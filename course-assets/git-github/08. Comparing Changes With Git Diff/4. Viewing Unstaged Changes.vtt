@@ -1,0 +1,292 @@
+WEBVTT
+
+00:00.120 --> 00:01.470
+Instructor: All right, so now we're going to walk through
+
+00:01.470 --> 00:03.780
+some of the different ways of using git diff.
+
+00:03.780 --> 00:06.690
+We've got git diff, git diff HEAD,
+
+00:06.690 --> 00:09.300
+git diff staged, and cached.
+
+00:09.300 --> 00:11.940
+And then we have git diff HEAD with a file name,
+
+00:11.940 --> 00:14.130
+git diff staged with a file name,
+
+00:14.130 --> 00:15.840
+branch names that we can use.
+
+00:15.840 --> 00:17.790
+We can put commit hashes in there.
+
+00:17.790 --> 00:19.710
+So there's a lot that we can cover.
+
+00:19.710 --> 00:21.840
+It all follows a very similar pattern though,
+
+00:21.840 --> 00:23.580
+so it's not super difficult.
+
+00:23.580 --> 00:26.130
+But I'm going to begin by making a very basic repo
+
+00:26.130 --> 00:29.280
+that we can follow along with instead of this crazier one
+
+00:29.280 --> 00:31.860
+with all these changes and tons of files.
+
+00:31.860 --> 00:34.050
+I'm going to do just a trivial example.
+
+00:34.050 --> 00:35.460
+It all works the same way.
+
+00:35.460 --> 00:37.560
+So I'm not in a repo at the moment.
+
+00:37.560 --> 00:39.000
+I'll init a repo,
+
+00:39.000 --> 00:44.000
+and I'm going to make just a colors file, colors.txt.
+
+00:44.250 --> 00:46.410
+And why don't I add a commit right now?
+
+00:46.410 --> 00:47.580
+Git add
+
+00:47.580 --> 00:49.980
+colors.txt, git commit.
+
+00:49.980 --> 00:51.633
+We'll just do initial commit.
+
+00:52.680 --> 00:55.350
+I'm just going to make some basic history.
+
+00:55.350 --> 00:56.820
+And then here's my file.
+
+00:56.820 --> 00:58.920
+So I'll add red into that file,
+
+00:58.920 --> 01:00.990
+and then I'll do a commit -am,
+
+01:00.990 --> 01:02.940
+which just means add everything,
+
+01:02.940 --> 01:06.213
+and then M for message so I don't have to add in commit.
+
+01:07.320 --> 01:09.180
+I'm going to just do this very quickly.
+
+01:09.180 --> 01:10.710
+I'll probably fast forward.
+
+01:10.710 --> 01:12.630
+So this one will be add orange.
+
+01:12.630 --> 01:15.420
+I'm just going to build up the rainbow one commit at a time.
+
+01:15.420 --> 01:17.420
+Maybe I'll do yellow and green together.
+
+01:18.360 --> 01:20.760
+So this, let me clear,
+
+01:20.760 --> 01:23.220
+will be "add yellow
+
+01:23.220 --> 01:24.387
+and green",
+
+01:25.410 --> 01:26.500
+and then blue
+
+01:27.810 --> 01:29.013
+and purple.
+
+01:31.080 --> 01:32.670
+So I'll do the same thing.
+
+01:32.670 --> 01:36.297
+Add a commit message, "add blue and purple".
+
+01:37.380 --> 01:39.390
+Okay, so we've got our rainbow set up now
+
+01:39.390 --> 01:41.253
+and I have a tiny bit of history.
+
+01:42.150 --> 01:44.490
+I have what, five commits so far?
+
+01:44.490 --> 01:47.250
+Okay, that's enough for us to start using git diff.
+
+01:47.250 --> 01:49.440
+So the first version I showed you, the only version,
+
+01:49.440 --> 01:51.840
+is just git diff with nothing else,
+
+01:51.840 --> 01:53.310
+and this will show us all the changes
+
+01:53.310 --> 01:55.890
+in our working directory that are not staged
+
+01:55.890 --> 01:57.270
+for the next commit.
+
+01:57.270 --> 02:00.720
+So it compares staging and the working directory.
+
+02:00.720 --> 02:02.370
+Also, staging is usually referred
+
+02:02.370 --> 02:05.400
+to the index on the documentation, which is confusing.
+
+02:05.400 --> 02:07.290
+Staging makes more sense.
+
+02:07.290 --> 02:08.760
+So a lot of people say that.
+
+02:08.760 --> 02:11.040
+Right now, if I run it, there's no difference
+
+02:11.040 --> 02:13.290
+because there are no changes at all.
+
+02:13.290 --> 02:14.670
+There's nothing in the staging area,
+
+02:14.670 --> 02:16.320
+there's nothing in the working directory.
+
+02:16.320 --> 02:17.733
+Nothing has changed.
+
+02:18.570 --> 02:21.573
+So, if I instead do something simple like,
+
+02:22.620 --> 02:24.240
+well, what I did in the last video,
+
+02:24.240 --> 02:26.250
+if I remove purple,
+
+02:26.250 --> 02:28.530
+and replace it as
+
+02:28.530 --> 02:29.363
+indigo,
+
+02:30.930 --> 02:32.223
+let's just save that.
+
+02:33.150 --> 02:35.250
+If I type "git status",
+
+02:35.250 --> 02:37.440
+we see, all right, there's something that's been modified.
+
+02:37.440 --> 02:39.780
+And now if I type "git diff",
+
+02:39.780 --> 02:42.000
+we see an actual diff.
+
+02:42.000 --> 02:45.030
+So this is showing us a comparison between what the index
+
+02:45.030 --> 02:47.612
+knows about and what the staging area has
+
+02:47.612 --> 02:50.160
+versus the changes that we've made.
+
+02:50.160 --> 02:52.680
+Another way of thinking about it is that the differences
+
+02:52.680 --> 02:56.370
+are what we could tell git to add to the staging area.
+
+02:56.370 --> 03:00.600
+So as we see here in our colors.txt file,
+
+03:00.600 --> 03:02.460
+we're comparing one file to the next,
+
+03:02.460 --> 03:04.920
+first version is "A" second version is "B".
+
+03:04.920 --> 03:08.670
+So "A" is what the staging area knows about,
+
+03:08.670 --> 03:12.990
+versus "B" is the changes we have in our working directory.
+
+03:12.990 --> 03:15.127
+So "A" gets the minus sign, right?
+
+03:15.127 --> 03:16.560
+"B" gets the plus sign.
+
+03:16.560 --> 03:19.140
+So in the the version of our files
+
+03:19.140 --> 03:21.423
+that the staging area last knew about,
+
+03:22.320 --> 03:24.540
+purple was still there.
+
+03:24.540 --> 03:26.280
+That's what that minus sign means.
+
+03:26.280 --> 03:27.990
+Versus with the version
+
+03:27.990 --> 03:30.600
+of the file that is actually in our working directory,
+
+03:30.600 --> 03:33.450
+we see that indigo has been added.
+
+03:33.450 --> 03:35.370
+So that's what the plus indicate.
+
+03:35.370 --> 03:36.900
+It doesn't always mean something is new,
+
+03:36.900 --> 03:39.330
+it just means that it came from file "B",
+
+03:39.330 --> 03:42.510
+and in our case, file "B" are the new changes.
+
+03:42.510 --> 03:44.160
+So that's all I'll show you in this video.
+
+03:44.160 --> 03:47.310
+Just to make this point more time, git diff on it's own
+
+03:47.310 --> 03:48.450
+will list the changes in our
+
+03:48.450 --> 03:51.153
+working directory that are not staged.
