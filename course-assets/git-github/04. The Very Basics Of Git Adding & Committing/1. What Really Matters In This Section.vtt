@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00.180 --> 00:01.170
+Instructor: All right, so hopefully,
+
+00:01.170 --> 00:02.580
+you now have Git installed.
+
+00:02.580 --> 00:04.410
+We're now moving on to what is probably
+
+00:04.410 --> 00:07.740
+the most essential section in this course.
+
+00:07.740 --> 00:10.380
+We're talking about some of the core Git commands
+
+00:10.380 --> 00:13.350
+so there's going to be a lot in the Critical column here.
+
+00:13.350 --> 00:15.540
+First, we're gonna talk about this concept
+
+00:15.540 --> 00:19.110
+of GI Repositories, Repos for short, what are they?
+
+00:19.110 --> 00:21.930
+And then we'll learn a bunch of commands, GI Init,
+
+00:21.930 --> 00:24.240
+that's going to be critical, and Git Status.
+
+00:24.240 --> 00:27.813
+These are things you'll use nonstop if you use Git.
+
+00:29.001 --> 00:31.860
+Understanding the .git folder I'll say is important,
+
+00:31.860 --> 00:33.180
+but not a critical thing.
+
+00:33.180 --> 00:35.040
+You could go your whole life as a GI user
+
+00:35.040 --> 00:38.370
+without really understanding it and what's inside of it.
+
+00:38.370 --> 00:41.730
+The Committing Workflow, a very important concept,
+
+00:41.730 --> 00:43.770
+sort of an overview that we'll do.
+
+00:43.770 --> 00:46.110
+And then we'll dive into three more commands,
+
+00:46.110 --> 00:48.235
+Git Add, Git Commit, and Git Log.
+
+00:48.235 --> 00:52.020
+None of them are terribly difficult or anything like that,
+
+00:52.020 --> 00:54.660
+but they are very, very important,
+
+00:54.660 --> 00:56.460
+essential to working with Git
+
+00:56.460 --> 00:58.680
+and they'll come up throughout the rest of the course.
+
+00:58.680 --> 01:00.450
+So take your time with this section.
+
+01:00.450 --> 01:01.680
+Don't speed through it.
+
+01:01.680 --> 01:04.590
+Remember how much is in the Critical column.
+
+01:04.590 --> 01:07.740
+Because for future sections, that really won't be the case.
+
+01:07.740 --> 01:09.540
+So let's go ahead and get started.
+
+01:09.540 --> 01:11.220
+What really matters? Pretty much everything.
+
+01:11.220 --> 01:12.273
+Okay, here we go.
