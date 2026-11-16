@@ -1,0 +1,574 @@
+WEBVTT
+
+00:00.120 --> 00:01.590
+Instructor: All right, so in this video
+
+00:01.590 --> 00:05.850
+we're gonna take a peek at some of the internals of Git.
+
+00:05.850 --> 00:08.190
+Specifically, I'm gonna show you a command
+
+00:08.190 --> 00:12.810
+called git hash-object that I never really use,
+
+00:12.810 --> 00:14.340
+except when I'm teaching,
+
+00:14.340 --> 00:17.190
+but I do think it explains a lot about how Git works.
+
+00:17.190 --> 00:18.930
+Now, remember what we said in the last video,
+
+00:18.930 --> 00:20.790
+Git is a key-value data store.
+
+00:20.790 --> 00:22.800
+We can give it any sort of information,
+
+00:22.800 --> 00:26.520
+including just a simple letter, or a sentence,
+
+00:26.520 --> 00:28.740
+let alone files, like we normally do,
+
+00:28.740 --> 00:31.020
+and it will give us back a unique key.
+
+00:31.020 --> 00:34.950
+So this command, git hash-object, is one way of doing that.
+
+00:34.950 --> 00:36.780
+We give it some data
+
+00:36.780 --> 00:39.540
+and then it will give us back a unique key,
+
+00:39.540 --> 00:43.260
+a corresponding SHA-1 hash, based upon that data.
+
+00:43.260 --> 00:45.120
+Remember how a hashing function works,
+
+00:45.120 --> 00:47.820
+we don't really care about the internals and how it works,
+
+00:47.820 --> 00:50.550
+but we care about the fact that you give it some input,
+
+00:50.550 --> 00:51.750
+it doesn't matter the size,
+
+00:51.750 --> 00:56.490
+it gives us an output that is always 40 hexadecimal digits.
+
+00:56.490 --> 01:01.170
+So this example here, git hash-object and then a file,
+
+01:01.170 --> 01:03.510
+is gonna take the content from a file
+
+01:03.510 --> 01:06.360
+and then it returns a unique SHA-1 hash
+
+01:06.360 --> 01:08.610
+that would be used to store our object,
+
+01:08.610 --> 01:12.510
+but it does not actually store anything, in this form.
+
+01:12.510 --> 01:14.610
+So this won't store anything for us,
+
+01:14.610 --> 01:17.790
+but there's a variant I'll show you where we can tell Git,
+
+01:17.790 --> 01:20.820
+actually store this, store this information,
+
+01:20.820 --> 01:24.510
+and it will create a new entry in the objects directory.
+
+01:24.510 --> 01:27.360
+Remember we talked about it, the objects directory
+
+01:27.360 --> 01:31.170
+is where all the information eventually is stored.
+
+01:31.170 --> 01:33.180
+All of our files and their contents
+
+01:33.180 --> 01:35.940
+and all this stuff we're about to talk about.
+
+01:35.940 --> 01:37.784
+So git hash-object on its own
+
+01:37.784 --> 01:40.440
+is not gonna be that useful, just like this.
+
+01:40.440 --> 01:41.700
+But the next thing I wanna show you
+
+01:41.700 --> 01:44.520
+is a somewhat complicated looking variant.
+
+01:44.520 --> 01:47.790
+This allows us to hash something that is not a file.
+
+01:47.790 --> 01:50.250
+This right here, echo 'hello',
+
+01:50.250 --> 01:52.170
+if you're not familiar with the echo command,
+
+01:52.170 --> 01:53.913
+if I just echo anything,
+
+01:55.500 --> 01:56.850
+it's just returned right back to me,
+
+01:56.850 --> 02:00.570
+you know, echo, echo, echo and so on, except only one time.
+
+02:00.570 --> 02:02.490
+So we can take that output,
+
+02:02.490 --> 02:04.590
+which is just hello in this case,
+
+02:04.590 --> 02:08.160
+and then we can pipe it over to git hash-object
+
+02:08.160 --> 02:12.150
+and we pass in the --stdin,
+
+02:12.150 --> 02:14.700
+that's one of the options that we can pass,
+
+02:14.700 --> 02:17.610
+to tell git hash-object that we want it to hash
+
+02:17.610 --> 02:20.400
+from the standard in, meaning hash this 'hello'.
+
+02:20.400 --> 02:22.320
+It's a very complicated way of telling it,
+
+02:22.320 --> 02:23.940
+we don't have a file for you to hash,
+
+02:23.940 --> 02:25.740
+just hash this right here.
+
+02:25.740 --> 02:27.390
+So let me demonstrate this.
+
+02:27.390 --> 02:30.933
+All right, so I'll echo something, we can do "hi"
+
+02:32.850 --> 02:37.850
+and then | and then git hash-object and then --stdin.
+
+02:41.070 --> 02:46.070
+And notice, it's giving me back a SHA-1 hash, a checksum.
+
+02:46.320 --> 02:48.480
+It's 40 characters hexadecimal.
+
+02:48.480 --> 02:52.200
+And every time that I call it with that same line,
+
+02:52.200 --> 02:56.550
+every time I hash "hi", I should always get the same output.
+
+02:56.550 --> 02:57.810
+Remember, it's deterministic.
+
+02:57.810 --> 03:01.590
+The same input should always yield the same output.
+
+03:01.590 --> 03:03.810
+So I could try this with something else.
+
+03:03.810 --> 03:06.690
+What would be another example? How about "hello"?
+
+03:06.690 --> 03:09.030
+We get a different output, same length,
+
+03:09.030 --> 03:12.750
+40 characters hexadecimal, but very, very different.
+
+03:12.750 --> 03:13.583
+So at this point,
+
+03:13.583 --> 03:16.200
+I actually haven't even initialized a Git repo.
+
+03:16.200 --> 03:18.510
+So the commands that I've showing you there
+
+03:18.510 --> 03:20.214
+is like a Git utility,
+
+03:20.214 --> 03:23.640
+in the same way that I can run git init anywhere,
+
+03:23.640 --> 03:25.650
+my machine just knows git init.
+
+03:25.650 --> 03:28.470
+I can run git hash-object anywhere,
+
+03:28.470 --> 03:31.860
+but now I'm in a new folder and I'm going to run git init.
+
+03:31.860 --> 03:32.853
+It's not a repo.
+
+03:33.870 --> 03:38.370
+And then, over in VS Code, I've opened the .git directory.
+
+03:38.370 --> 03:40.860
+So I'm showing you the contents here, right?
+
+03:40.860 --> 03:44.580
+If I do, ls .git, it now exists.
+
+03:44.580 --> 03:46.680
+This is the initial state of .git.
+
+03:46.680 --> 03:49.200
+Objects, it has these two folders, info and pack,
+
+03:49.200 --> 03:50.460
+but they don't have anything in them
+
+03:50.460 --> 03:52.830
+and they don't really matter to us right now.
+
+03:52.830 --> 03:55.620
+So objects does not have any of our content in it.
+
+03:55.620 --> 03:58.500
+It's just the blank object slate.
+
+03:58.500 --> 04:00.810
+All right, so now if I try running one
+
+04:00.810 --> 04:02.220
+of these commands again,
+
+04:02.220 --> 04:06.387
+like echo "hello" | git hash-object from the standard in,
+
+04:06.387 --> 04:08.130
+right, we see that output.
+
+04:08.130 --> 04:09.390
+I just wanna make it very clear.
+
+04:09.390 --> 04:11.400
+Objects is not changing at all.
+
+04:11.400 --> 04:13.080
+We're not storing anything in Git.
+
+04:13.080 --> 04:15.090
+This is just saying hello Git.
+
+04:15.090 --> 04:17.370
+If you were to store this object,
+
+04:17.370 --> 04:20.490
+or this information, just "hello", if you were to store it,
+
+04:20.490 --> 04:23.070
+what key would it be stored under?
+
+04:23.070 --> 04:25.560
+And that's the output, but it doesn't store it.
+
+04:25.560 --> 04:30.060
+However, if we add on this additional option, -w,
+
+04:30.060 --> 04:33.210
+I think it's just dash write, w for write,
+
+04:33.210 --> 04:37.350
+this is going to tell Git to actually store our object,
+
+04:37.350 --> 04:39.510
+actually take this information,
+
+04:39.510 --> 04:42.621
+in our case, the string "hello", take that word,
+
+04:42.621 --> 04:46.260
+hash it with SHA-1 and then store that.
+
+04:46.260 --> 04:48.420
+So after we run this command,
+
+04:48.420 --> 04:50.700
+whether we do "hello", or some other string,
+
+04:50.700 --> 04:52.700
+I'm gonna do "hello" because it's simple
+
+04:53.550 --> 04:56.040
+and I kind of recommend that you follow along,
+
+04:56.040 --> 04:59.070
+if you want to, with the same exact string,
+
+04:59.070 --> 05:00.810
+so "hello", as well,
+
+05:00.810 --> 05:03.625
+because it will make a more consistent experience for you.
+
+05:03.625 --> 05:05.610
+'cause this is gonna come back.
+
+05:05.610 --> 05:08.910
+All right, so if I just add in the -w,
+
+05:08.910 --> 05:12.450
+just wanna verify, prove, nothing in there.
+
+05:12.450 --> 05:15.873
+Now, we got this hash as our output, let's hit enter.
+
+05:16.710 --> 05:18.330
+We get the same output.
+
+05:18.330 --> 05:22.050
+But now, if we go to objects, it might take a moment.
+
+05:22.050 --> 05:23.580
+Well, for whatever reason
+
+05:23.580 --> 05:26.010
+VS Code is not wanting to refresh and show me.
+
+05:26.010 --> 05:27.930
+Let me try refreshing here.
+
+05:27.930 --> 05:29.250
+Okay, there we are.
+
+05:29.250 --> 05:32.010
+Whew. Okay, so (chuckles) it is indeed here.
+
+05:32.010 --> 05:35.460
+There's a new folder, ce.
+
+05:35.460 --> 05:37.020
+Now, that's a coincidence.
+
+05:37.020 --> 05:38.430
+Let me show you that output again,
+
+05:38.430 --> 05:40.080
+of course I, wiped the screen.
+
+05:40.080 --> 05:43.260
+But if we run this command,
+
+05:43.260 --> 05:48.260
+that hash that we got starts with ce, ce and then 013.
+
+05:49.440 --> 05:53.430
+So what do we have? Ce and then what do you know?
+
+05:53.430 --> 05:56.190
+0136 and so on.
+
+05:56.190 --> 05:59.130
+So there's this entry in the objects folder
+
+05:59.130 --> 06:03.030
+and there's a folder inside ce, just two characters,
+
+06:03.030 --> 06:05.610
+and then the rest, the 38 remaining digits
+
+06:05.610 --> 06:07.740
+are used to name this file.
+
+06:07.740 --> 06:12.150
+So this file is the most basic way that Git stores content.
+
+06:12.150 --> 06:15.540
+This file actually contains our content
+
+06:15.540 --> 06:17.850
+and in this case it was just "hello",
+
+06:17.850 --> 06:19.770
+but it's been compressed and encrypted.
+
+06:19.770 --> 06:21.990
+So we don't, we can't read it, right?
+
+06:21.990 --> 06:25.350
+It's stored as binary in there, but it is in there.
+
+06:25.350 --> 06:28.530
+We have successfully stored our first piece of data
+
+06:28.530 --> 06:32.580
+in our Git database, the very, very manual way.
+
+06:32.580 --> 06:34.290
+We almost never would do this.
+
+06:34.290 --> 06:37.590
+I can't imagine really doing this outside of teaching,
+
+06:37.590 --> 06:40.710
+but I hope that this explains a tiny bit.
+
+06:40.710 --> 06:43.200
+We're not done, there's a lot of pieces of the puzzle here,
+
+06:43.200 --> 06:46.710
+but I hope you understand that this git hash-object,
+
+06:46.710 --> 06:50.640
+with this annoying syntax, is taking our input "hello",
+
+06:50.640 --> 06:54.038
+which always returns the exact same output from SHA-1,
+
+06:54.038 --> 06:55.410
+this output,
+
+06:55.410 --> 06:58.410
+but we told it to write, with -w previously
+
+06:58.410 --> 07:01.920
+and Git took that and it created a file for us.
+
+07:01.920 --> 07:03.960
+It's not exactly the same name, right?
+
+07:03.960 --> 07:06.990
+It's 38 of 40 digits that are the same.
+
+07:06.990 --> 07:08.460
+And then, the first two digits
+
+07:08.460 --> 07:10.260
+were used to create the folder.
+
+07:10.260 --> 07:11.430
+That's just what Git does.
+
+07:11.430 --> 07:13.115
+So the objects directory,
+
+07:13.115 --> 07:16.380
+if we had two hashes that happen to start with ce,
+
+07:16.380 --> 07:18.030
+they would share this folder.
+
+07:18.030 --> 07:18.863
+But then,
+
+07:18.863 --> 07:21.000
+if we have another hash that starts with something else,
+
+07:21.000 --> 07:23.490
+which I'm about to do here, what should we do?
+
+07:23.490 --> 07:25.230
+Let's do "goodbye", as well.
+
+07:25.230 --> 07:29.040
+So echo "goodbye", and then pipe that,
+
+07:29.040 --> 07:32.430
+basically send the output to hash-object
+
+07:32.430 --> 07:34.620
+and tell it to expect standard in.
+
+07:34.620 --> 07:39.030
+So I'm not writing this yet, but we get dd7e.
+
+07:39.030 --> 07:42.060
+So when I add this -w, I'm telling Git,
+
+07:42.060 --> 07:45.540
+all right, store this, store "goodbye".
+
+07:45.540 --> 07:47.550
+So it does this all the time, but not with strings,
+
+07:47.550 --> 07:50.490
+with files, but I'm telling it store "goodbye".
+
+07:50.490 --> 07:53.280
+So we're gonna end up with a folder called dd
+
+07:53.280 --> 07:57.810
+and then a file, 7e1, blah, blah, blah, all the way to a6.
+
+07:57.810 --> 08:01.080
+And inside, will be a binary, compressed,
+
+08:01.080 --> 08:02.790
+encrypted version of "goodbye"
+
+08:02.790 --> 08:05.700
+that we won't be able to read, at least not with human eyes.
+
+08:05.700 --> 08:08.200
+All right? So I'm gonna add that -w and hit enter.
+
+08:09.480 --> 08:11.280
+And of course, we get the same output
+
+08:11.280 --> 08:12.930
+because it was the same input.
+
+08:12.930 --> 08:13.800
+It's deterministic.
+
+08:13.800 --> 08:15.960
+We should always get that same hash,
+
+08:15.960 --> 08:18.690
+assuming we give it the same exact input.
+
+08:18.690 --> 08:21.060
+So not an extra space, not an extra,
+
+08:21.060 --> 08:23.430
+you know, uppercase, lowercase, hidden character.
+
+08:23.430 --> 08:24.633
+Exactly the same.
+
+08:25.890 --> 08:28.470
+So I'm gonna have to refresh here. There we are.
+
+08:28.470 --> 08:31.410
+Now, we have dd and then 7e1.
+
+08:31.410 --> 08:34.680
+Okay, so I have two strings, two pieces of text
+
+08:34.680 --> 08:36.900
+that I have successfully put into Git.
+
+08:36.900 --> 08:39.150
+In the next video, I'll show you how to get them out,
+
+08:39.150 --> 08:42.183
+using another Git command that is pretty rarely used.
