@@ -1,0 +1,961 @@
+WEBVTT
+
+00:00.120 --> 00:02.370
+Instructor: So now we finally get to talk about Commits.
+
+00:02.370 --> 00:04.080
+Our good friend, we've been working
+
+00:04.080 --> 00:05.790
+with Commits for quite a long time.
+
+00:05.790 --> 00:07.740
+We've seen these commit hashes
+
+00:07.740 --> 00:10.380
+but now let's talk about the actual underlying structure
+
+00:10.380 --> 00:12.870
+of the Git object, the commit.
+
+00:12.870 --> 00:16.287
+So when we make a commits, Git generates a new commit,
+
+00:16.287 --> 00:19.050
+Git object, and it stores that, just like it stores
+
+00:19.050 --> 00:21.480
+all the other objects the blobs and trees we've seen,
+
+00:21.480 --> 00:24.450
+it hashes them it makes a file over here
+
+00:24.450 --> 00:26.070
+in the objects directory.
+
+00:26.070 --> 00:27.810
+First two digits make a folder.
+
+00:27.810 --> 00:31.050
+Inside of that 38 digits of the hash that are remaining
+
+00:31.050 --> 00:34.380
+are the name of that encrypted binary compressed file.
+
+00:34.380 --> 00:36.720
+Okay, so commits are going to be stored in there as well.
+
+00:36.720 --> 00:37.950
+What we haven't really talked about
+
+00:37.950 --> 00:40.110
+is what a commit actually contains.
+
+00:40.110 --> 00:41.850
+We know that it contains a message
+
+00:41.850 --> 00:43.590
+because we provide that message.
+
+00:43.590 --> 00:45.750
+We've seen that it includes the author
+
+00:45.750 --> 00:48.030
+but what we have not really talked about
+
+00:48.030 --> 00:50.490
+is the fact that commits also include a reference
+
+00:50.490 --> 00:52.170
+to a parent commit.
+
+00:52.170 --> 00:53.760
+We've mentioned that,
+
+00:53.760 --> 00:55.470
+but we haven't gone into a ton of detail.
+
+00:55.470 --> 00:57.480
+So that's a reference to the hash
+
+00:57.480 --> 00:59.340
+of the commit that came before.
+
+00:59.340 --> 01:01.650
+So really all we need to get the entire chain,
+
+01:01.650 --> 01:05.370
+the entire history of a Git repo is just a commits
+
+01:05.370 --> 01:06.900
+that links back to a parent
+
+01:06.900 --> 01:08.460
+and then we can go look at that parent,
+
+01:08.460 --> 01:09.900
+it links back to another parent
+
+01:09.900 --> 01:11.760
+and that links back to another parent.
+
+01:11.760 --> 01:14.220
+Anyway, commits have a reference to the parent commits
+
+01:14.220 --> 01:19.220
+but also they have a reference to a tree object.
+
+01:19.290 --> 01:21.510
+So this tree object is just like
+
+01:21.510 --> 01:24.630
+the tree objects that we've seen, like this,
+
+01:24.630 --> 01:28.710
+where a tree can reference other trees and also blobs.
+
+01:28.710 --> 01:31.050
+So you could visualize it this way instead,
+
+01:31.050 --> 01:32.610
+every commit has a hash, right?
+
+01:32.610 --> 01:36.090
+All the contents are hashed to generate this.
+
+01:36.090 --> 01:38.430
+There is the parent at the beginning of this repo.
+
+01:38.430 --> 01:39.450
+There's no history.
+
+01:39.450 --> 01:42.450
+So a parent just doesn't exist on this one commits.
+
+01:42.450 --> 01:45.510
+There's an author committer, there's a message.
+
+01:45.510 --> 01:47.310
+But the tree is the most important part
+
+01:47.310 --> 01:48.630
+that I want to talk about.
+
+01:48.630 --> 01:50.730
+When we run Git Commit,
+
+01:50.730 --> 01:53.190
+Git creates this new commit object for us
+
+01:53.190 --> 01:55.980
+and it sets the parent to be the current head commit.
+
+01:55.980 --> 01:58.350
+So that makes sense probably, right?
+
+01:58.350 --> 02:00.150
+If we make a new commit,
+
+02:00.150 --> 02:02.880
+it's going to have the parent of our current head.
+
+02:02.880 --> 02:05.493
+So it would go over here and point back to this one.
+
+02:06.420 --> 02:10.590
+But also, the tree that it stores in this commit,
+
+02:10.590 --> 02:13.170
+the tree is the current content of the index,
+
+02:13.170 --> 02:14.490
+the staging area.
+
+02:14.490 --> 02:17.610
+So there's an actual index file, but basically,
+
+02:17.610 --> 02:20.370
+everything that we have worked on, all our changes,
+
+02:20.370 --> 02:23.580
+everything we have staged and prepared to commit,
+
+02:23.580 --> 02:27.660
+when we actually run, Git Commits a tree is generated.
+
+02:27.660 --> 02:31.740
+So that tree will reflect the contents of the index
+
+02:31.740 --> 02:34.170
+and then that is included in the commit.
+
+02:34.170 --> 02:37.260
+Then we have the parent that references the parent commits.
+
+02:37.260 --> 02:39.570
+So that's giving us the history, right?
+
+02:39.570 --> 02:42.840
+So this is giving us the actual contents of the directory,
+
+02:42.840 --> 02:45.930
+our changes, and that tree is going to include,
+
+02:45.930 --> 02:48.093
+most likely other trees and blobs.
+
+02:49.050 --> 02:52.110
+And then there's the metadata, author, committer, message.
+
+02:52.110 --> 02:53.520
+And then that whole thing is hashed.
+
+02:53.520 --> 02:56.040
+And we end up with this commit hash.
+
+02:56.040 --> 02:58.890
+So if I make a new commit, remember what I said here,
+
+02:58.890 --> 03:00.900
+that when we make a new commit,
+
+03:00.900 --> 03:03.960
+the head commit is going to be the parent
+
+03:03.960 --> 03:04.800
+of that new commit.
+
+03:04.800 --> 03:06.630
+So this was head right here,
+
+03:06.630 --> 03:09.180
+now head is here and it points back,
+
+03:09.180 --> 03:11.790
+this commit refers back to the commit before it,
+
+03:11.790 --> 03:12.623
+the parent.
+
+03:12.623 --> 03:15.120
+So every commit is tied to a tree
+
+03:15.120 --> 03:17.700
+and that tree is something that represents
+
+03:17.700 --> 03:19.680
+the structure of the application.
+
+03:19.680 --> 03:22.590
+And in turn, the blobs that it contains all the data
+
+03:22.590 --> 03:23.850
+in the files.
+
+03:23.850 --> 03:26.040
+So we could go look at any commit
+
+03:26.040 --> 03:29.070
+and we can see that tree for that commit.
+
+03:29.070 --> 03:30.870
+We can take a look, we can inspect it.
+
+03:30.870 --> 03:33.630
+And then of course if we check out a commit,
+
+03:33.630 --> 03:35.760
+if we make a new branch based upon a commit,
+
+03:35.760 --> 03:38.970
+Git is going to take that tree and use it as the basis
+
+03:38.970 --> 03:41.100
+for our working directory.
+
+03:41.100 --> 03:42.810
+So let me demonstrate that.
+
+03:42.810 --> 03:46.080
+Lemme just show you an example here, another diagram.
+
+03:46.080 --> 03:47.160
+So here's this structure,
+
+03:47.160 --> 03:50.730
+we've talked about trees referring to blobs and to trees
+
+03:50.730 --> 03:54.480
+but a commit includes one tree.
+
+03:54.480 --> 03:56.400
+So this would be the state of our application
+
+03:56.400 --> 03:58.440
+at this time of the commit.
+
+03:58.440 --> 04:00.510
+And then we have the commit message and so on.
+
+04:00.510 --> 04:03.000
+So every commit has a tree like that.
+
+04:03.000 --> 04:05.550
+So here's a much more expanded diagram
+
+04:05.550 --> 04:07.770
+that just shows that the details, right?
+
+04:07.770 --> 04:09.780
+If you look at the hashes all match.
+
+04:09.780 --> 04:14.430
+So this commit, its tree, it's snapshot C387,
+
+04:14.430 --> 04:16.080
+that's this one right here.
+
+04:16.080 --> 04:19.350
+And then the tree has blobs and trees and so on.
+
+04:19.350 --> 04:22.230
+So let me try to demonstrate this.
+
+04:22.230 --> 04:23.850
+Let's make a simple repo.
+
+04:23.850 --> 04:24.870
+We'll just start from...
+
+04:24.870 --> 04:27.360
+Well we've got this dog repo already.
+
+04:27.360 --> 04:29.010
+Right? This one I have open.
+
+04:29.010 --> 04:30.723
+I haven't made any commits.
+
+04:31.800 --> 04:33.570
+So if you wanna follow along, right?
+
+04:33.570 --> 04:35.940
+If you have a new repo, you haven't made any commits,
+
+04:35.940 --> 04:37.020
+that will work for us.
+
+04:37.020 --> 04:39.420
+So right now there are no commit objects.
+
+04:39.420 --> 04:43.560
+I have added manually, I've added some blobs
+
+04:43.560 --> 04:46.080
+but you don't need those for this demonstration.
+
+04:46.080 --> 04:49.380
+What we do need to do is make an initial commit.
+
+04:49.380 --> 04:53.550
+So I have this one file dogs.txt.
+
+04:53.550 --> 04:55.440
+Why don't I just commit that?
+
+04:55.440 --> 04:59.100
+So I'll do something like Git add dogs.txt,
+
+04:59.100 --> 05:03.393
+Git commit, add dogs file or initial commit or something.
+
+05:04.380 --> 05:05.490
+Okay?
+
+05:05.490 --> 05:07.440
+So I just made a commit.
+
+05:07.440 --> 05:10.590
+And if we look at that commit with Git log,
+
+05:10.590 --> 05:13.290
+we see the commit hash, we see the author,
+
+05:13.290 --> 05:15.120
+we see the date and the message.
+
+05:15.120 --> 05:16.863
+But there is more to this commit.
+
+05:17.700 --> 05:21.810
+If I copy this hash, we can use the same command we've seen,
+
+05:21.810 --> 05:24.540
+cat file, Git cat file
+
+05:24.540 --> 05:27.420
+and then let's do dash T for type.
+
+05:27.420 --> 05:30.660
+And we see that we have a commit object.
+
+05:30.660 --> 05:34.470
+Also, 79DD6, let's remember that.
+
+05:34.470 --> 05:36.960
+Over here, what do we have?
+
+05:36.960 --> 05:39.000
+79, whoops, there it is.
+
+05:39.000 --> 05:42.540
+In the objects directory of dot Git, DD6.
+
+05:42.540 --> 05:45.090
+This is where my commit is stored.
+
+05:45.090 --> 05:47.490
+But I can actually view much more about it.
+
+05:47.490 --> 05:50.610
+I can pretty print it using Git cat file dash P,
+
+05:50.610 --> 05:51.720
+which we've also seen.
+
+05:51.720 --> 05:54.720
+We've printed trees, we printed objects or rather blobs,
+
+05:54.720 --> 05:55.980
+they're all objects.
+
+05:55.980 --> 05:57.033
+This is a commit.
+
+05:57.990 --> 06:00.870
+And now what we see is a little bit different.
+
+06:00.870 --> 06:03.030
+When we pretty print this commit hash
+
+06:03.030 --> 06:06.300
+we actually end up seeing the tree.
+
+06:06.300 --> 06:10.200
+So remember, every commit contains a reference to a tree
+
+06:10.200 --> 06:13.680
+and this tree represents the structure of our application,
+
+06:13.680 --> 06:17.280
+the snapshot of our directory, the app,
+
+06:17.280 --> 06:20.070
+at this point in time when we made the commit.
+
+06:20.070 --> 06:22.110
+So we could copy this
+
+06:22.110 --> 06:25.230
+and you'll see different hashes almost guaranteed,
+
+06:25.230 --> 06:26.640
+but if you are following along,
+
+06:26.640 --> 06:28.740
+we can verify that is indeed a tree, right?
+
+06:28.740 --> 06:33.270
+If we do Git cat file dash T for type, it's a tree.
+
+06:33.270 --> 06:36.213
+But I can also do Git cat file dash p.
+
+06:37.410 --> 06:39.630
+And we see, okay, here's the output
+
+06:39.630 --> 06:41.880
+or here's the contents, rather, of the tree
+
+06:41.880 --> 06:44.880
+just one file dogs.txt.
+
+06:44.880 --> 06:47.700
+But now, let's make a second commit
+
+06:47.700 --> 06:49.350
+and let's do some other changes.
+
+06:49.350 --> 06:51.393
+Why don't we make another file in here?
+
+06:52.290 --> 06:54.930
+So what do we have, dogs?
+
+06:54.930 --> 06:56.700
+Let's just do, you know, cats?
+
+06:56.700 --> 06:57.960
+I'll just do it from the command line.
+
+06:57.960 --> 07:02.960
+So I'm gonna do echo, meow, meow
+
+07:03.120 --> 07:06.930
+and I'll redirect that into a cats.txt file.
+
+07:06.930 --> 07:09.720
+You could also just make that file yourself.
+
+07:09.720 --> 07:11.190
+Oh, I don't have the directory open here.
+
+07:11.190 --> 07:14.520
+I have just.gits. But anyway, I have a file.
+
+07:14.520 --> 07:17.670
+If we look at it, it says Meow Meow.
+
+07:17.670 --> 07:19.950
+All right, so now if I do a Git status
+
+07:19.950 --> 07:24.693
+I'll add that cats.txt and then I'll commit.
+
+07:27.090 --> 07:29.133
+Let's just go with add cats file.
+
+07:30.360 --> 07:33.810
+Okay, so now we have two commits, right?
+
+07:33.810 --> 07:36.390
+Our first one, but this new second one,
+
+07:36.390 --> 07:40.620
+if I copy this hash, first of all, 5119.
+
+07:40.620 --> 07:42.870
+We'll see that over here somewhere.
+
+07:42.870 --> 07:44.793
+I may need to refresh this.
+
+07:45.720 --> 07:47.160
+Where are you? Here it is.
+
+07:47.160 --> 07:48.303
+5119.
+
+07:49.380 --> 07:52.650
+All right, so this is that commit object stored here.
+
+07:52.650 --> 07:57.650
+Okay, so if we use cat file, Git cat dash file,
+
+07:58.080 --> 08:01.320
+we do dash T, we see this is indeed a commit.
+
+08:01.320 --> 08:03.513
+But if I do the same thing with dash p.
+
+08:04.470 --> 08:07.170
+Now we see it has a parent commit
+
+08:07.170 --> 08:10.140
+and this parent commit is the only other commit we have.
+
+08:10.140 --> 08:12.840
+Hopefully you remember it was 79DD.
+
+08:12.840 --> 08:13.673
+That is correct.
+
+08:13.673 --> 08:16.020
+It's referencing the commit that we made first,
+
+08:16.020 --> 08:17.160
+there's only two.
+
+08:17.160 --> 08:20.970
+So this was the first one and it has a reference to a tree.
+
+08:20.970 --> 08:22.260
+And this is a different tree.
+
+08:22.260 --> 08:27.260
+If I inspect this tree, Git cat dash file dash p
+
+08:27.600 --> 08:29.070
+and then I don't need the whole thing,
+
+08:29.070 --> 08:31.473
+but just a part of this hash for the tree.
+
+08:32.520 --> 08:34.950
+Now we see it has two blobs.
+
+08:34.950 --> 08:35.940
+Okay?
+
+08:35.940 --> 08:37.830
+So the first tree from the first commit,
+
+08:37.830 --> 08:39.928
+that snapshot, had one blob for one dogs file.
+
+08:39.928 --> 08:42.240
+That's all we had.
+
+08:42.240 --> 08:45.210
+This one, this tree has two blobs.
+
+08:45.210 --> 08:47.280
+But what's important to note,
+
+08:47.280 --> 08:49.410
+we didn't change this dogs file.
+
+08:49.410 --> 08:54.090
+So Git doesn't give us a new blob, it keeps the same object,
+
+08:54.090 --> 08:57.480
+it has the same hash, meaning it didn't change.
+
+08:57.480 --> 09:00.390
+I can prove this. So we have FD91.
+
+09:00.390 --> 09:02.790
+If I go look at this other commit,
+
+09:02.790 --> 09:05.010
+so the parent commit this is gonna be, ugh,
+
+09:05.010 --> 09:07.740
+I'm scared to do this 'cause it's just so many commit hashes
+
+09:07.740 --> 09:10.440
+and so many crazy looking shaw hashes.
+
+09:10.440 --> 09:13.890
+But if I look at this earlier commit, the first one,
+
+09:13.890 --> 09:18.423
+Git cat file dash p, and then we look at that tree,
+
+09:19.890 --> 09:22.860
+Git cat file dash p with a tree.
+
+09:22.860 --> 09:24.000
+What do we see?
+
+09:24.000 --> 09:26.370
+One blob, this was the first snapshot I made.
+
+09:26.370 --> 09:30.270
+We only had the dog's file, FD91.
+
+09:30.270 --> 09:33.420
+So here, my second commit, we looked at the tree,
+
+09:33.420 --> 09:37.590
+the snapshot, and there was one blob for cats, that's new,
+
+09:37.590 --> 09:41.850
+but the second blob is for dogs and it still is FD915
+
+09:41.850 --> 09:43.920
+because it never changed.
+
+09:43.920 --> 09:46.410
+But now if I change that file,
+
+09:46.410 --> 09:48.780
+right, I do something different in the dog's file,
+
+09:48.780 --> 09:51.090
+like I change it to be Sirius Black,
+
+09:51.090 --> 09:52.740
+character from Harry Potter.
+
+09:52.740 --> 09:55.350
+So that's the new contents of the dogs file.
+
+09:55.350 --> 09:58.770
+Well now if I add that change, Git add dogs,
+
+09:58.770 --> 10:02.703
+Git commit dash M, update dog's file.
+
+10:04.680 --> 10:07.200
+If I commit, well, I just did commit
+
+10:07.200 --> 10:09.240
+and I look at that new commit,
+
+10:09.240 --> 10:12.900
+this one here, 4EC and so on,
+
+10:12.900 --> 10:17.463
+if I take a look with Git cat dash file dash p,
+
+10:18.570 --> 10:20.790
+all right, it's referencing the parent commit.
+
+10:20.790 --> 10:23.670
+That was the second commit, 5119,
+
+10:23.670 --> 10:25.620
+just remember those numbers.
+
+10:25.620 --> 10:29.700
+And this tree now, 0E37, blah blah.
+
+10:29.700 --> 10:34.350
+If we inspect that cat file dash P, it's still two blobs.
+
+10:34.350 --> 10:36.450
+One for dogs and one for cats.
+
+10:36.450 --> 10:39.810
+But notice here, 04998,
+
+10:39.810 --> 10:43.620
+that is a new hash for the dog's blob,
+
+10:43.620 --> 10:46.953
+versus, if we go back up to the earlier one,
+
+10:48.090 --> 10:51.933
+it used to be, so many, here we are, FD915.
+
+10:53.220 --> 10:55.800
+So Git's not going to come up with new hashes
+
+10:55.800 --> 10:58.560
+and change these objects if it doesn't need to,
+
+10:58.560 --> 11:00.360
+if nothing changed in those files,
+
+11:00.360 --> 11:01.830
+the contents are the same.
+
+11:01.830 --> 11:04.350
+A blob stores the contents of a file.
+
+11:04.350 --> 11:08.340
+So right now Git is storing this version of the file
+
+11:08.340 --> 11:12.000
+in one blob and then it's storing this version of the file
+
+11:12.000 --> 11:13.620
+in another blob.
+
+11:13.620 --> 11:17.700
+And then the trees will reference one of those versions
+
+11:17.700 --> 11:20.370
+depending on what was in that snapshot
+
+11:20.370 --> 11:22.380
+when I made the commit.
+
+11:22.380 --> 11:26.790
+So I'm hoping maybe some of this is starting to make sense.
+
+11:26.790 --> 11:29.520
+If not, you know, the good news is you could still use Git
+
+11:29.520 --> 11:31.800
+and not have to worry about this.
+
+11:31.800 --> 11:34.170
+But this is about as far as I want to go
+
+11:34.170 --> 11:36.180
+in exploring all of this.
+
+11:36.180 --> 11:38.280
+There are other things we can do.
+
+11:38.280 --> 11:41.430
+We can actually make commits and generate trees
+
+11:41.430 --> 11:44.460
+in the same way that we created blobs from scratch.
+
+11:44.460 --> 11:46.890
+But I think this is a good place to stop.
+
+11:46.890 --> 11:47.760
+Okay?
+
+11:47.760 --> 11:50.490
+So every commit includes a reference to a parent,
+
+11:50.490 --> 11:53.040
+unless it's the first commit, there is no parent.
+
+11:53.040 --> 11:54.780
+And then a tree,
+
+11:54.780 --> 11:57.660
+so that's another type of Git object we've seen.
+
+11:57.660 --> 12:01.710
+The tree will contain a bunch of references potentially,
+
+12:01.710 --> 12:06.000
+to other trees, if it's a subdirectory or to blobs.
+
+12:06.000 --> 12:08.940
+And a blob contains file contents.
+
+12:08.940 --> 12:11.130
+So a tree is the place where we store
+
+12:11.130 --> 12:14.880
+or Git stores the file name corresponding to a blob.
+
+12:14.880 --> 12:16.080
+And then everything's hashed.
+
+12:16.080 --> 12:19.800
+Blobs get hashed, trees get hashed, commits get hashed.
+
+12:19.800 --> 12:23.280
+And Git uses those hashes to easily determine
+
+12:23.280 --> 12:24.540
+if something has changed.
+
+12:24.540 --> 12:27.000
+Because you change a single character in a file,
+
+12:27.000 --> 12:28.740
+that blobs hashes different.
+
+12:28.740 --> 12:30.330
+You change something in a directory,
+
+12:30.330 --> 12:32.550
+that tree's hash is different.
+
+12:32.550 --> 12:35.760
+But also it uses those hashes as keys
+
+12:35.760 --> 12:37.980
+so that it can easily retrieve things, right?
+
+12:37.980 --> 12:41.190
+Keys are supposed to be unique in a key value data store.
+
+12:41.190 --> 12:44.010
+So if I say "Git, give me the information
+
+12:44.010 --> 12:46.140
+from this commit, FA4."
+
+12:46.140 --> 12:47.790
+It can easily go and find that.
+
+12:47.790 --> 12:50.370
+Or give me the information for this blob.
+
+12:50.370 --> 12:54.240
+We usually don't do that on a blob basis, but Git does that.
+
+12:54.240 --> 12:57.030
+Git will restore contents in a directory
+
+12:57.030 --> 12:59.400
+based upon the tree in a commit.
+
+12:59.400 --> 13:00.930
+So when I switch branches,
+
+13:00.930 --> 13:03.150
+it's going to look at the tip of a branch,
+
+13:03.150 --> 13:04.500
+what's that commit?
+
+13:04.500 --> 13:07.410
+Okay, what's the tree in that commit?
+
+13:07.410 --> 13:10.530
+Let's take that and we're going to restore
+
+13:10.530 --> 13:11.820
+the files and the working directory
+
+13:11.820 --> 13:14.250
+based upon the state in that tree.
+
+13:14.250 --> 13:16.470
+So that's kind of the underlying workflow
+
+13:16.470 --> 13:17.520
+that Git goes through.
+
+13:17.520 --> 13:19.590
+Now we're skipping a lot of stuff,
+
+13:19.590 --> 13:20.730
+but that's the basic idea,
+
+13:20.730 --> 13:24.360
+with Git objects, with hashing, commits, trees, blobs.
+
+13:24.360 --> 13:27.360
+There's also this fourth type, the annotated tag.
+
+13:27.360 --> 13:30.570
+We have talked about tags and annotated tags.
+
+13:30.570 --> 13:31.800
+Not a big deal.
+
+13:31.800 --> 13:34.230
+As this image loads here. (chuckles)
+
+13:34.230 --> 13:35.760
+They're not as important right now,
+
+13:35.760 --> 13:37.290
+to understanding how all this works
+
+13:37.290 --> 13:38.820
+but it's another type of Git object.
+
+13:38.820 --> 13:41.730
+They're hashed, they're stored in the objects directory.
+
+13:41.730 --> 13:45.810
+They include metadata, who made the tag, the dates,
+
+13:45.810 --> 13:49.590
+a tag message, just like a commit, except that a tag
+
+13:49.590 --> 13:52.890
+is just a pointer to a particular commit.
+
+13:52.890 --> 13:54.930
+It is not an actual commit itself.
+
+13:54.930 --> 13:57.330
+So it kind of stores a reference to a commit.
+
+13:57.330 --> 13:58.587
+And a commit stores a reference to a tree
+
+13:58.587 --> 14:01.230
+and a tree stores a references to blobs.
+
+14:01.230 --> 14:03.750
+Alright, I applaud you if you made it through all of this.
+
+14:03.750 --> 14:05.643
+I hope some of it made sense.
