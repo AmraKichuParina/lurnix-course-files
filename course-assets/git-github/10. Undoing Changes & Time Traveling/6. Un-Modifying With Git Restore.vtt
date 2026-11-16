@@ -1,0 +1,409 @@
+WEBVTT
+
+00:00.180 --> 00:02.340
+Instructor: All right, so now we're onto a new command,
+
+00:02.340 --> 00:03.630
+git restore,
+
+00:03.630 --> 00:06.540
+and this is actually a new command to git.
+
+00:06.540 --> 00:09.570
+It's pretty new, it's not all that well-known,
+
+00:09.570 --> 00:12.660
+so there's a lot of existing tutorials and videos
+
+00:12.660 --> 00:15.840
+and courses that don't mention it at all.
+
+00:15.840 --> 00:19.350
+Git restore takes some of the burden away from git checkout.
+
+00:19.350 --> 00:21.630
+It does- remember how I've said this a couple times,
+
+00:21.630 --> 00:23.490
+git checkout does a lot of things,
+
+00:23.490 --> 00:26.400
+and git switch alongside git restore,
+
+00:26.400 --> 00:29.280
+they both were introduced to try and take away
+
+00:29.280 --> 00:31.350
+some of that stuff from git checkout.
+
+00:31.350 --> 00:33.240
+So, git checkout still does all that stuff,
+
+00:33.240 --> 00:36.060
+but now, we have standalone commands git switch,
+
+00:36.060 --> 00:37.020
+to switch branches,
+
+00:37.020 --> 00:40.530
+and git restore, that helps with undoing operations.
+
+00:40.530 --> 00:41.610
+As you've seen already,
+
+00:41.610 --> 00:43.230
+we can use checkout to switch branches,
+
+00:43.230 --> 00:46.470
+we can use checkout to checkout earlier commits.
+
+00:46.470 --> 00:49.320
+We can use checkout, as we just saw in the previous video,
+
+00:49.320 --> 00:51.690
+to undo or discard changes.
+
+00:51.690 --> 00:56.280
+So, it's kind of crazy, but restore is the new command.
+
+00:56.280 --> 00:58.983
+It sometimes, honestly, feels a bit clunky to me,
+
+01:00.060 --> 01:01.800
+but I'm gonna show it to you now.
+
+01:01.800 --> 01:03.480
+So, the first thing we can do with git restore
+
+01:03.480 --> 01:07.590
+is discard changes that we've made in a repository
+
+01:07.590 --> 01:08.940
+since the last commit.
+
+01:08.940 --> 01:11.550
+Basically, the same thing I showed you in the last video.
+
+01:11.550 --> 01:15.330
+So, if I make some changes in my file, let's say dog,
+
+01:15.330 --> 01:17.820
+I add a bunch of stuff again.
+
+01:17.820 --> 01:20.010
+I delete all of this, right?
+
+01:20.010 --> 01:22.980
+I write, like, whatever that is, "-DOGGGG!!"
+
+01:22.980 --> 01:25.290
+Okay, I make a bunch of changes.
+
+01:25.290 --> 01:26.670
+I haven't added or committed them.
+
+01:26.670 --> 01:28.140
+I type git status, right?
+
+01:28.140 --> 01:31.080
+I've modified dog and I realize, "Ah, you know what?
+
+01:31.080 --> 01:32.430
+I don't want any of that."
+
+01:32.430 --> 01:36.300
+I can type git restore and then dog.txt.
+
+01:36.300 --> 01:39.210
+I don't even have to reference head or anything like that.
+
+01:39.210 --> 01:40.920
+Just git restore and a file name
+
+01:40.920 --> 01:44.670
+and it is going to restore my file, dog,
+
+01:44.670 --> 01:47.130
+back to what it looked like at head,
+
+01:47.130 --> 01:50.070
+where head currently is, at the last commit that we've made.
+
+01:50.070 --> 01:50.903
+So, here we go.
+
+01:52.920 --> 01:56.310
+And, there we are, dog.txt back to where it was.
+
+01:56.310 --> 01:59.340
+So, this is the same as what we did earlier,
+
+01:59.340 --> 02:03.393
+git checkout head dog.txt, it's just a little bit simpler.
+
+02:04.920 --> 02:06.390
+And then, the other thing we can do
+
+02:06.390 --> 02:11.390
+is actually reference a particular commit and go back.
+
+02:11.550 --> 02:14.160
+So, I could restore the contents of my dog file
+
+02:14.160 --> 02:17.850
+or my cat file or whatever I want to what it looked like
+
+02:17.850 --> 02:19.200
+two commits ago.
+
+02:19.200 --> 02:20.790
+So, I'll show you that.
+
+02:20.790 --> 02:22.980
+It's a little- this is why I said it's kind of clunky.
+
+02:22.980 --> 02:26.100
+We have to use the --source option.
+
+02:26.100 --> 02:28.770
+So, git restore and then we specify a source.
+
+02:28.770 --> 02:31.860
+The default source is just head, as we saw,
+
+02:31.860 --> 02:34.950
+but we can specify a different source using --source
+
+02:34.950 --> 02:38.460
+and then, either a commit hash or this-
+
+02:38.460 --> 02:40.200
+what do you call this syntax?
+
+02:40.200 --> 02:43.830
+Head~1 or head~2 and so on.
+
+02:43.830 --> 02:46.230
+So, let's try this out.
+
+02:46.230 --> 02:48.030
+It doesn't matter if I have stuff in here or not,
+
+02:48.030 --> 02:50.370
+but let's say I screw it up a lot
+
+02:50.370 --> 02:55.350
+and I want to restore the dog file back to-
+
+02:55.350 --> 02:58.770
+I don't know, if this is head~1,
+
+02:58.770 --> 03:00.060
+let's go all the way back to here.
+
+03:00.060 --> 03:02.700
+I want to restore it to this commit.
+
+03:02.700 --> 03:06.120
+So, this would be head~2.
+
+03:06.120 --> 03:09.630
+This is head. Back one, back two.
+
+03:09.630 --> 03:14.393
+So, I can do git restore --source head~2
+
+03:18.270 --> 03:20.220
+and then the file name.
+
+03:20.220 --> 03:23.700
+And, whatever is in here, I have unstaged changes,
+
+03:23.700 --> 03:25.050
+I'm going to lose them,
+
+03:25.050 --> 03:27.780
+which I don't think I made a big enough deal about earlier.
+
+03:27.780 --> 03:29.850
+But, you know, those changes are gone.
+
+03:29.850 --> 03:32.520
+If I haven't added or committed those changes,
+
+03:32.520 --> 03:35.190
+if I lose those changes, git has no record of them.
+
+03:35.190 --> 03:39.090
+So, only use this if you are comfortable truly going back
+
+03:39.090 --> 03:42.000
+and getting rid of uncommitted changes that you have
+
+03:42.000 --> 03:43.020
+at the moment.
+
+03:43.020 --> 03:44.670
+All right? So, here we go.
+
+03:44.670 --> 03:47.730
+Restore the contents of dog.txt to what it looked like
+
+03:47.730 --> 03:50.193
+two commits prior to head.
+
+03:52.260 --> 03:55.080
+And, there we are. First commit.
+
+03:55.080 --> 03:56.700
+Now, that doesn't move us, right?
+
+03:56.700 --> 03:59.580
+If we type git status, we're still on master.
+
+03:59.580 --> 04:03.750
+If I type git log, we're still here on the last commit,
+
+04:03.750 --> 04:05.010
+the tip of the master branch.
+
+04:05.010 --> 04:06.360
+So, we haven't gone back in time,
+
+04:06.360 --> 04:08.430
+we haven't, like, you know, time-traveled,
+
+04:08.430 --> 04:10.140
+no detached head or anything.
+
+04:10.140 --> 04:12.750
+But, dog.txt has been modified.
+
+04:12.750 --> 04:15.780
+So, if I don't want that, if I want to go back to head
+
+04:15.780 --> 04:20.680
+on that file, I can still do git restore dog.txt
+
+04:22.140 --> 04:24.630
+and now, it goes back to the most recent commit.
+
+04:24.630 --> 04:25.860
+So, we still lost-
+
+04:25.860 --> 04:27.570
+you know, if we have a bunch of other stuff,
+
+04:27.570 --> 04:30.240
+that's gonna be gone unless I add and commit that,
+
+04:30.240 --> 04:32.610
+but I can restore back-
+
+04:32.610 --> 04:34.800
+one more time, let's go git restore
+
+04:34.800 --> 04:36.840
+and then, I'll do it to both files.
+
+04:36.840 --> 04:41.083
+So, --source, head, and then I believe it's ~3.
+
+04:42.330 --> 04:44.373
+And then, I'll do cat and dog.
+
+04:45.510 --> 04:49.140
+Op, nope, I guess there is no head~3, it is-
+
+04:49.140 --> 04:50.910
+oh yeah, it's head~2.
+
+04:50.910 --> 04:53.430
+Well, here we are, first commit.
+
+04:53.430 --> 04:54.900
+First commit on both of them.
+
+04:54.900 --> 04:57.780
+And then, if I really didn't want to do that,
+
+04:57.780 --> 05:00.630
+or I want to- let's say I want to take cat back
+
+05:00.630 --> 05:02.130
+to where head is right now.
+
+05:02.130 --> 05:04.330
+Git restore cat
+
+05:06.120 --> 05:09.090
+and there, cat goes back to where head is.
+
+05:09.090 --> 05:12.390
+Dog is still back two commits prior.
+
+05:12.390 --> 05:14.640
+Okay, so, again, this is a very silly example,
+
+05:14.640 --> 05:16.920
+but I wanted to do something obvious where we knew
+
+05:16.920 --> 05:18.900
+this came from the first commit, this came from second,
+
+05:18.900 --> 05:20.940
+this came from third, and this-
+
+05:20.940 --> 05:23.520
+you know, having two files makes it easier to demonstrate.
+
+05:23.520 --> 05:24.420
+So, there we are.
+
+05:24.420 --> 05:28.200
+That is using git restore. At least, one use of it.
+
+05:28.200 --> 05:31.590
+In the next video, I'll show you another use of git restore,
+
+05:31.590 --> 05:33.780
+but, so far, what we've seen is that,
+
+05:33.780 --> 05:35.820
+basically, this is an another way of doing
+
+05:35.820 --> 05:38.370
+what we've already seen how to do with git checkout.
+
+05:38.370 --> 05:41.160
+Where with git checkout we have to specify head
+
+05:41.160 --> 05:42.240
+and then a file name,
+
+05:42.240 --> 05:44.220
+and checkout does a million other things,
+
+05:44.220 --> 05:45.570
+so it's confusing,
+
+05:45.570 --> 05:48.810
+restore is a lot more narrowly focused.
+
+05:48.810 --> 05:51.030
+It does, really, well, I guess two things,
+
+05:51.030 --> 05:52.773
+but, so far, we've seen one.
+
+05:53.610 --> 05:56.400
+And, by default, it will restore based upon head,
+
+05:56.400 --> 05:57.660
+we don't have to provide that.
+
+05:57.660 --> 06:01.140
+Or, we can provide a source with --source
+
+06:01.140 --> 06:05.283
+and then specify a commit hash or use this syntax. Okay.
