@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.150 --> 00:02.250
+Instructor: Okay, so to make an annotated tag,
+
+00:02.250 --> 00:05.442
+we use the dash A option for annotated,
+
+00:05.442 --> 00:07.470
+otherwise it's still git tag
+
+00:07.470 --> 00:09.900
+and then some tag that we're creating.
+
+00:09.900 --> 00:11.400
+And just like before
+
+00:11.400 --> 00:14.700
+it will be based upon the current head commit.
+
+00:14.700 --> 00:16.470
+Let's do some more significant changes.
+
+00:16.470 --> 00:18.780
+Now let's go make a new file
+
+00:18.780 --> 00:22.320
+and we'll just call this new feature.js.
+
+00:22.320 --> 00:23.400
+And then I'll put some stuff
+
+00:23.400 --> 00:26.590
+in here that says this is a new feature
+
+00:27.510 --> 00:29.493
+not breaking change.
+
+00:30.570 --> 00:32.370
+And then we'll put some gibberish here.
+
+00:32.370 --> 00:34.590
+We'll pretend that this is, you know, some nice new feature
+
+00:34.590 --> 00:35.550
+but you don't have to use it.
+
+00:35.550 --> 00:37.890
+It's just gonna be part of a minor release.
+
+00:37.890 --> 00:40.143
+Okay, so now I'm gonna add and commit.
+
+00:41.040 --> 00:46.040
+So git add new feature, git commit, add, new feature.
+
+00:46.260 --> 00:48.510
+Great and now I wanna create my tag.
+
+00:48.510 --> 00:51.360
+So git tag and then I'll do an annotated tag.
+
+00:51.360 --> 00:53.280
+So dash a.
+
+00:53.280 --> 00:55.830
+And then after that, the name
+
+00:55.830 --> 00:59.940
+of the tag that I wanna create, I think we're on 17 points.
+
+00:59.940 --> 01:03.930
+If we're doing a a minor release, it'll be 1.0, right?
+
+01:03.930 --> 01:08.310
+We were on oh 0.3 I believe 17.0 0.3.
+
+01:08.310 --> 01:10.410
+This is now a minor release, not a patch.
+
+01:10.410 --> 01:13.590
+So there we are and you'll see that it's gonna prompt me
+
+01:13.590 --> 01:16.083
+in my editor, just like when I do a commit.
+
+01:16.980 --> 01:19.080
+So it, you know, it wants me to include a message
+
+01:19.080 --> 01:22.590
+additional details if I want to, I can put stuff
+
+01:22.590 --> 01:27.070
+in here like this is more stuff about my tag
+
+01:28.500 --> 01:32.250
+it's an annotated tag.
+
+01:32.250 --> 01:33.960
+Sure, all right.
+
+01:33.960 --> 01:38.160
+And then I close out of here and that finishes the process.
+
+01:38.160 --> 01:41.670
+I now have that new tag and we see it down here.
+
+01:41.670 --> 01:44.160
+That is my new minor release.
+
+01:44.160 --> 01:46.500
+So that's how we make an annotated tag.
+
+01:46.500 --> 01:48.240
+Just like with Git Commit
+
+01:48.240 --> 01:50.730
+you can actually use the dash M option to do it
+
+01:50.730 --> 01:52.980
+in line to pass a message directly.
+
+01:52.980 --> 01:55.560
+You can forego the opening of the text editor
+
+01:55.560 --> 01:56.790
+just like git Commit.
+
+01:56.790 --> 01:58.230
+You still have to pass that in though.
+
+01:58.230 --> 02:02.100
+So if you use dash M, pass in a message between quotes.
+
+02:02.100 --> 02:05.590
+So how do we view more information about one of those tags
+
+02:06.680 --> 02:08.010
+right we just made this annotated tag.
+
+02:08.010 --> 02:09.810
+How do I see who made it?
+
+02:09.810 --> 02:12.540
+How do I see that metadata, the tag message?
+
+02:12.540 --> 02:16.680
+Well we use a command called git show and then the name
+
+02:16.680 --> 02:17.513
+of the tag.
+
+02:17.513 --> 02:22.513
+So 17.1.0 this is going to show us the tagger.
+
+02:22.830 --> 02:25.320
+There I am Colt, the date.
+
+02:25.320 --> 02:27.330
+Here's my tag information, right?
+
+02:27.330 --> 02:30.390
+This is the message I wrote and then the commit
+
+02:30.390 --> 02:31.830
+that it refers to.
+
+02:31.830 --> 02:33.300
+So you can see that right there.
+
+02:33.300 --> 02:36.690
+So we can also do this for real tags that others
+
+02:36.690 --> 02:37.620
+have created.
+
+02:37.620 --> 02:42.620
+Like let's look at 17.0.0 that major release.
+
+02:42.780 --> 02:47.550
+So we can do git show 17.0.0.
+
+02:47.550 --> 02:50.130
+So here's the commit that the tag refers to.
+
+02:50.130 --> 02:52.890
+We can see yeah bump versions for 17.
+
+02:52.890 --> 02:56.820
+Dan Abramov, very well relatively famous developer
+
+02:56.820 --> 02:57.653
+on the React team.
+
+02:57.653 --> 03:00.120
+Sort of the like React guy.
+
+03:00.120 --> 03:02.040
+And then we get a diff and you know
+
+03:02.040 --> 03:05.550
+this is exactly what happened in that one commit
+
+03:05.550 --> 03:09.540
+that this tag is referring to 17.0.0.
+
+03:09.540 --> 03:11.430
+So that's the basic concept
+
+03:11.430 --> 03:13.980
+of making an annotated tag dash A.
+
+03:13.980 --> 03:15.840
+It includes more information, it will prompt you
+
+03:15.840 --> 03:17.880
+in your text editor for a message
+
+03:17.880 --> 03:21.390
+or you can skip that and do dash M with the dash A
+
+03:21.390 --> 03:24.360
+at which point you need to pass in inside of quotes
+
+03:24.360 --> 03:26.730
+a message directly through the command line.
+
+03:26.730 --> 03:29.190
+And that will be used as your tagging message
+
+03:29.190 --> 03:30.960
+just like with Git Commit.
+
+03:30.960 --> 03:33.210
+And then we saw that we can use Git Show to
+
+03:33.210 --> 03:35.643
+see more information about a particular tag.
