@@ -1,0 +1,307 @@
+WEBVTT
+
+00:00.330 --> 00:02.550
+Instructor: In this video, I want to use GitKraken
+
+00:02.550 --> 00:04.950
+as a way to visualize our branches
+
+00:04.950 --> 00:08.220
+and specifically to visualize the merging process.
+
+00:08.220 --> 00:12.480
+So I have GitKraken open with this playlist repository.
+
+00:12.480 --> 00:14.086
+We just merged our two branches,
+
+00:14.086 --> 00:16.770
+we merged oldies into master.
+
+00:16.770 --> 00:20.850
+Unfortunately, I've been trying desperately to zoom this in,
+
+00:20.850 --> 00:23.430
+this is as far as it lets me go for whatever reason,
+
+00:23.430 --> 00:24.600
+I hope that you can see this.
+
+00:24.600 --> 00:27.180
+Otherwise, I'll try and make it a bit larger
+
+00:27.180 --> 00:30.030
+in post-production, although it might be blurry.
+
+00:30.030 --> 00:33.630
+Anyway, I have my road trip playlist repository open,
+
+00:33.630 --> 00:34.590
+and if you need to know,
+
+00:34.590 --> 00:36.150
+if you don't remember how to open that,
+
+00:36.150 --> 00:38.070
+just go to view all repositories,
+
+00:38.070 --> 00:40.980
+or you can actually click right there to open a repository
+
+00:40.980 --> 00:43.950
+and then navigate to the right folder and open it.
+
+00:43.950 --> 00:44.850
+So here it is
+
+00:44.850 --> 00:47.430
+and I can see each branch referenced
+
+00:47.430 --> 00:48.990
+over here on the left side.
+
+00:48.990 --> 00:51.300
+Now, master and oldies are currently referring
+
+00:51.300 --> 00:55.050
+to the exact same commits because that's where they are,
+
+00:55.050 --> 00:57.990
+they are in sync with the one another right now.
+
+00:57.990 --> 00:59.280
+But I'm gonna change that,
+
+00:59.280 --> 01:01.470
+I'm actually going to add some more work
+
+01:01.470 --> 01:03.120
+to the oldies branch
+
+01:03.120 --> 01:05.010
+and then merge it back into master eventually.
+
+01:05.010 --> 01:07.710
+But for now, I'm gonna go to the oldies branch.
+
+01:07.710 --> 01:12.360
+So let's switch over, git switch oldies
+
+01:12.360 --> 01:15.210
+and then I'm just gonna add another song or two here.
+
+01:15.210 --> 01:18.510
+Okay, so I added two songs by Wings, "Band on the Run"
+
+01:18.510 --> 01:19.710
+and "Live and Let Die."
+
+01:19.710 --> 01:21.300
+Let's add both of those.
+
+01:21.300 --> 01:26.300
+Git commit -a -m, add 2 Wings songs.
+
+01:28.740 --> 01:32.640
+Okay, so we added that to oldies, master,
+
+01:32.640 --> 01:35.850
+no longer it's up to date or in sync with oldies.
+
+01:35.850 --> 01:38.940
+Oldies now has a commit that master does not.
+
+01:38.940 --> 01:42.540
+Obviously if I switch to master, we see that go away.
+
+01:42.540 --> 01:44.970
+So now if we go back to GitKraken,
+
+01:44.970 --> 01:48.660
+we can see here's master, the last commit master has
+
+01:48.660 --> 01:51.840
+is this one, add two Van Morrison songs.
+
+01:51.840 --> 01:54.720
+Oldies is now one commit ahead
+
+01:54.720 --> 01:58.080
+and it has add two Wings songs.
+
+01:58.080 --> 02:01.860
+So I can do one more example, let's just add two more songs.
+
+02:01.860 --> 02:03.540
+How about two Joni Mitchell songs?
+
+02:03.540 --> 02:05.580
+Lemme switch back, git switch,
+
+02:05.580 --> 02:09.780
+and I can switch branches using GitKraken or a GUI.
+
+02:09.780 --> 02:12.390
+So I can switch this way if you prefer.
+
+02:12.390 --> 02:14.640
+And now in my terminal I type git status,
+
+02:14.640 --> 02:17.280
+it does say I'm on oldies.
+
+02:17.280 --> 02:20.250
+So I prefer to use Terminal, but I like to use GitKraken
+
+02:20.250 --> 02:22.050
+to help visualize this stuff.
+
+02:22.050 --> 02:25.980
+Anyway, I'm going to add two Joni Mitchell songs.
+
+02:25.980 --> 02:29.760
+There we are, "River and "Both Sides Now," great songs.
+
+02:29.760 --> 02:32.610
+I will add those changes and commit.
+
+02:32.610 --> 02:35.220
+So git commit -a -m.
+
+02:35.220 --> 02:37.043
+And I could do this from within, GitKraken,
+
+02:37.043 --> 02:38.403
+if I wanted to.
+
+02:39.840 --> 02:44.070
+Over here, view the Change, I can stage that file,
+
+02:44.070 --> 02:45.870
+and then I can make my commit message
+
+02:45.870 --> 02:50.550
+add two Joni Mitchell songs.
+
+02:50.550 --> 02:53.283
+It's the exact same thing, whoops, I mean two,
+
+02:54.150 --> 02:55.800
+it's just I'm doing it from a GUI.
+
+02:55.800 --> 02:57.060
+So I stage that file,
+
+02:57.060 --> 02:59.880
+I commit and I'm on the branch, oldies.
+
+02:59.880 --> 03:01.380
+So let's do that.
+
+03:01.380 --> 03:04.500
+Okay, so now we see this is where master was,
+
+03:04.500 --> 03:07.890
+it still is, but oldies now has two new commits
+
+03:07.890 --> 03:09.780
+that master does not have.
+
+03:09.780 --> 03:12.360
+So this sets us up for what we've already seen,
+
+03:12.360 --> 03:13.980
+a fast forward merge.
+
+03:13.980 --> 03:17.280
+If I want to merge the changes from oldies into master,
+
+03:17.280 --> 03:18.360
+it's pretty straightforward,
+
+03:18.360 --> 03:21.540
+all we need to do is add these two commits to master.
+
+03:21.540 --> 03:24.120
+Well, it's not what we do, but it's what Git does,
+
+03:24.120 --> 03:27.630
+it just catches up, catches up to the top
+
+03:27.630 --> 03:29.250
+so it's in sync with oldies.
+
+03:29.250 --> 03:32.910
+So again, this is master right now, this is oldies.
+
+03:32.910 --> 03:35.820
+There's two commits on oldies that master does not have,
+
+03:35.820 --> 03:37.350
+I'm going to merge them.
+
+03:37.350 --> 03:39.210
+So what is that process like again?
+
+03:39.210 --> 03:40.530
+Well, it's two steps.
+
+03:40.530 --> 03:43.050
+Remember, we go to the destination branch,
+
+03:43.050 --> 03:46.890
+and then we merge with Git Merge and our branch name.
+
+03:46.890 --> 03:48.603
+So I'm gonna switch to master.
+
+03:49.740 --> 03:54.420
+Okay, now I'm gonna run, git merge, and then oldies.
+
+03:54.420 --> 03:57.090
+So before I hit Enter, just one more time,
+
+03:57.090 --> 03:59.730
+these two commits, Wings and Joni Mitchell,
+
+03:59.730 --> 04:03.270
+those two bands or two groups that I added songs for,
+
+04:03.270 --> 04:06.390
+those commits are now going to be added to master.
+
+04:06.390 --> 04:08.400
+Or another way of thinking of it is just master
+
+04:08.400 --> 04:09.780
+is going to fast forward
+
+04:09.780 --> 04:11.400
+and catch up with those two commits.
+
+04:11.400 --> 04:14.430
+So here we go, fast forward,
+
+04:14.430 --> 04:16.530
+and you can see over here now,
+
+04:16.530 --> 04:20.910
+master and oldies are both referring to the same commit.
+
+04:20.910 --> 04:23.970
+So that's visualizing a fast forward merge.
+
+04:23.970 --> 04:26.933
+But as I've alluded to, not every merge is a fast forward,
+
+04:26.933 --> 04:29.640
+and in the next video we will deliberately
+
+04:29.640 --> 04:32.610
+create a situation that is not as simple.
+
+04:32.610 --> 04:35.490
+We'll have to merge and there may be some issues that arise.
+
+04:35.490 --> 04:36.490
+So that's coming up.
