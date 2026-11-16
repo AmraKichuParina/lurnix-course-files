@@ -1,0 +1,367 @@
+WEBVTT
+
+00:00.090 --> 00:01.950
+Instructor: So, as I've said a couple times,
+
+00:01.950 --> 00:04.230
+pulls can result in conflicts.
+
+00:04.230 --> 00:05.400
+It's not a horrible thing.
+
+00:05.400 --> 00:08.430
+Just like any merge conflicts, we can resolve them.
+
+00:08.430 --> 00:11.310
+But sometimes you might have some work locally
+
+00:11.310 --> 00:14.220
+that is not on GitHub, and GitHub might have some commits
+
+00:14.220 --> 00:15.540
+that you don't have locally.
+
+00:15.540 --> 00:18.510
+So when you pull down, there may be conflicts.
+
+00:18.510 --> 00:21.660
+For example, if we're working on the master branch
+
+00:21.660 --> 00:25.080
+I've made this new change, a new commit in yellow
+
+00:25.080 --> 00:29.400
+and at the same time my collaborator Bob Head
+
+00:29.400 --> 00:32.940
+made three green commits and push them up to GitHub.
+
+00:32.940 --> 00:35.130
+When I try and pull down, right,
+
+00:35.130 --> 00:38.400
+I pull those new commits down, git pull origin master.
+
+00:38.400 --> 00:40.320
+Just like when we're merging
+
+00:40.320 --> 00:41.910
+sometimes we get a fast forward merge
+
+00:41.910 --> 00:43.650
+and things go pretty smoothly.
+
+00:43.650 --> 00:45.120
+Sometimes Git can figure out
+
+00:45.120 --> 00:46.800
+how to merge things automatically
+
+00:46.800 --> 00:48.840
+but sometimes there might be conflicts
+
+00:48.840 --> 00:51.000
+if we're changing the same files
+
+00:51.000 --> 00:53.130
+if there's, you know, conflicting changes.
+
+00:53.130 --> 00:55.620
+So when that happens, if there are conflicts
+
+00:55.620 --> 00:58.053
+then Git is going to ask us to resolve them
+
+00:58.053 --> 01:00.840
+and figure it out and commit the changes.
+
+01:00.840 --> 01:02.550
+So I'll demonstrate that,
+
+01:02.550 --> 01:06.810
+I've set up well I have the food branch,
+
+01:06.810 --> 01:08.160
+right on this food branch
+
+01:08.160 --> 01:10.380
+I have this coffee file that I added.
+
+01:10.380 --> 01:12.540
+We'll say that my friend added it
+
+01:12.540 --> 01:14.160
+and pushed it up to GitHub.
+
+01:14.160 --> 01:15.570
+I don't have it locally.
+
+01:15.570 --> 01:16.690
+If I switch to food
+
+01:21.360 --> 01:22.920
+I don't have coffee, right?
+
+01:22.920 --> 01:26.040
+I have apple, banana, and popsicle.
+
+01:26.040 --> 01:28.500
+And let's say that I decided, you know
+
+01:28.500 --> 01:30.780
+I really wanna make a coffee file in here.
+
+01:30.780 --> 01:35.370
+So I'm gonna make my own coffee, touch coffee.txt
+
+01:35.370 --> 01:37.620
+and then I'm gonna open it up
+
+01:37.620 --> 01:39.480
+and put some coffee askie art,
+
+01:39.480 --> 01:42.000
+something different than what I have on GitHub.
+
+01:42.000 --> 01:45.574
+Alright, so I paste this in just another Askie art coffee
+
+01:45.574 --> 01:50.067
+and I'm gonna add and commit that, git add coffee
+
+01:50.067 --> 01:55.067
+git commit-m, add my coffee art.
+
+01:58.200 --> 02:00.960
+So now what I wanna do is share that change
+
+02:00.960 --> 02:03.840
+that I've made and get it up on GitHub.
+
+02:03.840 --> 02:05.370
+But as a good practice
+
+02:05.370 --> 02:08.250
+before you ever push something up to GitHub
+
+02:08.250 --> 02:11.790
+you wanna pull down and see if there's changes, right?
+
+02:11.790 --> 02:14.040
+If there's anything that is gonna be problematic,
+
+02:14.040 --> 02:15.150
+any conflicts.
+
+02:15.150 --> 02:16.620
+So that's what I'm gonna do.
+
+02:16.620 --> 02:18.900
+Git Pull Origin
+
+02:18.900 --> 02:22.080
+and I want the latest changes from the food branch.
+
+02:22.080 --> 02:24.990
+But remember I have a commit on here
+
+02:24.990 --> 02:26.640
+that does not exist on GitHub.
+
+02:26.640 --> 02:28.980
+And GitHub has a commit on the food branch
+
+02:28.980 --> 02:31.530
+that does not exist on my machine.
+
+02:31.530 --> 02:33.690
+So when I do that, oh no.
+
+02:33.690 --> 02:36.000
+Who could have ever predicted this conflict
+
+02:36.000 --> 02:39.933
+in coffee txt, automatic merge failed.
+
+02:39.933 --> 02:40.766
+It doesn't know what to keep
+
+02:40.766 --> 02:43.380
+fix the conflicts and then commit the results.
+
+02:43.380 --> 02:46.830
+So this is what came from GitHub that our collaborator
+
+02:46.830 --> 02:49.410
+whoever that was, Bob Head, added.
+
+02:49.410 --> 02:51.600
+And then this is what I had locally.
+
+02:51.600 --> 02:52.740
+So do I want one?
+
+02:52.740 --> 02:54.270
+Do I want both?
+
+02:54.270 --> 02:55.440
+Let's do both.
+
+02:55.440 --> 02:56.310
+Why not?
+
+02:56.310 --> 02:58.380
+So I'll keep that.
+
+02:58.380 --> 03:00.480
+Remember, I can also use the VS code.
+
+03:00.480 --> 03:03.180
+Just accept both changes button.
+
+03:03.180 --> 03:04.260
+That makes it easy.
+
+03:04.260 --> 03:05.400
+I'll save.
+
+03:05.400 --> 03:06.630
+So I've got that.
+
+03:06.630 --> 03:08.610
+Now go back here.
+
+03:08.610 --> 03:10.320
+I need to make sure that I add the changes.
+
+03:10.320 --> 03:13.590
+So Git add coffee, Git commit
+
+03:13.590 --> 03:16.743
+and we'll just do something boring like fix merge conflicts.
+
+03:19.440 --> 03:22.410
+And now we've merged together everything
+
+03:22.410 --> 03:24.840
+but we see something that we didn't see before.
+
+03:24.840 --> 03:27.600
+Your branch is now ahead of Origin/Food.
+
+03:27.600 --> 03:28.950
+How is it ahead?
+
+03:28.950 --> 03:31.020
+Well, the reason it's ahead is
+
+03:31.020 --> 03:34.680
+that we have this commit and the merge commit
+
+03:34.680 --> 03:36.780
+and those don't exist on GitHub, right?
+
+03:36.780 --> 03:39.090
+This is why we wanna pull down first,
+
+03:39.090 --> 03:41.160
+merge anything if there are problems,
+
+03:41.160 --> 03:44.670
+and now I can push up to GitHub and there won't be conflicts
+
+03:44.670 --> 03:47.848
+unless somebody happened to change GitHub, you know
+
+03:47.848 --> 03:50.100
+add new commits or something in the meantime
+
+03:50.100 --> 03:51.780
+the last 30 seconds or so.
+
+03:51.780 --> 03:54.120
+Otherwise we'll be good to go.
+
+03:54.120 --> 03:56.430
+So origin/food is still right here.
+
+03:56.430 --> 03:59.220
+This is what GitHub looks like at this point in time.
+
+03:59.220 --> 04:04.020
+It has the original coffee.txt file on this food branch
+
+04:04.020 --> 04:06.270
+but it doesn't have my coffee commit
+
+04:06.270 --> 04:08.580
+and it doesn't have the merge commit.
+
+04:08.580 --> 04:12.190
+So all I need to do now is Git push
+
+04:13.110 --> 04:15.693
+and then I can specify origin food.
+
+04:19.290 --> 04:21.930
+And now if I head over here and refresh,
+
+04:21.930 --> 04:24.510
+we see that we have a new commit showing up,
+
+04:24.510 --> 04:25.557
+fixed merge conflicts.
+
+04:25.557 --> 04:30.000
+And if I go into coffee.txt, both of them are here.
+
+04:30.000 --> 04:32.298
+If we take a look at all the commits on this branch
+
+04:32.298 --> 04:36.030
+you can see we've got Create the Apple, okay?
+
+04:36.030 --> 04:37.680
+Create coffee.txt.
+
+04:37.680 --> 04:39.420
+That was the one we did on GitHub.
+
+04:39.420 --> 04:41.400
+Then add my coffee art,
+
+04:41.400 --> 04:44.121
+that's the one that I just did locally.
+
+04:44.121 --> 04:45.570
+And then fix merge conflicts.
+
+04:45.570 --> 04:49.110
+So that's a simple example of generating a merge conflict
+
+04:49.110 --> 04:50.160
+when you pull,
+
+04:50.160 --> 04:52.590
+some work happened that we didn't have.
+
+04:52.590 --> 04:56.250
+And at the same time we did local work that conflicted
+
+04:56.250 --> 04:59.130
+with the work that was done and pushed up to GitHub.
+
+04:59.130 --> 05:01.530
+So when I pull down there's a merge
+
+05:01.530 --> 05:04.230
+and sometimes merges result in conflicts.
+
+05:04.230 --> 05:07.770
+Alright? So that is the basics of using Git Pull.
+
+05:07.770 --> 05:11.370
+The last thing I'll show you with Pull is a shorter syntax.
+
+05:11.370 --> 05:12.470
+That's the next video.
