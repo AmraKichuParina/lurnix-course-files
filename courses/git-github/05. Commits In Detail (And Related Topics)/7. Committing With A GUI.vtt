@@ -1,0 +1,451 @@
+WEBVTT
+
+00:00.090 --> 00:01.920
+Instructor: Next up, totally optional,
+
+00:01.920 --> 00:05.250
+like most of this section, just has to do with committing.
+
+00:05.250 --> 00:06.780
+I'm gonna show you how to make a commit
+
+00:06.780 --> 00:09.420
+using a GUI like GitKraken,
+
+00:09.420 --> 00:12.750
+and even if you're not interested in using a GUI,
+
+00:12.750 --> 00:14.910
+I still think it's worth checking out,
+
+00:14.910 --> 00:18.390
+because these GUIs can help show you your commits.
+
+00:18.390 --> 00:20.040
+They help you visualize things,
+
+00:20.040 --> 00:22.615
+but also it's nice to know that there are different ways
+
+00:22.615 --> 00:25.350
+of interacting with Git, and at the end of the day,
+
+00:25.350 --> 00:27.900
+we're still just working with that .git folder.
+
+00:27.900 --> 00:29.160
+It's just a different interface,
+
+00:29.160 --> 00:31.110
+different way of interacting with it.
+
+00:31.110 --> 00:32.460
+So I'm using GitKraken.
+
+00:32.460 --> 00:34.500
+I had a whole video on this early on
+
+00:34.500 --> 00:36.300
+where I talked about how to install it.
+
+00:36.300 --> 00:37.200
+It's very simple.
+
+00:37.200 --> 00:40.830
+You download it for free, and that's kind of it.
+
+00:40.830 --> 00:43.530
+And I'm just gonna open up this repo
+
+00:43.530 --> 00:45.720
+that we've been working in, my first novel.
+
+00:45.720 --> 00:48.270
+So if you have any repo you've created by now,
+
+00:48.270 --> 00:50.460
+whether it's from an exercise or you're following along,
+
+00:50.460 --> 00:51.720
+you have your own novel,
+
+00:51.720 --> 00:54.300
+whatever it is, we can open it with GitKraken.
+
+00:54.300 --> 00:55.593
+So here's GitKraken.
+
+00:56.700 --> 00:59.730
+I'm going to go to open a new repository.
+
+00:59.730 --> 01:01.800
+So if you open it up for the first time,
+
+01:01.800 --> 01:03.210
+it will probably look like this.
+
+01:03.210 --> 01:06.030
+It will ask you to open a repository.
+
+01:06.030 --> 01:08.550
+And then here is that folder I navigated to.
+
+01:08.550 --> 01:10.800
+I'm sorry I can't zoom in easily,
+
+01:10.800 --> 01:12.810
+but I just found my repository.
+
+01:12.810 --> 01:17.040
+So that same folder, my first novel, and I'm gonna open it.
+
+01:17.040 --> 01:18.000
+And there we are.
+
+01:18.000 --> 01:20.850
+We see my commit history right here.
+
+01:20.850 --> 01:23.460
+So right now, we're just visualizing the commits.
+
+01:23.460 --> 01:26.700
+This is basically what we see with a Git log.
+
+01:26.700 --> 01:29.790
+Unfortunately, it's not letting me zoom in much more either,
+
+01:29.790 --> 01:31.170
+but I hope you can see that.
+
+01:31.170 --> 01:32.520
+So we have our first one,
+
+01:32.520 --> 01:34.500
+start work on outline and main characters,
+
+01:34.500 --> 01:37.890
+all the way up to remove extra blank lines in chapter two.
+
+01:37.890 --> 01:40.800
+But what I wanna show you is how we make a new commit.
+
+01:40.800 --> 01:43.170
+So right now, our working tree is clean.
+
+01:43.170 --> 01:46.380
+I haven't made any changes at this point.
+
+01:46.380 --> 01:49.530
+I haven't diverged from what Git has committed,
+
+01:49.530 --> 01:50.730
+as you can see.
+
+01:50.730 --> 01:52.110
+But let's make some changes.
+
+01:52.110 --> 01:53.790
+What should we do?
+
+01:53.790 --> 01:56.730
+I'm gonna add some more to the characters file.
+
+01:56.730 --> 02:00.000
+So I just added some information about Myrtle Wilson,
+
+02:00.000 --> 02:02.370
+and here's some more information about George Wilson,
+
+02:02.370 --> 02:04.380
+two characters in the Great Gatsby
+
+02:04.380 --> 02:06.300
+that come up in chapter two.
+
+02:06.300 --> 02:08.040
+All right, so I'm gonna save that,
+
+02:08.040 --> 02:11.040
+and how about I add something to our moodboard?
+
+02:11.040 --> 02:12.690
+So I have these images in here.
+
+02:12.690 --> 02:14.190
+Let's add another image.
+
+02:14.190 --> 02:16.110
+Okay, so I downloaded two more images,
+
+02:16.110 --> 02:18.480
+one of alcohol and one of a billboard,
+
+02:18.480 --> 02:21.300
+thematically related in some way to the Great Gatsby.
+
+02:21.300 --> 02:23.460
+They're part of my moodboard,
+
+02:23.460 --> 02:25.860
+and both also licensed for me to use.
+
+02:25.860 --> 02:29.700
+So I'm gonna add those both into this moodboard folder.
+
+02:29.700 --> 02:31.710
+Okay, so I've made a couple of changes,
+
+02:31.710 --> 02:33.840
+and obviously, well I shouldn't say obviously,
+
+02:33.840 --> 02:35.820
+but hopefully, you're aware
+
+02:35.820 --> 02:39.690
+that I could check to see my status by using git status,
+
+02:39.690 --> 02:42.870
+and I would see that we modified characters.txt
+
+02:42.870 --> 02:45.720
+and that there are two new files in moodboard
+
+02:45.720 --> 02:47.430
+which are not being tracked.
+
+02:47.430 --> 02:50.040
+But this video is about using the GUI.
+
+02:50.040 --> 02:52.440
+If we take a look at the GUI, I get this message
+
+02:52.440 --> 02:55.590
+that says three file changes in working directory.
+
+02:55.590 --> 02:58.230
+So I can click here to view those file changes,
+
+02:58.230 --> 03:01.260
+or I can just click here where it says work in progress,
+
+03:01.260 --> 03:03.720
+and I wish I could make this larger,
+
+03:03.720 --> 03:07.200
+but what we see is unstaged files,
+
+03:07.200 --> 03:11.460
+characters.txt, and then moodboard bar
+
+03:11.460 --> 03:13.980
+and moodboard billboard, the two images.
+
+03:13.980 --> 03:15.990
+And you'll see that there's a little icon
+
+03:15.990 --> 03:16.980
+here with a pencil.
+
+03:16.980 --> 03:19.890
+That means I modified or edited that file.
+
+03:19.890 --> 03:24.090
+And here, this little plus sign means it's a new file.
+
+03:24.090 --> 03:26.040
+So I wanna make a commit, first,
+
+03:26.040 --> 03:28.500
+how about just with the characters changes.
+
+03:28.500 --> 03:32.820
+So I wanna stage characters, so I'm gonna click stage.
+
+03:32.820 --> 03:36.690
+Okay, so at this point, I have staged that one file,
+
+03:36.690 --> 03:39.690
+and actually, if I type git status over here,
+
+03:39.690 --> 03:40.523
+what do we see?
+
+03:40.523 --> 03:43.950
+Changes to be committed, characters.txt.
+
+03:43.950 --> 03:45.540
+So it was the same exact thing
+
+03:45.540 --> 03:48.030
+as me typing git add characters.
+
+03:48.030 --> 03:50.430
+But instead, I clicked stage,
+
+03:50.430 --> 03:52.230
+and then I'm gonna make my commit.
+
+03:52.230 --> 03:54.720
+So this first commit is just characters,
+
+03:54.720 --> 03:57.510
+so I add my commit message right there
+
+03:57.510 --> 03:59.760
+or I can type it over here,
+
+03:59.760 --> 04:02.310
+and my message will be something like
+
+04:02.310 --> 04:05.997
+add Wilsons to characters list.
+
+04:12.360 --> 04:13.230
+Okay?
+
+04:13.230 --> 04:14.610
+Or, yeah, that's fine.
+
+04:14.610 --> 04:16.950
+Add the Wilsons, maybe the Wilsons,
+
+04:16.950 --> 04:19.620
+So I added two of them, all right?
+
+04:19.620 --> 04:22.083
+And then I'll commit changes to that one file.
+
+04:23.130 --> 04:25.020
+And we see a new commit here,
+
+04:25.020 --> 04:27.180
+add the Wilsons to character list.
+
+04:27.180 --> 04:30.870
+And if I type git status, we now made a commit.
+
+04:30.870 --> 04:34.290
+We don't have this characters.txt staged anymore.
+
+04:34.290 --> 04:36.930
+And if I type git log, there it is.
+
+04:36.930 --> 04:39.390
+Add the Wilsons to characters list.
+
+04:39.390 --> 04:43.050
+So let's do a second commit now with the moodboard changes,
+
+04:43.050 --> 04:46.170
+so I'm gonna stage that new bar image
+
+04:46.170 --> 04:47.913
+and the billboard image,
+
+04:48.840 --> 04:50.970
+and then I group them together by staging them,
+
+04:50.970 --> 04:52.342
+and I'll make my commit,
+
+04:52.342 --> 04:57.342
+I don't know, add more, or how about expand,
+
+04:58.350 --> 05:03.350
+add two images to moodboard or something like that.
+
+05:03.510 --> 05:05.070
+Nothing amazing.
+
+05:05.070 --> 05:06.750
+But here's where I write that commit message,
+
+05:06.750 --> 05:08.010
+and here's where I commit.
+
+05:08.010 --> 05:10.073
+Before I do that, what do you expect me to see
+
+05:10.073 --> 05:12.330
+when I type git status?
+
+05:12.330 --> 05:16.830
+This is what we saw before, two untracked files,
+
+05:16.830 --> 05:19.830
+but now, they're both going to be committed.
+
+05:19.830 --> 05:23.700
+They are both staged because I clicked the stage button.
+
+05:23.700 --> 05:26.520
+So same process, just a different interface.
+
+05:26.520 --> 05:31.520
+I made changes, then I click to stage and I click to commit,
+
+05:31.590 --> 05:36.270
+or I use git add to stage and git commit to commit.
+
+05:36.270 --> 05:37.103
+All righty?
+
+05:37.103 --> 05:40.083
+So I'm gonna click commit changes to two files,
+
+05:41.250 --> 05:42.083
+and there we are.
+
+05:42.083 --> 05:44.190
+We have a new commit show up,
+
+05:44.190 --> 05:46.833
+and if I do git log, let's do our one line.
+
+05:47.910 --> 05:48.840
+There it is.
+
+05:48.840 --> 05:50.520
+Add two images to moodboard,
+
+05:50.520 --> 05:52.920
+add the Wilsons to character list.
+
+05:52.920 --> 05:56.490
+So that's just a quick intro to using a tool like GitKraken.
+
+05:56.490 --> 05:57.900
+Of course, the interface changes
+
+05:57.900 --> 05:59.490
+if you're using a different app,
+
+05:59.490 --> 06:03.960
+like SourceTree or, what else is there?
+
+06:03.960 --> 06:06.990
+GitTower? There's a couple of them. I can't remember.
+
+06:06.990 --> 06:08.310
+They all are similar, though.
+
+06:08.310 --> 06:11.460
+You click to stage, and then you click to commit,
+
+06:11.460 --> 06:12.870
+you type a message in,
+
+06:12.870 --> 06:16.181
+and this is just a nice educational tool, honestly,
+
+06:16.181 --> 06:19.800
+especially when we get to branching and merging,
+
+06:19.800 --> 06:22.020
+the diagrams over here are really helpful,
+
+06:22.020 --> 06:23.400
+but at this point, it's just another way
+
+06:23.400 --> 06:25.373
+of doing what we already know how to do.
