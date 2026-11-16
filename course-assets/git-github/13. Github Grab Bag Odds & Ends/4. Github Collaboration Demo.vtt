@@ -1,0 +1,478 @@
+WEBVTT
+
+00:00.180 --> 00:02.070
+Instructor: Okay, so now it's time to show you
+
+00:02.070 --> 00:04.530
+the actual collaboration process.
+
+00:04.530 --> 00:07.410
+We will be talking at length about different workflows,
+
+00:07.410 --> 00:09.270
+different strategies, for collaborating
+
+00:09.270 --> 00:11.220
+with git in the next section.
+
+00:11.220 --> 00:13.680
+For now, I'm just gonna show you, I don't know
+
+00:13.680 --> 00:16.950
+making a commit as Colt and then a commit as Stevie
+
+00:16.950 --> 00:20.310
+and pushing and pulling and working with multiple people.
+
+00:20.310 --> 00:22.260
+Okay, so nothing crazy. Same repo.
+
+00:22.260 --> 00:23.730
+We'll use this bookish disco
+
+00:23.730 --> 00:26.100
+which is currently completely empty.
+
+00:26.100 --> 00:27.180
+The first thing we have to get out
+
+00:27.180 --> 00:30.276
+of the way, just quickly upfront, is that normally
+
+00:30.276 --> 00:33.543
+to collaborate you need more than one person, right?
+
+00:34.380 --> 00:37.050
+So I can't exactly collaborate with myself
+
+00:37.050 --> 00:38.670
+but I can kind of fake it.
+
+00:38.670 --> 00:40.560
+I'll pretend to be two different users.
+
+00:40.560 --> 00:42.150
+I have two different GitHub accounts.
+
+00:42.150 --> 00:43.650
+That part is easy, right?
+
+00:43.650 --> 00:45.660
+I have one GitHub account for Colt
+
+00:45.660 --> 00:48.450
+as we've already seen that's in my Chrome window
+
+00:48.450 --> 00:49.950
+and I have another GitHub account
+
+00:49.950 --> 00:52.230
+for Stevie that I'm using in Safari.
+
+00:52.230 --> 00:54.780
+So I can have those two things signed in at once.
+
+00:54.780 --> 00:56.670
+That's easy. It's just two different applications,
+
+00:56.670 --> 00:57.720
+two browsers.
+
+00:57.720 --> 01:02.040
+What is not as easy is having two different git users active
+
+01:02.040 --> 01:04.890
+on my local machine, in my terminal.
+
+01:04.890 --> 01:06.999
+In fact, it's kind of annoying because
+
+01:06.999 --> 01:09.414
+if you remember setting up the SSH keys,
+
+01:09.414 --> 01:12.960
+it's a bit of a pain to set this up.
+
+01:12.960 --> 01:15.240
+So all that you need to know is that,
+
+01:15.240 --> 01:17.220
+yes, I'm working on one machine.
+
+01:17.220 --> 01:19.620
+This is all the same computer that I'm recording
+
+01:19.620 --> 01:21.300
+but I've set it up in such a way
+
+01:21.300 --> 01:23.700
+that I have one git user that I'll be working
+
+01:23.700 --> 01:25.890
+with on this window where it says Colt.
+
+01:25.890 --> 01:29.460
+It will be this same GitHub account, Colt
+
+01:29.460 --> 01:32.430
+and then where it says Stevie, this terminal,
+
+01:32.430 --> 01:34.950
+I'll be working as a completely different GitHub user.
+
+01:34.950 --> 01:37.320
+So anything I do here will be as Stevie,
+
+01:37.320 --> 01:39.450
+anything I do here will be as Colt.
+
+01:39.450 --> 01:41.400
+This is definitely not something you need to do.
+
+01:41.400 --> 01:44.700
+I, I don't recommend it. Just focus on being one user.
+
+01:44.700 --> 01:46.470
+That's how most people use gits.
+
+01:46.470 --> 01:48.690
+This is really just a conundrum I've run into
+
+01:48.690 --> 01:51.450
+to teach git and collaboration.
+
+01:51.450 --> 01:55.140
+Okay? So yes, it's one computer, but imagine it's two
+
+01:55.140 --> 01:57.648
+separate computers across the globe from one another.
+
+01:57.648 --> 02:01.680
+So right now nobody has done any work on this repository,
+
+02:01.680 --> 02:04.280
+bookish disco. So who's gonna move first?
+
+02:04.280 --> 02:09.180
+Let's do Colt first and according to git or to GitHub rather
+
+02:09.180 --> 02:12.540
+the instructions want us to do git init and then
+
+02:12.540 --> 02:16.050
+add a file or do some changes, then commit,
+
+02:16.050 --> 02:18.420
+and then rename the branch to main and then add
+
+02:18.420 --> 02:22.002
+on this remote and then push. So yeah, we'll do that.
+
+02:22.002 --> 02:24.540
+We can do it that way. Or we could just clone
+
+02:24.540 --> 02:26.850
+the empty repo, but we'll do git init.
+
+02:26.850 --> 02:28.530
+Make sure we're not in anything.
+
+02:28.530 --> 02:29.926
+Let's actually do this in a folder.
+
+02:29.926 --> 02:34.203
+I'll call this bookish disco. You don't have to do that.
+
+02:35.490 --> 02:40.490
+Alright, so git init, and then let's make a file in here.
+
+02:40.590 --> 02:42.300
+What, what's gonna be in bookish disco?
+
+02:42.300 --> 02:46.740
+Maybe just a playlist or how about artists.txt.
+
+02:46.740 --> 02:49.303
+Disco artists is what we'll put in there.
+
+02:49.303 --> 02:53.490
+And then I'll add that file, add artists.txt.
+
+02:53.490 --> 02:57.941
+Whoops, git add artists, git commit.
+
+02:57.941 --> 03:00.993
+Let's just do initial commit. Nothing exciting.
+
+03:02.820 --> 03:04.320
+Okay, so I have that file
+
+03:04.320 --> 03:07.050
+and I have that commit made by Colt.
+
+03:07.050 --> 03:09.510
+Okay, so the next thing I wanna do is,
+
+03:09.510 --> 03:11.370
+if I'm gonna follow these instructions,
+
+03:11.370 --> 03:13.920
+I'm going to rename my master branch to main.
+
+03:13.920 --> 03:15.870
+Of course you do not have to do that,
+
+03:15.870 --> 03:17.970
+but that is what GitHub is asking us
+
+03:17.970 --> 03:19.920
+or at least recommending these days.
+
+03:19.920 --> 03:22.380
+So we'll, we'll do it just to get more practice working
+
+03:22.380 --> 03:23.953
+with main instead of master.
+
+03:23.953 --> 03:28.020
+Okay? So now before I can push, I need to add a remote.
+
+03:28.020 --> 03:30.750
+So we add this remote here, we'll call it origin
+
+03:30.750 --> 03:34.590
+as they tell us to do using this URL.
+
+03:34.590 --> 03:37.403
+Okay, so I'm going to hit enter.
+
+03:37.403 --> 03:40.560
+We should have this new remote. There it is.
+
+03:40.560 --> 03:45.560
+Great. So now I can do a push. Git push origin main.
+
+03:45.600 --> 03:47.050
+That's the name of my branch.
+
+03:47.910 --> 03:50.610
+And there's just one commit. It's not an exciting commit.
+
+03:50.610 --> 03:54.720
+If I refresh initial commit, we just made a file,
+
+03:54.720 --> 03:59.100
+artists.txt. Alright, so it's on the main branch.
+
+03:59.100 --> 04:02.700
+And now if I'm Stevie, over here,
+
+04:02.700 --> 04:05.430
+I refresh the page on Stevie's account.
+
+04:05.430 --> 04:08.790
+Remember, it shows Colts because that's who created the repo
+
+04:08.790 --> 04:11.490
+but I'm on Stevie's account. You can see that here.
+
+04:11.490 --> 04:14.160
+Signed in as Stevie Chicks.
+
+04:14.160 --> 04:17.940
+So we see, okay, there's stuff here now, artists.txt,
+
+04:17.940 --> 04:20.700
+there's a single commit. So I want to get this
+
+04:20.700 --> 04:23.850
+on my machine and start working on it as Stevie.
+
+04:23.850 --> 04:25.890
+So Stevie could clone this.
+
+04:25.890 --> 04:29.040
+We copy that URL, and then we go
+
+04:29.040 --> 04:32.610
+to Stevie's terminal and we make sure we're not in a repo.
+
+04:32.610 --> 04:36.510
+Okay? And then we clone, okay?
+
+04:36.510 --> 04:39.810
+So we now have this folder, bookish disco,
+
+04:39.810 --> 04:41.640
+and I CD, inside of it.
+
+04:41.640 --> 04:44.550
+We're on the main branch, type git log.
+
+04:44.550 --> 04:46.200
+I'll make this a bit larger here.
+
+04:46.200 --> 04:50.040
+We see that we have that one commit from Colt and that's it.
+
+04:50.040 --> 04:52.740
+So let's go ahead and make our own commits.
+
+04:52.740 --> 04:54.840
+We've got this artist file.
+
+04:54.840 --> 04:56.940
+Let's add on some disco artists
+
+04:56.940 --> 04:57.870
+if that's what we're doing here.
+
+04:57.870 --> 05:01.290
+Let's do the Bee Gees and then what else?
+
+05:01.290 --> 05:06.270
+How about Sylvester? And then we will add that.
+
+05:06.270 --> 05:11.270
+So git add artists, git commit dash M, add two artists.
+
+05:13.320 --> 05:15.720
+Okay, so we're on the main branch.
+
+05:15.720 --> 05:19.500
+We now have a commit that we've added as Stevie Chicks.
+
+05:19.500 --> 05:21.540
+The other original commit came from Colt.
+
+05:21.540 --> 05:22.620
+This is from Stevie.
+
+05:22.620 --> 05:25.050
+Remember two completely different laptops or machines
+
+05:25.050 --> 05:27.270
+across the the globe from one another.
+
+05:27.270 --> 05:31.110
+We're collaborating and I'm now going to push this up so
+
+05:31.110 --> 05:34.140
+that it's on GitHub and Colt can go and get it.
+
+05:34.140 --> 05:36.300
+So to do that, we need to push,
+
+05:36.300 --> 05:38.250
+see our remote is called origin.
+
+05:38.250 --> 05:42.933
+So git push origin main, that's the branch we're working on.
+
+05:44.430 --> 05:48.510
+Come on, we refresh the page on GitHub and we see now
+
+05:48.510 --> 05:50.700
+we have two commits, add two artists,
+
+05:50.700 --> 05:53.370
+that's the most recent change. There we go.
+
+05:53.370 --> 05:54.450
+So then the final part
+
+05:54.450 --> 05:57.270
+of this basic workflow of collaborating
+
+05:57.270 --> 06:00.750
+is as Colt, making sure I get these changes.
+
+06:00.750 --> 06:02.640
+So how would I get those changes?
+
+06:02.640 --> 06:05.700
+Well, there's a couple of options, but normally if I
+
+06:05.700 --> 06:08.970
+I just want them on my main branch, I would just pull,
+
+06:08.970 --> 06:10.950
+so I'm now on Colt's machine
+
+06:10.950 --> 06:13.950
+and I don't have that most recent commit.
+
+06:13.950 --> 06:16.560
+So the easiest option is just to pull down.
+
+06:16.560 --> 06:17.790
+If we're looking for the main branch,
+
+06:17.790 --> 06:18.930
+it's the only branch we have.
+
+06:18.930 --> 06:20.820
+Or if it's master or whatever it is.
+
+06:20.820 --> 06:24.810
+In this case, I'll just do a git pull origin main
+
+06:24.810 --> 06:27.360
+and I'll pull down onto the branch I'm currently on
+
+06:28.500 --> 06:30.900
+and it tells us fast forward, right?
+
+06:30.900 --> 06:34.380
+We just got a commit that we didn't have, one file changed.
+
+06:34.380 --> 06:37.770
+I can see if I type git log, we now have that new
+
+06:37.770 --> 06:40.830
+commit from Stevie and I could now do some more
+
+06:40.830 --> 06:43.350
+work and push that up and Stevie could pull down, right?
+
+06:43.350 --> 06:45.540
+If I take a look at the artist file,
+
+06:45.540 --> 06:47.250
+we have Bee Gees and Sylvester.
+
+06:47.250 --> 06:49.050
+We have officially collaborated
+
+06:49.050 --> 06:53.640
+across the globe using GitHub. So I created a GitHub repo.
+
+06:53.640 --> 06:56.430
+I added Stevie as a collaborator.
+
+06:56.430 --> 06:59.760
+Then I did some work, I pushed it up, Stevie cloned,
+
+06:59.760 --> 07:01.170
+and then Stevie did some work
+
+07:01.170 --> 07:03.450
+and pushed that up and I pulled down.
+
+07:03.450 --> 07:05.437
+So that's the most basic workflow.
+
+07:05.437 --> 07:07.110
+I just wanted to show you, you know,
+
+07:07.110 --> 07:09.720
+how that works to have multiple people pushing.
+
+07:09.720 --> 07:11.460
+In the next section, we'll talk a lot more
+
+07:11.460 --> 07:13.500
+about potential workflows and the pros
+
+07:13.500 --> 07:16.503
+and cons of different approaches for collaboration.
