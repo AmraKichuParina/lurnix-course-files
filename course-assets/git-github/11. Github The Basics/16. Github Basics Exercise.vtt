@@ -1,0 +1,706 @@
+WEBVTT
+
+00:00.150 --> 00:01.230
+Instructor: All right, so now it's time
+
+00:01.230 --> 00:02.790
+to get some practice on your own
+
+00:02.790 --> 00:06.780
+with the GitHub basics, creating GitHub repositories,
+
+00:06.780 --> 00:10.230
+setting up remotes, pushing, that sort of thing.
+
+00:10.230 --> 00:13.260
+So, nothing crazy here, but really the bread and butter
+
+00:13.260 --> 00:15.810
+of working with GitHub is just getting your code
+
+00:15.810 --> 00:19.890
+up on GitHub, and then as we'll soon see, getting code down,
+
+00:19.890 --> 00:22.320
+pulling down from GitHub, which we haven't yet learned.
+
+00:22.320 --> 00:24.480
+Anyway, as always, for these exercises
+
+00:24.480 --> 00:27.570
+you can find the link to get to these instructions
+
+00:27.570 --> 00:29.700
+as a resource with this video.
+
+00:29.700 --> 00:33.180
+So, I recommend you open that up and probably, like always,
+
+00:33.180 --> 00:35.310
+just pause this video and read the instructions.
+
+00:35.310 --> 00:38.310
+If you have questions, come back to this video.
+
+00:38.310 --> 00:40.380
+So, the core idea here is that you're going
+
+00:40.380 --> 00:43.290
+to make a new repository locally on your computer.
+
+00:43.290 --> 00:46.620
+Then you'll go to GitHub and make a GitHub repository,
+
+00:46.620 --> 00:48.870
+and then you'll connect the two.
+
+00:48.870 --> 00:52.560
+Then after that you'll make a file
+
+00:52.560 --> 00:56.010
+called favorites.txt, an empty file.
+
+00:56.010 --> 00:58.860
+You'll save and you'll make your first commit.
+
+00:58.860 --> 01:00.600
+Now, this part is optional
+
+01:00.600 --> 01:02.880
+if you want to go with main instead of master.
+
+01:02.880 --> 01:05.880
+I'm gonna be using main just to be consistent in this file,
+
+01:05.880 --> 01:08.310
+but if you choose to stay with master
+
+01:08.310 --> 01:10.650
+then just sub that in wherever you see main.
+
+01:10.650 --> 01:13.710
+So, you'll make a new file, favorites.txt, leave it empty,
+
+01:13.710 --> 01:15.630
+make your first commit on the main branch.
+
+01:15.630 --> 01:18.090
+Then push up that main branch to GitHub,
+
+01:18.090 --> 01:21.510
+so make sure that you see your empty file on GitHub.
+
+01:21.510 --> 01:24.840
+Then the next bit is to make two branches, a foods branch
+
+01:24.840 --> 01:28.740
+and a movies branch, both based on the main branch.
+
+01:28.740 --> 01:30.553
+Then switch to the foods branch,
+
+01:30.553 --> 01:32.995
+add three or more of your favorite foods to the file,
+
+01:32.995 --> 01:34.527
+add and commit your changes.
+
+01:34.527 --> 01:36.135
+Then switch to the movies branch,
+
+01:36.135 --> 01:37.506
+add three or more of your favorite movies
+
+01:37.506 --> 01:40.695
+to the favorites file, add and commit your changes.
+
+01:40.695 --> 01:43.290
+Then push up your foods branch to GitHub,
+
+01:43.290 --> 01:46.170
+and make sure you see it on GitHub if you refresh the page.
+
+01:46.170 --> 01:47.910
+And then do the same thing for the movies branch,
+
+01:47.910 --> 01:49.500
+push up the movies branch.
+
+01:49.500 --> 01:51.330
+And then we get to this step
+
+01:51.330 --> 01:54.000
+where I'd like you to merge the foods branch,
+
+01:54.000 --> 01:55.350
+let me fix the highlighting.
+
+01:55.350 --> 01:56.430
+Okay, there we go.
+
+01:56.430 --> 02:00.090
+So, you'll merge the foods branch into the main branch,
+
+02:00.090 --> 02:01.740
+and then you'll merge the movies branch
+
+02:01.740 --> 02:02.910
+into the main branch.
+
+02:02.910 --> 02:04.860
+So, you should now have, after this step,
+
+02:04.860 --> 02:08.490
+a favorites file that contains both your favorites movies,
+
+02:08.490 --> 02:09.690
+both your favorite movies
+
+02:09.690 --> 02:13.470
+and your favorite foods in the same file, favorites.txt,
+
+02:13.470 --> 02:15.180
+on the main branch.
+
+02:15.180 --> 02:17.070
+So, now the main branch has changed,
+
+02:17.070 --> 02:18.510
+GitHub doesn't have that.
+
+02:18.510 --> 02:21.060
+So, push up the latest work from that main branch,
+
+02:21.060 --> 02:22.860
+push it up to GitHub.
+
+02:22.860 --> 02:24.450
+So, that's the basic steps, right?
+
+02:24.450 --> 02:27.660
+Make a repo, go on GitHub, make a repo, connect the two.
+
+02:27.660 --> 02:30.810
+Then push up your first little commit on the main branch,
+
+02:30.810 --> 02:33.150
+make two branches, do some work on both of them,
+
+02:33.150 --> 02:34.950
+push each of them up individually,
+
+02:34.950 --> 02:36.600
+and then merge those branches locally
+
+02:36.600 --> 02:39.720
+into the main branch and push the main branch up again.
+
+02:39.720 --> 02:42.780
+So, please give it a shot on your own
+
+02:42.780 --> 02:44.700
+unless you are very comfortable with GitHub.
+
+02:44.700 --> 02:46.860
+I don't know why you'd be watching this video anyway,
+
+02:46.860 --> 02:49.170
+but I know it's not the most exciting possible.
+
+02:49.170 --> 02:50.400
+I mean, none of these exercises
+
+02:50.400 --> 02:52.170
+are gonna knock your socks off,
+
+02:52.170 --> 02:54.600
+but very important basic workflow.
+
+02:54.600 --> 02:55.920
+So, I'll go ahead and do it.
+
+02:55.920 --> 02:58.370
+I'll make a new repository locally on my machine.
+
+02:59.250 --> 03:00.180
+Let's do it in a folder.
+
+03:00.180 --> 03:02.280
+I'll call this Favorites.
+
+03:02.280 --> 03:06.450
+I'll cd into it, and check that I'm not in a repo.
+
+03:06.450 --> 03:08.430
+I'll init, a new repo.
+
+03:08.430 --> 03:10.170
+Okay, and then I'll go ahead
+
+03:10.170 --> 03:12.120
+and make my new GitHub repository,
+
+03:12.120 --> 03:16.350
+so go to github.com, click the plus, New repository,
+
+03:16.350 --> 03:21.350
+and I'll just call this one gh-favorites-exercise.
+
+03:23.280 --> 03:24.750
+Name it whatever you'd like.
+
+03:24.750 --> 03:25.950
+I'll keep it public.
+
+03:25.950 --> 03:27.030
+If you wanna take a look,
+
+03:27.030 --> 03:28.530
+there's not really gonna be much to look at,
+
+03:28.530 --> 03:30.450
+but you're welcome to.
+
+03:30.450 --> 03:31.900
+And then I'm gonna create it.
+
+03:33.360 --> 03:36.210
+And then the next step is to connect my local repo
+
+03:36.210 --> 03:40.320
+to the GitHub repo, which really just means add this remote.
+
+03:40.320 --> 03:41.823
+So, I'm gonna add that remote.
+
+03:43.410 --> 03:46.860
+And then optionally rename my master branch to main,
+
+03:46.860 --> 03:48.510
+we can just copy that.
+
+03:48.510 --> 03:49.980
+Assuming that we're on the master branch,
+
+03:49.980 --> 03:52.590
+or in this case we're not even on a branch yet,
+
+03:52.590 --> 03:55.350
+so I will need to make that master branch
+
+03:55.350 --> 03:58.530
+or I will need to do some work, but then I can rename it.
+
+03:58.530 --> 04:00.510
+So, as you can see, I'm not even on a branch yet.
+
+04:00.510 --> 04:02.880
+I don't have any commits, so there's no branch reference.
+
+04:02.880 --> 04:05.880
+But I'll just save that line for just a moment
+
+04:05.880 --> 04:07.590
+because next we're going to make
+
+04:07.590 --> 04:10.350
+a new file called favorites.txt.
+
+04:10.350 --> 04:12.600
+We'll leave it empty and make our first commit.
+
+04:12.600 --> 04:16.740
+So, touch favorites.txt, then we'll add it,
+
+04:16.740 --> 04:18.270
+so git add favorites.
+
+04:18.270 --> 04:20.970
+And we'll commit, just do something like
+
+04:20.970 --> 04:23.043
+add empty favorites file.
+
+04:24.210 --> 04:26.730
+Okay, so now we see master there,
+
+04:26.730 --> 04:29.460
+and I'm gonna rename that to main, right?
+
+04:29.460 --> 04:32.910
+So, I type git status, we see on branch main.
+
+04:32.910 --> 04:33.780
+If I type git branch
+
+04:33.780 --> 04:35.490
+we don't have the master branch anymore.
+
+04:35.490 --> 04:38.280
+So, if you want to go with main that's how you do it.
+
+04:38.280 --> 04:41.640
+Next, we need to push up this main branch to GitHub.
+
+04:41.640 --> 04:44.610
+Right now nothing is up here, it's just empty.
+
+04:44.610 --> 04:48.840
+So, git push origin, that's the name of our remote.
+
+04:48.840 --> 04:51.510
+And you can always check, git remote -v,
+
+04:51.510 --> 04:54.150
+it is origin if you just copied and pasted from GitHub.
+
+04:54.150 --> 04:59.150
+So, git push origin, and then main is my branch.
+
+05:00.000 --> 05:03.240
+And if I refresh here we should see that empty file,
+
+05:03.240 --> 05:04.470
+and there it is.
+
+05:04.470 --> 05:08.250
+Okay, so next step we need to create two branches,
+
+05:08.250 --> 05:09.840
+foods and movies.
+
+05:09.840 --> 05:14.553
+So, git branch foods, git branch movies,
+
+05:15.390 --> 05:19.080
+or I could do git switch -c or git checkout -b.
+
+05:19.080 --> 05:20.130
+I can switch to one of them,
+
+05:20.130 --> 05:24.900
+so I'm gonna switch to foods, if I can spell that.
+
+05:24.900 --> 05:27.090
+And then add two, or what'd I say,
+
+05:27.090 --> 05:30.600
+three of my favorite foods to the favorites file.
+
+05:30.600 --> 05:32.253
+So, let me open this file.
+
+05:34.590 --> 05:37.050
+And what are my favorite foods?
+
+05:37.050 --> 05:38.850
+I did not think through this at all.
+
+05:40.020 --> 05:42.360
+Well, one of them would have to be peppermint ice cream.
+
+05:42.360 --> 05:45.870
+Not just mint chip, it has to be peppermint ice cream.
+
+05:45.870 --> 05:47.580
+It's not that common anymore.
+
+05:47.580 --> 05:49.780
+I used to have it around Christmas as a kid.
+
+05:51.060 --> 05:52.230
+What else?
+
+05:52.230 --> 05:53.970
+Man, I'm gonna sound like such a fatty
+
+05:53.970 --> 05:58.020
+if I just say my honest favorites (laughs), soft pretzels.
+
+05:58.020 --> 05:59.520
+Oh, I love soft pretzels.
+
+05:59.520 --> 06:03.930
+And then I feel like I need to just lie.
+
+06:03.930 --> 06:05.190
+How about celery?
+
+06:05.190 --> 06:07.320
+Yeah, I just love celery.
+
+06:07.320 --> 06:10.110
+All right, so now I need to add and commit this
+
+06:10.110 --> 06:12.000
+on the foods branch.
+
+06:12.000 --> 06:16.740
+So, git add favorites, git commit -m
+
+06:16.740 --> 06:19.533
+add favorite foods, not doods.
+
+06:21.030 --> 06:23.280
+And then that's it.
+
+06:23.280 --> 06:25.530
+I could skip ahead and just push it up,
+
+06:25.530 --> 06:28.530
+but I'm gonna now switch to the movies branch.
+
+06:28.530 --> 06:30.720
+Git switch to movies and add three
+
+06:30.720 --> 06:32.220
+of my favorite movies in here.
+
+06:32.220 --> 06:35.070
+If you've seen any of my other courses you probably know,
+
+06:35.070 --> 06:37.890
+or at least maybe you might remember
+
+06:37.890 --> 06:39.150
+my favorite movie is "Amadeus."
+
+06:39.150 --> 06:42.300
+I think I say that far too often in my courses.
+
+06:42.300 --> 06:44.160
+Great film, you gotta watch it if you haven't seen it.
+
+06:44.160 --> 06:46.470
+And if you don't like it I get it, it's not for everyone.
+
+06:46.470 --> 06:49.350
+But anyway, how about "The Fifth Element,"
+
+06:49.350 --> 06:51.060
+that's another one I like.
+
+06:51.060 --> 06:54.150
+Not necessarily, this is not top three movies, not in order.
+
+06:54.150 --> 06:55.290
+It doesn't matter, okay?
+
+06:55.290 --> 06:57.300
+It doesn't matter at all.
+
+06:57.300 --> 06:58.200
+What else?
+
+06:58.200 --> 07:00.487
+Hmm, here's a fun one I liked quite a bit,
+
+07:00.487 --> 07:04.230
+"Captain Fantastic," Viggo Mortensen.
+
+07:04.230 --> 07:06.427
+Sure, we'll say those are my favorites, not quite.
+
+07:06.427 --> 07:08.583
+"Amadeus" though, yeah, always number one.
+
+07:09.540 --> 07:13.410
+Okay, so now I'm gonna add those changes, git add favorites,
+
+07:13.410 --> 07:18.090
+git commit add three of my fav movies.
+
+07:18.090 --> 07:20.520
+Okay, and then we get to this step,
+
+07:20.520 --> 07:23.160
+push up the foods branch to GitHub.
+
+07:23.160 --> 07:26.940
+So, I can just do git push, my remote origin,
+
+07:26.940 --> 07:28.893
+and then the name of the branch, foods.
+
+07:29.940 --> 07:32.100
+I don't need to be on the foods branch,
+
+07:32.100 --> 07:35.850
+and I'll refresh and we should see a new branch.
+
+07:35.850 --> 07:36.683
+There it is.
+
+07:36.683 --> 07:38.490
+And we wanna verify we see our foods,
+
+07:38.490 --> 07:41.460
+whatever you put they show up here, right?
+
+07:41.460 --> 07:43.650
+And I'm, currently I was looking at that file,
+
+07:43.650 --> 07:45.090
+so that's why I saw this view.
+
+07:45.090 --> 07:46.950
+You'd probably see this.
+
+07:46.950 --> 07:48.960
+Okay, now push up the movies branch,
+
+07:48.960 --> 07:53.257
+git push origin movies, and refresh.
+
+07:57.660 --> 08:01.620
+Okay, we see the movies branch, and there we are.
+
+08:01.620 --> 08:03.750
+We see favorites and it has my favorite,
+
+08:03.750 --> 08:05.670
+or some of my favorite movies.
+
+08:05.670 --> 08:09.090
+Then finally, merge the food branch into the main branch.
+
+08:09.090 --> 08:10.953
+So, I'm gonna switch to main,
+
+08:12.480 --> 08:14.610
+and then I'll just show you my favorites file
+
+08:14.610 --> 08:15.633
+is empty right now.
+
+08:16.500 --> 08:21.480
+And I'm gonna merge in foods, so git merge foods,
+
+08:21.480 --> 08:23.400
+and that's just a fast forward.
+
+08:23.400 --> 08:25.200
+Okay, that's the easy part.
+
+08:25.200 --> 08:27.990
+Then I need to merge the movies branch into main.
+
+08:27.990 --> 08:29.580
+Now, this won't be a fast forward
+
+08:29.580 --> 08:31.680
+because now there's commits on the main branch
+
+08:31.680 --> 08:33.180
+that the movies branch does not have.
+
+08:33.180 --> 08:38.180
+So, git merge and then movies, and we get a lovely conflict.
+
+08:38.850 --> 08:41.820
+I'm just gonna select Accept Both Changes,
+
+08:41.820 --> 08:43.170
+and there we go.
+
+08:43.170 --> 08:44.790
+We'll just leave it like this.
+
+08:44.790 --> 08:46.680
+I could put a little heading I guess if I wanted
+
+08:46.680 --> 08:50.310
+that said movies here, meh, I'll just leave it like that.
+
+08:50.310 --> 08:52.980
+Anyway, I'm gonna resolve the conflict like I just did.
+
+08:52.980 --> 08:57.780
+I'm gonna add favorites, and then I'll make my commit here.
+
+08:57.780 --> 08:59.190
+What should I do?
+
+08:59.190 --> 09:00.570
+Let's just clear.
+
+09:00.570 --> 09:05.570
+Git commit, merge movies and foods into main, okay?
+
+09:08.640 --> 09:11.850
+And then finally I need to push that up, right?
+
+09:11.850 --> 09:14.370
+So, I don't have that latest commit
+
+09:14.370 --> 09:16.083
+on the main branch on GitHub.
+
+09:17.088 --> 09:20.670
+If I go to it it's just an empty file, very sad.
+
+09:20.670 --> 09:24.060
+Now, it's just as simple as git push,
+
+09:24.060 --> 09:26.220
+now I didn't use -u in the previous,
+
+09:26.220 --> 09:27.720
+when I first pushed the first time.
+
+09:27.720 --> 09:30.900
+So, I still need to say origin main.
+
+09:30.900 --> 09:33.363
+If I had used -u I could just say git push.
+
+09:34.590 --> 09:37.980
+So, actually it might just figure it out on its own,
+
+09:37.980 --> 09:39.270
+no it does not.
+
+09:39.270 --> 09:42.303
+Okay, so git push origin main.
+
+09:46.479 --> 09:48.720
+And if you have questions about that -u
+
+09:48.720 --> 09:50.640
+there's a standalone video I made on it
+
+09:50.640 --> 09:52.560
+so you could go check that out,
+
+09:52.560 --> 09:54.203
+but you probably already know that.
+
+09:55.053 --> 09:57.090
+Okay, and there we are.
+
+09:57.090 --> 10:00.870
+So, we see that we have this new commit one minute ago,
+
+10:00.870 --> 10:05.250
+less than that, where we merged movies and foods into main.
+
+10:05.250 --> 10:09.090
+And on main we see all three on GitHub.
+
+10:09.090 --> 10:10.920
+Foods just has the foods,
+
+10:10.920 --> 10:14.086
+and movies just has the movies.
+
+10:14.086 --> 10:17.670
+Okay, I need to take a break and watch one of these,
+
+10:17.670 --> 10:19.800
+that would be nice, with some peppermint ice cream
+
+10:19.800 --> 10:22.290
+and pretzels and not celery.
+
+10:22.290 --> 10:24.783
+I don't like celery at all really, bye-bye.
