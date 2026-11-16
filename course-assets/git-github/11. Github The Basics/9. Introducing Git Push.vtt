@@ -1,0 +1,655 @@
+WEBVTT
+
+00:00.150 --> 00:00.990
+Instructor: All right.
+
+00:00.990 --> 00:02.190
+So we have one more step
+
+00:02.190 --> 00:04.230
+to get our code up on GitHub.
+
+00:04.230 --> 00:06.060
+We just need to push it up.
+
+00:06.060 --> 00:08.610
+So if you remember option one,
+
+00:08.610 --> 00:10.050
+what we're following here,
+
+00:10.050 --> 00:11.850
+option one out of two
+
+00:11.850 --> 00:15.030
+is to create a new repo on GitHub, which we've done.
+
+00:15.030 --> 00:16.530
+Connect the local repo
+
+00:16.530 --> 00:18.810
+by adding a remote to our GitHub repo.
+
+00:18.810 --> 00:21.060
+We just did that in the previous video.
+
+00:21.060 --> 00:23.340
+Now we need to push our changes up.
+
+00:23.340 --> 00:25.230
+So we have our existing repo.
+
+00:25.230 --> 00:29.940
+I'm doing that stupid "Great Gatsby" novel, fake repo.
+
+00:29.940 --> 00:32.460
+I created an empty GitHub repo
+
+00:32.460 --> 00:35.460
+and then I set my remote called origin
+
+00:35.460 --> 00:38.670
+so that it points at this empty GitHub repo.
+
+00:38.670 --> 00:41.940
+So the final step is to push up.
+
+00:41.940 --> 00:45.030
+So we do this using the git push command.
+
+00:45.030 --> 00:47.280
+Again, this is not GitHub specific,
+
+00:47.280 --> 00:51.630
+though everything we'll be pushing to will be a GitHub repo.
+
+00:51.630 --> 00:53.760
+But the git push command is a git command
+
+00:53.760 --> 00:56.207
+that existed long before GitHub.
+
+00:56.207 --> 00:57.540
+And there are many other places
+
+00:57.540 --> 01:00.360
+where you can have a hosted repo that you can push to.
+
+01:00.360 --> 01:02.760
+So it works with any remote.
+
+01:02.760 --> 01:06.960
+Basically, the syntax is git push and then a remote.
+
+01:06.960 --> 01:09.660
+In our case, we just have one which is origin
+
+01:09.660 --> 01:11.100
+but we can have multiple.
+
+01:11.100 --> 01:13.560
+So we have to tell git where we're pushing,
+
+01:13.560 --> 01:18.300
+what's the destination repository and what branch to push.
+
+01:18.300 --> 01:20.700
+So, you know, we might have a really large repo
+
+01:20.700 --> 01:22.050
+with a ton of branches.
+
+01:22.050 --> 01:23.130
+Like, actually,
+
+01:23.130 --> 01:25.563
+we don't have a ton here but we've got a couple.
+
+01:27.300 --> 01:28.830
+No, just two. (laughs)
+
+01:28.830 --> 01:31.650
+Oh, well, this is because this video
+
+01:31.650 --> 01:34.440
+or this repo was created before we went into branching.
+
+01:34.440 --> 01:36.150
+But some of our repos have, like,
+
+01:36.150 --> 01:38.670
+I don't know, seven, eight, maybe 10 branches.
+
+01:38.670 --> 01:41.610
+And you may not want all of them on GitHub
+
+01:41.610 --> 01:43.920
+or you may not wanna push them all at once at least.
+
+01:43.920 --> 01:45.210
+So when we push,
+
+01:45.210 --> 01:46.860
+we call out a particular branch
+
+01:46.860 --> 01:49.110
+that we want to send to GitHub.
+
+01:49.110 --> 01:51.960
+Often, that will be your master or main branch.
+
+01:51.960 --> 01:54.780
+But you can push any branch up to GitHub
+
+01:54.780 --> 01:55.890
+and I'll show you that.
+
+01:55.890 --> 01:58.350
+So this is a really common command,
+
+01:58.350 --> 02:00.900
+git push origin master.
+
+02:00.900 --> 02:03.240
+Though it is becoming slightly less common
+
+02:03.240 --> 02:06.660
+as more people rename their master branch to main.
+
+02:06.660 --> 02:07.493
+If you recall,
+
+02:07.493 --> 02:10.020
+we talked about this early on when I introduced branching.
+
+02:10.020 --> 02:14.100
+It now comes up again, master versus main,
+
+02:14.100 --> 02:15.360
+because GitHub,
+
+02:15.360 --> 02:17.910
+as I mentioned at the end of 2020,
+
+02:17.910 --> 02:21.630
+decided to make the default branch name on a GitHub repo
+
+02:21.630 --> 02:23.490
+main instead of master.
+
+02:23.490 --> 02:25.200
+So their instructions tell you
+
+02:25.200 --> 02:27.360
+to add a remote called origin
+
+02:27.360 --> 02:29.760
+but then rename your branch,
+
+02:29.760 --> 02:34.470
+the master branch to main and then push main.
+
+02:34.470 --> 02:37.620
+So I will do this as well in a separate video.
+
+02:37.620 --> 02:39.000
+I will show this process.
+
+02:39.000 --> 02:40.710
+It's the exact same process.
+
+02:40.710 --> 02:42.810
+We rename a branch, we name it main
+
+02:42.810 --> 02:44.253
+and then we push up main.
+
+02:45.270 --> 02:46.530
+But I'm gonna start with master,
+
+02:46.530 --> 02:48.210
+just to keep this as simple as possible,
+
+02:48.210 --> 02:51.030
+because we have a master branch, right?
+
+02:51.030 --> 02:53.040
+We've been working with the term master,
+
+02:53.040 --> 02:55.140
+so we'll start there first.
+
+02:55.140 --> 02:58.470
+Okay, so I have this remote called origin,
+
+02:58.470 --> 03:01.620
+as we already discussed, git remote dash V.
+
+03:01.620 --> 03:03.810
+We see what it's pointing to.
+
+03:03.810 --> 03:06.180
+And it's always a good idea to see,
+
+03:06.180 --> 03:07.830
+you know, what we have,
+
+03:07.830 --> 03:10.710
+if we have any uncommitted changes that won't go up.
+
+03:10.710 --> 03:13.050
+Otherwise, we're ready.
+
+03:13.050 --> 03:15.270
+We're gonna do a git push.
+
+03:15.270 --> 03:17.760
+And then origin is where we're pushing to.
+
+03:17.760 --> 03:21.990
+And then master is the branch we are pushing up.
+
+03:21.990 --> 03:24.210
+Okay, so this is what our GitHub looks like right now.
+
+03:24.210 --> 03:25.043
+I'll refresh.
+
+03:25.043 --> 03:27.570
+There's nothing here except these instructions.
+
+03:27.570 --> 03:28.890
+This is the repo.
+
+03:28.890 --> 03:29.910
+But now I'm gonna push
+
+03:29.910 --> 03:33.450
+and there's going to be a substantial change.
+
+03:33.450 --> 03:34.560
+And remember,
+
+03:34.560 --> 03:37.740
+oh, gosh, I put images in this repo, didn't I?
+
+03:37.740 --> 03:39.930
+Well, that's why it's taking a little bit. (laughs)
+
+03:39.930 --> 03:43.950
+As you can see here, I have some images in that mood board.
+
+03:43.950 --> 03:46.380
+Usually, you don't include images in a,
+
+03:46.380 --> 03:48.930
+or at least not large images like I have
+
+03:48.930 --> 03:50.550
+but it finished up.
+
+03:50.550 --> 03:54.693
+Most repos are gonna push way, way, way faster than that,
+
+03:55.650 --> 03:57.420
+because they're usually just code.
+
+03:57.420 --> 03:59.373
+So I'm gonna refresh the page.
+
+04:00.960 --> 04:04.110
+And now we see something entirely different, right?
+
+04:04.110 --> 04:05.730
+We don't see those instructions.
+
+04:05.730 --> 04:09.030
+Now we see our file contents.
+
+04:09.030 --> 04:11.430
+So chapter one, chapter two, chapter three,
+
+04:11.430 --> 04:13.740
+characters, outline.
+
+04:13.740 --> 04:15.810
+We see different commits.
+
+04:15.810 --> 04:17.340
+I'll actually do a separate video
+
+04:17.340 --> 04:19.650
+where I walk through what we see.
+
+04:19.650 --> 04:22.770
+But we also have access to things like contributors.
+
+04:22.770 --> 04:24.690
+We can see there's only one branch,
+
+04:24.690 --> 04:26.133
+which is the master branch.
+
+04:26.970 --> 04:30.090
+And I can take a look at chapter one, for example.
+
+04:30.090 --> 04:31.840
+Here's the contents of chapter one.
+
+04:33.180 --> 04:36.270
+Okay, so we have our code up here.
+
+04:36.270 --> 04:37.890
+Now what I wanna show you
+
+04:37.890 --> 04:40.320
+is that we can push any branch, right?
+
+04:40.320 --> 04:42.960
+I talked about pushing master,
+
+04:42.960 --> 04:44.760
+because that's what we have on this project.
+
+04:44.760 --> 04:48.330
+But if we make a new branch, which I'll just make,
+
+04:48.330 --> 04:49.830
+what should my branch be called?
+
+04:49.830 --> 04:52.503
+How about empty or nearly empty?
+
+04:53.430 --> 04:55.200
+I switched to that branch
+
+04:55.200 --> 04:58.560
+and I'm just gonna delete pretty much everything in here.
+
+04:58.560 --> 05:00.573
+I'm gonna delete mood board for sure.
+
+05:02.100 --> 05:04.650
+So that's actually RM dash RF to get rid of that.
+
+05:04.650 --> 05:05.523
+It's a folder.
+
+05:06.900 --> 05:09.450
+And I'll RM, how about all chapters?
+
+05:09.450 --> 05:11.160
+So chapter one.
+
+05:11.160 --> 05:13.470
+I'll just leave the outline and the characters.
+
+05:13.470 --> 05:16.440
+So now, whoops, this is all we have.
+
+05:16.440 --> 05:18.030
+I'm on a branch though called empty.
+
+05:18.030 --> 05:21.210
+So I'm gonna add everything
+
+05:21.210 --> 05:25.953
+and then git commit, delete most things.
+
+05:26.940 --> 05:27.773
+All righty.
+
+05:27.773 --> 05:29.880
+Now, if I wanna push the code that I just changed,
+
+05:29.880 --> 05:33.210
+I wanna push my last commit from this branch.
+
+05:33.210 --> 05:35.520
+Remember, I'm on the empty branch.
+
+05:35.520 --> 05:38.010
+I need to push the empty branch.
+
+05:38.010 --> 05:40.230
+So let me illustrate that here,
+
+05:40.230 --> 05:41.970
+I've got some diagrams.
+
+05:41.970 --> 05:43.380
+What we just did
+
+05:43.380 --> 05:46.110
+was we pushed up our master branch to GitHub.
+
+05:46.110 --> 05:47.460
+So there was nothing on GitHub.
+
+05:47.460 --> 05:49.890
+I pushed up master, whoops, I went too far.
+
+05:49.890 --> 05:53.343
+Git push origin master, assuming our remote is named origin.
+
+05:54.210 --> 05:56.130
+Now, in this diagram
+
+05:56.130 --> 05:58.410
+I have a second branch called new feature.
+
+05:58.410 --> 05:59.760
+I'm gonna push that up.
+
+05:59.760 --> 06:02.283
+Git push origin new feature.
+
+06:03.150 --> 06:05.610
+In our case, our branch is called empty.
+
+06:05.610 --> 06:09.090
+So git push origin empty.
+
+06:09.090 --> 06:11.220
+I don't have to be on this branch, by the way.
+
+06:11.220 --> 06:14.130
+I happen to be on it, which is very common that,
+
+06:14.130 --> 06:15.900
+you know, you're taking a look at what's on a branch
+
+06:15.900 --> 06:16.920
+and then you push it up
+
+06:16.920 --> 06:18.630
+but you don't have to be on it.
+
+06:18.630 --> 06:20.583
+So git push origin empty.
+
+06:22.500 --> 06:25.260
+And, remember, if it asks you for your password,
+
+06:25.260 --> 06:26.670
+not a big deal,
+
+06:26.670 --> 06:29.430
+put your email and password or your username and password.
+
+06:29.430 --> 06:32.400
+But go back and check out the SSH video
+
+06:32.400 --> 06:35.220
+so that it doesn't have to keep bugging you.
+
+06:35.220 --> 06:38.610
+You know, asking you for a password every time you push.
+
+06:38.610 --> 06:41.583
+Okay, so now I'm gonna refresh.
+
+06:43.380 --> 06:45.480
+And it doesn't look like much changed
+
+06:45.480 --> 06:47.580
+but now we have two branches
+
+06:47.580 --> 06:49.890
+and we can see the two branches here,
+
+06:49.890 --> 06:51.390
+master and empty.
+
+06:51.390 --> 06:52.893
+And I can switch between them.
+
+06:54.300 --> 06:55.530
+And this is my empty branch.
+
+06:55.530 --> 06:57.360
+I'm just viewing it on GitHub
+
+06:57.360 --> 07:00.000
+and you'll see it just has two files, right?
+
+07:00.000 --> 07:01.143
+Go back to master.
+
+07:02.250 --> 07:04.170
+And I have a whole bunch of stuff.
+
+07:04.170 --> 07:07.350
+Okay, so I'm gonna just go through this process
+
+07:07.350 --> 07:08.280
+one more time,
+
+07:08.280 --> 07:09.600
+just to make it very clear.
+
+07:09.600 --> 07:11.340
+I'm gonna go back to master,
+
+07:11.340 --> 07:13.440
+git switch master.
+
+07:13.440 --> 07:15.390
+And let's make some changes.
+
+07:15.390 --> 07:17.026
+We'll do some new work here.
+
+07:17.026 --> 07:21.690
+How about chapter four dot TXT.
+
+07:21.690 --> 07:22.523
+All righty.
+
+07:22.523 --> 07:24.813
+And I'll just leave it blank, I guess.
+
+07:26.070 --> 07:27.240
+And I'm gonna add that.
+
+07:27.240 --> 07:29.220
+So git add chapter four,
+
+07:29.220 --> 07:33.063
+git commit, begin chapter four.
+
+07:35.490 --> 07:37.140
+Okay, pop quiz.
+
+07:37.140 --> 07:38.070
+What's on my GitHub?
+
+07:38.070 --> 07:39.420
+What's the most recent commit
+
+07:39.420 --> 07:41.850
+that I'll see on the GitHub repo?
+
+07:41.850 --> 07:43.560
+Nothing has changed on GitHub.
+
+07:43.560 --> 07:45.420
+It's still exactly the same.
+
+07:45.420 --> 07:47.610
+If we're looking at the master branch, nothing's changed.
+
+07:47.610 --> 07:48.660
+If we're looking at the empty branch,
+
+07:48.660 --> 07:51.528
+nothing has changed since we last pushed.
+
+07:51.528 --> 07:54.390
+GitHub doesn't just stay in sync automatically
+
+07:54.390 --> 07:56.160
+with my local repo.
+
+07:56.160 --> 07:57.450
+I have to push.
+
+07:57.450 --> 08:00.090
+So why don't I push up that commit?
+
+08:00.090 --> 08:02.010
+Chapter four, begin chapter four.
+
+08:02.010 --> 08:03.720
+Now, I said push up that commit.
+
+08:03.720 --> 08:06.180
+We don't select a specific commit,
+
+08:06.180 --> 08:09.090
+we push an entire branch as we've talked about.
+
+08:09.090 --> 08:10.950
+So I made that commit on the master branch,
+
+08:10.950 --> 08:12.180
+so I'll push that up.
+
+08:12.180 --> 08:14.040
+Git push origin,
+
+08:14.040 --> 08:16.983
+the only remote we have right now, origin master.
+
+08:19.200 --> 08:21.750
+Now, if we head over here and refresh we see,
+
+08:21.750 --> 08:23.790
+first of all, my most recent commit,
+
+08:23.790 --> 08:26.640
+begin chapter four, one minute ago.
+
+08:26.640 --> 08:29.760
+We also see the actual updated contents, right?
+
+08:29.760 --> 08:32.490
+Chapter four dot TXT is right there.
+
+08:32.490 --> 08:34.590
+Okay, so in the next video I'm going to
+
+08:34.590 --> 08:37.440
+kind of walk through GitHub repository,
+
+08:37.440 --> 08:40.590
+show you how we view the commits, the branches,
+
+08:40.590 --> 08:43.260
+diffs or changes, all that stuff.
+
+08:43.260 --> 08:45.240
+And then we'll get some more practice with pushing
+
+08:45.240 --> 08:48.423
+and we'll talk about renaming to use the main branch.
