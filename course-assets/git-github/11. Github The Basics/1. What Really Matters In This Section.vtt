@@ -1,0 +1,139 @@
+WEBVTT
+
+00:00.120 --> 00:01.980
+Instructor: Okay, big moment here in the course.
+
+00:01.980 --> 00:04.380
+We are now going to start talking about GitHub,
+
+00:04.380 --> 00:06.270
+and start learning about how to use it,
+
+00:06.270 --> 00:08.490
+and the different Git commands that have to do
+
+00:08.490 --> 00:11.580
+with interacting with tools like GitHub.
+
+00:11.580 --> 00:13.830
+I feel like that was a clunky sentence, but eh.
+
+00:13.830 --> 00:16.380
+I guess most of my sentences are clunky, anyway.
+
+00:16.380 --> 00:18.240
+So this is our first taste of GitHub.
+
+00:18.240 --> 00:19.710
+The essentials.
+
+00:19.710 --> 00:21.210
+We're gonna start by talking about things
+
+00:21.210 --> 00:24.180
+like what does GitHub do, who uses it,
+
+00:24.180 --> 00:26.610
+and I'm gonna show you a command called Git Clone,
+
+00:26.610 --> 00:29.190
+which really doesn't have to do with GitHub.
+
+00:29.190 --> 00:31.620
+It's not intrinsically linked to GitHub.
+
+00:31.620 --> 00:34.140
+But it is relevant to this section.
+
+00:34.140 --> 00:36.330
+So that is also critical.
+
+00:36.330 --> 00:38.610
+As well as registering for GitHub,
+
+00:38.610 --> 00:40.950
+and setting up our SSH keys.
+
+00:40.950 --> 00:42.300
+This is critical.
+
+00:42.300 --> 00:44.010
+We're going to be using GitHub.
+
+00:44.010 --> 00:46.950
+And we wanna set up an SSH key,
+
+00:46.950 --> 00:48.180
+so that we don't have to enter
+
+00:48.180 --> 00:49.590
+a username and password every time
+
+00:49.590 --> 00:51.120
+we try and connect to GitHub
+
+00:51.120 --> 00:53.040
+from our terminal, and from Git.
+
+00:53.040 --> 00:55.200
+That's probably the most annoying part of this section,
+
+00:55.200 --> 00:57.240
+is setting up for those keys.
+
+00:57.240 --> 00:58.200
+It's not the end of the world,
+
+00:58.200 --> 01:00.780
+but it's just a bunch of steps you have to follow.
+
+01:00.780 --> 01:03.360
+And then we get into the meat and potatoes.
+
+01:03.360 --> 01:06.810
+Creating GitHub repos, working with remotes,
+
+01:06.810 --> 01:08.610
+using the Git Push command.
+
+01:08.610 --> 01:10.320
+So we'll see a couple of new commands,
+
+01:10.320 --> 01:13.380
+Git Clone, some remote commands,
+
+01:13.380 --> 01:14.850
+and Git Push in this section,
+
+01:14.850 --> 01:17.550
+but pretty much everything here is critical,
+
+01:17.550 --> 01:20.670
+if you plan on using Git alongside GitHub.
+
+01:20.670 --> 01:22.380
+You could just skip all the GitHub stuff
+
+01:22.380 --> 01:24.060
+if you wanted to, but you know,
+
+01:24.060 --> 01:26.130
+GitHub is so commonly used,
+
+01:26.130 --> 01:31.020
+both by individuals, but also in enterprise situations,
+
+01:31.020 --> 01:33.450
+open source projects, big companies.
+
+01:33.450 --> 01:35.580
+I would not advise skipping it.
+
+01:35.580 --> 01:37.380
+So I'm marking everything as critical.
+
+01:37.380 --> 01:38.213
+All right.
+
+01:38.213 --> 01:39.873
+So let's get started with GitHub.
