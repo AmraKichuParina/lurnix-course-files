@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.240 --> 00:01.073
+Instructor: Okay so,
+
+00:01.073 --> 00:03.570
+now that we know what repositories are in general,
+
+00:03.570 --> 00:07.110
+let's learn how we instantiate a new repo using git
+
+00:07.110 --> 00:09.000
+and before I show you that command,
+
+00:09.000 --> 00:11.970
+I'm actually gonna show you a separate, very simple command
+
+00:11.970 --> 00:13.590
+called git status.
+
+00:13.590 --> 00:16.740
+Git status will come up again and again in this course
+
+00:16.740 --> 00:19.980
+and just in your life if you use git.
+
+00:19.980 --> 00:21.060
+It's a harmless command.
+
+00:21.060 --> 00:22.380
+It just reports back to you
+
+00:22.380 --> 00:25.440
+the status in your current repository.
+
+00:25.440 --> 00:28.350
+The thing is, we don't have any repositories yet,
+
+00:28.350 --> 00:31.290
+or at least if you're following along, we haven't made any.
+
+00:31.290 --> 00:34.920
+So if I run git status anywhere on my machine,
+
+00:34.920 --> 00:36.723
+assuming I don't have any repos,
+
+00:38.220 --> 00:41.790
+I get this message, fatal, not a git repository.
+
+00:41.790 --> 00:44.520
+It's telling me, you're not in a git repo.
+
+00:44.520 --> 00:47.190
+So it's aware of what git is.
+
+00:47.190 --> 00:50.010
+It's not giving me like you know, command not found.
+
+00:50.010 --> 00:54.180
+It's telling me, yeah I know, but you're not in a repo.
+
+00:54.180 --> 00:59.180
+Versus if I am in a git repo and I run git status,
+
+00:59.250 --> 01:00.840
+we see something different.
+
+01:00.840 --> 01:04.590
+Now what we see varies and that's why we use git status.
+
+01:04.590 --> 01:06.300
+It reports back to us
+
+01:06.300 --> 01:09.690
+and gives us information on the current repo we're in.
+
+01:09.690 --> 01:11.280
+So we'll use it all the time,
+
+01:11.280 --> 01:14.070
+but for now it's just proof that we're not in a repo.
+
+01:14.070 --> 01:15.720
+But now we're gonna learn our second command
+
+01:15.720 --> 01:17.610
+which is git init.
+
+01:17.610 --> 01:20.280
+So this will initialize a new repository
+
+01:20.280 --> 01:23.100
+wherever we are in our terminal.
+
+01:23.100 --> 01:25.500
+So whatever directory I'm inside of
+
+01:25.500 --> 01:28.950
+will become the home of a new git repository.
+
+01:28.950 --> 01:31.800
+So it's the equivalent of what this slide showed,
+
+01:31.800 --> 01:34.110
+or these diagrams where we have some folder
+
+01:34.110 --> 01:37.470
+and we initialize a repo inside of those folders.
+
+01:37.470 --> 01:39.300
+We navigate to the folder.
+
+01:39.300 --> 01:42.870
+So in my case, I have an empty folder called Basics.
+
+01:42.870 --> 01:43.703
+I'll have, you know
+
+01:43.703 --> 01:45.990
+different folders for different parts of the course.
+
+01:45.990 --> 01:47.850
+I'm gonna make a new directory.
+
+01:47.850 --> 01:49.470
+Let's say I'm writing a novel,
+
+01:49.470 --> 01:52.630
+so I'm gonna go with MyFirstNovel
+
+01:53.640 --> 01:56.850
+and then I'm gonna navigate into there.
+
+01:56.850 --> 01:59.790
+This is where I want my git repository.
+
+01:59.790 --> 02:02.250
+I want to have a new repo in MyFirstNovel
+
+02:02.250 --> 02:03.630
+so I can track the history,
+
+02:03.630 --> 02:05.700
+you know, the drafts, the changes I make,
+
+02:05.700 --> 02:08.820
+all of that stuff inside of this project
+
+02:08.820 --> 02:11.100
+and then I'm gonna run git init.
+
+02:11.100 --> 02:13.410
+Before that, just to remind you,
+
+02:13.410 --> 02:15.540
+currently not a git repository
+
+02:15.540 --> 02:17.820
+when I ran that command, git status.
+
+02:17.820 --> 02:20.340
+Now I run git init
+
+02:20.340 --> 02:24.330
+and it tells me it initialized an empty git repository n
+
+02:24.330 --> 02:26.550
+and then it gives me the whole path to where I am.
+
+02:26.550 --> 02:27.383
+MyFirstNovel.
+
+02:28.230 --> 02:30.210
+Now, I don't see anything here.
+
+02:30.210 --> 02:33.150
+We'll talk about what actually happens in the next video.
+
+02:33.150 --> 02:34.440
+There is something here,
+
+02:34.440 --> 02:37.110
+it's hidden and it's where git is stored.
+
+02:37.110 --> 02:40.860
+But before that, I just wanna recap what we've seen so far.
+
+02:40.860 --> 02:42.330
+The command, git init
+
+02:42.330 --> 02:45.480
+will instantiate a new git repository for us,
+
+02:45.480 --> 02:49.200
+wherever we are, whatever directory we're currently in,
+
+02:49.200 --> 02:52.020
+and our terminal where we run that command.
+
+02:52.020 --> 02:54.930
+Also, this is something we run one time per project,
+
+02:54.930 --> 02:57.720
+so we're not constantly initializing you know,
+
+02:57.720 --> 02:59.910
+if we're working on the same project day after day,
+
+02:59.910 --> 03:01.320
+if I'm working on this novel
+
+03:01.320 --> 03:03.330
+for a couple of months or years,
+
+03:03.330 --> 03:05.703
+if more like my speed, probably years,
+
+03:06.810 --> 03:09.390
+we would run git init one time.
+
+03:09.390 --> 03:13.050
+Git init just enables git in this one project
+
+03:13.050 --> 03:16.050
+and then we just use that same repository day after day.
+
+03:16.050 --> 03:17.100
+That's kind of the point.
+
+03:17.100 --> 03:19.200
+We want that continued history.
+
+03:19.200 --> 03:24.200
+Anyway, now if I run git status, we see something different.
+
+03:24.600 --> 03:27.330
+So before, not in a repository,
+
+03:27.330 --> 03:29.580
+then we initialize git init,
+
+03:29.580 --> 03:31.890
+now git status gives me something else.
+
+03:31.890 --> 03:33.120
+There's a lot of stuff in here
+
+03:33.120 --> 03:34.980
+we don't know about it this point in time,
+
+03:34.980 --> 03:37.530
+but we'll make sense of it soon,
+
+03:37.530 --> 03:38.850
+but it's just proof
+
+03:38.850 --> 03:41.910
+that something git-ish is happening, right?
+
+03:41.910 --> 03:44.850
+Instead of this message, not a git repo.
+
+03:44.850 --> 03:46.590
+Okay, next up we're gonna talk about
+
+03:46.590 --> 03:49.140
+what actually happens when I run git init.
+
+03:49.140 --> 03:51.600
+Where is the git folder or files
+
+03:51.600 --> 03:53.190
+or what information does it create?
+
+03:53.190 --> 03:54.240
+I don't see anything.
