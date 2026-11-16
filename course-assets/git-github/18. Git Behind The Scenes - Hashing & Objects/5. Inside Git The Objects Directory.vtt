@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00.090 --> 00:00.923
+Instructor: So next up,
+
+00:00.923 --> 00:03.540
+we're gonna talk about the Objects Folder.
+
+00:03.540 --> 00:06.420
+Now, this folder we're gonna spend quite a lot of time
+
+00:06.420 --> 00:09.000
+discussing over a couple of videos.
+
+00:09.000 --> 00:11.550
+This is really the core of Git.
+
+00:11.550 --> 00:15.150
+This is where all of the backups of our files,
+
+00:15.150 --> 00:18.090
+all the content is stored, all the commits live here.
+
+00:18.090 --> 00:21.450
+And the way that it works is a lot to explain,
+
+00:21.450 --> 00:24.780
+but it's also interesting and I think, hopefully,
+
+00:24.780 --> 00:27.450
+if I succeed, this section will make sense.
+
+00:27.450 --> 00:29.820
+This is the important stuff I want to cover in this section.
+
+00:29.820 --> 00:31.980
+It all has to do with hashing,
+
+00:31.980 --> 00:35.400
+and we're gonna talk about things like blobs and trees.
+
+00:35.400 --> 00:37.140
+Anyway, we'll get into that.
+
+00:37.140 --> 00:40.080
+But in this video, I just wanna show you, it exists.
+
+00:40.080 --> 00:41.400
+There is a folder, right?
+
+00:41.400 --> 00:43.710
+If we look in the ".git" directory,
+
+00:43.710 --> 00:46.560
+if I can spell it, of course, called "objects."
+
+00:46.560 --> 00:49.920
+And if we look inside of it, it's right here.
+
+00:49.920 --> 00:51.540
+So let me close down HEAD.
+
+00:51.540 --> 00:54.180
+Objects here has a bunch of sub directories
+
+00:54.180 --> 00:56.220
+at least on my repository.
+
+00:56.220 --> 00:58.140
+I'm using this React example.
+
+00:58.140 --> 01:01.350
+So if you have a repo and it has some history,
+
+01:01.350 --> 01:02.730
+you'll have something in here,
+
+01:02.730 --> 01:07.320
+but probably not the same combination, the same digits.
+
+01:07.320 --> 01:09.180
+But anyway, we have these two digit
+
+01:09.180 --> 01:11.340
+hexadecimal folder names.
+
+01:11.340 --> 01:14.340
+And then inside of them there are files.
+
+01:14.340 --> 01:16.740
+But then it tells me, "Hmm, I can't display it for you.
+
+01:16.740 --> 01:20.370
+It's either binary or an unsupported text encoding type."
+
+01:20.370 --> 01:23.670
+So we're not gonna be able to look at the contents.
+
+01:23.670 --> 01:26.910
+This is what it does when it tries to display in VS code.
+
+01:26.910 --> 01:30.150
+These are compressed, encrypted binary files.
+
+01:30.150 --> 01:32.490
+So they're not really meant for us to look at at all.
+
+01:32.490 --> 01:34.530
+They're meant to be small.
+
+01:34.530 --> 01:36.840
+But they store, those files store,
+
+01:36.840 --> 01:39.750
+all the Git history, all the commits,
+
+01:39.750 --> 01:41.970
+all of the files and their information,
+
+01:41.970 --> 01:43.860
+the contents of files.
+
+01:43.860 --> 01:46.740
+Git stores full snapshots.
+
+01:46.740 --> 01:50.760
+It does not store Diffs or changes
+
+01:50.760 --> 01:53.310
+like a Delta between two commits.
+
+01:53.310 --> 01:57.150
+It stores full complete snapshots, which is somewhat unique.
+
+01:57.150 --> 01:58.650
+So we'll talk about that.
+
+01:58.650 --> 01:59.940
+But inside of this folder,
+
+01:59.940 --> 02:03.480
+there are really four different types of basic Git objects,
+
+02:03.480 --> 02:04.440
+and this is what we're gonna spend
+
+02:04.440 --> 02:06.840
+a lot of time talking about in the next few videos.
+
+02:06.840 --> 02:09.750
+Those four types are commits, trees,
+
+02:09.750 --> 02:12.660
+blobs, and annotated tags.
+
+02:12.660 --> 02:14.580
+So these are four different things
+
+02:14.580 --> 02:16.980
+that are stored in this Objects directory.
+
+02:16.980 --> 02:18.960
+Really the core of Git.
+
+02:18.960 --> 02:21.390
+They're all going to be hashed.
+
+02:21.390 --> 02:23.550
+We've seen the commit hashes before,
+
+02:23.550 --> 02:25.320
+those long, crazy strings.
+
+02:25.320 --> 02:27.420
+We're going to learn a lot more about those
+
+02:27.420 --> 02:29.340
+in the next couple of videos.
+
+02:29.340 --> 02:30.990
+So where does this come from?
+
+02:30.990 --> 02:32.640
+What does this mean?
+
+02:32.640 --> 02:35.670
+Not the contents, but what do these file names mean,
+
+02:35.670 --> 02:37.020
+and these folder names?
+
+02:37.020 --> 02:39.600
+Those are mysteries that will hopefully be explained soon,
+
+02:39.600 --> 02:41.370
+if I do my job.
+
+02:41.370 --> 02:42.840
+I just wanted to introduce that folder.
+
+02:42.840 --> 02:44.730
+So there it is, the Objects directory.
+
+02:44.730 --> 02:47.940
+It contains all the data in a repository.
+
+02:47.940 --> 02:49.290
+So in the next video,
+
+02:49.290 --> 02:51.513
+we're gonna start by talking about hashing.
