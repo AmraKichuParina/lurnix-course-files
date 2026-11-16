@@ -1,0 +1,349 @@
+WEBVTT
+
+00:00.120 --> 00:01.020
+Presenter: In this video,
+
+00:01.020 --> 00:02.880
+we'll continue to make some more branches
+
+00:02.880 --> 00:04.860
+and I'm also gonna show you another way,
+
+00:04.860 --> 00:07.740
+another command we can use to make and switch to a branch.
+
+00:07.740 --> 00:09.720
+But first, I wanna pay special attention
+
+00:09.720 --> 00:12.570
+to this part of the first paragraph here.
+
+00:12.570 --> 00:15.210
+Use git branch with a branch-name to make a new branch
+
+00:15.210 --> 00:17.640
+based upon the current HEAD.
+
+00:17.640 --> 00:19.620
+That part is super important.
+
+00:19.620 --> 00:22.260
+It tells us that where we are,
+
+00:22.260 --> 00:25.050
+what HEAD is, when we create a branch
+
+00:25.050 --> 00:27.390
+impacts the branch that we create.
+
+00:27.390 --> 00:30.210
+So the location, the current branch we're on
+
+00:30.210 --> 00:32.520
+when we branch is very, very important
+
+00:32.520 --> 00:34.560
+and makes a huge difference.
+
+00:34.560 --> 00:37.750
+So for example, here I've got my road trip playlist.
+
+00:37.750 --> 00:39.120
+I don't wanna call it an app
+
+00:39.120 --> 00:41.670
+but our repo just from the previous video
+
+00:41.670 --> 00:44.070
+and I'm currently on the oldies branch.
+
+00:44.070 --> 00:48.120
+I type git log, I have the commits from master these two.
+
+00:48.120 --> 00:51.630
+And then I have the new commit I added on the oldies branch.
+
+00:51.630 --> 00:52.463
+So I'm gonna add
+
+00:52.463 --> 00:56.070
+how about two more songs, George Harrison songs.
+
+00:56.070 --> 00:57.390
+Okay, My Sweet Lord.
+
+00:57.390 --> 00:59.520
+And What is Life by George Harrison.
+
+00:59.520 --> 01:00.818
+And I'm gonna add and commit those
+
+01:00.818 --> 01:02.850
+and I'm actually gonna do it in a different way.
+
+01:02.850 --> 01:07.020
+I haven't showed you -a -m is basically
+
+01:07.020 --> 01:10.680
+a one line way of adding all on stage changes.
+
+01:10.680 --> 01:13.260
+So git commit -a instead of add
+
+01:13.260 --> 01:16.149
+and then commit and then I'll provide my message.
+
+01:16.149 --> 01:20.340
+Just add two George Harrison songs.
+
+01:20.340 --> 01:21.173
+All right?
+
+01:21.173 --> 01:22.560
+So now, I have another commit
+
+01:22.560 --> 01:24.930
+that I've added to the oldies branch.
+
+01:24.930 --> 01:28.350
+So if I branch right now and make a new branch,
+
+01:28.350 --> 01:31.590
+let's say I make a George's branch, I wanna make, yeah,
+
+01:31.590 --> 01:35.640
+I guess a playlist that only includes songs by George's.
+
+01:35.640 --> 01:36.473
+I can do that.
+
+01:36.473 --> 01:39.270
+I'll branch from the oldies branch.
+
+01:39.270 --> 01:41.040
+That's where I am right now.
+
+01:41.040 --> 01:45.397
+So I can do git branch georges, okay?
+
+01:45.397 --> 01:47.850
+So I made that branch.
+
+01:47.850 --> 01:50.790
+Of course I'm still on oldies, I haven't switched over.
+
+01:50.790 --> 01:54.570
+But if we look at git log, we see that both oldies
+
+01:54.570 --> 01:57.870
+and my new branch georges, they are both referring
+
+01:57.870 --> 01:59.130
+to the same commit.
+
+01:59.130 --> 02:02.730
+They're at the same spot, the same page has been bookmarked
+
+02:02.730 --> 02:04.320
+with two different bookmarks.
+
+02:04.320 --> 02:07.350
+HEAD is currently pointing to oldies, but if I wanna switch
+
+02:07.350 --> 02:09.720
+to George's and and make a commit on George's,
+
+02:09.720 --> 02:11.340
+of course they will diverge.
+
+02:11.340 --> 02:16.340
+So if I switch over, git switch to georges, we go git log.
+
+02:17.610 --> 02:20.190
+Only thing that has changed here is that HEAD now points
+
+02:20.190 --> 02:23.690
+to georges and I have all those commits
+
+02:23.690 --> 02:27.300
+from the earlier Old East branch on georges.
+
+02:27.300 --> 02:29.190
+So now, I can do a bit more work.
+
+02:29.190 --> 02:33.000
+I'll add what's another, I'll add two George Michael songs.
+
+02:33.000 --> 02:34.710
+Okay, so there we go.
+
+02:34.710 --> 02:37.380
+Careless Whisper and Faith by George Michael.
+
+02:37.380 --> 02:39.240
+I'll just add and commit them.
+
+02:39.240 --> 02:44.240
+Do the same thing, -a -m "add two, George Michael songs.
+
+02:45.660 --> 02:48.960
+And this of course only goes on the George's branch.
+
+02:48.960 --> 02:51.000
+That's the branch I'm currently on.
+
+02:51.000 --> 02:54.780
+So now, if I type git log, what do we expect to see?
+
+02:54.780 --> 02:57.030
+HEAD refers to georges
+
+02:57.030 --> 03:00.421
+because I'm on the georges branch and I have this one commit
+
+03:00.421 --> 03:03.210
+that only exists on the georges branch
+
+03:03.210 --> 03:06.791
+and the oldies branch was left in the dust back here, right?
+
+03:06.791 --> 03:09.057
+So I could switch back to oldies,
+
+03:09.057 --> 03:13.620
+git switch oldies and we see we lose those two songs.
+
+03:13.620 --> 03:15.840
+Also, you know, I actually left
+
+03:15.840 --> 03:18.077
+in those ABBA songs so I should switch back
+
+03:18.077 --> 03:22.590
+to georges and I wanna delete those ABBA songs
+
+03:22.590 --> 03:24.630
+because they're not created by georges
+
+03:24.630 --> 03:27.642
+and unfortunately, we're only allowing georges here.
+
+03:27.642 --> 03:30.120
+So now, I'll do another git add
+
+03:30.120 --> 03:32.250
+and git commits or just the short version.
+
+03:32.250 --> 03:34.927
+I'm on the georges branch so don't forget that.
+
+03:34.927 --> 03:38.577
+"remove two ABBA songs."
+
+03:39.420 --> 03:42.150
+Alright, so now git log.
+
+03:42.150 --> 03:45.450
+I have these two new commits on the georges branch
+
+03:45.450 --> 03:48.660
+that I'm currently on, plus all the other commits
+
+03:48.660 --> 03:52.650
+from the oldies branch at that moment in time when I split.
+
+03:52.650 --> 03:53.940
+So just at that moment in time
+
+03:53.940 --> 03:58.290
+if I do more work on oldies, it does not impact georges.
+
+03:58.290 --> 04:02.850
+Okay, so now I go back to oldies, git switch oldies
+
+04:02.850 --> 04:06.803
+and we see ABBA is back and we don't have George Michael.
+
+04:06.803 --> 04:11.100
+If I go back to master, almost everything's gone.
+
+04:11.100 --> 04:12.540
+We just have ABBA.
+
+04:12.540 --> 04:14.310
+So if I make one more branch from here
+
+04:14.310 --> 04:18.480
+just as a quick demo, it's going to be based upon master.
+
+04:18.480 --> 04:19.830
+That's where I currently am.
+
+04:19.830 --> 04:22.320
+So I know I'm beating this dead horse a lot
+
+04:22.320 --> 04:24.630
+but it's really important where you branch from matters.
+
+04:24.630 --> 04:26.622
+And if I make a new branch, git branch
+
+04:26.622 --> 04:28.470
+what should this one be?
+
+04:28.470 --> 04:30.720
+How about just an empty playlist?
+
+04:30.720 --> 04:32.730
+git branch emptyplaylist.
+
+04:34.340 --> 04:37.950
+Okay, I now have this branch referring
+
+04:37.950 --> 04:40.380
+to the same spot as master
+
+04:40.380 --> 04:42.930
+and now I'll switch over, git switch emptyplaylist.
+
+04:45.210 --> 04:46.140
+And here we are.
+
+04:46.140 --> 04:49.053
+So now, I can delete everything if I wanted to.
+
+04:50.160 --> 04:53.557
+git commit dash -a -m
+
+04:53.557 --> 04:57.690
+"empty out playlist and there we go.
+
+04:57.690 --> 05:00.360
+If I look at the git log, I only have three commits,
+
+05:00.360 --> 05:03.000
+the two from master and then the one new one.
+
+05:03.000 --> 05:05.490
+Anyway, this has been a long demonstration but
+
+05:05.490 --> 05:09.900
+I just wanted to show, it does matter where you branch from.
+
+05:09.900 --> 05:14.310
+So we go back to master if I whoops, I get switch master.
+
+05:14.310 --> 05:15.570
+Okay, we have ABBA.
+
+05:15.570 --> 05:20.570
+If I go back to georges, git switch georges, there we are.
+
+05:20.700 --> 05:24.450
+And if I get switch back to empty playlist,
+
+05:24.450 --> 05:25.775
+that's all we've got.
+
+05:25.775 --> 05:26.793
+Okay.
