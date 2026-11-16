@@ -1,0 +1,676 @@
+WEBVTT
+
+00:00.120 --> 00:02.040
+Instructor: All right, so I'm now gonna explain,
+
+00:02.040 --> 00:05.163
+wow, I just realized this says Gitub pages.
+
+00:06.060 --> 00:07.680
+That's annoying.
+
+00:07.680 --> 00:09.900
+Well, I'm now going to explain
+
+00:09.900 --> 00:13.800
+and demonstrate creating a GitHub pages hosted website
+
+00:13.800 --> 00:15.990
+for a simple repository.
+
+00:15.990 --> 00:18.180
+The first step is to make a repository
+
+00:18.180 --> 00:19.800
+or pick some repository
+
+00:19.800 --> 00:23.280
+that we want to create a GitHub page for.
+
+00:23.280 --> 00:25.560
+So I'm just gonna make a new repository quickly.
+
+00:25.560 --> 00:27.360
+I'm gonna call this one chickens.
+
+00:27.360 --> 00:28.650
+It'll be public.
+
+00:28.650 --> 00:30.840
+I'm not gonna put anything in there to begin with.
+
+00:30.840 --> 00:32.700
+And then locally on my machine,
+
+00:32.700 --> 00:36.570
+I don't yet have a repository, so I'm going to init.
+
+00:36.570 --> 00:39.000
+And let's say that this repository is a list
+
+00:39.000 --> 00:42.240
+of chicken breeds or chicken names or something.
+
+00:42.240 --> 00:45.270
+So I've got this chickens.txt file I just created.
+
+00:45.270 --> 00:46.620
+We'll add a commit.
+
+00:46.620 --> 00:49.560
+So git add chickens, git commit,
+
+00:49.560 --> 00:50.580
+you know, "initial commit,"
+
+00:50.580 --> 00:53.310
+nothing crazy, nothing to do with the website yet.
+
+00:53.310 --> 00:55.530
+I'll add some chickens into that list.
+
+00:55.530 --> 01:00.450
+Let's see, we've got Australorps and Barnvelders.
+
+01:00.450 --> 01:03.210
+I'm just copying and pasting some of these,
+
+01:03.210 --> 01:04.830
+so I'm just gonna put some chickens in there.
+
+01:04.830 --> 01:07.110
+It really doesn't matter.
+
+01:07.110 --> 01:10.500
+Whatever the content of this is, it's not a website.
+
+01:10.500 --> 01:11.790
+And that's what I wanna show you is
+
+01:11.790 --> 01:15.570
+that I can have some completely standalone project
+
+01:15.570 --> 01:17.220
+that is not a website.
+
+01:17.220 --> 01:18.360
+Then I can create a branch
+
+01:18.360 --> 01:20.610
+where I build out a GitHub pages website.
+
+01:20.610 --> 01:23.520
+So this will be our basic project, our starting point.
+
+01:23.520 --> 01:25.767
+I'll go ahead and add and commit,
+
+01:25.767 --> 01:30.240
+"add," I don't know, "some chicken breeds."
+
+01:30.240 --> 01:32.970
+All right, and then I want to get this up on GitHub.
+
+01:32.970 --> 01:35.430
+So I guess we'll rename to main
+
+01:35.430 --> 01:37.290
+just to follow what GitHub wants,
+
+01:37.290 --> 01:38.700
+it is optional of course.
+
+01:38.700 --> 01:41.040
+And then I will add my remote.
+
+01:41.040 --> 01:43.620
+So I'm just gonna rename master to main
+
+01:43.620 --> 01:45.123
+then I'll add my remote,
+
+01:46.350 --> 01:48.000
+and then I'll just push up,
+
+01:48.000 --> 01:49.740
+literally just copying and pasting,
+
+01:49.740 --> 01:51.660
+I'll push up what we've done.
+
+01:51.660 --> 01:54.210
+All right, so now we have
+
+01:54.210 --> 01:57.600
+if I refresh one more time, we have some workup here.
+
+01:57.600 --> 02:00.180
+Very simple, but imagine it's some complicated repository
+
+02:00.180 --> 02:02.760
+like that Faker project I showed you.
+
+02:02.760 --> 02:05.790
+Now if I wanna set up a GitHub page's website,
+
+02:05.790 --> 02:09.120
+all that I have to do is select some branch
+
+02:09.120 --> 02:13.500
+that I'm gonna tell GitHub contains a website
+
+02:13.500 --> 02:14.910
+and specifically it's gonna look
+
+02:14.910 --> 02:18.390
+for a file called index.html.
+
+02:18.390 --> 02:20.610
+So I don't have that on here at all right now,
+
+02:20.610 --> 02:23.430
+but if I did, I go to Settings,
+
+02:23.430 --> 02:26.850
+and then scroll all the way down to this,
+
+02:26.850 --> 02:28.950
+almost to the bottom right above the Danger Zone,
+
+02:28.950 --> 02:30.390
+GitHub pages.
+
+02:30.390 --> 02:32.010
+GitHub pages is currently disabled.
+
+02:32.010 --> 02:34.020
+Select a source below to enable it.
+
+02:34.020 --> 02:37.320
+And I have to pick a branch, so I'm not gonna select main
+
+02:37.320 --> 02:40.710
+because currently there's no HTML file,
+
+02:40.710 --> 02:43.080
+no index.html on the main branch.
+
+02:43.080 --> 02:44.520
+But also I want to demonstrate
+
+02:44.520 --> 02:46.680
+that you can have some project
+
+02:46.680 --> 02:49.170
+on the main branch and have no website.
+
+02:49.170 --> 02:51.960
+And then on a separate branch set up a website.
+
+02:51.960 --> 02:53.220
+So that's what I'm gonna do.
+
+02:53.220 --> 02:54.873
+I'm gonna make a new branch here,
+
+02:55.710 --> 02:57.570
+git switch -c,
+
+02:57.570 --> 03:01.140
+and I'll just call this one gh-pages.
+
+03:01.140 --> 03:02.703
+You don't have to name it that.
+
+03:03.810 --> 03:05.790
+actually I think in the past you did,
+
+03:05.790 --> 03:06.623
+now you can make
+
+03:06.623 --> 03:09.540
+any branch you want the designated GitHub pages branch.
+
+03:09.540 --> 03:11.100
+So you don't need that.
+
+03:11.100 --> 03:13.300
+And now I'm gonna make an index.html
+
+03:14.430 --> 03:17.523
+and I might even delete that chickens file.
+
+03:19.590 --> 03:21.360
+Oops, git status.
+
+03:21.360 --> 03:23.280
+And then I'm gonna add those changes.
+
+03:23.280 --> 03:26.943
+I'll commit and just say add index.html.
+
+03:28.380 --> 03:31.470
+Okay, so now I have this HTML file
+
+03:31.470 --> 03:33.363
+and it does need to be called index.
+
+03:34.200 --> 03:37.590
+And if you don't know HTML, that's not a huge deal.
+
+03:37.590 --> 03:39.390
+But basically I'm just gonna fill
+
+03:39.390 --> 03:42.870
+out some very simple HTML in here.
+
+03:42.870 --> 03:47.870
+Maybe I'll just put a heading Chickens! like that.
+
+03:47.940 --> 03:51.540
+And then, I don't know, I guess that's probably it.
+
+03:51.540 --> 03:55.140
+Maybe a paragraph that has some Lorem ipsum text.
+
+03:55.140 --> 03:57.450
+So imagine that this is my website
+
+03:57.450 --> 04:01.080
+that I want to host using GitHub pages.
+
+04:01.080 --> 04:04.020
+All right, so that's what it looks like.
+
+04:04.020 --> 04:05.340
+index.html.
+
+04:05.340 --> 04:07.770
+I'm now going to add and commit,
+
+04:07.770 --> 04:11.913
+git add index, git commit, I'm on this branch GitHub pages,
+
+04:13.050 --> 04:14.430
+git commit -m,
+
+04:14.430 --> 04:16.113
+and what should I do here,
+
+04:16.980 --> 04:19.083
+write add basic html.
+
+04:21.030 --> 04:23.430
+Cool, so now I'm gonna push this branch up,
+
+04:23.430 --> 04:26.553
+git push origin and then gh-pages.
+
+04:28.260 --> 04:30.360
+So now I should have two branches up here.
+
+04:30.360 --> 04:33.960
+One that is my very complicated, just use your imagination,
+
+04:33.960 --> 04:36.840
+very complicated repository, big project,
+
+04:36.840 --> 04:38.970
+I don't know what it is a Python project or something,
+
+04:38.970 --> 04:40.830
+a open source library.
+
+04:40.830 --> 04:45.720
+And then the second branch contains a lovely website.
+
+04:45.720 --> 04:47.460
+It's not hosted anywhere yet,
+
+04:47.460 --> 04:50.820
+but it is a single HTML file.
+
+04:50.820 --> 04:54.540
+So all I need to do now is go into Settings,
+
+04:54.540 --> 04:55.860
+and tell GitHub pages
+
+04:55.860 --> 05:00.030
+or tell GitHub that I want to use GitHub pages
+
+05:00.030 --> 05:02.040
+on the branch gh-pages,
+
+05:02.040 --> 05:05.340
+and I believe it automatically detected that name.
+
+05:05.340 --> 05:08.937
+So that's kind of the conventional name a lot of people use
+
+05:08.937 --> 05:11.820
+and it looks like it's set up to automatically detect that.
+
+05:11.820 --> 05:13.440
+But I wanna be very clear,
+
+05:13.440 --> 05:15.210
+you can name that branch anything.
+
+05:15.210 --> 05:17.640
+I could make it the main branch that is hosted,
+
+05:17.640 --> 05:20.100
+but I'm gonna go with gh-pages.
+
+05:20.100 --> 05:22.980
+And then it asks me to select a folder,
+
+05:22.980 --> 05:26.490
+where it will find the index.html file.
+
+05:26.490 --> 05:28.950
+And ours is just in the root of the repository.
+
+05:28.950 --> 05:31.470
+The other place you can do is a docs folder,
+
+05:31.470 --> 05:32.310
+but we just want it,
+
+05:32.310 --> 05:34.500
+or at least the way I have it right now,
+
+05:34.500 --> 05:37.350
+it's just index in the root of the repository.
+
+05:37.350 --> 05:39.330
+So that's good.
+
+05:39.330 --> 05:40.290
+That's all we need.
+
+05:40.290 --> 05:42.060
+This is how you can set up a custom domain.
+
+05:42.060 --> 05:43.320
+We're not gonna do that
+
+05:43.320 --> 05:45.450
+but here it shows me your site is ready
+
+05:45.450 --> 05:48.480
+to be published at colt.github.io
+
+05:48.480 --> 05:53.250
+slash the name of my repository, which is chickens.
+
+05:53.250 --> 05:55.410
+So it often takes a little while,
+
+05:55.410 --> 05:57.780
+especially in the first, well, nope, I'm wrong,
+
+05:57.780 --> 05:58.863
+it's already up here,
+
+05:59.790 --> 06:01.920
+but sometimes it can take a couple of minutes.
+
+06:01.920 --> 06:04.410
+But here's my hosted website, right?
+
+06:04.410 --> 06:07.950
+It's not beautiful, but colt.github.io/chickens.
+
+06:07.950 --> 06:09.240
+You could go to this right now
+
+06:09.240 --> 06:11.130
+and I'm actually gonna change this a bit.
+
+06:11.130 --> 06:14.160
+So you won't see this, but you'll see the website,
+
+06:14.160 --> 06:16.830
+and then I can continue to make changes
+
+06:16.830 --> 06:18.420
+to my other branches, right?
+
+06:18.420 --> 06:21.780
+I can build out the rest of this main branch
+
+06:21.780 --> 06:23.130
+and have a whole bunch of changes
+
+06:23.130 --> 06:24.750
+and files and collaborators.
+
+06:24.750 --> 06:27.570
+But then separately decide that I wanna update the website.
+
+06:27.570 --> 06:31.530
+All I do is push new code up to GitHub pages, gh-pages.
+
+06:31.530 --> 06:33.240
+That's the name of the branch.
+
+06:33.240 --> 06:34.073
+So that's what I'm gonna do.
+
+06:34.073 --> 06:37.980
+I'm actually gonna update this HTML file a little bit
+
+06:37.980 --> 06:39.750
+and make it somewhat nicer.
+
+06:39.750 --> 06:44.070
+Here's a CodePen that I found by this guy, Cesar C.,
+
+06:44.070 --> 06:48.690
+and I want to use this text, this animated SVG.
+
+06:48.690 --> 06:52.050
+So I'm just gonna basically adapt this.
+
+06:52.050 --> 06:53.643
+I'm gonna say chickens instead.
+
+06:55.020 --> 06:59.340
+And then I'm going to copy the corresponding HTML and CSS.
+
+06:59.340 --> 07:02.400
+This is actually written with something called Pug.
+
+07:02.400 --> 07:04.710
+I want the compiled HTML.
+
+07:04.710 --> 07:06.570
+This really has nothing to do with GitHub pages.
+
+07:06.570 --> 07:09.180
+But anyway, I'm gonna copy this,
+
+07:09.180 --> 07:11.253
+and put it in my HTML file.
+
+07:12.120 --> 07:14.613
+I'll get rid of everything else in the body,
+
+07:15.450 --> 07:19.083
+and then I'm going to look at the compiled CSS,
+
+07:19.980 --> 07:21.600
+copy all of that,
+
+07:21.600 --> 07:23.283
+and I'm gonna make a CSS file,
+
+07:24.150 --> 07:26.043
+I'll call it app.css,
+
+07:28.200 --> 07:29.913
+and put all of this in there.
+
+07:30.780 --> 07:35.343
+All right, and now I need to link to that CSS file,
+
+07:36.300 --> 07:39.330
+app.css, that's the name of that file.
+
+07:39.330 --> 07:42.270
+Great, and then I'm just gonna add and commit that.
+
+07:42.270 --> 07:44.490
+So git add app.css,
+
+07:44.490 --> 07:46.323
+I'll just do an add dot I guess,
+
+07:47.280 --> 07:49.593
+and then git commit -m,
+
+07:50.580 --> 07:54.423
+I don't know, add animated text to index.
+
+07:55.350 --> 07:57.900
+All right, so I'm on the GitHub pages branch still.
+
+07:57.900 --> 08:02.130
+So git push origin gh-pages.
+
+08:02.130 --> 08:06.450
+So I've modified my website, the index.html file,
+
+08:06.450 --> 08:08.580
+on this branch, I push that branch up,
+
+08:08.580 --> 08:11.550
+we go back, and just make sure that code is now here.
+
+08:11.550 --> 08:13.530
+If I look at that branch, right,
+
+08:13.530 --> 08:17.190
+we have app.css and our new version of index.
+
+08:17.190 --> 08:21.120
+And then if I go to the URL where it's currently served,
+
+08:21.120 --> 08:24.990
+colt, my username, .github.io/chickens.
+
+08:24.990 --> 08:27.300
+I refresh, it happened quickly.
+
+08:27.300 --> 08:29.730
+I recorded this video earlier today
+
+08:29.730 --> 08:30.563
+and had to throw it away,
+
+08:30.563 --> 08:32.280
+It was taking like 20 minutes to update,
+
+08:32.280 --> 08:34.830
+but this time I got lucky.
+
+08:34.830 --> 08:36.750
+And this is our hosted webpage.
+
+08:36.750 --> 08:37.860
+I will leave it as this.
+
+08:37.860 --> 08:40.200
+You could go to this URL yourself and view it.
+
+08:40.200 --> 08:42.120
+I'm not paying to host this, right?
+
+08:42.120 --> 08:43.710
+GitHub is doing it for free.
+
+08:43.710 --> 08:47.820
+Again, that doesn't necessarily mean you should use it
+
+08:47.820 --> 08:51.900
+for important projects or things with high stakes,
+
+08:51.900 --> 08:55.699
+but for portfolios or for personal websites,
+
+08:55.699 --> 08:58.860
+for documentation, for small projects,
+
+08:58.860 --> 09:00.810
+to just to demonstrate a project,
+
+09:00.810 --> 09:03.120
+GitHub pages is a great resource.
+
+09:03.120 --> 09:06.180
+So all you do, again, is for a project,
+
+09:06.180 --> 09:09.150
+make some branch or it could be your main branch,
+
+09:09.150 --> 09:12.300
+and then go into Settings and designate that branch
+
+09:12.300 --> 09:14.130
+as the GitHub pages branch.
+
+09:14.130 --> 09:16.200
+So I could change this over to be main,
+
+09:16.200 --> 09:18.180
+but there's no index.html there.
+
+09:18.180 --> 09:19.890
+So we won't actually see a webpage.
+
+09:19.890 --> 09:22.740
+But if I did, if I had an index on main,
+
+09:22.740 --> 09:26.400
+I could serve that instead, and I would see it here.
+
+09:26.400 --> 09:27.780
+So I push up my code,
+
+09:27.780 --> 09:30.930
+push up changes to that branch up to my GitHub repo,
+
+09:30.930 --> 09:33.540
+and then wait a moment, refresh.
+
+09:33.540 --> 09:34.650
+It might be more than a moment
+
+09:34.650 --> 09:36.810
+but a couple of minutes hopefully at most.
+
+09:36.810 --> 09:39.450
+And I'll see those changes reflected here.
+
+09:39.450 --> 09:42.510
+So that is GitHub pages a really, really nice resource.
+
+09:42.510 --> 09:45.090
+It's free and pretty simple to use compared
+
+09:45.090 --> 09:46.830
+to a lot of hosting services.
+
+09:46.830 --> 09:49.740
+But again, remember, it is limited to static sites.
+
+09:49.740 --> 09:51.900
+This is not a full-fledged hosting service
+
+09:51.900 --> 09:54.180
+for full web applications with backends,
+
+09:54.180 --> 09:56.080
+but still we are very thankful for it.
