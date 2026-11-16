@@ -1,0 +1,301 @@
+WEBVTT
+
+00:00.120 --> 00:02.280
+Instructor: This is going to be a very quick video.
+
+00:02.280 --> 00:03.780
+I just need to explain one thing
+
+00:03.780 --> 00:04.978
+that we haven't run into yet.
+
+00:04.978 --> 00:07.830
+If I'm on a branch and I have some work
+
+00:07.830 --> 00:09.870
+that is not currently committed,
+
+00:09.870 --> 00:11.820
+so let's go to the oldies branch,
+
+00:11.820 --> 00:15.460
+git switch oldies, and I'll do some work here.
+
+00:15.460 --> 00:18.837
+I'll add two Van Morrison songs, great songs,
+
+00:18.837 --> 00:20.700
+and it's "Stoned Me" and "Caravan."
+
+00:20.700 --> 00:24.570
+So I'll save those two, but I'm not gonna add any commits.
+
+00:24.570 --> 00:26.760
+So over here I see git status,
+
+00:26.760 --> 00:29.550
+I modified that, I have changes that are not staged.
+
+00:29.550 --> 00:32.880
+There's work on this branch that has not been committed.
+
+00:32.880 --> 00:34.844
+If I try and switch branches right now,
+
+00:34.844 --> 00:36.450
+let's see what happens.
+
+00:36.450 --> 00:38.310
+Let's go back to the,
+
+00:38.310 --> 00:43.083
+how about our empty playlist, git switch empty playlist,
+
+00:44.310 --> 00:45.930
+and what does it say?
+
+00:45.930 --> 00:46.920
+I get an error.
+
+00:46.920 --> 00:48.840
+Your local changes to the following files
+
+00:48.840 --> 00:50.850
+would be overwritten by checkout.
+
+00:50.850 --> 00:52.500
+Playlist dot txt.
+
+00:52.500 --> 00:55.170
+It's telling me that the work I have done right now
+
+00:55.170 --> 00:57.780
+that I have not yet committed, which is right here,
+
+00:57.780 --> 00:59.910
+if I try and switch to a different branch
+
+00:59.910 --> 01:02.369
+it's gonna be lost because it's not committed.
+
+01:02.369 --> 01:04.200
+This branch doesn't know about it.
+
+01:04.200 --> 01:06.210
+There's not gonna be a bookmark for it
+
+01:06.210 --> 01:09.690
+in the really large book before we change pages.
+
+01:09.690 --> 01:13.363
+So it says, "Please commit your changes or stash them."
+
+01:13.363 --> 01:15.296
+We will learn more about stashing
+
+01:15.296 --> 01:17.610
+in just a couple of sections from now.
+
+01:17.610 --> 01:19.080
+So for now, that's not an option.
+
+01:19.080 --> 01:21.420
+For now, our only option is to commit our work
+
+01:21.420 --> 01:24.630
+or just delete it I guess, and not make those changes.
+
+01:24.630 --> 01:29.280
+So I am gonna commit that, git add playlist,
+
+01:29.280 --> 01:33.513
+git commit, dash m, add two Van Morrison songs.
+
+01:35.716 --> 01:37.194
+Just like that.
+
+01:37.194 --> 01:39.240
+And now I can switch.
+
+01:39.240 --> 01:42.330
+So I can do the same command to switch to empty playlist.
+
+01:42.330 --> 01:43.470
+No complaints.
+
+01:43.470 --> 01:45.360
+So if you run into an issue like this,
+
+01:45.360 --> 01:47.760
+hopefully you understand why now Git is warning you
+
+01:47.760 --> 01:49.500
+you're going to lose those changes.
+
+01:49.500 --> 01:50.760
+You either need to stash them,
+
+01:50.760 --> 01:53.010
+which we haven't learned, or commit them.
+
+01:53.010 --> 01:54.585
+Now the last example I showed you,
+
+01:54.585 --> 01:57.930
+we had changes that were in conflict,
+
+01:57.930 --> 01:59.700
+right when I tried to switch branches,
+
+01:59.700 --> 02:03.330
+we were working on the same file, this playlist file
+
+02:03.330 --> 02:05.520
+and they were in conflict.
+
+02:05.520 --> 02:06.727
+And so Git yelled at me and said,
+
+02:06.727 --> 02:08.100
+"Hey, I don't know what to do."
+
+02:08.100 --> 02:10.620
+We'll learn more about conflicts when we get to merging
+
+02:10.620 --> 02:13.230
+but sometimes that's not an issue at all.
+
+02:13.230 --> 02:15.415
+So if I make a new file, for example,
+
+02:15.415 --> 02:19.470
+I'm on the oldies branch, lemme make a new branch here,
+
+02:19.470 --> 02:22.110
+git switch dash C,
+
+02:22.110 --> 02:26.050
+and this branch will be, I don't know, how about chicken?
+
+02:27.761 --> 02:29.430
+I'm gonna delete it.
+
+02:29.430 --> 02:31.170
+A chicken branch, okay?
+
+02:31.170 --> 02:32.460
+And on this chicken branch,
+
+02:32.460 --> 02:36.600
+I'm gonna make a new file entirely called chickens dot txt.
+
+02:36.600 --> 02:38.220
+And I'll put some of my chickens in here,
+
+02:38.220 --> 02:40.320
+like Stevie Chicks.
+
+02:40.320 --> 02:42.856
+Okay, so I have this new file no other branch has
+
+02:42.856 --> 02:45.954
+but I haven't added or committed that file.
+
+02:45.954 --> 02:49.740
+And so now if I switch again, let's go back to oldies.
+
+02:49.740 --> 02:51.199
+Git switch oldies.
+
+02:51.199 --> 02:53.518
+Previously at the beginning of this video
+
+02:53.518 --> 02:57.570
+we saw that Git yelled at me when I tried to switch
+
+02:57.570 --> 02:58.403
+and it says,
+
+02:58.403 --> 02:59.688
+"You can't switch.
+
+02:59.688 --> 03:00.810
+You have changes that are gonna be overwritten
+
+03:00.810 --> 03:02.100
+that are in conflict.
+
+03:02.100 --> 03:03.150
+We don't know what to do.
+
+03:03.150 --> 03:04.770
+Please stash or commit them."
+
+03:04.770 --> 03:06.120
+But this is going to be different
+
+03:06.120 --> 03:08.430
+because no other branch has this file.
+
+03:08.430 --> 03:11.387
+There's no way that it's in conflict with anything.
+
+03:11.387 --> 03:14.250
+So what actually will happen is this file
+
+03:14.250 --> 03:16.020
+is gonna come with me.
+
+03:16.020 --> 03:19.980
+I'm now on the oldies branch and I still have chickens.
+
+03:19.980 --> 03:20.813
+Do you see that?
+
+03:20.813 --> 03:22.080
+The file's still there.
+
+03:22.080 --> 03:23.947
+And it came with me and it still says,
+
+03:23.947 --> 03:25.356
+"Hey, there's this untracked file.
+
+03:25.356 --> 03:27.240
+You haven't made a commit with it anywhere.
+
+03:27.240 --> 03:29.484
+It's just gonna follow you to every branch you go to."
+
+03:29.484 --> 03:33.990
+So for now, I'm just gonna recommend we always add
+
+03:33.990 --> 03:36.720
+and commit changes before we switch branches
+
+03:36.720 --> 03:38.040
+so that we can avoid this.
+
+03:38.040 --> 03:39.150
+But of course, like I said,
+
+03:39.150 --> 03:41.880
+we're gonna learn how to stash changes very soon.
+
+03:41.880 --> 03:43.560
+First, we're gonna learn about merging
+
+03:43.560 --> 03:45.840
+but I just wanted to call your attention to this behavior.
+
+03:45.840 --> 03:48.120
+When you switch branches, sometimes,
+
+03:48.120 --> 03:51.900
+if you have unstaged changes, they will come with you.
+
+03:51.900 --> 03:54.630
+Other times if they're in conflict, Git will yell at you,
+
+03:54.630 --> 03:55.803
+so just know that.
