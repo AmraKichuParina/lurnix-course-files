@@ -1,0 +1,325 @@
+WEBVTT
+
+00:00.120 --> 00:00.953
+Instructor: Okay, so we saw
+
+00:00.953 --> 00:02.910
+that we can check out a particular commit
+
+00:02.910 --> 00:04.620
+using a commit hash,
+
+00:04.620 --> 00:06.180
+but there's another way in git
+
+00:06.180 --> 00:08.040
+that we can reference other commits.
+
+00:08.040 --> 00:11.010
+We can reference things based upon HEAD.
+
+00:11.010 --> 00:12.906
+The syntax is kind of, it's a little weird,
+
+00:12.906 --> 00:14.580
+but it looks like this:
+
+00:14.580 --> 00:16.470
+HEAD, and then a tilde,
+
+00:16.470 --> 00:18.510
+which is usually above the tab key
+
+00:18.510 --> 00:19.980
+and then a number.
+
+00:19.980 --> 00:23.070
+So HEAD, tilde one, is actually going to refer
+
+00:23.070 --> 00:25.980
+to whatever commit comes before HEAD.
+
+00:25.980 --> 00:27.900
+Think of it as HEAD minus one.
+
+00:27.900 --> 00:29.070
+HEAD tilde two,
+
+00:29.070 --> 00:31.770
+it's whatever comes two commits before HEAD,
+
+00:31.770 --> 00:33.900
+the grandparent commit.
+
+00:33.900 --> 00:35.670
+So if this is where HEAD is,
+
+00:35.670 --> 00:38.190
+if I check out HEAD tilde one,
+
+00:38.190 --> 00:39.840
+it's the previous commit.
+
+00:39.840 --> 00:43.560
+HEAD tilde two, it's this commit, three is this one.
+
+00:43.560 --> 00:45.180
+So I don't use this all that often,
+
+00:45.180 --> 00:48.113
+but sometimes, if you have a reason to reference
+
+00:48.113 --> 00:50.850
+what you did in the last commit
+
+00:50.850 --> 00:53.310
+and you don't want to go look up that commit hash,
+
+00:53.310 --> 00:57.240
+you can still very easily reference it with HEAD tilde one.
+
+00:57.240 --> 00:59.490
+So I'll show that very quickly.
+
+00:59.490 --> 01:00.720
+On our master branch,
+
+01:00.720 --> 01:01.953
+let's just take a look.
+
+01:03.990 --> 01:05.940
+So we've got begin chapter three,
+
+01:05.940 --> 01:07.350
+that's where we are right now.
+
+01:07.350 --> 01:09.390
+If I just wanna go back one commit,
+
+01:09.390 --> 01:12.090
+I could copy this, right?
+
+01:12.090 --> 01:13.680
+And then check that out
+
+01:13.680 --> 01:14.910
+or, I can do this.
+
+01:14.910 --> 01:19.910
+Git checkout HEAD tilde one, not 21, just one.
+
+01:22.050 --> 01:24.540
+And once again we're back to detached HEAD,
+
+01:24.540 --> 01:26.790
+because we checked out a particular commit.
+
+01:26.790 --> 01:29.375
+This is just a different way to reference that commit,
+
+01:29.375 --> 01:31.680
+we just said the previous commit,
+
+01:31.680 --> 01:32.700
+but it's still a commit.
+
+01:32.700 --> 01:33.960
+We're not on a branch.
+
+01:33.960 --> 01:35.220
+And we see that here:
+
+01:35.220 --> 01:37.620
+HEAD is now pointing to this commit:
+
+01:37.620 --> 01:39.690
+add headings to all files.
+
+01:39.690 --> 01:42.570
+So before, HEAD was pointing to master,
+
+01:42.570 --> 01:44.280
+which is still pointing to this commit.
+
+01:44.280 --> 01:45.930
+Now HEAD is one before
+
+01:45.930 --> 01:48.840
+and what we see in our file,
+
+01:48.840 --> 01:50.040
+we probably won't notice a whole lot,
+
+01:50.040 --> 01:51.600
+but there's no chapter three.
+
+01:51.600 --> 01:52.890
+That is the difference.
+
+01:52.890 --> 01:54.600
+Chapter one and chapter two are here,
+
+01:54.600 --> 01:57.840
+but chapter three was the next commit.
+
+01:57.840 --> 02:00.120
+It still exists on master of course.
+
+02:00.120 --> 02:03.360
+So from here, if I wanna go back one commit again,
+
+02:03.360 --> 02:05.220
+I can just do the same command:
+
+02:05.220 --> 02:08.070
+get checkout HEAD minus, or tilde, one;
+
+02:08.070 --> 02:10.320
+because HEAD is now right here,
+
+02:10.320 --> 02:12.843
+I can still reference one commit prior.
+
+02:14.100 --> 02:18.330
+Okay, and now we go back one, one further.
+
+02:18.330 --> 02:20.163
+So there we are, HEAD is now here.
+
+02:21.060 --> 02:21.893
+And we can see,
+
+02:21.893 --> 02:24.153
+we don't have those headings in my files anymore.
+
+02:24.990 --> 02:27.090
+Chapter two, chapter one,
+
+02:27.090 --> 02:29.490
+they used to have a heading up top.
+
+02:29.490 --> 02:31.020
+And that's kind of all I want to show.
+
+02:31.020 --> 02:33.450
+Of course, I'll switch back to master now.
+
+02:33.450 --> 02:34.953
+Git switch master.
+
+02:36.630 --> 02:38.040
+And now we have those headings back
+
+02:38.040 --> 02:40.260
+and we have chapter three back.
+
+02:40.260 --> 02:43.560
+So we're back up to date with the master branch reference.
+
+02:43.560 --> 02:45.660
+One other thing that we can do,
+
+02:45.660 --> 02:48.690
+to get back to the branch we were on.
+
+02:48.690 --> 02:51.120
+So, lemme try and explain that in a better way.
+
+02:51.120 --> 02:53.430
+If I check out some commit,
+
+02:53.430 --> 02:54.900
+I go into detached HEAD.
+
+02:54.900 --> 02:56.640
+Right now I'm on master, right?
+
+02:56.640 --> 03:00.120
+So if I check out HEAD tilde, I don't know.
+
+03:00.120 --> 03:01.773
+Let's go way back, like eight.
+
+03:03.210 --> 03:04.800
+We're way back here.
+
+03:04.800 --> 03:06.090
+This commit here.
+
+03:06.090 --> 03:08.850
+Okay, now if I wanna go back to where I was,
+
+03:08.850 --> 03:10.440
+I wanna leave detached HEAD.
+
+03:10.440 --> 03:11.910
+One option is to just remember
+
+03:11.910 --> 03:14.430
+what branch I was on, Master,
+
+03:14.430 --> 03:16.740
+and go back to Master, git switch Master.
+
+03:16.740 --> 03:19.530
+The other option is git switch with a dash
+
+03:19.530 --> 03:21.060
+and that will just take me back
+
+03:21.060 --> 03:23.580
+to whatever branch I was on last.
+
+03:23.580 --> 03:25.950
+And that happens to be master,
+
+03:25.950 --> 03:27.540
+but I could show a different example,
+
+03:27.540 --> 03:30.330
+we have this other branch,
+
+03:30.330 --> 03:31.410
+I already forgot the name.
+
+03:31.410 --> 03:32.243
+What is it?
+
+03:32.243 --> 03:33.720
+Chapter two, redo.
+
+03:33.720 --> 03:36.483
+If we check that out or switch to it, either one,
+
+03:37.440 --> 03:38.820
+okay, that's where I was.
+
+03:38.820 --> 03:41.970
+Now I'm gonna go back, git checkout HEAD,
+
+03:41.970 --> 03:44.940
+let's do tilde one.
+
+03:44.940 --> 03:46.590
+Okay, so I'm on this branch.
+
+03:46.590 --> 03:48.400
+I'm gonna go back one commit
+
+03:50.760 --> 03:53.340
+and now I just wanna leave detached HEAD.
+
+03:53.340 --> 03:54.690
+I don't remember what branch I was on,
+
+03:54.690 --> 03:56.460
+or I'm just lazy.
+
+03:56.460 --> 03:58.080
+I do git switch dash
+
+03:58.080 --> 04:00.510
+and it takes me back to where I left off.
+
+04:00.510 --> 04:02.210
+Okay, that's all I wanted to show.
