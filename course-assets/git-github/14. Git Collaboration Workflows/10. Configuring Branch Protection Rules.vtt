@@ -1,0 +1,565 @@
+WEBVTT
+
+00:00.150 --> 00:01.200
+Lecturer: So another thing we can do
+
+00:01.200 --> 00:03.990
+if we're working on a repository with collaborators
+
+00:03.990 --> 00:07.140
+is add in branch protection rules.
+
+00:07.140 --> 00:08.940
+So, if we go into Settings,
+
+00:08.940 --> 00:10.590
+assuming that you are somebody
+
+00:10.590 --> 00:12.210
+who has access to settings
+
+00:12.210 --> 00:13.320
+on the repository,
+
+00:13.320 --> 00:14.523
+under Branches,
+
+00:15.570 --> 00:16.620
+we have, first of all,
+
+00:16.620 --> 00:17.520
+the default branch,
+
+00:17.520 --> 00:18.720
+you can configure this.
+
+00:18.720 --> 00:20.070
+So, if you want to make it,
+
+00:20.070 --> 00:21.420
+something else, for example,
+
+00:21.420 --> 00:22.770
+if you have main and master
+
+00:22.770 --> 00:24.630
+and you realize you only want main,
+
+00:24.630 --> 00:25.530
+to be the default,
+
+00:25.530 --> 00:26.970
+well, I shouldn't say only,
+
+00:26.970 --> 00:28.620
+you can only have one default.
+
+00:28.620 --> 00:30.870
+So, if you want to switch that to main,
+
+00:30.870 --> 00:31.890
+then you could do that here,
+
+00:31.890 --> 00:34.170
+but we already have main as ours.
+
+00:34.170 --> 00:36.150
+Or, if we needed to change it in some way,
+
+00:36.150 --> 00:38.100
+you can change that default branch.
+
+00:38.100 --> 00:38.970
+But then down here,
+
+00:38.970 --> 00:41.220
+it says branch protection rules.
+
+00:41.220 --> 00:42.690
+Define branch protection rules
+
+00:42.690 --> 00:43.920
+to disable force pushing,
+
+00:43.920 --> 00:45.450
+prevent branches from being deleted,
+
+00:45.450 --> 00:48.600
+and optionally require status checks before merging.
+
+00:48.600 --> 00:50.880
+New to branch protection rules, learn more.
+
+00:50.880 --> 00:52.710
+So, we're going to add a rule.
+
+00:52.710 --> 00:54.420
+We're gonna protect our main branch.
+
+00:54.420 --> 00:55.253
+The first thing it asks
+
+00:55.253 --> 00:57.450
+is for a branch name pattern.
+
+00:57.450 --> 00:59.580
+Now, instead of just a branch name,
+
+00:59.580 --> 01:02.040
+it gives us the option of putting a pattern in here
+
+01:02.040 --> 01:04.200
+because on large projects,
+
+01:04.200 --> 01:06.870
+there may be thousands of branches
+
+01:06.870 --> 01:09.810
+that are pushed up or pull requests generated from.
+
+01:09.810 --> 01:13.260
+And the organization or the project enforces rules
+
+01:13.260 --> 01:14.240
+where they need to be something like,
+
+01:14.240 --> 01:19.240
+/feature/blah or /release,
+
+01:20.040 --> 01:21.870
+if it's a big release of,
+
+01:21.870 --> 01:23.010
+I can't spell release,
+
+01:23.010 --> 01:24.270
+but there are different patterns
+
+01:24.270 --> 01:25.800
+you could define different rules
+
+01:25.800 --> 01:27.810
+for those different types of branches
+
+01:27.810 --> 01:29.820
+instead of having to name each one.
+
+01:29.820 --> 01:31.110
+But, we're not gonna do that.
+
+01:31.110 --> 01:32.250
+We only have our main branch.
+
+01:32.250 --> 01:34.020
+So, we'll just put main in there.
+
+01:34.020 --> 01:35.550
+And then, I'm gonna do this,
+
+01:35.550 --> 01:39.210
+require pull request reviews before merging.
+
+01:39.210 --> 01:41.130
+This means that our commits need to be made
+
+01:41.130 --> 01:43.440
+to a non-protected branch, basically,
+
+01:43.440 --> 01:46.410
+not main and then submitted via pull request.
+
+01:46.410 --> 01:49.230
+And then, at least one person which is, (chuckles)
+
+01:49.230 --> 01:50.310
+that we've only got two here,
+
+01:50.310 --> 01:54.000
+so, only one person needs to approve the PR
+
+01:54.000 --> 01:55.590
+before it can be merged.
+
+01:55.590 --> 01:57.240
+So, I just wanna demonstrate,
+
+01:57.240 --> 01:58.073
+how that would work.
+
+01:58.073 --> 01:59.220
+There are other things, right?
+
+01:59.220 --> 02:00.690
+Do we allow people to delete
+
+02:00.690 --> 02:02.670
+matching branches or not?
+
+02:02.670 --> 02:03.990
+But, we're just gonna go
+
+02:03.990 --> 02:06.390
+with require pull request reviews.
+
+02:06.390 --> 02:08.280
+So, Create.
+
+02:08.280 --> 02:09.630
+So now we have this branch rule
+
+02:09.630 --> 02:11.460
+that applies to one branch, main.
+
+02:11.460 --> 02:13.080
+It is protected.
+
+02:13.080 --> 02:16.830
+So, if I try and act as Stevie,
+
+02:16.830 --> 02:18.570
+so, I'm logged in as Stevie here
+
+02:18.570 --> 02:21.300
+and I want to make a change to the main branch.
+
+02:21.300 --> 02:22.860
+First of all, if I try,
+
+02:22.860 --> 02:25.560
+let's update even just the README,
+
+02:25.560 --> 02:26.823
+directly on main.
+
+02:28.890 --> 02:30.090
+I'm gonna start editing this.
+
+02:30.090 --> 02:31.860
+So, feature-branch-workflow.
+
+02:31.860 --> 02:35.610
+How about Bock Bock?
+
+02:35.610 --> 02:37.380
+Okay, I'm going to try
+
+02:37.380 --> 02:38.610
+and commit this.
+
+02:38.610 --> 02:39.443
+And take a look.
+
+02:39.443 --> 02:41.130
+It says you can't commit to main
+
+02:41.130 --> 02:43.140
+because it's a protected branch.
+
+02:43.140 --> 02:45.960
+Earlier, I showed an example of this
+
+02:45.960 --> 02:46.793
+and we could just commit
+
+02:46.793 --> 02:48.750
+directly to main, but now I can't.
+
+02:48.750 --> 02:50.550
+So, it wants me to make a new branch
+
+02:50.550 --> 02:51.960
+and start a pull request.
+
+02:51.960 --> 02:54.030
+So, I'm gonna do it just in the browser,
+
+02:54.030 --> 02:55.470
+instead of doing it locally.
+
+02:55.470 --> 02:57.090
+It would be the same exact process.
+
+02:57.090 --> 02:58.530
+Though, I'd make a feature branch,
+
+02:58.530 --> 03:00.960
+make my changes, push up the feature branch.
+
+03:00.960 --> 03:03.450
+So, this just makes me a feature branch
+
+03:03.450 --> 03:04.560
+and I use the default name
+
+03:04.560 --> 03:07.110
+it gave me StevieChicks-patch-1.
+
+03:07.110 --> 03:07.950
+All right.
+
+03:07.950 --> 03:10.380
+So, now I can make my PR
+
+03:10.380 --> 03:12.940
+from StevieChicks-patch-1 to main
+
+03:13.800 --> 03:15.753
+and I'm going to create that PR,
+
+03:17.970 --> 03:19.680
+but I can't merge it.
+
+03:19.680 --> 03:21.420
+Look, merging is blocked.
+
+03:21.420 --> 03:24.240
+Earlier, when we had made PRs as Stevie,
+
+03:24.240 --> 03:26.910
+I showed you that I could just merge it in myself.
+
+03:26.910 --> 03:29.160
+There's no real, there's nothing preventing me
+
+03:29.160 --> 03:30.990
+from doing it, aside from being a,
+
+03:30.990 --> 03:33.510
+I guess a trustworthy developer.
+
+03:33.510 --> 03:34.740
+I could make a PR
+
+03:34.740 --> 03:36.750
+that did something bad and broke master,
+
+03:36.750 --> 03:39.270
+or broke the main branch and just merge it in.
+
+03:39.270 --> 03:42.180
+But now, because of the protection rule we set up,
+
+03:42.180 --> 03:45.270
+we need, at least, one approving reviewer.
+
+03:45.270 --> 03:47.820
+So, I'm gonna go as Colt
+
+03:47.820 --> 03:50.760
+and be that approving reviewer, hopefully.
+
+03:50.760 --> 03:52.383
+So, here is that PR,
+
+03:53.490 --> 03:55.170
+it says it needs a review.
+
+03:55.170 --> 03:57.150
+So I can add it, if I want,
+
+03:57.150 --> 03:58.890
+or I'm an administrator, right?
+
+03:58.890 --> 04:00.450
+I'm the owner of this project,
+
+04:00.450 --> 04:01.950
+so I could just directly merge it.
+
+04:01.950 --> 04:03.690
+But I'm gonna add a review.
+
+04:03.690 --> 04:05.340
+So, adding a review is super simple.
+
+04:05.340 --> 04:07.560
+If I'm good with it, can click this.
+
+04:07.560 --> 04:10.440
+But I can also add, a note,
+
+04:10.440 --> 04:13.140
+a comment about things and say like,
+
+04:13.140 --> 04:18.140
+you know, "Always with the Bock Bock, Stevie?
+
+04:21.360 --> 04:22.887
+Get a new catchphrase."
+
+04:23.940 --> 04:24.960
+I'm joking around here,
+
+04:24.960 --> 04:26.010
+but you know,
+
+04:26.010 --> 04:28.560
+we can add things in, like that.
+
+04:28.560 --> 04:29.970
+We can then start a review.
+
+04:29.970 --> 04:33.180
+So, I can just add a single comment, if I want.
+
+04:33.180 --> 04:35.880
+Stevie will then be able to see that, over here.
+
+04:35.880 --> 04:37.650
+You can see it shows up for Stevie,
+
+04:37.650 --> 04:38.483
+I reviewed it.
+
+04:38.483 --> 04:41.130
+It says always blah, blah, blah, blah, blah.
+
+04:41.130 --> 04:43.351
+He can respond back to me.
+
+04:43.351 --> 04:44.184
+(keyboard clanking)
+
+04:44.184 --> 04:45.423
+Bock Bock Bock.
+
+04:49.170 --> 04:50.970
+Now, I go back to my side.
+
+04:50.970 --> 04:52.833
+I may need to refresh here.
+
+04:53.820 --> 04:56.130
+There, we see Stevie's response.
+
+04:56.130 --> 04:58.710
+Okay, so now, click Review Changes.
+
+04:58.710 --> 05:02.160
+I can finish the review and I can approve.
+
+05:02.160 --> 05:03.930
+So, I can approve merging the changes
+
+05:03.930 --> 05:06.870
+or I can request that he makes additional changes
+
+05:06.870 --> 05:07.950
+or I can just leave a comment
+
+05:07.950 --> 05:10.050
+without actually approving it.
+
+05:10.050 --> 05:11.733
+But I'm going to approve now.
+
+05:14.490 --> 05:15.540
+So, that was the review.
+
+05:15.540 --> 05:17.070
+It's still not merged in.
+
+05:17.070 --> 05:19.770
+So now, at least, one person has approved it,
+
+05:19.770 --> 05:21.210
+which is the rule we set up.
+
+05:21.210 --> 05:22.290
+You can have it be more,
+
+05:22.290 --> 05:23.910
+you can have two, three, four,
+
+05:23.910 --> 05:26.250
+however many people you need to approve it.
+
+05:26.250 --> 05:28.290
+There's all different fancy permission things
+
+05:28.290 --> 05:29.123
+you can get into,
+
+05:29.123 --> 05:32.070
+especially if you have an organization setup
+
+05:32.070 --> 05:33.780
+or an enterprise account.
+
+05:33.780 --> 05:37.230
+Anyway, now, I can merge that in here, right?
+
+05:37.230 --> 05:38.520
+That wasn't showing up before.
+
+05:38.520 --> 05:39.390
+So, I'm just gonna merge it.
+
+05:39.390 --> 05:41.790
+It's a very silly change to make
+
+05:41.790 --> 05:43.750
+and I'm gonna confirm that merge
+
+05:45.090 --> 05:46.320
+and that will close the PR.
+
+05:46.320 --> 05:48.000
+We can delete that branch.
+
+05:48.000 --> 05:49.320
+And now, the master branch
+
+05:49.320 --> 05:53.190
+that README, contains Bock Bock,
+
+05:53.190 --> 05:54.810
+at the very bottom.
+
+05:54.810 --> 05:56.730
+Okay, so silly little example.
+
+05:56.730 --> 05:57.563
+But, I wanted to show
+
+05:57.563 --> 05:59.820
+that we can set up these protection rules
+
+05:59.820 --> 06:01.650
+and they're very, very useful,
+
+06:01.650 --> 06:04.170
+especially, if you have a bunch of people working on,
+
+06:04.170 --> 06:05.700
+you know, one project together
+
+06:05.700 --> 06:07.500
+and they're making a lot of pull requests.
+
+06:07.500 --> 06:08.333
+And you want to be able
+
+06:08.333 --> 06:09.900
+to have some quality control
+
+06:09.900 --> 06:12.090
+or some feedback process, in place,
+
+06:12.090 --> 06:13.590
+where people can't just, you know,
+
+06:13.590 --> 06:16.320
+directly change the main branch.
+
+06:16.320 --> 06:17.760
+They, instead, are asked
+
+06:17.760 --> 06:18.660
+to make a pull request
+
+06:18.660 --> 06:19.770
+and then get feedback
+
+06:19.770 --> 06:21.453
+from at least one person.
