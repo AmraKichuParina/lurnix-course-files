@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.150 --> 00:01.740
+Instructor: Often when we're using "git pull,"
+
+00:01.740 --> 00:04.290
+we can get away with an even shorter syntax
+
+00:04.290 --> 00:06.810
+where we don't need to specify the remote
+
+00:06.810 --> 00:08.910
+or the branch we want to pull.
+
+00:08.910 --> 00:12.180
+Because it's really common to be on some branch, right?
+
+00:12.180 --> 00:15.090
+I'm on the food branch,
+
+00:15.090 --> 00:18.570
+and if I want the latest from "origin/food,"
+
+00:18.570 --> 00:20.730
+that's where I would want to get changes from.
+
+00:20.730 --> 00:23.400
+Normally I'm not gonna pull some other branch
+
+00:23.400 --> 00:24.780
+onto the food branch.
+
+00:24.780 --> 00:27.300
+I want the latest from food on GitHub.
+
+00:27.300 --> 00:31.170
+So I could do "git pull origin food,"
+
+00:31.170 --> 00:32.190
+I'm on the food branch,
+
+00:32.190 --> 00:35.100
+I want food changes coming from origin.
+
+00:35.100 --> 00:36.420
+We only have one remote right now,
+
+00:36.420 --> 00:38.310
+so it should be origin anyway.
+
+00:38.310 --> 00:40.590
+Right, we haven't configured another remote.
+
+00:40.590 --> 00:44.203
+But "origin" is just such a common name in Git.
+
+00:44.203 --> 00:46.020
+Again, you can change all of these,
+
+00:46.020 --> 00:49.237
+but it's so common that it will default.
+
+00:49.237 --> 00:51.300
+"git pull" will default to "origin"
+
+00:51.300 --> 00:53.580
+if you don't specify a remote.
+
+00:53.580 --> 00:56.730
+And the branch will automatically default
+
+00:56.730 --> 00:59.070
+to whatever tracking connection is configured
+
+00:59.070 --> 01:00.690
+for your current branch.
+
+01:00.690 --> 01:03.870
+And, as in every example we've done so far,
+
+01:03.870 --> 01:06.060
+the tracking connections are set up for us.
+
+01:06.060 --> 01:08.160
+We never specify a tracking connection,
+
+01:08.160 --> 01:09.480
+I didn't create them,
+
+01:09.480 --> 01:11.880
+simply by switching to a remote branch.
+
+01:11.880 --> 01:14.730
+If you recall, I go way back here,
+
+01:14.730 --> 01:16.500
+when we did a "git switch,"
+
+01:16.500 --> 01:18.990
+almost there, almost there.
+
+01:18.990 --> 01:21.840
+Okay, when we did this, right, "git switch puppies,"
+
+01:21.840 --> 01:24.780
+or "git switch food," or "git switch movies,"
+
+01:24.780 --> 01:26.850
+that branch was set up for us,
+
+01:26.850 --> 01:29.640
+and it automatically had a tracking reference
+
+01:29.640 --> 01:31.890
+to the remote branch.
+
+01:31.890 --> 01:34.807
+So typically these are just the same name.
+
+01:34.807 --> 01:36.307
+"puppies," "origin/puppies,"
+
+01:36.307 --> 01:39.480
+"food," "origin/food," "main," "origin/main."
+
+01:39.480 --> 01:42.390
+You absolutely can configure them differently.
+
+01:42.390 --> 01:46.249
+I could have my food branch, my local food branch,
+
+01:46.249 --> 01:51.249
+for whatever reason, track the movies branch on origin.
+
+01:51.390 --> 01:53.550
+You just normally wouldn't want that,
+
+01:53.550 --> 01:55.320
+you normally don't do that.
+
+01:55.320 --> 01:58.890
+So "git pull" depends on the context of where you are.
+
+01:58.890 --> 02:02.040
+If I'm on the master branch and I run "git pull,"
+
+02:02.040 --> 02:05.970
+Git will automatically default to "origin" as the remote,
+
+02:05.970 --> 02:08.640
+and "master" because I'm on the master branch,
+
+02:08.640 --> 02:10.710
+and currently the tracking branch,
+
+02:10.710 --> 02:13.260
+the default value is "origin/master."
+
+02:13.260 --> 02:14.790
+So same thing with puppies.
+
+02:14.790 --> 02:17.970
+If I'm on the puppies branch and I run "git pull,"
+
+02:17.970 --> 02:20.737
+it's just a way of saying, "Please get the latest changes
+
+02:20.737 --> 02:22.957
+"and pull them down, merge them into this branch,
+
+02:22.957 --> 02:24.697
+"from the remote version,
+
+02:24.697 --> 02:27.420
+"from the origin version of puppies."
+
+02:27.420 --> 02:28.710
+So it's really common to do this,
+
+02:28.710 --> 02:31.710
+because that's normally where you want to pull changes from.
+
+02:31.710 --> 02:34.380
+Right, if I'm on the food branch, I want origin/food.
+
+02:34.380 --> 02:35.280
+So let's do it.
+
+02:35.280 --> 02:39.030
+I updated the food branch in between videos
+
+02:39.030 --> 02:40.350
+just to make it faster.
+
+02:40.350 --> 02:42.000
+I didn't want you to have to watch.
+
+02:42.000 --> 02:44.850
+I added a tea file, all right?
+
+02:44.850 --> 02:47.760
+I don't have that locally, I'll just prove it.
+
+02:47.760 --> 02:48.720
+Right, we don't see tea.
+
+02:48.720 --> 02:50.250
+We have coffee, but no tea.
+
+02:50.250 --> 02:54.540
+If I do "git pull," it pulled the food branch from origin,
+
+02:54.540 --> 02:57.390
+I see the tea file right there.
+
+02:57.390 --> 02:58.860
+I can view it.
+
+02:58.860 --> 03:02.280
+If I do "git log," I have that new commit.
+
+03:02.280 --> 03:04.080
+One more example.
+
+03:04.080 --> 03:06.990
+I updated the fantasy branch.
+
+03:06.990 --> 03:10.680
+I added a new file, "gryphon," there it is.
+
+03:10.680 --> 03:11.513
+I don't have that.
+
+03:11.513 --> 03:16.430
+If I switch to fantasy, "git switch fantasy," okay?
+
+03:19.680 --> 03:22.350
+I don't have that new gryphon file.
+
+03:22.350 --> 03:25.830
+You can see over here, it doesn't show up.
+
+03:25.830 --> 03:29.160
+I could do "git pull origin fantasy,"
+
+03:29.160 --> 03:31.857
+or just rely on the default, "git pull."
+
+03:33.060 --> 03:33.893
+And now I have it.
+
+03:33.893 --> 03:37.380
+It shows up there, and here it is.
+
+03:37.380 --> 03:39.810
+So if you want, you can use that syntax of,
+
+03:39.810 --> 03:42.510
+you know, typing out "origin" and typing the branch name.
+
+03:42.510 --> 03:44.610
+Sometimes you need to use that syntax.
+
+03:44.610 --> 03:47.640
+For example, if you have multiple remotes, which we will,
+
+03:47.640 --> 03:49.830
+we'll have an upstream and an origin.
+
+03:49.830 --> 03:53.280
+So sometimes we don't want to default to that origin.
+
+03:53.280 --> 03:56.250
+But for now, really most of the time
+
+03:56.250 --> 03:57.630
+you can just use "git pull,"
+
+03:57.630 --> 04:00.090
+assuming you wanna update the puppies branch
+
+04:00.090 --> 04:01.950
+with the changes from origin/puppies,
+
+04:01.950 --> 04:05.100
+or the movies branch with the changes from origin/movies.
+
+04:05.100 --> 04:08.340
+All right, so that about wraps up fetching and pulling.
+
+04:08.340 --> 04:10.560
+Hopefully this diagram makes more sense now.
+
+04:10.560 --> 04:13.890
+When we "fetch," we're getting changes from a remote repo,
+
+04:13.890 --> 04:16.140
+but they're not integrated into our workspace.
+
+04:16.140 --> 04:19.020
+When we "pull," we get those changes from the remote repo,
+
+04:19.020 --> 04:22.620
+and then they are merged into our current HEAD branch.
+
+04:22.620 --> 04:25.200
+Where we pull from matters.
+
+04:25.200 --> 04:27.150
+And that brings me to the last slide.
+
+04:27.150 --> 04:30.960
+Fetch gets changes from a remote branch, or branches.
+
+04:30.960 --> 04:33.360
+Updates the remote tracking branches with the changes,
+
+04:33.360 --> 04:36.480
+does not merge anything into your current HEAD branch.
+
+04:36.480 --> 04:38.070
+And it's safe to do at anytime.
+
+04:38.070 --> 04:40.867
+It's not gonna screw up any work that you're doing.
+
+04:40.867 --> 04:42.810
+"git pull," on the other hand,
+
+04:42.810 --> 04:45.210
+also gets changes from remote branches,
+
+04:45.210 --> 04:48.000
+but it updates the current branch with the new changes,
+
+04:48.000 --> 04:48.990
+merging them in.
+
+04:48.990 --> 04:51.120
+And it can result in merge conflicts.
+
+04:51.120 --> 04:53.340
+It is not safe to do at any time,
+
+04:53.340 --> 04:55.920
+meaning that, you know, you can have conflicts,
+
+04:55.920 --> 04:59.700
+you can have changes integrated into your working directory,
+
+04:59.700 --> 05:02.790
+conflicting with work that you had been working on.
+
+05:02.790 --> 05:06.180
+So not recommended to do if you have uncommitted work.
+
+05:06.180 --> 05:08.493
+All right, so that's fetch and pull.
