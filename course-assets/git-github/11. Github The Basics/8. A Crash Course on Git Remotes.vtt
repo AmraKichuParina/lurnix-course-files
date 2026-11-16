@@ -1,0 +1,463 @@
+WEBVTT
+
+00:00.150 --> 00:01.215
+Instructor: All right, so the next thing
+
+00:01.215 --> 00:02.735
+that we need to do is take
+
+00:02.735 --> 00:05.762
+this empty GitHub repo that's in the cloud.
+
+00:05.762 --> 00:09.420
+It's not connected at all to our local repo.
+
+00:09.420 --> 00:10.739
+And somehow configure our local repo
+
+00:10.739 --> 00:13.762
+so that it knows about this GitHub repo.
+
+00:13.762 --> 00:15.610
+Well, the way that we do this,
+
+00:15.610 --> 00:16.782
+whether we're using GitHub,
+
+00:16.782 --> 00:19.779
+or any other service that hosts a repo,
+
+00:19.779 --> 00:22.713
+is to set up a Git remote.
+
+00:22.713 --> 00:26.480
+So a remote is, really, just a a fancy name
+
+00:26.480 --> 00:29.527
+for, like, a destination URL.
+
+00:29.527 --> 00:34.440
+It's a URL that we tell Git about, and we give it a name.
+
+00:34.440 --> 00:35.751
+It's just like a label for a URL
+
+00:35.751 --> 00:38.457
+that we can then push code up to.
+
+00:38.457 --> 00:41.810
+Or fetch, or pull down, new code from.
+
+00:41.810 --> 00:45.719
+So we'll learn about those commands once we set up a remote.
+
+00:45.719 --> 00:48.230
+So an easy place to start is with this command,
+
+00:48.230 --> 00:50.981
+git remote, or git remote -v.
+
+00:50.981 --> 00:53.725
+They won't do anything except list to you
+
+00:53.725 --> 00:56.711
+the current remotes that you have in a repository.
+
+00:56.711 --> 00:58.692
+So in our repository, we have not
+
+00:58.692 --> 01:01.620
+configured any remotes, right?
+
+01:01.620 --> 01:03.690
+At this point, we haven't done anything with remotes.
+
+01:03.690 --> 01:05.950
+If I type git remote, or git remote -v,
+
+01:05.950 --> 01:07.738
+I'm in my book, MyFirstNovel,
+
+01:07.738 --> 01:10.758
+The Great Gatsby repo. Nothing.
+
+01:10.758 --> 01:14.252
+But if we actually go to any of the repos that we cloned,
+
+01:14.252 --> 01:16.770
+if you followed it along,
+
+01:16.770 --> 01:20.550
+I cloned this 2048 repo from GitHub.
+
+01:20.550 --> 01:21.740
+Remember this one?
+
+01:21.740 --> 01:23.726
+It has a whole bunch of commits.
+
+01:23.726 --> 01:26.494
+It's that addicting 2048 game.
+
+01:26.494 --> 01:30.710
+Anyway, if I type git remote in here, I see something now.
+
+01:30.710 --> 01:33.728
+origin. We'll talk about that in a moment.
+
+01:33.728 --> 01:35.724
+Let's do -v so you can see the difference.
+
+01:35.724 --> 01:38.760
+If I do -v, I think it's verbose.
+
+01:38.760 --> 01:43.760
+We see the name of a remote and the corresponding URL.
+
+01:44.725 --> 01:46.925
+So, I didn't set this up, right?
+
+01:46.925 --> 01:50.722
+All I did was git clone, and then this URL.
+
+01:50.722 --> 01:54.741
+And by doing that, Git made me a local repo.
+
+01:54.741 --> 01:56.744
+It put all these files in here.
+
+01:56.744 --> 01:58.735
+It gave me all the history.
+
+01:58.735 --> 02:00.977
+And it set up a remote that said
+
+02:00.977 --> 02:04.755
+the original GitHub URL that this repo came from,
+
+02:04.755 --> 02:07.697
+that it was cloned from, is right here.
+
+02:07.697 --> 02:11.757
+So, by setting this URL up, this remote origin,
+
+02:11.757 --> 02:13.771
+it gives me the ability later on to say,
+
+02:13.771 --> 02:16.727
+"Hey, Git, is there any new code on that URL?
+
+02:16.727 --> 02:19.445
+Is there any, you know, new updates?"
+
+02:19.445 --> 02:21.997
+Or if I was a collaborator,
+
+02:21.997 --> 02:24.991
+"Hey, Git, I'd like to push up my new 10 commits."
+
+02:24.991 --> 02:27.210
+It's kind of a lot to push up.
+
+02:27.210 --> 02:28.762
+But I'd like to push my new two commits
+
+02:28.762 --> 02:31.726
+that I did today up to origin.
+
+02:31.726 --> 02:34.744
+Okay, so I'll just show you one more example.
+
+02:34.744 --> 02:39.630
+If I take a look at, let's see, sample-project.
+
+02:39.630 --> 02:43.245
+That was the one that I cloned in the second video I did.
+
+02:43.245 --> 02:46.200
+It's really very simple, nothing in there.
+
+02:46.200 --> 02:49.127
+It came from, was it Bitbucket? I believe.
+
+02:49.127 --> 02:52.667
+If I do git remote -v. No, GitLab, sorry.
+
+02:52.667 --> 02:55.348
+It was a non GitHub repository.
+
+02:55.348 --> 02:56.745
+The same thing is true, right?
+
+02:56.745 --> 02:59.910
+I have a remote called origin automatically set up.
+
+02:59.910 --> 03:01.683
+I didn't do that. And it's set to
+
+03:01.683 --> 03:05.700
+whatever the URL is that I cloned it from.
+
+03:05.700 --> 03:09.833
+Okay, so we did not clone this repository, right?
+
+03:09.833 --> 03:11.738
+MyFirstNovel, we ran git in it.
+
+03:11.738 --> 03:13.708
+We created it from scratch.
+
+03:13.708 --> 03:15.206
+So there are no remotes.
+
+03:15.206 --> 03:17.420
+But we can make a remote using this command,
+
+03:17.420 --> 03:22.420
+git remote add, and then a &lt;name> and a &lt;url>.
+
+03:22.693 --> 03:24.625
+So this is a way of telling Git,
+
+03:24.625 --> 03:29.460
+"Hello Git, please remember this URL using this name."
+
+03:29.460 --> 03:31.748
+So whatever the name is that we provide.
+
+03:31.748 --> 03:34.990
+So a really standard name is origin.
+
+03:34.990 --> 03:39.426
+So git remote add origin, and then some GitHub URL.
+
+03:39.426 --> 03:41.984
+For a GitHub repo that we've created,
+
+03:41.984 --> 03:44.959
+it's telling Git, "Hey, here's a URL.
+
+03:44.959 --> 03:47.179
+I'm gonna call it origin. You remember that."
+
+03:47.179 --> 03:50.681
+Anytime I refer to origin, I'm talking about this URL.
+
+03:50.681 --> 03:52.254
+So the term origin, it's just
+
+03:52.254 --> 03:54.479
+a conventional git remote name,
+
+03:54.479 --> 03:56.790
+but it's not special in any way.
+
+03:56.790 --> 04:00.234
+No magical powers. It doesn't have any secret abilities.
+
+04:00.234 --> 04:02.219
+It's just a name for a URL.
+
+04:02.219 --> 04:03.688
+You could rename them.
+
+04:03.688 --> 04:05.959
+You can come up with whatever names you want for remotes.
+
+04:05.959 --> 04:09.000
+But origin is what you'll see all the time.
+
+04:09.000 --> 04:12.000
+Similar to how the master branch is a default name,
+
+04:12.000 --> 04:14.640
+or the default name for branches.
+
+04:14.640 --> 04:15.751
+You can change it to anything.
+
+04:15.751 --> 04:18.465
+So in the same way that master is just a name for a branch,
+
+04:18.465 --> 04:20.498
+origin is just a conventional name.
+
+04:20.498 --> 04:23.758
+You'll see it a lot, but it is not somehow special.
+
+04:23.758 --> 04:25.711
+It's just a name for a remote.
+
+04:25.711 --> 04:29.740
+So we could instead, add a new remote for this same URL.
+
+04:29.740 --> 04:32.126
+But instead, call it mygithuburl,
+
+04:32.126 --> 04:37.126
+or lol, or chickens are my friends.
+
+04:37.239 --> 04:38.265
+Whatever you want.
+
+04:38.265 --> 04:40.830
+But I would suggest origin,
+
+04:40.830 --> 04:43.754
+because it's what you'll see the most, and then a URL.
+
+04:43.754 --> 04:46.747
+And actually, if we go to the GitHub repository
+
+04:46.747 --> 04:49.185
+that we created that's empty,
+
+04:49.185 --> 04:50.786
+we see some instructions.
+
+04:50.786 --> 04:52.474
+It's telling us, first of all,
+
+04:52.474 --> 04:53.755
+if you've done this thing before,
+
+04:53.755 --> 04:56.178
+this kind of thing before, here's a URL.
+
+04:56.178 --> 04:58.770
+That is the URL for my repo.
+
+04:58.770 --> 05:00.600
+I hope this goes without saying,
+
+05:00.600 --> 05:02.217
+you should be using your URL, right?
+
+05:02.217 --> 05:05.695
+Not my repo, because you won't have permission
+
+05:05.695 --> 05:07.696
+to push your code up to my repository.
+
+05:07.696 --> 05:10.766
+So I hope you made your own if you're following along.
+
+05:10.766 --> 05:13.692
+Then it's telling me, if you don't have a repo yet,
+
+05:13.692 --> 05:16.700
+on the, like, at all, locally, follow these instructions.
+
+05:16.700 --> 05:17.707
+But I do.
+
+05:17.707 --> 05:20.680
+So I'm not following those.
+
+05:20.680 --> 05:22.050
+This is what we want.
+
+05:22.050 --> 05:24.153
+Push an existing repo from the command line,
+
+05:24.153 --> 05:27.030
+and take a look at the very first line,
+
+05:27.030 --> 05:32.030
+git remote add origin, and then the URL for my git repo.
+
+05:32.178 --> 05:34.740
+It's the same URL we see here.
+
+05:34.740 --> 05:37.465
+So I'm gonna copy that. Or just copy the whole line.
+
+05:37.465 --> 05:39.059
+It doesn't really matter.
+
+05:39.059 --> 05:40.707
+I guess I'll separate it out,
+
+05:40.707 --> 05:43.203
+just to hit the point harder here.
+
+05:43.203 --> 05:45.728
+So I'm on the MyFirstNovel repository.
+
+05:45.728 --> 05:47.776
+Right now, no remotes.
+
+05:47.776 --> 05:51.716
+Now, git remote add, and then a name.
+
+05:51.716 --> 05:54.960
+I'm gonna go with origin. It's conventional.
+
+05:54.960 --> 05:57.302
+And then this GitHub URL,
+
+05:57.302 --> 06:00.441
+whatever your GitHub URL is for that repo.
+
+06:00.441 --> 06:02.696
+Now, nothing really happens, but, of course,
+
+06:02.696 --> 06:06.701
+we can check our work with what we just saw, git remote -v.
+
+06:06.701 --> 06:11.701
+So hopefully, we see origin set up to this URL. And it is.
+
+06:13.680 --> 06:15.707
+So that's kind of all we need to do for now.
+
+06:15.707 --> 06:18.771
+We've connected. We've told our local git repo
+
+06:18.771 --> 06:21.736
+about a GitHub URL called origin,
+
+06:21.736 --> 06:24.540
+or that's the name that we'll refer to it by.
+
+06:24.540 --> 06:25.997
+So in the next video, I'll show you
+
+06:25.997 --> 06:28.422
+how we can push code up to origin.
+
+06:28.422 --> 06:30.699
+I just wanna emphasize one more time,
+
+06:30.699 --> 06:34.968
+it's just a name for a URL, a remote destination.
+
+06:34.968 --> 06:38.470
+And this is not super common, but if needed,
+
+06:38.470 --> 06:41.227
+you can rename a remote with this command,
+
+06:41.227 --> 06:45.467
+git remote rename, the old name space, new name.
+
+06:45.467 --> 06:48.738
+And you can get rid of a remote with git remote remove,
+
+06:48.738 --> 06:50.752
+and then the name that you're trying to delete.
+
+06:50.752 --> 06:53.634
+And later on, we'll actually see that
+
+06:53.634 --> 06:55.748
+it's somewhat common to have multiple remotes,
+
+06:55.748 --> 06:59.249
+especially when you're working on open source projects.
+
+06:59.249 --> 07:02.430
+We'll talk about workflows and how that would work
+
+07:02.430 --> 07:04.443
+when we get to that section. Okay.
