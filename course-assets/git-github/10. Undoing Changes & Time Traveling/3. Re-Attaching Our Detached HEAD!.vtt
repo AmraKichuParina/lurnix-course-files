@@ -1,0 +1,388 @@
+WEBVTT
+
+00:00.120 --> 00:01.560
+Instructor: So now let's talk about what we do
+
+00:01.560 --> 00:04.717
+or what we can do in this detached HEAD state.
+
+00:04.717 --> 00:09.451
+So in my repo, I've gone back to what is this commit again?
+
+00:09.451 --> 00:13.110
+4f1, split chapter one into two pieces,
+
+00:13.110 --> 00:14.781
+I'll also show you in GitKraken.
+
+00:14.781 --> 00:16.517
+This is where I went back to.
+
+00:16.517 --> 00:19.848
+It shows me HEAD is pointing at this one commit.
+
+00:19.848 --> 00:22.380
+Master branch is still all the way up here,
+
+00:22.380 --> 00:24.390
+that branch reference pointing over here,
+
+00:24.390 --> 00:25.350
+begin chapter three.
+
+00:25.350 --> 00:26.280
+There's like what?
+
+00:26.280 --> 00:29.310
+Eight commits or so in the meantime or in between.
+
+00:29.310 --> 00:33.000
+But I am now just looking at this split chapter one
+
+00:33.000 --> 00:34.830
+into two pieces commit.
+
+00:34.830 --> 00:38.730
+Okay, so one thing that I can do is just poke around,
+
+00:38.730 --> 00:41.370
+examine the contents of the old commit, view the files,
+
+00:41.370 --> 00:44.681
+maybe copy something and then bring it with me somewhere.
+
+00:44.681 --> 00:47.520
+We can see that all my files have been updated
+
+00:47.520 --> 00:50.373
+to reflect the fact that we're all the way back here.
+
+00:51.270 --> 00:55.380
+So I can see Gatsby everywhere.
+
+00:55.380 --> 00:57.060
+I don't see chapter three.
+
+00:57.060 --> 01:00.420
+There's work that is missing because I've gone back in time.
+
+01:00.420 --> 01:02.850
+So if that's all I wanted to do, great.
+
+01:02.850 --> 01:05.340
+Now if I want to go back to where I was,
+
+01:05.340 --> 01:07.170
+I wanna go back to master,
+
+01:07.170 --> 01:09.720
+all I need to do is switch to a branch.
+
+01:09.720 --> 01:11.640
+So if I have a detached HEAD,
+
+01:11.640 --> 01:13.260
+I can switch back to master,
+
+01:13.260 --> 01:15.780
+Git switch master or Git checkout master,
+
+01:15.780 --> 01:17.214
+and we're reattached.
+
+01:17.214 --> 01:18.380
+So I can show that.
+
+01:18.380 --> 01:21.390
+We've got only one branch in this repo,
+
+01:21.390 --> 01:23.910
+so master, I'll just switch back.
+
+01:23.910 --> 01:25.846
+So right now I'm in detached HEAD.
+
+01:25.846 --> 01:29.853
+Now if I do switch master, Git switch master,
+
+01:31.620 --> 01:34.012
+you can see I'm not in detached HEAD.
+
+01:34.012 --> 01:36.900
+We're back where master is, right?
+
+01:36.900 --> 01:38.460
+HEAD points to master.
+
+01:38.460 --> 01:40.320
+If I type Git log,
+
+01:40.320 --> 01:42.600
+we can see we have all those commits again,
+
+01:42.600 --> 01:46.080
+and HEAD is pointing to that master branch reference.
+
+01:46.080 --> 01:49.380
+So nothing changed, we didn't mess up anything.
+
+01:49.380 --> 01:51.660
+We simply went back as an observer,
+
+01:51.660 --> 01:55.320
+we took a look at what happened all those commits ago,
+
+01:55.320 --> 01:58.590
+we time traveled back and then time traveled forward.
+
+01:58.590 --> 02:00.720
+But if I wanted to go back,
+
+02:00.720 --> 02:05.400
+let's say to where I finished chapter one,
+
+02:05.400 --> 02:07.560
+and then I wanted to split off
+
+02:07.560 --> 02:10.710
+and try a new version of chapter two and chapter three,
+
+02:10.710 --> 02:13.050
+basically I want to get rid of all of this work.
+
+02:13.050 --> 02:14.790
+I'm not gonna delete all of that work,
+
+02:14.790 --> 02:17.550
+but I'm gonna try making a new branch
+
+02:17.550 --> 02:19.050
+that doesn't include any of this.
+
+02:19.050 --> 02:23.400
+So I'll go back in time maybe to this commit right here,
+
+02:23.400 --> 02:27.600
+whatever this hash is, and then I will branch off
+
+02:27.600 --> 02:29.850
+and do some stuff on that new branch.
+
+02:29.850 --> 02:33.360
+So I'll make a branch based upon this position,
+
+02:33.360 --> 02:34.830
+this particular commit.
+
+02:34.830 --> 02:36.600
+So I won't lose all this stuff,
+
+02:36.600 --> 02:38.700
+I'm just gonna make a new branch without it.
+
+02:38.700 --> 02:39.870
+Okay?
+
+02:39.870 --> 02:42.210
+So that's the third option, really I guess,
+
+02:42.210 --> 02:43.560
+for what we can do here,
+
+02:43.560 --> 02:45.570
+create a new branch and switch to it.
+
+02:45.570 --> 02:47.838
+Now I can make, I can save changes, I can make commits,
+
+02:47.838 --> 02:51.697
+because HEAD will now be attached to a new branch.
+
+02:51.697 --> 02:54.543
+So let's go back, let's pick one of those commits.
+
+02:55.410 --> 02:58.308
+Let's go to when I finished chapter one
+
+02:58.308 --> 03:01.080
+before we had chapter two.
+
+03:01.080 --> 03:03.005
+So I'm gonna copy that commit hash,
+
+03:03.005 --> 03:05.730
+make sure I don't have any un-staged changes
+
+03:05.730 --> 03:06.780
+and nothing to commit.
+
+03:06.780 --> 03:07.860
+Great.
+
+03:07.860 --> 03:12.030
+And I'll check out that old commit from a long time ago.
+
+03:12.030 --> 03:14.730
+Once again, detached HEAD, we can see where I am.
+
+03:14.730 --> 03:16.830
+I'm all the way back here.
+
+03:16.830 --> 03:19.290
+Now what I'm gonna do is make a new branch.
+
+03:19.290 --> 03:21.000
+So just like I make any other branch,
+
+03:21.000 --> 03:23.580
+I mean I can make it first, Git branch blah,
+
+03:23.580 --> 03:26.370
+and then switch to it or just do it in one go.
+
+03:26.370 --> 03:28.040
+What should I call this branch?
+
+03:28.040 --> 03:31.147
+Let's call it, sure,
+
+03:31.147 --> 03:36.147
+chapter two redo, like that, okay?
+
+03:36.366 --> 03:39.416
+So I made a new branch and I switched to it
+
+03:39.416 --> 03:41.567
+and just like anytime we make a branch,
+
+03:41.567 --> 03:44.490
+that branch is based upon HEAD.
+
+03:44.490 --> 03:47.670
+And at that point in time, HEAD was this commit.
+
+03:47.670 --> 03:50.760
+So now we have a new branch here, chapter two redo,
+
+03:50.760 --> 03:52.415
+and I'm reattached,
+
+03:52.415 --> 03:55.530
+HEAD is pointing to an actual branch reference.
+
+03:55.530 --> 03:56.730
+We're not in detached HEAD.
+
+03:56.730 --> 03:58.200
+I typed Git status
+
+03:58.200 --> 04:00.000
+and we can start doing more work.
+
+04:00.000 --> 04:02.550
+So my files still look like they did
+
+04:02.550 --> 04:06.660
+when I was in detached HEAD, but now I am reattached.
+
+04:06.660 --> 04:09.450
+So I could make my own version of chapter two, right?
+
+04:09.450 --> 04:11.400
+Chapter two dot TXT,
+
+04:11.400 --> 04:14.490
+and just put some random stuff in here.
+
+04:14.490 --> 04:16.305
+Here's my chapter two.
+
+04:16.305 --> 04:20.250
+Maybe I want to, ah, we'll just leave it at that I guess.
+
+04:20.250 --> 04:22.770
+Maybe I'll delete all of chapter one.
+
+04:22.770 --> 04:23.880
+I'll empty that out.
+
+04:23.880 --> 04:27.569
+Whatever I do, Git status, I'll add those changes.
+
+04:27.569 --> 04:30.990
+I'm on this branch, chapter two redo,
+
+04:30.990 --> 04:33.100
+and I'll do something like start
+
+04:35.340 --> 04:38.613
+second stab at chapter two.
+
+04:39.515 --> 04:41.772
+So now I have this new commit
+
+04:41.772 --> 04:45.600
+and it only exists on my chapter two redo branch.
+
+04:45.600 --> 04:47.760
+So this branch has the first three commits
+
+04:47.760 --> 04:50.340
+from master and then a whole new one where I branched off
+
+04:50.340 --> 04:53.310
+and tried a completely different version of chapter two.
+
+04:53.310 --> 04:56.820
+I don't have this history, but it's still there
+
+04:56.820 --> 04:58.890
+and I could just switch back to master, right?
+
+04:58.890 --> 05:00.030
+So this is what I'm looking at here.
+
+05:00.030 --> 05:01.410
+Chapter one is empty.
+
+05:01.410 --> 05:03.120
+Chapter two is almost empty.
+
+05:03.120 --> 05:05.804
+There is no chapter three, but I can switch back,
+
+05:05.804 --> 05:08.421
+Git switch master at any point,
+
+05:08.421 --> 05:11.130
+and all that stuff is restored.
+
+05:11.130 --> 05:14.010
+I've gone back to where we were before.
+
+05:14.010 --> 05:16.320
+Okay, so that is pretty much it
+
+05:16.320 --> 05:18.570
+for checking out previous commits,
+
+05:18.570 --> 05:21.810
+Git checkout and then a commit hash will take us back
+
+05:21.810 --> 05:23.340
+but we'll be in detached HEAD.
+
+05:23.340 --> 05:25.405
+We can poke around, we can switch back,
+
+05:25.405 --> 05:28.350
+go back to master or whatever branch we want
+
+05:28.350 --> 05:29.820
+or we can create a new branch
+
+05:29.820 --> 05:31.530
+based upon the particular commit
+
+05:31.530 --> 05:34.023
+we've time traveled back to, okay?
