@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00.150 --> 00:00.983
+Instructor: So now we're gonna talk
+
+00:00.983 --> 00:03.960
+about a second way of using the Git Rebase command.
+
+00:03.960 --> 00:06.240
+We can use it to rewrite history.
+
+00:06.240 --> 00:07.710
+We can edit commits
+
+00:07.710 --> 00:10.800
+we can change commit message, commit messages.
+
+00:10.800 --> 00:13.770
+We can change the contents of a commit.
+
+00:13.770 --> 00:16.140
+We can drop or delete an entire commit.
+
+00:16.140 --> 00:19.470
+We can even reorder things using Git Rebase.
+
+00:19.470 --> 00:21.300
+So if you remember I had this slide
+
+00:21.300 --> 00:24.450
+with not a peace sign, but two fingers, because
+
+00:24.450 --> 00:27.690
+there are two main ways to use the Git Rebase command.
+
+00:27.690 --> 00:29.670
+One is as an alternative to merging
+
+00:29.670 --> 00:31.080
+as we've already discussed.
+
+00:31.080 --> 00:33.246
+You're probably exhausted from that
+
+00:33.246 --> 00:35.640
+but that's one way of using it.
+
+00:35.640 --> 00:37.650
+But another way of using it is
+
+00:37.650 --> 00:41.340
+as a cleanup tool and it allows us to do some
+
+00:41.340 --> 00:43.980
+of these things I've just mentioned rewrite history.
+
+00:43.980 --> 00:46.230
+Now of course, anytime we rewrite history
+
+00:46.230 --> 00:47.310
+we don't wanna be doing that
+
+00:47.310 --> 00:49.620
+on work that people already have, right?
+
+00:49.620 --> 00:51.180
+We don't want to rewrite commits
+
+00:51.180 --> 00:54.060
+and make new commit hashes and screw everything
+
+00:54.060 --> 00:57.210
+up if collaborators already have that work.
+
+00:57.210 --> 00:58.650
+But this is a common workflow.
+
+00:58.650 --> 01:01.380
+If you've been working on a branch, you have lots
+
+01:01.380 --> 01:03.870
+of commits that maybe you've been working on this feature
+
+01:03.870 --> 01:06.660
+for a while and you have some kind of half baked commits
+
+01:06.660 --> 01:10.620
+or some buggy things or half complete commits.
+
+01:10.620 --> 01:11.453
+If you want to go through
+
+01:11.453 --> 01:15.114
+and streamline that and combine commits down, rename them
+
+01:15.114 --> 01:16.890
+that can be a nice thing to do
+
+01:16.890 --> 01:19.020
+before you share that code with anyone.
+
+01:19.020 --> 01:22.260
+So it's a step a lot of people take before sort
+
+01:22.260 --> 01:25.232
+of the grand unveiling of their branch, of their feature.
+
+01:25.232 --> 01:29.370
+So the way that we do this is a little bit different.
+
+01:29.370 --> 01:32.310
+We use the Git Rebase command, but typically
+
+01:32.310 --> 01:36.570
+we don't actually specify a branch to rebase onto.
+
+01:36.570 --> 01:39.330
+Instead we're just going to rebase a series
+
+01:39.330 --> 01:42.480
+of commits onto the head that they're currently based on.
+
+01:42.480 --> 01:46.140
+So instead of rebasing onto the master branch, for example
+
+01:46.140 --> 01:48.870
+or the main branch, we'll rebase, whatever branch we're
+
+01:48.870 --> 01:52.950
+on my feature, we'll rebase that branch onto where
+
+01:52.950 --> 01:54.660
+it currently is my feature.
+
+01:54.660 --> 01:59.231
+So it's just a way of recreating commits, every commit
+
+01:59.231 --> 02:01.410
+that we specify and we do have to provide a range.
+
+02:01.410 --> 02:03.030
+How far do we want to go back?
+
+02:03.030 --> 02:04.740
+In this case, four commits.
+
+02:04.740 --> 02:07.830
+I wanna go back four commits, recreate each one,
+
+02:07.830 --> 02:10.110
+and then we pass in this dash I flag
+
+02:10.110 --> 02:12.150
+this dash I option it stands
+
+02:12.150 --> 02:14.760
+for interactive, and I'll show you what that does
+
+02:14.760 --> 02:15.660
+in the next video.
+
+02:15.660 --> 02:18.840
+It's a very different way of rebasing than what we've
+
+02:18.840 --> 02:19.920
+seen so far.
+
+02:19.920 --> 02:22.860
+But remember that the Git Rebase command in the ways that
+
+02:22.860 --> 02:24.810
+or the previous way that we saw how to use it
+
+02:24.810 --> 02:27.990
+as an alternative to merge, what it did was it went
+
+02:27.990 --> 02:30.570
+through all the commits on some branch and it
+
+02:30.570 --> 02:34.020
+recreated each one right at the tip of a branch.
+
+02:34.020 --> 02:36.000
+So it doesn't matter where in this example
+
+02:36.000 --> 02:38.910
+but it recreates each commit from this feature branch
+
+02:38.910 --> 02:41.880
+minus those merge commits because they're not necessary.
+
+02:41.880 --> 02:45.030
+So each commit got a new hash, but it had the same contents
+
+02:45.030 --> 02:47.460
+it had the same message, same commit message
+
+02:47.460 --> 02:49.260
+but they're distinct commits.
+
+02:49.260 --> 02:52.140
+Using the interactive mode with this dash I
+
+02:52.140 --> 02:55.440
+it gives us the ability to instead say, as you're
+
+02:55.440 --> 02:58.864
+making this new commit, change the name or drop it.
+
+02:58.864 --> 03:01.344
+Don't make a new version of this one.
+
+03:01.344 --> 03:03.480
+So this is the basic syntax.
+
+03:03.480 --> 03:04.313
+In the next video
+
+03:04.313 --> 03:07.080
+I'm gonna demo it using a repository I've set
+
+03:07.080 --> 03:10.140
+up that you can clone as well if you wanna follow along.
+
+03:10.140 --> 03:11.460
+It's kind of fun
+
+03:11.460 --> 03:13.710
+and I'll walk through that in the next video.
