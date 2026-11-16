@@ -1,0 +1,382 @@
+WEBVTT
+
+00:00.150 --> 00:01.500
+Instructor: Now that we have a lot of practice
+
+00:01.500 --> 00:03.780
+making branches and switching between them,
+
+00:03.780 --> 00:05.940
+let's tackle merging branches.
+
+00:05.940 --> 00:08.670
+One of the essential features of working with branches,
+
+00:08.670 --> 00:10.200
+so the whole idea here is that
+
+00:10.200 --> 00:13.590
+with branches we can work within the self-contained context.
+
+00:13.590 --> 00:15.870
+We can work on different things in parallel,
+
+00:15.870 --> 00:18.750
+but usually we want to incorporate some of
+
+00:18.750 --> 00:21.330
+what we've done into another branch, right?
+
+00:21.330 --> 00:23.190
+We don't just work in a separate context
+
+00:23.190 --> 00:25.320
+and continue to work in a new separate context.
+
+00:25.320 --> 00:27.090
+Every time we work on something,
+
+00:27.090 --> 00:29.550
+we need to combine some of the stuff we're doing.
+
+00:29.550 --> 00:31.380
+If you are working on a feature
+
+00:31.380 --> 00:32.580
+and I'm working on a feature
+
+00:32.580 --> 00:34.200
+and we work at the same company,
+
+00:34.200 --> 00:37.364
+at some point if both of those features are,
+
+00:37.364 --> 00:40.200
+they're good features, we wanna incorporate them.
+
+00:40.200 --> 00:41.850
+You're going to need to merge your feature
+
+00:41.850 --> 00:43.380
+into some branch that I can get
+
+00:43.380 --> 00:44.910
+and I need to merge my feature
+
+00:44.910 --> 00:46.980
+into some branch that you can get.
+
+00:46.980 --> 00:49.570
+And then sometimes we do just abandon a branch
+
+00:50.965 --> 00:51.798
+and we don't merge it.
+
+00:51.798 --> 00:53.370
+But if things go well, a lot of the time
+
+00:53.370 --> 00:56.280
+we combine work from one branch into another.
+
+00:56.280 --> 00:58.800
+So there's a command we use called git merge.
+
+00:58.800 --> 01:00.840
+I'll show it in just a moment.
+
+01:00.840 --> 01:02.610
+But as I've said a couple of times,
+
+01:02.610 --> 01:05.940
+a really common workflow is to treat the master branch
+
+01:05.940 --> 01:08.700
+or the main branch or whatever you call it,
+
+01:08.700 --> 01:10.410
+some people call it trunk,
+
+01:10.410 --> 01:12.360
+whatever you call that branch.
+
+01:12.360 --> 01:15.480
+A lot of people treat it as the source of truth
+
+01:15.480 --> 01:20.100
+or the most stable build of an application
+
+01:20.100 --> 01:21.960
+where you don't want to screw anything up,
+
+01:21.960 --> 01:24.750
+you don't do any experiments on master.
+
+01:24.750 --> 01:26.850
+So people work on a feature branch
+
+01:26.850 --> 01:30.210
+and then that work can then be incorporated back
+
+01:30.210 --> 01:33.090
+into the master branch if it's deemed appropriate.
+
+01:33.090 --> 01:34.440
+You know, it's solid
+
+01:34.440 --> 01:36.150
+and it's gone through some different checks
+
+01:36.150 --> 01:37.320
+and people like it,
+
+01:37.320 --> 01:39.510
+they can merge it back into master.
+
+01:39.510 --> 01:42.270
+But the work itself is done on a feature branch.
+
+01:42.270 --> 01:46.170
+So everybody at X company works on their own feature branch
+
+01:46.170 --> 01:48.990
+for each feature and then potentially merges them back
+
+01:48.990 --> 01:50.040
+into master.
+
+01:50.040 --> 01:52.800
+So there's a couple of things that can be confusing
+
+01:52.800 --> 01:56.580
+about merging and basically I try and boil it down
+
+01:56.580 --> 01:58.770
+to these two principles.
+
+01:58.770 --> 02:02.460
+We merge branches, not specific commits,
+
+02:02.460 --> 02:05.220
+so we don't pick one commit and the second commit
+
+02:05.220 --> 02:06.630
+and join them together.
+
+02:06.630 --> 02:08.337
+We merge branches.
+
+02:08.337 --> 02:11.850
+And the second piece is that we always merge based
+
+02:11.850 --> 02:13.800
+on the current head branch.
+
+02:13.800 --> 02:17.550
+We merge to where we are to where head is.
+
+02:17.550 --> 02:19.170
+So here's a simple example.
+
+02:19.170 --> 02:21.390
+I have two branches in this example,
+
+02:21.390 --> 02:24.540
+a master branch and a bugfix branch.
+
+02:24.540 --> 02:26.760
+And on this bugfix branch,
+
+02:26.760 --> 02:29.670
+you can see down here I have some commits, right?
+
+02:29.670 --> 02:32.550
+I have diverged, I've made a new branch from master,
+
+02:32.550 --> 02:35.553
+and I've added two commits as I'm fixing this bug,
+
+02:36.933 --> 02:40.020
+and it's now time for me to merge that work into master.
+
+02:40.020 --> 02:42.030
+So I want these two commits.
+
+02:42.030 --> 02:44.610
+I want all of that work available on master.
+
+02:44.610 --> 02:47.490
+So the workflow here is to first switch
+
+02:47.490 --> 02:48.840
+or check out the branch
+
+02:48.840 --> 02:50.940
+that we want to merge the changes into.
+
+02:50.940 --> 02:54.420
+We need to move over to the receiving branch.
+
+02:54.420 --> 02:58.080
+So I'm trying to merge these commits into master.
+
+02:58.080 --> 03:00.660
+I need to switch to master.
+
+03:00.660 --> 03:02.793
+So that's what I do, git switch master.
+
+03:03.664 --> 03:04.497
+Head now points to master.
+
+03:04.497 --> 03:06.660
+And then the second step is to actually
+
+03:06.660 --> 03:08.520
+use the git merge command.
+
+03:08.520 --> 03:11.700
+And I'll show you an actual demo of this in the next video.
+
+03:11.700 --> 03:13.230
+But for now we're dealing with slides.
+
+03:13.230 --> 03:16.350
+So we use git merge and then some branch name
+
+03:16.350 --> 03:17.760
+and that will merge changes
+
+03:17.760 --> 03:21.540
+from this branch into the current branch that we're on.
+
+03:21.540 --> 03:24.750
+So this right here, git merge bugfix will take the commits
+
+03:24.750 --> 03:28.050
+from bugfix and merge them into whatever branch we're on,
+
+03:28.050 --> 03:30.150
+which in these diagrams is master.
+
+03:30.150 --> 03:34.950
+So we switch to master and then I run git merge bugfix.
+
+03:34.950 --> 03:39.270
+And you can see that master is now pointing at this commits.
+
+03:39.270 --> 03:41.940
+So it went from there to there.
+
+03:41.940 --> 03:44.460
+Now this is a very simple type of merge.
+
+03:44.460 --> 03:47.250
+The rest of this section deals with other types.
+
+03:47.250 --> 03:49.530
+Here's a easier way to visualize this, right?
+
+03:49.530 --> 03:52.590
+These colors in this diagonal line are just
+
+03:52.590 --> 03:55.470
+to help visually separate these branches for you.
+
+03:55.470 --> 03:57.750
+But really they're just commits
+
+03:57.750 --> 04:00.690
+with different pointers at different commits, right?
+
+04:00.690 --> 04:02.070
+It's just a chain of these commits,
+
+04:02.070 --> 04:04.020
+at least with the way this branch works.
+
+04:04.020 --> 04:04.980
+We had master,
+
+04:04.980 --> 04:08.220
+we branched off to bugfix and did two commits.
+
+04:08.220 --> 04:12.000
+Now all that we did when we merged was catch up.
+
+04:12.000 --> 04:15.270
+We moved master up to that same commit.
+
+04:15.270 --> 04:17.700
+This is called a fast forward merge
+
+04:17.700 --> 04:21.000
+because that's all we had to do for this branch to catch up.
+
+04:21.000 --> 04:23.370
+It just fast forwarded a couple of commits.
+
+04:23.370 --> 04:26.790
+There wasn't additional work on the master branch.
+
+04:26.790 --> 04:29.400
+Now sometimes that will be the case.
+
+04:29.400 --> 04:32.520
+So there'll be additional commits over here that don't exist
+
+04:32.520 --> 04:34.920
+on bugfix and that is trickier to merge
+
+04:34.920 --> 04:37.140
+and that's what we're gonna spend some time talking about.
+
+04:37.140 --> 04:38.670
+But for our first example,
+
+04:38.670 --> 04:40.920
+we're dealing with these fast forward merges.
+
+04:40.920 --> 04:42.600
+So you have two branches
+
+04:42.600 --> 04:45.990
+and one of the branches just has additional commits
+
+04:45.990 --> 04:48.000
+that the first branch doesn't have.
+
+04:48.000 --> 04:48.870
+So to catch up,
+
+04:48.870 --> 04:51.600
+it's just a matter of moving that pointer forward.
+
+04:51.600 --> 04:54.450
+So that's what the git merge command does in this example.
+
+04:54.450 --> 04:57.690
+So git merge bugfix, if we're on the master branch,
+
+04:57.690 --> 05:00.030
+moves that pointer up to bug fix.
+
+05:00.030 --> 05:02.400
+So now master has all that history,
+
+05:02.400 --> 05:04.560
+it has the work that it had from before,
+
+05:04.560 --> 05:06.840
+but also the work from bugfix.
+
+05:06.840 --> 05:10.440
+Okay? So again, this is called a fast forward merge.
+
+05:10.440 --> 05:11.700
+They're nice and simple.
+
+05:11.700 --> 05:13.770
+In the next video I'm going to demonstrate one
+
+05:13.770 --> 05:16.470
+and we'll get some practice with our playlist example.
