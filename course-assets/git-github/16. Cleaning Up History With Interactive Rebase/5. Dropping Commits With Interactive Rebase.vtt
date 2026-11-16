@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00.000 --> 00:01.620
+Instructor: The final thing I'll show you here
+
+00:01.620 --> 00:04.380
+with interactive Rebase is how we can completely
+
+00:04.380 --> 00:06.690
+remove a commit, not just the message
+
+00:06.690 --> 00:09.187
+but the entire commit and its changes.
+
+00:09.187 --> 00:11.880
+So I have this one horrible commit I made.
+
+00:11.880 --> 00:12.900
+Let's say it was an accident.
+
+00:12.900 --> 00:15.240
+It's silly, but in all reality
+
+00:15.240 --> 00:16.350
+there might be work you've done
+
+00:16.350 --> 00:19.800
+on a branch that you just don't want anymore, especially
+
+00:19.800 --> 00:22.012
+as you're about to share this branch with other people.
+
+00:22.012 --> 00:24.810
+So I faked that by de making a commit
+
+00:24.810 --> 00:28.350
+claiming it was from my cat, my JavaScript app.js
+
+00:28.350 --> 00:30.600
+file has a bunch of random nonsense, and then
+
+00:30.600 --> 00:33.840
+a commit message that says, my cat made this commit.
+
+00:33.840 --> 00:35.550
+So I wanna get rid of that.
+
+00:35.550 --> 00:37.650
+I'll just show you right now.
+
+00:37.650 --> 00:40.650
+If I take a look at the app.js file
+
+00:40.650 --> 00:43.200
+using the aptly named cat command
+
+00:43.200 --> 00:44.700
+this is what's in there, right?
+
+00:44.700 --> 00:45.660
+I can see this here.
+
+00:45.660 --> 00:48.660
+If I open it, I wanna get rid of that.
+
+00:48.660 --> 00:50.340
+I mean, I could delete it of course, but then
+
+00:50.340 --> 00:52.740
+I have to make a commit that says something like, you know
+
+00:52.740 --> 00:54.660
+deleting work for my cat.
+
+00:54.660 --> 00:56.940
+I just wanna drop that commit entirely.
+
+00:56.940 --> 00:59.613
+So I need to figure out how far back to go.
+
+01:00.870 --> 01:02.640
+It's just two commits to go.
+
+01:02.640 --> 01:04.020
+So that's, I could just do that.
+
+01:04.020 --> 01:04.853
+Go back two.
+
+01:04.853 --> 01:06.960
+So interactive rebase two.
+
+01:06.960 --> 01:08.280
+So I'm gonna do that.
+
+01:08.280 --> 01:13.280
+Git rebase dash I again, just rebasing in place.
+
+01:13.500 --> 01:17.730
+So head tilde two, it opens it up.
+
+01:17.730 --> 01:22.730
+Here's that commit, and instead of pick or reword or fix up
+
+01:23.100 --> 01:27.270
+I'm going to drop, which will remove the commit entirely.
+
+01:27.270 --> 01:28.290
+All righty.
+
+01:28.290 --> 01:30.330
+So we're gonna go ahead and try that.
+
+01:30.330 --> 01:32.760
+I don't know why I just went to my terminal.
+
+01:32.760 --> 01:36.180
+I'm gonna do drop that commit
+
+01:36.180 --> 01:40.080
+and then X out of here, I saved.
+
+01:40.080 --> 01:45.080
+And now first of all, if I type git log, that commit is not
+
+01:45.570 --> 01:46.440
+showing up, right?
+
+01:46.440 --> 01:50.040
+I don't see the message, but also the changes are gone.
+
+01:50.040 --> 01:52.620
+If I go to my editor, that file is still here
+
+01:52.620 --> 01:54.810
+because I created it in a different commit
+
+01:54.810 --> 01:57.330
+but the contents are gone.
+
+01:57.330 --> 02:00.900
+So now I have a completely rewritten history on this branch
+
+02:00.900 --> 02:04.240
+my feature branch, and we could compare it.
+
+02:04.240 --> 02:06.570
+So if we just take a look here, right?
+
+02:06.570 --> 02:09.870
+We only have one, two, three, four, five, six total commits.
+
+02:09.870 --> 02:12.900
+And they're all, I guess in present tense
+
+02:12.900 --> 02:17.670
+although you know it, maybe I want to uppercase all of them.
+
+02:17.670 --> 02:21.780
+So here we have an uppercase C, or the other option
+
+02:21.780 --> 02:23.490
+would be to make this lowercase.
+
+02:23.490 --> 02:24.720
+So we could do that, right?
+
+02:24.720 --> 02:27.210
+We know how to do that actually, if it's the most
+
+02:27.210 --> 02:30.330
+recent commit, the easiest way is to use git
+
+02:30.330 --> 02:34.260
+commit dash amend, which I showed you quite a long time ago.
+
+02:34.260 --> 02:38.010
+You may not remember, but if I do this, it opens
+
+02:38.010 --> 02:40.050
+up the most recent commit and it allows me
+
+02:40.050 --> 02:41.610
+to edit the commit message.
+
+02:41.610 --> 02:45.630
+But also I could add stuff in if I did a git add first
+
+02:45.630 --> 02:47.100
+and then commit amend.
+
+02:47.100 --> 02:48.950
+So I'm gonna close outta this though.
+
+02:50.130 --> 02:53.970
+And now if I do my git log, everything's all lowercase.
+
+02:53.970 --> 02:56.100
+I don't know, may just keep it consistent, right?
+
+02:56.100 --> 02:57.300
+It's just another way of editing
+
+02:57.300 --> 03:00.360
+commits of rewriting history.
+
+03:00.360 --> 03:03.180
+Okay, so we'll switch back to master from here.
+
+03:03.180 --> 03:07.563
+Git switch master and do a, oh no, it's main, isn't it?
+
+03:09.240 --> 03:11.700
+And then I'll do a git log one line.
+
+03:11.700 --> 03:13.260
+Way more commits.
+
+03:13.260 --> 03:17.070
+As you can see, very inconsistent tense.
+
+03:17.070 --> 03:18.480
+We collapse some of these down.
+
+03:18.480 --> 03:20.130
+We mushed them together.
+
+03:20.130 --> 03:22.170
+This one here with that one.
+
+03:22.170 --> 03:24.150
+And then these three, we combined
+
+03:24.150 --> 03:26.973
+we dropped this one, we rewrote history.
