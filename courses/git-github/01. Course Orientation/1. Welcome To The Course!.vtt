@@ -1,0 +1,343 @@
+WEBVTT
+
+00:00.240 --> 00:02.100
+Colt: Hey everyone, me and some of my
+
+00:02.100 --> 00:03.750
+stock asset friends here
+
+00:03.750 --> 00:05.700
+are very happy to welcome you to the Git
+
+00:05.700 --> 00:07.290
+and GitHub bootcamp.
+
+00:07.290 --> 00:09.540
+So none of these people are my real friends,
+
+00:09.540 --> 00:12.660
+but they are free images from my slide software,
+
+00:12.660 --> 00:13.800
+which is pretty good too
+
+00:13.800 --> 00:15.270
+and they'll be making some appearances
+
+00:15.270 --> 00:17.250
+throughout the course in my diagrams.
+
+00:17.250 --> 00:19.710
+Anyway, none of these fine folks are actually me.
+
+00:19.710 --> 00:20.640
+This is me here.
+
+00:20.640 --> 00:21.473
+Hello everyone.
+
+00:21.473 --> 00:22.631
+My name is Colt Steele.
+
+00:22.631 --> 00:25.650
+I never know how much detail to go into in my background,
+
+00:25.650 --> 00:28.740
+but I'll say that I've been teaching people how to program
+
+00:28.740 --> 00:29.880
+for almost a decade.
+
+00:29.880 --> 00:31.860
+I've helped thousands of people change careers
+
+00:31.860 --> 00:32.693
+in my in-person bootcamps,
+
+00:32.693 --> 00:35.940
+but I've also reached over a million students online.
+
+00:35.940 --> 00:37.980
+Ugh, I always feel a bit weird talking about it,
+
+00:37.980 --> 00:39.660
+but you can always check out my LinkedIn
+
+00:39.660 --> 00:42.600
+or my instructor bio if you want more information.
+
+00:42.600 --> 00:43.470
+All that really matters
+
+00:43.470 --> 00:46.020
+is that I actually really enjoy teaching Git.
+
+00:46.020 --> 00:47.460
+It's a challenging thing to teach
+
+00:47.460 --> 00:50.910
+and it's a creative challenge for the teacher.
+
+00:50.910 --> 00:52.260
+So I hope you enjoy the course.
+
+00:52.260 --> 00:54.300
+I've spent a lot of time trying to make it
+
+00:54.300 --> 00:56.250
+the best possible Git course.
+
+00:56.250 --> 00:58.350
+So if you're watching this, you probably already know
+
+00:58.350 --> 01:01.290
+that Git is this amazing, universal,
+
+01:01.290 --> 01:04.530
+widespread tool that, along with GitHub, enables
+
+01:04.530 --> 01:07.540
+and empowers millions and millions of users
+
+01:07.540 --> 01:10.650
+and companies ranging from tiny startups all the way up
+
+01:10.650 --> 01:13.260
+to Fortune 50 companies, to build things together,
+
+01:13.260 --> 01:16.680
+to collaborate and to maintain applications.
+
+01:16.680 --> 01:18.090
+So you probably already know that
+
+01:18.090 --> 01:19.350
+and a lot of people know it.
+
+01:19.350 --> 01:23.340
+They know it's crucial, yet it often goes ignored.
+
+01:23.340 --> 01:26.820
+It's not the most glamorous topic to learn at the beginning.
+
+01:26.820 --> 01:28.320
+I totally get why a lot
+
+01:28.320 --> 01:32.040
+of people prioritize learning JavaScript or CSS
+
+01:32.040 --> 01:35.580
+or Python or pretty much anything over Git.
+
+01:35.580 --> 01:39.450
+But the truth is, this is a very annoying expression
+
+01:39.450 --> 01:42.300
+that the best time to learn Git is yesterday.
+
+01:42.300 --> 01:43.732
+Somebody told me something very similar,
+
+01:43.732 --> 01:46.980
+a neighbor actually, about how the best time
+
+01:46.980 --> 01:49.320
+to plant fruit trees is five years ago.
+
+01:49.320 --> 01:50.370
+When you hear something like that,
+
+01:50.370 --> 01:54.120
+it's natural to want to punch that person,
+
+01:54.120 --> 01:56.700
+strangle them, or maybe just roll your eyes.
+
+01:56.700 --> 01:58.860
+But there is some truth to this,
+
+01:58.860 --> 02:01.350
+but also there's another piece to that sentence.
+
+02:01.350 --> 02:03.420
+The second best time to learn Git is now
+
+02:03.420 --> 02:05.890
+the second best time to plant fruit trees is today.
+
+02:05.890 --> 02:08.250
+Probably the second best time to plant fruit trees,
+
+02:08.250 --> 02:09.720
+it was four years ago.
+
+02:09.720 --> 02:12.090
+Anyway, the point is that it's very important to try
+
+02:12.090 --> 02:13.421
+and learn Git as soon as possible
+
+02:13.421 --> 02:16.410
+along whatever journey you're on.
+
+02:16.410 --> 02:19.470
+The sooner you learn it, the better, because it's not just
+
+02:19.470 --> 02:23.070
+about learning some syntax that takes some time,
+
+02:23.070 --> 02:25.800
+but you know, you can watch a video or a course
+
+02:25.800 --> 02:28.170
+or read a book and and learn the basics,
+
+02:28.170 --> 02:29.220
+but it takes more work.
+
+02:29.220 --> 02:31.950
+There's more than just learning the basic syntax.
+
+02:31.950 --> 02:34.140
+The real work comes with part two
+
+02:34.140 --> 02:35.760
+or what I'm calling step two,
+
+02:35.760 --> 02:39.060
+actually living as a Git user and breathing Git.
+
+02:39.060 --> 02:41.190
+It needs to become second nature.
+
+02:41.190 --> 02:44.220
+Git becomes a fundamental part of your workflow.
+
+02:44.220 --> 02:45.480
+So that takes time, right?
+
+02:45.480 --> 02:47.520
+That's why the best time to learn Git is yesterday,
+
+02:47.520 --> 02:48.614
+blah, blah, blah.
+
+02:48.614 --> 02:52.500
+But also, that's the goal of this course, to help Git
+
+02:52.500 --> 02:54.000
+become second nature.
+
+02:54.000 --> 02:56.010
+So not just to teach you the basics,
+
+02:56.010 --> 03:00.330
+it's also helping you just learn and live Git,
+
+03:00.330 --> 03:03.120
+breathe Git in as a user and that takes time
+
+03:03.120 --> 03:04.530
+and it takes practice.
+
+03:04.530 --> 03:06.150
+So that's why this course is more
+
+03:06.150 --> 03:08.670
+than just a bunch of lectures, although it's a ton
+
+03:08.670 --> 03:11.683
+of lectures, obviously I can't get around that.
+
+03:11.683 --> 03:14.700
+That is one of the core pieces of the course.
+
+03:14.700 --> 03:15.750
+It has to be educational.
+
+03:15.750 --> 03:18.630
+There's going to be that explaining the syntax
+
+03:18.630 --> 03:20.340
+and demonstrating how things work.
+
+03:20.340 --> 03:23.310
+But also there are quite a few exercises that I built to try
+
+03:23.310 --> 03:25.500
+and force you to get practice, to try
+
+03:25.500 --> 03:30.500
+and sort of steer you towards becoming one with Git.
+
+03:31.290 --> 03:33.360
+So I highly recommend you do those.
+
+03:33.360 --> 03:35.160
+I'll point them out in a separate video.
+
+03:35.160 --> 03:37.170
+I wanna talk about some strategies for them.
+
+03:37.170 --> 03:38.812
+I also tried to make it somewhat interesting
+
+03:38.812 --> 03:42.000
+and entertaining, but also visually,
+
+03:42.000 --> 03:45.210
+I spent way too much time, I think, making diagrams
+
+03:45.210 --> 03:48.240
+and Git is something that I think benefits a lot
+
+03:48.240 --> 03:50.640
+from thinking about in a visual way.
+
+03:50.640 --> 03:52.560
+So I spent a lot of time making these diagrams.
+
+03:52.560 --> 03:53.790
+I hope you appreciate them.
+
+03:53.790 --> 03:56.370
+And I guess that's really all I have to say right now.
+
+03:56.370 --> 03:57.570
+Welcome to the course, everyone.
+
+03:57.570 --> 03:58.980
+I hope you enjoy it.
+
+03:58.980 --> 04:00.540
+And I'll end this welcome video
+
+04:00.540 --> 04:04.020
+with one not-at-all important note.
+
+04:04.020 --> 04:07.320
+In my courses, I often reference my pet chickens
+
+04:07.320 --> 04:08.160
+throughout my courses.
+
+04:08.160 --> 04:11.640
+I'll use their names in different files or in exercises,
+
+04:11.640 --> 04:14.820
+in diagrams, and students inevitably demand photos
+
+04:14.820 --> 04:16.050
+or videos of my chickens.
+
+04:16.050 --> 04:17.529
+So I'm just gonna get it out of the way here.
+
+04:17.529 --> 04:20.370
+If you wanna see them, here they are.
+
+04:20.370 --> 04:22.350
+All right, so we'll go ahead and get started.
+
+04:22.350 --> 04:24.950
+Once again, welcome and I hope you enjoy the course.
