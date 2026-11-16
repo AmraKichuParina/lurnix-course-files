@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00.120 --> 00:02.820
+-: So the second use for git restore is
+
+00:02.820 --> 00:05.880
+to unstage files that we currently stage.
+
+00:05.880 --> 00:08.160
+So if we made a mistake, we stage something
+
+00:08.160 --> 00:10.260
+it's going to be included in the next commit
+
+00:10.260 --> 00:12.960
+and then we decide, ah, we really don't want that.
+
+00:12.960 --> 00:15.570
+We can un stage it using git restore
+
+00:15.570 --> 00:19.260
+and then dash dash staged in a file name.
+
+00:19.260 --> 00:22.410
+So I'll demonstrate this, let's restore back to head.
+
+00:22.410 --> 00:23.970
+So we'll just do get restore.
+
+00:23.970 --> 00:28.970
+Whoops, get restore our files, cat and dog.
+
+00:29.850 --> 00:33.420
+We'll go back to first, second, and third in both of them.
+
+00:33.420 --> 00:35.430
+So now I'm gonna make a new commit in here.
+
+00:35.430 --> 00:37.560
+Fourth commit.
+
+00:37.560 --> 00:39.450
+So I'll just put that in both of them.
+
+00:39.450 --> 00:41.610
+And for the sake of this example
+
+00:41.610 --> 00:45.510
+I'm gonna make a file, I'll call it secrets dot txt.
+
+00:45.510 --> 00:48.390
+And in here I'll put something like, I don't know
+
+00:48.390 --> 00:52.140
+A P i key equals some a P i key
+
+00:52.140 --> 00:57.140
+and then credit card number equals and then some fake.
+
+00:57.330 --> 00:59.220
+I don't even, I don't think that's the right number
+
+01:00.405 --> 01:01.238
+of digits, but let's say that's your credit card number.
+
+01:02.093 --> 01:04.314
+Okay, then I forget about this file
+
+01:04.314 --> 01:06.147
+and I'm ready to make my next commit.
+
+01:06.147 --> 01:08.670
+So I head over here and I type git add dot
+
+01:08.670 --> 01:12.209
+and then I have a horrible sinking feeling.
+
+01:12.209 --> 01:13.868
+I type get status.
+
+01:13.868 --> 01:16.620
+I realized, shoot, I did not want to stage my secrets file.
+
+01:16.620 --> 01:18.000
+I don't wanna include that.
+
+01:18.000 --> 01:19.890
+Now ideally I would have a get ignore
+
+01:19.890 --> 01:21.460
+and it would include that file
+
+01:22.368 --> 01:23.730
+but still there are times if you've done a lot
+
+01:23.730 --> 01:26.070
+of work and you need to split your changes
+
+01:26.070 --> 01:29.010
+up into a couple of commits, you might add a file
+
+01:29.010 --> 01:31.200
+that you don't wanna stage, you might wanna remove it.
+
+01:31.200 --> 01:32.370
+That's what we're doing here.
+
+01:32.370 --> 01:35.371
+I want these two to be included, right?
+
+01:35.371 --> 01:36.698
+I want fourth commit.
+
+01:36.698 --> 01:38.034
+Fourth commit.
+
+01:38.034 --> 01:40.470
+I want that to be included, but I want to unstage this.
+
+01:40.470 --> 01:43.140
+So to do that, git restore dash
+
+01:43.140 --> 01:45.900
+dash staged and then the file name.
+
+01:45.900 --> 01:47.310
+So here we go.
+
+01:47.310 --> 01:52.170
+Git restore, dash, dash staged secrets, not stages.
+
+01:52.170 --> 01:53.003
+Staged.
+
+01:54.747 --> 01:57.270
+Okay, that gets status
+
+01:57.270 --> 02:00.330
+and now it's not being tracked, right?
+
+02:00.330 --> 02:02.250
+Git doesn't really care about this file anymore.
+
+02:02.250 --> 02:04.920
+It's at least not staged to be included in the commit
+
+02:04.920 --> 02:07.050
+but the file has not been changed.
+
+02:07.050 --> 02:10.020
+So we didn't like delete it or reset anything in it.
+
+02:10.020 --> 02:12.000
+It's just not staged for the next commit.
+
+02:12.000 --> 02:17.000
+So now I can make my commit fourth commit get status.
+
+02:17.460 --> 02:20.850
+Still it was not included and it's still there, you know
+
+02:20.850 --> 02:24.243
+just waiting for us to stage it or ideally to ignore it.
+
+02:25.110 --> 02:27.090
+So that's kind of confusing, right?
+
+02:27.090 --> 02:32.090
+The two purposes for git restore one is to unmodify a file
+
+02:32.460 --> 02:37.200
+or files and the other is to un stage file or files.
+
+02:37.200 --> 02:41.190
+Fortunately, if you use git status, Git will tell you
+
+02:41.190 --> 02:45.150
+at any point it reminds you how to do both of them.
+
+02:45.150 --> 02:48.690
+So for example, if I stage a change
+
+02:48.690 --> 02:50.490
+which right now I don't have anything
+
+02:50.490 --> 02:55.490
+but if I do stage that change, get add secrets dot txt
+
+02:55.740 --> 02:59.010
+and I type get status, it tells me right here
+
+02:59.010 --> 03:00.330
+this is going to be committed.
+
+03:00.330 --> 03:04.281
+If you don't want that use git restore dash
+
+03:04.281 --> 03:07.410
+dash staged and then a file name to unstage.
+
+03:07.410 --> 03:09.540
+'cause honestly I struggled to remember this
+
+03:09.540 --> 03:12.129
+I don't have to do it all that often.
+
+03:12.129 --> 03:14.295
+Thankfully git status tells us.
+
+03:14.295 --> 03:15.773
+So I mean we could just copy that.
+
+03:17.940 --> 03:22.830
+Great. And then the same thing, if I change one of my files
+
+03:22.830 --> 03:25.560
+I put some stuff in there, I delete it, great.
+
+03:25.560 --> 03:28.983
+Git status, it says hey, you modified that file.
+
+03:30.004 --> 03:32.457
+And it's also mentioned to discard the changes
+
+03:32.457 --> 03:33.330
+in the working directory.
+
+03:33.330 --> 03:35.400
+Use git restore and then the file name.
+
+03:35.400 --> 03:38.457
+So I'll do that, get restore cat dot txt
+
+03:38.457 --> 03:40.620
+and we're back to where we were.
+
+03:40.620 --> 03:42.630
+So you don't have to remember it at all times.
+
+03:42.630 --> 03:45.840
+You can just use git status it will remind you what to use.
+
+03:45.840 --> 03:48.548
+It does not show you in git status though
+
+03:48.548 --> 03:50.144
+that you have this option, right?
+
+03:50.144 --> 03:50.977
+To specify a different source.
+
+03:50.977 --> 03:51.843
+Not as common.
+
+03:53.076 --> 03:54.853
+But this does allow you to reset the contents
+
+03:54.853 --> 03:57.540
+of a file to what it looked like 10 commits ago if needed.
+
+03:57.540 --> 03:59.370
+So you can use that dash, dash source
+
+03:59.370 --> 04:01.860
+it defaults to head as we've seen.
+
+04:01.860 --> 04:03.260
+Okay, so that's git restore.
