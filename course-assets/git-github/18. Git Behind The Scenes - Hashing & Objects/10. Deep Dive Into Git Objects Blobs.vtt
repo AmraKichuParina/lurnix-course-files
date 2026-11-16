@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00.000 --> 00:02.760
+Instructor: Alright, so in the last few videos we've seen
+
+00:02.760 --> 00:06.450
+that we can manually tell GIT to store characters,
+
+00:06.450 --> 00:09.120
+single strings like hello and goodbye
+
+00:09.120 --> 00:12.240
+and it will store them in the objects directory.
+
+00:12.240 --> 00:14.283
+It creates a file using the hash.
+
+00:14.283 --> 00:17.640
+So here I'm just showing, you know the, the hash file.
+
+00:17.640 --> 00:19.170
+I'm not showing the subdirectory.
+
+00:19.170 --> 00:21.743
+It's nested inside of technically the hash.
+
+00:21.743 --> 00:24.600
+The first two characters make the directory name right
+
+00:24.600 --> 00:26.763
+and then the other 38 make up the file name.
+
+00:26.763 --> 00:30.873
+But anyway, it stores the contents in this case, hello,
+
+00:30.873 --> 00:35.280
+in the file and it names it with this key with the hash.
+
+00:35.280 --> 00:37.680
+And then I can put something else in there like goodbye
+
+00:37.680 --> 00:38.760
+and chicken.
+
+00:38.760 --> 00:41.466
+Or I could have different versions of files,
+
+00:41.466 --> 00:42.974
+which is more realistic.
+
+00:42.974 --> 00:46.440
+I can have a hundred lines in a file versus a thousand lines
+
+00:46.440 --> 00:49.320
+in the same file or store 10 different files.
+
+00:49.320 --> 00:52.230
+Git is going to create objects for each of them. And then,
+
+00:52.230 --> 00:55.470
+at any point, we can manually say, Hey, here's the key
+
+00:55.470 --> 00:58.980
+for something, please go give me the corresponding data.
+
+00:58.980 --> 01:01.320
+And we saw Git was able to do that.
+
+01:01.320 --> 01:04.860
+So at this point, everything that we have stored
+
+01:04.860 --> 01:08.400
+all of the stuff in this objects directory,
+
+01:08.400 --> 01:10.320
+they are examples of one type
+
+01:10.320 --> 01:13.260
+of a Git object called blobs,
+
+01:13.260 --> 01:16.188
+binary large objects blob.
+
+01:16.188 --> 01:19.380
+So this is one type of an object Git can store.
+
+01:19.380 --> 01:23.220
+Remember there are four. Commits are one, blobs are another.
+
+01:23.220 --> 01:24.930
+Something called trees, we'll see next.
+
+01:24.930 --> 01:26.730
+And then annotated tags.
+
+01:26.730 --> 01:28.320
+We don't care about those so much.
+
+01:28.320 --> 01:31.650
+But really blobs, commits and trees are the most important.
+
+01:31.650 --> 01:36.330
+So a blob is used to store the content of a file.
+
+01:36.330 --> 01:40.140
+It is just the content of a file, just the insides.
+
+01:40.140 --> 01:42.158
+It doesn't include even the file name
+
+01:42.158 --> 01:44.100
+it's just the content.
+
+01:44.100 --> 01:48.270
+So what we've done so far is created a couple of blobs.
+
+01:48.270 --> 01:50.550
+This is a blob, this is a blob, this is a blob.
+
+01:50.550 --> 01:51.581
+This is a blob.
+
+01:51.581 --> 01:55.290
+They are just content that we've stored.
+
+01:55.290 --> 01:56.580
+Now what's interesting, as I said
+
+01:56.580 --> 01:59.160
+is that the file name is not included.
+
+01:59.160 --> 02:01.320
+So you can visualize a blob like this.
+
+02:01.320 --> 02:05.340
+This is the content in a file, some JavaScript file.
+
+02:05.340 --> 02:08.250
+Git of course keeps track of a file name,
+
+02:08.250 --> 02:09.675
+and that's where trees come in.
+
+02:09.675 --> 02:14.261
+But Git stores the contents of a file separate from the name
+
+02:14.261 --> 02:17.760
+and then each blob gets its own hash.
+
+02:17.760 --> 02:19.230
+We've already seen that.
+
+02:19.230 --> 02:20.190
+These are blobs.
+
+02:20.190 --> 02:21.780
+We created a blob.
+
+02:21.780 --> 02:23.280
+It got this hash.
+
+02:23.280 --> 02:26.730
+This is a blob, it has this hash, 39 E 275.
+
+02:26.730 --> 02:29.940
+This is a blob, CE 0136.
+
+02:29.940 --> 02:31.145
+Blobs are a building block
+
+02:31.145 --> 02:34.866
+of the way that we use gits, where we have different files
+
+02:34.866 --> 02:38.190
+and different contents and different versions and commits.
+
+02:38.190 --> 02:40.915
+They play a very important role, as you'll see
+
+02:40.915 --> 02:44.370
+but on their own, a blob is just a Git object
+
+02:44.370 --> 02:46.770
+that stores the contents of a file.
+
+02:46.770 --> 02:48.300
+Doesn't even include the file name
+
+02:48.300 --> 02:49.980
+but it does get its own hash.
+
+02:49.980 --> 02:52.320
+So it's not a commit hash, it's a blob hash.
+
+02:52.320 --> 02:54.179
+They might look like a commit hash, but that's just
+
+02:54.179 --> 02:57.540
+because they're all 40 character hexa decimals, right?
+
+02:57.540 --> 02:59.160
+It's impossible to tell them apart
+
+02:59.160 --> 03:03.000
+and they're the output of the same shah one function.
+
+03:03.000 --> 03:05.010
+Anyway, that's an intro to blobs.
+
+03:05.010 --> 03:08.013
+In the next video we get to talk about trees.
