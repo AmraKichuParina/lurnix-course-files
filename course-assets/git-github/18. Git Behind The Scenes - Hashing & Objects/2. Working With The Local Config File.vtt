@@ -1,0 +1,649 @@
+WEBVTT
+
+00:00.330 --> 00:01.919
+Instructor: So the first part
+
+00:01.919 --> 00:03.180
+of this Git behind the scenes section,
+
+00:03.180 --> 00:07.440
+we'll focus on the .git directory and its contents.
+
+00:07.440 --> 00:10.230
+There's a lot in there that we're not going to talk about
+
+00:10.230 --> 00:11.400
+but I'm gonna highlight some
+
+00:11.400 --> 00:14.370
+of the most important pieces in the next few videos.
+
+00:14.370 --> 00:16.980
+So if we take a look at any repository
+
+00:16.980 --> 00:20.520
+I'm gonna be using the React repository that we cloned
+
+00:20.520 --> 00:24.270
+in the Git tags section, but you can do this on any repo.
+
+00:24.270 --> 00:25.390
+But just to remind you
+
+00:26.337 --> 00:27.990
+there's a whole bunch of stuff in this one.
+
+00:27.990 --> 00:32.082
+If I do a git log, well that's not very helpful.
+
+00:32.082 --> 00:36.000
+Let's do a one line, lots and lots of commits, I mean a lot.
+
+00:36.000 --> 00:41.000
+Okay, and then we've got of course our .git folder.
+
+00:41.610 --> 00:43.170
+So I'm gonna take a look at that folder
+
+00:43.170 --> 00:45.330
+I'll just cd into it.
+
+00:45.330 --> 00:48.090
+Remember it's a hidden folder, let me clear.
+
+00:48.090 --> 00:50.599
+And then here are the contents.
+
+00:50.599 --> 00:53.190
+So compared to this slide, there's a lot more
+
+00:53.190 --> 00:54.450
+but I'm just gonna highlight some
+
+00:54.450 --> 00:55.680
+of the most important pieces.
+
+00:55.680 --> 00:57.840
+And in this video, I'm gonna start
+
+00:57.840 --> 01:01.230
+by talking about this one file called config.
+
+01:01.230 --> 01:05.160
+The config file is for additional configuration.
+
+01:05.160 --> 01:07.740
+We've talked about this a little bit with Git.
+
+01:07.740 --> 01:11.430
+There are multiple locations that we can configure settings,
+
+01:11.430 --> 01:12.860
+we can do it globally,
+
+01:12.860 --> 01:15.210
+we can actually do it system-wide, globally
+
+01:15.210 --> 01:18.510
+and then locally on a per repo basis.
+
+01:18.510 --> 01:22.680
+So this config file in the .git folder right there
+
+01:22.680 --> 01:25.140
+in every repo, it's gonna exist.
+
+01:25.140 --> 01:27.720
+If you put settings in there, they will be configured
+
+01:27.720 --> 01:30.990
+for this one repo, but not for all repos.
+
+01:30.990 --> 01:32.970
+It's not going to change things globally.
+
+01:32.970 --> 01:36.270
+Now there is also a global config file
+
+01:36.270 --> 01:37.830
+which we won't talk about now.
+
+01:37.830 --> 01:40.080
+I just wanna show you the local one.
+
+01:40.080 --> 01:42.000
+This is where we can go and change things.
+
+01:42.000 --> 01:45.330
+We can add customization for one repo that,
+
+01:45.330 --> 01:47.400
+you know, won't affect another repo.
+
+01:47.400 --> 01:50.520
+The problem is that there is so much that you can do
+
+01:50.520 --> 01:53.270
+so many different settings, it's honestly overwhelming.
+
+01:54.301 --> 01:56.070
+Here is what the file looks like.
+
+01:56.070 --> 01:57.960
+So the format is a bit different
+
+01:57.960 --> 02:00.150
+than anything we've seen so far.
+
+02:00.150 --> 02:02.580
+This is what's in mine by default.
+
+02:02.580 --> 02:05.010
+So every time I add a remote,
+
+02:05.010 --> 02:07.350
+I end up, well I cloned this repo.
+
+02:07.350 --> 02:09.180
+So we ended up with this remote first
+
+02:09.180 --> 02:12.930
+and then I added my own remote, I called it Colt.
+
+02:12.930 --> 02:16.140
+So we end up with this here, but then we have some settings
+
+02:16.140 --> 02:17.130
+that we can change.
+
+02:17.130 --> 02:20.070
+Some of these basic ones like ignore case,
+
+02:20.070 --> 02:22.050
+these are all they're in here automatically,
+
+02:22.050 --> 02:24.854
+but I can add on as much as I want.
+
+02:24.854 --> 02:26.940
+And this is also where we can add Git aliases
+
+02:26.940 --> 02:28.920
+that we'll talk about later.
+
+02:28.920 --> 02:31.680
+So I said there's a lot that you can do.
+
+02:31.680 --> 02:35.910
+This is the documentation, the page for Git config.
+
+02:35.910 --> 02:38.160
+We can configure Git, we can change settings
+
+02:38.160 --> 02:40.860
+from the command line, which we've seen before
+
+02:40.860 --> 02:42.360
+when we did this sort of thing.
+
+02:42.360 --> 02:47.360
+Git config user.name for example, when we set this
+
+02:48.060 --> 02:50.370
+if I set it to something else, I'm actually
+
+02:50.370 --> 02:54.720
+setting a a value in a file in the global Git config file.
+
+02:54.720 --> 02:56.580
+But I can also set things locally
+
+02:56.580 --> 02:58.350
+so I could do Git config
+
+02:58.350 --> 03:02.793
+and then local user.name.
+
+03:04.380 --> 03:05.490
+It's not gonna give me anything
+
+03:05.490 --> 03:09.270
+but I can set this value to be something else like
+
+03:09.270 --> 03:10.953
+I don't know, chicken little.
+
+03:12.450 --> 03:15.360
+Okay, and now if I ask for my local username
+
+03:15.360 --> 03:17.400
+it says "you are chicken little"
+
+03:17.400 --> 03:20.790
+and if we look at this file somewhere, there it is.
+
+03:20.790 --> 03:23.940
+User name is chicken little.
+
+03:23.940 --> 03:25.443
+So if I set email,
+
+03:26.520 --> 03:31.520
+local user.email, I dunno, how about chicken@gmail.com?
+
+03:34.620 --> 03:36.960
+We can see it is just a simple way
+
+03:36.960 --> 03:38.940
+of updating the file for me, right?
+
+03:38.940 --> 03:41.970
+I'm setting a local setting versus
+
+03:41.970 --> 03:43.860
+if I leave off the dash dash local
+
+03:43.860 --> 03:46.920
+I'm updating a setting in the global config file.
+
+03:46.920 --> 03:48.970
+So in another repo, I'm still Colt
+
+03:49.950 --> 03:51.540
+that's the global user.name.
+
+03:51.540 --> 03:55.920
+And this repo I am now chicken little.
+
+03:55.920 --> 03:58.410
+Also, we can do a whole bunch more
+
+03:58.410 --> 04:00.480
+which is what I was starting to get at,
+
+04:00.480 --> 04:01.920
+so many different settings.
+
+04:01.920 --> 04:05.580
+It's very, very overwhelming as I scroll through here,
+
+04:05.580 --> 04:07.080
+each one of these is a setting
+
+04:08.130 --> 04:11.730
+and most of them have multiple possible values.
+
+04:11.730 --> 04:13.440
+I mean, it's kind of crazy.
+
+04:13.440 --> 04:17.340
+So if you do wanna get into fancy configuration files
+
+04:17.340 --> 04:18.480
+I usually poke around
+
+04:18.480 --> 04:20.730
+and take a look at what other developers do.
+
+04:20.730 --> 04:23.280
+They often share their config files.
+
+04:23.280 --> 04:24.630
+I'll just show one example
+
+04:24.630 --> 04:26.310
+of things that we could configure.
+
+04:26.310 --> 04:27.960
+It's I guess kind of fun.
+
+04:27.960 --> 04:29.790
+We'll play around with color.
+
+04:29.790 --> 04:33.810
+So depending on the terminal you're using,
+
+04:33.810 --> 04:35.460
+the shell specifically,
+
+04:35.460 --> 04:39.030
+you may have some colors automatically configured.
+
+04:39.030 --> 04:40.440
+For example, if I do a Git,
+
+04:40.440 --> 04:42.750
+I have to get out of the .git folder.
+
+04:42.750 --> 04:45.330
+If I do a git diff, let's just do
+
+04:45.330 --> 04:50.330
+compared to a couple commits ago, I've got, you know,
+
+04:50.580 --> 04:55.580
+this default red and green on this diff and some cyan here.
+
+04:55.710 --> 04:57.900
+You may or may not see the same colors
+
+04:57.900 --> 05:00.810
+but I'm gonna show you how we can actually change that.
+
+05:00.810 --> 05:03.420
+So there's all these settings under color.
+
+05:03.420 --> 05:06.360
+If I try and search for color, this is what I don't like.
+
+05:06.360 --> 05:10.380
+I'm searching for color and I'm getting 151 results.
+
+05:10.380 --> 05:12.600
+It's really hard to navigate this.
+
+05:12.600 --> 05:16.170
+But basically I happen to know how to do this
+
+05:16.170 --> 05:19.410
+because I've pulled up an earlier example
+
+05:19.410 --> 05:22.110
+and I think there's an example somewhere on here as well.
+
+05:22.110 --> 05:24.393
+But I'm just gonna show you what it's like.
+
+05:25.227 --> 05:26.760
+I wouldn't come to the Git docs to figure this out.
+
+05:26.760 --> 05:31.530
+I would probably Google just Git config colors.
+
+05:31.530 --> 05:33.660
+So I'm gonna show it to you over here.
+
+05:33.660 --> 05:35.760
+I can manually edit this file.
+
+05:35.760 --> 05:36.660
+Instead of going
+
+05:36.660 --> 05:40.170
+and using the commands from the terminal, I can do this.
+
+05:40.170 --> 05:41.703
+So I'm gonna start with color.
+
+05:42.840 --> 05:44.580
+And again, the syntax's kind of weird.
+
+05:44.580 --> 05:47.730
+I'm gonna say UI equals true.
+
+05:47.730 --> 05:51.780
+All right, and then after that I can set colors
+
+05:51.780 --> 05:53.940
+for different parts and different commands.
+
+05:53.940 --> 05:56.580
+So for example, for the output of Git branch
+
+05:56.580 --> 06:00.240
+this is the syntax, color space branch.
+
+06:00.240 --> 06:01.890
+And then indented.
+
+06:01.890 --> 06:05.580
+I can then change what the current branch looks like
+
+06:05.580 --> 06:07.080
+what a remote branch looks like,
+
+06:07.080 --> 06:08.490
+what a local branch looks like.
+
+06:08.490 --> 06:09.990
+I can change their colors.
+
+06:09.990 --> 06:11.550
+So I'm not sure what we have right now.
+
+06:11.550 --> 06:16.080
+If I do Git branch, okay, well I'm in detached head.
+
+06:16.080 --> 06:20.760
+Okay, let's go back to master, Git switch master.
+
+06:20.760 --> 06:22.650
+Okay, let's do Git branch again.
+
+06:22.650 --> 06:25.230
+So my current branch is green right now.
+
+06:25.230 --> 06:27.360
+And if I make another branch
+
+06:27.360 --> 06:28.960
+let's just call this new branch.
+
+06:30.480 --> 06:32.340
+Yeah, so it's green
+
+06:32.340 --> 06:36.150
+and then the other branches that I have locally are black.
+
+06:36.150 --> 06:37.350
+So I can change that.
+
+06:37.350 --> 06:40.830
+I could say all local branches equal
+
+06:40.830 --> 06:42.180
+and then I can come up with a color.
+
+06:42.180 --> 06:44.910
+There's only so many color choices.
+
+06:44.910 --> 06:47.340
+It does go into it on the docs somewhere here
+
+06:47.340 --> 06:48.840
+but of course I can't find it.
+
+06:49.920 --> 06:52.620
+Here we are, black, red, green, yellow,
+
+06:52.620 --> 06:54.630
+blue, magenta cyan and white.
+
+06:54.630 --> 06:58.743
+Let's do, I don't know, let's do cyan just to show this.
+
+06:59.611 --> 07:01.560
+And then I can also set a weight like bold
+
+07:01.560 --> 07:04.020
+but I guess I'll do bold, sure.
+
+07:04.020 --> 07:07.270
+Okay, so if I save this and I run the command again
+
+07:08.490 --> 07:11.640
+now you can see when I run Git branch the output
+
+07:11.640 --> 07:14.460
+for all branches, except the current one I'm on
+
+07:14.460 --> 07:17.880
+they show up as cyan and bolded.
+
+07:17.880 --> 07:20.160
+So I could also say that current
+
+07:20.160 --> 07:24.633
+this is just another keyword, equals yellow bold.
+
+07:26.040 --> 07:29.853
+Now if I try it, that's my terminal's version of yellow.
+
+07:30.690 --> 07:32.811
+These are colors that you can actually configure.
+
+07:32.811 --> 07:34.140
+And yellow doesn't even have to be yellow
+
+07:34.140 --> 07:36.990
+it's up to the terminal that it's being displayed in,
+
+07:36.990 --> 07:40.080
+color is kind of a confusing topic with terminals.
+
+07:40.080 --> 07:42.960
+Anyway, there's other things we can do, right?
+
+07:42.960 --> 07:44.160
+Besides just bold.
+
+07:44.160 --> 07:47.130
+I think we can do, yeah, blink, reverse
+
+07:47.130 --> 07:50.133
+italic, strikethrough, dim.
+
+07:51.270 --> 07:53.910
+So eh, I don't know if we want to do any of those
+
+07:53.910 --> 07:58.680
+but I'll just show if we leave off bold
+
+07:58.680 --> 08:03.330
+like for local branches, it's not bolded
+
+08:03.330 --> 08:05.610
+it's just sort of the default font weight.
+
+08:05.610 --> 08:07.770
+And then we can do other things.
+
+08:07.770 --> 08:10.860
+Like if you wanna set the colors for Git diff
+
+08:10.860 --> 08:14.580
+or for Git status, you can set all of those commands.
+
+08:14.580 --> 08:19.353
+So I'll do color for diff, it looks like this.
+
+08:20.730 --> 08:21.870
+And then indented.
+
+08:21.870 --> 08:24.990
+We have things that we can set, including old.
+
+08:24.990 --> 08:28.080
+So what the old stuff looks like, what color it is.
+
+08:28.080 --> 08:32.890
+New, so right now, if I just recall this command
+
+08:34.769 --> 08:37.413
+you can see that new is already showing up as green.
+
+08:38.388 --> 08:40.350
+And is there any old, I don't see anything.
+
+08:40.350 --> 08:42.930
+Lemme try a couple commits ago.
+
+08:42.930 --> 08:43.763
+Here we are.
+
+08:43.763 --> 08:45.630
+So you can see red and green.
+
+08:45.630 --> 08:48.540
+And then we've got this stuff that's in cyan.
+
+08:48.540 --> 08:49.373
+Eh, I don't know,
+
+08:49.373 --> 08:50.700
+I don't wanna waste your time showing all this
+
+08:50.700 --> 08:53.310
+but I'll just quickly say old is now going
+
+08:53.310 --> 08:56.820
+to be magenta in bold.
+
+08:56.820 --> 09:00.340
+Sure, and if I run Git diff again
+
+09:01.869 --> 09:03.030
+you'll see I have magenta showing up
+
+09:03.030 --> 09:05.190
+for the old, the minus signs.
+
+09:05.190 --> 09:08.910
+So just another example of configuring things.
+
+09:08.910 --> 09:10.350
+There are other things we can do.
+
+09:10.350 --> 09:11.680
+You know,
+
+09:11.680 --> 09:13.800
+you can change the text editor locally for whatever reason.
+
+09:13.800 --> 09:17.160
+I wouldn't do this, but you could for this one repo,
+
+09:17.160 --> 09:19.680
+there are many, many settings,
+
+09:19.680 --> 09:21.000
+but a lot of the time you want them
+
+09:21.000 --> 09:23.160
+to go in your global Git config.
+
+09:23.160 --> 09:25.800
+But I just wanted to show you that you can screw around.
+
+09:25.800 --> 09:27.150
+Well I won't say screw around.
+
+09:27.150 --> 09:30.270
+You can have fun with this Git config file.
+
+09:30.270 --> 09:33.330
+It's located in every .git folder.
+
+09:33.330 --> 09:37.920
+It's just called config and I'm looking at it right here.
+
+09:37.920 --> 09:40.410
+Kind of weird syntax, terrifying docs.
+
+09:40.410 --> 09:42.870
+Intimidating to try and understand
+
+09:42.870 --> 09:45.060
+but there's just so many settings you can play around with.
+
+09:45.060 --> 09:46.500
+So you can set them from the terminal
+
+09:46.500 --> 09:49.230
+as I showed you with a dash dash local flag.
+
+09:49.230 --> 09:52.050
+Or you can set them manually in the file.
+
+09:52.050 --> 09:55.383
+Okay, so that's the config file in the .git folder.
