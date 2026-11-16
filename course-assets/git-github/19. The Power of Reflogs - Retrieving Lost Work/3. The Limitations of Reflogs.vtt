@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.150 --> 00:02.160
+Instructor: Now before we go any further,
+
+00:02.160 --> 00:04.170
+I think in the last video I said I was gonna show you
+
+00:04.170 --> 00:07.230
+this get Git reflog command, but first I just need
+
+00:07.230 --> 00:10.440
+to make a very important announcement about reflogs.
+
+00:10.440 --> 00:12.660
+I made a separate video to tell you this.
+
+00:12.660 --> 00:16.710
+Reflogs are only local. That's the first bit.
+
+00:16.710 --> 00:18.750
+So I could be working on a repository
+
+00:18.750 --> 00:22.650
+with thousands of collaborators like this React repository.
+
+00:22.650 --> 00:24.000
+This has thousands of commits
+
+00:24.000 --> 00:27.480
+from at least I think 1,500 different people.
+
+00:27.480 --> 00:29.190
+I don't have their reflogs.
+
+00:29.190 --> 00:30.810
+I don't know what happened to their head
+
+00:30.810 --> 00:33.240
+on a day-to-day or minute-to-minute basis.
+
+00:33.240 --> 00:35.490
+That would just be absolutely overwhelming.
+
+00:35.490 --> 00:37.260
+So reflogs are local.
+
+00:37.260 --> 00:40.200
+Git is only storing, it's only logging my changes
+
+00:40.200 --> 00:42.960
+to references on my machine locally.
+
+00:42.960 --> 00:45.810
+And, furthermore, they are non-permanent.
+
+00:45.810 --> 00:48.480
+They do expire, and I think the default
+
+00:48.480 --> 00:51.030
+according to the Git docs is around 90 days
+
+00:51.030 --> 00:54.090
+where old entries will be removed.
+
+00:54.090 --> 00:56.040
+But you can actually change that.
+
+00:56.040 --> 00:58.230
+I don't really think it's worth changing.
+
+00:58.230 --> 01:01.020
+I wouldn't change it, but there is a way to do that.
+
+01:01.020 --> 01:03.420
+You can make it shorter if you wanted to,
+
+01:03.420 --> 01:05.490
+but the main takeaway from this video
+
+01:05.490 --> 01:06.660
+is that they do expire.
+
+01:06.660 --> 01:07.770
+So it's not a permanent record
+
+01:07.770 --> 01:09.420
+of everything you've ever done
+
+01:09.420 --> 01:11.040
+if you have a really old repository
+
+01:11.040 --> 01:13.170
+with lots of work locally.
+
+01:13.170 --> 01:16.260
+So, again, only local changes are tracked in reflogs,
+
+01:16.260 --> 01:18.333
+and they do expire, okay.
