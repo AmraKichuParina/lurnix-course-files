@@ -1,0 +1,139 @@
+WEBVTT
+
+00:00.210 --> 00:01.920
+Instructor: Another variation of git diff
+
+00:01.920 --> 00:05.310
+is to pass in this option --staged
+
+00:05.310 --> 00:07.260
+or alternatively cached.
+
+00:07.260 --> 00:09.570
+They do the same thing, just an alias.
+
+00:09.570 --> 00:13.200
+Both of them will show us the staged changes,
+
+00:13.200 --> 00:15.570
+only the changes that are staged.
+
+00:15.570 --> 00:17.550
+So we've seen how to do all unstaged.
+
+00:17.550 --> 00:20.910
+We've seen how to do staged and unstaged,
+
+00:20.910 --> 00:24.150
+both of these options are how you do only stage changes.
+
+00:24.150 --> 00:26.580
+Only show me the staged changes.
+
+00:26.580 --> 00:29.250
+What is the difference between my last commit
+
+00:29.250 --> 00:31.500
+and the staging area?
+
+00:31.500 --> 00:33.510
+So I'll show this to you now.
+
+00:33.510 --> 00:36.570
+If we take a look at git status, the same project,
+
+00:36.570 --> 00:40.020
+project is a stretch, but the same repository,
+
+00:40.020 --> 00:43.110
+changes to be committed, numbers.txt.
+
+00:43.110 --> 00:45.450
+We added one into numbers,
+
+00:45.450 --> 00:47.700
+then we have some changes for the colors file,
+
+00:47.700 --> 00:51.570
+we added violet, but that is not part of the staging area.
+
+00:51.570 --> 00:56.570
+So right now, if I can type it, git diff -- and the staged,
+
+00:58.890 --> 01:01.890
+we only see those changes from numbers
+
+01:01.890 --> 01:02.910
+because that's the only...
+
+01:02.910 --> 01:06.930
+Change, versus if I do git diff on its own,
+
+01:06.930 --> 01:10.020
+this is unstaged changes so we see colors
+
+01:10.020 --> 01:13.980
+and if I do get diff head, we see both.
+
+01:13.980 --> 01:15.390
+That's everything that has changed.
+
+01:15.390 --> 01:17.520
+It doesn't care if it's staged or not
+
+01:17.520 --> 01:21.960
+and then if I add in colors, so if I do git add colors,
+
+01:21.960 --> 01:25.590
+now if I do git diff --staged, we see both
+
+01:25.590 --> 01:27.150
+because both of those changes
+
+01:27.150 --> 01:28.770
+have been staged at this point.
+
+01:28.770 --> 01:30.483
+Also, we can use cached.
+
+01:31.560 --> 01:33.610
+For whatever reason, I don't like cached.
+
+01:34.740 --> 01:37.260
+I call it the staging area, staged makes more sense to me.
+
+01:37.260 --> 01:40.410
+But I do believe the docs actually reference cached first
+
+01:40.410 --> 01:42.900
+and then say staged is an alias of cached.
+
+01:42.900 --> 01:43.950
+It doesn't matter.
+
+01:43.950 --> 01:46.710
+All right, so quick quiz here.
+
+01:46.710 --> 01:48.120
+Here's my git status.
+
+01:48.120 --> 01:49.770
+What will I see if I do git diff?
+
+01:51.000 --> 01:52.140
+Think about it.
+
+01:52.140 --> 01:54.390
+Okay, the answer is nothing.
+
+01:54.390 --> 01:58.110
+Well, I guess we see end, but there's no changes to display
+
+01:58.110 --> 02:00.900
+because git diff is showing us unstaged changes,
+
+02:00.900 --> 02:02.670
+there are no unstaged changes,
+
+02:02.670 --> 02:04.833
+everything has been staged at this point.
