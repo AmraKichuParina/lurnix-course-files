@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00.210 --> 00:02.220
+Instructor: One more thing to talk about with git push
+
+00:02.220 --> 00:06.213
+is the dash U option, which you've likely seen.
+
+00:09.060 --> 00:10.770
+When you create a new repository,
+
+00:10.770 --> 00:12.360
+which I won't, actually.
+
+00:12.360 --> 00:15.510
+Well, I guess I kind of have to if I wanna show you.
+
+00:15.510 --> 00:17.040
+Eh, okay, I'll delete this one.
+
+00:17.040 --> 00:18.783
+But if I make a new repository,
+
+00:19.740 --> 00:21.570
+the instructions GitHub gives me,
+
+00:21.570 --> 00:23.670
+both of them end with this line,
+
+00:23.670 --> 00:27.120
+git push something, but with a dash U.
+
+00:27.120 --> 00:29.460
+So what is this dash U option?
+
+00:29.460 --> 00:31.590
+Well, it stands for upstream,
+
+00:31.590 --> 00:34.050
+which probably doesn't mean a lot.
+
+00:34.050 --> 00:38.400
+The upstream of a local branch is kind of like,
+
+00:38.400 --> 00:42.060
+think of it as a connection pointing to a remote branch.
+
+00:42.060 --> 00:45.720
+So if we have our master branch on our local machine,
+
+00:45.720 --> 00:50.400
+normally we want the upstream branch to be origin master
+
+00:50.400 --> 00:52.353
+or some master branch on GitHub.
+
+00:53.280 --> 00:54.990
+They are connected,
+
+00:54.990 --> 00:58.320
+and this enables me to do things like just run git push
+
+00:58.320 --> 01:01.320
+without having to specify origin master,
+
+01:01.320 --> 01:05.910
+and if I've configured the upstream for my master branch,
+
+01:05.910 --> 01:08.250
+then I get to use this shortcut.
+
+01:08.250 --> 01:10.650
+So there are other situations where this comes up as well,
+
+01:10.650 --> 01:13.140
+like with pulling, and we talked about that.
+
+01:13.140 --> 01:15.120
+But again, it's not something that we have to do
+
+01:15.120 --> 01:17.400
+in order to push, but it's recommended,
+
+01:17.400 --> 01:19.650
+'cause it can make your life easier.
+
+01:19.650 --> 01:23.280
+So when we run this, git push -u origin master,
+
+01:23.280 --> 01:27.480
+this tells Git that on my computer, locally in my repo,
+
+01:27.480 --> 01:32.480
+I want to push up the master branch to origin master,
+
+01:32.700 --> 01:35.070
+and I want you to remember that,
+
+01:35.070 --> 01:37.140
+I want you to recall in the future,
+
+01:37.140 --> 01:39.600
+that my master branch on my computer
+
+01:39.600 --> 01:41.853
+is connected to the master branch on origin.
+
+01:42.720 --> 01:45.450
+So if I do this right now, let's see.
+
+01:45.450 --> 01:48.270
+If I make a new branch on this example we were doing,
+
+01:48.270 --> 01:51.690
+let's make a new branch called dogs.
+
+01:51.690 --> 01:52.523
+All right?
+
+01:52.523 --> 01:55.260
+So this branch, right now, does not exist on GitHub.
+
+01:55.260 --> 01:58.593
+If I push it up, git push origin dogs,
+
+02:01.074 --> 02:02.760
+you can see it's not here,
+
+02:02.760 --> 02:06.270
+but it will make a new dogs branch on GitHub.
+
+02:06.270 --> 02:07.770
+There it is.
+
+02:07.770 --> 02:09.030
+Okay.
+
+02:09.030 --> 02:11.970
+But I did not set the upstream, right?
+
+02:11.970 --> 02:15.690
+I did not use that dash U option, but that's okay.
+
+02:15.690 --> 02:18.300
+If I want to push up again,
+
+02:18.300 --> 02:21.270
+whatever I have on this dogs branch, let's make a change.
+
+02:21.270 --> 02:22.860
+Let's make a new file.
+
+02:22.860 --> 02:26.100
+dogs.txt, git add dogs, git commit,
+
+02:26.100 --> 02:29.670
+just an empty file, create dogs.
+
+02:29.670 --> 02:31.620
+If I want to push that up,
+
+02:31.620 --> 02:34.800
+I have to do git push origin dogs.
+
+02:34.800 --> 02:37.470
+That's totally fine, it's not a big deal.
+
+02:37.470 --> 02:39.990
+But normally, I want my dogs branch
+
+02:39.990 --> 02:43.320
+to be connected to the GitHub dogs branch, right?
+
+02:43.320 --> 02:47.130
+I want this connection right here, dogs pointing to dogs.
+
+02:47.130 --> 02:49.290
+My local dogs branch connected
+
+02:49.290 --> 02:53.280
+to the GitHub dogs branch on origin, that's standard.
+
+02:53.280 --> 02:55.920
+In the previous video, I showed you that you can push
+
+02:55.920 --> 02:58.230
+from one branch to something with a different name,
+
+02:58.230 --> 02:59.670
+but normally we want them connected,
+
+02:59.670 --> 03:03.450
+and if I use this dash U, that will enable it to happen.
+
+03:03.450 --> 03:05.490
+But before that, if I just try git push,
+
+03:05.490 --> 03:07.410
+you'll see it fails.
+
+03:07.410 --> 03:12.410
+It says the current branch dogs has no upstream branch.
+
+03:12.660 --> 03:14.640
+So here's one way to do this.
+
+03:14.640 --> 03:16.050
+Dash dash set upstream,
+
+03:16.050 --> 03:19.500
+or we just use Dash U, which is equivalent.
+
+03:19.500 --> 03:21.330
+So I'm gonna do that now.
+
+03:21.330 --> 03:25.020
+git push -u origin dogs.
+
+03:25.020 --> 03:28.200
+So remember, if we don't use this weird colon syntax
+
+03:28.200 --> 03:30.900
+that I showed you in the previous video,
+
+03:30.900 --> 03:33.000
+git is going to take our local dogs branch
+
+03:33.000 --> 03:35.280
+and push it up to the origin dogs branch.
+
+03:35.280 --> 03:36.840
+It uses the same name.
+
+03:36.840 --> 03:40.470
+And this dash U says, I want you to remember that.
+
+03:40.470 --> 03:44.190
+Set the upstream for dogs to be origin dogs.
+
+03:44.190 --> 03:46.170
+And now it shows me this line right here,
+
+03:46.170 --> 03:51.170
+branch dogs set up to track remote branch dogs from origin.
+
+03:51.360 --> 03:53.430
+So now if I make a change,
+
+03:53.430 --> 03:56.673
+let's just make a new file, touch moredogs.
+
+03:58.740 --> 04:03.740
+git add moredogs, git commit, create more dogs.
+
+04:04.050 --> 04:07.380
+If I do just git push and nothing else,
+
+04:07.380 --> 04:09.720
+now we have an upstream set,
+
+04:09.720 --> 04:12.780
+and it knows, for this dogs branch that I'm on,
+
+04:12.780 --> 04:14.160
+what that upstream is,
+
+04:14.160 --> 04:17.910
+and it pushes up to my GitHub dogs branch,
+
+04:17.910 --> 04:20.370
+and we see moredogs showing up here.
+
+04:20.370 --> 04:22.290
+So that's the use case for dash U.
+
+04:22.290 --> 04:24.690
+Normally, you'll use it in this context,
+
+04:24.690 --> 04:27.960
+but you could use it in a situation like this
+
+04:27.960 --> 04:31.470
+if you wanted to set the upstream to be something other
+
+04:31.470 --> 04:33.720
+than the remote branch of the same name.
+
+04:33.720 --> 04:37.920
+In other words, if I wanted to set, I'm not gonna do this,
+
+04:37.920 --> 04:42.920
+but if I wanted to set the dogs branch locally,
+
+04:42.930 --> 04:46.260
+I wanted to push that up to the cats branch
+
+04:46.260 --> 04:48.570
+and set that upstream, I can.
+
+04:48.570 --> 04:52.530
+So if I ran this, not only would it push my dogs branch
+
+04:52.530 --> 04:55.890
+from my machine up to the remote cats branch on GitHub,
+
+04:55.890 --> 04:57.840
+it would also say, in the future,
+
+04:57.840 --> 05:00.060
+this dogs branch should have an upstream
+
+05:00.060 --> 05:03.390
+referring to the origin cats branch.
+
+05:03.390 --> 05:04.770
+Normally, you don't want that,
+
+05:04.770 --> 05:06.150
+and also, it can be a headache,
+
+05:06.150 --> 05:08.100
+and I don't recommend you try this stuff.
+
+05:08.100 --> 05:09.630
+You'll run into merging issues
+
+05:09.630 --> 05:11.425
+if you're pushing from multiple branches
+
+05:11.425 --> 05:14.850
+to the same remote branch, the cats branch,
+
+05:14.850 --> 05:16.380
+it's just, you don't wanna do it.
+
+05:16.380 --> 05:17.664
+Anyway, it's possible,
+
+05:17.664 --> 05:20.550
+but normally, you'll use it in this context.
+
+05:20.550 --> 05:23.640
+The very first time you push some branch up,
+
+05:23.640 --> 05:27.510
+use that dash U, and the local branch of that name
+
+05:27.510 --> 05:30.900
+will have its upstream set to the origin branch of that name
+
+05:30.900 --> 05:32.700
+or whatever this remote is called.
+
+05:32.700 --> 05:33.533
+All right.
