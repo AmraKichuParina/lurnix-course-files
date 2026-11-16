@@ -1,0 +1,862 @@
+WEBVTT
+
+00:00.090 --> 00:01.200
+Presenter: So now I'm gonna demonstrate
+
+00:01.200 --> 00:04.710
+this fork and clone workflow on very, very simple terms.
+
+00:04.710 --> 00:06.090
+But the workflow is the same.
+
+00:06.090 --> 00:08.400
+We're just gonna work on a very silly repository.
+
+00:08.400 --> 00:11.070
+So as Colt, one GitHub user,
+
+00:11.070 --> 00:13.020
+I'm gonna make a new repository
+
+00:13.020 --> 00:16.080
+and I'm not gonna give anybody access or,
+
+00:16.080 --> 00:17.490
+well, I'm gonna make it public, of course,
+
+00:17.490 --> 00:20.040
+but I'm not going to make anybody a collaborator.
+
+00:20.040 --> 00:22.140
+So nobody will be able to push to this.
+
+00:22.140 --> 00:24.900
+I'll just call this fork and clone maybe.
+
+00:24.900 --> 00:26.520
+Fork,
+
+00:26.520 --> 00:29.070
+geez and clone.
+
+00:29.070 --> 00:30.450
+Alright, it's public.
+
+00:30.450 --> 00:32.550
+I'll put a read me in there.
+
+00:32.550 --> 00:35.043
+Okay, and then I'll create this repository.
+
+00:38.077 --> 00:42.360
+Okay so now I'm gonna just add, I have my initial commit.
+
+00:42.360 --> 00:44.190
+Maybe I'll do one more commit.
+
+00:44.190 --> 00:47.130
+I'm just gonna do it on GitHub to keep things simple.
+
+00:47.130 --> 00:48.603
+So this,
+
+00:49.800 --> 00:52.320
+is a repo to demonstrate
+
+00:52.320 --> 00:53.850
+the fork
+
+00:53.850 --> 00:55.470
+and clone
+
+00:55.470 --> 00:56.523
+workflow.
+
+00:57.720 --> 01:01.143
+Sure okay, we'll commit those changes to the main branch.
+
+01:02.040 --> 01:03.810
+And there we are.
+
+01:03.810 --> 01:04.740
+Okay.
+
+01:04.740 --> 01:08.280
+So the next thing that I'm going to do is change people.
+
+01:08.280 --> 01:10.110
+I'm going to switch over to Stevie.
+
+01:10.110 --> 01:11.310
+Pretend I'm Stevie.
+
+01:11.310 --> 01:14.700
+So here we are on Stevie's GitHub.
+
+01:14.700 --> 01:17.400
+I'm logged in as Stevie here, Stevie Chicks.
+
+01:17.400 --> 01:21.540
+And if I go look at Colt's repositories,
+
+01:21.540 --> 01:22.680
+oh I hate looking at this.
+
+01:22.680 --> 01:24.720
+I can see fork and clone.
+
+01:24.720 --> 01:27.450
+Okay, so this is the original project.
+
+01:27.450 --> 01:29.940
+I don't have access, I can't edit things.
+
+01:29.940 --> 01:30.773
+I mean I can view it
+
+01:30.773 --> 01:33.720
+because it's public and I do want to collaborate.
+
+01:33.720 --> 01:36.510
+Let's say I want to, I don't know, I'll add some changes.
+
+01:36.510 --> 01:38.520
+I'll make a new file, whatever it is.
+
+01:38.520 --> 01:41.910
+There's some change that I wanna work on and suggest.
+
+01:41.910 --> 01:45.060
+So I'm gonna fork this repository as Stevie.
+
+01:45.060 --> 01:47.610
+So instead of Colt slash fork and clone
+
+01:47.610 --> 01:51.207
+hopefully we end up with Stevie Chicks slash fork and clone.
+
+01:51.207 --> 01:52.890
+And it takes a moment
+
+01:52.890 --> 01:55.830
+but when it's done forking, there we are.
+
+01:55.830 --> 02:00.830
+I now am going to copy this URL and clone this as Stevie.
+
+02:01.500 --> 02:03.930
+So over here, let me clean this up a bit.
+
+02:03.930 --> 02:07.590
+Okay so I'm Stevie here, I'm going to back out.
+
+02:07.590 --> 02:09.030
+Sure, I'll just clone it right here.
+
+02:09.030 --> 02:10.860
+Make sure I'm not in a repo.
+
+02:10.860 --> 02:12.483
+clone, that URL.
+
+02:14.220 --> 02:15.600
+Excellent.
+
+02:15.600 --> 02:18.120
+So now we have this fork and clone repository.
+
+02:18.120 --> 02:19.710
+Very simple, single commit.
+
+02:19.710 --> 02:22.950
+No two commits in there from Colt Steel.
+
+02:22.950 --> 02:24.660
+And now I have cloned it.
+
+02:24.660 --> 02:27.800
+But if I look at my remote, I cloned the fork.
+
+02:27.800 --> 02:30.810
+So that remote is just pointing to my fork,
+
+02:30.810 --> 02:32.700
+not to the original.
+
+02:32.700 --> 02:34.560
+So I can push changes up.
+
+02:34.560 --> 02:36.660
+I can do that right now if I wanted to.
+
+02:36.660 --> 02:39.690
+But before that I'm gonna just set up a second remote.
+
+02:39.690 --> 02:42.510
+And the reason for this, if I go back to my diagrams,
+
+02:42.510 --> 02:44.880
+is that I also want to be able to get changes
+
+02:44.880 --> 02:48.690
+that Colt's might publish on the original project.
+
+02:48.690 --> 02:51.210
+Because my fork is frozen in time
+
+02:51.210 --> 02:54.000
+I don't get changes from the original project
+
+02:54.000 --> 02:55.740
+after I create the fork.
+
+02:55.740 --> 02:59.190
+They are forking, it's a, they diverge right?
+
+02:59.190 --> 03:01.800
+So if I wanna stay up to date with what's happening
+
+03:01.800 --> 03:03.090
+and I want to get those changes
+
+03:03.090 --> 03:05.640
+on my repo from Colt's original,
+
+03:05.640 --> 03:07.140
+then I want to have a connection.
+
+03:07.140 --> 03:10.920
+I need a remote to refer to that original project repo.
+
+03:10.920 --> 03:12.990
+So I'll just go to the original.
+
+03:12.990 --> 03:14.850
+So this is the original project.
+
+03:14.850 --> 03:19.530
+I'm gonna copy this URL for Colt's version, right?
+
+03:19.530 --> 03:22.290
+And then I'm going to add remote.
+
+03:22.290 --> 03:24.960
+So it's Git remote add.
+
+03:24.960 --> 03:27.270
+And then I'm gonna call this one upstream
+
+03:27.270 --> 03:29.130
+because that's a really common name
+
+03:29.130 --> 03:31.740
+or original, or something to indicate
+
+03:31.740 --> 03:35.550
+this is the original thing I forked and cloned.
+
+03:35.550 --> 03:39.330
+This is not my repository, so I'll just go with upstream.
+
+03:39.330 --> 03:43.170
+Okay, so now if I do remote dash V, we have two remotes.
+
+03:43.170 --> 03:44.940
+I know it's kind of hard to see them here
+
+03:44.940 --> 03:46.540
+because they're not on one line.
+
+03:47.460 --> 03:48.780
+Let's make that full screen.
+
+03:48.780 --> 03:49.613
+Here we are.
+
+03:49.613 --> 03:51.270
+Origin goes to Stevie Chicks,
+
+03:51.270 --> 03:53.730
+upstream goes to Colt's version.
+
+03:53.730 --> 03:57.090
+Okay, so now I'm switching back to Colt for a moment.
+
+03:57.090 --> 03:59.280
+Let's suppose that during all of this,
+
+03:59.280 --> 04:00.420
+this couple of minutes,
+
+04:00.420 --> 04:03.900
+while Stevie has been forking and cloning,
+
+04:03.900 --> 04:06.000
+I'm working on this project as well.
+
+04:06.000 --> 04:09.150
+And again, I'm just gonna do a very silly simple change.
+
+04:09.150 --> 04:11.550
+I'm going to edit this, which we put in here.
+
+04:11.550 --> 04:12.573
+Fork and clone,
+
+04:14.850 --> 04:16.110
+I,
+
+04:16.110 --> 04:16.943
+how about this?
+
+04:18.053 --> 04:21.273
+My favorite ice cream flavors.
+
+04:22.260 --> 04:24.603
+And then we'll do in no particular order.
+
+04:26.160 --> 04:27.450
+Mint.
+
+04:27.450 --> 04:29.350
+Well my actual favorite is peppermint,
+
+04:31.170 --> 04:32.280
+because that's not that common.
+
+04:32.280 --> 04:34.290
+And then we'll say mint chip.
+
+04:34.290 --> 04:36.450
+And then let's just leave it at that for now.
+
+04:36.450 --> 04:38.670
+All right, so there's my new commit.
+
+04:38.670 --> 04:42.510
+I'll go with add ice cream to read me.
+
+04:42.510 --> 04:44.670
+Commit changes to main.
+
+04:44.670 --> 04:48.300
+So this is happening on Colt's original repository.
+
+04:48.300 --> 04:50.040
+Stevie's Fork doesn't have that.
+
+04:50.040 --> 04:52.950
+They diverged, they're not in sync anymore.
+
+04:52.950 --> 04:56.100
+This is a fork from a moment in time.
+
+04:56.100 --> 04:57.570
+So they're not attached.
+
+04:57.570 --> 04:58.950
+However,
+
+04:58.950 --> 05:00.990
+I can still get those changes
+
+05:00.990 --> 05:04.170
+because locally I have those two remotes.
+
+05:04.170 --> 05:06.300
+So if I want the latest,
+
+05:06.300 --> 05:08.280
+just make sure, git status okay.
+
+05:08.280 --> 05:10.200
+Everything's up to date with origin.
+
+05:10.200 --> 05:12.990
+But if I want the latest from Colt's repository,
+
+05:12.990 --> 05:17.010
+I can do a git pull and then the remote is upstream.
+
+05:17.010 --> 05:20.520
+And then whatever branch I'm looking for, I want in main.
+
+05:20.520 --> 05:22.740
+So I'll pull down from upstream.
+
+05:22.740 --> 05:25.560
+And if I do a quick git log,
+
+05:25.560 --> 05:27.570
+we see we have ice cream now.
+
+05:27.570 --> 05:29.550
+Add ice cream to read me.
+
+05:29.550 --> 05:33.330
+So now I could make some more changes on this potentially.
+
+05:33.330 --> 05:34.800
+Like let's say,
+
+05:34.800 --> 05:35.850
+what would I want to do
+
+05:35.850 --> 05:38.340
+if I just open it over here in my text editor?
+
+05:38.340 --> 05:40.260
+Here's the read me file.
+
+05:40.260 --> 05:41.580
+Let's do something like,
+
+05:41.580 --> 05:43.380
+Stevie's
+
+05:43.380 --> 05:44.290
+favorite
+
+05:47.100 --> 05:49.050
+ice cream flavors.
+
+05:49.050 --> 05:50.520
+And then Stevie is a chicken,
+
+05:50.520 --> 05:54.060
+so Stevie really likes mealworm,
+
+05:54.060 --> 05:56.220
+maybe like shrimp flakes,
+
+05:56.220 --> 05:57.870
+and
+
+05:57.870 --> 05:59.373
+sunflower seeds.
+
+06:01.899 --> 06:04.907
+Okay, so we make a change, we'll add that commit.
+
+06:05.790 --> 06:07.590
+So git add, read me.
+
+06:07.590 --> 06:09.540
+I'm doing this all as Stevie.
+
+06:09.540 --> 06:10.710
+Blocking that but,
+
+06:10.710 --> 06:11.760
+I'm all you know,
+
+06:11.760 --> 06:13.830
+I'm working as Stevie the chicken right now.
+
+06:13.830 --> 06:14.910
+So git commit.
+
+06:14.910 --> 06:16.920
+Let's do something like add
+
+06:16.920 --> 06:18.510
+Stevie's,
+
+06:18.510 --> 06:21.510
+Stevie Fave ice cream.
+
+06:21.510 --> 06:22.890
+Okay, not a great commit message
+
+06:22.890 --> 06:25.230
+but trying to keep this quick.
+
+06:25.230 --> 06:26.160
+Okay.
+
+06:26.160 --> 06:28.470
+So if I wanna make a suggestion
+
+06:28.470 --> 06:31.830
+to the original project that they include this,
+
+06:31.830 --> 06:34.140
+this new commit that I've made or whatever,
+
+06:34.140 --> 06:35.370
+multiple commits.
+
+06:35.370 --> 06:37.740
+First of all, normally we'd be working on a branch
+
+06:37.740 --> 06:38.790
+and we are on a branch,
+
+06:38.790 --> 06:42.060
+but we'd work on a separate branch, a feature branch,
+
+06:42.060 --> 06:43.230
+just to keep it simple.
+
+06:43.230 --> 06:45.060
+I'm just working on main as well.
+
+06:45.060 --> 06:49.020
+So I don't have permission to push this up to upstream
+
+06:49.020 --> 06:52.080
+but I do have permission to push to my fork.
+
+06:52.080 --> 06:53.400
+So that's what I'm gonna do.
+
+06:53.400 --> 06:55.470
+Remember that my fork I labeled,
+
+06:55.470 --> 06:58.440
+well I didn't label but the default name for that remote,
+
+06:58.440 --> 06:59.673
+is origin.
+
+07:00.600 --> 07:02.790
+Make that full screen as Stevie.
+
+07:02.790 --> 07:04.440
+This is what I can push to.
+
+07:04.440 --> 07:06.000
+I'm not allowed to push to this.
+
+07:06.000 --> 07:08.820
+I don't own it, I don't have collaborator privileges.
+
+07:08.820 --> 07:10.980
+So I'm gonna push up to origin.
+
+07:10.980 --> 07:13.920
+Git push, and then we'll do origin.
+
+07:13.920 --> 07:16.743
+And then main, it's just the branch we're working on.
+
+07:18.030 --> 07:20.850
+And when that finishes I should be able to refresh
+
+07:20.850 --> 07:23.820
+on my fork as Stevie Chicks.
+
+07:23.820 --> 07:26.550
+And we see Stevie's flavors are down there.
+
+07:26.550 --> 07:28.890
+But at the original does not have it.
+
+07:28.890 --> 07:32.430
+You can see I am one commit ahead of Colt's version.
+
+07:32.430 --> 07:34.380
+If we just open that in a tab,
+
+07:34.380 --> 07:36.780
+this is what Colt's original version looks like.
+
+07:36.780 --> 07:40.470
+So we now have this work that we could suggest.
+
+07:40.470 --> 07:41.820
+And that's exactly what I'm going to do.
+
+07:41.820 --> 07:43.620
+I'm gonna open a pull request.
+
+07:43.620 --> 07:45.500
+That's the next step in this diagram, right?
+
+07:45.500 --> 07:47.100
+So we make our changes,
+
+07:47.100 --> 07:49.140
+we push them up to our fork,
+
+07:49.140 --> 07:50.370
+and then I pull request,
+
+07:50.370 --> 07:53.100
+I make a pull request to the original project.
+
+07:53.100 --> 07:56.553
+So as Stevie, I'm gonna make that pull request.
+
+07:58.860 --> 08:00.780
+Thankfully it's a very easy one to merge.
+
+08:00.780 --> 08:02.100
+I'm gonna ask
+
+08:02.100 --> 08:03.150
+please,
+
+08:03.150 --> 08:04.503
+please allow this in.
+
+08:06.150 --> 08:06.993
+Please,
+
+08:07.830 --> 08:09.633
+I'm just a little chicken.
+
+08:11.160 --> 08:12.390
+I want to
+
+08:12.390 --> 08:14.020
+make this PR
+
+08:15.090 --> 08:16.590
+bock, bock.
+
+08:16.590 --> 08:21.540
+Alright, so then I'm going to create pull request.
+
+08:21.540 --> 08:23.250
+Take a look here.
+
+08:23.250 --> 08:26.250
+Specifically, I'm going from main to main.
+
+08:26.250 --> 08:27.630
+It's not that common.
+
+08:27.630 --> 08:29.880
+Normally we'd be working on a feature branch.
+
+08:29.880 --> 08:31.110
+We saw how to make a pull request
+
+08:31.110 --> 08:33.030
+from a feature branch in the last,
+
+08:33.030 --> 08:34.500
+what, a couple videos ago?
+
+08:34.500 --> 08:35.490
+So it's the same process.
+
+08:35.490 --> 08:36.630
+You just change the branch.
+
+08:36.630 --> 08:37.800
+We just don't have a different branch
+
+08:37.800 --> 08:39.240
+to pick from right now.
+
+08:39.240 --> 08:41.310
+So from my fork to the original.
+
+08:41.310 --> 08:44.640
+Main to main, here's my comment, please.
+
+08:44.640 --> 08:45.993
+Here's my pull request.
+
+08:46.920 --> 08:49.770
+Alright, so I can't merge that in.
+
+08:49.770 --> 08:50.640
+I don't have access.
+
+08:50.640 --> 08:51.900
+I'm not the decider.
+
+08:51.900 --> 08:54.390
+But I just wait here and I hope that I hear back,
+
+08:54.390 --> 08:55.380
+maybe some feedback.
+
+08:55.380 --> 08:56.940
+I hope it's not just closed,
+
+08:56.940 --> 08:58.320
+but it may be.
+
+08:58.320 --> 09:01.860
+Now as Colt's, I'll go to pull requests.
+
+09:01.860 --> 09:04.360
+I'll refresh and we should see a new pull request.
+
+09:05.640 --> 09:06.810
+And here it is.
+
+09:06.810 --> 09:08.490
+I am the only person in charge.
+
+09:08.490 --> 09:09.780
+I get to review and decide
+
+09:09.780 --> 09:11.490
+if I want to merge this in or not.
+
+09:11.490 --> 09:13.620
+And let's say that I'm happy with it.
+
+09:13.620 --> 09:16.050
+So I will merge it in.
+
+09:16.050 --> 09:16.893
+Confirm.
+
+09:18.930 --> 09:22.110
+Now I have successfully merged in that pull request.
+
+09:22.110 --> 09:25.890
+So that means that fork and clone on my account Colt,
+
+09:25.890 --> 09:28.710
+now has the new information from Stevie's.
+
+09:28.710 --> 09:33.060
+And so now we have completed this cycle at least one time.
+
+09:33.060 --> 09:35.160
+So Stevie made some changes,
+
+09:35.160 --> 09:37.080
+pushed them to the fork, made a pull request.
+
+09:37.080 --> 09:39.870
+The pull request was accepted and merged in.
+
+09:39.870 --> 09:44.430
+And so now this original repository has Stevie's changes.
+
+09:44.430 --> 09:47.190
+So this process is all over the place
+
+09:47.190 --> 09:49.080
+with open source development.
+
+09:49.080 --> 09:52.350
+If we just take a look at any big git repository,
+
+09:52.350 --> 09:54.510
+let's take a look at, here's React.
+
+09:54.510 --> 09:57.060
+Right, we can see lots and lots of contributors.
+
+09:57.060 --> 09:59.850
+I mean used by millions of people.
+
+09:59.850 --> 10:01.473
+And if I go to pull requests,
+
+10:02.640 --> 10:05.910
+I showed this a while ago, lots and lots of pull requests.
+
+10:05.910 --> 10:07.500
+And if we look at where the
+
+10:07.500 --> 10:10.170
+pull requests are originating from,
+
+10:10.170 --> 10:11.703
+let's just pick any of them.
+
+10:12.900 --> 10:13.733
+It doesn't really matter.
+
+10:13.733 --> 10:14.583
+Sure this one.
+
+10:16.950 --> 10:18.840
+Notice that it says,
+
+10:18.840 --> 10:21.210
+this person AriPerkkio
+
+10:21.210 --> 10:24.870
+wants to merge one commit into Facebook master branch
+
+10:24.870 --> 10:29.220
+from Ari's particular fork and then a feature branch.
+
+10:29.220 --> 10:30.810
+So notice that the prefix, right?
+
+10:30.810 --> 10:34.260
+Facebook master versus AriPerkkio,
+
+10:34.260 --> 10:35.940
+sorry if you're watching this Ari.
+
+10:35.940 --> 10:37.410
+You're probably not watching this but,
+
+10:37.410 --> 10:39.690
+anyway, that's a fork.
+
+10:39.690 --> 10:41.760
+So this is a fork that was made and
+
+10:41.760 --> 10:44.550
+we can go take a look, here is that fork.
+
+10:44.550 --> 10:47.370
+This is Ari's fork of the original react.
+
+10:47.370 --> 10:48.780
+And they made a pull request.
+
+10:48.780 --> 10:50.160
+And now they're just waiting.
+
+10:50.160 --> 10:50.993
+Is there?
+
+10:50.993 --> 10:51.840
+Yeah, well they're not even just waiting.
+
+10:51.840 --> 10:53.400
+There's a conversation happening
+
+10:53.400 --> 10:56.790
+about this pull request, but it's still open.
+
+10:56.790 --> 10:58.230
+So that's the basic workflow,
+
+10:58.230 --> 11:00.420
+and that's how all of these contributors
+
+11:00.420 --> 11:02.070
+are making their contributions.
+
+11:02.070 --> 11:03.840
+They're forking and then making
+
+11:03.840 --> 11:06.120
+a pull request over with their changes.
+
+11:06.120 --> 11:07.800
+And then to stay up to date
+
+11:07.800 --> 11:11.400
+with what actually changes on the official repository,
+
+11:11.400 --> 11:12.480
+remember this step.
+
+11:12.480 --> 11:15.060
+Pulling down to get the latest changes
+
+11:15.060 --> 11:16.830
+from the official project repo
+
+11:16.830 --> 11:18.420
+so that you are up to date with the work
+
+11:18.420 --> 11:19.833
+everyone else has merged in.
