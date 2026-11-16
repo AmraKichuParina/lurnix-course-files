@@ -1,0 +1,481 @@
+WEBVTT
+
+00:00.120 --> 00:02.130
+Instructor: So in this video, I'm gonna demonstrate
+
+00:02.130 --> 00:04.705
+this merging workflow we've already seen
+
+00:04.705 --> 00:06.570
+and then we'll set things up
+
+00:06.570 --> 00:09.870
+so that we can then rebase and see a difference.
+
+00:09.870 --> 00:12.210
+Otherwise, if I just show you rebasing on its own,
+
+00:12.210 --> 00:15.000
+it's a little bit harder to see how it compares.
+
+00:15.000 --> 00:17.850
+All right, so I'm gonna make a new,
+
+00:17.850 --> 00:20.160
+I already made a folder called RebaseDemo.
+
+00:20.160 --> 00:22.650
+I'm gonna keep this extremely simple,
+
+00:22.650 --> 00:26.220
+in terms of what my commits are and the history I create.
+
+00:26.220 --> 00:29.610
+Currently, no git repo, so I'm going to init
+
+00:29.610 --> 00:32.760
+and I'll just work on the default master branch for now.
+
+00:32.760 --> 00:35.370
+And let's say that we're working on some projects
+
+00:35.370 --> 00:40.370
+called, I don't know, website. (chuckles)
+
+00:40.590 --> 00:43.470
+Website is gonna be a text file, just to keep things simple.
+
+00:43.470 --> 00:45.660
+All right, so I'll add that file,
+
+00:45.660 --> 00:48.207
+I will commit, just "initial commit."
+
+00:49.200 --> 00:51.360
+Just like that, nice and simple.
+
+00:51.360 --> 00:54.180
+All right, so we have our website file open.
+
+00:54.180 --> 00:56.610
+I'm not gonna be typing code, I'm just gonna pretend.
+
+00:56.610 --> 01:00.810
+We'll do something like, NAV BAR ADDED. (chuckles)
+
+01:00.810 --> 01:01.650
+That's the equivalent
+
+01:01.650 --> 01:04.440
+of somebody actually adding a navbar in, all right?
+
+01:04.440 --> 01:09.440
+So now I'm going to commit that, just -am "navbar".
+
+01:09.600 --> 01:11.940
+How about, "add navbar".
+
+01:11.940 --> 01:15.030
+Okay, so now I'm gonna switch over to a feature branch.
+
+01:15.030 --> 01:17.970
+We'll imagine that I'm working on this feature branch,
+
+01:17.970 --> 01:18.930
+whatever the feature is,
+
+01:18.930 --> 01:22.710
+I'm just gonna call it feat, just like that. F-E-A-T.
+
+01:22.710 --> 01:24.067
+So I'm on this branch,
+
+01:24.067 --> 01:26.400
+I'm gonna be working in a separate file,
+
+01:26.400 --> 01:28.410
+just to minimize conflicts.
+
+01:28.410 --> 01:29.850
+I'll also talk about what happens
+
+01:29.850 --> 01:31.830
+if we do have conflicts when we rebase.
+
+01:31.830 --> 01:34.110
+Anyway, what should my file be?
+
+01:34.110 --> 01:37.950
+Let's just call it feature.txt.
+
+01:37.950 --> 01:40.290
+All right, so I'm gonna make this incredibly basic.
+
+01:40.290 --> 01:43.320
+As I said, I'm gonna add feature, just to start,
+
+01:43.320 --> 01:48.320
+git commit -m, you know, and "begin feature".
+
+01:50.310 --> 01:53.850
+Begin feature, okay.
+
+01:53.850 --> 01:57.259
+And then, I'll do one other change in the feature.
+
+01:57.259 --> 02:01.260
+I think my changes in here are just gonna be numbers, right?
+
+02:01.260 --> 02:06.247
+So ONE, and then I'll go back, git commit -am, you know,
+
+02:06.247 --> 02:08.037
+"work on feature."
+
+02:09.240 --> 02:12.060
+Okay, so I'm now gonna switch back to master,
+
+02:12.060 --> 02:13.323
+git switch master.
+
+02:14.400 --> 02:16.830
+There's no feature file and no feature branch, right?
+
+02:16.830 --> 02:18.240
+We're on master.
+
+02:18.240 --> 02:21.030
+Let's say that somebody adds the footer.
+
+02:21.030 --> 02:24.480
+So this is new work someone has done in the meantime, right?
+
+02:24.480 --> 02:27.240
+So I'm working on my feature branch, I have some commits,
+
+02:27.240 --> 02:29.580
+then changes are merged into master
+
+02:29.580 --> 02:30.960
+that I don't have on feature.
+
+02:30.960 --> 02:32.520
+So that's what I'm doing right now.
+
+02:32.520 --> 02:33.950
+The footer was added.
+
+02:33.950 --> 02:38.950
+So I will do a git commit -am "add footer."
+
+02:42.480 --> 02:44.220
+Okay, so here's what things
+
+02:44.220 --> 02:46.500
+look like in GitKraken, currently.
+
+02:46.500 --> 02:48.390
+So we have our master branch
+
+02:48.390 --> 02:50.160
+and then we have the feature branch.
+
+02:50.160 --> 02:52.020
+If I wanna keep working on my feature branch,
+
+02:52.020 --> 02:54.060
+but I want the latest work from master,
+
+02:54.060 --> 02:55.530
+we'll pretend it's coming from, you know,
+
+02:55.530 --> 02:58.080
+somebody else did this work, not just me.
+
+02:58.080 --> 02:59.730
+I want that on my feature branch.
+
+02:59.730 --> 03:02.070
+I could do a merge on feature.
+
+03:02.070 --> 03:04.560
+So merge master into feature.
+
+03:04.560 --> 03:06.510
+And that's what I'm gonna begin with.
+
+03:06.510 --> 03:08.460
+Exactly what I did here,
+
+03:08.460 --> 03:10.680
+where we end up with a merge commit on feature.
+
+03:10.680 --> 03:12.120
+So I'm gonna do that.
+
+03:12.120 --> 03:14.910
+So I'm on master right now, right?
+
+03:14.910 --> 03:17.103
+I'm just gonna take a look at my log.
+
+03:17.970 --> 03:20.100
+We have three commits on master,
+
+03:20.100 --> 03:22.923
+but if I switch back to feat,
+
+03:25.140 --> 03:27.480
+I want to merge in the changes from master.
+
+03:27.480 --> 03:31.680
+So git merge master, I'm on the feature branch.
+
+03:31.680 --> 03:34.530
+So again, see what it looks like right now, right?
+
+03:34.530 --> 03:36.300
+I've diverged, there's new work on master.
+
+03:36.300 --> 03:38.190
+I want that on my feature branch.
+
+03:38.190 --> 03:39.570
+I'm not done with the feature,
+
+03:39.570 --> 03:41.520
+but I want the latest work from master.
+
+03:42.750 --> 03:45.120
+So it prompts me in my editor here,
+
+03:45.120 --> 03:46.920
+or if you don't have your editor configured,
+
+03:46.920 --> 03:48.390
+it'll prompt you here in your terminal
+
+03:48.390 --> 03:50.240
+with whatever your default editor is.
+
+03:51.300 --> 03:54.990
+I'm going to just close this, it's just a merge commit.
+
+03:54.990 --> 03:57.483
+So now, we have this merge commit, right?
+
+03:58.410 --> 04:01.530
+Right there, merge branch master into feat.
+
+04:01.530 --> 04:02.970
+You can see what it looks like here,
+
+04:02.970 --> 04:05.430
+we have this merge commit right there.
+
+04:05.430 --> 04:07.620
+Okay, that's not too bad I guess.
+
+04:07.620 --> 04:09.450
+So I keep working on my feature.
+
+04:09.450 --> 04:14.040
+Let's say I get to, TWO, whatever TWO is.
+
+04:14.040 --> 04:16.050
+That is more work on my feature.
+
+04:16.050 --> 04:18.600
+So I'm trying to just keep this super simple.
+
+04:18.600 --> 04:21.597
+All right, "more work on feature."
+
+04:23.910 --> 04:25.440
+Okay and then in the meantime,
+
+04:25.440 --> 04:27.840
+let's say that took me, like, half a day.
+
+04:27.840 --> 04:30.570
+Go back to master and we'll pretend we're other people,
+
+04:30.570 --> 04:33.360
+on master, a coworker finished some feature
+
+04:33.360 --> 04:38.360
+they're working on, LOGIN FORM ADDED, right?
+
+04:39.030 --> 04:41.880
+So I will add that, just to pretend I'm one of them,
+
+04:41.880 --> 04:46.227
+or I'll just do a commit -am "add login form."
+
+04:51.259 --> 04:53.430
+And the feature I'm working on,
+
+04:53.430 --> 04:55.020
+actually it would be really useful
+
+04:55.020 --> 04:58.560
+if I had that login form on that feature branch.
+
+04:58.560 --> 05:01.230
+So once again, I could do the same thing, right?
+
+05:01.230 --> 05:03.660
+I could go onto the feature branch
+
+05:03.660 --> 05:06.993
+and merge master into feature.
+
+05:07.860 --> 05:09.540
+So I'm gonna do that.
+
+05:09.540 --> 05:11.820
+'cause now there's a commit that I don't have.
+
+05:11.820 --> 05:14.223
+So I go back to feature, git switch.
+
+05:16.410 --> 05:18.540
+And then, I'm gonna do a, just git status,
+
+05:18.540 --> 05:20.340
+make sure I don't have any uncommitted stuff,
+
+05:20.340 --> 05:22.530
+git merge master.
+
+05:22.530 --> 05:24.750
+So here's what it looks like now.
+
+05:24.750 --> 05:27.960
+Here's my commit on feature that does not exist on master.
+
+05:27.960 --> 05:31.500
+Here's the commit on master, the new work, the login form.
+
+05:31.500 --> 05:34.050
+I want to merge that in to my feature branch.
+
+05:34.050 --> 05:36.630
+So I'm still not touching, I'm not changing master.
+
+05:36.630 --> 05:39.450
+Well, I am for this demo, but my feature branch
+
+05:39.450 --> 05:42.600
+is not merged into master at any point.
+
+05:42.600 --> 05:44.730
+I'm still just working on feature.
+
+05:44.730 --> 05:47.850
+So once again, it generates a new merge commit.
+
+05:47.850 --> 05:50.370
+And now, my history here, right?
+
+05:50.370 --> 05:52.800
+It doesn't look super bad, 'cause it's small.
+
+05:52.800 --> 05:54.660
+There's not a lot of merge commits,
+
+05:54.660 --> 05:57.060
+but there's another merge commit on my feature branch.
+
+05:57.060 --> 06:00.647
+And if I look at my history, git log, right?
+
+06:02.310 --> 06:05.340
+I have all this work, but then I have merge branch
+
+06:05.340 --> 06:07.590
+and then some more work, some more work.
+
+06:07.590 --> 06:09.660
+And then merge branch again.
+
+06:09.660 --> 06:13.380
+So the history of my one feature branch that I'm working on
+
+06:13.380 --> 06:16.290
+is already cluttered and I just have two merge commits,
+
+06:16.290 --> 06:19.110
+but as I do more work on this one feature
+
+06:19.110 --> 06:22.020
+and as the master branch continues to change
+
+06:22.020 --> 06:24.540
+and there are more and more commits added onto it,
+
+06:24.540 --> 06:26.310
+I end up with a lot of merge commits
+
+06:26.310 --> 06:27.720
+if I want to stay up to date.
+
+06:27.720 --> 06:28.800
+If I want my feature branch
+
+06:28.800 --> 06:31.380
+to have the latest work from master.
+
+06:31.380 --> 06:33.570
+So we end up with this sort of scenario,
+
+06:33.570 --> 06:36.840
+where my feature branch constantly has merge commits,
+
+06:36.840 --> 06:39.420
+the history is cluttered, it's muddied,
+
+06:39.420 --> 06:41.700
+it's uglier, it's harder to follow.
+
+06:41.700 --> 06:43.260
+Now, this isn't a huge deal, right?
+
+06:43.260 --> 06:44.970
+It's not the end of the world.
+
+06:44.970 --> 06:47.910
+But on a really large project with lots and lots of commits,
+
+06:47.910 --> 06:51.330
+it can be way nicer if you have a clean commit history,
+
+06:51.330 --> 06:52.980
+or a clean project history,
+
+06:52.980 --> 06:55.940
+where the commits are grouped together in a logical way
+
+06:55.940 --> 06:59.220
+and you minimize the number of those merge commits.
+
+06:59.220 --> 07:01.500
+So that is what rebasing helps us do.
+
+07:01.500 --> 07:02.520
+In the next video,
+
+07:02.520 --> 07:05.370
+I'll actually use the commands that we talked about briefly
+
+07:05.370 --> 07:08.370
+to show you how to rebase so that we don't end up
+
+07:08.370 --> 07:10.620
+with these merge commits, but instead we end up
+
+07:10.620 --> 07:14.040
+with this nice, linear history by rewriting it.
+
+07:14.040 --> 07:15.040
+So that's coming up.
