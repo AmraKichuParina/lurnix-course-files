@@ -1,0 +1,313 @@
+WEBVTT
+
+00:00.330 --> 00:02.100
+Instructor: So just like with branches,
+
+00:02.100 --> 00:04.590
+we can actually check out particular tags.
+
+00:04.590 --> 00:05.760
+The main difference, though,
+
+00:05.760 --> 00:07.418
+is that when we're checking out a tag,
+
+00:07.418 --> 00:12.229
+a tag is referring to a a particular commit, not a branch.
+
+00:12.229 --> 00:13.912
+There's a a big difference there,
+
+00:13.912 --> 00:17.040
+where a branch reference is always going to be updated
+
+00:17.040 --> 00:19.620
+to refer to the tip of that branch.
+
+00:19.620 --> 00:20.670
+We check out that branch.
+
+00:20.670 --> 00:22.260
+We're not in detached head.
+
+00:22.260 --> 00:24.926
+But if we instead check out a particular tag,
+
+00:24.926 --> 00:27.239
+we are going to go into detached head,
+
+00:27.239 --> 00:29.753
+because we're basically just checking out a commit,
+
+00:29.753 --> 00:33.090
+just like if we actually check out a particular commit
+
+00:33.090 --> 00:38.090
+like git checkout 532FB, whatever that commit hash is,
+
+00:38.257 --> 00:40.261
+that is gonna put us into detached head.
+
+00:40.261 --> 00:42.609
+Same thing when we check out a tag,
+
+00:42.609 --> 00:45.763
+because a tag is just pointing to a commit.
+
+00:45.763 --> 00:47.198
+So it's not a problem.
+
+00:47.198 --> 00:48.420
+If we want to go back
+
+00:48.420 --> 00:51.090
+and actually work on an older version...
+
+00:51.090 --> 00:54.450
+Usually, you don't just make changes to an old release.
+
+00:54.450 --> 00:57.090
+The point is that a release is set in stone.
+
+00:57.090 --> 00:59.400
+When it's released, it doesn't change.
+
+00:59.400 --> 01:00.870
+That's what new releases are for
+
+01:00.870 --> 01:02.250
+if you need to make changes.
+
+01:02.250 --> 01:04.735
+But let's say we wanted to go back and work on
+
+01:04.735 --> 01:08.190
+or work off of some earlier release.
+
+01:08.190 --> 01:12.510
+How about, sure, 15.3.1.
+
+01:12.510 --> 01:13.530
+All right?
+
+01:13.530 --> 01:18.030
+All that we have to do is git checkout that right there.
+
+01:18.030 --> 01:19.446
+15.3.1.
+
+01:19.446 --> 01:21.165
+So that's a tag name.
+
+01:21.165 --> 01:23.940
+If I try and use checkout normally,
+
+01:23.940 --> 01:26.179
+we check out a branch or we check out a commit hash.
+
+01:26.179 --> 01:28.230
+That's not exactly what one looks like.
+
+01:28.230 --> 01:30.794
+Or we can check out a tag.
+
+01:30.794 --> 01:33.210
+And we see our favorite message,
+
+01:33.210 --> 01:35.040
+that we're now in detached head state.
+
+01:35.040 --> 01:37.582
+You can look around, make experimental changes, commit them,
+
+01:37.582 --> 01:40.952
+and we can make a branch if we want to keep working.
+
+01:40.952 --> 01:42.516
+So I could do that.
+
+01:42.516 --> 01:46.500
+I could do a git switch -c, MY,
+
+01:46.500 --> 01:50.740
+I don't know what I wanna call this, BRANCH_FROM_TAG.
+
+01:51.600 --> 01:52.890
+I don't know why I'm using underscores here.
+
+01:52.890 --> 01:54.180
+Normally, I wouldn't do that.
+
+01:54.180 --> 01:56.283
+But anyway, I now made this branch
+
+01:56.283 --> 02:01.283
+based upon that particular commit, which was 15.3.1.
+
+02:01.290 --> 02:02.830
+That's what the tag referred to.
+
+02:02.830 --> 02:06.150
+And we probably won't be able to tell much difference
+
+02:06.150 --> 02:07.740
+here at all.
+
+02:07.740 --> 02:09.511
+But that brings me to the next point,
+
+02:09.511 --> 02:12.467
+which is that we can actually diff different tags.
+
+02:12.467 --> 02:15.311
+So I think a more obvious diff to do
+
+02:15.311 --> 02:18.082
+would be between two patches.
+
+02:18.082 --> 02:19.920
+So what about this?
+
+02:19.920 --> 02:22.576
+17.0.0, so that was a major release,
+
+02:22.576 --> 02:24.600
+and then there was a patch.
+
+02:24.600 --> 02:27.240
+So I want to see what changed between these two.
+
+02:27.240 --> 02:28.980
+I can do that very easily.
+
+02:28.980 --> 02:33.980
+So I can do git diff and then v17., if I can type it, .0.0,
+
+02:35.910 --> 02:40.910
+and then I want v17.0.1, like that.
+
+02:41.637 --> 02:45.780
+And it looks like it was a very minor change.
+
+02:45.780 --> 02:47.130
+This is the only thing that changed,
+
+02:47.130 --> 02:51.060
+one file and just a little bit of what,
+
+02:51.060 --> 02:53.470
+a couple of lines added and one line removed.
+
+02:53.470 --> 02:55.170
+So that was it.
+
+02:55.170 --> 02:58.468
+But if we were to compare something much more drastic,
+
+02:58.468 --> 03:02.833
+how about the last minor release on 16?
+
+03:03.714 --> 03:04.860
+So 16.14.
+
+03:04.860 --> 03:07.620
+So let's just find that, 16.14.
+
+03:07.620 --> 03:09.870
+It probably starts with a V.
+
+03:09.870 --> 03:10.713
+Is it on here?
+
+03:12.570 --> 03:13.403
+Yes. Okay.
+
+03:13.403 --> 03:17.145
+16.14.0. And compare that to 17.
+
+03:17.145 --> 03:22.145
+So git diff 16.14.0 and we'll compare that to v17.0.0.
+
+03:23.336 --> 03:27.030
+So this was the last minor on 16
+
+03:27.030 --> 03:31.067
+and the first major or a new major release v17.
+
+03:31.067 --> 03:33.917
+And I'm gonna be scrolling for a while.
+
+03:33.917 --> 03:36.360
+There are lots of files, lots of changes,
+
+03:36.360 --> 03:38.032
+lots of stuff deleted.
+
+03:38.032 --> 03:40.759
+I don't even know how much.
+
+03:40.759 --> 03:42.270
+It doesn't gimme an indication
+
+03:42.270 --> 03:44.370
+of how much more I have to go, but lots of changes.
+
+03:44.370 --> 03:45.780
+It doesn't help that I'm very zoomed in
+
+03:45.780 --> 03:47.160
+to make the text large.
+
+03:47.160 --> 03:49.470
+But anyway, those are two points in time.
+
+03:49.470 --> 03:50.970
+They are marked with tags.
+
+03:50.970 --> 03:53.070
+We can check them out and make a new branch
+
+03:53.070 --> 03:55.668
+if we wanna work based upon one of those points in time,
+
+03:55.668 --> 03:57.482
+or we can compare them.
+
+03:57.482 --> 03:59.790
+These are just moments in time.
+
+03:59.790 --> 04:01.800
+They're releases in this case,
+
+04:01.800 --> 04:04.236
+but as we'll soon see, we can create tags with any name.
+
+04:04.236 --> 04:05.910
+We'll stick with releases.
+
+04:05.910 --> 04:06.990
+But they're just a pointer.
+
+04:06.990 --> 04:08.640
+It's just like a sticky note on a commit
+
+04:08.640 --> 04:11.223
+that says here is 17.0.0,
+
+04:11.223 --> 04:13.290
+so everyone in the future knows
+
+04:13.290 --> 04:15.330
+that this is where that release was.
+
+04:15.330 --> 04:17.340
+This is what we released right here.
+
+04:17.340 --> 04:18.870
+So that's how we can check out tags
+
+04:18.870 --> 04:20.430
+and how we can diff them.
+
+04:20.430 --> 04:22.530
+The next thing, of course, is making tags.
