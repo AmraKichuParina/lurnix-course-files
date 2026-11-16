@@ -1,0 +1,544 @@
+WEBVTT
+
+00:00.210 --> 00:01.230
+Instructor: All right so imagine,
+
+00:01.230 --> 00:02.760
+we have this hypothetical repo
+
+00:02.760 --> 00:05.430
+with three commits that we cloned
+
+00:05.430 --> 00:06.960
+and there's a master branch,
+
+00:06.960 --> 00:07.793
+and them, of course,
+
+00:07.793 --> 00:10.560
+we have this remote tracking branch we talked about
+
+00:10.560 --> 00:13.260
+that says this is the last known spot that we know of
+
+00:13.260 --> 00:14.880
+for origin slash master,
+
+00:14.880 --> 00:18.120
+the master branch on the origin GitHub repo.
+
+00:18.120 --> 00:19.770
+Anyway, I do some more work.
+
+00:19.770 --> 00:22.650
+What happens if I'm on the master branch I make new commits?
+
+00:22.650 --> 00:24.390
+That master pointer updates
+
+00:24.390 --> 00:26.850
+just like it always has when we've made branches
+
+00:26.850 --> 00:28.890
+and worked on branches and made new commits.
+
+00:28.890 --> 00:30.900
+That branch reference moves,
+
+00:30.900 --> 00:33.870
+it refers to the latest commit on that branch.
+
+00:33.870 --> 00:36.330
+So I might have two new commits
+
+00:36.330 --> 00:39.360
+and you'll see the remote branch reference doesn't update,
+
+00:39.360 --> 00:41.340
+it doesn't move, that's the point.
+
+00:41.340 --> 00:45.300
+It stays at the last known spot for origin/master.
+
+00:45.300 --> 00:47.250
+This is just master.
+
+00:47.250 --> 00:50.370
+Origin/master is the master branch on origin,
+
+00:50.370 --> 00:52.170
+whatever that GitHub repo is.
+
+00:52.170 --> 00:53.250
+So let's demonstrate this.
+
+00:53.250 --> 00:56.430
+Let's make on this animals project, right?
+
+00:56.430 --> 00:58.410
+I've got my main branch,
+
+00:58.410 --> 01:01.170
+and again, instead of master, it's main this time.
+
+01:01.170 --> 01:02.700
+On this main branch,
+
+01:02.700 --> 01:04.620
+I'll go ahead and make some changes.
+
+01:04.620 --> 01:05.910
+I'll make a new commit.
+
+01:05.910 --> 01:07.740
+So we've got this pets file.
+
+01:07.740 --> 01:08.580
+Here it is.
+
+01:08.580 --> 01:10.380
+I'll make a change or two.
+
+01:10.380 --> 01:13.530
+Why don't I add my two childhood cats
+
+01:13.530 --> 01:15.120
+that are no longer with us.
+
+01:15.120 --> 01:19.320
+Let's see, we had Monty and Mocha,
+
+01:19.320 --> 01:20.700
+and then I'll add and commit.
+
+01:20.700 --> 01:24.310
+So git add pets, git commit -m
+
+01:25.207 --> 01:28.800
+"add childhood cats,"
+
+01:28.800 --> 01:31.980
+all right, so now we have two commits just locally
+
+01:31.980 --> 01:35.580
+on the main branch and if I type git status,
+
+01:35.580 --> 01:37.740
+we'll see something we haven't really looked at
+
+01:37.740 --> 01:39.210
+or talked about before.
+
+01:39.210 --> 01:41.850
+This right here, your branch is ahead
+
+01:41.850 --> 01:45.420
+of origin slash main by one commit.
+
+01:45.420 --> 01:49.050
+In other words, your main branch and origin/main
+
+01:49.050 --> 01:51.990
+were pointing at the exact same thing
+
+01:51.990 --> 01:53.700
+just like this except master.
+
+01:53.700 --> 01:57.150
+But anyway, your main branch and origin/main were pointing
+
+01:57.150 --> 01:59.850
+to the same commit but then you made a new commit,
+
+01:59.850 --> 02:02.670
+and so now you are one commit ahead
+
+02:02.670 --> 02:05.010
+of where origin/main left off.
+
+02:05.010 --> 02:06.660
+That's exactly what it's telling me.
+
+02:06.660 --> 02:09.330
+So if I do this again, I make another change.
+
+02:09.330 --> 02:13.653
+We had a tree frog as a kid named George the Frog,
+
+02:15.630 --> 02:16.463
+what was he?
+
+02:16.463 --> 02:19.260
+A red-eyed tree frog I think is what they were called.
+
+02:19.260 --> 02:22.983
+Really cool looking but not very friendly pets.
+
+02:24.180 --> 02:27.603
+Anyway, George the Frog, I'm gonna add him.
+
+02:28.860 --> 02:31.687
+git add pets, git commit
+
+02:31.687 --> 02:35.970
+"add George the frog."
+
+02:35.970 --> 02:39.270
+All right, so now I type git status once again.
+
+02:39.270 --> 02:42.300
+Now we see your main branch, which is what I'm on,
+
+02:42.300 --> 02:45.540
+right on branch main is ahead of origin slash main
+
+02:45.540 --> 02:48.270
+by two commits now, so in other words,
+
+02:48.270 --> 02:52.410
+we're at this point where there are now two commits
+
+02:52.410 --> 02:55.200
+that master has since the last known spot
+
+02:55.200 --> 02:58.560
+of origin/master or in our case origin/main.
+
+02:58.560 --> 03:01.380
+Anyway, they have diverged and that's fine
+
+03:01.380 --> 03:02.640
+that's totally normal, right?
+
+03:02.640 --> 03:05.040
+That's the point of this tracking reference.
+
+03:05.040 --> 03:08.550
+This remote tracking reference is so that you know
+
+03:08.550 --> 03:09.900
+how far ahead you are
+
+03:09.900 --> 03:12.510
+and it will update when we get new updates
+
+03:12.510 --> 03:14.190
+from the GitHub repo, right?
+
+03:14.190 --> 03:15.450
+We can change this,
+
+03:15.450 --> 03:18.090
+we can go ask to make sure are there new commits,
+
+03:18.090 --> 03:19.140
+am I missing stuff?
+
+03:19.140 --> 03:21.210
+And this might move somewhere,
+
+03:21.210 --> 03:22.980
+but anyway, we haven't gotten to that yet.
+
+03:22.980 --> 03:24.990
+That's where fetching and pulling come in.
+
+03:24.990 --> 03:27.930
+But what I wanna show you is that if you wanted to
+
+03:27.930 --> 03:30.270
+if you were ahead of origin/master
+
+03:30.270 --> 03:32.610
+or origin/main or whatever it is, like we are,
+
+03:32.610 --> 03:36.270
+we can still take a look at origin/master or origin/main.
+
+03:36.270 --> 03:37.470
+We can check it out.
+
+03:37.470 --> 03:42.060
+So imagine this is our scenario and we we wonder, hmm,
+
+03:42.060 --> 03:43.290
+what did this project look like
+
+03:43.290 --> 03:44.940
+when I first cloned this repository,
+
+03:44.940 --> 03:48.270
+or when I last got an update from origin.
+
+03:48.270 --> 03:51.900
+If you want to know, you can check out origin/master.
+
+03:51.900 --> 03:53.850
+So you will go into detached HEAD,
+
+03:53.850 --> 03:55.410
+just like anytime we've done this
+
+03:55.410 --> 03:57.270
+before checking out a commits,
+
+03:57.270 --> 03:58.920
+don't panic, don't freak out.
+
+03:58.920 --> 04:00.120
+So let me show this.
+
+04:00.120 --> 04:01.590
+I'm gonna go back here.
+
+04:01.590 --> 04:04.440
+We are ahead of origin/main by two commits.
+
+04:04.440 --> 04:06.480
+This is what it looks like right now
+
+04:06.480 --> 04:08.070
+when we have these two new commits, right?
+
+04:08.070 --> 04:09.270
+These are new lines.
+
+04:09.270 --> 04:10.800
+I type git log,
+
+04:10.800 --> 04:12.450
+three total commits.
+
+04:12.450 --> 04:15.210
+So if I go back, git checkout,
+
+04:15.210 --> 04:17.310
+and remember I can always see
+
+04:17.310 --> 04:20.760
+that remote tracking branch right there, origin/main.
+
+04:20.760 --> 04:23.553
+git checkout origin/main,
+
+04:24.600 --> 04:26.490
+okay, we're in detached HEAD,
+
+04:26.490 --> 04:28.620
+you can look around, blah, blah, blah.
+
+04:28.620 --> 04:29.640
+Here we are.
+
+04:29.640 --> 04:30.900
+This is what it looked like.
+
+04:30.900 --> 04:34.500
+This is that reference that bookmark to origin/main
+
+04:34.500 --> 04:37.200
+from the last time we communicated with GitHub,
+
+04:37.200 --> 04:39.930
+this is what we had for the main branch.
+
+04:39.930 --> 04:42.390
+So I've moved ahead by two commits.
+
+04:42.390 --> 04:45.510
+If I wanted to work from here, just like any time
+
+04:45.510 --> 04:47.100
+that we've been in detached HEAD,
+
+04:47.100 --> 04:49.350
+I can make a new branch and start working,
+
+04:49.350 --> 04:51.960
+or I can undo, I go back to main,
+
+04:51.960 --> 04:53.400
+if I just want to, you know, I'm done.
+
+04:53.400 --> 04:55.650
+I just wanted to poke around and see what it looks like.
+
+04:55.650 --> 04:57.930
+But this is just to show you really as an illustration
+
+04:57.930 --> 05:01.530
+of the fact that this is a reference to where we were,
+
+05:01.530 --> 05:04.020
+where the main branch was last time we communicated
+
+05:04.020 --> 05:06.090
+with GitHub and now I can go back just
+
+05:06.090 --> 05:09.330
+to the actual main branch, get switch main,
+
+05:09.330 --> 05:11.520
+and this is where we are now, right?
+
+05:11.520 --> 05:13.230
+On my local machine.
+
+05:13.230 --> 05:15.240
+So now of course if I want these two commits
+
+05:15.240 --> 05:17.670
+that I have that aren't on GitHub,
+
+05:17.670 --> 05:19.170
+if I want them up on GitHub,
+
+05:19.170 --> 05:21.240
+it's as simple as pushing them, right?
+
+05:21.240 --> 05:24.390
+git push origin master.
+
+05:24.390 --> 05:26.070
+Nope, origin main,
+
+05:26.070 --> 05:27.180
+old habits die hard.
+
+05:27.180 --> 05:28.893
+There we go, git push origin main,
+
+05:30.270 --> 05:31.143
+refresh,
+
+05:32.370 --> 05:35.250
+and we see we now have our new commit here,
+
+05:35.250 --> 05:37.080
+add George the Frog,
+
+05:37.080 --> 05:39.540
+I can take a look at pets.txt.
+
+05:39.540 --> 05:42.240
+Okay, so we have Monty, Mocha, and George the Frog,
+
+05:42.240 --> 05:45.210
+and if I look at all the commits on this repository,
+
+05:45.210 --> 05:49.140
+just go back, three total commits now.
+
+05:49.140 --> 05:51.660
+The original one and then two that we just pushed.
+
+05:51.660 --> 05:53.370
+And now if I type git status,
+
+05:53.370 --> 05:55.530
+we're no longer two commits ahead.
+
+05:55.530 --> 05:58.650
+It says your branch is up to date with origin/main.
+
+05:58.650 --> 06:01.350
+We just communicated with that GitHub repository
+
+06:01.350 --> 06:03.330
+that remote repo called origin,
+
+06:03.330 --> 06:06.870
+and now our local repo knows what origin/main looks like.
+
+06:06.870 --> 06:09.330
+It has a new version of that pointer, right?
+
+06:09.330 --> 06:12.690
+It's pointing at the same commit that main is pointing at.
+
+06:12.690 --> 06:14.340
+But if I make new commits on main
+
+06:14.340 --> 06:15.870
+then of course they diverge.
+
+06:15.870 --> 06:18.210
+So I'll do that one more time.
+
+06:18.210 --> 06:19.350
+I'm not gonna show you anything new,
+
+06:19.350 --> 06:20.910
+I'm just gonna repeat the process.
+
+06:20.910 --> 06:23.310
+Let's see, another pet that I had as a kid,
+
+06:23.310 --> 06:27.060
+oh my trusty dog Wyatt passed away a couple years ago.
+
+06:27.060 --> 06:28.108
+So we'll add him,
+
+06:28.108 --> 06:29.400
+git add .
+
+06:29.400 --> 06:33.903
+git commit -m add Wyatt, rest in piece.
+
+06:34.740 --> 06:36.840
+Okay, I type git status,
+
+06:36.840 --> 06:40.800
+and now I'm ahead of origin/main by one commit, right?
+
+06:40.800 --> 06:43.500
+So if I check out origin/main,
+
+06:43.500 --> 06:46.203
+git checkout origin/ main,
+
+06:47.460 --> 06:49.080
+we see why it is gone.
+
+06:49.080 --> 06:50.340
+This is what the file looked like,
+
+06:50.340 --> 06:51.270
+this is what the repo looked
+
+06:51.270 --> 06:54.090
+like the last time we communicated with origin,
+
+06:54.090 --> 06:55.770
+which was just a couple seconds
+
+06:55.770 --> 06:57.900
+or maybe a minute ago when we pushed.
+
+06:57.900 --> 07:00.600
+So this is what it looked like if I go back
+
+07:00.600 --> 07:02.760
+which I can also do with git switch dash.
+
+07:02.760 --> 07:06.030
+We now see that we're ahead of origin/main by one commit.
+
+07:06.030 --> 07:09.480
+So now I can push that up to git push origin main,
+
+07:09.480 --> 07:11.010
+and when that finishes,
+
+07:11.010 --> 07:13.350
+we see we're now up to date with origin/main,
+
+07:13.350 --> 07:16.140
+and if I refresh, we should see a fourth commit.
+
+07:16.140 --> 07:17.430
+There it is.
+
+07:17.430 --> 07:18.993
+All right, so I'll stop there.
