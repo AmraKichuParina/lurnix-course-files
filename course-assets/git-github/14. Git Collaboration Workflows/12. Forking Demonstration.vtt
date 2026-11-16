@@ -1,0 +1,424 @@
+WEBVTT
+
+00:00.090 --> 00:02.010
+Instructor: So now I'm gonna demonstrate forking,
+
+00:02.010 --> 00:04.140
+well forking and cloning,
+
+00:04.140 --> 00:07.020
+because all that forking does is it makes us a copy
+
+00:07.020 --> 00:10.020
+of a GitHub repo on our GitHub account, right?
+
+00:10.020 --> 00:12.150
+It just makes a copy that we have access
+
+00:12.150 --> 00:14.602
+and permission to do whatever we want with,
+
+00:14.602 --> 00:17.055
+but that doesn't mean we have it on our machine.
+
+00:17.055 --> 00:19.320
+So the demonstration repo
+
+00:19.320 --> 00:22.350
+I'll be working with is this 2048 repo.
+
+00:22.350 --> 00:24.150
+We actually cloned it a while ago
+
+00:24.150 --> 00:25.980
+when I first intro cloning.
+
+00:25.980 --> 00:28.680
+It's for this very addictive 2048 game.
+
+00:28.680 --> 00:30.720
+It's just a single HTML file,
+
+00:30.720 --> 00:32.640
+some JavaScript, some CSS.
+
+00:32.640 --> 00:34.800
+Anyway, I can clone it right now
+
+00:34.800 --> 00:36.840
+just like any other repository.
+
+00:36.840 --> 00:39.480
+But if I clone that and make changes
+
+00:39.480 --> 00:41.010
+and make my own commits,
+
+00:41.010 --> 00:43.290
+I can't push those up, right?
+
+00:43.290 --> 00:44.130
+I don't have permission
+
+00:44.130 --> 00:46.590
+unless I ask to be a collaborator somehow.
+
+00:46.590 --> 00:48.080
+That's not how this works.
+
+00:48.080 --> 00:49.860
+That's not how GitHub works.
+
+00:49.860 --> 00:51.990
+So instead, if I wanna make my own changes
+
+00:51.990 --> 00:54.030
+and push them up to GitHub,
+
+00:54.030 --> 00:55.500
+maybe just to show other people,
+
+00:55.500 --> 00:56.700
+let's just start there.
+
+00:56.700 --> 00:58.650
+I want my own version on GitHub
+
+00:58.650 --> 01:00.990
+where I can totally screw things up
+
+01:00.990 --> 01:02.280
+and share it with people,
+
+01:02.280 --> 01:04.470
+maybe even add my own collaborators.
+
+01:04.470 --> 01:07.470
+I wanna work with my friend who,
+
+01:07.470 --> 01:09.090
+I don't have friends these days.
+
+01:09.090 --> 01:11.460
+My friend llama lady.
+
+01:11.460 --> 01:14.880
+I wanna work with her on our own version of 2048.
+
+01:14.880 --> 01:16.620
+We'll use this as a starting point
+
+01:16.620 --> 01:19.050
+and then I will fork it or she can fork it
+
+01:19.050 --> 01:21.720
+and then I can add her as a collaborator.
+
+01:21.720 --> 01:23.943
+So I'm gonna fork it to my personal account.
+
+01:25.470 --> 01:26.735
+It takes a moment,
+
+01:26.735 --> 01:28.530
+but we should, well, you can already see
+
+01:28.530 --> 01:31.770
+Colt slash 2048, my own copy.
+
+01:31.770 --> 01:34.496
+I have all the files, I have all the history,
+
+01:34.496 --> 01:38.610
+but now I could do things like add my own collaborators
+
+01:38.610 --> 01:41.730
+or change the access, you know, protect a branch,
+
+01:41.730 --> 01:44.100
+delete branches, whatever I want.
+
+01:44.100 --> 01:47.220
+So now I can clone this down to my machine,
+
+01:47.220 --> 01:49.620
+so I could clone the original too, right?
+
+01:49.620 --> 01:51.660
+There's nothing stopping me. It's a public repo.
+
+01:51.660 --> 01:53.160
+But if I clone this one,
+
+01:53.160 --> 01:56.520
+when I clone it, the remote will be set up
+
+01:56.520 --> 01:59.700
+for me automatically so that I can push up to here
+
+01:59.700 --> 02:03.000
+versus with a cloned version of the original.
+
+02:03.000 --> 02:05.730
+If I clone this, I can't push up to origin
+
+02:05.730 --> 02:09.870
+because origin will be Gabrielle Cirulli.
+
+02:09.870 --> 02:11.490
+That will be this account, right?
+
+02:11.490 --> 02:13.290
+I can't push to this repo.
+
+02:13.290 --> 02:14.910
+I can push to this one.
+
+02:14.910 --> 02:16.590
+So I'll copy that URL
+
+02:16.590 --> 02:18.870
+and then I'll clone it down to my machine.
+
+02:18.870 --> 02:20.120
+So let's get out of here.
+
+02:21.750 --> 02:23.013
+Git clone.
+
+02:25.830 --> 02:28.113
+All right, so we have that new directory.
+
+02:29.070 --> 02:32.820
+2048 git status.
+
+02:32.820 --> 02:36.330
+Cool, we see all the files and let's do git log.
+
+02:36.330 --> 02:38.490
+I see the full history,
+
+02:38.490 --> 02:40.800
+lots and lots of commits,
+
+02:40.800 --> 02:45.390
+but also if I do a get remote dash V,
+
+02:45.390 --> 02:48.540
+you can see that origin is set to my own fork.
+
+02:48.540 --> 02:50.520
+This is my repo on GitHub,
+
+02:50.520 --> 02:52.110
+not the original.
+
+02:52.110 --> 02:53.370
+So now I can do whatever I want.
+
+02:53.370 --> 02:55.680
+I can diverge and make some serious changes.
+
+02:55.680 --> 02:57.150
+So let's open this up.
+
+02:57.150 --> 02:59.070
+So here it is in the browser
+
+02:59.070 --> 03:01.650
+Just the file index dot html.
+
+03:01.650 --> 03:04.950
+I'll make some very simple changes, a single commit.
+
+03:04.950 --> 03:09.730
+Let's go with, I don't know, 2048 forked like that.
+
+03:12.000 --> 03:13.625
+Not an exciting change.
+
+03:13.625 --> 03:16.260
+Oh god, that really screwed things up, huh?
+
+03:16.260 --> 03:18.330
+Okay, well let's go with 2048
+
+03:18.330 --> 03:19.620
+and keep it like that.
+
+03:19.620 --> 03:21.990
+Well, maybe we'll just change some styling then.
+
+03:21.990 --> 03:23.190
+Very simple.
+
+03:23.190 --> 03:24.660
+New background color.
+
+03:24.660 --> 03:26.670
+Okay, well I fast forwarded a bit.
+
+03:26.670 --> 03:28.680
+I modified some of the CSS.
+
+03:28.680 --> 03:30.570
+So now this is what the game looks like.
+
+03:30.570 --> 03:33.120
+I didn't really do anything worthwhile,
+
+03:33.120 --> 03:34.860
+but can see, you know,
+
+03:34.860 --> 03:36.660
+the colors have changed a little bit
+
+03:36.660 --> 03:37.800
+compared to the original,
+
+03:37.800 --> 03:40.860
+which looked something like that there.
+
+03:40.860 --> 03:42.510
+Not for the better necessarily,
+
+03:42.510 --> 03:44.760
+but I've changed some CSS.
+
+03:44.760 --> 03:46.680
+Okay, so I can make those commits
+
+03:46.680 --> 03:48.630
+and do whatever I want locally.
+
+03:48.630 --> 03:50.970
+So this is my local git.
+
+03:50.970 --> 03:53.160
+I can make a commits on the master branch,
+
+03:53.160 --> 03:54.990
+which is where I am by default.
+
+03:54.990 --> 03:56.760
+Or I can go to some other branch,
+
+03:56.760 --> 03:59.130
+git switch, and I'll just commit
+
+03:59.130 --> 04:00.540
+directly to master I guess.
+
+04:00.540 --> 04:05.190
+Git add dot git commit dash M,
+
+04:05.190 --> 04:07.143
+change color palette.
+
+04:08.280 --> 04:09.113
+Cool.
+
+04:09.113 --> 04:10.440
+So I have that changed locally,
+
+04:10.440 --> 04:11.670
+which I could do on any repo
+
+04:11.670 --> 04:13.920
+whether I cloned it or forked and cloned.
+
+04:13.920 --> 04:17.220
+You have permission to make commits on your own local repo.
+
+04:17.220 --> 04:18.630
+But what I don't have permission to do
+
+04:18.630 --> 04:20.640
+unless I own the repository
+
+04:20.640 --> 04:23.340
+or I've been granted collaborator privileges,
+
+04:23.340 --> 04:25.246
+is push as we already know.
+
+04:25.246 --> 04:29.130
+So I own this repository because I forked it.
+
+04:29.130 --> 04:30.300
+So I can push up
+
+04:30.300 --> 04:33.292
+and push that new change to my fork,
+
+04:33.292 --> 04:35.790
+git remote dash V.
+
+04:35.790 --> 04:37.983
+So if I push my master branch to origin,
+
+04:39.030 --> 04:41.070
+just like that, git push origin master.
+
+04:41.070 --> 04:44.610
+Now my new commit is on my fork
+
+04:44.610 --> 04:46.770
+and we see change color palette, right?
+
+04:46.770 --> 04:49.080
+All the other commits are like years and years ago,
+
+04:49.080 --> 04:50.925
+and then 36 seconds to go.
+
+04:50.925 --> 04:53.280
+So that's just on my fork.
+
+04:53.280 --> 04:56.267
+It has nothing to do with the original project,
+
+04:56.267 --> 04:58.860
+aside from the fact that I made my own copy
+
+04:58.860 --> 05:01.080
+of the original project and made changes to it,
+
+05:01.080 --> 05:03.900
+but I'm not working on this original repository.
+
+05:03.900 --> 05:06.510
+I'm working on my fork and I can do whatever I want.
+
+05:06.510 --> 05:07.800
+I can add somebody else on here.
+
+05:07.800 --> 05:09.729
+We can collaborate, we can destroy this
+
+05:09.729 --> 05:12.090
+without ever impacting the original,
+
+05:12.090 --> 05:13.380
+without needing permission.
+
+05:13.380 --> 05:15.420
+That's the whole point of forking.
+
+05:15.420 --> 05:16.830
+So in the next video,
+
+05:16.830 --> 05:18.270
+I wanna talk about this workflow
+
+05:18.270 --> 05:20.788
+that stems from the ability to fork where we can fork
+
+05:20.788 --> 05:24.570
+and then collaborate on an open source project
+
+05:24.570 --> 05:26.040
+or just as a team
+
+05:26.040 --> 05:29.283
+with a bunch of forks and a centralized repository.
