@@ -1,0 +1,292 @@
+WEBVTT
+
+00:00.150 --> 00:02.100
+Instructor: Before we dive into git aliases,
+
+00:02.100 --> 00:05.580
+I wanna talk about the global config file.
+
+00:05.580 --> 00:07.080
+We've talked about configuring git
+
+00:07.080 --> 00:09.750
+a couple of different times and there are multiple places we
+
+00:09.750 --> 00:12.540
+can configure Git, there's actually three.
+
+00:12.540 --> 00:16.860
+There is the local config file in every single git repo.
+
+00:16.860 --> 00:18.360
+We talked about that, I think,
+
+00:18.360 --> 00:20.233
+what, one or two sections ago?
+
+00:20.233 --> 00:22.770
+In the .git directory, there is
+
+00:22.770 --> 00:27.770
+a file called "config," so settings in there apply
+
+00:27.780 --> 00:31.350
+to one repo and just that one local repo.
+
+00:31.350 --> 00:33.930
+Then, we have the global git config file
+
+00:33.930 --> 00:36.000
+where we can configure settings that will apply
+
+00:36.000 --> 00:39.870
+across all repos, but there's actually one level above that,
+
+00:39.870 --> 00:43.890
+which I never use, there's a system-wide config file.
+
+00:43.890 --> 00:47.220
+If you have multiple users and accounts on one machine,
+
+00:47.220 --> 00:49.710
+that system-wide config file would apply
+
+00:49.710 --> 00:52.830
+to all of those users, but I just use one account
+
+00:52.830 --> 00:55.260
+for the most part, so I configure things globally
+
+00:55.260 --> 00:58.440
+if I want them to impact all of my repos.
+
+00:58.440 --> 01:00.660
+So we configured things globally early
+
+01:00.660 --> 01:03.360
+on using the command line, "git config,"
+
+01:03.360 --> 01:07.650
+and then we do --global, and then user.name,
+
+01:07.650 --> 01:10.290
+for example, that's one thing that we set,
+
+01:10.290 --> 01:11.850
+and then we also did user.email.
+
+01:11.850 --> 01:13.800
+I'm just retrieving those values,
+
+01:13.800 --> 01:16.380
+but I could change them from the command line,
+
+01:16.380 --> 01:19.410
+and when we learn how to make aliases in the next video,
+
+01:19.410 --> 01:20.967
+I can do that from the command line.
+
+01:20.967 --> 01:23.340
+I'm just adding a new configuration
+
+01:23.340 --> 01:26.760
+or I'm changing a setting, but it's kind of annoying
+
+01:26.760 --> 01:28.650
+to do it from the command line, for me at least,
+
+01:28.650 --> 01:30.420
+I like to see all of my aliases
+
+01:30.420 --> 01:32.730
+at once, so we can actually open
+
+01:32.730 --> 01:36.270
+up the config file, the global config file.
+
+01:36.270 --> 01:37.710
+So where do we look for that?
+
+01:37.710 --> 01:40.140
+We saw that the local config file lives
+
+01:40.140 --> 01:43.620
+in the .git folder for every repo.
+
+01:43.620 --> 01:47.340
+Well, the global config file is called .gitconfig,
+
+01:47.340 --> 01:49.380
+it's a hidden file, and it's located
+
+01:49.380 --> 01:51.630
+in the Home directory by default.
+
+01:51.630 --> 01:54.570
+So we can take a look at it, I could just print it out,
+
+01:54.570 --> 01:58.653
+so it's tilde, to reference the home directory, .gitconfig,
+
+01:59.520 --> 02:01.470
+and this is what I have in it right now.
+
+02:01.470 --> 02:02.310
+I don't think I've really done
+
+02:02.310 --> 02:04.950
+a whole lot in this config file.
+
+02:04.950 --> 02:07.228
+I've set up, yeah, really not much.
+
+02:07.228 --> 02:10.440
+Also, I'll just open it over here. Here we go.
+
+02:10.440 --> 02:14.670
+So we have things like user, name is called "Steele,"
+
+02:14.670 --> 02:17.910
+so I could change that here, or change my email here,
+
+02:17.910 --> 02:20.550
+and this does the exact same thing
+
+02:20.550 --> 02:23.430
+that this line did right here
+
+02:23.430 --> 02:26.850
+if I were to set user.name to be something else,
+
+02:26.850 --> 02:30.210
+so two interfaces that change the same setting,
+
+02:30.210 --> 02:31.530
+one from the command line,
+
+02:31.530 --> 02:34.440
+it actually changes this file right here.
+
+02:34.440 --> 02:38.550
+So if I run this, you'll see it now has been updated.
+
+02:38.550 --> 02:40.860
+I didn't change this in the file myself.
+
+02:40.860 --> 02:42.960
+This command triggered that change,
+
+02:42.960 --> 02:44.580
+but I'm going to go back to what we
+
+02:44.580 --> 02:47.850
+had in there and I'm gonna save that, okay?
+
+02:47.850 --> 02:50.100
+So there are lots of settings that we can change in here,
+
+02:50.100 --> 02:52.500
+just like with the local config files.
+
+02:52.500 --> 02:55.860
+It's kind of overwhelming how many things you can update.
+
+02:55.860 --> 02:58.830
+Aliases are probably the most important aside
+
+02:58.830 --> 03:00.450
+from the basic things like your username
+
+03:00.450 --> 03:04.500
+and email as well as setting up your editor.
+
+03:04.500 --> 03:06.000
+So I did this early on.
+
+03:06.000 --> 03:07.770
+If you recall, I used VS Code,
+
+03:07.770 --> 03:10.320
+I set that up, that's what this code is,
+
+03:10.320 --> 03:13.650
+that's just the the name that we use to refer to VS Code,
+
+03:13.650 --> 03:16.110
+but this could be another editor's name.
+
+03:16.110 --> 03:19.650
+That's where we tell Git what editor to use by default,
+
+03:19.650 --> 03:20.850
+and so that's the sort of thing we want
+
+03:20.850 --> 03:23.160
+to happen globally in all repos.
+
+03:23.160 --> 03:25.320
+The same goes for setting up these aliases
+
+03:25.320 --> 03:27.090
+that I'll show you in the next video.
+
+03:27.090 --> 03:30.270
+We want them to apply across all repos presumably.
+
+03:30.270 --> 03:32.700
+I mean, they don't have to, but if you want
+
+03:32.700 --> 03:35.880
+to use these nice aliases, why not use them everywhere?
+
+03:35.880 --> 03:38.940
+Anyway, the last thing I'll just remind you
+
+03:38.940 --> 03:40.710
+of is this weird syntax.
+
+03:40.710 --> 03:45.710
+So if you want to change username, it's user is the entity
+
+03:46.050 --> 03:49.980
+or the group that we reference in square brackets.
+
+03:49.980 --> 03:52.980
+You don't have to indent, but everybody does.
+
+03:52.980 --> 03:55.560
+It makes it clear this relationship here,
+
+03:55.560 --> 03:58.290
+that name is nested under user,
+
+03:58.290 --> 04:00.990
+and then we set name equal to something.
+
+04:00.990 --> 04:03.930
+From the command line, it's user and
+
+04:03.930 --> 04:07.890
+then dot some property like name.
+
+04:07.890 --> 04:11.100
+So it does vary the way that it's set up, or the syntax,
+
+04:11.100 --> 04:13.200
+but they end up changing the same setting.
+
+04:13.200 --> 04:16.560
+Anyway, this is our global git config file.
+
+04:16.560 --> 04:18.660
+In the next video, we will learn how to add
+
+04:18.660 --> 04:21.630
+some basic aliases to somewhere in this file,
+
+04:21.630 --> 04:23.250
+and hopefully, they're very useful.
+
+04:23.250 --> 04:24.650
+So let's see how to do that.
