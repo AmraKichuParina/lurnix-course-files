@@ -1,0 +1,463 @@
+WEBVTT
+
+00:00.120 --> 00:02.340
+Instructor: So let's now try making a pull request.
+
+00:02.340 --> 00:04.080
+We'll use the same repository,
+
+00:04.080 --> 00:07.560
+the feature-branch-workflow for Colt
+
+00:07.560 --> 00:09.630
+and our chicken, Stevie.
+
+00:09.630 --> 00:11.190
+So we have this nav bar branch
+
+00:11.190 --> 00:13.170
+that Stevie already pushed up, right?
+
+00:13.170 --> 00:15.360
+We can see nav bar right there.
+
+00:15.360 --> 00:16.920
+We also have the pricing table branch,
+
+00:16.920 --> 00:18.360
+but that's already been merged in.
+
+00:18.360 --> 00:20.490
+We didn't use a pull request to do that.
+
+00:20.490 --> 00:23.220
+I'm currently working as Stevie
+
+00:23.220 --> 00:25.650
+and if we take a closer look at the nav bar branch,
+
+00:25.650 --> 00:28.590
+there's this button here, pull request.
+
+00:28.590 --> 00:33.513
+So first we can do a comparison between nav bar and main.
+
+00:35.010 --> 00:38.370
+Now it assumes that I want to compare with main
+
+00:38.370 --> 00:40.140
+because that's a default branch,
+
+00:40.140 --> 00:42.090
+but I could make a pull request
+
+00:42.090 --> 00:44.130
+to some other branch if I needed to,
+
+00:44.130 --> 00:46.380
+I could make a pull request to pricing table.
+
+00:46.380 --> 00:48.240
+Just not that common.
+
+00:48.240 --> 00:50.940
+So it tells me, all right, here's your comparison.
+
+00:50.940 --> 00:51.773
+Good news,
+
+00:51.773 --> 00:55.020
+we're able to automatically merge your branch,
+
+00:55.020 --> 00:57.720
+nav bar into main if we get to that point.
+
+00:57.720 --> 01:01.410
+So it's not going to merge without me clicking merge.
+
+01:01.410 --> 01:05.460
+Creating the pull request simply requests that merging.
+
+01:05.460 --> 01:08.520
+So we can see there's just two commits, right?
+
+01:08.520 --> 01:12.330
+We have the broken nav bar, the nav bar fix,
+
+01:12.330 --> 01:13.290
+here's the diff.
+
+01:13.290 --> 01:15.420
+We can see all the stuff that I added in,
+
+01:15.420 --> 01:16.950
+or Stevie added in.
+
+01:16.950 --> 01:19.890
+Anyway, if I decide I wanna make this poll request,
+
+01:19.890 --> 01:22.500
+I'll click that button, create poll request,
+
+01:22.500 --> 01:23.910
+and then I can put some title in here.
+
+01:23.910 --> 01:26.370
+It's just using the the name of the branch.
+
+01:26.370 --> 01:31.370
+So how about add in bootstrap nav bar?
+
+01:31.590 --> 01:33.690
+Okay, leave a comment.
+
+01:33.690 --> 01:35.340
+This is my comment.
+
+01:35.340 --> 01:39.480
+I can mention people, like I'll mention Colt.
+
+01:39.480 --> 01:41.013
+Please take a look.
+
+01:41.850 --> 01:44.910
+So that will actually mention him as a user.
+
+01:44.910 --> 01:48.360
+You know, I can have bold text, I can put code in here,
+
+01:48.360 --> 01:49.920
+I can do all sorts of stuff,
+
+01:49.920 --> 01:51.960
+different formatting and formatted information
+
+01:51.960 --> 01:53.850
+but I'm just gonna keep it simple.
+
+01:53.850 --> 01:55.290
+So add in boot strap nav bar.
+
+01:55.290 --> 01:57.540
+This is my comment at Colt, please take a look.
+
+01:57.540 --> 01:59.430
+Here we go, create pull request.
+
+01:59.430 --> 02:02.223
+So from my nav bar branch to the main branch.
+
+02:04.470 --> 02:06.240
+Alright, so here's the PR.
+
+02:06.240 --> 02:09.120
+You can see under PR's or pull requests, we have one,
+
+02:09.120 --> 02:10.500
+it's open.
+
+02:10.500 --> 02:13.920
+It was created by Stevie Chicks a couple seconds ago
+
+02:13.920 --> 02:17.760
+and we can also see the way that this repo is set up,
+
+02:17.760 --> 02:19.560
+Stevie can just merge it in.
+
+02:19.560 --> 02:22.980
+That probably is not the approach that we want to take.
+
+02:22.980 --> 02:24.570
+There are ways to restrict
+
+02:24.570 --> 02:27.240
+who can merge branches and organizations,
+
+02:27.240 --> 02:28.950
+or who can merge PR's,
+
+02:28.950 --> 02:31.080
+but for now anybody can merge it in.
+
+02:31.080 --> 02:32.430
+So Stevie could make that PR
+
+02:32.430 --> 02:34.770
+and then also just turn around and click merge,
+
+02:34.770 --> 02:36.480
+but I'm not gonna do that.
+
+02:36.480 --> 02:39.870
+Let's go switch over as Colt.
+
+02:39.870 --> 02:43.330
+So we'll refresh the page on Colt's computer
+
+02:44.910 --> 02:47.190
+and then we have this PR showing up.
+
+02:47.190 --> 02:49.800
+I also got a notification up here.
+
+02:49.800 --> 02:52.470
+I dismissed it when I wasn't recording unfortunately,
+
+02:52.470 --> 02:54.300
+but I got a notification for
+
+02:54.300 --> 02:57.030
+the fact that I was mentioned in this poll request.
+
+02:57.030 --> 02:59.640
+So I can respond to Stevie, right?
+
+02:59.640 --> 03:04.050
+I can decide one, I can merge it right now if I want to.
+
+03:04.050 --> 03:05.400
+I can close it and just say
+
+03:05.400 --> 03:07.320
+this poll request is going nowhere.
+
+03:07.320 --> 03:09.630
+We're not adding this in to the main branch.
+
+03:09.630 --> 03:13.110
+Or I can leave some comments like, you know,
+
+03:13.110 --> 03:15.180
+looks good or looks bad.
+
+03:15.180 --> 03:17.550
+Could you fix this or add this?
+
+03:17.550 --> 03:19.080
+Can you make this change?
+
+03:19.080 --> 03:22.260
+And changes can be added to a poll request
+
+03:22.260 --> 03:25.350
+after the poll request is originally created.
+
+03:25.350 --> 03:27.540
+We can continue to, like in this example,
+
+03:27.540 --> 03:30.420
+Stevie could continue to to add to the nav bar branch
+
+03:30.420 --> 03:32.490
+and respond to feedback,
+
+03:32.490 --> 03:36.120
+but for this demo, I'll do something like, looks good.
+
+03:36.120 --> 03:40.050
+Whoops, didn't mean to do caps but merging now.
+
+03:40.050 --> 03:41.820
+All right, so I'll leave that comment.
+
+03:41.820 --> 03:43.320
+I won't close it.
+
+03:43.320 --> 03:44.340
+So I haven't done any,
+
+03:44.340 --> 03:47.400
+I haven't taken action, but now I'm going to.
+
+03:47.400 --> 03:49.290
+So not every poll request
+
+03:49.290 --> 03:52.410
+can be merged automatically on GitHub.
+
+03:52.410 --> 03:55.830
+Just like when we're doing merges locally with git,
+
+03:55.830 --> 03:59.010
+not every branch merge is a fast forward,
+
+03:59.010 --> 04:01.650
+or not every one can be done automatically
+
+04:01.650 --> 04:04.230
+without generating any sort of conflicts.
+
+04:04.230 --> 04:06.510
+So what I'm doing here by clicking this button
+
+04:06.510 --> 04:08.010
+is telling GitHub,
+
+04:08.010 --> 04:10.170
+alright go ahead and do the merge yourself.
+
+04:10.170 --> 04:12.240
+So then we're going to have some code
+
+04:12.240 --> 04:14.040
+that has been merged in on GitHub
+
+04:14.040 --> 04:15.840
+that we don't have locally.
+
+04:15.840 --> 04:17.460
+So the main branch is going to change.
+
+04:17.460 --> 04:19.500
+I'm gonna click, all right,
+
+04:19.500 --> 04:21.960
+do I wanna change the commit message?
+
+04:21.960 --> 04:23.520
+This is fine.
+
+04:23.520 --> 04:24.693
+Confirm merge.
+
+04:25.770 --> 04:28.620
+Successfully merged and close this poll request.
+
+04:28.620 --> 04:31.260
+The nav bar branch can now be safely deleted.
+
+04:31.260 --> 04:33.003
+So let's just delete it now.
+
+04:34.680 --> 04:37.860
+Okay, so now we have successfully completed
+
+04:37.860 --> 04:39.780
+one part of his workflow where
+
+04:39.780 --> 04:43.950
+we went from working on a feature branch, Stevie made it,
+
+04:43.950 --> 04:46.860
+and then Colt actually added a commit, he fixed a bug.
+
+04:46.860 --> 04:49.080
+We pushed that up to GitHub, we make a pull request.
+
+04:49.080 --> 04:50.730
+That pull request was merged in
+
+04:50.730 --> 04:53.430
+and now if we look at our index html,
+
+04:53.430 --> 04:57.180
+we have the nav bar showing up on our main branch.
+
+04:57.180 --> 04:59.460
+So now other developers, everyone on the team,
+
+04:59.460 --> 05:01.920
+needs to go and get the latest changes.
+
+05:01.920 --> 05:02.850
+So to do that,
+
+05:02.850 --> 05:06.450
+and we could fetch or we can just pull origin main.
+
+05:06.450 --> 05:07.990
+This is on Colt's machine
+
+05:09.780 --> 05:13.798
+and now we should have the nav bar showing up somewhere.
+
+05:13.798 --> 05:14.910
+There it is.
+
+05:14.910 --> 05:18.270
+We have all that nav bar work from the nav bar branch.
+
+05:18.270 --> 05:20.460
+Just take a look at it here.
+
+05:20.460 --> 05:21.450
+There we are.
+
+05:21.450 --> 05:23.730
+So it's not very nice looking,
+
+05:23.730 --> 05:26.643
+but that came from a branch that Stevie created
+
+05:26.643 --> 05:28.320
+and pushed up to GitHub.
+
+05:28.320 --> 05:31.050
+Then we made that PR and then Colt's accepted it,
+
+05:31.050 --> 05:31.920
+merged it in,
+
+05:31.920 --> 05:34.440
+and now individual users, collaborators
+
+05:34.440 --> 05:36.870
+need to pull down the new main branch
+
+05:36.870 --> 05:39.690
+and we could do the same thing on Stevie's side.
+
+05:39.690 --> 05:42.240
+So we can get rid of the nav bar branch.
+
+05:42.240 --> 05:44.730
+We'll switch to main first.
+
+05:44.730 --> 05:46.560
+We can remove nav bar.
+
+05:46.560 --> 05:51.030
+So we can do git branch -D nav bar to delete it.
+
+05:51.030 --> 05:53.970
+So now it's gone, locally and on GitHub,
+
+05:53.970 --> 05:56.190
+and now I can pull down the latest version of main.
+
+05:56.190 --> 05:58.060
+So git pull origin main
+
+06:00.120 --> 06:04.320
+and our local main branch is updated, we have the nav bar.
+
+06:04.320 --> 06:06.630
+I can just show it here.
+
+06:06.630 --> 06:07.560
+So there we go.
+
+06:07.560 --> 06:09.240
+We have the same end results.
+
+06:09.240 --> 06:10.470
+The same thing that we did
+
+06:10.470 --> 06:13.860
+to make this pricing table merged into the main branch,
+
+06:13.860 --> 06:15.900
+except we did it via a poll request,
+
+06:15.900 --> 06:18.720
+an intermediate step that is done on GitHub
+
+06:18.720 --> 06:21.240
+where we can have discussion and you know, debate
+
+06:21.240 --> 06:22.980
+as to whether something should be merged in
+
+06:22.980 --> 06:25.383
+and that's our first intro to PR's.
