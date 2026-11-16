@@ -1,0 +1,523 @@
+WEBVTT
+
+00:00.120 --> 00:02.370
+Instructor: Okay, so we will soon learn
+
+00:02.370 --> 00:05.010
+what git stashing is in this particular commands.
+
+00:05.010 --> 00:08.220
+In this video, I want to explain why it's a thing.
+
+00:08.220 --> 00:12.720
+What is the problem that git stashing or git stash solves?
+
+00:12.720 --> 00:15.600
+So imagine for just a moment here
+
+00:15.600 --> 00:19.800
+we're working on a repository and I'm on the master branch.
+
+00:19.800 --> 00:21.807
+You can see up top on the right side, I've
+
+00:21.807 --> 00:23.730
+I've got a single file I'm working on.
+
+00:23.730 --> 00:26.580
+A Python file called cat.py.
+
+00:26.580 --> 00:27.720
+So I'm doing a whole bunch
+
+00:27.720 --> 00:30.750
+of work and then I make some commits
+
+00:30.750 --> 00:33.030
+and then I switch over to a new branch.
+
+00:33.030 --> 00:34.140
+I just make that new branch.
+
+00:34.140 --> 00:36.120
+I switch to it, it's called puppy
+
+00:36.120 --> 00:38.403
+and I do some more work over here.
+
+00:39.240 --> 00:42.840
+And then I have some uncommitted work on this puppy branch.
+
+00:42.840 --> 00:46.110
+So I never committed this dog file, for example.
+
+00:46.110 --> 00:47.940
+And then I need to switch back to master.
+
+00:47.940 --> 00:49.290
+I don't know why, something's wrong,
+
+00:49.290 --> 00:51.000
+I need to switch back quickly.
+
+00:51.000 --> 00:54.540
+What happens if I have a file or a hundred files,
+
+00:54.540 --> 00:56.550
+if I have uncommitted changes
+
+00:56.550 --> 01:00.090
+on one branch and I switch to another branch?
+
+01:00.090 --> 01:02.130
+Well, there's really two options.
+
+01:02.130 --> 01:04.770
+One is that those changes will just come
+
+01:04.770 --> 01:07.050
+with me to the, to the destination branch.
+
+01:07.050 --> 01:08.730
+They'll just come along and show
+
+01:08.730 --> 01:11.340
+up on the master branch in this case.
+
+01:11.340 --> 01:14.070
+The other option is that git won't let me switch.
+
+01:14.070 --> 01:16.740
+And I actually showed this early on when I first
+
+01:16.740 --> 01:18.725
+introed branching, git will give you a message
+
+01:18.725 --> 01:20.970
+if there's a conflict between files,
+
+01:20.970 --> 01:22.770
+it's not gonna let you just switch
+
+01:22.770 --> 01:25.680
+to a new branch and bring that conflict over.
+
+01:25.680 --> 01:28.170
+So I'm gonna show this in a very simple way.
+
+01:28.170 --> 01:29.670
+I'm gonna try and illustrate it here
+
+01:29.670 --> 01:32.760
+with some HTML and some CSS in a new git repo.
+
+01:32.760 --> 01:35.700
+But this is a problem or it could be a problem.
+
+01:35.700 --> 01:37.410
+There are lots of times you might be working
+
+01:37.410 --> 01:38.880
+on something but you're not done.
+
+01:38.880 --> 01:41.460
+You don't wanna make an actual official commit
+
+01:41.460 --> 01:42.780
+but you need to go somewhere else.
+
+01:42.780 --> 01:44.310
+You need to go to a different branch.
+
+01:44.310 --> 01:46.140
+A coworker asks for help.
+
+01:46.140 --> 01:48.240
+You realize that there's a really simple typo
+
+01:48.240 --> 01:50.040
+that you could fix in a different branch.
+
+01:50.040 --> 01:51.990
+You don't need to wait until you make a commit
+
+01:51.990 --> 01:55.740
+on your current branch because we can stash changes.
+
+01:55.740 --> 01:59.160
+So let me show you a situation where this would be useful.
+
+01:59.160 --> 02:02.610
+I am in a new folder it's just called stashing,
+
+02:02.610 --> 02:05.083
+just a little demo. It's not a repo at the moment.
+
+02:05.083 --> 02:07.440
+I am going to make it one
+
+02:07.440 --> 02:12.420
+and I'm gonna make an index HTML file and an app.css file.
+
+02:12.420 --> 02:16.831
+So if you don't know CSS and HTML, it's totally fine.
+
+02:16.831 --> 02:19.275
+I'm just gonna illustrate this here.
+
+02:19.275 --> 02:22.200
+I'm gonna make a simple HTML file.
+
+02:22.200 --> 02:24.900
+I'll just call it 'hello.'
+
+02:24.900 --> 02:26.220
+I'll have an h1 one in here.
+
+02:26.220 --> 02:28.110
+A heading 'Hello World.'
+
+02:28.110 --> 02:31.620
+Again, the HTML is not the point of this video.
+
+02:31.620 --> 02:34.300
+And I'll add some lorem ipsum in a paragraph.
+
+02:34.300 --> 02:38.523
+And then I'm gonna connect this app.css file.
+
+02:39.540 --> 02:42.423
+So I'll just do a link app.css.
+
+02:43.443 --> 02:45.300
+Okay, so nothing crazy.
+
+02:45.300 --> 02:48.810
+I have an empty CSS file and if I view my file
+
+02:48.810 --> 02:50.880
+in the browser, this is what it looks like right now.
+
+02:50.880 --> 02:54.450
+And let's just say that's all I want on the master branch.
+
+02:54.450 --> 02:56.460
+So I'm gonna add and commit,
+
+02:56.460 --> 02:58.710
+git add, git commit everything.
+
+02:58.710 --> 03:02.400
+Okay? Create index html and app.css.
+
+03:02.400 --> 03:05.010
+Okay, so this is done on the master branch.
+
+03:05.010 --> 03:07.050
+Now I create a new branch.
+
+03:07.050 --> 03:10.350
+So git switch, let's just do it dash with C.
+
+03:10.350 --> 03:12.120
+And I'm gonna call this branch something
+
+03:12.120 --> 03:14.505
+like purple for example.
+
+03:14.505 --> 03:16.590
+And I'll show you why in a moment.
+
+03:16.590 --> 03:19.110
+I'm gonna work on making a purple version
+
+03:19.110 --> 03:23.400
+of this website where I add some changes into app.css
+
+03:23.400 --> 03:24.960
+that will make my website purple.
+
+03:24.960 --> 03:29.960
+So I'll do things like h1 should have a color of purple.
+
+03:30.330 --> 03:32.820
+I'll save, I refresh. And there it is.
+
+03:32.820 --> 03:34.138
+We have some purple there.
+
+03:34.138 --> 03:37.383
+Maybe I'll do, the body has a purple background color.
+
+03:38.250 --> 03:42.180
+Background color should be, let's not do purple.
+
+03:42.180 --> 03:43.470
+Let's do, is there
+
+03:43.470 --> 03:46.440
+like a light purpley color that I can just name?
+
+03:46.440 --> 03:49.230
+Okay, I chose lavender. Okay, I don't know
+
+03:49.230 --> 03:51.150
+if that's gonna show up great on a screen recording
+
+03:51.150 --> 03:53.550
+but you can see I've made some changes here.
+
+03:53.550 --> 03:55.380
+We have some purpley stuff.
+
+03:55.380 --> 03:58.350
+However, I'm not going to commit, for whatever reason
+
+03:58.350 --> 04:00.300
+I need to go back to master for a moment.
+
+04:00.300 --> 04:03.450
+I've been called away and I'm gonna switch.
+
+04:03.450 --> 04:06.600
+So right now, if I type git status, we can see it says,
+
+04:06.600 --> 04:09.180
+oh you have some changes in app.css.
+
+04:09.180 --> 04:10.680
+They're not staged for commits.
+
+04:10.680 --> 04:12.270
+There's no commits on this branch.
+
+04:12.270 --> 04:14.250
+If I switch right now to master,
+
+04:14.250 --> 04:19.250
+git switch master, hmm no problem.
+
+04:20.070 --> 04:21.090
+I didn't get a warning
+
+04:21.090 --> 04:23.670
+or I didn't get an alert that says you can't do that.
+
+04:23.670 --> 04:28.470
+I'm on master right now but I still see this purple webpage.
+
+04:28.470 --> 04:30.510
+My changes came with me.
+
+04:30.510 --> 04:32.280
+So that was the first scenario here.
+
+04:32.280 --> 04:34.980
+If I make changes and they're not committed,
+
+04:34.980 --> 04:36.090
+they can come with me
+
+04:36.090 --> 04:38.700
+to the destination branch, assuming they don't conflict.
+
+04:38.700 --> 04:40.980
+And I don't have any conflicts here, right?
+
+04:40.980 --> 04:43.650
+This is basically a, if I was merging
+
+04:43.650 --> 04:45.020
+it would be a fast forward.
+
+04:45.020 --> 04:47.610
+But anyway, nothing has been added or committed.
+
+04:47.610 --> 04:51.570
+And you'll see if I typed git status, it still says
+
+04:51.570 --> 04:55.110
+you know, those changes are not staged for commit right now.
+
+04:55.110 --> 04:57.570
+Okay, so that's one option.
+
+04:57.570 --> 05:00.899
+If I go back to purple, git switch purple,
+
+05:00.899 --> 05:03.000
+I can add those changes
+
+05:03.000 --> 05:07.593
+and you know, git commit, make stuff purple.
+
+05:09.960 --> 05:13.900
+Okay? And then I'll go back to master, git switch master
+
+05:15.330 --> 05:16.950
+and now those changes are gone.
+
+05:16.950 --> 05:20.070
+They didn't come with me because I added, I committed them
+
+05:20.070 --> 05:24.270
+over on the purple branch and then I switched over.
+
+05:24.270 --> 05:27.480
+They didn't come with me. Great. Okay, so next step
+
+05:27.480 --> 05:30.720
+I'm gonna show this second scenario, which is also common.
+
+05:30.720 --> 05:32.850
+If git detects potential conflicts
+
+05:32.850 --> 05:34.470
+it's not going to be happy with us.
+
+05:34.470 --> 05:36.030
+It won't let us switch branches
+
+05:36.030 --> 05:38.392
+if we haven't added and committed those changes.
+
+05:38.392 --> 05:42.030
+So I'm gonna make a new branch here, git switch dash C
+
+05:42.030 --> 05:45.690
+I'm on master, and this new branch, let's see
+
+05:45.690 --> 05:47.550
+maybe I'll change the name of our webpage.
+
+05:47.550 --> 05:49.530
+I'm going to call it 'goodbye.'
+
+05:49.530 --> 05:53.280
+All right, so goodbyeworld, and I'll just do goodbye,
+
+05:53.280 --> 05:55.140
+it's easier to type.
+
+05:55.140 --> 05:57.780
+Alrighty. So I'm on this new branch
+
+05:57.780 --> 05:59.610
+but before I do anything on the new branch
+
+05:59.610 --> 06:02.420
+I'm gonna go back to master, git switch master,
+
+06:02.420 --> 06:05.493
+and I'm gonna change something on here.
+
+06:06.330 --> 06:10.110
+Instead of hello world, let's do hello world with a bunch
+
+06:10.110 --> 06:14.610
+of exclamation points like that and a bunch up here.
+
+06:14.610 --> 06:17.280
+Okay, so now I'm gonna add and commit my changes
+
+06:17.280 --> 06:21.960
+on master git add dot, git commit dash M, you know,
+
+06:21.960 --> 06:24.033
+update hello greeting.
+
+06:25.260 --> 06:28.293
+Now I'm gonna switch back to our goodbye branch.
+
+06:29.820 --> 06:31.590
+So at the moment, goodbye,
+
+06:31.590 --> 06:34.680
+this Goodbye branch still has the older version, right?
+
+06:34.680 --> 06:36.390
+We don't have all these exclamation points.
+
+06:36.390 --> 06:39.810
+And if I update this to be goodbye world
+
+06:39.810 --> 06:41.920
+and this says goodbye here
+
+06:43.800 --> 06:46.770
+but I don't add and commit, I switch over to master
+
+06:46.770 --> 06:49.980
+from here. I have unstaged uncommitted changes.
+
+06:49.980 --> 06:54.090
+I'm gonna switch back to master, it won't let me.
+
+06:54.090 --> 06:56.700
+This is that second scenario, your local changes
+
+06:56.700 --> 06:59.040
+to the following files would be overwritten
+
+06:59.040 --> 07:02.640
+by switching, or by checkout, index.html.
+
+07:02.640 --> 07:04.110
+Please commit your changes
+
+07:04.110 --> 07:06.510
+or stash them before you switch branches.
+
+07:06.510 --> 07:08.370
+So this is a common scenario
+
+07:08.370 --> 07:11.160
+at least somewhat common where I need to switch over
+
+07:11.160 --> 07:13.770
+I need to go back to this master branch for whatever reason.
+
+07:13.770 --> 07:16.260
+Imagine it's a much more complicated project.
+
+07:16.260 --> 07:17.760
+I need to switch over to some branch.
+
+07:17.760 --> 07:19.110
+It doesn't have to be master
+
+07:19.110 --> 07:21.930
+but I have work that is uncommitted
+
+07:21.930 --> 07:24.788
+on my current branch and git is not gonna let me switch
+
+07:24.788 --> 07:27.690
+or I don't want the changes to come with me.
+
+07:27.690 --> 07:29.640
+Like I didn't want those purple changes to come
+
+07:29.640 --> 07:31.156
+with me when I switched to master.
+
+07:31.156 --> 07:33.810
+So this is where git stash comes in.
+
+07:33.810 --> 07:34.770
+If I don't want to commit,
+
+07:34.770 --> 07:36.990
+I'm not ready to make a commit, it's unnecessary,
+
+07:36.990 --> 07:41.370
+I can use git stash to sort of pause, to save my changes
+
+07:41.370 --> 07:43.050
+without actually committing them.
+
+07:43.050 --> 07:44.640
+So that's what we're gonna learn how to do
+
+07:44.640 --> 07:45.753
+in the next video.
