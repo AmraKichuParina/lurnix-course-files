@@ -1,0 +1,829 @@
+WEBVTT
+
+00:00.240 --> 00:01.470
+Instructor: Okay, so it's time to get some
+
+00:01.470 --> 00:02.940
+practice with Git diff.
+
+00:02.940 --> 00:04.526
+There are two very important announcements
+
+00:04.526 --> 00:07.350
+or notes about this exercise upfront.
+
+00:07.350 --> 00:10.260
+First of all, this exercise actually involves
+
+00:10.260 --> 00:13.110
+an existing repository that you're going to download.
+
+00:13.110 --> 00:15.660
+So stay tuned for those instructions in just a moment.
+
+00:15.660 --> 00:18.090
+And second, the other important note is
+
+00:18.090 --> 00:20.610
+that all these different variations that I'm
+
+00:20.610 --> 00:24.060
+asking you to use in these different steps here,
+
+00:24.060 --> 00:26.880
+you may not remember them all off the top of your head.
+
+00:26.880 --> 00:28.680
+I wouldn't blame you if you don't.
+
+00:28.680 --> 00:30.330
+So don't feel like, you know
+
+00:30.330 --> 00:33.000
+we've talked about adding and committing and branching.
+
+00:33.000 --> 00:35.760
+Those are like fundamental things you do day to day.
+
+00:35.760 --> 00:38.040
+Diffing, you may do frequently,
+
+00:38.040 --> 00:40.800
+but maybe not every flavor of git diff.
+
+00:40.800 --> 00:43.110
+So I would say it's just not as crucial.
+
+00:43.110 --> 00:44.790
+If you struggle to remember some of these,
+
+00:44.790 --> 00:47.970
+I wouldn't feel bad, but make sure you can get the answers.
+
+00:47.970 --> 00:50.820
+Make sure you understand, you know what command does what,
+
+00:50.820 --> 00:52.860
+even if you can't recall it instantly.
+
+00:52.860 --> 00:54.600
+It's fine to look things up.
+
+00:54.600 --> 00:57.120
+Anyway, like all the other exercises,
+
+00:57.120 --> 01:00.180
+there's a link in the resources for this video.
+
+01:00.180 --> 01:01.810
+I definitely recommend you open it up
+
+01:01.810 --> 01:05.130
+because in order to get started with this project,
+
+01:05.130 --> 01:07.680
+with this exercise, it's not really a project.
+
+01:07.680 --> 01:10.410
+You're going to need to do something we have not yet seen.
+
+01:10.410 --> 01:12.630
+This is actually skipping ahead.
+
+01:12.630 --> 01:14.760
+We're going to learn about a git command
+
+01:14.760 --> 01:17.550
+once we get to GitHub called git clone.
+
+01:17.550 --> 01:19.050
+So all that I'll say about it for now
+
+01:19.050 --> 01:22.080
+is that as part of the setup for this exercise,
+
+01:22.080 --> 01:25.020
+you need to copy this link or copy this entire line.
+
+01:25.020 --> 01:26.670
+So I'm gonna do that right now.
+
+01:26.670 --> 01:29.250
+And then we're going to run this from our terminal
+
+01:29.250 --> 01:31.110
+and we're going to make sure we're not
+
+01:31.110 --> 01:33.210
+in a git repository when we do this
+
+01:33.210 --> 01:35.520
+because this is actually gonna make a copy
+
+01:35.520 --> 01:37.140
+of a git repo that I've made.
+
+01:37.140 --> 01:39.750
+It's gonna make a copy for you on your machine.
+
+01:39.750 --> 01:41.433
+So let's try it.
+
+01:42.270 --> 01:43.440
+I'll do it right here.
+
+01:43.440 --> 01:45.633
+So I'm not in a git repository right now,
+
+01:45.633 --> 01:47.340
+and I'm gonna run this command.
+
+01:47.340 --> 01:48.523
+I just copied it.
+
+01:48.523 --> 01:50.700
+I don't want those, when I copied it,
+
+01:50.700 --> 01:53.010
+I don't want the little marks there.
+
+01:53.010 --> 01:55.173
+Okay, so now I'm gonna hit enter.
+
+01:56.820 --> 01:59.130
+And we get this output from Git.
+
+01:59.130 --> 02:01.440
+Again, we're, we're gonna learn about this commands later
+
+02:01.440 --> 02:04.920
+but I now have a new folder called git diff exercise.
+
+02:04.920 --> 02:06.810
+So now I'm gonna CD into that.
+
+02:06.810 --> 02:07.830
+That's the next step.
+
+02:07.830 --> 02:10.050
+Change into that directory.
+
+02:10.050 --> 02:12.164
+So CD and to git diff exercise.
+
+02:12.164 --> 02:14.717
+And you'll see two files in here.
+
+02:14.717 --> 02:19.170
+So I can open this code dot,
+
+02:19.170 --> 02:20.910
+just open it in VS Code.
+
+02:20.910 --> 02:21.743
+And here we go.
+
+02:21.743 --> 02:22.890
+We have two files.
+
+02:22.890 --> 02:26.850
+One for fleetwoodmac.txt, the band Fleetwood Mac,
+
+02:26.850 --> 02:29.580
+and then another one for queen, the band Queen.
+
+02:29.580 --> 02:31.740
+Now the way that this exercise works is
+
+02:31.740 --> 02:33.300
+that there are actually two branches.
+
+02:33.300 --> 02:34.380
+The current branch that you're
+
+02:34.380 --> 02:36.480
+on by default is called current.
+
+02:36.480 --> 02:38.610
+Now I recognize it's kind of confusing.
+
+02:38.610 --> 02:40.710
+What I meant is that this is
+
+02:40.710 --> 02:42.480
+the branch for the current lineups,
+
+02:42.480 --> 02:46.473
+the modern 2021, 2022 lineups of these bands.
+
+02:47.400 --> 02:50.250
+But there's a second branch that I've made already,
+
+02:50.250 --> 02:52.350
+and you can access it by running
+
+02:52.350 --> 02:55.260
+this command, git switch 1970s.
+
+02:55.260 --> 02:56.343
+So I'll do that now.
+
+02:57.990 --> 02:59.070
+And it is kind of weird.
+
+02:59.070 --> 03:01.170
+You're not gonna see this branch
+
+03:01.170 --> 03:02.250
+which is why I'm having you run this.
+
+03:02.250 --> 03:04.500
+If you run git branch, we don't see a second branch.
+
+03:04.500 --> 03:06.030
+We will learn why that is.
+
+03:06.030 --> 03:07.350
+So I'm not gonna go into that
+
+03:07.350 --> 03:09.630
+until we get to GitHub and remote branches.
+
+03:09.630 --> 03:11.640
+But anyway, just follow these steps blindly.
+
+03:11.640 --> 03:13.500
+It's okay, we will learn.
+
+03:13.500 --> 03:17.400
+So now I have two branches, okay, 1970s and current.
+
+03:17.400 --> 03:19.620
+I made both of those ahead of time for you.
+
+03:19.620 --> 03:20.880
+Now you have them on your machine
+
+03:20.880 --> 03:22.770
+if you followed these steps.
+
+03:22.770 --> 03:25.440
+So if we look at the 1970s branch,
+
+03:25.440 --> 03:27.630
+that's what I'm on right now,
+
+03:27.630 --> 03:28.920
+we have some slight changes.
+
+03:28.920 --> 03:30.990
+For example, the Queen file now has
+
+03:30.990 --> 03:33.240
+Freddie Mercury as its singer.
+
+03:33.240 --> 03:35.100
+Fleetwood Mac has a different lineup,
+
+03:35.100 --> 03:38.040
+no keyboardist back in 1970.
+
+03:38.040 --> 03:39.600
+Now this band Fleetwood Mac has had
+
+03:39.600 --> 03:40.800
+a million lineup changes
+
+03:40.800 --> 03:43.380
+and this is not entirely faithful
+
+03:43.380 --> 03:45.330
+but the point is that there's two versions
+
+03:45.330 --> 03:47.490
+of each file, two branches.
+
+03:47.490 --> 03:49.350
+Each branch has the same two file names
+
+03:49.350 --> 03:51.060
+but different contents.
+
+03:51.060 --> 03:52.761
+So now that we have that set up,
+
+03:52.761 --> 03:57.263
+we now have our diffs, the actual exercise portion.
+
+03:57.263 --> 04:00.210
+So there are a bunch of steps where I'm asking you
+
+04:00.210 --> 04:03.540
+to make different comparisons between the 1970s branch
+
+04:03.540 --> 04:05.940
+and the current branch for all files,
+
+04:05.940 --> 04:07.980
+between the 1970s branch and the current branch
+
+04:07.980 --> 04:10.950
+but only for the queen.txt file,
+
+04:10.950 --> 04:13.560
+or switch over to this current branch,
+
+04:13.560 --> 04:14.670
+that's the name of it,
+
+04:14.670 --> 04:16.980
+and run a diff to compare the current head
+
+04:16.980 --> 04:18.270
+to the previous commit.
+
+04:18.270 --> 04:20.940
+Basically there's a bunch of diffs I'm asking you to run.
+
+04:20.940 --> 04:24.150
+Every one will involve a flavor of git diff.
+
+04:24.150 --> 04:25.860
+Now towards the end, I actually ask you
+
+04:25.860 --> 04:27.930
+to make some changes to a file.
+
+04:27.930 --> 04:30.780
+Follow these directions pretty carefully.
+
+04:30.780 --> 04:33.600
+For example, here I'm telling you to replace
+
+04:33.600 --> 04:35.790
+Adam Lambert's name with your own name.
+
+04:35.790 --> 04:38.670
+Save the change, add to the staging area.
+
+04:38.670 --> 04:41.490
+So add that change, but do not commit.
+
+04:41.490 --> 04:44.070
+So that sort of thing is important because it enables us
+
+04:44.070 --> 04:46.110
+to you know, run different diffs
+
+04:46.110 --> 04:47.850
+where some changes are staged,
+
+04:47.850 --> 04:50.700
+some are not staged and some are committed.
+
+04:50.700 --> 04:52.830
+Anyway, follow these instructions if you'd like.
+
+04:52.830 --> 04:54.600
+I hope you do this exercise.
+
+04:54.600 --> 04:56.910
+We're gonna make some comparisons between the different band
+
+04:56.910 --> 04:59.730
+lineups over the years and stop watching at this point
+
+04:59.730 --> 05:02.550
+because I'm now just gonna go through it myself.
+
+05:02.550 --> 05:04.380
+So I did part one.
+
+05:04.380 --> 05:06.030
+I have this repository.
+
+05:06.030 --> 05:08.010
+I have these two branches, right?
+
+05:08.010 --> 05:09.750
+1970s and current.
+
+05:09.750 --> 05:12.990
+Now the first exercise, the first problem is
+
+05:12.990 --> 05:16.170
+to compare the difference between the 1970s branch
+
+05:16.170 --> 05:19.770
+and the current branch across all files.
+
+05:19.770 --> 05:22.500
+So I can do that with git diff
+
+05:22.500 --> 05:24.960
+and then just two branch names.
+
+05:24.960 --> 05:26.880
+So I didn't specify which one, you know
+
+05:26.880 --> 05:28.320
+you should compare first.
+
+05:28.320 --> 05:29.850
+Remember that the order matters,
+
+05:29.850 --> 05:33.270
+but I'll just say 1970s compared to now.
+
+05:33.270 --> 05:34.890
+Chronologically, that makes more sense
+
+05:34.890 --> 05:37.380
+because, well lemme just show you.
+
+05:37.380 --> 05:41.013
+We see for example, you know what's changed like currently,
+
+05:41.880 --> 05:45.960
+in Fleetwood Mac, Lindsey Buckingham is no longer part
+
+05:45.960 --> 05:49.050
+of the band, sadly, and he's been replaced.
+
+05:49.050 --> 05:51.330
+So this format makes sense, in my opinion,
+
+05:51.330 --> 05:53.790
+where we have, you know, the old is the actual
+
+05:53.790 --> 05:55.140
+chronologically older branch,
+
+05:55.140 --> 05:58.140
+and the new is the current branch, but it doesn't matter.
+
+05:58.140 --> 05:59.490
+So we also see, you know,
+
+05:59.490 --> 06:01.500
+keyboard was set to none.
+
+06:01.500 --> 06:04.920
+On the 1970s branch, there was no keyboard player.
+
+06:04.920 --> 06:08.220
+And now in the current branch, it's Christine McVie,
+
+06:08.220 --> 06:10.980
+and we also see the changes in the Queen file.
+
+06:10.980 --> 06:14.370
+Now the second part of the exercise is to do the same thing
+
+06:14.370 --> 06:16.830
+but only for the queen.txt file.
+
+06:16.830 --> 06:19.590
+So still compare the two branches,
+
+06:19.590 --> 06:24.480
+but I can narrow it down, just like that as a third value.
+
+06:24.480 --> 06:27.240
+Just gimme that one file and here we are.
+
+06:27.240 --> 06:28.320
+What's changed?
+
+06:28.320 --> 06:31.590
+Well, Freddie Mercury exists in the 1970s branch.
+
+06:31.590 --> 06:33.450
+Adam Lambert is in the current branch.
+
+06:33.450 --> 06:35.160
+Mike Gross is in the 1970s branch.
+
+06:35.160 --> 06:38.850
+And Neil Fairclough, I don't know.
+
+06:38.850 --> 06:42.330
+He's a new addition to the band actually.
+
+06:42.330 --> 06:43.163
+What's his name?
+
+06:43.163 --> 06:45.030
+Roger Deacon I think was his name,
+
+06:45.030 --> 06:47.160
+was the real, the main bass of the band
+
+06:47.160 --> 06:49.440
+but he's actually not part of it anymore.
+
+06:49.440 --> 06:52.923
+So he kind of got lost between 1970s and 2021.
+
+06:53.790 --> 06:55.470
+But we don't have a middle branch.
+
+06:55.470 --> 06:58.110
+Anyway, next up, step three,
+
+06:58.110 --> 06:59.520
+switch over to the current branch
+
+06:59.520 --> 07:01.560
+if you're not on it currently.
+
+07:01.560 --> 07:02.640
+So I'll do that.
+
+07:02.640 --> 07:05.871
+I'm on the 1970s branch, git switched to current,
+
+07:05.871 --> 07:10.110
+and then it says run a diff to compare the current head
+
+07:10.110 --> 07:11.820
+to the previous commit.
+
+07:11.820 --> 07:14.223
+Basically if we do a git log,
+
+07:15.180 --> 07:18.390
+I wanna see what happened between where we are right now.
+
+07:18.390 --> 07:21.000
+This is head and this commit.
+
+07:21.000 --> 07:22.470
+So there are multiple ways of doing this.
+
+07:22.470 --> 07:25.290
+I mean I could copy these commit hashes and do a diff
+
+07:25.290 --> 07:28.980
+between them or I could just say what's the difference?
+
+07:28.980 --> 07:32.490
+So git diff between head,
+
+07:32.490 --> 07:36.120
+and then the prior commit the parent of head,
+
+07:36.120 --> 07:37.233
+head tilde one.
+
+07:38.130 --> 07:40.770
+And this is what changed in that commit.
+
+07:40.770 --> 07:43.920
+I changed, the bass is John Deacon,
+
+07:43.920 --> 07:46.200
+I think I said Roger Deacon, it's John Deacon.
+
+07:46.200 --> 07:48.300
+Anyway, I updated him.
+
+07:48.300 --> 07:51.720
+He left the band and was replaced by this guy.
+
+07:51.720 --> 07:53.760
+So the way that I've written this right now,
+
+07:53.760 --> 07:56.550
+is that we're looking at head compared to head tilde one.
+
+07:56.550 --> 07:58.550
+I would probably do it this way instead.
+
+08:00.720 --> 08:03.870
+Like this so that we can see what was added
+
+08:03.870 --> 08:06.390
+in the newest commit and what was removed, right?
+
+08:06.390 --> 08:07.740
+It's the same change.
+
+08:07.740 --> 08:10.740
+It's just the order was slightly different.
+
+08:10.740 --> 08:13.800
+But you could also get that commit hash as I mentioned.
+
+08:13.800 --> 08:15.330
+So we could just copy part of that hash
+
+08:15.330 --> 08:19.200
+or the whole thing and do a git diff compared to that.
+
+08:19.200 --> 08:21.213
+So this is the same thing as this.
+
+08:22.290 --> 08:24.540
+And then here we're just flipping the order.
+
+08:24.540 --> 08:27.330
+So this is comparing head tilde one to head,
+
+08:27.330 --> 08:29.940
+and this is comparing head to head tilde one.
+
+08:29.940 --> 08:31.800
+So the new commit to the parent
+
+08:31.800 --> 08:34.320
+or the parent commit to the child.
+
+08:34.320 --> 08:35.370
+Okay.
+
+08:35.370 --> 08:38.550
+The next step, while on the current branch
+
+08:38.550 --> 08:40.950
+change the queen.txt file
+
+08:40.950 --> 08:43.140
+by replacing Adam Lambert with your own name.
+
+08:43.140 --> 08:46.230
+Save the change, add that file to the staging area.
+
+08:46.230 --> 08:47.940
+Do not commit.
+
+08:47.940 --> 08:50.250
+Okay, so let's try that.
+
+08:50.250 --> 08:54.210
+I'm gonna change Adam Lambert and put my own name
+
+08:54.210 --> 08:56.618
+Colt Steele, and I'm gonna save,
+
+08:56.618 --> 08:59.700
+and then I will just run git status.
+
+08:59.700 --> 09:01.020
+I will add that file.
+
+09:01.020 --> 09:03.090
+I'll stage it like the instructions say
+
+09:03.090 --> 09:04.893
+but I'm not going to commit.
+
+09:06.120 --> 09:09.450
+Okay, now edit the Fleetwood Mac file
+
+09:09.450 --> 09:12.810
+changing the lead singer from Stevie Nicks to Stevie Chicks.
+
+09:12.810 --> 09:14.940
+One of my chickens is Stevie Chicks.
+
+09:14.940 --> 09:17.923
+So we'll save that file, but we're not going to stage it.
+
+09:17.923 --> 09:22.050
+So Stevie Nicks becomes Stevie Chicks,
+
+09:22.050 --> 09:25.230
+and I saved it but I'm not going to stage that.
+
+09:25.230 --> 09:28.680
+Okay, now we get to do some more diffs.
+
+09:28.680 --> 09:31.590
+Run a diff that reveals the unstaged changes
+
+09:31.590 --> 09:32.910
+in the working directory.
+
+09:32.910 --> 09:35.340
+So I should only see the change that we made
+
+09:35.340 --> 09:37.357
+to fleetwoodmac.txt.
+
+09:38.340 --> 09:40.950
+So what is the command I can do to view that?
+
+09:40.950 --> 09:43.140
+Well it's gonna be git diff something,
+
+09:43.140 --> 09:45.750
+and if actually it's just git diff.
+
+09:45.750 --> 09:48.960
+So git diff on its own, it's going to show me in this case,
+
+09:48.960 --> 09:51.210
+the unstaged changes.
+
+09:51.210 --> 09:52.680
+It's not gonna show me the changes
+
+09:52.680 --> 09:54.510
+that I already staged right?
+
+09:54.510 --> 09:57.090
+To do that, that's the next little bit here.
+
+09:57.090 --> 10:00.360
+Run a diff that would reveal only the stage changes.
+
+10:00.360 --> 10:03.000
+So I should only see that change we made to queen.txt.
+
+10:03.000 --> 10:04.410
+I should see my name.
+
+10:04.410 --> 10:05.760
+So how do I do that?
+
+10:05.760 --> 10:07.457
+Well, it's gonna be another git diff
+
+10:07.457 --> 10:11.580
+but we need dash, dash staged or cached.
+
+10:11.580 --> 10:12.510
+And there we are.
+
+10:12.510 --> 10:16.050
+We see Colt Steele or whatever your name is
+
+10:16.050 --> 10:18.480
+replacing Adam Lambert.
+
+10:18.480 --> 10:21.360
+And then finally run a diff that prints all changes,
+
+10:21.360 --> 10:23.940
+both files that we changed the stage file
+
+10:23.940 --> 10:26.643
+and the unstaged file since the prior commit.
+
+10:27.660 --> 10:30.330
+So we can do git diff head.
+
+10:30.330 --> 10:32.400
+So take current working directory,
+
+10:32.400 --> 10:34.230
+staged and unstaged changes,
+
+10:34.230 --> 10:36.870
+compare that to the head commit.
+
+10:36.870 --> 10:39.093
+So here's what changed in Fleetwood Mac,
+
+10:40.191 --> 10:42.510
+and here's what changed in Queen, okay?
+
+10:42.510 --> 10:45.240
+So I know this was kind of a tedious exercise
+
+10:45.240 --> 10:46.500
+but I had to try and come up
+
+10:46.500 --> 10:49.110
+with something that you could follow along with
+
+10:49.110 --> 10:50.820
+and try and run some diffs on your own
+
+10:50.820 --> 10:53.790
+and get some practice with the different commands.
+
+10:53.790 --> 10:55.590
+You know, I don't know how successful this was,
+
+10:55.590 --> 10:58.950
+but I hope you followed along and enjoyed it.
+
+10:58.950 --> 11:01.590
+Don't get hung up on this bit around git clone
+
+11:01.590 --> 11:02.850
+and how this all works.
+
+11:02.850 --> 11:05.668
+We will be spending a lot of time on that later on.
+
+11:05.668 --> 11:09.450
+This just enabled me to give you some starter code or files
+
+11:09.450 --> 11:12.300
+and branches so you could just get going with the diffs.
+
+11:12.300 --> 11:13.803
+All right, moving on.
