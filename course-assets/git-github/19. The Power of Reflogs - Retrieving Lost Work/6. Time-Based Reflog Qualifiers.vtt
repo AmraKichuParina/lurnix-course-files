@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00.240 --> 00:01.073
+Instructor: Okay, so now
+
+00:01.073 --> 00:03.390
+on to something a bit more interesting, hopefully.
+
+00:03.390 --> 00:07.320
+Every single reflog entry has a timestamp associated
+
+00:07.320 --> 00:08.190
+with it.
+
+00:08.190 --> 00:09.780
+If we take a look at one of them,
+
+00:09.780 --> 00:12.750
+here's the head reflog for this react repo.
+
+00:12.750 --> 00:16.170
+Every entry has a commit hash, right?
+
+00:16.170 --> 00:18.415
+It has the user who made it,
+
+00:18.415 --> 00:21.570
+but it also has a timestamp in here.
+
+00:21.570 --> 00:23.027
+So this is a timestamp,
+
+00:23.027 --> 00:26.220
+and this includes the date and the time
+
+00:26.220 --> 00:29.010
+that the head reference was updated.
+
+00:29.010 --> 00:30.780
+It's a Unix timestamp.
+
+00:30.780 --> 00:33.090
+Anyway, we can use this,
+
+00:33.090 --> 00:35.970
+or rather get can use it for us,
+
+00:35.970 --> 00:38.250
+if we pass through some
+
+00:38.250 --> 00:41.580
+of these nifty timed reference qualifiers.
+
+00:41.580 --> 00:45.480
+So instead of saying, "head at five moves ago",
+
+00:45.480 --> 00:48.480
+I can say "head at one day ago".
+
+00:48.480 --> 00:51.810
+Or "master branch two days ago" or "a week ago"
+
+00:51.810 --> 00:52.643
+or "yesterday".
+
+00:52.643 --> 00:55.410
+Or I can even provide a fully flushed out timestamp
+
+00:55.410 --> 00:56.520
+in different formats.
+
+00:56.520 --> 00:58.800
+If I want to know at an exact time,
+
+00:58.800 --> 01:00.840
+what did X branch look like?
+
+01:00.840 --> 01:01.680
+But remember,
+
+01:01.680 --> 01:05.340
+this does not go back more than typically 90 days.
+
+01:05.340 --> 01:08.730
+But also, it only includes local changes.
+
+01:08.730 --> 01:10.953
+So it doesn't matter what somebody else has done
+
+01:10.953 --> 01:14.970
+and what their head looked like over the last 90 days.
+
+01:14.970 --> 01:18.330
+It's just reflogs on your machine that are just a log
+
+01:18.330 --> 01:20.940
+of your local changes and movements.
+
+01:20.940 --> 01:21.773
+Okay?
+
+01:21.773 --> 01:24.660
+So I can use this syntax in place of-
+
+01:24.660 --> 01:25.980
+And it's the same syntax.
+
+01:25.980 --> 01:27.570
+What we've seen here were qualifiers,
+
+01:27.570 --> 01:29.550
+just a timed qualifier.
+
+01:29.550 --> 01:32.130
+And this definitely can be useful.
+
+01:32.130 --> 01:33.030
+Sometimes,
+
+01:33.030 --> 01:35.183
+if I wanna just compare what something looked like-
+
+01:35.183 --> 01:37.860
+Let's just take the master branch right now,
+
+01:37.860 --> 01:38.760
+today,
+
+01:38.760 --> 01:41.220
+compared to what it was yesterday.
+
+01:41.220 --> 01:42.053
+You know,
+
+01:42.053 --> 01:43.620
+I could go through the git log,
+
+01:43.620 --> 01:45.030
+and I could format it
+
+01:45.030 --> 01:48.360
+so that it also includes commit timestamps.
+
+01:48.360 --> 01:49.260
+And I could try and figure
+
+01:49.260 --> 01:52.410
+out which commit was two days ago.
+
+01:52.410 --> 01:53.243
+Or what?
+
+01:53.243 --> 01:54.076
+I said yesterday?
+
+01:54.076 --> 01:55.350
+Which commit I made yesterday,
+
+01:55.350 --> 01:58.500
+and then I could do a diff between now and that.
+
+01:58.500 --> 02:02.790
+Or I could just do "git diff between head",
+
+02:02.790 --> 02:04.980
+and then "head yesterday".
+
+02:04.980 --> 02:06.573
+So at yesterday.
+
+02:07.741 --> 02:09.420
+(keyboard clicking)
+
+02:09.420 --> 02:11.370
+And this is what's changed
+
+02:11.370 --> 02:14.790
+between now and yesterday on the master branch.
+
+02:14.790 --> 02:15.720
+Although actually,
+
+02:15.720 --> 02:16.553
+you know what?
+
+02:16.553 --> 02:17.640
+This is between head and head.
+
+02:17.640 --> 02:19.800
+That's probably not that useful.
+
+02:19.800 --> 02:21.540
+I would do this
+
+02:21.540 --> 02:23.280
+between the current master branch
+
+02:23.280 --> 02:26.040
+and the master branch tip yesterday.
+
+02:26.040 --> 02:26.873
+And there we go.
+
+02:26.873 --> 02:28.680
+Less has changed.
+
+02:28.680 --> 02:30.840
+Comparing between head and head yesterday,
+
+02:30.840 --> 02:32.700
+I mean, who knows what branch we're on.
+
+02:32.700 --> 02:34.110
+That's gonna impact it,
+
+02:34.110 --> 02:35.160
+and who knows what branch we were
+
+02:35.160 --> 02:37.732
+on yesterday at that point in time?
+
+02:37.732 --> 02:42.060
+So we can also do things like if I do "get ref log show",
+
+02:42.060 --> 02:44.130
+so I can filter what I look at
+
+02:44.130 --> 02:47.730
+in the ref log instead of "all entries".
+
+02:47.730 --> 02:51.480
+For head I can look at everything
+
+02:51.480 --> 02:54.090
+up until two days ago.
+
+02:54.090 --> 02:56.793
+So I can do two dot days ago,
+
+02:57.870 --> 03:00.060
+and it includes the time for me now.
+
+03:00.060 --> 03:02.970
+So it shows today's the 21st of February.
+
+03:02.970 --> 03:04.413
+Here's February 19th.
+
+03:05.730 --> 03:07.770
+So it also includes all the earlier stuff,
+
+03:07.770 --> 03:09.423
+up until two days ago.
+
+03:10.830 --> 03:11.663
+I also,
+
+03:11.663 --> 03:13.920
+I believe you can do two days,
+
+03:13.920 --> 03:14.970
+T W O.
+
+03:14.970 --> 03:16.053
+Or I know you can.
+
+03:17.010 --> 03:18.393
+So you can write that out.
+
+03:18.393 --> 03:20.493
+I can also do things like,
+
+03:21.330 --> 03:22.620
+I don't know, one hour ago.
+
+03:22.620 --> 03:23.550
+I don't think I have anything.
+
+03:23.550 --> 03:25.413
+How about one minute ago?
+
+03:27.120 --> 03:28.050
+Okay.
+
+03:28.050 --> 03:29.160
+So now we see-
+
+03:29.160 --> 03:30.882
+Oh, it's actually the 22nd, I guess.
+
+03:30.882 --> 03:31.980
+But anyway,
+
+03:31.980 --> 03:34.260
+we see that we have the time included here,
+
+03:34.260 --> 03:35.610
+and what time is it now?
+
+03:35.610 --> 03:37.050
+11 21.
+
+03:37.050 --> 03:40.432
+So this is the closest thing that it can go up to.
+
+03:40.432 --> 03:43.380
+And that's probably all I'll show here.
+
+03:43.380 --> 03:44.527
+We have these different options.
+
+03:44.527 --> 03:45.514
+"Yesterday",
+
+03:45.514 --> 03:47.467
+"multiple minutes ago",
+
+03:47.467 --> 03:48.300
+"hours ago",
+
+03:48.300 --> 03:49.133
+"days ago".
+
+03:49.133 --> 03:50.100
+You can do "weeks ago".
+
+03:50.100 --> 03:51.990
+I believe you can even do "months ago".
+
+03:51.990 --> 03:56.990
+I don't know if anything will show up for me one month ago.
+
+03:57.990 --> 04:01.020
+Yeah, it's just empty, but we don't get an invalid syntax.
+
+04:01.020 --> 04:05.130
+It tells us, "head ref log only goes back to this date".
+
+04:05.130 --> 04:07.320
+So this means if I wanted to go back and take a look
+
+04:07.320 --> 04:09.690
+at the master branch a week ago,
+
+04:09.690 --> 04:11.040
+when things were working,
+
+04:11.040 --> 04:12.900
+I know they were working a week ago,
+
+04:12.900 --> 04:17.643
+one option would just be "git checkout master" at,
+
+04:18.810 --> 04:20.793
+and then one dot week ago.
+
+04:21.780 --> 04:23.550
+So I don't have to find the commit hash.
+
+04:23.550 --> 04:25.200
+This is just gonna take me back
+
+04:25.200 --> 04:28.290
+to the closest matching reflog entry.
+
+04:28.290 --> 04:29.550
+Every entry in the reflog,
+
+04:29.550 --> 04:31.440
+every time that master tip changes,
+
+04:31.440 --> 04:33.900
+we get a new entry with a timestamp.
+
+04:33.900 --> 04:36.780
+And now, of course that puts me in detached head.
+
+04:36.780 --> 04:39.180
+And if we look at this git log-
+
+04:39.180 --> 04:40.470
+Here we are.
+
+04:40.470 --> 04:42.930
+Actually, why don't I just do regular git log?
+
+04:42.930 --> 04:45.240
+This was Friday, February 12th.
+
+04:45.240 --> 04:46.800
+So the closest thing that happened
+
+04:46.800 --> 04:49.020
+to that master tip a week ago.
+
+04:49.020 --> 04:51.690
+And here's that commit hash, right?
+
+04:51.690 --> 04:54.750
+But I am in detached head so I can get out of here,
+
+04:54.750 --> 04:56.700
+but that's one way we can use that.
+
+04:56.700 --> 04:58.587
+Now, what I'm gonna show you next,
+
+04:58.587 --> 05:02.250
+is how we can really use this stuff if we make mistakes,
+
+05:02.250 --> 05:03.478
+how we can undo
+
+05:03.478 --> 05:07.260
+or retrieve seemingly lost commits and information.
+
+05:07.260 --> 05:08.820
+And that's coming up next.
+
+05:08.820 --> 05:09.653
+But in this video,
+
+05:09.653 --> 05:12.390
+we saw that we can use this pattern
+
+05:12.390 --> 05:13.740
+to reference a particular entry
+
+05:13.740 --> 05:14.760
+in a ref log,
+
+05:14.760 --> 05:16.770
+but instead of just passing a number,
+
+05:16.770 --> 05:18.240
+like one or five,
+
+05:18.240 --> 05:19.680
+we can pass in these weird,
+
+05:19.680 --> 05:20.790
+but very nifty,
+
+05:20.790 --> 05:21.623
+timed references
+
+05:21.623 --> 05:23.070
+because every entry
+
+05:23.070 --> 05:26.123
+in the ref log also contains a timestamp associated with it.
+
+05:26.123 --> 05:27.033
+Okay.
