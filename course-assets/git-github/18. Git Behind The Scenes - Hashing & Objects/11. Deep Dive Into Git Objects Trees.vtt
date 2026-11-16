@@ -1,0 +1,694 @@
+WEBVTT
+
+00:00.240 --> 00:02.100
+Instructor: Okay, so in the previous video,
+
+00:02.100 --> 00:06.210
+we talked about blobs, and it's kind of probably confusing
+
+00:06.210 --> 00:07.590
+at this point.
+
+00:07.590 --> 00:11.460
+We said blobs store the contents of files,
+
+00:11.460 --> 00:12.990
+but not even the file name.
+
+00:12.990 --> 00:15.000
+Just the contents of files.
+
+00:15.000 --> 00:16.530
+Now, that's fine, I guess,
+
+00:16.530 --> 00:19.380
+if we wanna do things like we have been doing,
+
+00:19.380 --> 00:22.260
+where we're storing a couple of words,
+
+00:22.260 --> 00:24.360
+or the content of a single file,
+
+00:24.360 --> 00:25.530
+and then spitting it back out,
+
+00:25.530 --> 00:27.900
+asking Git to return it back to us.
+
+00:27.900 --> 00:30.840
+But in a large project, with hundreds of files
+
+00:30.840 --> 00:34.050
+in nested folders, and the crazy structure,
+
+00:34.050 --> 00:36.840
+if I can just tell Git, check out this commit,
+
+00:36.840 --> 00:39.000
+or switch to this branch, and it can change
+
+00:39.000 --> 00:41.310
+all of those files, all of those folders,
+
+00:41.310 --> 00:43.260
+it might delete some in my working directory.
+
+00:43.260 --> 00:45.450
+It might add a whole bunch of stuff.
+
+00:45.450 --> 00:47.970
+How is it able to keep track of that structure?
+
+00:47.970 --> 00:49.860
+It's not just the insides of the files,
+
+00:49.860 --> 00:52.770
+it's the relationships between the files.
+
+00:52.770 --> 00:55.440
+It's the structure of the directories.
+
+00:55.440 --> 00:57.900
+So that's the role of tree objects.
+
+00:57.900 --> 01:00.600
+Trees are Git objects that are used to store
+
+01:00.600 --> 01:02.640
+the contents of a directory.
+
+01:02.640 --> 01:05.520
+So blobs store the contents of a file,
+
+01:05.520 --> 01:08.520
+and trees store the contents of a directory.
+
+01:08.520 --> 01:11.400
+So trees actually contain pointers
+
+01:11.400 --> 01:15.390
+that can refer both to blobs and to other trees.
+
+01:15.390 --> 01:16.800
+So think about it this way.
+
+01:16.800 --> 01:19.350
+If we have one folder,
+
+01:19.350 --> 01:22.980
+and inside that one folder, there is one file,
+
+01:22.980 --> 01:25.920
+well, Git would represent that with one tree,
+
+01:25.920 --> 01:29.940
+and that tree would point to, or refer to, one blob
+
+01:29.940 --> 01:31.410
+for that file.
+
+01:31.410 --> 01:35.430
+So each entry in a tree, you can visualize it like this,
+
+01:35.430 --> 01:36.600
+contains the type.
+
+01:36.600 --> 01:38.670
+Is it a blob or a tree?
+
+01:38.670 --> 01:41.460
+The two things that a tree can refer to,
+
+01:41.460 --> 01:43.080
+or can reference.
+
+01:43.080 --> 01:46.140
+And then for each entry, we've got the hash.
+
+01:46.140 --> 01:47.820
+So this is not the commit hash.
+
+01:47.820 --> 01:50.700
+This is a blob hash, in this case.
+
+01:50.700 --> 01:51.741
+Right?
+
+01:51.741 --> 01:52.800
+We saw a blob, like this one.
+
+01:52.800 --> 01:53.820
+1F7.
+
+01:53.820 --> 01:56.100
+It's the contents of some file.
+
+01:56.100 --> 01:57.750
+Well, here's a tree.
+
+01:57.750 --> 02:01.950
+And it references that contents, that blob, 1F7,
+
+02:01.950 --> 02:03.840
+and it gives it a name.
+
+02:03.840 --> 02:05.760
+App.js.
+
+02:05.760 --> 02:08.790
+And then down here, it references another blob.
+
+02:08.790 --> 02:09.990
+Here's the hash.
+
+02:09.990 --> 02:12.900
+So it's not storing the contents in the tree.
+
+02:12.900 --> 02:14.400
+That's what the blob is for.
+
+02:14.400 --> 02:15.990
+This is the structure.
+
+02:15.990 --> 02:17.760
+This is the content.
+
+02:17.760 --> 02:20.700
+So we end up with references to blobs,
+
+02:20.700 --> 02:23.340
+but also references to trees,
+
+02:23.340 --> 02:26.220
+because we have nested directories, often.
+
+02:26.220 --> 02:28.800
+So in this case, in this tree,
+
+02:28.800 --> 02:31.740
+we're representing app.js, and README.
+
+02:31.740 --> 02:33.870
+Two files, two blobs.
+
+02:33.870 --> 02:35.490
+But then, there's an images directory
+
+02:35.490 --> 02:38.790
+and a styles directory, and each one of those
+
+02:38.790 --> 02:41.250
+would be represented with its own tree.
+
+02:41.250 --> 02:44.310
+And there will be blobs, most likely, in there,
+
+02:44.310 --> 02:46.590
+and then maybe more trees.
+
+02:46.590 --> 02:48.060
+So hopefully this diagram helps
+
+02:48.060 --> 02:49.320
+explain it a little bit.
+
+02:49.320 --> 02:52.260
+If this is my folder structure, two files,
+
+02:52.260 --> 02:56.010
+index.html, main.js, and then a directory,
+
+02:56.010 --> 02:58.110
+nested, called styles.
+
+02:58.110 --> 03:02.100
+Apps.css is inside, nav.css is inside.
+
+03:02.100 --> 03:05.010
+Well, Git would have a single tree to represent
+
+03:05.010 --> 03:06.660
+this entire directory.
+
+03:06.660 --> 03:07.950
+So we've got a tree.
+
+03:07.950 --> 03:10.440
+And then it has a blob that it refers to,
+
+03:10.440 --> 03:12.870
+and it names it index.html.
+
+03:12.870 --> 03:15.180
+So that's the contents of that file.
+
+03:15.180 --> 03:18.360
+Remember, the blob itself does not store the name.
+
+03:18.360 --> 03:20.130
+The tree stores the name.
+
+03:20.130 --> 03:22.410
+And then it references the hash of that blob.
+
+03:22.410 --> 03:24.360
+So this is that connection between a file name
+
+03:24.360 --> 03:25.800
+and the contents.
+
+03:25.800 --> 03:29.010
+1F7, that's this blob.
+
+03:29.010 --> 03:30.030
+Okay.
+
+03:30.030 --> 03:32.880
+So then the same thing for this main.js file.
+
+03:32.880 --> 03:35.850
+It points to that blob, whatever that hash is,
+
+03:35.850 --> 03:37.140
+and names it.
+
+03:37.140 --> 03:41.250
+But then, it refers to another tree called styles.
+
+03:41.250 --> 03:44.280
+And that tree contains two blobs.
+
+03:44.280 --> 03:46.710
+App.css refers to one blob.
+
+03:46.710 --> 03:49.380
+Nav.css refers to another blob.
+
+03:49.380 --> 03:51.750
+So here's a more fleshed out diagram,
+
+03:51.750 --> 03:54.750
+complete with the actual hashes that match.
+
+03:54.750 --> 03:56.490
+So you can see, we have a tree.
+
+03:56.490 --> 03:58.530
+This tree has its own hash.
+
+03:58.530 --> 03:59.790
+Every tree has its own hash.
+
+03:59.790 --> 04:00.660
+It's a Git object.
+
+04:00.660 --> 04:03.780
+So this is stored in the objects directory.
+
+04:03.780 --> 04:08.780
+And we see there's a blob, 1F7A7, right here.
+
+04:08.910 --> 04:11.460
+So that is hashed and stored,
+
+04:11.460 --> 04:13.680
+and is called index.html.
+
+04:13.680 --> 04:17.400
+Here's the blob, this is the tree that refers to it.
+
+04:17.400 --> 04:20.130
+Here's another blob, BE321.
+
+04:20.130 --> 04:21.480
+That matches this.
+
+04:21.480 --> 04:22.860
+And it's called main.js.
+
+04:22.860 --> 04:24.360
+It's a blob.
+
+04:24.360 --> 04:25.950
+So whatever is in that file
+
+04:25.950 --> 04:29.070
+is the contents of a file called main.js.
+
+04:29.070 --> 04:31.350
+And then we've got a tree, styles,
+
+04:31.350 --> 04:32.760
+so that's a directory.
+
+04:32.760 --> 04:34.620
+98287.
+
+04:34.620 --> 04:35.970
+That's the name of that hash.
+
+04:35.970 --> 04:38.670
+It's not the name, but that's the hash we see here.
+
+04:38.670 --> 04:42.720
+And that tree stores two blobs, 10ABB,
+
+04:42.720 --> 04:44.310
+which is app.css,
+
+04:44.310 --> 04:49.110
+and then FFE77, which is nav.css.
+
+04:49.110 --> 04:50.880
+Those are the contents there.
+
+04:50.880 --> 04:53.580
+So the last thing I'll show you in this video,
+
+04:53.580 --> 04:55.830
+we're not gonna make any trees right now,
+
+04:55.830 --> 04:58.710
+but I'm gonna show you that in an existing repo,
+
+04:58.710 --> 05:02.010
+that has history, we can view trees,
+
+05:02.010 --> 05:06.000
+just like we could use cat file to view blobs.
+
+05:06.000 --> 05:08.040
+We can use cat file to view trees,
+
+05:08.040 --> 05:10.050
+and we don't have a tree to reference
+
+05:10.050 --> 05:12.900
+in our own repository that we've been working on,
+
+05:12.900 --> 05:15.150
+but this is the react repository,
+
+05:15.150 --> 05:16.770
+or any repo we've worked on.
+
+05:16.770 --> 05:19.470
+If we have some commits that we've made,
+
+05:19.470 --> 05:21.930
+and we've added some files, and folders and stuff,
+
+05:21.930 --> 05:24.270
+we will have a tree, at least one,
+
+05:24.270 --> 05:26.940
+as we'll soon see, every commit references a tree.
+
+05:26.940 --> 05:29.910
+Anyway, this command, git cat file -P,
+
+05:29.910 --> 05:30.900
+we've already seen,
+
+05:30.900 --> 05:35.580
+but this syntax, master, and then this caret tree,
+
+05:35.580 --> 05:38.010
+that syntax is a particular way to refer
+
+05:38.010 --> 05:41.130
+to the tree object that is pointed to
+
+05:41.130 --> 05:42.900
+by the tip of our master branch.
+
+05:42.900 --> 05:45.060
+So the last commit on master,
+
+05:45.060 --> 05:46.650
+every commit refers to a tree.
+
+05:46.650 --> 05:49.080
+This just gives us the most recent tree.
+
+05:49.080 --> 05:50.460
+So let me show you that.
+
+05:50.460 --> 05:53.490
+This is that react repo that has all sorts of commits,
+
+05:53.490 --> 05:54.600
+lots of files in here.
+
+05:54.600 --> 05:55.710
+You can see them.
+
+05:55.710 --> 05:58.320
+A couple directories, okay?
+
+05:58.320 --> 06:00.450
+Really just fixtures, packages, and scripts,
+
+06:00.450 --> 06:01.710
+and then files.
+
+06:01.710 --> 06:05.073
+Now, if I do Git, cat file -P,
+
+06:05.970 --> 06:08.100
+and then I'm going to do that weird syntax.
+
+06:08.100 --> 06:13.100
+So master and then caret above the six tree.
+
+06:14.040 --> 06:15.330
+Like that.
+
+06:15.330 --> 06:17.010
+And I hit enter.
+
+06:17.010 --> 06:20.340
+It prints out, it pretty prints a lot of stuff.
+
+06:20.340 --> 06:21.510
+We could ignore this over here.
+
+06:21.510 --> 06:22.920
+It's just a file mode.
+
+06:22.920 --> 06:23.910
+Doesn't matter.
+
+06:23.910 --> 06:26.790
+But it also shows us if it's a tree or a blob,
+
+06:26.790 --> 06:28.650
+and then the hash for each,
+
+06:28.650 --> 06:30.630
+and then the name.
+
+06:30.630 --> 06:33.000
+So we can see for each file,
+
+06:33.000 --> 06:36.030
+we've got, let's see, circleCI.
+
+06:36.030 --> 06:36.960
+That's a file.
+
+06:36.960 --> 06:38.340
+Somewhere over here, it's a hidden file,
+
+06:38.340 --> 06:39.960
+so it's not showing up there.
+
+06:39.960 --> 06:40.800
+Let's keep going down.
+
+06:40.800 --> 06:41.700
+Here we are.
+
+06:41.700 --> 06:42.630
+Authors.
+
+06:42.630 --> 06:43.830
+That's a blob.
+
+06:43.830 --> 06:44.663
+Right?
+
+06:44.663 --> 06:48.030
+So the contents are stored with this hash.
+
+06:48.030 --> 06:49.980
+And I could actually view the contents
+
+06:49.980 --> 06:51.300
+if I wanted to.
+
+06:51.300 --> 06:53.700
+Let's take a look, how about, sure.
+
+06:53.700 --> 06:54.533
+The read me.
+
+06:54.533 --> 06:57.900
+I could copy this, just I'll keep it on my clipboard.
+
+06:57.900 --> 07:00.300
+But then I'll also show you there's trees, right?
+
+07:00.300 --> 07:03.540
+Here's a tree object for the fixtures directory.
+
+07:03.540 --> 07:05.310
+Here's another one for packages,
+
+07:05.310 --> 07:07.290
+and another for scripts.
+
+07:07.290 --> 07:09.660
+There we are, the three directories.
+
+07:09.660 --> 07:11.820
+So I'll just show this here.
+
+07:11.820 --> 07:13.980
+If I take this hash that I copied.
+
+07:13.980 --> 07:15.300
+This was a blob hash.
+
+07:15.300 --> 07:20.300
+Remember, I can do cat file -P, if I can type.
+
+07:20.370 --> 07:21.270
+Here we are.
+
+07:21.270 --> 07:23.040
+Pass in that hash.
+
+07:23.040 --> 07:25.140
+And it's showing me the contents of the read me.
+
+07:25.140 --> 07:27.390
+This is all the stuff from that read me file.
+
+07:29.160 --> 07:32.190
+So quite a bit of stuff that it's storing there.
+
+07:32.190 --> 07:33.690
+It's not too much.
+
+07:33.690 --> 07:34.770
+The last thing I wanna show you
+
+07:34.770 --> 07:38.550
+is that another option for this cat file command
+
+07:38.550 --> 07:41.430
+is to actually tell us the type of something.
+
+07:41.430 --> 07:42.720
+What type of Git object.
+
+07:42.720 --> 07:45.690
+If I do -T, it tells me it's a blob.
+
+07:45.690 --> 07:47.430
+But if I instead do this,
+
+07:47.430 --> 07:50.760
+Git cat-file, well, actually,
+
+07:50.760 --> 07:52.050
+why don't I just show you?
+
+07:52.050 --> 07:54.120
+If we look at the tree again,
+
+07:54.120 --> 07:56.040
+if I pick one of these trees,
+
+07:56.040 --> 07:58.590
+like this tree object that represents
+
+07:58.590 --> 08:00.480
+the fixtures directory,
+
+08:00.480 --> 08:01.800
+if I do the same thing,
+
+08:01.800 --> 08:03.930
+git cat file -T.
+
+08:03.930 --> 08:06.540
+With that, it tells me it's a tree.
+
+08:06.540 --> 08:09.120
+So there are two types we've covered so far.
+
+08:09.120 --> 08:10.050
+Blobs and trees.
+
+08:10.050 --> 08:13.200
+We haven't seen how to make a tree in the same way
+
+08:13.200 --> 08:15.780
+that we saw how to make a blob manually.
+
+08:15.780 --> 08:17.580
+I showed you an existing repository
+
+08:17.580 --> 08:19.290
+that's react repo.
+
+08:19.290 --> 08:21.060
+But all that you need to know for now
+
+08:21.060 --> 08:24.000
+is that trees represent folders.
+
+08:24.000 --> 08:26.040
+The structure of a directory,
+
+08:26.040 --> 08:28.560
+and inside of a folder, we can have files,
+
+08:28.560 --> 08:31.020
+but we can also have other folders.
+
+08:31.020 --> 08:33.660
+So the tree itself contains,
+
+08:33.660 --> 08:35.580
+it's not an actual table, like you see here,
+
+08:35.580 --> 08:38.970
+but inside of it, it stores a bunch of entries,
+
+08:38.970 --> 08:42.000
+references, to blobs, and to other trees.
+
+08:42.000 --> 08:43.530
+Each one has a name,
+
+08:43.530 --> 08:45.330
+and each one has a hash,
+
+08:45.330 --> 08:47.340
+a blob hash, or a tree hash.
+
+08:47.340 --> 08:49.650
+And each tree, as we've seen, has a hash,
+
+08:49.650 --> 08:51.930
+and that's all I'll say for now about it.
+
+08:51.930 --> 08:54.390
+I know it's getting kind of complicated,
+
+08:54.390 --> 08:56.943
+but this is hopefully all gonna come together soon.
