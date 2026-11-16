@@ -1,0 +1,415 @@
+WEBVTT
+
+00:00.120 --> 00:01.380
+Instructor: So this section is focused
+
+00:01.380 --> 00:04.830
+on getting code down from GitHub to our machine.
+
+00:04.830 --> 00:06.870
+And this is really important when we're collaborating
+
+00:06.870 --> 00:09.450
+with others because those other people
+
+00:09.450 --> 00:11.520
+will be changing our repositories,
+
+00:11.520 --> 00:13.470
+making new commits, pushing those up.
+
+00:13.470 --> 00:15.510
+How do we get those down?
+
+00:15.510 --> 00:17.550
+So before we talk about the different commands,
+
+00:17.550 --> 00:19.110
+git fetch and git pull,
+
+00:19.110 --> 00:20.670
+we have to understand a little bit more
+
+00:20.670 --> 00:24.750
+about how cloning a repo works and how remotes work.
+
+00:24.750 --> 00:28.260
+So when we clone a repository, whatever the repository is
+
+00:28.260 --> 00:31.290
+whether it's one I made or I'm cloning React
+
+00:31.290 --> 00:34.320
+or some really popular open source repository
+
+00:34.320 --> 00:36.150
+what happens is that, you know
+
+00:36.150 --> 00:39.330
+we have at the very beginning nothing on my machine.
+
+00:39.330 --> 00:41.160
+We have the GitHub repository.
+
+00:41.160 --> 00:43.560
+Let's just say it's three commits, one branch
+
+00:43.560 --> 00:44.880
+the master branch.
+
+00:44.880 --> 00:48.690
+When I clone that, of course git clone this URL
+
+00:48.690 --> 00:51.030
+I end up with the three commits,
+
+00:51.030 --> 00:53.010
+all files from the repository.
+
+00:53.010 --> 00:54.990
+We have a git repo, right?
+
+00:54.990 --> 00:57.000
+We didn't have one before, now we do.
+
+00:57.000 --> 00:59.100
+And I have the master branch
+
+00:59.100 --> 01:02.490
+but there's actually two branch references here
+
+01:02.490 --> 01:04.680
+and we've only talked about one.
+
+01:04.680 --> 01:07.620
+So there is the standard master branch reference,
+
+01:07.620 --> 01:09.770
+a regular old branch reference.
+
+01:09.770 --> 01:12.840
+And I should mention, you know, this uses master
+
+01:12.840 --> 01:15.210
+but whatever the default branch is,
+
+01:15.210 --> 01:17.040
+when we clone, that's what we end up with.
+
+01:17.040 --> 01:22.040
+So whether it's main or master or trunk or purple chicken,
+
+01:22.230 --> 01:23.130
+it doesn't matter.
+
+01:23.130 --> 01:26.520
+Whatever that GitHub repo has as its default branch
+
+01:26.520 --> 01:29.010
+that's what we're gonna start with when we clone.
+
+01:29.010 --> 01:31.020
+Okay, so in this diagram, it's master.
+
+01:31.020 --> 01:33.600
+We have our regular branch reference
+
+01:33.600 --> 01:36.030
+and that acts like any other branch reference.
+
+01:36.030 --> 01:38.790
+If we add new commits, it will move.
+
+01:38.790 --> 01:43.170
+But then there's this other thing, origin slash master.
+
+01:43.170 --> 01:47.040
+This is something called a remote tracking branch reference.
+
+01:47.040 --> 01:50.220
+It sounds complicated, but basically it's just a pointer
+
+01:50.220 --> 01:52.380
+in the same way that this is a pointer
+
+01:52.380 --> 01:55.890
+but this pointer does not move, or I don't move it myself.
+
+01:55.890 --> 01:58.020
+It's pointing back to the last known commit
+
+01:58.020 --> 02:01.230
+on the master branch from the origin remote.
+
+02:01.230 --> 02:03.960
+So in other words, wherever this is pointing,
+
+02:03.960 --> 02:05.460
+just like any other branch reference,
+
+02:05.460 --> 02:08.280
+I like to visualize them as a repo,
+
+02:08.280 --> 02:11.130
+as a big book with a bunch of bookmarks in there.
+
+02:11.130 --> 02:14.520
+So these two bookmarks will start at the same spot
+
+02:14.520 --> 02:17.340
+but they might diverge as I do more work
+
+02:17.340 --> 02:20.430
+and make commits on the master branch locally.
+
+02:20.430 --> 02:24.000
+So to reiterate this term remote tracking branch,
+
+02:24.000 --> 02:26.880
+think of it as the bookmark or a pointer
+
+02:26.880 --> 02:29.670
+that remembers at the last time you communicated
+
+02:29.670 --> 02:31.380
+with this remote repo.
+
+02:31.380 --> 02:34.200
+Here is where the master branch or the main branch
+
+02:34.200 --> 02:36.360
+or the purple branch was pointing
+
+02:36.360 --> 02:39.090
+on that GitHub repo on origin.
+
+02:39.090 --> 02:42.390
+So they followed this pattern remote slash branch name.
+
+02:42.390 --> 02:44.400
+So Git names them for us.
+
+02:44.400 --> 02:47.250
+As we talked about, origin is a very common remote name.
+
+02:47.250 --> 02:49.470
+So we've got origin master
+
+02:49.470 --> 02:53.880
+but that might as well be origin, eggplant or upstream.
+
+02:53.880 --> 02:56.370
+That's another common remote name that we'll talk about.
+
+02:56.370 --> 02:59.340
+And then Logo Design, that might be a branch.
+
+02:59.340 --> 03:02.520
+It could be any remote name slash a branch.
+
+03:02.520 --> 03:06.480
+But just as the example, if we clone a repo,
+
+03:06.480 --> 03:07.980
+by default when we clone,
+
+03:07.980 --> 03:10.410
+the remote name will be set to origin
+
+03:10.410 --> 03:12.060
+and whatever that default branch name
+
+03:12.060 --> 03:15.780
+in this case master will give us origin master.
+
+03:15.780 --> 03:18.330
+So we can actually view these remote tracking branches.
+
+03:18.330 --> 03:21.570
+If we use git branch with dash R
+
+03:21.570 --> 03:23.520
+we can see that branch reference.
+
+03:23.520 --> 03:25.230
+So I'm gonna show you that now.
+
+03:25.230 --> 03:26.880
+So I'll make a new repository
+
+03:26.880 --> 03:28.350
+once again just to demonstrate this.
+
+03:28.350 --> 03:32.450
+I'll call this animals and I'll make it public.
+
+03:32.450 --> 03:33.840
+I won't add any files
+
+03:33.840 --> 03:36.420
+so I'll just have this Animals repository
+
+03:36.420 --> 03:38.520
+and I'm gonna do something slightly different
+
+03:38.520 --> 03:39.840
+that we haven't seen before.
+
+03:39.840 --> 03:42.690
+I'm actually gonna create a new file on GitHub
+
+03:42.690 --> 03:45.780
+so that when I clone it, I get some information
+
+03:45.780 --> 03:48.210
+along with, you know, the initial state of my repo.
+
+03:48.210 --> 03:49.710
+I'll actually have some files
+
+03:49.710 --> 03:53.010
+so I can make changes and make commits on GitHub.
+
+03:53.010 --> 03:57.840
+So my Animals project, I'll have a file called pets.txt.
+
+03:57.840 --> 03:59.910
+And then in here, I'm just gonna keep it really simple.
+
+03:59.910 --> 04:01.620
+I'll add some of my pets over the years.
+
+04:01.620 --> 04:05.700
+I've got Rusty and Blue, I've got a cat named Scout.
+
+04:05.700 --> 04:08.490
+She also goes by the name of Rocket
+
+04:08.490 --> 04:10.110
+and I've got some chickens.
+
+04:10.110 --> 04:12.599
+Okay, so whatever I have in this file
+
+04:12.599 --> 04:14.520
+I then need to make a commit
+
+04:14.520 --> 04:17.400
+just like I would locally on my machine.
+
+04:17.400 --> 04:19.200
+I'll just leave it as the default here.
+
+04:19.200 --> 04:23.760
+Create pets.txt, we make that commit, great.
+
+04:23.760 --> 04:27.900
+And now we have a file in my repository
+
+04:27.900 --> 04:30.150
+and we have one commit.
+
+04:30.150 --> 04:32.910
+And remember in GitHub, on GitHub
+
+04:32.910 --> 04:34.680
+the default branch name is main.
+
+04:34.680 --> 04:36.810
+If I don't push up a branch first
+
+04:36.810 --> 04:39.120
+if I don't rename it, we'll go with main.
+
+04:39.120 --> 04:41.010
+Okay, so I'm gonna clone this now.
+
+04:41.010 --> 04:43.590
+I'll copy this URL like we've done before.
+
+04:43.590 --> 04:45.060
+And then I have a new empty folder.
+
+04:45.060 --> 04:46.530
+So you can see on my computer
+
+04:46.530 --> 04:49.980
+I'm not in a repo and I'm gonna clone.
+
+04:49.980 --> 04:53.100
+So git clone that animals URL.
+
+04:53.100 --> 04:55.560
+So we now have this animals directory
+
+04:55.560 --> 05:00.120
+and if I type git branch, we have one branch main.
+
+05:00.120 --> 05:03.390
+But as we talked about when I clone something
+
+05:03.390 --> 05:05.490
+we automatically get this remote, right?
+
+05:05.490 --> 05:08.610
+Get remote dash V, it's called origin.
+
+05:08.610 --> 05:11.100
+And then the one branch we have is called main.
+
+05:11.100 --> 05:13.980
+But Git sets up a remote tracking branch
+
+05:13.980 --> 05:16.530
+for this main branch on origin.
+
+05:16.530 --> 05:18.090
+It's this little reminder here
+
+05:18.090 --> 05:20.880
+in this case origin master, but in our case, origin main.
+
+05:20.880 --> 05:22.410
+But it's a remote tracking branch
+
+05:22.410 --> 05:25.140
+a bookmark that holds the spot.
+
+05:25.140 --> 05:27.510
+The most recently known state
+
+05:27.510 --> 05:29.460
+of the master branch on origin,
+
+05:29.460 --> 05:32.400
+or in our case of the main branch on origin.
+
+05:32.400 --> 05:35.670
+So right now, if I take a look, remember I can do this.
+
+05:35.670 --> 05:40.440
+Git branch dash R, I can see this origin slash main.
+
+05:40.440 --> 05:42.600
+So the main branch on origin
+
+05:42.600 --> 05:45.660
+that is the remote tracking branch.
+
+05:45.660 --> 05:48.150
+So currently if we were to diagram this
+
+05:48.150 --> 05:50.700
+we have two branch references pointing at the same commit
+
+05:50.700 --> 05:52.470
+because I just cloned.
+
+05:52.470 --> 05:53.850
+But in the next video we'll see
+
+05:53.850 --> 05:55.950
+that we can get them to diverge
+
+05:55.950 --> 05:59.073
+and we can check one out and see the differences.
