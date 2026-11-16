@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00.150 --> 00:02.168
+Instructor: This video is just additional practice
+
+00:02.168 --> 00:05.460
+or reinforcement on the basic pushing workflow,
+
+00:05.460 --> 00:09.510
+add, commit, push up to GitHub and repeats.
+
+00:09.510 --> 00:10.830
+So if you feel good about that,
+
+00:10.830 --> 00:12.450
+move on to the next video where I talk
+
+00:12.450 --> 00:15.420
+about cloning your own repos, option two.
+
+00:15.420 --> 00:19.590
+But for now, I'm gonna go back to my first novel
+
+00:19.590 --> 00:21.720
+and nothing super exciting in here.
+
+00:21.720 --> 00:24.390
+But why don't we make a new branch?
+
+00:24.390 --> 00:26.700
+What branch are we on right now?
+
+00:26.700 --> 00:28.920
+We're on this empty branch.
+
+00:28.920 --> 00:30.930
+What would be a good branch to make?
+
+00:30.930 --> 00:32.520
+Why don't we go back to master?
+
+00:32.520 --> 00:36.120
+Okay, so I'm gonna switch, git switch master,
+
+00:36.120 --> 00:38.490
+and I'm gonna pretend to do some more work.
+
+00:38.490 --> 00:40.920
+We've got chapter 2, 3, 4.
+
+00:40.920 --> 00:43.110
+Why don't I remove this mood board?
+
+00:43.110 --> 00:45.000
+I'm just gonna get rid of that.
+
+00:45.000 --> 00:49.332
+So I'm gonna do an RM dash RF mood board.
+
+00:49.332 --> 00:51.180
+So I got rid of that folder.
+
+00:51.180 --> 00:53.970
+I'll do a git status, I'll add all those changes,
+
+00:53.970 --> 00:58.970
+git commits, delete mood board folder.
+
+01:00.330 --> 01:02.670
+So now we have this new commit
+
+01:02.670 --> 01:05.880
+that only exists here locally on my repo,
+
+01:05.880 --> 01:10.320
+on my laptop on the master branch, not up on GitHub.
+
+01:10.320 --> 01:12.168
+So now I'm gonna switch to the empty branch,
+
+01:12.168 --> 01:14.550
+git switch empty.
+
+01:14.550 --> 01:16.860
+I'm gonna make another commit on this branch.
+
+01:16.860 --> 01:18.545
+So what do we have in here?
+
+01:18.545 --> 01:20.250
+Not a whole lot.
+
+01:20.250 --> 01:22.110
+Why don't I make a new file?
+
+01:22.110 --> 01:24.960
+We'll call this one characters, outline,
+
+01:24.960 --> 01:27.325
+how about Summary dot txt?
+
+01:27.325 --> 01:31.050
+And then I'm just gonna add that empty file and commit it.
+
+01:31.050 --> 01:32.703
+Add summary file.
+
+01:33.540 --> 01:36.323
+Okay, so now we have a commit here on empty
+
+01:36.323 --> 01:38.280
+that is not on GitHub,
+
+01:38.280 --> 01:40.926
+and we have a commit on master that is not on GitHub.
+
+01:40.926 --> 01:43.569
+So let's push both of them up.
+
+01:43.569 --> 01:45.960
+It's gonna take two commands, right?
+
+01:45.960 --> 01:48.810
+We need to first decide, let's push up master branch
+
+01:48.810 --> 01:50.700
+or let's push up the empty branch.
+
+01:50.700 --> 01:52.320
+Remember the syntax, git push,
+
+01:52.320 --> 01:54.000
+and then our remote is origin.
+
+01:54.000 --> 01:55.410
+That's the only one we have.
+
+01:55.410 --> 01:58.379
+And then I'll push the master branch to begin with.
+
+01:58.379 --> 02:03.368
+Okay, so if I come back to my GitHub and I refresh,
+
+02:03.368 --> 02:06.150
+I don't see anything new here, right?
+
+02:06.150 --> 02:09.030
+Because I'm still on the empty branch on GitHub.
+
+02:09.030 --> 02:10.620
+I'm looking at the empty branch
+
+02:10.620 --> 02:13.284
+but if I switch to the master branch,
+
+02:13.284 --> 02:16.127
+we can see this new commit two minutes ago,
+
+02:16.127 --> 02:19.170
+delete mood board folder.
+
+02:19.170 --> 02:22.500
+And we don't see the mood board here anymore at all.
+
+02:22.500 --> 02:24.626
+So I can take a look at that commit,
+
+02:24.626 --> 02:27.060
+specifically see what was deleted,
+
+02:27.060 --> 02:29.610
+as you see there the whole mood board directory
+
+02:29.610 --> 02:31.080
+and its image contents.
+
+02:31.080 --> 02:32.790
+So that new commit was pushed up
+
+02:32.790 --> 02:35.340
+whatever new commits existed on the master branch
+
+02:35.340 --> 02:38.910
+but on the empty branch, nothing has changed on GitHub.
+
+02:38.910 --> 02:42.350
+Remember on my local empty branch, which I'm on right now,
+
+02:42.350 --> 02:44.070
+we have this new file summary
+
+02:44.070 --> 02:46.770
+and we have a commit called, well what was it?
+
+02:46.770 --> 02:47.730
+Add summary file.
+
+02:47.730 --> 02:48.900
+That was the message.
+
+02:48.900 --> 02:50.250
+So if I wanna push that up,
+
+02:50.250 --> 02:53.943
+I need to do git push origin and then the empty branch.
+
+02:55.830 --> 02:58.314
+And if we head over here,
+
+02:58.314 --> 03:01.830
+refresh at some points, here we are,
+
+03:01.830 --> 03:04.260
+empty had recent pushes less than a minute ago
+
+03:04.260 --> 03:07.500
+and we see summary dot txt, that was pushed up
+
+03:07.500 --> 03:09.870
+and the commit that it was associated with,
+
+03:09.870 --> 03:12.930
+add summary file, two days ago.
+
+03:12.930 --> 03:14.160
+So that's, yeah,
+
+03:14.160 --> 03:16.530
+that's pretty much all I wanted to show you here, right?
+
+03:16.530 --> 03:19.860
+That basic workflow, do some stuff locally on a branch,
+
+03:19.860 --> 03:22.530
+make some commits, and then you push that branch up
+
+03:22.530 --> 03:24.030
+and that about wraps up the basics
+
+03:24.030 --> 03:25.710
+of using the push command, right?
+
+03:25.710 --> 03:27.360
+We have a branch locally,
+
+03:27.360 --> 03:30.540
+we push it up with git push remote and branch name.
+
+03:30.540 --> 03:33.870
+Then GitHub now has that branch hosted in the Cloud.
+
+03:33.870 --> 03:35.550
+And then we repeat that
+
+03:35.550 --> 03:37.470
+if we want to push another branch up.
+
+03:37.470 --> 03:39.911
+Now you don't have to push every branch you make up.
+
+03:39.911 --> 03:43.980
+Often what you'll do is have a master or a main branch
+
+03:43.980 --> 03:46.740
+and then you'll have branches where you work on features.
+
+03:46.740 --> 03:49.350
+You can merge those into master slash main
+
+03:49.350 --> 03:52.676
+and then push that new master slash main work up.
+
+03:52.676 --> 03:54.900
+Or you can push branches up to GitHub
+
+03:54.900 --> 03:56.610
+and just have a whole bunch of branches.
+
+03:56.610 --> 03:57.570
+But that's something we'll talk about
+
+03:57.570 --> 03:58.630
+when we get to workflows.
+
+03:58.630 --> 03:59.733
+All right.
