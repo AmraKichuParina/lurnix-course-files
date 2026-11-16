@@ -1,0 +1,676 @@
+WEBVTT
+
+00:00.120 --> 00:02.280
+-: So, now that we've seen how to store data
+
+00:02.280 --> 00:04.950
+in a very low-level way in Git.
+
+00:04.950 --> 00:06.990
+Normally, we use a whole bunch of other commands,
+
+00:06.990 --> 00:08.670
+and Git hashes things for us,
+
+00:08.670 --> 00:10.207
+but we can manually tell it,
+
+00:10.207 --> 00:13.200
+"Hash this, turn it into a Git object, and store it."
+
+00:13.200 --> 00:15.630
+So, we've done that a couple of times,
+
+00:15.630 --> 00:17.700
+and we got these keys back.
+
+00:17.700 --> 00:20.013
+Right, we have this one and this one.
+
+00:20.910 --> 00:23.760
+So, imagine that I don't know what was stored in there,
+
+00:23.760 --> 00:26.370
+or it was a really long file that I stored.
+
+00:26.370 --> 00:28.620
+I want to retrieve that data out.
+
+00:28.620 --> 00:30.030
+I have the key,
+
+00:30.030 --> 00:32.430
+and Git is storing the information in these files.
+
+00:32.430 --> 00:34.260
+I just can't read them.
+
+00:34.260 --> 00:36.750
+So, to get it out, there's a function,
+
+00:36.750 --> 00:40.297
+or there's a Git command called "cat-file,"
+
+00:40.297 --> 00:44.130
+"git cat-file," and then we pass in an object-hash.
+
+00:44.130 --> 00:45.720
+So that could be a commit hash,
+
+00:45.720 --> 00:47.070
+or it could be one of these hashes.
+
+00:47.070 --> 00:48.510
+This is not from a commit;
+
+00:48.510 --> 00:49.890
+it's from something called a blob.
+
+00:49.890 --> 00:52.050
+We'll go into more detail.
+
+00:52.050 --> 00:54.570
+But any of these hashes we get in Git
+
+00:54.570 --> 00:58.560
+they all are tied to a Git Object, one of four types.
+
+00:58.560 --> 01:00.330
+And we can get information,
+
+01:00.330 --> 01:03.720
+we can read them out using git cat-file.
+
+01:03.720 --> 01:06.210
+Now this -p option tells Git
+
+01:06.210 --> 01:08.160
+to pretty-print the contents of the object
+
+01:08.160 --> 01:10.680
+based on the type of object it is.
+
+01:10.680 --> 01:13.470
+So, I could pretty-print a commit
+
+01:13.470 --> 01:15.750
+if I had a commit, using -p,
+
+01:15.750 --> 01:18.570
+it would detect it to commit and print it out as a commit.
+
+01:18.570 --> 01:20.970
+But we're gonna try it with what we have.
+
+01:20.970 --> 01:22.320
+These are not commits.
+
+01:22.320 --> 01:26.743
+So I can copy the whole hash and do a git cat-file -p,
+
+01:29.400 --> 01:32.040
+and then I'll pass in the whole thing just to start.
+
+01:32.040 --> 01:33.330
+And what do you know?
+
+01:33.330 --> 01:35.520
+It says, "Hey, I have something stored for that.
+
+01:35.520 --> 01:36.930
+I have, hello."
+
+01:36.930 --> 01:39.330
+I can also give it way fewer, right?
+
+01:39.330 --> 01:40.740
+I could just give it a couple of digits,
+
+01:40.740 --> 01:41.970
+and it can figure it out.
+
+01:41.970 --> 01:44.520
+Let's do our second value that we stored,
+
+01:44.520 --> 01:45.540
+which was "goodbye."
+
+01:45.540 --> 01:47.580
+We got back "dd7e1."
+
+01:47.580 --> 01:48.840
+Let's just do that.
+
+01:48.840 --> 01:50.820
+So instead of the whole hash,
+
+01:50.820 --> 01:54.060
+just that little bit, and it knows what it stored,
+
+01:54.060 --> 01:57.810
+we gave it the key, it gave us back "goodbye."
+
+01:57.810 --> 01:58.710
+All right.
+
+01:58.710 --> 02:01.530
+So, now what I wanna show you is a little bit different.
+
+02:01.530 --> 02:02.910
+I wanna use files.
+
+02:02.910 --> 02:06.570
+I wanna have, actually, just two versions of the same file,
+
+02:06.570 --> 02:09.600
+both of which we'll be able to store manually
+
+02:09.600 --> 02:12.570
+using the command git hash-object.
+
+02:12.570 --> 02:15.180
+And then we'll be able to get those versions back out.
+
+02:15.180 --> 02:16.800
+So let's make our new file.
+
+02:16.800 --> 02:20.550
+I'll just touch dogs.txt.
+
+02:20.550 --> 02:22.980
+And then I'm gonna open it up in my editor.
+
+02:22.980 --> 02:24.360
+Alright, here it is.
+
+02:24.360 --> 02:28.020
+And I'll put in some of my dogs,
+
+02:28.020 --> 02:30.480
+Rusty and Wyatt,
+
+02:30.480 --> 02:32.550
+rest in peace, Rusty and Wyatt.
+
+02:32.550 --> 02:35.580
+All right, so I have one version of this file.
+
+02:35.580 --> 02:40.410
+If I look at that file, that's what we have in that file.
+
+02:40.410 --> 02:43.500
+So, I can tell Git to hash it,
+
+02:43.500 --> 02:44.670
+I can do the same thing,
+
+02:44.670 --> 02:45.720
+git hash-object.
+
+02:45.720 --> 02:48.960
+I don't have to bother with the echo and the standard in
+
+02:48.960 --> 02:51.120
+because I'm gonna provide it a file.
+
+02:51.120 --> 02:54.480
+I want it to tell me what is the hypothetical hash
+
+02:54.480 --> 02:56.280
+I would get back if you stored this?
+
+02:56.280 --> 02:59.190
+I'm not storing it 'cause I didn't do -w.
+
+02:59.190 --> 03:00.480
+That's what we get back.
+
+03:00.480 --> 03:03.210
+So, assuming that file doesn't change...
+
+03:03.210 --> 03:04.140
+Remember how this works.
+
+03:04.140 --> 03:06.270
+The same input gives you the same output.
+
+03:06.270 --> 03:09.330
+Well, that's really important for how Git works
+
+03:09.330 --> 03:10.867
+because it can very quickly tell,
+
+03:10.867 --> 03:12.180
+"Oh, this file hasn't changed.
+
+03:12.180 --> 03:14.910
+It's giving me the same hash that it had before."
+
+03:14.910 --> 03:16.980
+But as soon as I change anything,
+
+03:16.980 --> 03:18.810
+anything, a single space,
+
+03:18.810 --> 03:20.760
+a capital letter to a lowercase,
+
+03:20.760 --> 03:23.580
+the entire hash changes, and Git can detect that.
+
+03:23.580 --> 03:26.340
+Anyway, I'm going to store it now.
+
+03:26.340 --> 03:28.830
+So, I'm gonna add the -w.
+
+03:28.830 --> 03:29.663
+All right.
+
+03:29.663 --> 03:34.080
+So, git hash-dogs.txt -w.
+
+03:34.080 --> 03:36.600
+And if you're following along here,
+
+03:36.600 --> 03:39.180
+you can type this exactly as you see it
+
+03:39.180 --> 03:41.070
+or just make note of, you know,
+
+03:41.070 --> 03:43.500
+the fact that your hash is different
+
+03:43.500 --> 03:47.130
+and just use that hash when we come back to it.
+
+03:47.130 --> 03:49.170
+So, just be consistent, right?
+
+03:49.170 --> 03:50.760
+If you do follow along with me,
+
+03:50.760 --> 03:52.230
+make sure you're getting this hash.
+
+03:52.230 --> 03:53.970
+If you don't, it's not a big deal.
+
+03:53.970 --> 03:55.650
+Just use that hash that you're getting
+
+03:55.650 --> 03:57.270
+instead of the one that I have.
+
+03:57.270 --> 03:58.103
+All right?
+
+03:58.103 --> 03:59.460
+So, I'm gonna do -w,
+
+03:59.460 --> 04:03.840
+I'm saying store this version of that file, dogs.txt.
+
+04:03.840 --> 04:05.790
+And I'll have to refresh VS Code,
+
+04:05.790 --> 04:09.069
+but there it is, "39 e27..." whatever.
+
+04:09.069 --> 04:11.227
+And that's what it starts with, right?
+
+04:11.227 --> 04:14.040
+"39e27..." blah blah blah.
+
+04:14.040 --> 04:16.110
+So now, if I do a different version...
+
+04:16.110 --> 04:19.290
+If I change what's in this file, Rusty, Wyatt,
+
+04:19.290 --> 04:21.290
+pretend, you know, I'm using Git.
+
+04:21.290 --> 04:23.940
+We we haven't made any commits to be clear, right?
+
+04:23.940 --> 04:27.870
+If I type git log, no commits.
+
+04:27.870 --> 04:31.650
+But if I add another dog on here, Rusty, Wyatt,
+
+04:31.650 --> 04:34.860
+I had a childhood dog named Cheyenne,
+
+04:34.860 --> 04:39.390
+and how about Sirius Black, another great dog.
+
+04:39.390 --> 04:40.223
+Okay?
+
+04:40.223 --> 04:42.390
+So, a new version of this file,
+
+04:42.390 --> 04:44.340
+if I try hashing that,
+
+04:44.340 --> 04:46.560
+I won't store it just yet, but if I hash it,
+
+04:46.560 --> 04:48.780
+we get a very different hash now
+
+04:48.780 --> 04:50.490
+because things have changed.
+
+04:50.490 --> 04:52.710
+Small change, any change should lead to
+
+04:52.710 --> 04:54.630
+a large change in the output.
+
+04:54.630 --> 04:55.980
+So, still 40 characters,
+
+04:55.980 --> 04:59.610
+that hash that we get back from trial one from Git,
+
+04:59.610 --> 05:01.440
+but it's very different.
+
+05:01.440 --> 05:03.300
+So, let's store that one too.
+
+05:03.300 --> 05:04.133
+All right?
+
+05:04.133 --> 05:08.884
+So, I'm gonna do git hash-object dogs.txt -w for right.
+
+05:08.884 --> 05:12.150
+So, we should see a new folder called FD,
+
+05:12.150 --> 05:15.363
+and a file called this "915," and so on.
+
+05:16.920 --> 05:19.620
+So, whatever you did, if you had changes,
+
+05:19.620 --> 05:21.630
+you should get a different hash.
+
+05:21.630 --> 05:24.420
+And in that .GIT/objects folder,
+
+05:24.420 --> 05:25.950
+there now is an FD,
+
+05:25.950 --> 05:29.040
+at least in my example, 915.
+
+05:29.040 --> 05:32.970
+So, I can't read it, but we can use the cat command, right?
+
+05:32.970 --> 05:36.090
+Git cat-file, which if I scroll up...
+
+05:36.090 --> 05:37.080
+Where did that go?
+
+05:37.080 --> 05:39.390
+We used it recently, maybe not.
+
+05:39.390 --> 05:41.368
+Anyways, there it is, cat-file.
+
+05:41.368 --> 05:44.220
+And then I can provide that hash.
+
+05:44.220 --> 05:46.080
+So, either one of these hashes.
+
+05:46.080 --> 05:48.753
+If I do this, let's take this one.
+
+05:49.590 --> 05:52.500
+Git cat-file, and I provide that hash...
+
+05:52.500 --> 05:53.400
+Well, it yells at me
+
+05:53.400 --> 05:56.880
+'cause I forgot to provide the -p option for pretty-print.
+
+05:56.880 --> 05:57.900
+There we are.
+
+05:57.900 --> 05:59.910
+So, we see the first version.
+
+05:59.910 --> 06:02.280
+Actually, this is the second version, rather.
+
+06:02.280 --> 06:03.960
+But if I take the other one,
+
+06:03.960 --> 06:05.310
+and this is where it gets kind of annoying
+
+06:05.310 --> 06:06.143
+to watch me do this,
+
+06:06.143 --> 06:08.430
+but remember I have two versions.
+
+06:08.430 --> 06:10.860
+This was the second one, this was the first one.
+
+06:10.860 --> 06:12.633
+I'll just copy part of that hash.
+
+06:13.800 --> 06:15.240
+And then I'll do the same thing,
+
+06:15.240 --> 06:19.263
+git cat-file -p, I forgot that.
+
+06:20.310 --> 06:21.870
+This was the other version.
+
+06:21.870 --> 06:24.300
+So, Git is storing both of these.
+
+06:24.300 --> 06:26.670
+I can delete the file entirely.
+
+06:26.670 --> 06:29.940
+I could get rid of this file, dogs.txt,
+
+06:29.940 --> 06:32.040
+but as long as I don't delete .git,
+
+06:32.040 --> 06:34.740
+it still has both of these versions in there,
+
+06:34.740 --> 06:36.990
+and I can get them out without even making a commit.
+
+06:36.990 --> 06:39.960
+I told get to store those things for me manually.
+
+06:39.960 --> 06:42.810
+So, let's say I delete everything from...
+
+06:42.810 --> 06:44.100
+Let's just delete the contents.
+
+06:44.100 --> 06:46.140
+I won't delete the entire file.
+
+06:46.140 --> 06:47.460
+Okay?
+
+06:47.460 --> 06:50.100
+If I wanted to restore the contents,
+
+06:50.100 --> 06:52.140
+I'll take the hash that we got back,
+
+06:52.140 --> 06:56.040
+this one that starts with "fd9," just like that.
+
+06:56.040 --> 06:58.050
+Whatever you got back, copy it.
+
+06:58.050 --> 06:59.580
+And then lemme clear this.
+
+06:59.580 --> 07:03.480
+I'm gonna do a git and then cat-file -p,
+
+07:03.480 --> 07:04.830
+pass in that hash.
+
+07:04.830 --> 07:08.340
+But this time I'm going to add it into that file.
+
+07:08.340 --> 07:10.380
+Is it dogs, dog?
+
+07:10.380 --> 07:12.160
+Dogs.txt
+
+07:14.490 --> 07:15.323
+And take a look.
+
+07:15.323 --> 07:17.190
+It's been restored for me.
+
+07:17.190 --> 07:19.740
+And if I use the other hash, which I can't remember,
+
+07:19.740 --> 07:21.870
+but I could even just look in here.
+
+07:21.870 --> 07:26.340
+I think it was "39e275."
+
+07:26.340 --> 07:27.720
+We'll see if I'm right or not.
+
+07:27.720 --> 07:28.553
+Let's see.
+
+07:28.553 --> 07:29.697
+"39e275."
+
+07:31.565 --> 07:34.650
+There it is, Rusty and Wyatt.
+
+07:34.650 --> 07:36.847
+So, what I'm doing here is telling Git,
+
+07:36.847 --> 07:38.940
+"Please go and take this key,
+
+07:38.940 --> 07:42.330
+find the corresponding value that was stored under that key
+
+07:42.330 --> 07:44.760
+and then take the contents of that file."
+
+07:44.760 --> 07:45.593
+Right?
+
+07:45.593 --> 07:46.426
+Each one of these files
+
+07:46.426 --> 07:48.450
+it's binary, it's compressed, it's encrypted.
+
+07:48.450 --> 07:51.480
+Take that, turn it back into something that makes sense.
+
+07:51.480 --> 07:54.120
+And then stick it in dogs.txt.
+
+07:54.120 --> 07:55.590
+So, I could still delete that file,
+
+07:55.590 --> 07:56.423
+I could empty it out.
+
+07:56.423 --> 07:58.170
+I could have some radical changes in here.
+
+07:58.170 --> 08:00.467
+Which I mean we do this all the time with Git, right?
+
+08:00.467 --> 08:02.670
+And then we realize, "Oh shoot,
+
+08:02.670 --> 08:05.070
+I wanna go back to an older version of this file."
+
+08:05.070 --> 08:06.754
+Well, Git stores them all in here,
+
+08:06.754 --> 08:09.210
+not because we're running this command
+
+08:09.210 --> 08:11.430
+or because we're running git hash-object,
+
+08:11.430 --> 08:13.230
+but it's the same principle.
+
+08:13.230 --> 08:15.330
+Git is able to hold onto those files.
+
+08:15.330 --> 08:17.760
+It's storing them in that objects directory.
+
+08:17.760 --> 08:19.837
+And then at any point we can say,
+
+08:19.837 --> 08:22.830
+"Okay, please go give us that."
+
+08:22.830 --> 08:25.833
+Let me redirect that into dogs.txt,
+
+08:26.760 --> 08:28.270
+and we're back to normal.
+
+08:28.270 --> 08:32.010
+Okay, so we're one step closer to understanding things.
+
+08:32.010 --> 08:34.020
+We have not made a single commit,
+
+08:34.020 --> 08:35.490
+just wanna be very clear.
+
+08:35.490 --> 08:38.340
+We have only hashed things, hashed files,
+
+08:38.340 --> 08:41.550
+and hash strings of text and stored those,
+
+08:41.550 --> 08:43.350
+and we've been able to retrieve them
+
+08:43.350 --> 08:45.720
+using the hashes we get back.
+
+08:45.720 --> 08:47.010
+But that's not a commit.
+
+08:47.010 --> 08:48.750
+In fact, there's something called a blob.
+
+08:48.750 --> 08:51.813
+And in the next video we'll expand more on blobs.
