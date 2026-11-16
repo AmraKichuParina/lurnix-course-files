@@ -1,0 +1,814 @@
+WEBVTT
+
+00:00.000 --> 00:02.220
+-: Before we talk about the ways we can use git diff
+
+00:02.220 --> 00:04.350
+the different variations, the options,
+
+00:04.350 --> 00:06.360
+let's discuss the output.
+
+00:06.360 --> 00:08.460
+So, the output that we get from git diff,
+
+00:08.460 --> 00:11.730
+whatever the diff is that we're trying to generate,
+
+00:11.730 --> 00:14.340
+it always follows a very similar pattern.
+
+00:14.340 --> 00:16.290
+And it looks something like this.
+
+00:16.290 --> 00:17.370
+You can see over here on the right,
+
+00:17.370 --> 00:18.960
+it's kind of crazy looking.
+
+00:18.960 --> 00:21.960
+I mean, we see hopefully, relatively clearly,
+
+00:21.960 --> 00:24.480
+some of the code or changes in a file.
+
+00:24.480 --> 00:26.340
+But then there's a bunch of stuff before.
+
+00:26.340 --> 00:27.570
+We've got pluses.
+
+00:27.570 --> 00:29.310
+We also have minuses.
+
+00:29.310 --> 00:32.730
+We have weird looking symbols, these "@@s".
+
+00:32.730 --> 00:35.640
+So, let's walk through what exactly is going on.
+
+00:35.640 --> 00:39.000
+So for these diagrams, I'm using a very simple example
+
+00:39.000 --> 00:42.630
+of a repository, where we have a file called "rainbow.txt".
+
+00:42.630 --> 00:43.770
+And I made a commit.
+
+00:43.770 --> 00:45.090
+It looked like this,
+
+00:45.090 --> 00:46.800
+red, orange, yellow, green, blue, purple.
+
+00:46.800 --> 00:48.930
+That's how I learned the rainbow when I was a little kid.
+
+00:48.930 --> 00:50.970
+It was just blue and purple at the end.
+
+00:50.970 --> 00:53.580
+But then, we make some new changes.
+
+00:53.580 --> 00:55.650
+We haven't committed anything, but I made some changes
+
+00:55.650 --> 00:57.900
+in the working directory in the same file.
+
+00:57.900 --> 01:02.310
+And I updated it to be Blue indigo Violet, ROYGBIV.
+
+01:02.310 --> 01:03.143
+Okay.
+
+01:03.143 --> 01:05.580
+So, clearly we can see it's a a minor difference.
+
+01:05.580 --> 01:08.820
+We changed the same file so that purple is gone.
+
+01:08.820 --> 01:11.850
+We deleted that, and we added indigo and violet.
+
+01:11.850 --> 01:14.100
+So, when I run the git diff command,
+
+01:14.100 --> 01:16.350
+and again, I'll walk through doing that
+
+01:16.350 --> 01:17.730
+and the different variations.
+
+01:17.730 --> 01:21.180
+But I'll get an output that looks something like this.
+
+01:21.180 --> 01:22.860
+So, there's a lot of stuff going on,
+
+01:22.860 --> 01:25.800
+even just for that tiny little bit of a change.
+
+01:25.800 --> 01:27.360
+Hopefully, you can see, right?
+
+01:27.360 --> 01:29.640
+We see purple in red with a minus sign,
+
+01:29.640 --> 01:32.640
+indigo and violet in green with a plus sign.
+
+01:32.640 --> 01:34.500
+But let's talk about what we actually see
+
+01:34.500 --> 01:36.690
+on this diff, on this output.
+
+01:36.690 --> 01:39.690
+So the first thing up top, it's gonna say "diff"
+
+01:39.690 --> 01:41.190
+and then "--git"
+
+01:41.190 --> 01:42.810
+But then it's going to have the files
+
+01:42.810 --> 01:44.550
+that are being compared.
+
+01:44.550 --> 01:47.550
+Usually, these are actually going to be the same file
+
+01:47.550 --> 01:50.160
+just two versions, the old version of Rainbow,
+
+01:50.160 --> 01:51.570
+and the new version, right?
+
+01:51.570 --> 01:53.730
+The version from the last commit
+
+01:53.730 --> 01:55.650
+and the version in my working directory.
+
+01:55.650 --> 01:57.690
+But it could be different files.
+
+01:57.690 --> 01:59.550
+You would have to set that up yourself.
+
+01:59.550 --> 02:01.740
+Typically, it's the same file
+
+02:01.740 --> 02:03.030
+just over time.
+
+02:03.030 --> 02:05.313
+Between commits, between branches,
+
+02:05.313 --> 02:08.340
+between your staging area and your working directory.
+
+02:08.340 --> 02:09.990
+It's the same file, typically.
+
+02:09.990 --> 02:14.010
+So, Git is going to call one A and the other one B.
+
+02:14.010 --> 02:15.930
+So, you can see "rainbow.txt".
+
+02:15.930 --> 02:18.157
+The first one here is going to be A.
+
+02:18.157 --> 02:20.910
+"rainbow.txt", the second one will be B.
+
+02:20.910 --> 02:24.750
+So, we may get an output that's a lot more complicated.
+
+02:24.750 --> 02:27.720
+But there's always going to be the first line
+
+02:27.720 --> 02:30.270
+the files that are being compared, two files.
+
+02:30.270 --> 02:33.327
+So, "helpers.scss" compared to "helpers.scss".
+
+02:34.440 --> 02:36.630
+And here's what changed in that file.
+
+02:36.630 --> 02:38.257
+And, here's another file.
+
+02:38.257 --> 02:39.517
+"main.css"
+
+02:39.517 --> 02:41.340
+"main.css".
+
+02:41.340 --> 02:44.460
+So, if I just rerun the command that I had earlier,
+
+02:44.460 --> 02:47.430
+we can see, it's telling me here is the diff
+
+02:47.430 --> 02:50.760
+between index html and index html.
+
+02:50.760 --> 02:52.620
+And then, I keep going down.
+
+02:52.620 --> 02:53.857
+Now, we have a different file,
+
+02:53.857 --> 02:56.700
+"grid.js" and "grid.js".
+
+02:56.700 --> 02:58.807
+If I keep going down, here's another file.
+
+02:58.807 --> 02:59.947
+"main.css",
+
+02:59.947 --> 03:01.920
+"main.css".
+
+03:01.920 --> 03:02.753
+Okay?
+
+03:02.753 --> 03:04.156
+So, it's just telling us the two files,
+
+03:04.156 --> 03:07.500
+usually, they're the same file over time.
+
+03:07.500 --> 03:10.140
+Then, the next line does not matter for the most part.
+
+03:10.140 --> 03:14.280
+I've never needed to ever take a look or understand it.
+
+03:14.280 --> 03:17.670
+It's metadata about the files that are being compared.
+
+03:17.670 --> 03:19.710
+Each file actually gets its own hash.
+
+03:19.710 --> 03:21.210
+That's what we're seeing here.
+
+03:21.210 --> 03:22.830
+But really, it doesn't matter.
+
+03:22.830 --> 03:25.650
+And then, this is an internal file mode identifier.
+
+03:25.650 --> 03:27.600
+Again, not important.
+
+03:27.600 --> 03:30.300
+Then we see two lines of markers.
+
+03:30.300 --> 03:33.780
+This is gits way of telling us that for file A,
+
+03:33.780 --> 03:36.900
+whatever that is, it's going to be indicated changes
+
+03:36.900 --> 03:39.930
+in file A will be indicated with a minus sign.
+
+03:39.930 --> 03:42.060
+And file B will be a plus sign.
+
+03:42.060 --> 03:44.253
+So, that part's hopefully straightforward.
+
+03:44.253 --> 03:47.730
+Then, we get to chunks.
+
+03:47.730 --> 03:50.820
+So, you might have a file that's 10,000 lines long.
+
+03:50.820 --> 03:52.260
+You changed one line.
+
+03:52.260 --> 03:55.530
+Git diff is not gonna show you the entire 10,000 lines.
+
+03:55.530 --> 03:57.780
+It's going to show you the change,
+
+03:57.780 --> 03:59.100
+that part that was changed.
+
+03:59.100 --> 04:02.640
+And then a little bit of context before and after.
+
+04:02.640 --> 04:04.890
+So we can see, you know, here's what was changed,
+
+04:04.890 --> 04:06.900
+and then there's some context before.
+
+04:06.900 --> 04:08.010
+And it's at the end of the file,
+
+04:08.010 --> 04:09.630
+so there's nothing after.
+
+04:09.630 --> 04:12.600
+Here, I changed this line here.
+
+04:12.600 --> 04:15.210
+So, we get a little bit of context before
+
+04:15.210 --> 04:16.650
+and then some after.
+
+04:16.650 --> 04:18.090
+And then here's another change.
+
+04:18.090 --> 04:20.700
+We got context before and after.
+
+04:20.700 --> 04:22.860
+So, this file itself might have been
+
+04:22.860 --> 04:25.020
+a couple hundred lines, I think it is,
+
+04:25.020 --> 04:27.120
+but it's only showing us a small selection,
+
+04:27.120 --> 04:29.790
+a small chunk around each change.
+
+04:29.790 --> 04:32.650
+So, each chunk starts with a chunk header
+
+04:33.570 --> 04:34.403
+which looks like,
+
+04:34.403 --> 04:36.510
+oh, here's just multiple chunks by the way.
+
+04:36.510 --> 04:39.690
+This is one file, "main.css".
+
+04:39.690 --> 04:42.600
+It has one chunk and then a second chunk,
+
+04:42.600 --> 04:45.810
+just two different areas in the file that were changed.
+
+04:45.810 --> 04:48.030
+So, a chunk header is the header at the beginning
+
+04:48.030 --> 04:49.800
+of each chunk, and you can identify them
+
+04:49.800 --> 04:53.310
+by the two "@" signs on either side.
+
+04:53.310 --> 04:55.680
+And then some weird looking numbers inside.
+
+04:55.680 --> 04:56.513
+All right?
+
+04:56.513 --> 04:58.800
+So, there are two pairs of numbers.
+
+04:58.800 --> 05:02.130
+One set of these numbers corresponds to file A,
+
+05:02.130 --> 05:03.960
+the other file B.
+
+05:03.960 --> 05:06.630
+That's what the minus sign here indicates.
+
+05:06.630 --> 05:10.860
+So, "--" as we see is for file A.
+
+05:10.860 --> 05:12.990
+Plus is for file B.
+
+05:12.990 --> 05:15.210
+Anyway, what these numbers are telling us
+
+05:15.210 --> 05:18.120
+is how many lines have been extracted in this chunk.
+
+05:18.120 --> 05:20.610
+So, how big is this chunk from file A?
+
+05:20.610 --> 05:23.550
+And what part of the file do they start from?
+
+05:23.550 --> 05:25.110
+So, it's kind of confusing.
+
+05:25.110 --> 05:26.100
+You often don't,
+
+05:26.100 --> 05:28.470
+I personally don't spend a lot of time looking at this.
+
+05:28.470 --> 05:30.270
+I'm usually looking at the changes.
+
+05:30.270 --> 05:32.940
+But, just so you understand how to read it.
+
+05:32.940 --> 05:36.330
+This first bit says from file A, because the minus sign,
+
+05:36.330 --> 05:39.480
+four lines have been extracted starting from line three.
+
+05:39.480 --> 05:42.450
+So, this is not negative three, it's just three.
+
+05:42.450 --> 05:44.280
+The minus indicates A.
+
+05:44.280 --> 05:46.440
+So, four lines starting from line three.
+
+05:46.440 --> 05:49.320
+And so, the next part from file B,
+
+05:49.320 --> 05:52.440
+we have five lines starting from line three.
+
+05:52.440 --> 05:54.450
+So, I'm gonna diagram that out here.
+
+05:54.450 --> 05:55.950
+This is what our files looked like.
+
+05:55.950 --> 05:57.900
+This is file A, this is file B.
+
+05:57.900 --> 05:59.790
+Old version, from the last commits.
+
+05:59.790 --> 06:01.350
+New version, same file.
+
+06:01.350 --> 06:03.060
+But just what's changed.
+
+06:03.060 --> 06:06.330
+Well, the chunk says from file A,
+
+06:06.330 --> 06:09.030
+we get four lines starting from line three.
+
+06:09.030 --> 06:09.900
+So, 1, 2, 3.
+
+06:09.900 --> 06:11.070
+This is line three.
+
+06:11.070 --> 06:11.910
+We get four lines.
+
+06:11.910 --> 06:13.590
+Yellow, green, blue, purple.
+
+06:13.590 --> 06:17.430
+Then, file B is going to include five lines
+
+06:17.430 --> 06:18.660
+starting from line 3.
+
+06:18.660 --> 06:19.890
+1, 2, 3.
+
+06:19.890 --> 06:22.200
+So, 1, 2, 3, 4, 5.
+
+06:22.200 --> 06:24.090
+Now, one thing that is kind of confusing
+
+06:24.090 --> 06:25.860
+is that it shows orange right here.
+
+06:25.860 --> 06:27.870
+This is line two of our file.
+
+06:27.870 --> 06:31.740
+Technically, this is not really part of the chunk itself,
+
+06:31.740 --> 06:34.230
+depending on the language of your file.
+
+06:34.230 --> 06:36.570
+If it's Python or JavaScript or something else.
+
+06:36.570 --> 06:39.660
+Sometimes it'll display a little preview of a line.
+
+06:39.660 --> 06:41.160
+Other times, this is something else
+
+06:41.160 --> 06:44.070
+it's not reliably aligned from the chunk.
+
+06:44.070 --> 06:44.903
+It's confusing.
+
+06:44.903 --> 06:45.933
+So, it starts here.
+
+06:46.770 --> 06:47.730
+Anyway.
+
+06:47.730 --> 06:50.070
+So, what we have here are the two ranges, right?
+
+06:50.070 --> 06:50.947
+Those numbers,
+
+06:50.947 --> 06:51.847
+"3,4"
+
+06:51.847 --> 06:53.280
+"3,5"
+
+06:53.280 --> 06:55.770
+And then down below we have the actual changes.
+
+06:55.770 --> 06:57.870
+So, this is the content of the file,
+
+06:57.870 --> 06:59.430
+two files, superimposed
+
+06:59.430 --> 07:03.030
+where we can see every line that starts with a minus,
+
+07:03.030 --> 07:05.550
+it was a change that came from file A.
+
+07:05.550 --> 07:09.330
+And every line that starts with A plus comes from file B.
+
+07:09.330 --> 07:13.230
+So, these lines, yellow, green, blue are unchanged, right?
+
+07:13.230 --> 07:14.670
+They exist in both.
+
+07:14.670 --> 07:17.610
+But then purple, which is actually red,
+
+07:17.610 --> 07:19.860
+but purple has that minus sign,
+
+07:19.860 --> 07:22.740
+came from file A and it's not in file B.
+
+07:22.740 --> 07:25.980
+And then, indigo and violets came from file B.
+
+07:25.980 --> 07:27.480
+They're not in file A.
+
+07:27.480 --> 07:30.600
+Usually, Git picks A and B for us
+
+07:30.600 --> 07:33.000
+in such a way that you can think of file A
+
+07:33.000 --> 07:35.700
+as like the old stuff and file B as the new stuff.
+
+07:35.700 --> 07:38.100
+But, it doesn't always work out that way.
+
+07:38.100 --> 07:40.350
+So, this tells us as we already know,
+
+07:40.350 --> 07:42.420
+that yellow green and blue are in both files.
+
+07:42.420 --> 07:43.830
+Nothing changed there, right?
+
+07:43.830 --> 07:45.510
+Red, orange are both in there too.
+
+07:45.510 --> 07:47.070
+They're just not part of this chunk
+
+07:47.070 --> 07:51.000
+because it just picks a small little bit of context
+
+07:51.000 --> 07:53.670
+around a change, and the change happened right there.
+
+07:53.670 --> 07:56.160
+Purple turned to indigo and violet.
+
+07:56.160 --> 07:59.130
+So, indigo and violet are new, purple gone.
+
+07:59.130 --> 08:01.192
+So, here's a more complicated example.
+
+08:01.192 --> 08:04.470
+This is for a style sheet, "main.css".
+
+08:04.470 --> 08:05.730
+We can see up top,
+
+08:05.730 --> 08:08.790
+same file just compared A and B.
+
+08:08.790 --> 08:10.260
+Then we see the chunk header.
+
+08:10.260 --> 08:12.450
+And then here's our chunk, some context,
+
+08:12.450 --> 08:15.660
+and we see that we ended up with four new lines
+
+08:15.660 --> 08:19.200
+in this chunk, added, as part of file B.
+
+08:19.200 --> 08:22.350
+And then here, the second chunk in the same file,
+
+08:22.350 --> 08:23.370
+it just skips down.
+
+08:23.370 --> 08:25.320
+We're starting at what, line 63 now?
+
+08:25.320 --> 08:26.850
+Instead of 22.
+
+08:26.850 --> 08:28.080
+There's a whole bunch of stuff in between
+
+08:28.080 --> 08:29.490
+that just doesn't show up.
+
+08:29.490 --> 08:33.780
+We see that file A had these lines in red that are gone,
+
+08:33.780 --> 08:35.550
+and file B has these, what?
+
+08:35.550 --> 08:37.200
+Six lines that are new.
+
+08:37.200 --> 08:39.330
+So, that's a basic concept for how these diffs,
+
+08:39.330 --> 08:41.070
+these outputs work.
+
+08:41.070 --> 08:42.090
+If we just go back here,
+
+08:42.090 --> 08:44.130
+I know it's kind of crazy to look at.
+
+08:44.130 --> 08:45.930
+But hopefully, you can step through
+
+08:45.930 --> 08:48.330
+and understand what each line does.
+
+08:48.330 --> 08:51.570
+So, this is telling us we're comparing two files,
+
+08:51.570 --> 08:54.630
+same name just at different points in time.
+
+08:54.630 --> 08:57.360
+What those points in time are, we can set up ourself.
+
+08:57.360 --> 08:59.610
+We'll learn how to do that in the next couple of videos.
+
+08:59.610 --> 09:01.710
+And then we see the stuff, the Metadata,
+
+09:01.710 --> 09:03.450
+we really don't need to care about.
+
+09:03.450 --> 09:07.530
+Then we see each version A and B are both assigned a symbol.
+
+09:07.530 --> 09:10.260
+A gets minus, B gets plus.
+
+09:10.260 --> 09:11.550
+Then we have the chunk header.
+
+09:11.550 --> 09:15.810
+It tells us seven lines from line 25 are coming from file A,
+
+09:15.810 --> 09:20.100
+and seven lines starting at line 25 are coming from file B.
+
+09:20.100 --> 09:21.520
+Then, what we see here
+
+09:21.520 --> 09:23.730
+are those seven lines from file A.
+
+09:23.730 --> 09:24.563
+Right?
+
+09:24.563 --> 09:25.500
+1, 2, 3.
+
+09:25.500 --> 09:26.940
+This one came from A.
+
+09:26.940 --> 09:29.220
+So, 4, 5, 6, 7.
+
+09:29.220 --> 09:30.930
+And the seven lines from file B.
+
+09:30.930 --> 09:33.780
+1, 2, 3, skip that one.
+
+09:33.780 --> 09:36.300
+4, 5, 6, 7.
+
+09:36.300 --> 09:38.640
+And then, of course the color coding is helpful
+
+09:38.640 --> 09:42.480
+but this minus sign means it's a file A line
+
+09:42.480 --> 09:44.070
+that only exists in file A.
+
+09:44.070 --> 09:46.230
+This means it only exists in file B.
+
+09:46.230 --> 09:48.783
+Usually, this means old versus new.
+
+09:49.860 --> 09:52.110
+And then we've got a second chunk in the same file
+
+09:52.110 --> 09:54.630
+where there's just a line that I added "CHICKENS"
+
+09:54.630 --> 09:56.160
+that only exists in file B.
+
+09:56.160 --> 10:00.390
+Nothing was removed or changed in file A, at this point.
+
+10:00.390 --> 10:01.890
+And then we've got other files, right?
+
+10:01.890 --> 10:04.890
+The same sort of idea applies to this different file
+
+10:04.890 --> 10:07.230
+or to this JavaScript file.
+
+10:07.230 --> 10:09.300
+There are different chunks exerted,
+
+10:09.300 --> 10:11.412
+excerpt, excerpted?
+
+10:11.412 --> 10:13.590
+Excerpt, I don't know how you say that.
+
+10:13.590 --> 10:16.470
+Different excerpts from the files.
+
+10:16.470 --> 10:17.910
+All right, so in the next video we'll talk
+
+10:17.910 --> 10:20.100
+about different ways that we can use git diff,
+
+10:20.100 --> 10:21.660
+and to make different comparisons
+
+10:21.660 --> 10:23.940
+where we will see very similar looking outputs
+
+10:23.940 --> 10:25.390
+that follow the same pattern.
