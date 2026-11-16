@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00.120 --> 00:02.970
+Instructor: Next up a very quick one: Deleting tags.
+
+00:02.970 --> 00:05.640
+We just use the -d flag,
+
+00:05.640 --> 00:07.830
+just like with deleting a branch,
+
+00:07.830 --> 00:10.530
+and then the tag name that we're referencing.
+
+00:10.530 --> 00:13.983
+So let's see. Which one should we delete?
+
+00:15.120 --> 00:19.140
+We've got this tag v17.1.0.
+
+00:19.140 --> 00:20.370
+Let's do something more obvious.
+
+00:20.370 --> 00:23.580
+Let's actually add another tag just where we are right now,
+
+00:23.580 --> 00:25.563
+git tag deleteme.
+
+00:27.120 --> 00:29.970
+All right, so now if we look at our git log,
+
+00:29.970 --> 00:32.430
+we have two tags referring to this commit.
+
+00:32.430 --> 00:34.110
+I wanna delete this one.
+
+00:34.110 --> 00:37.290
+I can do git tag -d for delete,
+
+00:37.290 --> 00:38.763
+and then deleteme,
+
+00:40.470 --> 00:42.360
+and it deletes that tag for me.
+
+00:42.360 --> 00:43.920
+And if we look at our log again,
+
+00:43.920 --> 00:45.660
+we still have that other tag,
+
+00:45.660 --> 00:48.660
+but our deleteme tag is completely gone.
+
+00:48.660 --> 00:50.460
+So that's all there is to deleting tags.
+
+00:50.460 --> 00:51.360
+Nice and easy.
