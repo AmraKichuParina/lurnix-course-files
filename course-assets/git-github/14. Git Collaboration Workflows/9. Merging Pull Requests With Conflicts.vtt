@@ -1,0 +1,862 @@
+WEBVTT
+
+00:00.000 --> 00:01.380
+Instructor: So in the last video,
+
+00:01.380 --> 00:03.690
+the pull request that Stevie generated
+
+00:03.690 --> 00:05.880
+was able to be automatically merged in
+
+00:05.880 --> 00:08.370
+with a single button click, right?
+
+00:08.370 --> 00:11.370
+We didn't have to do any merging locally on our machine,
+
+00:11.370 --> 00:12.750
+it was all done in GitHub,
+
+00:12.750 --> 00:14.730
+and then we just pulled down the changes.
+
+00:14.730 --> 00:16.500
+But that only happens sometimes,
+
+00:16.500 --> 00:18.480
+where the merge can be done automatically.
+
+00:18.480 --> 00:20.430
+Just like any merge in Git,
+
+00:20.430 --> 00:23.070
+there's always a potential for conflicts.
+
+00:23.070 --> 00:24.000
+So in this video,
+
+00:24.000 --> 00:26.640
+I wanna show you how you can resolve conflicts
+
+00:26.640 --> 00:29.460
+when merging a pull request, okay?
+
+00:29.460 --> 00:32.040
+So we need to first start by making a pull request
+
+00:32.040 --> 00:34.080
+that will generate a conflict.
+
+00:34.080 --> 00:34.920
+And to do that,
+
+00:34.920 --> 00:38.850
+and to do things relatively speedily, hopefully,
+
+00:38.850 --> 00:43.850
+I'm going to start by doing a tiny change as Stevie.
+
+00:44.280 --> 00:46.650
+So, here we are as Stevie.
+
+00:46.650 --> 00:48.180
+I'm going to just,
+
+00:48.180 --> 00:50.340
+I don't know, let's change the title here
+
+00:50.340 --> 00:51.870
+of the entire webpage.
+
+00:51.870 --> 00:54.780
+So we'll imagine, you know, we're doing some big task,
+
+00:54.780 --> 00:55.920
+we're working on a feature branch,
+
+00:55.920 --> 00:58.050
+but really we're just gonna change the heading.
+
+00:58.050 --> 01:00.870
+So, let's make a feature branch as Stevie.
+
+01:00.870 --> 01:01.863
+We'll call this,
+
+01:02.700 --> 01:04.260
+let me make this a bit larger,
+
+01:04.260 --> 01:05.670
+how about git, let's see,
+
+01:05.670 --> 01:06.720
+we're on main.
+
+01:06.720 --> 01:08.970
+Let's do git switch -c,
+
+01:08.970 --> 01:10.590
+because we're not gonna work on main,
+
+01:10.590 --> 01:13.023
+and then we'll call this new-heading.
+
+01:15.060 --> 01:18.300
+Okay, so switch to a new branch, new-heading.
+
+01:18.300 --> 01:21.390
+And now we can do some really basic work,
+
+01:21.390 --> 01:24.210
+like change the heading here.
+
+01:24.210 --> 01:25.470
+Where is that?
+
+01:25.470 --> 01:29.370
+Instead of an h1, I'm gonna give it a class of display-1,
+
+01:29.370 --> 01:31.650
+which is just part of Bootstrap.
+
+01:31.650 --> 01:33.150
+And let's see what it looks like.
+
+01:33.150 --> 01:34.110
+Okay, there it is.
+
+01:34.110 --> 01:36.423
+And then I'm gonna change the text to be,
+
+01:38.280 --> 01:42.600
+I don't know, "Heyo World!"
+
+01:42.600 --> 01:44.940
+Oh, how about, actually this is coming from Stevie,
+
+01:44.940 --> 01:46.833
+how about just Bock Bock.
+
+01:48.360 --> 01:49.193
+Is that how you spell that?
+
+01:49.193 --> 01:50.026
+I don't know.
+
+01:50.026 --> 01:51.150
+Whatever noise my chickens make,
+
+01:51.150 --> 01:54.510
+it's like a bock, bock, bock, bock, bock most of the time.
+
+01:54.510 --> 01:57.180
+All right, so that's Stevie's change.
+
+01:57.180 --> 01:59.610
+So, Stevie adds and commits this to the branch,
+
+01:59.610 --> 02:01.560
+so git add index,
+
+02:01.560 --> 02:06.560
+git commit -m "change heading to bock bock" (laughs softly)
+
+02:07.170 --> 02:08.970
+All right, so now we can push that up,
+
+02:08.970 --> 02:11.010
+or Stevie can push this branch,
+
+02:11.010 --> 02:14.670
+git push origin new-heading,
+
+02:14.670 --> 02:15.503
+up to GitHub.
+
+02:16.800 --> 02:18.720
+Then simultaneously,
+
+02:18.720 --> 02:20.580
+I'm not gonna go through the whole workflow
+
+02:20.580 --> 02:22.560
+of making a PR as Colt,
+
+02:22.560 --> 02:26.250
+I'm just gonna do some changes on the index
+
+02:26.250 --> 02:28.080
+directly on the main branch.
+
+02:28.080 --> 02:30.360
+Which normally, you know, we should be consistent,
+
+02:30.360 --> 02:32.880
+and if we're going to enforce pull requests,
+
+02:32.880 --> 02:35.550
+I guess I'm the the owner of this repo,
+
+02:35.550 --> 02:37.050
+so I can do whatever I want,
+
+02:37.050 --> 02:39.000
+but normally you follow some rules, right?
+
+02:39.000 --> 02:41.490
+You're not gonna have two sets of rules,
+
+02:41.490 --> 02:45.540
+you're going to ask everyone to use PRs to merge changes in.
+
+02:45.540 --> 02:49.560
+But just to demo this faster and not lose your attention,
+
+02:49.560 --> 02:53.520
+I will directly edit the file on GitHub as Colt.
+
+02:53.520 --> 02:55.230
+Right so, I can just edit a file
+
+02:55.230 --> 02:57.990
+and make a commit on the main branch.
+
+02:57.990 --> 02:59.310
+So I'm going to edit this,
+
+02:59.310 --> 03:02.190
+instead of saying hello world,
+
+03:02.190 --> 03:03.290
+where is that heading?
+
+03:04.200 --> 03:05.220
+Wait, here it is. (chuckles softly)
+
+03:05.220 --> 03:06.180
+Instead of "Hello, world,"
+
+03:06.180 --> 03:10.143
+I'll do "Hello there Everyone"
+
+03:11.880 --> 03:14.460
+and maybe a bunch of exclamation points.
+
+03:14.460 --> 03:18.180
+Okay, then I'm going to save that.
+
+03:18.180 --> 03:19.140
+Well, not really save it,
+
+03:19.140 --> 03:21.030
+but I'm going to make a new commit.
+
+03:21.030 --> 03:22.080
+So, Update index,
+
+03:22.080 --> 03:23.280
+sure, that's fine.
+
+03:23.280 --> 03:25.290
+Commit directly to the main branch.
+
+03:25.290 --> 03:26.123
+Here we go.
+
+03:27.780 --> 03:30.480
+So now the main branch has changed,
+
+03:30.480 --> 03:33.270
+and Stevie has a branch that was pushed up.
+
+03:33.270 --> 03:35.100
+This is still kind of a trivial,
+
+03:35.100 --> 03:37.860
+a silly way of creating a conflict,
+
+03:37.860 --> 03:39.750
+but there should be a conflict now,
+
+03:39.750 --> 03:42.513
+where if I try and make a pull request as Stevie,
+
+03:43.860 --> 03:45.930
+I'll take a look, here's my new heading branch.
+
+03:45.930 --> 03:47.373
+Let's make a pull request,
+
+03:48.660 --> 03:51.030
+Uh-oh, can't automatically merge.
+
+03:51.030 --> 03:51.863
+Don't worry though,
+
+03:51.863 --> 03:53.580
+you can still create the pull request.
+
+03:53.580 --> 03:56.130
+So hopefully you see why we can't automatically merge,
+
+03:56.130 --> 03:57.150
+there's a conflict.
+
+03:57.150 --> 03:59.280
+Just like if we tried to merge these on our machine
+
+03:59.280 --> 04:02.430
+with git merge, it's the exact same mechanic.
+
+04:02.430 --> 04:03.810
+So if I wanna make a pull request
+
+04:03.810 --> 04:05.673
+to change the heading to bock bock,
+
+04:07.269 --> 04:12.269
+'I am a chicken and I changed the heading to say "bock bock"
+
+04:13.500 --> 04:15.750
+I hope you like it.'
+
+04:15.750 --> 04:16.950
+Okay, so I have a message,
+
+04:16.950 --> 04:21.543
+I'll create that pull request from new-heading to main.
+
+04:22.410 --> 04:25.680
+And we see that there are conflicts that can be resolved.
+
+04:25.680 --> 04:28.590
+So the way that our repo is set up,
+
+04:28.590 --> 04:30.510
+anybody who's a collaborator currently
+
+04:30.510 --> 04:32.130
+can resolve conflicts,
+
+04:32.130 --> 04:35.250
+right, and merge or PR once that's resolved.
+
+04:35.250 --> 04:38.430
+I'm going to do it as Colt though, not as Stevie.
+
+04:38.430 --> 04:39.690
+That's a more typical workflow,
+
+04:39.690 --> 04:41.250
+is somebody submits the PR,
+
+04:41.250 --> 04:43.080
+and then it needs to be reviewed.
+
+04:43.080 --> 04:46.920
+So I'm gonna go back to Colt's workspace,
+
+04:46.920 --> 04:49.410
+and then we see there's a new PR.
+
+04:49.410 --> 04:51.060
+Here it is.
+
+04:51.060 --> 04:52.440
+And if I want to merge this in,
+
+04:52.440 --> 04:55.800
+unfortunately, it's not as simple as clicking a button.
+
+04:55.800 --> 04:57.660
+So, I can do a couple of things.
+
+04:57.660 --> 05:00.450
+If I click the Resolve conflicts button,
+
+05:00.450 --> 05:03.840
+it actually gives me an option to do this in the browser,
+
+05:03.840 --> 05:06.750
+which I haven't really done before.
+
+05:06.750 --> 05:08.640
+And this, actually for this example,
+
+05:08.640 --> 05:11.010
+is super easy to do it that way,
+
+05:11.010 --> 05:12.330
+because it's just a single line
+
+05:12.330 --> 05:14.160
+that we're keeping or combining.
+
+05:14.160 --> 05:16.320
+But rather than doing it in the browser,
+
+05:16.320 --> 05:19.140
+I'm gonna show you the good old fashioned way of doing it
+
+05:19.140 --> 05:21.570
+that you would do if you had a bunch of files.
+
+05:21.570 --> 05:23.820
+This is just one conflict in a single file,
+
+05:23.820 --> 05:26.310
+but in the real world you may run into conflicts
+
+05:26.310 --> 05:27.780
+across a bunch of files,
+
+05:27.780 --> 05:29.850
+hopefully not too many, but still,
+
+05:29.850 --> 05:32.370
+it might be easier to resolve them on your own machine.
+
+05:32.370 --> 05:36.060
+So, we can click this, "view command line instructions,"
+
+05:36.060 --> 05:39.300
+and it tells us exactly how to do this on the command line.
+
+05:39.300 --> 05:41.700
+So first, we need to bring the changes in
+
+05:41.700 --> 05:43.350
+so we can fetch origin.
+
+05:43.350 --> 05:45.630
+So, we'll do that on my machine as Colt.
+
+05:45.630 --> 05:47.883
+git fetch origin.
+
+05:49.260 --> 05:51.660
+All right, so now we have this new branch reference,
+
+05:51.660 --> 05:52.980
+this remote tracking branch.
+
+05:52.980 --> 05:54.693
+Let me make this larger again.
+
+05:55.680 --> 05:57.330
+Oh, well, that didn't work.
+
+05:57.330 --> 05:58.830
+Try that one more time.
+
+05:58.830 --> 05:59.940
+Here we are.
+
+05:59.940 --> 06:02.400
+You can see, origin/new-heading.
+
+06:02.400 --> 06:06.150
+So the instructions now tell me to check out new-heading.
+
+06:06.150 --> 06:08.340
+They're using the the checkout command
+
+06:08.340 --> 06:10.260
+on the GitHub website,
+
+06:10.260 --> 06:11.820
+they don't use git switch yet,
+
+06:11.820 --> 06:13.470
+which is the newer way of doing it.
+
+06:13.470 --> 06:14.880
+So, we could do this.
+
+06:14.880 --> 06:17.100
+We're saying "Make me a new branch called new-heading,
+
+06:17.100 --> 06:19.470
+and have it track origin/new-heading."
+
+06:19.470 --> 06:24.120
+Or the easier option is just git switch new-heading,
+
+06:24.120 --> 06:26.880
+and it will do that for us, as we've seen.
+
+06:26.880 --> 06:28.380
+So now that I've done that,
+
+06:28.380 --> 06:32.670
+I can see here, I should have "Bock Bock" showing up
+
+06:32.670 --> 06:35.310
+in the heading, and I do, I have Stevie's changes.
+
+06:35.310 --> 06:37.410
+I am currently checking out, I'm switching,
+
+06:37.410 --> 06:38.550
+or I have switched,
+
+06:38.550 --> 06:41.640
+to that new-heading branch that Stevie pushed up.
+
+06:41.640 --> 06:44.430
+So now, I need to merge in the main branch.
+
+06:44.430 --> 06:45.840
+So this approach is,
+
+06:45.840 --> 06:48.480
+switch to the new branch, the feature branch,
+
+06:48.480 --> 06:51.210
+and merge main into the feature branch,
+
+06:51.210 --> 06:53.160
+resolve the conflicts there.
+
+06:53.160 --> 06:55.260
+So, just test things out and make sure it works,
+
+06:55.260 --> 06:58.500
+and then when we're ready, we're gonna switch over to main
+
+06:58.500 --> 07:00.093
+and merge new-heading in.
+
+07:01.350 --> 07:03.510
+All right, so let's try that.
+
+07:03.510 --> 07:05.850
+git merge main.
+
+07:05.850 --> 07:06.900
+This is the main branch,
+
+07:06.900 --> 07:09.210
+we know that there's likely going to be a conflict,
+
+07:09.210 --> 07:13.680
+although I think I'm missing the latest changes from main.
+
+07:13.680 --> 07:16.470
+Yeah, it's up to date because I didn't pull down.
+
+07:16.470 --> 07:18.330
+So, let's switch to main.
+
+07:18.330 --> 07:19.230
+I'll show you what I mean,
+
+07:19.230 --> 07:20.580
+git switch main.
+
+07:20.580 --> 07:24.960
+Remember that I updated on main on GitHub,
+
+07:24.960 --> 07:27.330
+I changed the heading, and it actually tells me that,
+
+07:27.330 --> 07:29.910
+your main branch is behind origin/main.
+
+07:29.910 --> 07:32.073
+So we'll do a git pull origin main.
+
+07:33.240 --> 07:35.340
+Now we have the latest changes on main.
+
+07:35.340 --> 07:37.533
+Now I can go back to new-heading,
+
+07:40.260 --> 07:41.970
+and then I can merge main.
+
+07:41.970 --> 07:44.430
+So, git merge the new main branch that we have,
+
+07:44.430 --> 07:47.610
+it's not new, but the latest version, the latest work,
+
+07:47.610 --> 07:49.350
+merge that into this new heading branch.
+
+07:49.350 --> 07:50.880
+Now we have the conflict,
+
+07:50.880 --> 07:53.340
+so now I can resolve the conflict here.
+
+07:53.340 --> 07:55.890
+So, maybe I want both,
+
+07:55.890 --> 08:00.690
+maybe I want h1 class equals display-1 from Stevie,
+
+08:00.690 --> 08:04.650
+and then I want, I don't know, all these exclamation points?
+
+08:04.650 --> 08:06.870
+How about "Bock Bock Everyone!!!!!"
+
+08:06.870 --> 08:07.703
+Like that.
+
+08:09.600 --> 08:12.450
+So, let's see what that looks like. (chuckles)
+
+08:12.450 --> 08:13.500
+Let's refresh.
+
+08:13.500 --> 08:14.940
+Okay, great.
+
+08:14.940 --> 08:17.130
+So now we need to add and commit the changes.
+
+08:17.130 --> 08:19.380
+So git add index,
+
+08:19.380 --> 08:22.050
+and we'll just do a useless commit message,
+
+08:22.050 --> 08:25.347
+like "resolve conflicts."
+
+08:26.520 --> 08:29.670
+Okay, so now, we've merged the changes in,
+
+08:29.670 --> 08:31.860
+but we're just on the new-heading branch.
+
+08:31.860 --> 08:33.450
+So, we know for sure
+
+08:33.450 --> 08:35.910
+that the current version of master, or main,
+
+08:35.910 --> 08:39.240
+works when we merged it in with the changes on new-heading,
+
+08:39.240 --> 08:40.650
+we've resolved the conflicts,
+
+08:40.650 --> 08:43.053
+now we can switch back to main,
+
+08:44.190 --> 08:47.130
+and then we can merge in that new-heading branch
+
+08:47.130 --> 08:49.170
+that we already resolved the conflicts on,
+
+08:49.170 --> 08:50.850
+which is exactly what they ask us to do,
+
+08:50.850 --> 08:52.800
+or tell us to do, on GitHub.
+
+08:52.800 --> 08:54.120
+So, go back to main,
+
+08:54.120 --> 08:56.580
+and then merge in new-heading,
+
+08:56.580 --> 08:58.500
+which already has the conflicts resolved,
+
+08:58.500 --> 09:00.330
+so we shouldn't get new conflicts.
+
+09:00.330 --> 09:02.640
+Now this --no-ff,
+
+09:02.640 --> 09:05.580
+that's an indicator that we're telling git merge
+
+09:05.580 --> 09:09.360
+to not fast forward if it detects that it can.
+
+09:09.360 --> 09:11.190
+Because when we do a fast forward,
+
+09:11.190 --> 09:13.380
+instead of making a merge commit as we've seen,
+
+09:13.380 --> 09:17.010
+Git will just move the branch pointer to some new commit.
+
+09:17.010 --> 09:18.330
+Right? It just moves forward.
+
+09:18.330 --> 09:20.622
+And sometimes we wanna prevent that from happening,
+
+09:20.622 --> 09:22.620
+especially when we want to preserve
+
+09:22.620 --> 09:25.350
+or maintain our specific branch.
+
+09:25.350 --> 09:27.210
+We wanna make it clear that there was a branch
+
+09:27.210 --> 09:29.250
+merged in here just to have that history.
+
+09:29.250 --> 09:30.450
+You don't have to do this part,
+
+09:30.450 --> 09:33.030
+but it's just what GitHub recommends.
+
+09:33.030 --> 09:35.700
+So, we could just copy the entire line.
+
+09:35.700 --> 09:38.340
+We're merging new-heading into main.
+
+09:38.340 --> 09:41.250
+Okay, so see, I'm now gonna put a commit here
+
+09:41.250 --> 09:42.750
+instead of just a fast forward,
+
+09:42.750 --> 09:45.030
+I'm putting a a merge commit in
+
+09:45.030 --> 09:47.760
+because I said no fast forward.
+
+09:47.760 --> 09:50.400
+All right, and now we just push up to master.
+
+09:50.400 --> 09:52.110
+git push origin main.
+
+09:52.110 --> 09:54.360
+I said master again, we're using main,
+
+09:54.360 --> 09:55.413
+git push origin main.
+
+09:59.040 --> 10:01.380
+All right, so now if I refresh this page,
+
+10:01.380 --> 10:03.990
+it automatically just, I didn't refresh,
+
+10:03.990 --> 10:07.020
+but it automatically detects, successfully merged this PR,
+
+10:07.020 --> 10:08.220
+and it's closed now,
+
+10:08.220 --> 10:10.890
+and you can delete that new-heading branch if you want.
+
+10:10.890 --> 10:12.333
+Sure, let's delete it.
+
+10:13.650 --> 10:15.630
+We can also restore it if needed.
+
+10:15.630 --> 10:19.860
+And now we merged the PR in that had a conflict.
+
+10:19.860 --> 10:22.560
+And the same process would apply if there was one conflict
+
+10:22.560 --> 10:24.750
+or tons and tons of conflicts,
+
+10:24.750 --> 10:27.090
+we make a pull request, and then resolve the conflicts,
+
+10:27.090 --> 10:28.740
+following the instructions.
+
+10:28.740 --> 10:31.800
+Basically, pull that code down, or fetch it,
+
+10:31.800 --> 10:34.620
+check it out, or switch to the new feature branch,
+
+10:34.620 --> 10:36.870
+merge master or main in,
+
+10:36.870 --> 10:37.830
+resolve conflicts,
+
+10:37.830 --> 10:38.700
+add and commit,
+
+10:38.700 --> 10:40.710
+then switch back to master or main,
+
+10:40.710 --> 10:44.040
+merge in the now conflictless branch,
+
+10:44.040 --> 10:46.170
+and then push that up.
+
+10:46.170 --> 10:49.500
+Okay, so now the last thing to do is, as Stevie,
+
+10:49.500 --> 10:52.260
+go and get the latest version, right, of the main branch,
+
+10:52.260 --> 10:54.210
+we don't have that as Stevie.
+
+10:54.210 --> 10:55.410
+So we just need to pull down,
+
+10:55.410 --> 10:57.180
+we'll switch to main.
+
+10:57.180 --> 11:00.810
+We can remove that branch now, new-heading,
+
+11:00.810 --> 11:04.503
+so git branch -D new-heading.
+
+11:05.820 --> 11:08.580
+And now, git pull origin main,
+
+11:08.580 --> 11:10.860
+we'll get the latest changes from main.
+
+11:10.860 --> 11:12.540
+And there's not a whole lot that we got,
+
+11:12.540 --> 11:14.610
+but if we type git log, we see,
+
+11:14.610 --> 11:17.670
+okay, we got the resolving of the conflict,
+
+11:17.670 --> 11:20.130
+merged that branch in, my work was merged in.
+
+11:20.130 --> 11:23.400
+So now, our latest version of the main branch
+
+11:23.400 --> 11:25.260
+says "Bock Bock Everyone!!!!!" (laughs softly)
+
+11:25.260 --> 11:28.110
+And we can take a look at it right here.
+
+11:28.110 --> 11:29.160
+And there we are,
+
+11:29.160 --> 11:32.069
+so we successfully merged a PR in that had a conflict.
+
+11:32.069 --> 11:33.093
+Okay.
