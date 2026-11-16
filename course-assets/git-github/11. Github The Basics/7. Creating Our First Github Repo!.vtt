@@ -1,0 +1,407 @@
+WEBVTT
+
+00:00.240 --> 00:01.440
+Presenter: Okay, so let's talk
+
+00:01.440 --> 00:03.870
+about how we actually get our code up on GitHub.
+
+00:03.870 --> 00:07.359
+How do we take a local gi.repo on our laptop
+
+00:07.359 --> 00:09.540
+and how do I connect that
+
+00:09.540 --> 00:12.840
+in some way to a hosted GitHub repo?
+
+00:12.840 --> 00:13.872
+How do I connect them?
+
+00:13.872 --> 00:15.960
+How do I set up the repo on GitHub?
+
+00:15.960 --> 00:16.920
+And then what do I do
+
+00:16.920 --> 00:19.860
+on my machine to tell it about the GitHub repo?
+
+00:19.860 --> 00:21.930
+Well, there's really two different approaches
+
+00:21.930 --> 00:24.330
+or two options that I'm gonna walk through.
+
+00:24.330 --> 00:27.690
+In this video, I'm just gonna talk about both of them
+
+00:27.690 --> 00:29.070
+and just explain how they work
+
+00:29.070 --> 00:32.040
+and then we'll dive into actually doing them.
+
+00:32.040 --> 00:36.364
+So the first option called option one is
+
+00:36.364 --> 00:39.037
+if you have an existing repo on your machine.
+
+00:39.037 --> 00:41.580
+If you have something that you've already been working on,
+
+00:41.580 --> 00:44.100
+it already has Git history, you already have code,
+
+00:44.100 --> 00:46.950
+whatever it is, and you wanna get that on GitHub,
+
+00:46.950 --> 00:48.930
+these would be the steps that you follow.
+
+00:48.930 --> 00:51.420
+You create a new repo on GitHub
+
+00:51.420 --> 00:53.299
+then you connect your local repo
+
+00:53.299 --> 00:55.680
+by adding something called a remote.
+
+00:55.680 --> 00:56.672
+We'll go into that.
+
+00:56.672 --> 01:00.346
+So you add that remote to your local machine
+
+01:00.346 --> 01:03.810
+and then you push your changes up to GitHub.
+
+01:03.810 --> 01:05.430
+So here's some diagrams.
+
+01:05.430 --> 01:07.050
+If I have something I've been working on
+
+01:07.050 --> 01:09.207
+whether it's just a day of work, an hour of work,
+
+01:09.207 --> 01:13.269
+an empty repository that I've created, or years of work,
+
+01:13.269 --> 01:16.528
+whatever it is, if it's on my machine and not on GitHub.
+
+01:16.528 --> 01:21.528
+I go onto GitHub and I make a new empty repository.
+
+01:21.840 --> 01:23.680
+I'll show that in just a moment too.
+
+01:23.680 --> 01:26.640
+So once I make that new empty repository
+
+01:26.640 --> 01:29.790
+then what I do is tell my computer, specifically,
+
+01:29.790 --> 01:34.768
+tell this gi.repository about the GitHub repository
+
+01:34.768 --> 01:38.613
+and then I can push my code up to the GitHub repo.
+
+01:39.570 --> 01:43.050
+The other option is, if I don't have anything done yet,
+
+01:43.050 --> 01:45.060
+I don't have a repo anywhere.
+
+01:45.060 --> 01:47.520
+I know I wanna start a project, and I know right
+
+01:47.520 --> 01:51.630
+outta the gate that I also want to use GitHub alongside gi.
+
+01:51.630 --> 01:56.010
+If that's the case, I can start on GitHub, make a new repo
+
+01:56.010 --> 01:59.190
+on GitHub, and clone that down to my machine
+
+01:59.190 --> 02:01.230
+as an empty repository.
+
+02:01.230 --> 02:04.080
+Instead of running git and Knit, I can clone down
+
+02:04.080 --> 02:06.280
+my GitHub repo that's empty and start working
+
+02:06.280 --> 02:09.600
+in that repo, and then push it up to GitHub.
+
+02:09.600 --> 02:12.660
+And if I do it that way, I don't have to manually connect
+
+02:12.660 --> 02:15.270
+my local repo to my GitHub repo, because
+
+02:15.270 --> 02:18.180
+if I clone this repo from GitHub, it automatically
+
+02:18.180 --> 02:20.850
+is connected to that GitHub DRL.
+
+02:20.850 --> 02:23.850
+So some diagrams to illustrate that I don't have
+
+02:23.850 --> 02:28.850
+any repositories yet, either on GitHub or on my machine.
+
+02:28.920 --> 02:32.190
+And I start by making a new repo on GitHub,
+
+02:32.190 --> 02:35.640
+which I'm visualizing as this empty container.
+
+02:35.640 --> 02:38.670
+And then I clone that down to my laptop.
+
+02:38.670 --> 02:42.480
+And because it came from this clone, it automatically knows
+
+02:42.480 --> 02:44.670
+about this GitHub URL.
+
+02:44.670 --> 02:47.610
+So now I can do my work locally and push it up.
+
+02:47.610 --> 02:50.340
+I don't have to connect them in any way, but I'm gonna
+
+02:50.340 --> 02:52.260
+actually start by showing you the other option.
+
+02:52.260 --> 02:55.740
+Option one, because you may have some existing code.
+
+02:55.740 --> 02:58.260
+I mean, we certainly have existing repos from the course.
+
+02:58.260 --> 03:00.990
+None of them are very useful,
+
+03:00.990 --> 03:02.700
+but we have existing repos, right?
+
+03:02.700 --> 03:04.290
+We've been working with Git
+
+03:04.290 --> 03:07.740
+and let's talk about how to get that on GitHub.
+
+03:07.740 --> 03:08.700
+So to do that,
+
+03:08.700 --> 03:12.480
+the first step is to make an empty GitHub repo.
+
+03:12.480 --> 03:14.868
+So if you wanna follow along, start
+
+03:14.868 --> 03:18.420
+by just picking some gi.repository that we've made
+
+03:18.420 --> 03:21.450
+or that you've made that you want to get on GitHub.
+
+03:21.450 --> 03:23.980
+So it doesn't have to be something that you make public
+
+03:23.980 --> 03:25.740
+and it doesn't have to be something
+
+03:25.740 --> 03:27.180
+that you keep up there, right?
+
+03:27.180 --> 03:28.650
+You can delete it or get rid
+
+03:28.650 --> 03:31.451
+of it immediately if you don't want people to see it.
+
+03:31.451 --> 03:35.850
+So we've done quite a few different repositories.
+
+03:35.850 --> 03:40.200
+Why don't I just take that really simple book repository,
+
+03:40.200 --> 03:45.033
+MyFirstNovel, all right, so it's a disastrous repo.
+
+03:46.080 --> 03:49.110
+I'd like to get all of this up on GitHub.
+
+03:49.110 --> 03:51.690
+Alright, all of this history, all my files.
+
+03:51.690 --> 03:52.523
+One more time.
+
+03:52.523 --> 03:53.520
+This is what I'm dealing with.
+
+03:53.520 --> 03:55.500
+So whatever you have found,
+
+03:55.500 --> 03:57.750
+if you have a repo you wanna follow along with,
+
+03:57.750 --> 04:00.690
+the first step is to go on GitHub.
+
+04:00.690 --> 04:04.920
+So once you're signed in and create a new empty repo
+
+04:04.920 --> 04:06.690
+and there's a couple of buttons to do that.
+
+04:06.690 --> 04:08.280
+One is just this green button.
+
+04:08.280 --> 04:10.590
+If you're on the homepage, new
+
+04:10.590 --> 04:13.920
+or if you're somewhere else, like I'm on marketplace,
+
+04:13.920 --> 04:17.580
+if I click the plus new repo right there
+
+04:17.580 --> 04:20.940
+then I see this page.
+Create a new repository.
+
+04:20.940 --> 04:21.773
+So we need to come up
+
+04:21.773 --> 04:26.720
+with a name about github-demo-novel or something like that.
+
+04:27.690 --> 04:31.110
+This is just a name that we'll use to identify it
+
+04:31.110 --> 04:32.460
+on GitHub, right?
+
+04:32.460 --> 04:34.380
+It doesn't have to match anything
+
+04:34.380 --> 04:36.780
+from our actual repository that we have locally
+
+04:36.780 --> 04:39.120
+but we don't want spaces.
+
+04:39.120 --> 04:41.364
+It will automatically add dashes for us.
+
+04:41.364 --> 04:43.740
+I don't know, I just put them in there myself
+
+04:43.740 --> 04:46.110
+but we don't need to do that.
+
+04:46.110 --> 04:47.370
+You don't really need a description
+
+04:47.370 --> 04:50.220
+although you should put one in, especially if you plan
+
+04:50.220 --> 04:53.502
+on having other people see this repo or discover it.
+
+04:53.502 --> 04:55.590
+But we will talk more about that.
+
+04:55.590 --> 04:57.067
+To keep this short and simple.
+
+04:57.067 --> 04:59.730
+I'm not gonna put a description in there
+
+04:59.730 --> 05:02.340
+and then we can decide if it's public or private.
+
+05:02.340 --> 05:04.080
+Now, I'm gonna keep this public in case some
+
+05:04.080 --> 05:06.125
+of you wanna take a look at the repo.
+
+05:06.125 --> 05:09.405
+Although frankly, for the contents of this book,
+
+05:09.405 --> 05:12.150
+it's probably best for my reputation
+
+05:12.150 --> 05:14.280
+if I do make it private.
+
+05:14.280 --> 05:16.515
+That just means that if someone looks at my profile
+
+05:16.515 --> 05:19.355
+if they search, they're not gonna find this repository.
+
+05:19.355 --> 05:21.330
+They don't have access to it.
+
+05:21.330 --> 05:23.970
+But if it's public, anyone can see it.
+
+05:23.970 --> 05:25.787
+Okay, and then I'm not gonna touch this.
+
+05:25.787 --> 05:29.670
+We will come back and talk more about these files later.
+
+05:29.670 --> 05:32.043
+I'm just gonna click Create repository.
+
+05:33.554 --> 05:35.816
+And did I click?
+
+05:35.816 --> 05:36.850
+I might've not.
+
+05:36.850 --> 05:39.090
+Okay, I guess I didn't click.
+
+05:39.090 --> 05:42.360
+And, okay, we now see this page here.
+
+05:42.360 --> 05:46.860
+So my username Colt/, and then the repository name.
+
+05:46.860 --> 05:49.290
+And then inside of it, there's not really anything to look
+
+05:49.290 --> 05:52.290
+at right now, except for a couple of instructions.
+
+05:52.290 --> 05:53.400
+Alright, so I'll stop here.
+
+05:53.400 --> 05:55.360
+We've made an empty GitHub repository.
+
+05:55.360 --> 05:58.530
+Our local repo knows nothing about it.
+
+05:58.530 --> 05:59.728
+They're not connected in any way
+
+05:59.728 --> 06:02.403
+but that's gonna change in the next video.
