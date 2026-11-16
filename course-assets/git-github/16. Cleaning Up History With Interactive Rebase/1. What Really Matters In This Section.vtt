@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.150 --> 00:02.580
+Instructor: In this section, we'll see another use case
+
+00:02.580 --> 00:04.590
+for the Git rebase command.
+
+00:04.590 --> 00:07.320
+It's one that I actually quite like using.
+
+00:07.320 --> 00:09.570
+It's called interactive rebasing,
+
+00:09.570 --> 00:11.520
+and we'll use it in this section
+
+00:11.520 --> 00:14.010
+to clean up our Git history,
+
+00:14.010 --> 00:17.520
+basically, to go back and reword commits,
+
+00:17.520 --> 00:19.410
+like not just the previous commit,
+
+00:19.410 --> 00:21.510
+but 10, 50, 100 commits,
+
+00:21.510 --> 00:23.280
+probably not that far back normally,
+
+00:23.280 --> 00:27.000
+but you can reword commits, you can edit commits.
+
+00:27.000 --> 00:30.810
+We can do something called fixing up and squashing commits.
+
+00:30.810 --> 00:33.090
+We can even drop commits entirely,
+
+00:33.090 --> 00:34.410
+and I'm gonna show you how to do all of that
+
+00:34.410 --> 00:36.423
+with the interactive rebase command.
+
+00:37.260 --> 00:40.770
+I will say that this is all gonna go in nice to have.
+
+00:40.770 --> 00:43.710
+It's, personally, I like using it.
+
+00:43.710 --> 00:46.530
+It's part of my workflow when I work with Git,
+
+00:46.530 --> 00:48.630
+but not everyone does this,
+
+00:48.630 --> 00:51.660
+and it's not something that really I could say is important,
+
+00:51.660 --> 00:53.250
+or critical, but I like it,
+
+00:53.250 --> 00:54.630
+and I think it's kind of fun, honestly.
+
+00:54.630 --> 00:57.900
+It's different then a lot of what we do with Git.
+
+00:57.900 --> 00:59.790
+Anyway, nice-to-haves.
+
+00:59.790 --> 01:00.623
+I wouldn't skip it.
+
+01:00.623 --> 01:03.450
+It's a short section, and I hope you enjoy it.
+
+01:03.450 --> 01:05.490
+It's kind of fun to go back, and edit,
+
+01:05.490 --> 01:08.703
+and manipulate Git history that's already happened, okay.
