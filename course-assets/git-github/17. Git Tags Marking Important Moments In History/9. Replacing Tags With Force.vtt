@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00.240 --> 00:01.073
+Instructor: If, for some reason,
+
+00:01.073 --> 00:03.120
+we need to move a tag,
+
+00:03.120 --> 00:06.330
+so we need to have it refer to a different commit,
+
+00:06.330 --> 00:10.200
+we can use the -f option to force that tag through.
+
+00:10.200 --> 00:12.360
+Because, as I'll show you,
+
+00:12.360 --> 00:15.090
+git does not like it if we try and reuse a tag.
+
+00:15.090 --> 00:16.410
+So I've got,
+
+00:16.410 --> 00:20.160
+let's just take this tag here, 17.0.3,
+
+00:20.160 --> 00:21.600
+and for whatever reason,
+
+00:21.600 --> 00:24.030
+it's a bad idea and you should not do this typically,
+
+00:24.030 --> 00:25.560
+but let's say I wanted to,
+
+00:25.560 --> 00:26.820
+actually, I made a mistake.
+
+00:26.820 --> 00:30.270
+I instead want this tag to point to this commit right here.
+
+00:30.270 --> 00:32.700
+So, I can copy that commit hash,
+
+00:32.700 --> 00:34.740
+and then I want 17.0.3,
+
+00:34.740 --> 00:36.360
+so I can do git tag,
+
+00:36.360 --> 00:40.200
+and then v17.0.3,
+
+00:40.200 --> 00:42.000
+and then this commit hash.
+
+00:42.000 --> 00:44.670
+But then git says, "Not so fast, fatal,"
+
+00:44.670 --> 00:46.200
+always so dark sounding,
+
+00:46.200 --> 00:48.180
+that tag already exists.
+
+00:48.180 --> 00:50.220
+So, tag names do need to be unique.
+
+00:50.220 --> 00:53.160
+I can't reuse that, so that's a problem.
+
+00:53.160 --> 00:54.570
+But if I want to move that,
+
+00:54.570 --> 00:55.710
+which is what I'm trying to do,
+
+00:55.710 --> 00:57.660
+I made a mistake for whatever reason,
+
+00:57.660 --> 01:00.510
+I want that tag to actually apply,
+
+01:00.510 --> 01:03.600
+I want it to refer to this commit right here instead,
+
+01:03.600 --> 01:05.523
+I use the -f flag.
+
+01:06.450 --> 01:07.710
+So, just like that.
+
+01:07.710 --> 01:09.960
+It doesn't have to go at the end of course, anywhere,
+
+01:09.960 --> 01:13.470
+but -f and I force it through.
+
+01:13.470 --> 01:16.050
+It says, "All right, all right, updated that tag."
+
+01:16.050 --> 01:17.940
+It was referring to this commit,
+
+01:17.940 --> 01:20.490
+now it refers to that commit you wanted.
+
+01:20.490 --> 01:24.270
+And if I do my git log, mm, there it is.
+
+01:24.270 --> 01:26.820
+It refers to this commit instead of that one.
+
+01:26.820 --> 01:29.220
+So, that's how you can move tags if needed.
+
+01:29.220 --> 01:31.080
+Not something I do very often at all
+
+01:31.080 --> 01:33.813
+but if you need to, use the -f flag.
