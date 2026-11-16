@@ -1,0 +1,295 @@
+WEBVTT
+
+00:00.300 --> 00:01.620
+Lecturer: So let's start this section off
+
+00:01.620 --> 00:05.400
+with a nice and easy topic, The Git Docs.
+
+00:05.400 --> 00:09.600
+Yes, this is a very funny joke because these are pictures
+
+00:09.600 --> 00:13.560
+of doctors, but we're not actually talking about doctors.
+
+00:13.560 --> 00:15.717
+We're talking about the Git Documentation.
+
+00:15.717 --> 00:17.550
+Can you believe how funny that is?
+
+00:17.550 --> 00:18.900
+So dumb jokes aside,
+
+00:18.900 --> 00:20.980
+we're talking about the Git Documentation
+
+00:22.001 --> 00:23.220
+which you may want to reference at some point
+
+00:23.220 --> 00:24.990
+if you have questions or you wanna learn more
+
+00:24.990 --> 00:27.660
+about one of the commands that I'm showing you.
+
+00:27.660 --> 00:32.583
+So the docs are accessible at git-scm.com.
+
+00:33.420 --> 00:34.680
+I never remember that.
+
+00:34.680 --> 00:38.400
+I just google Git and then I end up on this webpage.
+
+00:38.400 --> 00:40.500
+And then we want to go to Documentation
+
+00:40.500 --> 00:41.490
+pretty much every time.
+
+00:41.490 --> 00:42.840
+That's where I go.
+
+00:42.840 --> 00:44.910
+And you know, I'm not going to About,
+
+00:44.910 --> 00:47.370
+I don't need to see the advantages of Git compared
+
+00:47.370 --> 00:49.200
+to something else, I'm already using it.
+
+00:49.200 --> 00:50.820
+I just want the docs.
+
+00:50.820 --> 00:52.650
+Now there are a couple of sections here,
+
+00:52.650 --> 00:53.850
+and most of the time
+
+00:53.850 --> 00:55.770
+I end up looking at the Reference Manual.
+
+00:55.770 --> 00:59.430
+Occasionally this book called Pro Git.
+
+00:59.430 --> 01:01.290
+Pretty much never the Videos.
+
+01:01.290 --> 01:03.600
+So the Reference Manual, we'll start there,
+
+01:03.600 --> 01:04.800
+is exactly what it says.
+
+01:04.800 --> 01:07.560
+It's a reference manual, it's all the Git commands
+
+01:07.560 --> 01:09.750
+and main topics.
+
+01:09.750 --> 01:12.690
+It is not ordered, it's not a step-by-step guide,
+
+01:12.690 --> 01:14.280
+it's just a reference.
+
+01:14.280 --> 01:18.150
+So for example, we've been using git-commit.
+
+01:18.150 --> 01:20.520
+If I wanna learn more about git-commit,
+
+01:20.520 --> 01:22.710
+I can click on this, I'll zoom in.
+
+01:22.710 --> 01:24.510
+It tells us roughly what it does,
+
+01:24.510 --> 01:26.610
+record changes to the repository.
+
+01:26.610 --> 01:29.130
+Here's a more detailed description.
+
+01:29.130 --> 01:32.820
+But then as I scroll down this is what I end up looking at
+
+01:32.820 --> 01:36.000
+occasionally on the docs, all of these options.
+
+01:36.000 --> 01:38.460
+So this is one command, git-commit,
+
+01:38.460 --> 01:41.490
+and we've used one option, which is -m.
+
+01:41.490 --> 01:45.210
+Could find that on here somewhere, -m,
+
+01:45.210 --> 01:48.210
+which is short for --message=&lt;msg>.
+
+01:48.210 --> 01:51.180
+Use the given &lt;msg> as the commit message.
+
+01:51.180 --> 01:54.150
+We already know that, hopefully, you know how to do that.
+
+01:54.150 --> 01:56.700
+But here is where we would find that information.
+
+01:56.700 --> 01:58.530
+So there are lots of options
+
+01:58.530 --> 02:00.870
+for every single one of the Git commands I've shown you,
+
+02:00.870 --> 02:03.180
+and it's honestly overwhelming.
+
+02:03.180 --> 02:06.580
+I use very few of them, but there are a lot available.
+
+02:06.580 --> 02:08.520
+So if you ever have questions about them,
+
+02:08.520 --> 02:11.310
+if you see somebody use a command, git-commit
+
+02:11.310 --> 02:14.970
+and then the -z flag and you have no idea what that is,
+
+02:14.970 --> 02:16.770
+you can read about it here.
+
+02:16.770 --> 02:21.770
+Also, if we keep scrolling down, we will find examples.
+
+02:21.810 --> 02:23.970
+So there are some examples that show, you know,
+
+02:23.970 --> 02:26.880
+how to use git-commit in this example.
+
+02:26.880 --> 02:28.140
+But on, you know, another page,
+
+02:28.140 --> 02:29.370
+if we're looking at git-log,
+
+02:29.370 --> 02:31.110
+there will be examples for git-log
+
+02:31.110 --> 02:32.760
+or for some of the more advanced commands,
+
+02:32.760 --> 02:34.530
+that can be helpful.
+
+02:34.530 --> 02:35.850
+And that's pretty much it.
+
+02:35.850 --> 02:38.250
+I mean there's Discussion down at the bottom.
+
+02:38.250 --> 02:40.530
+Basically for every Git command,
+
+02:40.530 --> 02:42.870
+we deal with this really thorough,
+
+02:42.870 --> 02:46.980
+but also intimidating set of documentation.
+
+02:46.980 --> 02:51.210
+So if you are looking for something more educational
+
+02:51.210 --> 02:55.170
+or more sort of teachy, you can go to the book.
+
+02:55.170 --> 02:58.020
+And this is grouped into topics that are ordered
+
+02:58.020 --> 02:59.190
+and it explains things.
+
+02:59.190 --> 03:01.920
+So for example, we haven't yet covered Branching,
+
+03:01.920 --> 03:03.930
+but if you wanted to learn more about Branching
+
+03:03.930 --> 03:06.420
+or if my explanation is insufficient
+
+03:06.420 --> 03:07.800
+once you get to that section,
+
+03:07.800 --> 03:09.900
+you can read more and have diagrams
+
+03:09.900 --> 03:12.300
+and sort of step-by-step explanation here.
+
+03:12.300 --> 03:13.860
+And it's pretty, well, I shouldn't say pretty,
+
+03:13.860 --> 03:15.420
+it's very well written.
+
+03:15.420 --> 03:20.070
+It's a well done book and it is a nice antidote to the dry
+
+03:20.070 --> 03:24.930
+and you know, purely reference manual documentation.
+
+03:24.930 --> 03:28.920
+The book really does have a clear path through it.
+
+03:28.920 --> 03:31.770
+So I don't necessarily recommend reading the entire book.
+
+03:31.770 --> 03:33.930
+But I mean, if I come here occasionally
+
+03:33.930 --> 03:35.190
+when I have questions about things,
+
+03:35.190 --> 03:37.830
+some commands that I haven't used in a while
+
+03:37.830 --> 03:39.870
+or configuring things,
+
+03:39.870 --> 03:42.540
+the book is very helpful to explain them.
+
+03:42.540 --> 03:44.130
+And then if you just have a one-off question
+
+03:44.130 --> 03:45.270
+about what is that flag
+
+03:45.270 --> 03:48.900
+or is there a way to do X with the git-log command,
+
+03:48.900 --> 03:51.270
+you can go read about it on the Reference Manual.
+
+03:51.270 --> 03:55.200
+Just do your best to stay sane while reading these docs.
+
+03:55.200 --> 03:56.250
+There's so many options,
+
+03:56.250 --> 03:58.650
+so many flags for every single command.
+
+03:58.650 --> 04:00.810
+All right, so that's how we get to the docs.
+
+04:00.810 --> 04:05.810
+Git-scm.com, Documentation, Reference Manual or Book.
