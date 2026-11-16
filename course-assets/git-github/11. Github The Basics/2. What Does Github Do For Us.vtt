@@ -1,0 +1,502 @@
+WEBVTT
+
+00:00.180 --> 00:01.410
+Instructor: Alright, so let's start
+
+00:01.410 --> 00:02.820
+with the obvious question.
+
+00:02.820 --> 00:06.129
+What exactly is GitHub or what does it do?
+
+00:06.129 --> 00:08.520
+There's many answers to that question
+
+00:08.520 --> 00:09.690
+because GitHub over the years
+
+00:09.690 --> 00:12.780
+has really evolved and added on a bunch of features.
+
+00:12.780 --> 00:14.280
+But the core mechanic,
+
+00:14.280 --> 00:16.950
+the single thing that GitHub is known for
+
+00:16.950 --> 00:20.970
+is that it's a hosting platform for Git repositories.
+
+00:20.970 --> 00:24.480
+GitHub allows us to put our Git repos in the cloud.
+
+00:24.480 --> 00:25.800
+We can access them from anywhere,
+
+00:25.800 --> 00:27.360
+we can share them with people,
+
+00:27.360 --> 00:30.930
+and we can collaborate with people on Git repos.
+
+00:30.930 --> 00:32.850
+So GitHub has a bunch of features built
+
+00:32.850 --> 00:34.191
+that have to do with collaboration
+
+00:34.191 --> 00:37.290
+and discussion about Git repos.
+
+00:37.290 --> 00:39.030
+So I showed this slide very early on
+
+00:39.030 --> 00:40.819
+but I just want, I return to it.
+
+00:40.819 --> 00:42.630
+There is an important
+
+00:42.630 --> 00:44.850
+huge difference between Git and GitHub.
+
+00:44.850 --> 00:46.917
+Git, hopefully you're familiar with by now
+
+00:46.917 --> 00:49.218
+is a version control system
+
+00:49.218 --> 00:51.734
+that we run on our machines locally.
+
+00:51.734 --> 00:54.150
+We don't need the internet, we don't need an account.
+
+00:54.150 --> 00:56.190
+You could go your entire life working with Git
+
+00:56.190 --> 00:57.420
+and never using GitHub.
+
+00:57.420 --> 01:00.450
+GitHub on the other hand, is a website.
+
+01:00.450 --> 01:03.180
+It's a hosting platform for Git repositories.
+
+01:03.180 --> 01:04.980
+You need the internet to access it.
+
+01:04.980 --> 01:06.205
+You need an account.
+
+01:06.205 --> 01:09.870
+It is completely, I don't wanna say completely separate
+
+01:09.870 --> 01:14.280
+from Git, because it is a hosting service for Git repos,
+
+01:14.280 --> 01:16.889
+but Git itself is completely independent.
+
+01:16.889 --> 01:19.800
+So imagine I'm working on a video game,
+
+01:19.800 --> 01:22.658
+a mobile game that I'm developing on my machine,
+
+01:22.658 --> 01:25.020
+and I'm using Git to track it.
+
+01:25.020 --> 01:26.160
+I have a couple of commits.
+
+01:26.160 --> 01:27.780
+Let's say there's like a couple hundred.
+
+01:27.780 --> 01:30.060
+Those three you're seeing on my machine are just
+
+01:30.060 --> 01:31.740
+to fit in the diagram
+
+01:31.740 --> 01:33.960
+and I can make a GitHub account,
+
+01:33.960 --> 01:38.100
+make a GitHub repository, and push my local code,
+
+01:38.100 --> 01:40.860
+that repo from my machine up to GitHub.
+
+01:40.860 --> 01:43.620
+And I could do this for a couple of reasons.
+
+01:43.620 --> 01:46.080
+One, I just wanna back things up.
+
+01:46.080 --> 01:48.030
+So I keep doing my work
+
+01:48.030 --> 01:50.220
+and I can push those changes up to GitHub.
+
+01:50.220 --> 01:54.330
+So now GitHub has a record of my repository.
+
+01:54.330 --> 01:57.210
+So maybe there's a house fire, a horrible tragedy.
+
+01:57.210 --> 01:59.820
+I get a new laptop, I lost my old laptop
+
+01:59.820 --> 02:01.170
+with the repo on it.
+
+02:01.170 --> 02:02.430
+Well, fortunately for me,
+
+02:02.430 --> 02:04.860
+assuming I kept my GitHub up to date,
+
+02:04.860 --> 02:07.500
+I can go to GitHub and get that code
+
+02:07.500 --> 02:10.350
+and pull it down to my machine.
+
+02:10.350 --> 02:12.330
+So that's kind of a, I won't say rare,
+
+02:12.330 --> 02:14.490
+but not as common scenario.
+
+02:14.490 --> 02:18.210
+What really is great about pushing my code up to GitHub
+
+02:18.210 --> 02:20.100
+is that I can collaborate.
+
+02:20.100 --> 02:22.950
+So maybe I decide I need to bring in, you know, a
+
+02:22.950 --> 02:25.687
+I don't know, another engineer over here on the left
+
+02:25.687 --> 02:29.100
+and I don't know what her name is, let's say Zelda.
+
+02:29.100 --> 02:32.100
+And then I bring in a graphics artist,
+
+02:32.100 --> 02:33.960
+a pixel artist over here on the right.
+
+02:33.960 --> 02:35.610
+His name is Link.
+
+02:35.610 --> 02:36.837
+So I need their help.
+
+02:36.837 --> 02:40.020
+So using GitHub, they can all clone
+
+02:40.020 --> 02:42.150
+or they can all get access to this repository
+
+02:42.150 --> 02:43.143
+on their machine,
+
+02:44.607 --> 02:45.440
+and then they can make contributions,
+
+02:45.440 --> 02:46.440
+put 'em up on GitHub
+
+02:46.440 --> 02:48.030
+and then we can pull them down
+
+02:48.030 --> 02:49.948
+and get those latest contributions to those new commits.
+
+02:49.948 --> 02:51.879
+And this allows us to collaborate
+
+02:51.879 --> 02:54.720
+and maybe eventually if my game's a hit,
+
+02:54.720 --> 02:57.900
+we're talking about dozens or hundreds of collaborators.
+
+02:57.900 --> 03:00.033
+So this is really where GitHub shines.
+
+03:01.337 --> 03:02.170
+It's important to know that GitHub
+
+03:02.170 --> 03:04.556
+is not the only option for some of these features,
+
+03:04.556 --> 03:07.860
+specifically for hosting repositories.
+
+03:07.860 --> 03:10.588
+There are other options like GitLab, Bitbucket,
+
+03:10.588 --> 03:13.560
+but the truth is that in recent years
+
+03:13.560 --> 03:16.830
+GitHub has just completely obliterated the competition.
+
+03:16.830 --> 03:19.050
+It's now become the world's largest host
+
+03:19.050 --> 03:20.700
+of source code.
+
+03:20.700 --> 03:22.380
+In early 2020,
+
+03:22.380 --> 03:25.087
+they reported having over 40 million users,
+
+03:25.087 --> 03:30.087
+these days it looks like over 56 million in 2021,
+
+03:30.660 --> 03:32.580
+just from their own marketing page,
+
+03:32.580 --> 03:33.633
+which we'll come back to.
+
+03:33.633 --> 03:36.030
+It's really a lovely marketing page.
+
+03:36.030 --> 03:38.790
+And the last slide here on GitHub that's very important
+
+03:38.790 --> 03:41.040
+is that it's free for our purposes.
+
+03:41.040 --> 03:43.770
+So unlike a lot of subscription platforms
+
+03:43.770 --> 03:47.190
+or websites where the free tier is just garbage,
+
+03:47.190 --> 03:49.350
+or it's just supposed to like lure you
+
+03:49.350 --> 03:51.120
+in to paying more, right?
+
+03:51.120 --> 03:53.940
+Where maybe you have a very limited set of features
+
+03:53.940 --> 03:55.350
+and if you pay 10 bucks a month
+
+03:55.350 --> 03:57.375
+then you can actually use this in a useful way.
+
+03:57.375 --> 03:59.550
+That is not GitHub's model.
+
+03:59.550 --> 04:01.630
+GitHub offers paid tiers,
+
+04:01.630 --> 04:04.560
+but they're largely oriented towards enterprise,
+
+04:04.560 --> 04:05.790
+towards companies.
+
+04:05.790 --> 04:08.430
+For individuals, for developers,
+
+04:08.430 --> 04:10.530
+the free tier gives you pretty much everything
+
+04:10.530 --> 04:11.363
+you would need
+
+04:11.363 --> 04:14.430
+unless you are creating some incredibly popular tool,
+
+04:14.430 --> 04:16.478
+an open source project that's like used
+
+04:16.478 --> 04:18.060
+by millions of people.
+
+04:18.060 --> 04:21.480
+In all likelihood, you'll never need to subscribe to GitHub.
+
+04:21.480 --> 04:24.242
+So I can show you the different pricing tiers here, right?
+
+04:24.242 --> 04:27.761
+Here's free, there is a team, there's enterprise level,
+
+04:27.761 --> 04:29.137
+but with this free level,
+
+04:29.137 --> 04:33.540
+we have unlimited public and private repositories,
+
+04:33.540 --> 04:35.055
+unlimited collaborators.
+
+04:35.055 --> 04:37.410
+There's these things called GitHub actions
+
+04:37.410 --> 04:38.340
+we'll talk more about.
+
+04:38.340 --> 04:40.050
+So there are some distinctions there.
+
+04:40.050 --> 04:43.650
+You pay for more actions or more minutes a month.
+
+04:43.650 --> 04:45.330
+And then there are some security features.
+
+04:45.330 --> 04:47.190
+Larger enterprise companies might want,
+
+04:47.190 --> 04:49.241
+single sign-on, advanced auditing,
+
+04:49.241 --> 04:50.942
+but we really don't need to worry about that.
+
+04:50.942 --> 04:54.300
+We're focused on just the core mechanics of GitHub.
+
+04:54.300 --> 04:55.620
+It's all here for us,
+
+04:55.620 --> 04:57.630
+which we are very, very thankful for.
+
+04:57.630 --> 05:00.360
+Somewhat rare in the world of subscriptions.
+
+05:00.360 --> 05:03.180
+So I'll end off by just scrolling through their
+
+05:03.180 --> 05:04.770
+beautiful marketing page.
+
+05:04.770 --> 05:06.729
+I really love the illustrations they have.
+
+05:06.729 --> 05:09.450
+You can see, you know, some stats about
+
+05:09.450 --> 05:10.860
+how many people are using it.
+
+05:10.860 --> 05:13.020
+72% of Fortune 50 companies.
+
+05:13.020 --> 05:15.840
+It's really grown both in market share for just
+
+05:15.840 --> 05:18.960
+open source development and random developers like me,
+
+05:18.960 --> 05:21.420
+but also in large companies.
+
+05:21.420 --> 05:22.964
+So tons of big companies use it.
+
+05:22.964 --> 05:25.320
+I'd say it all boils down to this,
+
+05:25.320 --> 05:28.110
+give your code a home in the cloud.
+
+05:28.110 --> 05:30.395
+But there are many other features.
+
+05:30.395 --> 05:33.690
+It almost acts as a social network for Git repos
+
+05:33.690 --> 05:36.720
+where you can chat, write comments,
+
+05:36.720 --> 05:38.310
+approve, disapprove,
+
+05:38.310 --> 05:41.100
+suggest changes to projects,
+
+05:41.100 --> 05:44.010
+merge code in, reject code,
+
+05:44.010 --> 05:46.650
+call attention to certain lines of code.
+
+05:46.650 --> 05:48.930
+Then there are some other things that don't necessarily
+
+05:48.930 --> 05:50.790
+have to do with Git repos,
+
+05:50.790 --> 05:52.500
+but are kind of adjacent,
+
+05:52.500 --> 05:54.715
+like these interactive developer environments.
+
+05:54.715 --> 05:55.860
+I think, what do they call it?
+
+05:55.860 --> 05:56.700
+Code spaces.
+
+05:56.700 --> 05:57.930
+That's new.
+
+05:57.930 --> 06:00.750
+GitHub actions, we'll come back to later on.
+
+06:00.750 --> 06:01.989
+Additional features like
+
+06:01.989 --> 06:04.380
+automatically scanning your repositories
+
+06:04.380 --> 06:06.480
+and looking for common vulnerabilities
+
+06:06.480 --> 06:09.270
+and letting you know ahead of time
+
+06:09.270 --> 06:10.830
+and a whole bunch of other things.
+
+06:10.830 --> 06:12.840
+So, ah, let's end with that.
+
+06:12.840 --> 06:14.580
+What a beautiful illustration.
+
+06:14.580 --> 06:16.230
+Okay, so that's it.
+
+06:16.230 --> 06:18.660
+GitHub does a lot, but for us, what we care about
+
+06:18.660 --> 06:20.940
+is the fact that it will host our repositories
+
+06:20.940 --> 06:22.641
+and help facilitate collaboration.
+
+06:22.641 --> 06:23.703
+Whoof.
