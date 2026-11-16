@@ -1,0 +1,535 @@
+WEBVTT
+
+00:00.180 --> 00:01.080
+Instructor: Okay, we've made it
+
+00:01.080 --> 00:03.150
+to our last command for this section.
+
+00:03.150 --> 00:06.840
+Another similar sounding command, git revert.
+
+00:06.840 --> 00:08.580
+Yes, we have restore,
+
+00:08.580 --> 00:10.710
+we have reset and now revert.
+
+00:10.710 --> 00:13.140
+They all kind of sound like they do the same thing.
+
+00:13.140 --> 00:16.830
+Revert actually does something very similar to reset.
+
+00:16.830 --> 00:19.710
+It has to do with undoing changes from a commit,
+
+00:19.710 --> 00:21.810
+but there's a very important difference.
+
+00:21.810 --> 00:25.500
+So both revert and reset will undo changes from a commits,
+
+00:25.500 --> 00:27.780
+but the way that they accomplish it is different
+
+00:27.780 --> 00:29.340
+as we saw with reset.
+
+00:29.340 --> 00:31.620
+Reset removes commits entirely
+
+00:31.620 --> 00:33.600
+and it moves the branch pointer backwards
+
+00:33.600 --> 00:35.610
+as if those commits never occurred,
+
+00:35.610 --> 00:37.710
+they never existed in the first place.
+
+00:37.710 --> 00:39.270
+Revert does something different.
+
+00:39.270 --> 00:41.580
+It actually makes a brand new commit.
+
+00:41.580 --> 00:42.840
+And in that new commit,
+
+00:42.840 --> 00:45.420
+it undoes the changes from an earlier commit.
+
+00:45.420 --> 00:47.940
+So it still helps us undo changes,
+
+00:47.940 --> 00:49.920
+but again, it makes a new commit
+
+00:49.920 --> 00:52.740
+that basically says undoing changes
+
+00:52.740 --> 00:55.200
+instead of just deleting everything
+
+00:55.200 --> 00:57.270
+and deleting history, removing commits.
+
+00:57.270 --> 00:58.380
+That can be a problem
+
+00:58.380 --> 01:00.300
+if you're collaborating with other people.
+
+01:00.300 --> 01:01.470
+So at the end of this video,
+
+01:01.470 --> 01:03.750
+I'll explain why you might use revert
+
+01:03.750 --> 01:06.120
+or reset, vice versa.
+
+01:06.120 --> 01:08.520
+Okay, so let me just visualize that for you.
+
+01:08.520 --> 01:11.580
+So here is a diagram of using reset
+
+01:11.580 --> 01:14.430
+where if we reset back two commits,
+
+01:14.430 --> 01:16.020
+we lose those commits entirely.
+
+01:16.020 --> 01:17.550
+They're gone.
+
+01:17.550 --> 01:19.470
+Whereas if I use revert,
+
+01:19.470 --> 01:20.820
+let's say that I made a mistake
+
+01:20.820 --> 01:21.990
+on this most recent commit.
+
+01:21.990 --> 01:23.340
+It's already been committed
+
+01:23.340 --> 01:27.390
+and I want to remove that change or changes,
+
+01:27.390 --> 01:29.910
+but I'm gonna revert.
+
+01:29.910 --> 01:31.650
+I end up with a new commit
+
+01:31.650 --> 01:35.010
+and this new commit effectively undoes this one.
+
+01:35.010 --> 01:37.740
+So I revert a particular commit hash.
+
+01:37.740 --> 01:39.870
+This is the commit that I'm reverting.
+
+01:39.870 --> 01:40.800
+It doesn't go away.
+
+01:40.800 --> 01:43.320
+It's still there in the history of my repo,
+
+01:43.320 --> 01:46.230
+but the changes from it are gone hopefully.
+
+01:46.230 --> 01:47.460
+So let me demonstrate this.
+
+01:47.460 --> 01:50.160
+I'll go ahead and do a really simple example.
+
+01:50.160 --> 01:52.080
+I'll make a bad commit.
+
+01:52.080 --> 01:53.853
+Bad commit.
+
+01:55.500 --> 01:58.050
+And same thing, I'll do it over in cat.
+
+01:58.050 --> 01:59.790
+Okay, so I have two changes
+
+01:59.790 --> 02:01.320
+and I haven't made a commit yet,
+
+02:01.320 --> 02:06.320
+but I'll commit them now, -a -m "make a bad commit".
+
+02:08.910 --> 02:11.520
+Okay, so I have this bad commit.
+
+02:11.520 --> 02:12.810
+We can ignore this other branch,
+
+02:12.810 --> 02:15.630
+but on master, I have bad commits
+
+02:15.630 --> 02:17.820
+and I realize, you know,
+
+02:17.820 --> 02:19.950
+I really did not mean to make that commit.
+
+02:19.950 --> 02:22.140
+I want to get rid of it.
+
+02:22.140 --> 02:25.080
+Well, in the last video, we saw to use reset,
+
+02:25.080 --> 02:27.090
+but I actually don't wanna reset.
+
+02:27.090 --> 02:29.250
+I want to keep a record of this commit,
+
+02:29.250 --> 02:31.410
+but I want to undo the changes.
+
+02:31.410 --> 02:32.880
+So I'm gonna use revert.
+
+02:32.880 --> 02:35.580
+So this is the commit I want to revert.
+
+02:35.580 --> 02:38.130
+I can use the whole, you know, head tilde one,
+
+02:38.130 --> 02:39.840
+tilde two type syntax
+
+02:39.840 --> 02:42.120
+or I can use a particular commit hash.
+
+02:42.120 --> 02:44.250
+So I'm gonna do git revert
+
+02:44.250 --> 02:47.010
+and then this commit hash right there.
+
+02:47.010 --> 02:47.843
+Okay.
+
+02:48.960 --> 02:50.970
+And it opens up my editor, right?
+
+02:50.970 --> 02:52.800
+Because it generates a new commit.
+
+02:52.800 --> 02:54.330
+Just like when we merge,
+
+02:54.330 --> 02:56.070
+it generates a commit when we merge.
+
+02:56.070 --> 02:58.500
+Or sometimes, if it's not a fast forward.
+
+02:58.500 --> 02:59.370
+When there's a merge commit,
+
+02:59.370 --> 03:00.720
+we need to provide a message.
+
+03:00.720 --> 03:04.500
+So the default message is revert, make a bad commit.
+
+03:04.500 --> 03:06.990
+This was the commit that we reverted, right?
+
+03:06.990 --> 03:08.070
+That was the message.
+
+03:08.070 --> 03:09.750
+Make a bad commit.
+
+03:09.750 --> 03:11.160
+So it's reverting that.
+
+03:11.160 --> 03:12.630
+Now we can put other stuff in here,
+
+03:12.630 --> 03:14.910
+maybe an explanation why we're reverting it,
+
+03:14.910 --> 03:16.530
+what's wrong with that commit,
+
+03:16.530 --> 03:17.880
+but I'm just gonna close it
+
+03:18.840 --> 03:21.060
+and let's see what happens.
+
+03:21.060 --> 03:23.580
+If we type git log oneline,
+
+03:23.580 --> 03:25.500
+that bad commit is still there,
+
+03:25.500 --> 03:27.570
+but now we have this new commit
+
+03:27.570 --> 03:29.100
+at the tip of our master branch
+
+03:29.100 --> 03:32.490
+and that new commit reverts the one before it.
+
+03:32.490 --> 03:34.020
+If we go back to our editor,
+
+03:34.020 --> 03:36.630
+we can see that the two changes we made are gone.
+
+03:36.630 --> 03:40.320
+So we still have the history preserved of that commit,
+
+03:40.320 --> 03:42.273
+but its changes have been reverted.
+
+03:43.140 --> 03:44.910
+So why would you do this?
+
+03:44.910 --> 03:45.840
+What's the reasoning?
+
+03:45.840 --> 03:47.430
+Why not just reset?
+
+03:47.430 --> 03:49.530
+Well it has to do with collaboration
+
+03:49.530 --> 03:51.150
+which we haven't really talked about yet,
+
+03:51.150 --> 03:53.850
+but if you're working on a team with other people
+
+03:53.850 --> 03:55.860
+and they're all on, you know, different machines,
+
+03:55.860 --> 03:58.083
+you don't just all work on the same laptop.
+
+03:58.950 --> 04:02.850
+If other people have copies of that commit,
+
+04:02.850 --> 04:06.690
+if everyone else had that bad commit on their copy
+
+04:06.690 --> 04:09.450
+and then I decided to get rid of it using reset,
+
+04:09.450 --> 04:11.460
+that can cause some serious problems
+
+04:11.460 --> 04:12.960
+because I'm undoing history
+
+04:12.960 --> 04:14.340
+that other people have
+
+04:14.340 --> 04:16.650
+and that can be difficult to reconcile.
+
+04:16.650 --> 04:20.280
+So instead, what we usually would do is use revert
+
+04:20.280 --> 04:23.010
+and that will make a new commit, as we've seen
+
+04:23.010 --> 04:25.080
+and I can share that new commit with everyone.
+
+04:25.080 --> 04:27.420
+Now potentially, I might make a mistake
+
+04:27.420 --> 04:29.040
+and make a commit I want to get rid of
+
+04:29.040 --> 04:31.530
+and I haven't shared it with anyone else yet.
+
+04:31.530 --> 04:33.210
+Then it's fine to use reset.
+
+04:33.210 --> 04:34.110
+Nobody ever knows.
+
+04:34.110 --> 04:35.730
+They don't have it on their machines.
+
+04:35.730 --> 04:38.100
+But as soon as collaborators have a commit,
+
+04:38.100 --> 04:39.720
+if you're trying to get rid of those changes,
+
+04:39.720 --> 04:41.340
+it's better to use revert.
+
+04:41.340 --> 04:43.140
+So here's a demonstration.
+
+04:43.140 --> 04:45.570
+Some diagrams, I'm working with two friends
+
+04:45.570 --> 04:48.690
+and then here's my local version of my repository.
+
+04:48.690 --> 04:50.820
+So I'm using just commit numbers here.
+
+04:50.820 --> 04:52.950
+So everybody has one, two, and three, right?
+
+04:52.950 --> 04:54.330
+One, two, three, one, two, three.
+
+04:54.330 --> 04:57.870
+And also, my friend down here has done more work.
+
+04:57.870 --> 04:59.850
+She has commit four that she's worked on
+
+04:59.850 --> 05:00.960
+and I don't have that
+
+05:00.960 --> 05:02.880
+and neither does our other friend.
+
+05:02.880 --> 05:05.130
+Anyway, I realize I wanna get rid
+
+05:05.130 --> 05:07.500
+of those two and three commits.
+
+05:07.500 --> 05:10.350
+I use reset and that's a problem
+
+05:10.350 --> 05:12.480
+'cause I've already shared that with my friends.
+
+05:12.480 --> 05:13.920
+So it's gonna be very difficult
+
+05:13.920 --> 05:16.590
+to reconcile their code with mine
+
+05:16.590 --> 05:17.880
+because they already have those commits
+
+05:17.880 --> 05:19.590
+and they've been working on top of them.
+
+05:19.590 --> 05:22.380
+I altered the history that they already have.
+
+05:22.380 --> 05:24.750
+So instead what I should do is revert
+
+05:24.750 --> 05:26.130
+and make a new commit
+
+05:26.130 --> 05:28.890
+that undoes the changes from some other commit.
+
+05:28.890 --> 05:30.990
+And that is easy for me to share with them
+
+05:30.990 --> 05:33.030
+and for them to reconcile.
+
+05:33.030 --> 05:35.460
+So it's kind of a simple explanation
+
+05:35.460 --> 05:37.500
+because we haven't talked about collaborating
+
+05:37.500 --> 05:39.390
+and sharing code and you know,
+
+05:39.390 --> 05:41.940
+pushing and pulling in GitHub and all of that stuff.
+
+05:41.940 --> 05:43.650
+But that's coming up very soon.
+
+05:43.650 --> 05:45.060
+I think we're pretty much at the end
+
+05:45.060 --> 05:47.550
+of sort of the core git functionality
+
+05:47.550 --> 05:49.500
+and we're gonna start talking about GitHub.
+
+05:49.500 --> 05:51.360
+The last thing I'll say about the revert command
+
+05:51.360 --> 05:53.850
+is that sometimes reverting a commit
+
+05:53.850 --> 05:55.890
+can result in conflicts
+
+05:55.890 --> 05:57.180
+where you need to go into the file,
+
+05:57.180 --> 05:59.310
+just like any other merge conflict
+
+05:59.310 --> 06:00.720
+and figure out what you want to keep
+
+06:00.720 --> 06:02.010
+and what you want to get rid of.
+
+06:02.010 --> 06:05.430
+Because like our commit we just reverted was simple,
+
+06:05.430 --> 06:07.410
+it was just get rid of a line,
+
+06:07.410 --> 06:09.960
+but if you're reverting something from a while back
+
+06:10.800 --> 06:13.410
+and Git doesn't know what to keep and what not to keep,
+
+06:13.410 --> 06:14.850
+you have to do it yourself.
+
+06:14.850 --> 06:15.930
+You've gotta go into the files
+
+06:15.930 --> 06:17.310
+and resolve the conflicts
+
+06:17.310 --> 06:19.170
+and then make your commit manually.
+
+06:19.170 --> 06:20.820
+But the end result is the same.
+
+06:20.820 --> 06:22.290
+Okay, so that's git revert.
+
+06:22.290 --> 06:25.410
+It will undo a commit by making a new commit
+
+06:25.410 --> 06:26.733
+that undoes the changes.
