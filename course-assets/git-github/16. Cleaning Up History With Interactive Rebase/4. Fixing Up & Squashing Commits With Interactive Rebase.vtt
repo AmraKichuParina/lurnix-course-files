@@ -1,0 +1,514 @@
+WEBVTT
+
+00:00.300 --> 00:03.180
+Instructor: All right, so we saw how to reword a commit,
+
+00:03.180 --> 00:05.640
+and you can do that with multiple commits,
+
+00:05.640 --> 00:08.190
+instead of just pick for each one,
+
+00:08.190 --> 00:09.780
+you can replace it with reword
+
+00:09.780 --> 00:11.880
+if you wanted to reword all of them.
+
+00:11.880 --> 00:15.300
+But what I wanna do next is focus on combining,
+
+00:15.300 --> 00:16.950
+let's do these two,
+
+00:16.950 --> 00:18.450
+where I have add bootstrap,
+
+00:18.450 --> 00:22.320
+and then whoops forgot to add bootstrap JavaScript script.
+
+00:22.320 --> 00:24.480
+So in this example, or in this commit,
+
+00:24.480 --> 00:28.350
+I added a CSS file for Bootstrap,
+
+00:28.350 --> 00:30.090
+and then in this next commit,
+
+00:30.090 --> 00:33.810
+I realized I had forgotten to add the JavaScript script.
+
+00:33.810 --> 00:36.180
+So two things that really both should be part
+
+00:36.180 --> 00:38.010
+of add bootstrap.
+
+00:38.010 --> 00:39.600
+So I want the contents of both commits.
+
+00:39.600 --> 00:41.190
+I don't wanna just delete this,
+
+00:41.190 --> 00:42.630
+but I wanna get rid of that message,
+
+00:42.630 --> 00:44.850
+I don't want to have a moment in history
+
+00:44.850 --> 00:46.200
+where you see this change.
+
+00:46.200 --> 00:48.690
+I want it to be incorporated in this commit.
+
+00:48.690 --> 00:50.160
+So we have an option to do that.
+
+00:50.160 --> 00:52.890
+We can use fixup, a different command,
+
+00:52.890 --> 00:55.380
+which basically says use the contents of this commit,
+
+00:55.380 --> 00:58.410
+but meld it or mush it into the previous commits,
+
+00:58.410 --> 01:00.510
+and get rid of its commit message.
+
+01:00.510 --> 01:01.650
+So that's what I want.
+
+01:01.650 --> 01:04.260
+I wanna just get rid of this commit message,
+
+01:04.260 --> 01:05.640
+take the contents of the commit,
+
+01:05.640 --> 01:08.070
+and mush it together with this one.
+
+01:08.070 --> 01:09.450
+So I'll show you that now,
+
+01:09.450 --> 01:11.880
+I need to figure out how far back I wanna rebase.
+
+01:11.880 --> 01:13.410
+I'll just do nine again,
+
+01:13.410 --> 01:16.320
+just we don't need to, but sure, nine.
+
+01:16.320 --> 01:17.553
+So it opens this up,
+
+01:18.570 --> 01:22.440
+and I need to find the one that I want to fix up.
+
+01:22.440 --> 01:25.770
+So it says, it's like squash, which will use the commit,
+
+01:25.770 --> 01:27.900
+but meld it into the previous commit.
+
+01:27.900 --> 01:30.000
+But this time, if we use fixup,
+
+01:30.000 --> 01:32.760
+it also discards the commit's log message.
+
+01:32.760 --> 01:34.350
+So squash does not do that,
+
+01:34.350 --> 01:37.020
+I tend not to use squash, I tend to use fixup,
+
+01:37.020 --> 01:38.700
+if I wanna combine commits,
+
+01:38.700 --> 01:41.430
+I probably wanna only keep one commit message,
+
+01:41.430 --> 01:43.800
+but keep the contents of both.
+
+01:43.800 --> 01:46.260
+Okay, so we'll start here,
+
+01:46.260 --> 01:48.003
+pick that, fine, keep it.
+
+01:49.020 --> 01:51.900
+Pick that, that means keep it, don't change.
+
+01:51.900 --> 01:54.810
+Pick, add bootstrap, I don't wanna change that either.
+
+01:54.810 --> 01:59.700
+But this one here, I'm gonna change to fixup, or just F,
+
+01:59.700 --> 02:01.590
+but again, I'm gonna type the whole thing out,
+
+02:01.590 --> 02:04.350
+so fixup, and then save.
+
+02:04.350 --> 02:07.200
+And this will take the commit from before,
+
+02:07.200 --> 02:09.960
+and add this commit onto that one.
+
+02:09.960 --> 02:11.610
+So take the contents of this commit,
+
+02:11.610 --> 02:14.400
+which I think it was just a single JavaScript line,
+
+02:14.400 --> 02:17.340
+and add that on to this commit,
+
+02:17.340 --> 02:19.800
+and then just get rid of this commit message.
+
+02:19.800 --> 02:23.070
+So I'll show you when I close this,
+
+02:23.070 --> 02:26.760
+we're gonna get rid of this file, or X out after I save,
+
+02:26.760 --> 02:29.760
+go back to our terminal, successfully rebased.
+
+02:29.760 --> 02:33.330
+Okay, so git status, we're still in the same branch,
+
+02:33.330 --> 02:36.690
+nothing has really changed, at least not obviously.
+
+02:36.690 --> 02:41.040
+But if I do a git log oneline, take a look.
+
+02:41.040 --> 02:43.230
+We just have add bootstrap,
+
+02:43.230 --> 02:46.410
+so that makes it seem like we deleted that commit
+
+02:46.410 --> 02:48.750
+that came after it, I don't see it here,
+
+02:48.750 --> 02:51.750
+but I'm telling you the contents are still included.
+
+02:51.750 --> 02:53.700
+I can prove that to you, I guess,
+
+02:53.700 --> 02:55.530
+if I go to GitHub,
+
+02:55.530 --> 02:58.740
+and I take a look at what we did in that commit,
+
+02:58.740 --> 03:02.160
+if I look at this, forgot to add bootstrap js commit,
+
+03:02.160 --> 03:03.840
+it was just this line,
+
+03:03.840 --> 03:06.570
+so line 14, 15, 16 of the HTML file,
+
+03:06.570 --> 03:09.570
+although that will change, but it's this script.
+
+03:09.570 --> 03:10.800
+This is gonna be really annoying,
+
+03:10.800 --> 03:14.580
+but you can see script cdn.jsdelivr, anonymous,
+
+03:14.580 --> 03:16.230
+whatever you wanna look at there.
+
+03:16.230 --> 03:20.280
+If I open up my project locally, I still see that script,
+
+03:20.280 --> 03:22.707
+it's gonna be down here, right there.
+
+03:22.707 --> 03:24.960
+cdn.jsdelivr, anonymous,
+
+03:24.960 --> 03:27.150
+it's the same contents of that commit,
+
+03:27.150 --> 03:29.340
+but that commit is now mushed in,
+
+03:29.340 --> 03:32.490
+it's gone from our local machine, it's still on GitHub,
+
+03:32.490 --> 03:35.040
+but I don't have that commit with that message,
+
+03:35.040 --> 03:37.260
+whoops forgot to add bootstrap js script.
+
+03:37.260 --> 03:39.810
+I combined that, I fixed it up,
+
+03:39.810 --> 03:42.840
+so it was right here, this one,
+
+03:42.840 --> 03:44.850
+whoops forgot to add bootstrap js script,
+
+03:44.850 --> 03:46.980
+smushed it in with add bootstrap,
+
+03:46.980 --> 03:50.280
+and we end up with just one streamlined commit
+
+03:50.280 --> 03:52.020
+for those two commits.
+
+03:52.020 --> 03:53.580
+So all the changes are still there,
+
+03:53.580 --> 03:57.420
+we just have one simplified commit that says add bootstrap.
+
+03:57.420 --> 04:00.000
+I could also rename this if I wanted to reword it.
+
+04:00.000 --> 04:02.460
+I could say add bootstrap, CSS, and js,
+
+04:02.460 --> 04:04.230
+and it's totally up to me.
+
+04:04.230 --> 04:06.540
+Now as a consequence, by doing that,
+
+04:06.540 --> 04:09.210
+once again all of these commits that come after it
+
+04:09.210 --> 04:10.620
+are going to be new.
+
+04:10.620 --> 04:14.280
+So that pick command just means keep the contents,
+
+04:14.280 --> 04:16.440
+keep everything you can from this commit,
+
+04:16.440 --> 04:19.560
+but it may end up that we need to remake that commit
+
+04:19.560 --> 04:21.300
+if something changes before it.
+
+04:21.300 --> 04:24.000
+So we changed this commit here,
+
+04:24.000 --> 04:28.590
+so this has a new hash, add top navbar, de1,
+
+04:28.590 --> 04:31.110
+in the previous video, or at the beginning of this one,
+
+04:31.110 --> 04:33.540
+add top navbar was 71b.
+
+04:33.540 --> 04:36.240
+So all the subsequent commits have changed.
+
+04:36.240 --> 04:39.090
+All right, so I'll do one more example.
+
+04:39.090 --> 04:41.580
+We have all of these right here.
+
+04:41.580 --> 04:43.290
+Fix another navbar typo,
+
+04:43.290 --> 04:44.820
+fix navbar typos,
+
+04:44.820 --> 04:46.470
+add top navbar.
+
+04:46.470 --> 04:50.040
+If I want to combine, I mean I could combine these two,
+
+04:50.040 --> 04:52.650
+they both are just fixing typos in the navbar.
+
+04:52.650 --> 04:56.400
+I could do that, or I could combine all three of these,
+
+04:56.400 --> 05:00.270
+and just have one add top navbar if I wanted to.
+
+05:00.270 --> 05:01.710
+So why don't I try that?
+
+05:01.710 --> 05:03.090
+So we'll do the same thing.
+
+05:03.090 --> 05:06.420
+Now if I do a git rebase nine this time,
+
+05:06.420 --> 05:09.870
+head tilde nine, that results in an error
+
+05:09.870 --> 05:11.190
+because the number of commits
+
+05:11.190 --> 05:13.500
+that I have has changed, right?
+
+05:13.500 --> 05:16.380
+I have one fewer, so I'm gonna do eight.
+
+05:16.380 --> 05:17.355
+All righty?
+
+05:17.355 --> 05:19.560
+So what am I going to do here?
+
+05:19.560 --> 05:23.220
+We'll fix up, minimize that,
+
+05:23.220 --> 05:27.930
+these here, fix navbar typos, fix another navbar typo.
+
+05:27.930 --> 05:32.040
+I'm gonna do a fixup, and another fixup.
+
+05:32.040 --> 05:35.610
+So both of them will be smushed into the previous commit,
+
+05:35.610 --> 05:38.820
+and those messages will be lost, just gone,
+
+05:38.820 --> 05:41.670
+but the contents of both will be included.
+
+05:41.670 --> 05:44.340
+So I fixed, I'll show you the typos, they're not exciting,
+
+05:44.340 --> 05:47.010
+but I fixed two typos and then one typo here.
+
+05:47.010 --> 05:48.450
+I'm just gonna include that all
+
+05:48.450 --> 05:50.640
+when I created the navbar, all right?
+
+05:50.640 --> 05:53.730
+So right now we have those two commits about fixing typos.
+
+05:53.730 --> 05:54.730
+I'm gonna close out.
+
+05:56.850 --> 05:58.230
+Okay, it looks good here.
+
+05:58.230 --> 06:00.280
+And if I do a git log oneline
+
+06:01.200 --> 06:04.170
+now it just says add top navbar.
+
+06:04.170 --> 06:05.400
+Commit hash has changed,
+
+06:05.400 --> 06:08.550
+but we no longer have those other two typo commits,
+
+06:08.550 --> 06:09.540
+they're gone,
+
+06:09.540 --> 06:11.670
+but I promise you the changes are still there.
+
+06:11.670 --> 06:14.130
+I'll quickly prove that, and then end the video.
+
+06:14.130 --> 06:15.693
+So if I go back to one of them,
+
+06:16.740 --> 06:18.933
+how about fix another navbar typo?
+
+06:20.040 --> 06:22.500
+I had Navbarr with two Rs,
+
+06:22.500 --> 06:25.200
+and I fixed it to have one R, all right?
+
+06:25.200 --> 06:27.450
+So that change is still here.
+
+06:27.450 --> 06:29.880
+It's just been moved into a different commit,
+
+06:29.880 --> 06:30.930
+it's been smushed.
+
+06:30.930 --> 06:34.050
+If I find that line, which is right here,
+
+06:34.050 --> 06:37.590
+that typo has been fixed, Navbar with one R,
+
+06:37.590 --> 06:42.590
+and the other commit navbar here, navbar typos,
+
+06:43.140 --> 06:46.920
+I've changed Linkk that had two Ks to have one K.
+
+06:46.920 --> 06:51.920
+So if I show you that, it is right here, it has one K.
+
+06:51.990 --> 06:55.380
+So those changes were not deleted, they're still there.
+
+06:55.380 --> 06:58.470
+All the code from whatever commit that I fixed up,
+
+06:58.470 --> 06:59.640
+that's still included,
+
+06:59.640 --> 07:01.590
+it's just smushed into the previous commit,
+
+07:01.590 --> 07:03.780
+and the commit message is gone.
+
+07:03.780 --> 07:05.040
+So that's super useful,
+
+07:05.040 --> 07:08.190
+I have cleaned up my history significantly already, right?
+
+07:08.190 --> 07:10.470
+This is a lot easier to look at
+
+07:10.470 --> 07:12.600
+and understand what I was doing.
+
+07:12.600 --> 07:14.550
+One thing, though, that we probably wanna do is
+
+07:14.550 --> 07:15.600
+get rid of this commit,
+
+07:15.600 --> 07:17.500
+and I'll show you how to do that next.
