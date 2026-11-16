@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00.210 --> 00:01.680
+Instructor: All right, so in this section,
+
+00:01.680 --> 00:03.750
+we're focusing on Git tags,
+
+00:03.750 --> 00:06.210
+which we have not really talked about at all,
+
+00:06.210 --> 00:08.880
+but they're pretty straightforward, nothing super difficult,
+
+00:08.880 --> 00:12.240
+and they're also not used all the time.
+
+00:12.240 --> 00:15.360
+It depends on the project, it depends on the company,
+
+00:15.360 --> 00:17.850
+or the organization that you're working with,
+
+00:17.850 --> 00:20.100
+or just your personal habits.
+
+00:20.100 --> 00:21.660
+Most often these days,
+
+00:21.660 --> 00:24.510
+tags are used to mark different releases,
+
+00:24.510 --> 00:27.900
+different versions of a project over time,
+
+00:27.900 --> 00:32.900
+like, you know, version 7.1.0, version 7.1.1, and so on.
+
+00:33.450 --> 00:35.130
+So important to understand.
+
+00:35.130 --> 00:38.070
+I'll say understanding Git tags is important.
+
+00:38.070 --> 00:42.840
+Understanding semantic versioning is not really tied to Git.
+
+00:42.840 --> 00:45.060
+This is a concept on its own.
+
+00:45.060 --> 00:47.700
+I'm teetering between important and nice to have,
+
+00:47.700 --> 00:50.490
+'cause it is, it's kind of these days
+
+00:50.490 --> 00:53.310
+like the de facto use case for tags.
+
+00:53.310 --> 00:56.130
+But anyway, I'm getting ahead of myself.
+
+00:56.130 --> 00:58.860
+I'll say that viewing tags is important.
+
+00:58.860 --> 01:02.190
+Creating tags, lightweight and annotated tags, is important,
+
+01:02.190 --> 01:04.920
+and being able to push tags is important.
+
+01:04.920 --> 01:08.850
+Moving tags, diffing tags, deleting tags, nice to have.
+
+01:08.850 --> 01:11.280
+I mean, it's all kind of in this gray area
+
+01:11.280 --> 01:13.050
+between important and nice to have,
+
+01:13.050 --> 01:15.840
+but nothing in my opinion that is critical here.
+
+01:15.840 --> 01:17.910
+If you end up working with tags a lot,
+
+01:17.910 --> 01:19.200
+you'll get very good with them,
+
+01:19.200 --> 01:21.090
+and it's very straightforward.
+
+01:21.090 --> 01:23.370
+Honestly, they're pretty simple.
+
+01:23.370 --> 01:26.370
+So I think it's worth checking out the section.
+
+01:26.370 --> 01:28.020
+For as many videos as there are,
+
+01:28.020 --> 01:29.730
+it's actually pretty short.
+
+01:29.730 --> 01:33.480
+Some of them are like one minute, or one and a half minutes,
+
+01:33.480 --> 01:35.520
+so don't let it intimidate you
+
+01:35.520 --> 01:37.860
+that there's 11 videos, or something.
+
+01:37.860 --> 01:39.060
+Anyway, let's get started.
+
+01:39.060 --> 01:41.253
+We're gonna talk about tags, here we go.
