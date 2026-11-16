@@ -1,0 +1,485 @@
+WEBVTT
+
+00:00.150 --> 00:02.280
+Instructor: So, the next piece of the .git folder
+
+00:02.280 --> 00:05.220
+we'll cover is the refs folder.
+
+00:05.220 --> 00:07.440
+So, in every git repo that you make,
+
+00:07.440 --> 00:09.480
+there's going to be a refs folder
+
+00:09.480 --> 00:11.850
+and inside of that refs folder,
+
+00:11.850 --> 00:14.190
+there are a couple of different sub directories.
+
+00:14.190 --> 00:17.760
+And, we'll start by talking about the heads directory.
+
+00:17.760 --> 00:21.240
+But, actually, before that, refs for references
+
+00:21.240 --> 00:23.160
+is where git stores all of the-
+
+00:23.160 --> 00:25.500
+every time I've talked about a pointer or a reference,
+
+00:25.500 --> 00:28.890
+whether it's a branch pointer or a tag,
+
+00:28.890 --> 00:31.020
+two different ways, or two things, in git
+
+00:31.020 --> 00:34.020
+that refer to commits, those are stored,
+
+00:34.020 --> 00:37.320
+they actually exist, in the refs folder.
+
+00:37.320 --> 00:39.930
+So, that's what refs is: references.
+
+00:39.930 --> 00:42.240
+So, we'll start by taking a look at branches
+
+00:42.240 --> 00:45.540
+in this refs/heads directory.
+
+00:45.540 --> 00:49.440
+Git makes one file for every branch in a repo
+
+00:49.440 --> 00:51.540
+and that file will have the name of the branch.
+
+00:51.540 --> 00:54.000
+So, when I've shown diagrams like this in the past,
+
+00:54.000 --> 00:56.460
+where I've shown, or I've illustrated,
+
+00:56.460 --> 00:58.500
+branch references with an arrow,
+
+00:58.500 --> 01:00.300
+like, a label and an arrow,
+
+01:00.300 --> 01:03.420
+these references are just files in that folder,
+
+01:03.420 --> 01:06.300
+in the refs/heads folder.
+
+01:06.300 --> 01:08.940
+So, if we had a branch called dark mode,
+
+01:08.940 --> 01:11.370
+there is a file called dark mode,
+
+01:11.370 --> 01:12.720
+and there's no arrow,
+
+01:12.720 --> 01:16.170
+but inside the file there's a commit hash.
+
+01:16.170 --> 01:18.210
+It points to a particular commit.
+
+01:18.210 --> 01:20.850
+So, in this repo, this is the react repo,
+
+01:20.850 --> 01:24.300
+let's see, we've got three branches here
+
+01:24.300 --> 01:28.500
+and if I just show you inside of this .git folder,
+
+01:28.500 --> 01:31.950
+I'll just show the contents, .git/,
+
+01:31.950 --> 01:34.350
+and then we've got refs right here.
+
+01:34.350 --> 01:37.380
+So, I'll just print out the contents.
+
+01:37.380 --> 01:40.410
+We have heads, remotes, and tags.
+
+01:40.410 --> 01:42.270
+Now, you may not have all of these
+
+01:42.270 --> 01:43.740
+depending on if you have any remotes,
+
+01:43.740 --> 01:45.360
+if you have any tags.
+
+01:45.360 --> 01:46.920
+Also, I forgot to mention that,
+
+01:46.920 --> 01:49.650
+if you started with a brand new empty git repo,
+
+01:49.650 --> 01:51.210
+things are slightly different
+
+01:51.210 --> 01:52.980
+than if you actually have a commit in there,
+
+01:52.980 --> 01:55.620
+if you have, you know, stuff being staged,
+
+01:55.620 --> 01:56.790
+if you have history.
+
+01:56.790 --> 01:59.010
+So, everything I'm talking about is
+
+01:59.010 --> 02:03.240
+once you have at least one commit and at least one branch.
+
+02:03.240 --> 02:06.990
+Okay, so inside of this heads directory,
+
+02:06.990 --> 02:09.360
+I'll print that out just like this,
+
+02:09.360 --> 02:13.740
+you'll see we have three files, one for each branch.
+
+02:13.740 --> 02:18.150
+And, each one of those files contains a commit hash.
+
+02:18.150 --> 02:20.460
+So, why don't I start with a git log?
+
+02:20.460 --> 02:23.310
+Actually, let me just open up the contents here.
+
+02:23.310 --> 02:25.050
+Okay, so I have it in VS Code,
+
+02:25.050 --> 02:27.390
+my .git folder for this one repo.
+
+02:27.390 --> 02:30.960
+If I look at refs, heads, here's the three files.
+
+02:30.960 --> 02:33.360
+Let's take a look at new branch.
+
+02:33.360 --> 02:35.850
+I think that's the branch we're currently on.
+
+02:35.850 --> 02:37.920
+And, it just has a commit hash in here.
+
+02:37.920 --> 02:40.680
+796 is what it starts with.
+
+02:40.680 --> 02:43.500
+If I do git log one line,
+
+02:43.500 --> 02:46.800
+we can see this is where new branch is.
+
+02:46.800 --> 02:49.230
+This commit, 796.
+
+02:49.230 --> 02:51.450
+But, we have some other branches, I think.
+
+02:51.450 --> 02:53.250
+Actually, maybe not.
+
+02:53.250 --> 02:54.990
+We've got this remote branch,
+
+02:54.990 --> 02:58.530
+but all the other branches here, master, new branch-
+
+02:58.530 --> 03:01.800
+okay, well, why don't I make a new commit instead?
+
+03:01.800 --> 03:04.230
+As you can see, master and new branch
+
+03:04.230 --> 03:06.063
+refer to the same commit.
+
+03:07.710 --> 03:09.780
+Ah, this one doesn't branch from tag.
+
+03:09.780 --> 03:12.090
+I made that a while ago in a previous video.
+
+03:12.090 --> 03:13.740
+It refers to a different commit,
+
+03:13.740 --> 03:16.110
+just like this slide where we have one branch
+
+03:16.110 --> 03:18.030
+pointing or referencing one commit
+
+03:18.030 --> 03:21.330
+and a different reference over here to a different commit.
+
+03:21.330 --> 03:24.030
+So, if I make a commit on this new branch,
+
+03:24.030 --> 03:25.830
+do I have any changes here?
+
+03:25.830 --> 03:26.663
+Nah, of course not.
+
+03:26.663 --> 03:29.653
+Let's just make a file touch newfile.jss.
+
+03:32.040 --> 03:37.020
+Let's add new file. Let's commit it, add new file.
+
+03:37.020 --> 03:41.040
+Okay, so, now, if I do a one line git log,
+
+03:41.040 --> 03:45.720
+this new branch is referencing this commit, 5fb,
+
+03:45.720 --> 03:47.220
+and we see that here.
+
+03:47.220 --> 03:51.570
+It says 5fb. Master, though, has not changed.
+
+03:51.570 --> 03:54.150
+It's exactly what happened here on this slide
+
+03:54.150 --> 03:56.940
+where, if I go back a bit,
+
+03:56.940 --> 03:59.130
+at one point, we had two branches
+
+03:59.130 --> 04:00.630
+pointing to the same commit
+
+04:00.630 --> 04:03.150
+and then they diverged, right?
+
+04:03.150 --> 04:05.190
+And this dark mode reference file,
+
+04:05.190 --> 04:07.080
+it's now pointing to a new commit.
+
+04:07.080 --> 04:08.040
+And, when I say pointing,
+
+04:08.040 --> 04:11.700
+it's just a commit hash stored in a file.
+
+04:11.700 --> 04:14.190
+So, if I make one more branch, if I branch off
+
+04:14.190 --> 04:18.690
+from where I am now, git switch -c for create.
+
+04:18.690 --> 04:20.400
+What should we call this one?
+
+04:20.400 --> 04:21.333
+Just chicken.
+
+04:22.440 --> 04:23.273
+What do we see?
+
+04:23.273 --> 04:28.140
+We have a new file in that refs/heads folder called chicken
+
+04:28.140 --> 04:31.197
+and inside of it, it has the tip commit,
+
+04:31.197 --> 04:32.887
+the tip of that branch.
+
+04:32.887 --> 04:35.970
+"Which chicken?" We just created it from new branch.
+
+04:35.970 --> 04:38.310
+So, it has the same commit hash right now.
+
+04:38.310 --> 04:39.780
+We're pointing to the same commit.
+
+04:39.780 --> 04:41.370
+5fb.
+
+04:41.370 --> 04:43.170
+5fb.
+
+04:43.170 --> 04:45.540
+All right, so, inside of this directory,
+
+04:45.540 --> 04:48.870
+we also have a tags folder
+
+04:48.870 --> 04:51.660
+and tags are just pointers as well.
+
+04:51.660 --> 04:53.880
+So, you see some of the tags that I created.
+
+04:53.880 --> 04:56.040
+Each one has a commit hash
+
+04:56.040 --> 04:59.250
+and then the name of that file is the name of that tag.
+
+04:59.250 --> 05:03.480
+So, just another reference, hence the refs directory.
+
+05:03.480 --> 05:05.700
+And then, this remotes folder,
+
+05:05.700 --> 05:07.740
+you can see for each of the remotes I have set up,
+
+05:07.740 --> 05:09.930
+there's a directory and I'll just show you
+
+05:09.930 --> 05:11.910
+what we're looking at right now.
+
+05:11.910 --> 05:13.680
+If we pay attention to origin here,
+
+05:13.680 --> 05:15.030
+if I do a fetch-
+
+05:15.030 --> 05:17.193
+so, this is a react repository.
+
+05:18.054 --> 05:20.943
+If I do a git fetch, just everything-
+
+05:23.010 --> 05:25.530
+it fetched from the origin by default,
+
+05:25.530 --> 05:28.020
+which is the react repo.
+
+05:28.020 --> 05:30.900
+Not my fork, but the official react repo.
+
+05:30.900 --> 05:34.260
+If we take a look in here, now it's been updated
+
+05:34.260 --> 05:35.610
+because we have this new-
+
+05:35.610 --> 05:37.740
+remember, we talked about remote tracking branches.
+
+05:37.740 --> 05:42.090
+It's keeping track of the commit, that origin master.
+
+05:42.090 --> 05:43.920
+So, the master branch on origin,
+
+05:43.920 --> 05:46.140
+this is where that tip of that branch is.
+
+05:46.140 --> 05:47.520
+I don't have that.
+
+05:47.520 --> 05:51.030
+That is not actually on my local working directory.
+
+05:51.030 --> 05:53.790
+I know about it, or my git repository knows about it.
+
+05:53.790 --> 05:55.200
+It has that commit here
+
+05:55.200 --> 05:56.790
+and this is how it's able to do things
+
+05:56.790 --> 05:58.593
+like when I type git status-
+
+05:59.580 --> 06:01.443
+oh, if I go back to master, rather,
+
+06:03.150 --> 06:06.690
+and I type git status again, it tells me you have diverged.
+
+06:06.690 --> 06:09.360
+But, long story short, this is the same concept, right?
+
+06:09.360 --> 06:11.850
+A reference to a branch,
+
+06:11.850 --> 06:14.490
+but instead of a local branch that we have,
+
+06:14.490 --> 06:16.410
+this is something that's updated when we fetched,
+
+06:16.410 --> 06:19.680
+or when we pull, these are references to branches
+
+06:19.680 --> 06:20.940
+that are on a remote.
+
+06:20.940 --> 06:24.390
+So, that might be the origin remote, the master branch,
+
+06:24.390 --> 06:26.670
+or the colt remote to the master branch.
+
+06:26.670 --> 06:29.250
+But, there could be many, many other branches on there.
+
+06:29.250 --> 06:31.290
+I just don't have them currently.
+
+06:31.290 --> 06:33.150
+All right, so that's a quick exploration
+
+06:33.150 --> 06:35.610
+of the refs directory.
+
+06:35.610 --> 06:39.150
+It's just a place that git stores all those references.
+
+06:39.150 --> 06:40.980
+Every time I've diagrammed something like this
+
+06:40.980 --> 06:43.650
+where I have a branch pointer referencing a commit,
+
+06:43.650 --> 06:45.960
+it's just a file with the name of a branch
+
+06:45.960 --> 06:48.960
+and in that file, there's just a single commit hash
+
+06:48.960 --> 06:51.570
+and then, there's a bunch of them, one for each branch,
+
+06:51.570 --> 06:53.520
+and they're stored in the heads directory
+
+06:53.520 --> 06:54.990
+where it's also a tags directory
+
+06:54.990 --> 06:57.183
+and a remotes directory.
+Okay.
