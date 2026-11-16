@@ -1,0 +1,295 @@
+WEBVTT
+
+00:00.120 --> 00:02.580
+Instructor: Next up we're gonna talk about git pull.
+
+00:02.580 --> 00:06.030
+So the git pull command is similar to fetch
+
+00:06.030 --> 00:08.370
+in that we use it to retrieve changes
+
+00:08.370 --> 00:10.020
+from some remote repo.
+
+00:10.020 --> 00:11.130
+But the big difference is
+
+00:11.130 --> 00:14.343
+that pull will actually update our HEAD branch.
+
+00:15.349 --> 00:16.350
+It updates our working directory.
+
+00:16.350 --> 00:19.350
+Whatever changes are retrieved or pulled down
+
+00:19.350 --> 00:22.200
+from GitHub or some other remote repo
+
+00:22.200 --> 00:25.170
+will be integrated into our local repo
+
+00:25.170 --> 00:26.610
+and our working directory.
+
+00:26.610 --> 00:27.720
+So think of it as,
+
+00:27.720 --> 00:31.290
+okay git, go and download the latest commits from GitHub
+
+00:31.290 --> 00:33.600
+and immediately update my working directory
+
+00:33.600 --> 00:34.950
+with those changes.
+
+00:34.950 --> 00:39.090
+You can kind of think of it as a git fetch plus a git merge.
+
+00:39.090 --> 00:41.640
+So fetch in the sense that we are updating
+
+00:41.640 --> 00:43.080
+the remote tracking branch
+
+00:43.080 --> 00:45.510
+with the latest changes from some remote.
+
+00:45.510 --> 00:47.790
+So go and get the latest changes from, you know,
+
+00:47.790 --> 00:51.660
+origin master or origin main or origin food.
+
+00:51.660 --> 00:55.440
+But then second step is take those changes
+
+00:55.440 --> 00:56.970
+from the remote tracking branch
+
+00:56.970 --> 00:58.050
+and merge them in
+
+00:58.050 --> 00:59.880
+or update my current branch
+
+00:59.880 --> 01:02.043
+that I'm on with those new changes.
+
+01:03.000 --> 01:04.890
+So the syntax looks like this,
+
+01:04.890 --> 01:05.910
+git pull,
+
+01:05.910 --> 01:09.600
+and then a remote name and a branch name.
+
+01:09.600 --> 01:12.240
+What really is important to understand is that where
+
+01:12.240 --> 01:15.180
+we run git pull from matters.
+
+01:15.180 --> 01:17.130
+So whatever branch I'm on,
+
+01:17.130 --> 01:19.290
+that is where the changes will be merged
+
+01:19.290 --> 01:21.990
+into where I'm pulling down to.
+
+01:21.990 --> 01:23.490
+So for example,
+
+01:23.490 --> 01:26.250
+if I am on the master branch
+
+01:26.250 --> 01:29.700
+and I run git pull origin master
+
+01:29.700 --> 01:33.240
+it's going to fetch the changes from origin master
+
+01:33.240 --> 01:35.580
+and then merge them into my current branch,
+
+01:35.580 --> 01:38.820
+which if I'm on master, then it's master.
+
+01:38.820 --> 01:40.650
+So it fetches and then merges.
+
+01:40.650 --> 01:42.540
+And just like any other merge,
+
+01:42.540 --> 01:45.390
+that can sometimes result in merge conflicts.
+
+01:45.390 --> 01:48.600
+So we need to resolve those just like a normal merge.
+
+01:48.600 --> 01:49.890
+So I'll demonstrate that,
+
+01:49.890 --> 01:50.940
+but why don't we start with something
+
+01:50.940 --> 01:53.280
+that won't result in a merge conflict?
+
+01:53.280 --> 01:55.770
+Alright, so let's use our movies branch.
+
+01:55.770 --> 01:57.390
+I think I'm, yeah, I'm already on it.
+
+01:57.390 --> 01:58.830
+We have this movies branch.
+
+01:58.830 --> 02:01.110
+I did fetch in the previous video.
+
+02:01.110 --> 02:03.630
+The most recent changes, right?
+
+02:03.630 --> 02:07.410
+We have Tinkerbell, but it's not on our actual branch.
+
+02:07.410 --> 02:09.570
+We just have it on the remote branch.
+
+02:09.570 --> 02:11.910
+So we have origin/movies
+
+02:11.910 --> 02:14.350
+but I don't have Tinkerbell here
+
+02:15.210 --> 02:17.760
+in my working directory on the movies branch.
+
+02:17.760 --> 02:21.240
+So if I want to get those changes from the movies branch
+
+02:21.240 --> 02:26.240
+I can do git pull origin and then the name of the branch
+
+02:26.430 --> 02:29.100
+I'm pulling movies and I wanna pull
+
+02:29.100 --> 02:32.340
+down to the branch I'm on, which is movies.
+
+02:32.340 --> 02:34.920
+So if you go to GitHub or this is gonna be hard
+
+02:34.920 --> 02:38.310
+for you to do unless you're editing the repo yourself
+
+02:38.310 --> 02:39.330
+and it'll have an exercise.
+
+02:39.330 --> 02:40.163
+So you get practice
+
+02:40.163 --> 02:42.873
+with this on the movies branch, we have Tinkerbell here.
+
+02:43.920 --> 02:45.120
+I don't have that commit here.
+
+02:45.120 --> 02:49.830
+So I'm gonna pull, and you can see it updates.
+
+02:49.830 --> 02:52.920
+If I type git log, I have a new commit here.
+
+02:52.920 --> 02:56.490
+So now my movies branch and origin movies
+
+02:56.490 --> 02:59.250
+they're pointing to the exact same commit, right?
+
+02:59.250 --> 03:00.966
+And if I type ls,
+
+03:00.966 --> 03:04.470
+we see Tinkerbell right there and over here I see that file.
+
+03:04.470 --> 03:08.670
+So I pulled that down and it was merged into this directory.
+
+03:08.670 --> 03:12.480
+So I'll do one more demo, I'll update the fantasy branch,
+
+03:12.480 --> 03:16.320
+I'll add another file just like this.
+
+03:16.320 --> 03:20.160
+It's a cyclops, I'll call it cyclops.txt.
+
+03:20.160 --> 03:21.990
+Again, this is on the fantasy branch.
+
+03:21.990 --> 03:24.930
+We're simulating somebody pushing up changes,
+
+03:24.930 --> 03:26.340
+some collaborator.
+
+03:26.340 --> 03:28.350
+So now we have that cyclops file.
+
+03:28.350 --> 03:29.880
+I don't have it locally.
+
+03:29.880 --> 03:30.990
+I'm on the movies branch,
+
+03:30.990 --> 03:32.910
+but I'm gonna switch to,
+
+03:32.910 --> 03:33.743
+what did we call it?
+
+03:33.743 --> 03:34.623
+Is it fantasy?
+
+03:36.780 --> 03:39.060
+So if I wanna get the cyclops file
+
+03:39.060 --> 03:43.900
+all I need to do is git pull and then origin fantasy.
+
+03:46.680 --> 03:48.570
+Okay, let's take a look.
+
+03:48.570 --> 03:50.520
+You can see it says create mode cyclops.
+
+03:50.520 --> 03:53.823
+That means it created my cyclops file.
+
+03:54.822 --> 03:58.050
+We see it here and over here we have access to it.
+
+03:58.050 --> 04:02.040
+Alright, so that's really the the core mechanic of pulling.
+
+04:02.040 --> 04:03.721
+What I'm gonna show you
+
+04:03.721 --> 04:05.850
+in the next video is that merge conflicts can arise
+
+04:05.850 --> 04:08.310
+and often do if you're working on something
+
+04:08.310 --> 04:11.340
+that somebody else also pushed some changes to.
+
+04:11.340 --> 04:12.873
+So that's coming up next.
