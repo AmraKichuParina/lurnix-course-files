@@ -1,0 +1,511 @@
+WEBVTT
+
+00:00.050 --> 00:02.220
+Narrator: So to fully understand how Git works
+
+00:02.220 --> 00:05.040
+we need to take a small side trip away from Git
+
+00:05.040 --> 00:07.140
+to talk about hashing functions.
+
+00:07.140 --> 00:09.930
+If you're familiar with the topic, the concept of hashing,
+
+00:09.930 --> 00:12.300
+you could skip this or maybe just skim it,
+
+00:12.300 --> 00:15.540
+we'll get back to Git specifically in the next video.
+
+00:15.540 --> 00:17.550
+But of course, this is all connected.
+
+00:17.550 --> 00:18.780
+So let's get going.
+
+00:18.780 --> 00:20.280
+So you've probably come across,
+
+00:20.280 --> 00:21.810
+I don't know why I said probably,
+
+00:21.810 --> 00:24.930
+you have definitely come across
+
+00:24.930 --> 00:26.700
+these long strings of characters.
+
+00:26.700 --> 00:30.630
+They are hexadecimal characters, exactly 40 digits long.
+
+00:30.630 --> 00:32.250
+If you're not familiar with hexadecimal,
+
+00:32.250 --> 00:35.970
+it's base-16 instead of base-10 decimal
+
+00:35.970 --> 00:37.890
+for a numbering system.
+
+00:37.890 --> 00:42.060
+So base-16 means we run out of digits that we use,
+
+00:42.060 --> 00:44.490
+at least in the decimal system, zero through nine,
+
+00:44.490 --> 00:47.790
+so then we move on to letters A, B, C, D, E.
+
+00:47.790 --> 00:49.590
+And F, I forgot F.
+
+00:49.590 --> 00:53.340
+Okay, so we end up with these very long strings,
+
+00:53.340 --> 00:54.570
+which are numbers
+
+00:54.570 --> 00:57.750
+and they're all exactly 40 characters long.
+
+00:57.750 --> 00:59.040
+We've seen them before.
+
+00:59.040 --> 01:01.950
+I've used the term commit hash or just hashes.
+
+01:01.950 --> 01:03.660
+So what exactly are those?
+
+01:03.660 --> 01:04.950
+Well, they're the output
+
+01:04.950 --> 01:07.200
+of something called a hashing function.
+
+01:07.200 --> 01:09.210
+So hashing functions are a family
+
+01:09.210 --> 01:12.000
+of functions that have one goal.
+
+01:12.000 --> 01:15.000
+They take inputs of arbitrary size
+
+01:15.000 --> 01:19.110
+meaning inputs of a variable size, small, large
+
+01:19.110 --> 01:23.400
+and then spit out outputs of a fixed size.
+
+01:23.400 --> 01:27.210
+So in this example, whatever this hashing function is,
+
+01:27.210 --> 01:29.910
+it spits out, I'm not sure how many characters this is,
+
+01:29.910 --> 01:33.090
+but whatever it is, you can see that both outputs
+
+01:33.090 --> 01:36.510
+are exactly the same length, same number of digits.
+
+01:36.510 --> 01:38.250
+It doesn't have to be hexadecimal.
+
+01:38.250 --> 01:40.950
+Any number can be turned from hexadecimal to decimal
+
+01:40.950 --> 01:42.600
+or to binary, right?
+
+01:42.600 --> 01:43.890
+Numbers are numbers.
+
+01:43.890 --> 01:46.020
+This is just one way of representing them.
+
+01:46.020 --> 01:47.850
+They would be a little bit longer
+
+01:47.850 --> 01:50.010
+if this was a decimal number.
+
+01:50.010 --> 01:52.110
+Anyway, it's a fixed size.
+
+01:52.110 --> 01:53.670
+So the input here is a sentence.
+
+01:53.670 --> 01:55.530
+The input here is three characters.
+
+01:55.530 --> 01:57.870
+The input could be a file potentially,
+
+01:57.870 --> 01:59.670
+or it could be a single number,
+
+01:59.670 --> 02:03.660
+and it spits out fixed size outputs.
+
+02:03.660 --> 02:05.520
+So you may have come across hashing functions
+
+02:05.520 --> 02:07.440
+in computer science contexts,
+
+02:07.440 --> 02:10.245
+talking about data structures like hash tables,
+
+02:10.245 --> 02:12.900
+or you may have come across the term
+
+02:12.900 --> 02:15.420
+cryptographic hash functions,
+
+02:15.420 --> 02:18.360
+which is a subset of hash functions.
+
+02:18.360 --> 02:19.770
+They do the same thing, right,
+
+02:19.770 --> 02:22.020
+they map data of some arbitrary size
+
+02:22.020 --> 02:24.540
+to an output of a fixed size,
+
+02:24.540 --> 02:26.460
+but they have a couple of additional constraints.
+
+02:26.460 --> 02:28.290
+And this group of hashing functions
+
+02:28.290 --> 02:30.450
+have a whole bunch of different applications
+
+02:30.450 --> 02:34.410
+in information security, digital signatures,
+
+02:34.410 --> 02:37.590
+cryptocurrencies, as well as Git.
+
+02:37.590 --> 02:40.860
+So I'll just run through some of these really quickly.
+
+02:40.860 --> 02:43.020
+Probably the most important one to talk about upfront
+
+02:43.020 --> 02:44.940
+is that cryptographic hash functions
+
+02:44.940 --> 02:46.590
+need to be deterministic,
+
+02:46.590 --> 02:50.640
+meaning that the same input always yields the same output.
+
+02:50.640 --> 02:53.227
+In other words, if we go back to this example,
+
+02:53.227 --> 02:56.730
+"I love chickens" should always yield this output,
+
+02:56.730 --> 02:59.490
+whatever it is, if that's the input,
+
+02:59.490 --> 03:01.717
+it should always yield that output.
+
+03:01.717 --> 03:04.230
+"LOL" should always yield this output.
+
+03:04.230 --> 03:06.930
+So whatever the output is, it should be consistent.
+
+03:06.930 --> 03:08.610
+There shouldn't be any variability
+
+03:08.610 --> 03:10.950
+in what you get for the same input.
+
+03:10.950 --> 03:13.770
+Another constraint is that a cryptographic hash function
+
+03:13.770 --> 03:16.050
+should be a one-way function,
+
+03:16.050 --> 03:18.690
+meaning that if you have the output
+
+03:18.690 --> 03:21.120
+it shouldn't tell you anything about the input.
+
+03:21.120 --> 03:24.300
+And along those lines, you shouldn't be able to guess
+
+03:24.300 --> 03:26.640
+or infer anything about the input.
+
+03:26.640 --> 03:28.560
+You shouldn't be able to reverse engineer
+
+03:28.560 --> 03:30.450
+if you have the output.
+
+03:30.450 --> 03:34.200
+So if I were to implement a password login authentication
+
+03:34.200 --> 03:35.790
+for users on a website,
+
+03:35.790 --> 03:38.310
+we use a hashing function to store
+
+03:38.310 --> 03:40.440
+the hashed output of a password.
+
+03:40.440 --> 03:42.180
+Let's say these are two passwords.
+
+03:42.180 --> 03:44.610
+If somebody gets access to our database, a hacker
+
+03:44.610 --> 03:47.970
+a bad actor, they see these password hashes,
+
+03:47.970 --> 03:49.560
+they shouldn't be able to infer anything
+
+03:49.560 --> 03:51.300
+about the actual passwords.
+
+03:51.300 --> 03:53.850
+So that's important in a lot of situations.
+
+03:53.850 --> 03:55.890
+Also, a small change in an input
+
+03:55.890 --> 03:58.620
+should yield a large change in the output.
+
+03:58.620 --> 04:00.360
+It goes along the same lines, right?
+
+04:00.360 --> 04:02.137
+I shouldn't be able to guess.
+
+04:02.137 --> 04:03.720
+"I love chickens" yields this.
+
+04:03.720 --> 04:04.860
+I should not be able to guess
+
+04:04.860 --> 04:07.110
+what "I love chicken" will yield.
+
+04:07.110 --> 04:08.520
+They shouldn't be connected.
+
+04:08.520 --> 04:11.910
+And then also, it should be unlikely to find two outputs
+
+04:11.910 --> 04:12.810
+with the same value.
+
+04:12.810 --> 04:15.720
+We want to avoid collisions whenever possible.
+
+04:15.720 --> 04:17.678
+So mathematically, with these hashing functions
+
+04:17.678 --> 04:20.520
+it is possible to have collisions, of course,
+
+04:20.520 --> 04:22.290
+but the probabilities are so low
+
+04:22.290 --> 04:24.690
+that we really don't need to worry about it.
+
+04:24.690 --> 04:26.670
+Anyway, those are the basic rules
+
+04:26.670 --> 04:29.040
+of cryptographic hash functions.
+
+04:29.040 --> 04:30.390
+Now, we're talking about Git here.
+
+04:30.390 --> 04:31.980
+We're not talking about cryptography,
+
+04:31.980 --> 04:35.280
+we're not talking about authentication or cryptocurrencies.
+
+04:35.280 --> 04:40.260
+But Git uses one of these hashing functions called SHA-1,
+
+04:40.260 --> 04:43.470
+although this actually is set to change eventually.
+
+04:43.470 --> 04:46.920
+It's something that the group behind Git has said
+
+04:46.920 --> 04:49.350
+we plan on changing, we don't know when,
+
+04:49.350 --> 04:51.420
+and it's gonna be a nightmare to change
+
+04:51.420 --> 04:54.630
+but we plan on it at some point.
+
+04:54.630 --> 04:55.620
+But at the end of the day,
+
+04:55.620 --> 04:56.880
+there will be some replacement
+
+04:56.880 --> 04:59.103
+that will be just another hashing function.
+
+04:59.940 --> 05:03.420
+And this one, SHA-1 has been around for a little while
+
+05:03.420 --> 05:06.240
+and it's a hashing function that always generates
+
+05:06.240 --> 05:09.120
+40 digit hexadecimal strings.
+
+05:09.120 --> 05:11.820
+So the output size is fixed, right?
+
+05:11.820 --> 05:12.990
+We've talked about that.
+
+05:12.990 --> 05:15.120
+And all of the hashes we've seen
+
+05:15.120 --> 05:18.690
+are the output of the SHA-1 algorithm.
+
+05:18.690 --> 05:21.330
+So there are a handful, more than a handful,
+
+05:21.330 --> 05:24.360
+but there's a set of known
+
+05:24.360 --> 05:27.630
+or commonly used cryptographic hashing functions,
+
+05:27.630 --> 05:30.621
+including the SHA family, but there are others.
+
+05:30.621 --> 05:35.160
+MD5, ECDSA, is that what it is, ECDSA?
+
+05:35.160 --> 05:36.690
+I can never remember.
+
+05:36.690 --> 05:38.250
+Yes, ECDSA.
+
+05:38.250 --> 05:40.050
+Anyway, there's a group of these algorithms
+
+05:40.050 --> 05:42.090
+that are most commonly used.
+
+05:42.090 --> 05:44.610
+I just wanna end this video by demonstrating
+
+05:44.610 --> 05:47.910
+some of the principles of this SHA-1 algorithm
+
+05:47.910 --> 05:50.430
+or any cryptographic hashing function.
+
+05:50.430 --> 05:52.380
+There are many websites that let you play around
+
+05:52.380 --> 05:53.670
+with different hash functions.
+
+05:53.670 --> 05:55.770
+So I've selected SHA-1 here,
+
+05:55.770 --> 05:57.600
+and then I can put any input in here,
+
+05:57.600 --> 06:01.233
+like H lowercase, I'll hash it.
+
+06:02.220 --> 06:04.230
+And here's the output that we get.
+
+06:04.230 --> 06:06.660
+40 characters of hexadecimal.
+
+06:06.660 --> 06:09.840
+But I could also do H E, or how about a capital H?
+
+06:09.840 --> 06:14.763
+Just to show you, we get a very different output, 27D54.
+
+06:15.840 --> 06:18.606
+Now we have 7CF, completely different,
+
+06:18.606 --> 06:20.820
+there is no connection.
+
+06:20.820 --> 06:24.150
+Now, if I do something that's really, really long,
+
+06:24.150 --> 06:27.000
+like imagine a whole file of JavaScript,
+
+06:27.000 --> 06:29.100
+or a couple thousand lines of CSS.
+
+06:29.100 --> 06:31.470
+I'm just gonna duplicate this a bunch of times.
+
+06:31.470 --> 06:34.593
+We're still only going to get 40 characters out.
+
+06:35.490 --> 06:39.990
+Okay, so Git uses this algorithm, SHA-1.
+
+06:39.990 --> 06:42.390
+You can see some of the other hashing functions here,
+
+06:42.390 --> 06:44.550
+common cryptographic hashing functions.
+
+06:44.550 --> 06:46.560
+But for us, we only care about SHA-1.
+
+06:46.560 --> 06:48.570
+We don't need to know anything about how it works.
+
+06:48.570 --> 06:51.630
+We just need to know that it satisfies the requirements
+
+06:51.630 --> 06:53.610
+to be a cryptographic hash function,
+
+06:53.610 --> 06:55.470
+even if it's not that commonly used these days
+
+06:55.470 --> 06:57.960
+outside of Git, it is used in Git.
+
+06:57.960 --> 07:00.390
+And let's talk about how in the next video.
+
+07:00.390 --> 07:01.390
+So that's coming up.
