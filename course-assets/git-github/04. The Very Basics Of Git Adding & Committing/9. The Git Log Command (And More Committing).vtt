@@ -1,0 +1,601 @@
+WEBVTT
+
+00:00.000 --> 00:00.840
+Instructor: So now that we've made it
+
+00:00.840 --> 00:01.920
+through our first commit,
+
+00:01.920 --> 00:04.560
+let's repeat the process and hopefully speed it up.
+
+00:04.560 --> 00:06.840
+We'll do some work, we'll add some changes
+
+00:06.840 --> 00:08.910
+and then we'll make a commit.
+
+00:08.910 --> 00:11.670
+So it's day two of writing my novel,
+
+00:11.670 --> 00:13.590
+or maybe it's afternoon of day one,
+
+00:13.590 --> 00:14.940
+and I've come back from lunch.
+
+00:14.940 --> 00:16.200
+I have my outline.
+
+00:16.200 --> 00:18.810
+I've flushed out the very basic characters,
+
+00:18.810 --> 00:21.390
+the four characters so far that I've included,
+
+00:21.390 --> 00:24.330
+and I'm gonna start working on chapter 1.
+
+00:24.330 --> 00:27.690
+So I'm gonna make chapter 1 just a text file.
+
+00:27.690 --> 00:30.480
+I'll just do it from within my text editor,
+
+00:30.480 --> 00:31.710
+but I could do it from the command line,
+
+00:31.710 --> 00:32.810
+it doesn't matter how,
+
+00:33.660 --> 00:36.060
+and I'm just gonna save that file.
+
+00:36.060 --> 00:38.960
+Maybe I'll put something in here like chapter 1.
+
+00:38.960 --> 00:42.480
+Hmm, I'm not sure what I'm gonna write in there.
+
+00:42.480 --> 00:45.750
+And of course, if I go over here to my terminal
+
+00:45.750 --> 00:48.453
+what do we expect to see when I type git status?
+
+00:50.160 --> 00:52.620
+Here it's telling me, as we've seen before,
+
+00:52.620 --> 00:57.120
+that there's an untracked file called chapter1.txt.
+
+00:57.120 --> 01:00.570
+Also, if I go into any of the other files,
+
+01:00.570 --> 01:04.380
+like how about characters.txt or maybe the outline
+
+01:04.380 --> 01:06.180
+and I type something else in here.
+
+01:06.180 --> 01:08.490
+Let's just change a single character.
+
+01:08.490 --> 01:11.760
+How about Jordan, I'm gonna make a lowercase J
+
+01:11.760 --> 01:13.653
+and I'm going to save this file.
+
+01:15.240 --> 01:16.690
+If I run git status
+
+01:17.850 --> 01:19.860
+now we see something new.
+
+01:19.860 --> 01:24.390
+It says there's a modified file, outline.txt.
+
+01:24.390 --> 01:27.300
+It doesn't matter that I just changed the case of a letter.
+
+01:27.300 --> 01:31.320
+I did change that file and git has been watching that file.
+
+01:31.320 --> 01:34.240
+Unlike chapter1, which is an untracked file,
+
+01:34.240 --> 01:37.530
+outline, it's already been added and committed previously,
+
+01:37.530 --> 01:39.397
+so git knows about it and it says,
+
+01:39.397 --> 01:41.700
+"Hey, you modified that file."
+
+01:41.700 --> 01:43.650
+So let's say I actually continue to work,
+
+01:43.650 --> 01:46.110
+though I'm not ready to do a commit or anything like that,
+
+01:46.110 --> 01:47.640
+Ah, what should I do?
+
+01:47.640 --> 01:49.350
+I'm gonna start on chapter 1.
+
+01:49.350 --> 01:52.710
+I'm gonna just copy some of the text from the Great Gatsby.
+
+01:52.710 --> 01:56.760
+This is all available these days online free and legally,
+
+01:56.760 --> 02:00.000
+so I'm just gonna take some of this chapter 1,
+
+02:00.000 --> 02:01.920
+if you really wanna follow along, you don't need to,
+
+02:01.920 --> 02:04.950
+but if you want to, I'll include this link,
+
+02:04.950 --> 02:07.500
+and then I'm just gonna paste this in my chapter 1.
+
+02:08.520 --> 02:10.080
+Okay?
+
+02:10.080 --> 02:12.210
+Simultaneously, I decide I need to do
+
+02:12.210 --> 02:15.420
+a bit more on the outline, so I'll add some here.
+
+02:15.420 --> 02:16.253
+There we go.
+
+02:16.253 --> 02:18.600
+Here's a bit more work that I've done on the outline
+
+02:18.600 --> 02:21.240
+to match some of the stuff that I've been working on
+
+02:21.240 --> 02:23.280
+in chapter 1 so far.
+
+02:23.280 --> 02:26.820
+Okay, so I'm gonna save both of those files.
+
+02:26.820 --> 02:29.820
+And then I'm gonna go over here again to my terminal,
+
+02:29.820 --> 02:31.380
+type git status,
+
+02:31.380 --> 02:33.750
+and we see basically the same thing.
+
+02:33.750 --> 02:35.580
+The files have changed.
+
+02:35.580 --> 02:37.200
+I mean, git's not telling me right now
+
+02:37.200 --> 02:39.330
+what has been modified in this file.
+
+02:39.330 --> 02:41.580
+There is a way for us to see exactly what's changed,
+
+02:41.580 --> 02:43.200
+but for now, all that it says
+
+02:43.200 --> 02:45.330
+is something changed in outline.
+
+02:45.330 --> 02:47.820
+So if I'm ready to make a commit, I have to decide,
+
+02:47.820 --> 02:50.310
+you know, am I going to group those files together?
+
+02:50.310 --> 02:53.370
+And I am because they both had to do with chapter 1
+
+02:53.370 --> 02:55.140
+and the work I did on chapter 1.
+
+02:55.140 --> 02:58.920
+So I'm going to add outline.txt,
+
+02:58.920 --> 03:00.150
+and I'll do it in one go.
+
+03:00.150 --> 03:04.800
+If I separate them by a space, I'll also add chapter1.txt.
+
+03:04.800 --> 03:06.840
+And now if I type git status,
+
+03:06.840 --> 03:09.090
+we see that whenever I do commit next,
+
+03:09.090 --> 03:12.690
+both of these changes, new file chapter1
+
+03:12.690 --> 03:15.930
+and the modifying, modification of outline,
+
+03:15.930 --> 03:18.780
+both of those will be included in the next commit.
+
+03:18.780 --> 03:20.010
+So I'm gonna commit,
+
+03:20.010 --> 03:22.560
+git commit -m, what's my message here?
+
+03:22.560 --> 03:23.460
+What did I do?
+
+03:23.460 --> 03:27.300
+How about "begin work on chapter 1".
+
+03:27.300 --> 03:30.600
+Okay? And type git status.
+
+03:30.600 --> 03:32.160
+Quick, what do you think we'll see?
+
+03:32.160 --> 03:33.600
+We saw it earlier.
+
+03:33.600 --> 03:36.333
+Nothing to commit, working tree clean.
+
+03:37.218 --> 03:39.690
+Okay, so the next thing I wanna talk about
+
+03:39.690 --> 03:42.990
+is a command called git log.
+
+03:42.990 --> 03:45.480
+And the git log command doesn't do anything,
+
+03:45.480 --> 03:49.080
+it's much like git status, it just retrieves information.
+
+03:49.080 --> 03:50.910
+And the information it retrieves to us
+
+03:50.910 --> 03:55.380
+is a log of the commits for a given repository.
+
+03:55.380 --> 03:57.840
+And in this repo we only have two commits.
+
+03:57.840 --> 04:00.600
+Now there's a bunch of stuff in here for each commit.
+
+04:00.600 --> 04:02.460
+Here is one commit,
+
+04:02.460 --> 04:04.200
+here is another.
+
+04:04.200 --> 04:06.300
+And for each one you can see the author,
+
+04:06.300 --> 04:07.200
+the dates,
+
+04:07.200 --> 04:09.120
+those, well the author and the email
+
+04:09.120 --> 04:11.010
+are things that you can configure,
+
+04:11.010 --> 04:12.540
+and we did configure early on,
+
+04:12.540 --> 04:16.320
+so it just uses whatever your local git has configured
+
+04:16.320 --> 04:18.060
+for username and email.
+
+04:18.060 --> 04:19.380
+Then we have the dates
+
+04:19.380 --> 04:22.200
+and then we have the commit message.
+
+04:22.200 --> 04:24.930
+And then up top, this crazy looking thing
+
+04:24.930 --> 04:27.120
+called the commit hash, we don't need to worry about for now
+
+04:27.120 --> 04:30.120
+but definitely we will come back and reference.
+
+04:30.120 --> 04:32.310
+And then here is the second commit.
+
+04:32.310 --> 04:35.130
+So at this point, honestly git log is just a way for us
+
+04:35.130 --> 04:37.590
+to demonstrate that when we ran git commit,
+
+04:37.590 --> 04:41.010
+it did something, and that's kind of it for now.
+
+04:41.010 --> 04:44.100
+So it's the next morning, I am very excited.
+
+04:44.100 --> 04:47.160
+I, I know how I want to finish chapter 1.
+
+04:47.160 --> 04:50.850
+So I'm going to start by just adding more to our outline.
+
+04:50.850 --> 04:51.683
+There we go.
+
+04:51.683 --> 04:53.460
+So I'll save again,
+
+04:53.460 --> 04:54.510
+if you're following along,
+
+04:54.510 --> 04:56.340
+you can just change a single character
+
+04:56.340 --> 04:57.810
+and git is going to notice.
+
+04:57.810 --> 05:00.217
+Now if I type git status, right, it tells us,
+
+05:00.217 --> 05:02.370
+"Hey, you modified that file again."
+
+05:02.370 --> 05:05.730
+Next up, now that I finished that outline for chapter 1,
+
+05:05.730 --> 05:08.010
+I'm gonna go back to the actual file
+
+05:08.010 --> 05:10.050
+and finish typing the chapter out,
+
+05:10.050 --> 05:12.930
+which again, I'm just copying from the real Great Gatsby.
+
+05:12.930 --> 05:15.480
+Okay, so I've got a lot more text in here.
+
+05:15.480 --> 05:17.580
+Just took it from the Great Gatsby website,
+
+05:17.580 --> 05:19.650
+and I'm gonna save.
+
+05:19.650 --> 05:22.920
+And now I finished chapter 1, I outlined it,
+
+05:22.920 --> 05:26.400
+and I'm ready to go through the same steps again and commit.
+
+05:26.400 --> 05:28.275
+So I always start with git status,
+
+05:28.275 --> 05:30.570
+and I'm gonna show you one other option
+
+05:30.570 --> 05:33.540
+for how I can add these two files simultaneously
+
+05:33.540 --> 05:36.090
+rather than having to add them by name.
+
+05:36.090 --> 05:39.180
+If I do git add followed by a dot,
+
+05:39.180 --> 05:40.830
+I actually have a slide on this.
+
+05:40.830 --> 05:41.670
+Here we are,
+
+05:41.670 --> 05:45.900
+git add dot will stage all changes at once.
+
+05:45.900 --> 05:48.990
+So whatever we have unstaged at the moment,
+
+05:48.990 --> 05:50.460
+they're not going to be committed,
+
+05:50.460 --> 05:54.060
+when I use git add dot, both in this case,
+
+05:54.060 --> 05:56.190
+but if I had 50 files that were modified,
+
+05:56.190 --> 05:58.110
+all 50 would be staged.
+
+05:58.110 --> 06:00.210
+And it can be useful but also if you've worked
+
+06:00.210 --> 06:02.190
+on a bunch of things and, you know,
+
+06:02.190 --> 06:04.890
+disparate features that aren't necessarily ready
+
+06:04.890 --> 06:06.840
+to all be committed at once,
+
+06:06.840 --> 06:10.110
+it's much better to be surgical when you make your commits.
+
+06:10.110 --> 06:12.090
+But for now, I finished chapter 1.
+
+06:12.090 --> 06:15.420
+The outline had to do with chapter 1, so I'll add both.
+
+06:15.420 --> 06:17.100
+If I type git status,
+
+06:17.100 --> 06:19.980
+we can see both of those have been modified.
+
+06:19.980 --> 06:24.980
+And now I'll commit, git commit -m "finish chapter 1".
+
+06:25.470 --> 06:28.590
+Great. Type git log just as proof.
+
+06:28.590 --> 06:31.230
+And there it is, finish chapter 1.
+
+06:31.230 --> 06:36.230
+Okay, so then I go to bed and I'm having a real rough time
+
+06:36.300 --> 06:38.640
+with how long chapter 1 is,
+
+06:38.640 --> 06:41.460
+and I'm thinking about it in at night as I'm in bed,
+
+06:41.460 --> 06:43.260
+I'm like, "Yeah, I really need to fix that
+
+06:43.260 --> 06:45.990
+in the next morning. I need to break this chapter up."
+
+06:45.990 --> 06:47.760
+So that's what I decide to do.
+
+06:47.760 --> 06:51.600
+I wake up and I move my outline around a bit
+
+06:51.600 --> 06:53.910
+to reflect my new changes.
+
+06:53.910 --> 06:56.100
+I decide that right here
+
+06:56.100 --> 06:59.400
+I want to split my outline.
+
+06:59.400 --> 07:02.430
+So I'm gonna add chapter 2
+
+07:02.430 --> 07:04.950
+now starts right here.
+
+07:04.950 --> 07:07.200
+So I'm just gonna move some content around.
+
+07:07.200 --> 07:09.810
+Of course, by doing that and saving the file,
+
+07:09.810 --> 07:12.750
+I've now dirtied our working tree,
+
+07:12.750 --> 07:14.100
+meaning that we have some changes
+
+07:14.100 --> 07:15.690
+that have not yet been committed.
+
+07:15.690 --> 07:18.420
+Then I'll go to the chapter 1 file.
+
+07:18.420 --> 07:20.130
+I'm gonna take half of this,
+
+07:20.130 --> 07:21.300
+the second half,
+
+07:21.300 --> 07:23.070
+and cut it out of here,
+
+07:23.070 --> 07:24.360
+save this file.
+
+07:24.360 --> 07:26.550
+And then I'm gonna make a chapter 2 file,
+
+07:26.550 --> 07:31.260
+chapter2.txt and I'm going to paste that in there and save.
+
+07:31.260 --> 07:33.810
+So now I have updated chapter 1,
+
+07:33.810 --> 07:35.250
+I've updated the outline,
+
+07:35.250 --> 07:38.940
+and I've created a new file, chapter 2.
+
+07:38.940 --> 07:41.340
+If I saved all three files, which I did,
+
+07:41.340 --> 07:43.387
+and I run git status, git tells us,
+
+07:43.387 --> 07:45.600
+"Hey, there's three things that changed."
+
+07:45.600 --> 07:48.930
+Really, two things that it knows for sure were modified
+
+07:48.930 --> 07:53.370
+and a third untracked file that it's aware of vaguely,
+
+07:53.370 --> 07:56.790
+it sees that it exists but it's not tracking the changes.
+
+07:56.790 --> 07:58.050
+So I'm gonna add all of them
+
+07:58.050 --> 08:00.060
+and we can use the same shortcut I showed you,
+
+08:00.060 --> 08:01.200
+git add dot,
+
+08:01.200 --> 08:03.060
+because they all have to do with the same thing,
+
+08:03.060 --> 08:05.100
+it's just the same piece of work.
+
+08:05.100 --> 08:08.497
+Something like when I commit my message will be, you know,
+
+08:08.497 --> 08:13.497
+"split chapter 1 into 2 pieces"
+
+08:15.480 --> 08:17.460
+or something like that.
+
+08:17.460 --> 08:18.360
+Looks good.
+
+08:18.360 --> 08:21.480
+Type git status, working tree clean,
+
+08:21.480 --> 08:22.860
+and git log.
+
+08:22.860 --> 08:24.573
+We see we have a new commit.
