@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.300 --> 00:02.910
+-: So next up we Git to talk about Git tags
+
+00:02.910 --> 00:05.610
+which are very useful, but also fortunately
+
+00:05.610 --> 00:08.130
+for us are pretty simple to pick up.
+
+00:08.130 --> 00:10.440
+They're not a very complicated concept.
+
+00:10.440 --> 00:12.840
+The main idea behind Git tags is
+
+00:12.840 --> 00:14.910
+that we can tag particular commits.
+
+00:14.910 --> 00:17.940
+We can label commits by creating a Git tag
+
+00:17.940 --> 00:20.520
+a reference to a moment in time.
+
+00:20.520 --> 00:22.380
+So these tags can be anything.
+
+00:22.380 --> 00:24.060
+We can name them whatever we want.
+
+00:24.060 --> 00:26.910
+But typically tags are used these days to
+
+00:26.910 --> 00:29.670
+mark version releases for projects.
+
+00:29.670 --> 00:31.110
+So again, think of tags as
+
+00:31.110 --> 00:33.955
+like a label pointing to a particular moment in time
+
+00:33.955 --> 00:36.750
+kind of like branch references, except
+
+00:36.750 --> 00:39.690
+that a branch reference like these here, right?
+
+00:39.690 --> 00:41.670
+These change, if we add a new commit
+
+00:41.670 --> 00:45.000
+to the master branch, this reference moves
+
+00:45.000 --> 00:48.030
+it points to the tip of the master branch, the next commit.
+
+00:48.030 --> 00:50.280
+But a tag will actually stay referring
+
+00:50.280 --> 00:52.740
+to the same commit that we set it up on.
+
+00:52.740 --> 00:55.080
+So on the Git docs, they explain this
+
+00:55.080 --> 00:57.390
+Git has the ability to tag specific points
+
+00:57.390 --> 01:00.210
+in repositories history as being important.
+
+01:00.210 --> 01:02.790
+Think of it as like a sticky note on a commit.
+
+01:02.790 --> 01:04.710
+Typically people use this functionality to
+
+01:04.710 --> 01:07.410
+mark release points, but again, you don't have to
+
+01:07.410 --> 01:09.420
+but that's the context I'm gonna demonstrate it in.
+
+01:09.420 --> 01:10.920
+It's what you'll see the most.
+
+01:11.872 --> 01:14.280
+Really the only thing I ever see tags used for.
+
+01:14.280 --> 01:16.785
+So tags allow us to do things like this.
+
+01:16.785 --> 01:19.920
+Everybody, whoever sees this repository
+
+01:19.920 --> 01:24.240
+I'm tagging this one, commit as our version 3.1 0.0 release
+
+01:24.240 --> 01:27.090
+for whatever this software is that we're making.
+
+01:27.090 --> 01:29.550
+So that is always going to be there no matter
+
+01:29.550 --> 01:31.290
+how much more work we do
+
+01:31.290 --> 01:33.120
+thousands of more commits in the master branch.
+
+01:33.120 --> 01:34.380
+Lots of merges.
+
+01:34.380 --> 01:36.540
+This will always be 3.1 0.0.
+
+01:36.540 --> 01:38.190
+It's tagged that way.
+
+01:38.190 --> 01:41.206
+Yes, we could move the tag, but we have to do it manually
+
+01:41.206 --> 01:44.910
+unlike with a branch reference, which automatically updates.
+
+01:44.910 --> 01:46.860
+So I can tag different points
+
+01:46.860 --> 01:49.890
+as different releases in our history.
+
+01:49.890 --> 01:52.530
+And all I'm doing is marking them as important moments.
+
+01:52.530 --> 01:55.069
+And a lot of the time this happens, right?
+
+01:55.069 --> 01:57.474
+You, you would have a new version,
+
+01:57.474 --> 01:58.680
+a new release when some code is merged
+
+01:58.680 --> 01:59.830
+into the master branch.
+
+02:00.919 --> 02:02.310
+If we're working on a big project
+
+02:02.310 --> 02:03.143
+a big open source project, lots
+
+02:03.143 --> 02:05.940
+and lots of contributors, at some point, some code is merged
+
+02:05.940 --> 02:09.840
+in and whether it's a bug fix or a whole new refactoring
+
+02:09.840 --> 02:13.560
+or some radical change, that typically marks a new release.
+
+02:13.560 --> 02:15.416
+So that's why I'm marking
+
+02:15.416 --> 02:16.650
+or I'm tagging these merge commits
+
+02:16.650 --> 02:18.480
+but that's not always how it works.
+
+02:18.480 --> 02:21.383
+All that I want you to understand for now is
+
+02:21.383 --> 02:23.700
+that a tag is just a pointer to a commit a moment in time.
+
+02:23.700 --> 02:25.110
+It doesn't have to be in the master branch.
+
+02:25.110 --> 02:26.790
+You can tag any commits.
+
+02:26.790 --> 02:29.760
+And when you tag that, commits, that tag stays there.
+
+02:29.760 --> 02:31.770
+It refers to that moment in time.
+
+02:31.770 --> 02:34.260
+And these names can be anything.
+
+02:34.260 --> 02:37.290
+Most of the time we're talking about versioning
+
+02:37.290 --> 02:40.080
+but you could name them Hotdog Pickle and Bluebird Tuber
+
+02:40.080 --> 02:41.070
+if you wanted to.
+
+02:41.070 --> 02:45.000
+We have complete control over what we tag things as.
+
+02:45.000 --> 02:46.291
+So there are two different types of tags
+
+02:46.291 --> 02:49.683
+that we're going to discuss. There are lightweight tags.
+
+02:51.259 --> 02:52.950
+Lightweight tags are simpler, they're lightweight
+
+02:52.950 --> 02:54.780
+they're just like a name and a label.
+
+02:54.780 --> 02:55.613
+That's it.
+
+02:55.613 --> 02:57.300
+Think of what you see here.
+
+02:57.300 --> 02:59.970
+A name referring to a moment in time.
+
+02:59.970 --> 03:02.520
+Annotated tags include additional information
+
+03:02.520 --> 03:06.060
+including a tag message, kind of like a commit message.
+
+03:06.060 --> 03:08.580
+The author's name and email, the date.
+
+03:08.580 --> 03:09.630
+And for that reason
+
+03:09.630 --> 03:12.000
+because they include all this additional metadata
+
+03:12.000 --> 03:15.720
+they are generally preferred in a lot of big projects.
+
+03:15.720 --> 03:18.780
+They'll ask you to use annotated tags, not lightweight tags.
+
+03:18.780 --> 03:20.340
+So I'll show you how to do both of them.
+
+03:20.340 --> 03:21.600
+They're very simple.
+
+03:21.600 --> 03:23.520
+It's really just one command we need to cover
+
+03:23.520 --> 03:27.210
+which is Git tag and then we'll go on from there.
+
+03:27.210 --> 03:28.890
+But before we go any further
+
+03:28.890 --> 03:31.650
+I actually wanna talk a little bit about versioning
+
+03:31.650 --> 03:34.920
+because tagging and versioning are kind of tied together.
+
+03:34.920 --> 03:37.230
+That's the main use case for Git tags.
+
+03:37.230 --> 03:39.360
+I wanna talk about semantic versioning
+
+03:39.360 --> 03:41.933
+and that's what we're gonna cover in the next video.
