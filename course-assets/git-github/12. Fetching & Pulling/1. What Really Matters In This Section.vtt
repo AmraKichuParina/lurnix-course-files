@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00.240 --> 00:01.590
+Instructor: Welcome to the next section.
+
+00:01.590 --> 00:04.230
+Hopefully you survived the Intro to Git Hub,
+
+00:04.230 --> 00:06.780
+as well as the new commands, like Git Clone,
+
+00:06.780 --> 00:08.250
+and Git Push, that we covered.
+
+00:08.250 --> 00:09.900
+All very important stuff.
+
+00:09.900 --> 00:12.360
+In this section, we are continuing to talk
+
+00:12.360 --> 00:15.600
+about working with remote repositories,
+
+00:15.600 --> 00:17.490
+specifically Git Hub repositories,
+
+00:17.490 --> 00:20.700
+but you could sub in Git Hub for other services.
+
+00:20.700 --> 00:23.280
+They're just not that popular, as we've already discussed.
+
+00:23.280 --> 00:25.350
+Specifically, we're focusing on two commands,
+
+00:25.350 --> 00:27.450
+Git Fetch and Git Pull.
+
+00:27.450 --> 00:30.690
+They both have to do with getting changes down
+
+00:30.690 --> 00:33.840
+from a remote repository, like a Git Hub Repo.
+
+00:33.840 --> 00:35.460
+So if we're working with collaborators
+
+00:35.460 --> 00:37.347
+and our repository changes,
+
+00:37.347 --> 00:39.300
+how do we get those changes down?
+
+00:39.300 --> 00:42.570
+We've seen the other half pushing up with Git Push.
+
+00:42.570 --> 00:44.760
+So there's only three topics, really,
+
+00:44.760 --> 00:45.690
+that are covered here.
+
+00:45.690 --> 00:46.950
+They're all connected.
+
+00:46.950 --> 00:48.990
+Something called Remote Tracking Branches,
+
+00:48.990 --> 00:50.940
+Git Fetch, and Git Pull.
+
+00:50.940 --> 00:52.230
+And I've marked them all in yellow
+
+00:52.230 --> 00:55.140
+because they are a bit, mm, I don't want to say trickier,
+
+00:55.140 --> 00:59.370
+but meatier, so they're all yellow.
+
+00:59.370 --> 01:01.140
+They're all critical.
+
+01:01.140 --> 01:03.630
+If you want to work with remote repositories,
+
+01:03.630 --> 01:05.070
+you could use Git your entire life,
+
+01:05.070 --> 01:07.650
+and never share your changes with anyone,
+
+01:07.650 --> 01:08.940
+at which point, you wouldn't need Git Hub.
+
+01:08.940 --> 01:10.410
+You wouldn't need to push, or to pull,
+
+01:10.410 --> 01:12.090
+or to fetch, or anything like that.
+
+01:12.090 --> 01:15.161
+But if you plan on collaborating, critical.
+
+01:15.161 --> 01:15.994
+All right?
+
+01:15.994 --> 01:17.070
+So let's talk about these commands,
+
+01:17.070 --> 01:19.770
+and get more practice working with Git Hub.
+
+01:19.770 --> 01:20.603
+Here we go.
