@@ -1,0 +1,322 @@
+WEBVTT
+
+00:00.120 --> 00:01.830
+-: So I just spent all that time demonstrating
+
+00:01.830 --> 00:04.500
+working on feature branches, but so far,
+
+00:04.500 --> 00:09.060
+none of the work that Colt/me did or Stevie did.
+
+00:09.060 --> 00:11.130
+None of that work is integrated
+
+00:11.130 --> 00:13.893
+into the main branch or the master branch.
+
+00:13.893 --> 00:17.310
+So that obviously is an important part of working
+
+00:17.310 --> 00:20.760
+on feature branches, is integrating your changes in.
+
+00:20.760 --> 00:23.730
+And we have a couple of options for how we do this.
+
+00:23.730 --> 00:25.710
+One would just be merge at will,
+
+00:25.710 --> 00:28.740
+whenever anybody wants to merge their changes in,
+
+00:28.740 --> 00:30.270
+just go for it.
+
+00:30.270 --> 00:32.130
+Just merge them into main.
+
+00:32.130 --> 00:34.350
+Obviously that could be fraught with problems,
+
+00:34.350 --> 00:36.750
+especially on larger teams with lots and lots
+
+00:36.750 --> 00:39.300
+of collaborators, lots of new features.
+
+00:39.300 --> 00:42.030
+If there's no testing going on beforehand,
+
+00:42.030 --> 00:44.010
+if there's no conversation or discussion
+
+00:44.010 --> 00:46.890
+going on beforehand, that could get way out of control.
+
+00:46.890 --> 00:50.580
+And you would never do that on a real product with users
+
+00:50.580 --> 00:52.710
+and you know, things at stake.
+
+00:52.710 --> 00:55.920
+Maybe on a fun hobby project with friends, I guess.
+
+00:55.920 --> 00:58.245
+So another option that's similar is,
+
+00:58.245 --> 01:00.990
+you merge your own branches in,
+
+01:00.990 --> 01:03.270
+but only after you have discussed it.
+
+01:03.270 --> 01:06.270
+You've sent an email or a chat message
+
+01:06.270 --> 01:08.970
+or some sort of, had a conversation
+
+01:08.970 --> 01:11.280
+with your team in some way about
+
+01:11.280 --> 01:13.950
+whether you should merge those changes in or not.
+
+01:13.950 --> 01:15.900
+And then there is the third option,
+
+01:15.900 --> 01:18.630
+which is what we're going to talk about in the next video,
+
+01:18.630 --> 01:20.430
+something called Pull Requests.
+
+01:20.430 --> 01:21.960
+But first, I just want to do another
+
+01:21.960 --> 01:23.580
+demonstration of merging.
+
+01:23.580 --> 01:26.070
+So if you wanna just get to Pull Requests, skip this video.
+
+01:26.070 --> 01:27.840
+But I'm just gonna quickly demonstrate.
+
+01:27.840 --> 01:31.110
+On Colt's computer,
+
+01:31.110 --> 01:33.420
+we have this pricing table branch, right?
+
+01:33.420 --> 01:36.540
+This is what the pricing table branch looks like.
+
+01:36.540 --> 01:40.140
+But the main branch currently doesn't have any of this.
+
+01:40.140 --> 01:42.930
+So let's say I've talked it over with Stevie.
+
+01:42.930 --> 01:44.490
+We're just a two person team,
+
+01:44.490 --> 01:46.200
+well one person, one chicken team.
+
+01:46.200 --> 01:50.430
+And I say, okay, I'm ready to merge this in, I think.
+
+01:50.430 --> 01:52.620
+Let's say Stevie pulls it down,
+
+01:52.620 --> 01:54.600
+Stevie takes a look, we consent, all right
+
+01:54.600 --> 01:55.500
+let's merge it in.
+
+01:55.500 --> 01:56.730
+Somebody merges it in.
+
+01:56.730 --> 02:00.150
+Let's say it's me, I'm the owner of the project.
+
+02:00.150 --> 02:03.090
+So I'm currently on the pricing table branch.
+
+02:03.090 --> 02:04.800
+I'm gonna switch to Master.
+
+02:04.800 --> 02:08.400
+Git switch to main--old habits.
+
+02:08.400 --> 02:10.156
+And then it's always good to just pull down
+
+02:10.156 --> 02:11.943
+to see if you've missed anything.
+
+02:13.140 --> 02:15.750
+Do we have any new work from main?
+
+02:15.750 --> 02:16.950
+No, we don't.
+
+02:16.950 --> 02:20.073
+Okay, so now I'm just gonna merge.
+
+02:21.090 --> 02:23.220
+And what is the branch I'm trying to merge in?
+
+02:23.220 --> 02:28.220
+Pricing table and it looks like, well easy, fast forward.
+
+02:28.440 --> 02:30.360
+So nothing bad, no commits,
+
+02:30.360 --> 02:33.390
+or sorry, no conflicts, no merge commit needed.
+
+02:33.390 --> 02:34.410
+Fast forward merge.
+
+02:34.410 --> 02:37.320
+And we see the pricing table shows up here.
+
+02:37.320 --> 02:40.560
+Great, I'll refresh my view here.
+
+02:40.560 --> 02:42.720
+I'm now on the main branch.
+
+02:42.720 --> 02:44.820
+We see the same thing as before.
+
+02:44.820 --> 02:47.820
+Okay, so we just integrated that feature branch
+
+02:47.820 --> 02:52.820
+and now I can push main back up to origin main.
+
+02:52.890 --> 02:54.450
+So I'm gonna do exactly that.
+
+02:54.450 --> 02:58.203
+Git push origin main,
+
+03:00.930 --> 03:02.330
+and then we'll go to GitHub.
+
+03:04.380 --> 03:07.920
+And now main includes the code from,
+
+03:07.920 --> 03:09.690
+no I'm on the wrong branch.
+
+03:09.690 --> 03:12.150
+Main includes the code from pricing table.
+
+03:12.150 --> 03:14.850
+We see whatever work I had done.
+
+03:14.850 --> 03:16.440
+It's now on this branch.
+
+03:16.440 --> 03:18.120
+So nothing new. We just merged.
+
+03:18.120 --> 03:21.660
+And then on Stevie's side of things, wherever he lives,
+
+03:21.660 --> 03:24.060
+the next step for him would be to make sure to
+
+03:24.060 --> 03:26.190
+get that new version of the main branch.
+
+03:26.190 --> 03:28.020
+Whenever he goes back to main or whenever
+
+03:28.020 --> 03:30.810
+he needs that new work, go back to main branch.
+
+03:30.810 --> 03:33.060
+So git switch main,
+
+03:33.060 --> 03:35.640
+he could fetch or he could just pull,
+
+03:35.640 --> 03:37.833
+git pull origin main.
+
+03:39.330 --> 03:43.560
+And now Stevie has this new work on his main branch.
+
+03:43.560 --> 03:46.500
+He has the whole pricing table and all that stuff.
+
+03:46.500 --> 03:49.560
+And then he could merge in his nav bar branch
+
+03:49.560 --> 03:52.140
+if they both agree it's appropriate,
+
+03:52.140 --> 03:54.630
+he could merge in nav bar into main
+
+03:54.630 --> 03:55.710
+and then push that up.
+
+03:55.710 --> 03:58.080
+And then Colt would then go pull that down
+
+03:58.080 --> 03:59.970
+and we'd repeat over and over.
+
+03:59.970 --> 04:01.110
+So that's just a quick version
+
+04:01.110 --> 04:03.381
+of merging a feature branch in.
+
+04:03.381 --> 04:06.150
+It would be best to delete that branch locally
+
+04:06.150 --> 04:08.940
+if we agree that it's, you know, we're good to go.
+
+04:08.940 --> 04:10.320
+We merged in pricing table,
+
+04:10.320 --> 04:11.850
+we don't need that branch anymore.
+
+04:11.850 --> 04:13.980
+Delete it, delete it off of GitHub.
+
+04:13.980 --> 04:16.620
+But just to keep things short and easy for you to follow.
+
+04:16.620 --> 04:18.810
+If you do take a look at this repository,
+
+04:18.810 --> 04:21.780
+I'm not going to delete that branch this way.
+
+04:21.780 --> 04:23.370
+You'll just have that history.
+
+04:23.370 --> 04:24.870
+And in the next video,
+
+04:24.870 --> 04:27.660
+we're gonna talk about the more common way
+
+04:27.660 --> 04:29.700
+of merging feature branches in
+
+04:29.700 --> 04:33.933
+or requesting to merge them in, which is a Pull Request.
