@@ -1,0 +1,514 @@
+WEBVTT
+
+00:00.150 --> 00:00.990
+Narrator: So by forking,
+
+00:00.990 --> 00:03.360
+we've made a copy of the repository
+
+00:03.360 --> 00:06.240
+that exists on my account on Colt
+
+00:06.240 --> 00:08.010
+and I've made some changes locally.
+
+00:08.010 --> 00:09.060
+I pushed them up.
+
+00:09.060 --> 00:09.930
+We see the changes.
+
+00:09.930 --> 00:12.210
+We did this in the last video.
+
+00:12.210 --> 00:13.230
+Where is that commit?
+
+00:13.230 --> 00:14.400
+Basic, no, not basic.
+
+00:14.400 --> 00:15.233
+Here it is.
+
+00:15.233 --> 00:17.610
+Change color palette on this style directory.
+
+00:17.610 --> 00:18.960
+Anyway, I have some work
+
+00:18.960 --> 00:22.320
+and it actually shows I am one commit ahead
+
+00:22.320 --> 00:25.470
+of the original repository that I forked from.
+
+00:25.470 --> 00:28.500
+So GitHub is actually telling me automatically,
+
+00:28.500 --> 00:30.570
+hey you have some work on your fork
+
+00:30.570 --> 00:32.190
+that is not on the original,
+
+00:32.190 --> 00:33.360
+and I can just ignore that
+
+00:33.360 --> 00:36.150
+and never do anything with the original,
+
+00:36.150 --> 00:39.630
+or I can actually share my work or attempt to share it
+
+00:39.630 --> 00:41.280
+by making a pull request.
+
+00:41.280 --> 00:42.330
+I can make a pull request
+
+00:42.330 --> 00:45.090
+from my fork to the original repository.
+
+00:45.090 --> 00:47.070
+So I'm not gonna actually go through with it
+
+00:47.070 --> 00:50.310
+because I don't wanna bother the creator of this repository
+
+00:50.310 --> 00:53.876
+with a dumb, useless pull request that they'll just close.
+
+00:53.876 --> 00:56.100
+But you can see it's the same interface.
+
+00:56.100 --> 00:58.530
+I can create a pull request with my changes.
+
+00:58.530 --> 00:59.400
+I can leave a comment,
+
+00:59.400 --> 01:01.560
+I can explain why.
+
+01:01.560 --> 01:02.700
+You know,
+
+01:02.700 --> 01:04.680
+why I think this should be merged in.
+
+01:04.680 --> 01:06.720
+And then the repository owner
+
+01:06.720 --> 01:08.700
+and anybody who has merge permissions
+
+01:08.700 --> 01:10.830
+can then take my pull request and merge it in
+
+01:10.830 --> 01:13.140
+or close it or whatever they want to do.
+
+01:13.140 --> 01:16.110
+So that mechanism is really, really important.
+
+01:16.110 --> 01:19.290
+This would be a way for me to make a real contribution
+
+01:19.290 --> 01:20.760
+not this silly one that I did
+
+01:20.760 --> 01:22.110
+but I could make a real contribution
+
+01:22.110 --> 01:24.300
+to a project that I don't own.
+
+01:24.300 --> 01:26.130
+I don't have permission to push to it,
+
+01:26.130 --> 01:27.810
+but I can fork it.
+
+01:27.810 --> 01:29.460
+I can make my own suggestions,
+
+01:29.460 --> 01:30.293
+my own changes
+
+01:30.293 --> 01:32.100
+and then open a pull request.
+
+01:32.100 --> 01:34.140
+And that's the basis of this workflow.
+
+01:34.140 --> 01:36.720
+So this workflow, I'm calling it fork and clone.
+
+01:36.720 --> 01:38.790
+Other people say fork and clone I'm pretty sure.
+
+01:38.790 --> 01:41.310
+It's not some official term but it's common enough.
+
+01:41.310 --> 01:43.290
+It allows a whole bunch of people to work
+
+01:43.290 --> 01:47.130
+on the same project without actually all having permission
+
+01:47.130 --> 01:50.400
+and write permissions for the same repository.
+
+01:50.400 --> 01:52.980
+So I have some diagrams that I'll be using
+
+01:52.980 --> 01:54.944
+to illustrate how this all works.
+
+01:54.944 --> 01:58.500
+If we have three collaborators, which is just a subset.
+
+01:58.500 --> 02:01.260
+Let's say we have way more on a big project,
+
+02:01.260 --> 02:03.690
+potentially thousands of people who want to collaborate.
+
+02:03.690 --> 02:07.680
+But here on the diagram I've only included three people,
+
+02:07.680 --> 02:10.950
+me, somebody named Taylor and somebody named Lupe.
+
+02:10.950 --> 02:14.610
+And then we have the official project repository.
+
+02:14.610 --> 02:16.950
+Maybe we're working on React
+
+02:16.950 --> 02:18.930
+or some, I don't know,
+
+02:18.930 --> 02:21.840
+some big repository that we don't have access to
+
+02:21.840 --> 02:24.690
+to directly push or change settings,
+
+02:24.690 --> 02:26.280
+we have to make a fork.
+
+02:26.280 --> 02:30.060
+So we each fork, that's what the fork is representing.
+
+02:30.060 --> 02:34.020
+And then on my local machine, I clone my fork.
+
+02:34.020 --> 02:35.970
+So that's what this is indicating.
+
+02:35.970 --> 02:37.980
+So I have my fork that I made from
+
+02:37.980 --> 02:39.510
+the original project repo.
+
+02:39.510 --> 02:40.653
+I clone that down.
+
+02:41.820 --> 02:45.420
+So now I have this automatic remote setup called Origin.
+
+02:45.420 --> 02:47.400
+Just because I cloned this repository,
+
+02:47.400 --> 02:49.920
+the default remote name is going to be Origin.
+
+02:49.920 --> 02:52.740
+So origin refers to my fork
+
+02:52.740 --> 02:55.770
+that's done automatically when I cloned.
+
+02:55.770 --> 02:58.260
+But then I'm gonna set up a second remote,
+
+02:58.260 --> 03:01.500
+and this remote is going to be anything I want,
+
+03:01.500 --> 03:03.180
+but normally we would call it upstream.
+
+03:03.180 --> 03:05.010
+That's a very conventional name.
+
+03:05.010 --> 03:08.100
+And it refers to the original repo that we forked.
+
+03:08.100 --> 03:11.580
+So this allows me to basically have a place where
+
+03:11.580 --> 03:14.160
+I can do my own work and push changes up to.
+
+03:14.160 --> 03:16.710
+But also, if there are changes made
+
+03:16.710 --> 03:18.630
+to the original repository
+
+03:18.630 --> 03:21.060
+on a large open source project like React
+
+03:21.060 --> 03:24.450
+there might be new commits and pull requests merged daily.
+
+03:24.450 --> 03:26.970
+I want to be able to get those down on my machine.
+
+03:26.970 --> 03:28.710
+So even if I can't push up,
+
+03:28.710 --> 03:30.930
+I can still pull changes down.
+
+03:30.930 --> 03:33.180
+So often upstream or original
+
+03:33.180 --> 03:35.550
+will be the name of this remote.
+
+03:35.550 --> 03:37.050
+But now we have two remotes.
+
+03:37.050 --> 03:40.230
+One going to my fork and one going to the original.
+
+03:40.230 --> 03:41.580
+So now if I do some work
+
+03:41.580 --> 03:44.010
+I make a new commit or a bunch of commits.
+
+03:44.010 --> 03:45.570
+Normally this would be on a feature branch
+
+03:45.570 --> 03:47.541
+but for the diagram's sake I'm just doing it
+
+03:47.541 --> 03:50.190
+on the main branch or whatever this branch is.
+
+03:50.190 --> 03:53.070
+So I make some work or I make some commits.
+
+03:53.070 --> 03:55.470
+Then if I want to try and share it
+
+03:55.470 --> 03:57.030
+with the repository creators,
+
+03:57.030 --> 04:00.960
+I definitely cannot push up because I don't have permission.
+
+04:00.960 --> 04:05.280
+So instead, I can push up to my origin, which is my fork.
+
+04:05.280 --> 04:06.720
+I can push whatever I want up there.
+
+04:06.720 --> 04:08.400
+I can make the whole thing empty.
+
+04:08.400 --> 04:10.110
+I have permission to do anything with that
+
+04:10.110 --> 04:11.850
+because I own that fork.
+
+04:11.850 --> 04:13.380
+So now on GitHub,
+
+04:13.380 --> 04:15.960
+I have my fork that I've worked on
+
+04:15.960 --> 04:17.790
+and I can make a pull request
+
+04:17.790 --> 04:21.390
+just like what I showed you here where I forked 2048.
+
+04:21.390 --> 04:25.560
+I can make a PR and ask for my changes to be merged in.
+
+04:25.560 --> 04:27.480
+So then if I do that,
+
+04:27.480 --> 04:28.710
+open up a pull request,
+
+04:28.710 --> 04:30.000
+then it's up to the original
+
+04:30.000 --> 04:32.160
+or the official project repo owners,
+
+04:32.160 --> 04:34.770
+somebody who maintains it and who has permission
+
+04:34.770 --> 04:38.370
+to accept to merge or close my pull request.
+
+04:38.370 --> 04:41.850
+And if my pull request is accepted, it's merged in.
+
+04:41.850 --> 04:44.220
+So then the next step is basically
+
+04:44.220 --> 04:45.270
+show up at work again
+
+04:45.270 --> 04:48.660
+and pull down my changes from upstream.
+
+04:48.660 --> 04:50.820
+So there's new work that was done on upstream.
+
+04:50.820 --> 04:52.410
+I don't have it locally.
+
+04:52.410 --> 04:55.200
+So I go and get the latest from the real repository.
+
+04:55.200 --> 04:58.800
+I pull that down and then I can do some more work locally,
+
+04:58.800 --> 05:00.780
+push that up to my fork,
+
+05:00.780 --> 05:03.870
+and then from my fork make a pull request when necessary.
+
+05:03.870 --> 05:05.580
+So the whole point of this workflow is to
+
+05:05.580 --> 05:08.250
+allow people who don't have direct access,
+
+05:08.250 --> 05:10.110
+direct permission to push
+
+05:10.110 --> 05:13.710
+or to change anything in a project repository.
+
+05:13.710 --> 05:14.970
+They can still collaborate,
+
+05:14.970 --> 05:17.610
+they can still make pull requests by forking
+
+05:17.610 --> 05:18.840
+and then pushing their changes
+
+05:18.840 --> 05:20.790
+to their fork and opening a PR.
+
+05:20.790 --> 05:22.920
+So this would be the sort of cycle.
+
+05:22.920 --> 05:24.510
+We pull down the latest changes
+
+05:24.510 --> 05:25.860
+from the official repo,
+
+05:25.860 --> 05:27.210
+that's one remote.
+
+05:27.210 --> 05:28.500
+We make changes,
+
+05:28.500 --> 05:30.330
+we push them up to our fork
+
+05:30.330 --> 05:31.650
+and then we can make a pull request
+
+05:31.650 --> 05:34.290
+if we want with suggestions or with our changes
+
+05:34.290 --> 05:37.020
+that we want to be merged into the original repo.
+
+05:37.020 --> 05:39.840
+And then we just wait and we hope that someone responds.
+
+05:39.840 --> 05:41.460
+So here's a short summary.
+
+05:41.460 --> 05:43.500
+Fork the project, clone the fork
+
+05:43.500 --> 05:44.880
+add our upstream remote,
+
+05:44.880 --> 05:45.780
+do some work,
+
+05:45.780 --> 05:47.100
+push to the origin
+
+05:47.100 --> 05:50.400
+and then open a PR to the original or the upstream.
+
+05:50.400 --> 05:52.800
+So I'm gonna demo that again in the next video.
+
+05:52.800 --> 05:54.390
+We'll wrap up by just talking about
+
+05:54.390 --> 05:57.510
+why this is a good idea in some situations.
+
+05:57.510 --> 05:59.670
+This is not a workflow that you may want to use
+
+05:59.670 --> 06:02.640
+like on every single project that you you're working on,
+
+06:02.640 --> 06:06.210
+but again, at a larger scale where there might be
+
+06:06.210 --> 06:08.370
+some project that thousands of people
+
+06:08.370 --> 06:09.750
+might be interested in working in,
+
+06:09.750 --> 06:11.790
+or even if it's just two or three people
+
+06:11.790 --> 06:13.620
+but you don't want to give them access
+
+06:13.620 --> 06:15.990
+directly to your repository,
+
+06:15.990 --> 06:17.970
+people can still make these suggestions.
+
+06:17.970 --> 06:19.860
+They can make their own changes
+
+06:19.860 --> 06:21.720
+and hope that you merge them in.
+
+06:21.720 --> 06:24.120
+They can make a pull request from their forks.
+
+06:24.120 --> 06:26.970
+So this allows us to work with tons and tons of people
+
+06:26.970 --> 06:30.363
+without having to have direct collaborators added to a repo.
