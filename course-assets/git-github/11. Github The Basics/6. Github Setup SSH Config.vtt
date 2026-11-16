@@ -1,0 +1,511 @@
+WEBVTT
+
+00:00.120 --> 00:01.980
+Instructor: So the next step, a very important one,
+
+00:01.980 --> 00:04.260
+is to register for GitHub.
+
+00:04.260 --> 00:07.380
+So go to github.com if you don't have an account yet
+
+00:07.380 --> 00:08.733
+and click Sign up.
+
+00:09.720 --> 00:10.830
+So then, you'll need to come up
+
+00:10.830 --> 00:14.610
+with a username, an email address, and a password.
+
+00:14.610 --> 00:17.250
+Make sure that you use a real email address
+
+00:17.250 --> 00:19.950
+because you will need to verify the email.
+
+00:19.950 --> 00:21.510
+And it's helpful,
+
+00:21.510 --> 00:25.260
+things work better if the email address you use here
+
+00:25.260 --> 00:29.040
+is the one that you configured very early on in the course.
+
+00:29.040 --> 00:31.050
+If you remember, we did this,
+
+00:31.050 --> 00:34.803
+let's see, git config user.email.
+
+00:35.701 --> 00:40.080
+So I'm actually using a special email that GitHub gives me,
+
+00:40.080 --> 00:43.800
+but basically we want git to use the same email address here
+
+00:43.800 --> 00:45.720
+that we use on GitHub.
+
+00:45.720 --> 00:48.270
+I use this weird noreply email
+
+00:48.270 --> 00:50.880
+just so that I'm not like publicly blasting my email address
+
+00:50.880 --> 00:54.870
+in every git commit or in every video I do using git.
+
+00:54.870 --> 00:59.130
+But it works best if whatever your account email is
+
+00:59.130 --> 01:02.160
+is also set up locally in your git config,
+
+01:02.160 --> 01:05.610
+and that just helps GitHub know who you are, you know.
+
+01:05.610 --> 01:06.990
+When you push up code,
+
+01:06.990 --> 01:09.690
+it knows to use your profile and your image
+
+01:09.690 --> 01:12.150
+and sort of track your work.
+
+01:12.150 --> 01:15.600
+Anyway, so sign up, use an email address, your username.
+
+01:15.600 --> 01:18.030
+And then the second step, once that is done,
+
+01:18.030 --> 01:20.250
+is to configure an SSH key.
+
+01:20.250 --> 01:22.650
+So without going into too much detail,
+
+01:22.650 --> 01:27.480
+SSH, I believe stands for Secure Shell, is this protocol
+
+01:27.480 --> 01:31.200
+that allows us to be authenticated without having to write
+
+01:31.200 --> 01:33.630
+our email or our username and password
+
+01:33.630 --> 01:36.090
+every single time we wanna interact with GitHub
+
+01:36.090 --> 01:37.860
+from the command line.
+
+01:37.860 --> 01:42.330
+So what we need to do is generate one of these SSH keys
+
+01:42.330 --> 01:44.460
+and then tell GitHub about it.
+
+01:44.460 --> 01:45.390
+And to do that,
+
+01:45.390 --> 01:48.200
+we're gonna follow the instructions on GitHub
+
+01:48.200 --> 01:50.490
+that go into detail about how to do that.
+
+01:50.490 --> 01:53.490
+So it depends on the platform you're on, but the first step
+
+01:53.490 --> 01:57.300
+is to check if you have an SSH key generated already,
+
+01:57.300 --> 02:01.544
+and all you do to figure that out is run this command here.
+
+02:01.544 --> 02:03.270
+You can just copy this command.
+
+02:03.270 --> 02:04.770
+You don't want that dollar sign.
+
+02:04.770 --> 02:06.930
+And this is going to show a whole bunch of,
+
+02:06.930 --> 02:09.960
+it may show a whole bunch of existing files
+
+02:09.960 --> 02:12.547
+in a directory called .ssh.
+
+02:12.547 --> 02:14.310
+If nothing is in there
+
+02:14.310 --> 02:17.130
+or, rather, if you don't see any of these,
+
+02:17.130 --> 02:19.080
+id_rsa.pub,
+
+02:19.080 --> 02:21.420
+id_ecdca.pub,
+
+02:21.420 --> 02:23.430
+these are all different hashing algorithms.
+
+02:23.430 --> 02:24.660
+If you don't see one of these
+
+02:24.660 --> 02:26.490
+or you just wanna make a new key,
+
+02:26.490 --> 02:28.050
+if you're brand new to all these,
+
+02:28.050 --> 02:30.150
+you likely don't have any of these files.
+
+02:30.150 --> 02:33.990
+It's no big deal. All we need to do is generate a new key.
+
+02:33.990 --> 02:35.670
+So this is where things diverge a bit
+
+02:35.670 --> 02:38.130
+if you're on a Windows machine versus a Mac.
+
+02:38.130 --> 02:40.320
+I don't think the differences are that significant,
+
+02:40.320 --> 02:45.300
+but definitely do it following the tutorial here on GitHub.
+
+02:45.300 --> 02:47.580
+Don't use this video as the source of truth.
+
+02:47.580 --> 02:48.810
+Things change quickly.
+
+02:48.810 --> 02:51.450
+I'll include it as one of the resources.
+
+02:51.450 --> 02:52.950
+So I'll go through this process.
+
+02:52.950 --> 02:55.800
+I've already set up an SSH key, but I'll do the same thing.
+
+02:55.800 --> 02:58.590
+We're gonna copy this right here,
+
+02:58.590 --> 03:00.330
+and then we put our email in there,
+
+03:00.330 --> 03:02.970
+and that will act as our label.
+
+03:02.970 --> 03:05.301
+So I'm gonna go to my terminal.
+
+03:05.301 --> 03:06.840
+I'm gonna run this,
+
+03:06.840 --> 03:09.810
+then in quotes just gonna use this email here.
+
+03:09.810 --> 03:12.077
+This is the one I use for git and GitHub.
+
+03:13.050 --> 03:15.720
+Okay, and then it's gonna ask me for a file
+
+03:15.720 --> 03:17.730
+where it should save that key.
+
+03:17.730 --> 03:20.940
+So this is the default filename and the default location,
+
+03:20.940 --> 03:23.310
+in this .ssh folder.
+
+03:23.310 --> 03:25.920
+If you just hit Enter, it's going to use that.
+
+03:25.920 --> 03:28.920
+You can also come up with your own filename if you want.
+
+03:28.920 --> 03:33.883
+However, all the GitHub tutorials use this name, id_ed25519.
+
+03:35.520 --> 03:38.730
+So I'm just gonna go with that. I'm gonna hit Enter.
+
+03:38.730 --> 03:40.620
+And then enter a passphrase.
+
+03:40.620 --> 03:42.000
+So you can type that passphrase,
+
+03:42.000 --> 03:44.610
+and then enter the same passphrase again.
+
+03:44.610 --> 03:45.960
+All right, so then it tells me
+
+03:45.960 --> 03:49.950
+that my identification has been saved in this file
+
+03:49.950 --> 03:52.800
+and my public key has been saved in a similar file,
+
+03:52.800 --> 03:54.570
+but it ends in .pub.
+
+03:54.570 --> 03:55.830
+It's the public key.
+
+03:55.830 --> 03:57.870
+I'm not going into detail, explaining how this stuff works
+
+03:57.870 --> 04:00.330
+because it doesn't really matter at this point.
+
+04:00.330 --> 04:01.950
+We just wanna get it set up.
+
+04:01.950 --> 04:03.330
+So the next step
+
+04:03.330 --> 04:07.260
+is to then add the SSH key to the SSH agent.
+
+04:07.260 --> 04:09.780
+So we're gonna copy this line, if you're on a Mac,
+
+04:09.780 --> 04:11.190
+and there are some instructions.
+
+04:11.190 --> 04:13.650
+Depending on the macOS operating system,
+
+04:13.650 --> 04:15.210
+I guess that's what OS is,
+
+04:15.210 --> 04:17.340
+and depending on the version that you're running,
+
+04:17.340 --> 04:19.800
+you may need to make some additional changes.
+
+04:19.800 --> 04:21.654
+So I'm gonna try this here.
+
+04:21.654 --> 04:24.780
+Okay, so that looks like it's working fine.
+
+04:24.780 --> 04:27.150
+So the next step on a Mac is to check
+
+04:27.150 --> 04:30.930
+if we have this file called config in the ssh directory.
+
+04:30.930 --> 04:32.580
+So we can see if it exists.
+
+04:32.580 --> 04:33.780
+And if it doesn't exist,
+
+04:33.780 --> 04:35.700
+you can run this command to make it.
+
+04:35.700 --> 04:38.700
+So if you get this line, it says it does not exist,
+
+04:38.700 --> 04:40.950
+try this one to make that file,
+
+04:40.950 --> 04:44.100
+and, again, this is only if you're on a newer Mac.
+
+04:44.100 --> 04:46.800
+And then here, we need to open that file
+
+04:46.800 --> 04:49.560
+and then put this right here, just copy this,
+
+04:49.560 --> 04:51.600
+and put that in the file.
+
+04:51.600 --> 04:54.660
+Now, if you gave your filename, when you generated the keys,
+
+04:54.660 --> 04:56.850
+if you gave it a different name from the default,
+
+04:56.850 --> 04:59.820
+you'll need to reflect that name here, but I'm just going
+
+04:59.820 --> 05:01.710
+with what they have in the documentation.
+
+05:01.710 --> 05:02.940
+So I'm gonna paste that in,
+
+05:02.940 --> 05:06.510
+hopefully you can see this, and save.
+
+05:06.510 --> 05:08.130
+So that was the name of my file.
+
+05:08.130 --> 05:10.350
+If you remember, right here,
+
+05:10.350 --> 05:12.930
+this is what I set to save it as it just hit Enter.
+
+05:12.930 --> 05:17.220
+So that matches this right here coming from the GitHub Docs.
+
+05:17.220 --> 05:20.636
+Also, if you elected to use a passcode
+
+05:20.636 --> 05:23.430
+when you generated the key, you want this line.
+
+05:23.430 --> 05:26.460
+If you did not use a passcode, you don't want that line.
+
+05:26.460 --> 05:28.200
+Now, the final step here
+
+05:28.200 --> 05:31.050
+is, well, the final step before we go to GitHub
+
+05:31.050 --> 05:34.710
+is to copy this line which is to add our key
+
+05:34.710 --> 05:37.980
+to something called the SSH agent which we just started up.
+
+05:37.980 --> 05:40.080
+And if we do this, again, you need to make sure
+
+05:40.080 --> 05:41.820
+you're using the correct filename
+
+05:41.820 --> 05:44.730
+that matches the filename you generated,
+
+05:44.730 --> 05:46.560
+but, again, this is the default.
+
+05:46.560 --> 05:49.620
+So if you didn't deviate, this is all you need to do.
+
+05:49.620 --> 05:53.760
+We'll run this line. Okay, identity added.
+
+05:53.760 --> 05:56.670
+So now, final step is to go to GitHub
+
+05:56.670 --> 05:59.733
+and add that SSH key to the GitHub account.
+
+06:00.600 --> 06:03.300
+So what we need to do is copy the contents
+
+06:03.300 --> 06:06.420
+of the key that was generated, the public key.
+
+06:06.420 --> 06:07.860
+So, again, just copy this line
+
+06:07.860 --> 06:10.983
+if you're using the same name and you didn't modify it.
+
+06:11.893 --> 06:15.946
+You won't see any output, but this command, pbcopy,
+
+06:15.946 --> 06:19.620
+copies the output of this into your clipboard.
+
+06:19.620 --> 06:23.010
+So on the clipboard right now I have this key here.
+
+06:23.010 --> 06:25.470
+So I got that. I have access to it.
+
+06:25.470 --> 06:28.320
+And now I need to go onto GitHub
+
+06:28.320 --> 06:32.040
+and go to my profile, profile photo up top,
+
+06:32.040 --> 06:35.310
+and then go to Settings, I believe is what it is.
+
+06:35.310 --> 06:37.200
+Super zoomed in here. Here we are.
+
+06:37.200 --> 06:41.190
+And then I click on SSH, and then I'll add a new key.
+
+06:41.190 --> 06:44.430
+So I'll just demonstrate this. I go to GitHub.
+
+06:44.430 --> 06:47.850
+Here's my profile, I'm gonna go to Settings,
+
+06:47.850 --> 06:50.760
+and then SSH and GPG keys,
+
+06:50.760 --> 06:54.930
+and then I'm gonna click New SSH key just like that,
+
+06:54.930 --> 06:56.380
+then I'm gonna paste this in,
+
+06:57.300 --> 06:59.820
+thing I copied from the clipboard over here
+
+06:59.820 --> 07:01.500
+or copied to my clipboard.
+
+07:01.500 --> 07:03.000
+And then give it a title
+
+07:03.000 --> 07:07.833
+just like laptop, for example, or mykey, it doesn't matter,
+
+07:09.596 --> 07:11.760
+and I'm going to add it.
+
+07:11.760 --> 07:14.387
+All right, so we should be good to go now.
+
+07:14.387 --> 07:18.600
+I know it's obnoxious process, but once we have it done,
+
+07:18.600 --> 07:20.400
+really don't ever have to do it again,
+
+07:20.400 --> 07:22.140
+at least not on this machine.
+
+07:22.140 --> 07:23.820
+With that said, I'm gonna do it again
+
+07:23.820 --> 07:25.860
+after recording this video.
+
+07:25.860 --> 07:27.120
+But we should have the key set up,
+
+07:27.120 --> 07:28.650
+and we'll know if it works or not
+
+07:28.650 --> 07:31.113
+when we try pushing in the next couple of videos.
