@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.180 --> 00:02.760
+Instructor: So this next section is very short,
+
+00:02.760 --> 00:05.220
+and as you can see, there's really not a whole lot we cover.
+
+00:05.220 --> 00:08.580
+It's all about setting up your own custom Git aliases.
+
+00:08.580 --> 00:10.080
+So there's two things we talk about.
+
+00:10.080 --> 00:14.190
+One is how we define the aliases and where we put them,
+
+00:14.190 --> 00:16.140
+which is this global config file.
+
+00:16.140 --> 00:18.180
+That's normally where we put them.
+
+00:18.180 --> 00:21.810
+So I'll say, eh, I don't know, it's worth knowing about that
+
+00:21.810 --> 00:24.090
+even outside of the context of aliases,
+
+00:24.090 --> 00:27.540
+and then actually writing these aliases is nice to have.
+
+00:27.540 --> 00:29.730
+Some people really use a lot of aliases.
+
+00:29.730 --> 00:30.750
+They're like shortcuts,
+
+00:30.750 --> 00:32.490
+little custom commands you can write,
+
+00:32.490 --> 00:35.340
+so you don't have to type out full length Git commands,
+
+00:35.340 --> 00:37.230
+but other people aren't as crazy about them.
+
+00:37.230 --> 00:39.300
+So I'd say completely nice to have,
+
+00:39.300 --> 00:41.040
+but people might argue with me.
+
+00:41.040 --> 00:43.770
+Some people are very, I don't wanna say addicted,
+
+00:43.770 --> 00:48.450
+but very into their own aliases that they've set up,
+
+00:48.450 --> 00:49.890
+so much so that they might not even know
+
+00:49.890 --> 00:51.570
+how to use regular Git commands.
+
+00:51.570 --> 00:53.100
+They're just so used to,
+
+00:53.100 --> 00:55.140
+so accustomed to their custom aliases.
+
+00:55.140 --> 00:56.640
+Anyway, nothing critical.
+
+00:56.640 --> 00:58.710
+It's a short section and pretty light stuff.
+
+00:58.710 --> 01:00.030
+It's kind of fun.
+
+01:00.030 --> 01:02.310
+And if you enjoy working with these aliases,
+
+01:02.310 --> 01:04.960
+you'll have a lot that you can do after this section.
