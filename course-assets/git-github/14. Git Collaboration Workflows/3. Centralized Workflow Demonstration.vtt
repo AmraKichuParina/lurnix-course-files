@@ -1,0 +1,844 @@
+WEBVTT
+
+00:00.300 --> 00:01.650
+Instructor: Okay, here goes nothing.
+
+00:01.650 --> 00:04.260
+I'm gonna demonstrate the centralized workflow.
+
+00:04.260 --> 00:06.570
+I'm working with the same two user accounts,
+
+00:06.570 --> 00:11.160
+same two Git users Colt and good old StevieChicks.
+
+00:11.160 --> 00:15.420
+My chicken, well you can see StevieChicks
+
+00:15.420 --> 00:16.800
+that's who I'm signed in here.
+
+00:16.800 --> 00:19.470
+Once again, paid attention to what you see up top
+
+00:19.470 --> 00:21.510
+that is very important to differentiate
+
+00:21.510 --> 00:23.160
+between the different users.
+
+00:23.160 --> 00:25.800
+Alright, so I've made a repo called centralized-workflow.
+
+00:25.800 --> 00:28.320
+Colt is the owner and I've gone ahead
+
+00:28.320 --> 00:31.530
+and added StevieChicks as a collaborator.
+
+00:31.530 --> 00:34.290
+As you can see here, I just fast forwarded,
+
+00:34.290 --> 00:35.580
+or I didn't even fast forward,
+
+00:35.580 --> 00:37.500
+I skipped through that part entirely
+
+00:37.500 --> 00:38.640
+because it just takes time.
+
+00:38.640 --> 00:42.090
+I had to open the email and accept the invite as Stevie.
+
+00:42.090 --> 00:43.470
+But anyway, we both have access.
+
+00:43.470 --> 00:44.670
+It's a public repo for now.
+
+00:44.670 --> 00:45.570
+It doesn't matter.
+
+00:45.570 --> 00:48.210
+And Colt's already added a simple Read Me,
+
+00:48.210 --> 00:50.850
+and I actually did that all in the browser.
+
+00:50.850 --> 00:52.950
+I don't have this on my local machine,
+
+00:52.950 --> 00:56.610
+so I am gonna clone this down as Colt.
+
+00:56.610 --> 00:59.340
+So make sure I'm not in a Git repo, git status.
+
+00:59.340 --> 01:02.223
+Cool, so git clone that URL,
+
+01:04.110 --> 01:07.050
+okay, so now we have that folder,
+
+01:07.050 --> 01:09.390
+git status, we've got the README,
+
+01:09.390 --> 01:11.400
+and I'll open that over here.
+
+01:11.400 --> 01:12.870
+Okay, so there's that file there.
+
+01:12.870 --> 01:16.020
+And then I'll go ahead and clone the same repo down
+
+01:16.020 --> 01:18.690
+to Stevie's local machine,
+
+01:18.690 --> 01:20.340
+so that we can, you know, both work on it.
+
+01:20.340 --> 01:22.770
+Just like we would just like in the diagrams,
+
+01:22.770 --> 01:24.780
+where in this centralized workflow,
+
+01:24.780 --> 01:28.050
+everybody clones or everybody gets the same starting repo,
+
+01:28.050 --> 01:29.310
+the same remotes.
+
+01:29.310 --> 01:31.020
+So that's what I'm gonna do here.
+
+01:31.020 --> 01:33.243
+Okay? So I'm gonna copy this URL,
+
+01:34.860 --> 01:37.350
+and then as Stevie clone it.
+
+01:37.350 --> 01:39.060
+Okay, and just as a reminder,
+
+01:39.060 --> 01:41.820
+I had to jump through some hoops in order
+
+01:41.820 --> 01:45.000
+to have these two different accounts and be able to clone
+
+01:45.000 --> 01:48.240
+as separate users with different SSH keys.
+
+01:48.240 --> 01:52.110
+So I actually did tweak my URL a bit to make this all work.
+
+01:52.110 --> 01:53.010
+It doesn't really matter
+
+01:53.010 --> 01:54.270
+because I'm not expecting you to do it.
+
+01:54.270 --> 01:57.750
+But I just wanna be very clear and transparent about that.
+
+01:57.750 --> 01:58.710
+I am on one machine,
+
+01:58.710 --> 02:00.720
+and normally you don't have two different accounts,
+
+02:00.720 --> 02:03.210
+and two different SSH keys and all of that.
+
+02:03.210 --> 02:07.140
+Anyway, I clone that, we see centralized-workflow.
+
+02:07.140 --> 02:09.900
+Great, and we're now working on that.
+
+02:09.900 --> 02:12.150
+I'll open it in Stevie's editor too.
+
+02:12.150 --> 02:13.980
+Okay, so now we both have it.
+
+02:13.980 --> 02:15.780
+We've cloned, we're ready to go.
+
+02:15.780 --> 02:17.430
+So we're gonna make a simple website.
+
+02:17.430 --> 02:19.350
+I'm talking very, very simple,
+
+02:19.350 --> 02:21.630
+and Colt is gonna start it off.
+
+02:21.630 --> 02:25.590
+Colt is going to make the index.html, our main file,
+
+02:25.590 --> 02:27.210
+the entry point into our app,
+
+02:27.210 --> 02:30.360
+and then he's going to add and commit that.
+
+02:30.360 --> 02:33.150
+So we'll do a git add index,
+
+02:33.150 --> 02:36.780
+git commit -m "add index.html",
+
+02:36.780 --> 02:38.820
+I'm doing super short
+
+02:38.820 --> 02:41.550
+and kind of terrible commit messages, but that's fine.
+
+02:41.550 --> 02:44.880
+And then what I'm going to do is use Bootstrap.
+
+02:44.880 --> 02:46.680
+So if you're familiar with Bootstrap, great.
+
+02:46.680 --> 02:48.300
+If not, it doesn't really matter
+
+02:48.300 --> 02:51.060
+because I'm not expecting you to follow along.
+
+02:51.060 --> 02:53.940
+But I'm going to open that HTML file
+
+02:53.940 --> 02:57.090
+and add some basic Bootstrap boilerplate.
+
+02:57.090 --> 02:58.890
+Okay, so I put that in there,
+
+02:58.890 --> 03:02.370
+and I'll add and commit that as Colt,
+
+03:02.370 --> 03:04.863
+git add index, git commit,
+
+03:06.870 --> 03:10.380
+add bootstrap boilerplate.
+
+03:10.380 --> 03:12.510
+All right, so now I'm gonna push this up.
+
+03:12.510 --> 03:16.500
+I'll clear, I'm gonna push those two commits to origin main.
+
+03:16.500 --> 03:18.450
+If we're all working on one branch,
+
+03:18.450 --> 03:20.070
+in this case it'll be the main branch,
+
+03:20.070 --> 03:22.170
+but in the diagrams I created,
+
+03:22.170 --> 03:24.330
+it's the master branch everyone's working on.
+
+03:24.330 --> 03:25.830
+But it's the same concept.
+
+03:25.830 --> 03:29.550
+So basically right now we are playing the role of Forrest,
+
+03:29.550 --> 03:32.070
+doing some commits and pushing them up.
+
+03:32.070 --> 03:33.570
+All right, so that's what I'm gonna do.
+
+03:33.570 --> 03:34.923
+git push origin main,
+
+03:35.880 --> 03:38.100
+and that goes up to GitHub.
+
+03:38.100 --> 03:40.890
+And now if we refresh our repository,
+
+03:40.890 --> 03:42.930
+we see index.html, right?
+
+03:42.930 --> 03:44.070
+This is now up here.
+
+03:44.070 --> 03:45.630
+So now as Stevie,
+
+03:45.630 --> 03:48.352
+we definitely wanna pull down those changes, right?
+
+03:48.352 --> 03:51.723
+So gi pull origin main just to start.
+
+03:53.700 --> 03:57.270
+All right, and so now we have that new file index.html,
+
+03:57.270 --> 03:58.740
+and let's get to work.
+
+03:58.740 --> 04:00.300
+Let's say that Colt has been tasked
+
+04:00.300 --> 04:03.630
+with making a form on their webpage.
+
+04:03.630 --> 04:05.130
+A simple form.
+
+04:05.130 --> 04:07.140
+So we're just gonna copy some of the forms
+
+04:07.140 --> 04:08.910
+from the documentation.
+
+04:08.910 --> 04:11.910
+Maybe it's a form that looks like,
+
+04:11.910 --> 04:14.100
+sure, maybe it's just a login form.
+
+04:14.100 --> 04:16.830
+So we're just gonna copy this just to keep everything short.
+
+04:16.830 --> 04:19.920
+So this is on Colt's machine.
+
+04:19.920 --> 04:23.703
+We'll put this in the body, we'll add a Bootstrap container.
+
+04:25.380 --> 04:27.120
+Okay, so this is the work.
+
+04:27.120 --> 04:28.980
+We'll pretend this took all morning,
+
+04:28.980 --> 04:30.210
+Colt did this work.
+
+04:30.210 --> 04:31.854
+So then Colt decides.
+
+04:31.854 --> 04:34.260
+So weird saying my name in third person.
+
+04:34.260 --> 04:38.130
+But anyway, I decide it's time to make a commit.
+
+04:38.130 --> 04:40.320
+So always check its status.
+
+04:40.320 --> 04:42.630
+All right, git, I'll just do a one-liner,
+
+04:42.630 --> 04:45.660
+git dash, or git commit -am
+
+04:45.660 --> 04:48.720
+for what'd we do, "add basic",
+
+04:48.720 --> 04:50.910
+this is a login form that we made,
+
+04:50.910 --> 04:54.270
+sure, "login form".
+
+04:54.270 --> 04:56.040
+All right, so now Colt pushes this up.
+
+04:56.040 --> 04:58.470
+He wants everyone else to know about this.
+
+04:58.470 --> 05:00.783
+So git push origin main.
+
+05:02.160 --> 05:04.710
+Now at the same time all this has been happening,
+
+05:04.710 --> 05:07.470
+Stevie is working on some other feature.
+
+05:07.470 --> 05:10.500
+Stevie has been tasked with adding a Navbar,
+
+05:10.500 --> 05:12.930
+probably not exactly, right?
+
+05:12.930 --> 05:17.010
+A super realistic reflection of a real workplace,
+
+05:17.010 --> 05:20.460
+where one person is asked to just put a form on a page,
+
+05:20.460 --> 05:21.450
+and somebody else is asked
+
+05:21.450 --> 05:24.330
+to independently put some random Navbar on a page,
+
+05:24.330 --> 05:26.160
+and then they're expected to combine it.
+
+05:26.160 --> 05:30.270
+Usually there would be some sort of design process
+
+05:30.270 --> 05:33.300
+and some sort of mock up or wire framed or something
+
+05:33.300 --> 05:35.520
+that would be what we were trying to recreate.
+
+05:35.520 --> 05:37.350
+But anyway, let's just say it's a free for all.
+
+05:37.350 --> 05:39.600
+Stevie has been asked to add a Navbar.
+
+05:39.600 --> 05:42.330
+So on Bootstrap, we can make all sorts of fancy Navbars
+
+05:42.330 --> 05:44.400
+like this one here.
+
+05:44.400 --> 05:48.000
+Again, I'm just gonna copy this, just straight up copy it.
+
+05:48.000 --> 05:49.620
+I don't wanna waste your time.
+
+05:49.620 --> 05:52.740
+So Stevie, this is Stevie's desktop here,
+
+05:52.740 --> 05:55.023
+puts that in index.html,
+
+05:56.370 --> 05:59.790
+puts it right above everything else.
+
+05:59.790 --> 06:01.200
+So this is Stevie's work.
+
+06:01.200 --> 06:02.160
+Let's see what it looks like.
+
+06:02.160 --> 06:04.800
+If we refresh, there's the Navbar.
+
+06:04.800 --> 06:08.070
+Okay, so then Stevie adds and commits that,
+
+06:08.070 --> 06:09.750
+git add index,
+
+06:09.750 --> 06:14.613
+git commit -m "add bootstrap navbar"
+
+06:15.600 --> 06:18.150
+okay, so then he keeps working
+
+06:18.150 --> 06:20.520
+and then maybe he makes another small tweak.
+
+06:20.520 --> 06:23.580
+He actually wants this to be a dark Navbar.
+
+06:23.580 --> 06:24.480
+So on the Navbar,
+
+06:24.480 --> 06:28.800
+we can change this navbar-light to be navbar-dark,
+
+06:28.800 --> 06:31.830
+and then give it a dark background.
+
+06:31.830 --> 06:35.370
+So bg-dark like this.
+
+06:35.370 --> 06:36.540
+Let's see what that looks like.
+
+06:36.540 --> 06:38.250
+All right, so that's what Stevie wants.
+
+06:38.250 --> 06:41.970
+And then he realizes, oh, you know what?
+
+06:41.970 --> 06:45.000
+This is supposed to be responsive and it is,
+
+06:45.000 --> 06:47.700
+except why is this drawer not working right?
+
+06:47.700 --> 06:50.700
+He wants this drawer like it does on the documentation.
+
+06:50.700 --> 06:53.280
+Whoops, it's on this page, isn't it?
+
+06:53.280 --> 06:56.310
+On the documentation when this collapses,
+
+06:56.310 --> 06:59.370
+right there, there's this dropdown that's supposed
+
+06:59.370 --> 07:01.740
+to show up or this drawer that expands,
+
+07:01.740 --> 07:03.900
+but it's not happening on Stevie's copy,
+
+07:03.900 --> 07:04.860
+and he's freaking out.
+
+07:04.860 --> 07:07.050
+He's very junior, I mean, he's a chicken,
+
+07:07.050 --> 07:08.610
+he doesn't know what's going on.
+
+07:08.610 --> 07:09.930
+So he decides, you know what?
+
+07:09.930 --> 07:13.830
+I should just ask Colt, he's somewhat experienced with this.
+
+07:13.830 --> 07:14.880
+I'm gonna just ask him,
+
+07:14.880 --> 07:16.050
+I'll send him a Slack message,
+
+07:16.050 --> 07:18.750
+and I'll put my code up on GitHub.
+
+07:18.750 --> 07:20.670
+So you probably know where I'm going with this.
+
+07:20.670 --> 07:23.040
+Stevie needs to put this code on GitHub.
+
+07:23.040 --> 07:25.680
+He wants to put this half, I mean, it's kind, it's working.
+
+07:25.680 --> 07:27.270
+It's a Navbar, it's showing up,
+
+07:27.270 --> 07:29.520
+but for whatever reason, it's not collapsing.
+
+07:29.520 --> 07:31.410
+He wants to share this with Colt.
+
+07:31.410 --> 07:34.770
+So Stevie goes ahead and adds and commits.
+
+07:34.770 --> 07:38.760
+He needs to add that git add index,
+
+07:38.760 --> 07:43.760
+git commit -m "change navbar color
+
+07:45.150 --> 07:46.860
+to dark" or something.
+
+07:46.860 --> 07:49.560
+Alright, so now Stevie, moment of truth,
+
+07:49.560 --> 07:51.540
+I'll make this a bit larger here.
+
+07:51.540 --> 07:53.100
+Now he pushes this code up
+
+07:53.100 --> 07:55.350
+and if we're doing this centralized workflow
+
+07:55.350 --> 07:58.530
+if there's only one branch main, he pushes that up.
+
+07:58.530 --> 08:01.293
+So git push origin main,
+
+08:03.030 --> 08:05.100
+uh-oh, what does this say?
+
+08:05.100 --> 08:08.190
+Rejected. Oh, who saw this coming?
+
+08:08.190 --> 08:10.980
+Failed to push some refs to blah, blah, blah, blah, blah.
+
+08:10.980 --> 08:11.970
+Updates were rejected
+
+08:11.970 --> 08:13.290
+because the remote contained work
+
+08:13.290 --> 08:15.270
+that you do not have locally.
+
+08:15.270 --> 08:16.140
+This is usually caused
+
+08:16.140 --> 08:18.330
+by another repository pushing blah, blah, blah, blah.
+
+08:18.330 --> 08:21.360
+So basically we ran into this problem, oh my gosh,
+
+08:21.360 --> 08:23.760
+lots of desktops, right here,
+
+08:23.760 --> 08:26.250
+where if we try and push something up,
+
+08:26.250 --> 08:29.130
+and we don't have all the new work from GitHub,
+
+08:29.130 --> 08:30.870
+Git won't let us do that.
+
+08:30.870 --> 08:33.720
+So we first have to pull those new commits down.
+
+08:33.720 --> 08:35.790
+Basically, I have to get the work,
+
+08:35.790 --> 08:37.530
+Stevie has to get the work
+
+08:37.530 --> 08:39.870
+that Colt pushed up to GitHub.
+
+08:39.870 --> 08:43.350
+Oh boy, what a nightmare to talk about all of this.
+
+08:43.350 --> 08:45.060
+But right, there's these new commits.
+
+08:45.060 --> 08:46.110
+There's five commits here.
+
+08:46.110 --> 08:48.120
+The most recent one is the login form
+
+08:48.120 --> 08:50.070
+that Colt pushed up to GitHub.
+
+08:50.070 --> 08:52.170
+Stevie doesn't have that locally,
+
+08:52.170 --> 08:55.440
+so we have to pull down, so we can do that.
+
+08:55.440 --> 08:59.073
+git pull origin main.
+
+09:01.200 --> 09:03.780
+And it could have been worse, but there was still a merge.
+
+09:03.780 --> 09:05.336
+So we have this merge commit,
+
+09:05.336 --> 09:07.710
+and it's saying, merge Branch main,
+
+09:07.710 --> 09:09.930
+blah, blah, blah, blah, on into main.
+
+09:09.930 --> 09:11.430
+Sure, we'll just go with that.
+
+09:11.430 --> 09:14.370
+So this is what things now look like on Stevie's machine.
+
+09:14.370 --> 09:18.180
+He got the changes that Colt did for this form.
+
+09:18.180 --> 09:22.140
+So now he can push up, hopefully, let's see, git status.
+
+09:22.140 --> 09:23.550
+Yes, he's good to go.
+
+09:23.550 --> 09:27.450
+So he can push up, git push origin main,
+
+09:27.450 --> 09:29.640
+which is what we tried to do in the first place, right?
+
+09:29.640 --> 09:31.440
+We don't even have this finished Navbar.
+
+09:31.440 --> 09:33.090
+It's still not really working.
+
+09:33.090 --> 09:34.890
+We wanna push that up.
+
+09:34.890 --> 09:37.890
+Okay? We go to GitHub and it does show up here.
+
+09:37.890 --> 09:41.850
+We can see on index, we have the Navbar content.
+
+09:41.850 --> 09:44.700
+So in the meantime, it's the next day.
+
+09:44.700 --> 09:47.610
+Colt shows up to work and he starts doing some other stuff.
+
+09:47.610 --> 09:50.190
+Let's say he's just making some minor tweaks.
+
+09:50.190 --> 09:52.350
+He's changing the form.
+
+09:52.350 --> 09:53.640
+I don't know what he's doing to the form,
+
+09:53.640 --> 09:56.730
+instead of We'll never share your email with anyone else,
+
+09:56.730 --> 10:00.330
+We'll always share your email with everyone.
+
+10:00.330 --> 10:01.980
+So he's just making some changes.
+
+10:01.980 --> 10:03.757
+And then he gets that message from Stevie saying,
+
+10:03.757 --> 10:06.210
+"Hey, I just pushed up new, some new code,
+
+10:06.210 --> 10:08.790
+this broken nav mark, can you try and fix it for me?"
+
+10:08.790 --> 10:11.940
+So Colt then has to decide, okay,
+
+10:11.940 --> 10:15.660
+well I have these changes, right, on my master branch,
+
+10:15.660 --> 10:19.500
+or my main branch, the only branch allowed in this workflow.
+
+10:19.500 --> 10:21.420
+Oh, you can see it's kind of a nightmare.
+
+10:21.420 --> 10:23.910
+I have changes that are not ready to commit.
+
+10:23.910 --> 10:24.743
+What do I do?
+
+10:24.743 --> 10:27.123
+I want to go get that new stuff from Stevie,
+
+10:27.960 --> 10:29.970
+but if I try and pull right now,
+
+10:29.970 --> 10:31.503
+git pull origin main,
+
+10:33.480 --> 10:34.980
+and what do we see?
+
+10:34.980 --> 10:37.080
+Oh, it doesn't actually let me do it.
+
+10:37.080 --> 10:38.100
+It says, "Your local changes
+
+10:38.100 --> 10:39.990
+to the following files would be overwritten.
+
+10:39.990 --> 10:42.600
+Please commit your changes or stash them before you merge."
+
+10:42.600 --> 10:44.910
+So it doesn't even let me get the newest version,
+
+10:44.910 --> 10:46.770
+the newest work that Stevie's done.
+
+10:46.770 --> 10:49.770
+So I need to commit or stash.
+
+10:49.770 --> 10:52.860
+I guess we could stash, but that's fine.
+
+10:52.860 --> 10:54.810
+So git stash.
+
+10:54.810 --> 10:57.030
+Okay, so now I can take a look.
+
+10:57.030 --> 10:59.460
+I can do a git pull origin main again,
+
+10:59.460 --> 11:00.540
+we're all just working.
+
+11:00.540 --> 11:02.580
+We're stuck on this one branch.
+
+11:02.580 --> 11:06.360
+All right, now I get that new commit, hopefully from Stevie.
+
+11:06.360 --> 11:08.190
+Let's just take a look.
+
+11:08.190 --> 11:09.960
+We have the Navbar.
+
+11:09.960 --> 11:13.200
+It is showing up and it's not working,
+
+11:13.200 --> 11:16.200
+right, I go back here, it's still broken.
+
+11:16.200 --> 11:17.250
+And that was the point.
+
+11:17.250 --> 11:19.560
+Stevie wanted help and just to get help,
+
+11:19.560 --> 11:21.720
+he had to break the main branch.
+
+11:21.720 --> 11:23.010
+Our only branch.
+
+11:23.010 --> 11:24.570
+I mean, it's not truly broken,
+
+11:24.570 --> 11:26.910
+but he had to add this incomplete code to it.
+
+11:26.910 --> 11:29.940
+This isn't working and it's not ready for production.
+
+11:29.940 --> 11:32.070
+I'll get in trouble from my boss.
+
+11:32.070 --> 11:33.570
+I can't do this sort of thing.
+
+11:33.570 --> 11:34.650
+So in the next video,
+
+11:34.650 --> 11:36.923
+we're gonna talk about a much better workflow.
