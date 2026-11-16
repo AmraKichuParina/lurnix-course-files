@@ -1,0 +1,481 @@
+WEBVTT
+
+00:00.150 --> 00:02.520
+Instructor: When we rebase, we can end up with conflicts
+
+00:02.520 --> 00:03.690
+just like when we merge.
+
+00:03.690 --> 00:04.980
+We're combining history,
+
+00:04.980 --> 00:06.870
+we're combining branches together.
+
+00:06.870 --> 00:08.910
+That can lead to a merge conflict.
+
+00:08.910 --> 00:11.040
+So I'll just quickly demo that.
+
+00:11.040 --> 00:12.840
+We are on the feature branch.
+
+00:12.840 --> 00:17.070
+Let's change something on our website file.
+
+00:17.070 --> 00:19.200
+How about, I don't know,
+
+00:19.200 --> 00:22.413
+let's change this line that says footer added.
+
+00:23.250 --> 00:27.000
+Let's change it to say, what should we do?
+
+00:27.000 --> 00:27.833
+I don't know.
+
+00:27.833 --> 00:29.040
+How about, how about this?
+
+00:29.040 --> 00:32.940
+Instead of login form, we do log out form, added.
+
+00:32.940 --> 00:35.160
+I don't know why you need a form to log out, but sure.
+
+00:35.160 --> 00:36.990
+And then instead of navbar added,
+
+00:36.990 --> 00:41.130
+let's do top navbar added.
+
+00:41.130 --> 00:43.590
+Okay, not very exciting, but there we are.
+
+00:43.590 --> 00:45.693
+So I'm gonna add that and commit.
+
+00:47.280 --> 00:48.113
+And let's just go,
+
+00:48.113 --> 00:52.050
+let's say like update website on feature branch.
+
+00:52.050 --> 00:53.550
+I'm just putting on feat there,
+
+00:53.550 --> 00:54.870
+so you can see it in the message.
+
+00:54.870 --> 00:57.030
+You normally don't say what branch you're working on
+
+00:57.030 --> 00:59.370
+in a commit message, but I'm just doing that here
+
+00:59.370 --> 01:00.660
+so that we can see it.
+
+01:00.660 --> 01:03.720
+Now I'm gonna switch to master, right?
+
+01:03.720 --> 01:07.566
+And I'll do some more work on one of these lines.
+
+01:07.566 --> 01:11.130
+So instead of saying top navbar, I'll say,
+
+01:11.130 --> 01:13.710
+I don't know, main navbar.
+
+01:13.710 --> 01:17.760
+And instead of log out, I'll do, hmm,
+
+01:17.760 --> 01:19.200
+what should we say here?
+
+01:19.200 --> 01:20.100
+Sign up form?
+
+01:20.100 --> 01:21.060
+How about that?
+
+01:21.060 --> 01:22.470
+Sign up form added.
+
+01:22.470 --> 01:25.050
+So we should have some conflicts, right?
+
+01:25.050 --> 01:27.150
+And then we could even add something else.
+
+01:27.150 --> 01:28.800
+We'll let's start with that.
+
+01:28.800 --> 01:31.863
+Git commit dash am or on the master branch.
+
+01:32.850 --> 01:36.003
+Update copy on master.
+
+01:37.440 --> 01:41.940
+Okay, so now I'm gonna switch back to my feature branch.
+
+01:41.940 --> 01:44.490
+Let's do a tiny bit more work.
+
+01:44.490 --> 01:49.490
+Three, git commit dash am, right, more work on feat.
+
+01:54.720 --> 01:56.790
+All right, so here's what our history looks like
+
+01:56.790 --> 01:58.110
+in GitKraken.
+
+01:58.110 --> 02:00.660
+So we have a divergence,
+
+02:00.660 --> 02:03.090
+if that's the right way of saying that.
+
+02:03.090 --> 02:05.370
+We have our feature branch, which has some work.
+
+02:05.370 --> 02:07.440
+It's not a master, of course, quite a lot of work.
+
+02:07.440 --> 02:09.420
+But then, master has new work.
+
+02:09.420 --> 02:11.490
+We'll pretend we pulled that down.
+
+02:11.490 --> 02:12.750
+We didn't just type that ourself
+
+02:12.750 --> 02:15.120
+because that would be very stupid what I just showed you
+
+02:15.120 --> 02:16.140
+in the real world.
+
+02:16.140 --> 02:18.510
+But whatever that work is, it's coming from GitHub.
+
+02:18.510 --> 02:19.343
+We pull it down.
+
+02:19.343 --> 02:21.960
+It's a new feature our collaborators added in.
+
+02:21.960 --> 02:23.370
+I want that on feature.
+
+02:23.370 --> 02:25.380
+So I'm on the feature branch.
+
+02:25.380 --> 02:27.420
+I will rebase instead of merge.
+
+02:27.420 --> 02:29.883
+Git rebase and then master.
+
+02:31.110 --> 02:33.750
+And uh oh, look at this output.
+
+02:33.750 --> 02:35.250
+Slightly different, right?
+
+02:35.250 --> 02:37.740
+So it tries, it recreates all of our commits
+
+02:37.740 --> 02:41.400
+from the feature branch, rebasing them on the master branch.
+
+02:41.400 --> 02:44.850
+But then it gets to this, conflict,
+
+02:44.850 --> 02:47.220
+merge conflict in website.txt,
+
+02:47.220 --> 02:49.140
+failed to merge in changes.
+
+02:49.140 --> 02:53.370
+And if we look at our history, hmm, look at that.
+
+02:53.370 --> 02:57.360
+It is a partial rebase if you can see.
+
+02:57.360 --> 02:58.500
+I'll zoom in.
+
+02:58.500 --> 03:02.730
+So we have the feature branch, which is here,
+
+03:02.730 --> 03:05.070
+and it started to recreate our commit.
+
+03:05.070 --> 03:08.340
+So we have begin feature, we also have begin feature.
+
+03:08.340 --> 03:10.440
+We have work on feature, work on feature.
+
+03:10.440 --> 03:13.560
+We have more work on feature, more work on feature.
+
+03:13.560 --> 03:15.810
+So the rebase is not done.
+
+03:15.810 --> 03:17.010
+So I have a couple of choices.
+
+03:17.010 --> 03:18.992
+One, I can just abort the whole thing.
+
+03:18.992 --> 03:20.910
+It tells me exactly what to do.
+
+03:20.910 --> 03:23.490
+Here we are, to abort and get back to the state before,
+
+03:23.490 --> 03:26.130
+run git rebase, dash, dash abort.
+
+03:26.130 --> 03:29.400
+But basically, we are part of the way through rebasing.
+
+03:29.400 --> 03:31.650
+So it made new commits, some new commits,
+
+03:31.650 --> 03:32.610
+but it had a conflict.
+
+03:32.610 --> 03:34.590
+So we need to resolve that.
+
+03:34.590 --> 03:35.850
+So it tells us in this case,
+
+03:35.850 --> 03:38.520
+it's just one file, website.txt.
+
+03:38.520 --> 03:41.610
+I'll go in there, and I have to decide what to keep,
+
+03:41.610 --> 03:43.740
+what not to keep just like I would
+
+03:43.740 --> 03:47.010
+with any conflict or regular old merge conflict.
+
+03:47.010 --> 03:48.582
+So what should I do here?
+
+03:48.582 --> 03:53.582
+Let's say I want top navbar, but I want sign up form,
+
+03:53.610 --> 03:56.910
+so I can just, you know, manually do this.
+
+03:56.910 --> 03:59.580
+I'll do, get rid of that.
+
+03:59.580 --> 04:01.920
+I don't want main navbar.
+
+04:01.920 --> 04:03.960
+I want top navbar.
+
+04:03.960 --> 04:05.850
+So I can just manually reconfigure.
+
+04:05.850 --> 04:08.010
+I'm kind of just combining from two branches.
+
+04:08.010 --> 04:10.380
+I could have just gone with one or the other, of course,
+
+04:10.380 --> 04:12.480
+and often, that's what you do.
+
+04:12.480 --> 04:15.750
+But in this case, I'm gonna manually just combine them.
+
+04:15.750 --> 04:18.420
+So footer and then I want signup form.
+
+04:18.420 --> 04:19.253
+Okay.
+
+04:20.220 --> 04:21.843
+And then image gallery as well.
+
+04:22.830 --> 04:25.350
+All right, so that's kind of a messy way of resolving it.
+
+04:25.350 --> 04:29.340
+But that is the new version of this file that I want.
+
+04:29.340 --> 04:30.450
+Okay.
+
+04:30.450 --> 04:33.750
+So now it tells me, hopefully, you can see this.
+
+04:33.750 --> 04:36.570
+What I need to do is mark them as resolved by adding them.
+
+04:36.570 --> 04:40.560
+So git add the file, and then run git rebase,
+
+04:40.560 --> 04:44.010
+dash, dash continue, make this larger.
+
+04:44.010 --> 04:46.620
+Okay, so if I type git status,
+
+04:46.620 --> 04:48.270
+it tells me rebase in progress.
+
+04:48.270 --> 04:49.820
+Here's the commit that it's on.
+
+04:50.700 --> 04:53.760
+It tells me exactly where it is in this rebasing.
+
+04:53.760 --> 04:56.640
+So I'm going to add website
+
+04:56.640 --> 04:58.893
+because I fixed the conflict in there.
+
+05:00.090 --> 05:02.460
+Okay, but I'm not gonna commit.
+
+05:02.460 --> 05:04.470
+I'm going to run git rebase,
+
+05:04.470 --> 05:06.600
+dash, dash continue.
+
+05:06.600 --> 05:08.460
+So this is where you wanna just pay attention
+
+05:08.460 --> 05:09.870
+to the output, right?
+
+05:09.870 --> 05:11.970
+We just follow the instructions.
+
+05:11.970 --> 05:13.440
+It says all conflicts fixed.
+
+05:13.440 --> 05:14.790
+Now run this.
+
+05:14.790 --> 05:18.810
+Or I can abort the entire rebase using dash dash abort
+
+05:18.810 --> 05:21.090
+if I just wanna bail on it.
+
+05:21.090 --> 05:25.020
+Okay, so right now, rebase is paused,
+
+05:25.020 --> 05:28.410
+but I just continued it.
+
+05:28.410 --> 05:29.243
+Looks good.
+
+05:29.243 --> 05:31.080
+Let's type git status.
+
+05:31.080 --> 05:33.660
+All right, working to re-clean.
+
+05:33.660 --> 05:35.760
+And now we successfully completed the rebase,
+
+05:35.760 --> 05:37.290
+we resolved the conflicts,
+
+05:37.290 --> 05:40.260
+and the end result is that the changes from master
+
+05:40.260 --> 05:42.330
+and feature are all combined.
+
+05:42.330 --> 05:43.163
+They're integrated.
+
+05:43.163 --> 05:46.050
+So I have exactly what I wanted, right?
+
+05:46.050 --> 05:48.870
+I have this file resolved the way it is,
+
+05:48.870 --> 05:50.430
+and the entire feature branch,
+
+05:50.430 --> 05:52.140
+all that history was rewritten
+
+05:52.140 --> 05:54.030
+on top of the master branch,
+
+05:54.030 --> 05:57.780
+rebased on top of the tip of the master branch.
+
+05:57.780 --> 05:58.613
+All righty?
+
+05:58.613 --> 05:59.700
+So we still can have conflicts.
+
+05:59.700 --> 06:01.620
+We're still just combining commits
+
+06:01.620 --> 06:03.210
+or combining branches, rather.
+
+06:03.210 --> 06:04.740
+And that can lead to conflicts.
+
+06:04.740 --> 06:06.450
+The way you resolve them is the same.
+
+06:06.450 --> 06:07.590
+You go into the files.
+
+06:07.590 --> 06:09.270
+It tells you exactly where the conflict is.
+
+06:09.270 --> 06:12.990
+You pick what you want, incoming, original change,
+
+06:12.990 --> 06:15.030
+or a hybrid of them like we did.
+
+06:15.030 --> 06:17.160
+Then you add, you stage it,
+
+06:17.160 --> 06:18.780
+and then you follow the instructions.
+
+06:18.780 --> 06:20.610
+In our case, we don't wanna merge commit,
+
+06:20.610 --> 06:22.230
+so we don't do git commit.
+
+06:22.230 --> 06:26.023
+When we rebase, we did git rebase, dash, dash continue.
+
+06:26.023 --> 06:27.123
+All right.
