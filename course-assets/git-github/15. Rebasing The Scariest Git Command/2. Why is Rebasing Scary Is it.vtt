@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.150 --> 00:01.350
+Instructor: I wanna start this section on
+
+00:01.350 --> 00:03.270
+rebasing by telling you a little bit
+
+00:03.270 --> 00:06.570
+about my own personal history with rebasing.
+
+00:06.570 --> 00:07.620
+It's a command.
+
+00:07.620 --> 00:09.120
+Git rebase is the command.
+
+00:09.120 --> 00:13.230
+That, there's a bit of a divide over in the Git community.
+
+00:13.230 --> 00:15.750
+Some people use this command all the time.
+
+00:15.750 --> 00:17.700
+Some companies ask that their developers
+
+00:17.700 --> 00:19.170
+use rebase all the time.
+
+00:19.170 --> 00:21.510
+Others avoid it like the plague.
+
+00:21.510 --> 00:24.990
+When I first started, when I first learned Git,
+
+00:24.990 --> 00:27.600
+I was actually told by the person I was learning
+
+00:27.600 --> 00:30.787
+from to try to avoid rebasing ever.
+
+00:30.787 --> 00:32.160
+"Don't worry about it.
+
+00:32.160 --> 00:33.780
+It can really screw things up for you
+
+00:33.780 --> 00:35.400
+and for other people on your team.
+
+00:35.400 --> 00:36.810
+It's not for beginners."
+
+00:36.810 --> 00:38.337
+And some of that is true for sure,
+
+00:38.337 --> 00:43.260
+but it was kind of, I don't know, a scary command for me,
+
+00:43.260 --> 00:46.560
+and I avoided it for quite a long time, for many years.
+
+00:46.560 --> 00:48.300
+And I got by just fine with Git.
+
+00:48.300 --> 00:50.190
+I didn't really run into many issues.
+
+00:50.190 --> 00:52.230
+Maybe there was once or twice I had to use it
+
+00:52.230 --> 00:53.760
+but I would just Google, you know,
+
+00:53.760 --> 00:57.150
+what I needed to do and find something on Stack Overflow.
+
+00:57.150 --> 01:00.090
+It just wasn't something I needed to do frequently.
+
+01:00.090 --> 01:03.330
+Anyway, one day I was teaching a bootcamp a couple years ago
+
+01:03.330 --> 01:05.520
+and a student asked me about rebase in front
+
+01:05.520 --> 01:07.890
+of the rest of the class and I was not all
+
+01:07.890 --> 01:10.410
+that prepared to give him a good response.
+
+01:10.410 --> 01:13.260
+So I went home, did more research, came back,
+
+01:13.260 --> 01:14.700
+gave a the lecture the next day.
+
+01:14.700 --> 01:15.960
+Anyway, doesn't really matter.
+
+01:15.960 --> 01:19.410
+But long story short, I use rebase all the time now.
+
+01:19.410 --> 01:21.210
+It can be very useful
+
+01:21.210 --> 01:23.520
+but you have to know when not to use it.
+
+01:23.520 --> 01:25.440
+There's a golden rule of rebasing
+
+01:25.440 --> 01:28.020
+and we will focus on that in this section.
+
+01:28.020 --> 01:30.810
+So there's a divide within the community
+
+01:30.810 --> 01:34.890
+because rebasing is an alternative to merging.
+
+01:34.890 --> 01:36.360
+There's two different things really
+
+01:36.360 --> 01:38.010
+that people do with rebasing.
+
+01:38.010 --> 01:41.010
+The first one is you can use Git rebase instead
+
+01:41.010 --> 01:42.210
+of Git merge.
+
+01:42.210 --> 01:45.360
+So some people like to do that and they'll use Git rebase
+
+01:45.360 --> 01:47.280
+or some companies will ask their developers
+
+01:47.280 --> 01:49.770
+to use Git rebase instead of merging.
+
+01:49.770 --> 01:51.720
+But other people get by just fine
+
+01:51.720 --> 01:54.360
+with Git merge and they avoid Git rebase.
+
+01:54.360 --> 01:58.170
+So there's two big workflows for combining branches.
+
+01:58.170 --> 02:00.270
+One is rebasing and one is merging.
+
+02:00.270 --> 02:03.150
+We'll talk about that starting in the next video
+
+02:03.150 --> 02:06.240
+and then the second use case for rebase is
+
+02:06.240 --> 02:10.380
+to clean up your own commits, clean up your Git history.
+
+02:10.380 --> 02:12.660
+We'll talk about that too towards the end.
+
+02:12.660 --> 02:14.550
+All right, so you can get by
+
+02:14.550 --> 02:17.370
+with just merging things as we have been doing.
+
+02:17.370 --> 02:19.170
+Rebase is not, in my opinion,
+
+02:19.170 --> 02:22.434
+one of the essential commands that you just have to know.
+
+02:22.434 --> 02:24.960
+As I said, I used Git for quite a while
+
+02:24.960 --> 02:27.450
+without really rebasing all that much,
+
+02:27.450 --> 02:29.518
+but it's definitely worth knowing about
+
+02:29.518 --> 02:32.460
+and these days I think it's gaining in popularity
+
+02:32.460 --> 02:35.220
+or at least equal to the Git merge crowd.
+
+02:35.220 --> 02:36.333
+Okay, so let's begin.
