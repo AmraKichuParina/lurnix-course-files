@@ -1,0 +1,214 @@
+WEBVTT
+
+00:00.270 --> 00:02.640
+-: So now we move on to aliases.
+
+00:02.640 --> 00:07.350
+So a git alias is just a shortcut, it's a custom command,
+
+00:07.350 --> 00:09.570
+a name that we can come up with
+
+00:09.570 --> 00:12.540
+that corresponds to some existing git commands.
+
+00:12.540 --> 00:15.000
+So instead of typing git status over and over,
+
+00:15.000 --> 00:19.290
+I could type git s or git stats or git st.
+
+00:19.290 --> 00:21.540
+I can totally customize it.
+
+00:21.540 --> 00:25.110
+I can even combine certain commands or add on a bunch
+
+00:25.110 --> 00:27.450
+of options, things that get really annoying,
+
+00:27.450 --> 00:30.450
+a bunch of flags, and create a shortcut for that,
+
+00:30.450 --> 00:32.580
+where instead of typing maybe a hundred characters,
+
+00:32.580 --> 00:34.920
+I might type two or three characters.
+
+00:34.920 --> 00:37.770
+So the way that we do this is we work
+
+00:37.770 --> 00:41.220
+in the global config file, or we set the alias
+
+00:41.220 --> 00:45.000
+from the command line, but there is no git alias command.
+
+00:45.000 --> 00:48.060
+Instead, we configure aliases just like we set
+
+00:48.060 --> 00:50.100
+any other property.
+
+00:50.100 --> 00:53.100
+So, I'll show you a very basic example to begin with.
+
+00:53.100 --> 00:55.110
+Why don't we do git status?
+
+00:55.110 --> 00:58.080
+So instead of typing, git status like this,
+
+00:58.080 --> 01:00.750
+I'm in a git repo right now.
+
+01:00.750 --> 01:02.910
+Of course it was not gonna work if we're not in one.
+
+01:02.910 --> 01:05.833
+Well, it will work, but we won't see this sort of output.
+
+01:05.833 --> 01:06.666
+(laughing)
+
+01:06.666 --> 01:08.880
+I don't know why I'm reminding you how git status works.
+
+01:08.880 --> 01:10.860
+You know that if you run it and you're not in a repo,
+
+01:10.860 --> 01:12.540
+it says not in a repo.
+
+01:12.540 --> 01:15.060
+Anyway, if I am tired of typing that,
+
+01:15.060 --> 01:17.670
+or I type it all the time which I do,
+
+01:17.670 --> 01:20.343
+we could set up git s, maybe, or st.
+
+01:21.810 --> 01:26.670
+So if I do it in the config file I need to work under alias.
+
+01:26.670 --> 01:28.680
+So alias, square brackets,
+
+01:28.680 --> 01:32.190
+and then we just follow this syntax s,
+
+01:32.190 --> 01:34.380
+if that's what the alias we want to be called,
+
+01:34.380 --> 01:36.870
+if we want it to be s, s =
+
+01:36.870 --> 01:40.830
+And then some known git command, like status.
+
+01:40.830 --> 01:43.200
+Now we don't need to write git status,
+
+01:43.200 --> 01:45.240
+we can just write status.
+
+01:45.240 --> 01:49.143
+It assumes the git because we'll still need to run git s.
+
+01:50.220 --> 01:51.783
+So if I save this file,
+
+01:52.686 --> 01:55.623
+and I come over here and I type git s, it works.
+
+01:56.700 --> 02:00.750
+And if I instead change that to statpat,
+
+02:00.750 --> 02:03.780
+I don't know why, but if that's what I want,
+
+02:03.780 --> 02:07.074
+if I try running git statpat,
+
+02:07.074 --> 02:08.010
+(laughs)
+
+02:08.010 --> 02:09.450
+there we go.
+
+02:09.450 --> 02:12.630
+But if I try something else, like git that,
+
+02:12.630 --> 02:16.110
+we don't have that command, but I can fix that.
+
+02:16.110 --> 02:17.373
+Not that I really would.
+
+02:20.370 --> 02:21.690
+And I run it and now it works.
+
+02:21.690 --> 02:23.460
+It corresponds to git status.
+
+02:23.460 --> 02:25.860
+It's running git status for us.
+
+02:25.860 --> 02:29.310
+So I would probably leave that as s or st.
+
+02:29.310 --> 02:31.060
+We could do another one for git log
+
+02:32.340 --> 02:36.210
+and it would just look like this, l = log.
+
+02:36.210 --> 02:39.570
+So, git l would be the same as git log.
+
+02:39.570 --> 02:40.470
+git l
+
+02:40.470 --> 02:41.403
+And there we are.
+
+02:43.080 --> 02:44.373
+Same as git log.
+
+02:45.390 --> 02:48.630
+And that's the first most basic type of alias we can do,
+
+02:48.630 --> 02:50.610
+just a shortcut, just save.
+
+02:50.610 --> 02:52.230
+I mean they're all about saving characters,
+
+02:52.230 --> 02:53.700
+but these are very basic,
+
+02:53.700 --> 02:55.740
+and we could fill this out with a bunch more.
+
+02:55.740 --> 02:57.600
+I'm gonna show you a second way of setting them
+
+02:57.600 --> 03:00.090
+from the command line, which some people prefer.
+
+03:00.090 --> 03:01.530
+And then we'll talk about aliases
+
+03:01.530 --> 03:04.050
+with arguments and then I'll show you some aliases
+
+03:04.050 --> 03:06.990
+that, online people have shared, that I don't, you know
+
+03:06.990 --> 03:10.860
+I didn't write, but that I use, because they're useful.
+
+03:10.860 --> 03:12.410
+So I'll show you those as well.
