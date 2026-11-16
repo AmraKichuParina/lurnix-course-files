@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.120 --> 00:02.070
+Instructor: Okay, so we spent a lot of time
+
+00:02.070 --> 00:03.810
+talking about pull requests,
+
+00:03.810 --> 00:05.430
+but it's a very important feature,
+
+00:05.430 --> 00:07.230
+and it's actually going to come up again
+
+00:07.230 --> 00:09.930
+in this next workflow I'm going to introduce.
+
+00:09.930 --> 00:12.990
+I'm calling it fork and clone, or forking and cloning.
+
+00:12.990 --> 00:15.660
+It's a different approach to what we've seen so far.
+
+00:15.660 --> 00:17.040
+So this is a workflow where,
+
+00:17.040 --> 00:20.790
+instead of just one centralized repository on GitHub,
+
+00:20.790 --> 00:23.580
+every developer has their own GitHub repository
+
+00:23.580 --> 00:27.090
+in addition to some main centralized repo,
+
+00:27.090 --> 00:29.220
+and then individual developers can make changes
+
+00:29.220 --> 00:31.860
+and push to their own versions, their own forks,
+
+00:31.860 --> 00:33.660
+before making pull requests.
+
+00:33.660 --> 00:36.750
+So I'm gonna diagram all this, and hopefully it makes sense.
+
+00:36.750 --> 00:40.920
+The whole point of this is that large open-source projects,
+
+00:40.920 --> 00:43.110
+projects with lots of contributors,
+
+00:43.110 --> 00:45.480
+maybe thousands and thousands of contributors,
+
+00:45.480 --> 00:49.020
+they often employ this strategy or this workflow,
+
+00:49.020 --> 00:50.340
+where there might be a handful
+
+00:50.340 --> 00:53.970
+of actual maintainers and owners of the project.
+
+00:53.970 --> 00:55.650
+They're not adding thousands of people
+
+00:55.650 --> 00:57.510
+as direct contributors
+
+00:57.510 --> 01:02.010
+like we saw with an invite where I could invite Stevie.
+
+01:02.010 --> 01:04.260
+I manually went in here.
+
+01:04.260 --> 01:05.220
+Where was that?
+
+01:05.220 --> 01:08.160
+Manage access, and I invited Stevie.
+
+01:08.160 --> 01:10.830
+So they're not doing that for every single person
+
+01:10.830 --> 01:12.146
+who wants to collaborate
+
+01:12.146 --> 01:15.960
+on React or TensorFlow or something.
+
+01:15.960 --> 01:19.680
+Instead, this workflow, this fork and clone workflow,
+
+01:19.680 --> 01:23.460
+enables anybody to try and make a contribution.
+
+01:23.460 --> 01:24.660
+You don't need permission.
+
+01:24.660 --> 01:27.450
+You make your own copy, you try making changes,
+
+01:27.450 --> 01:28.890
+and then you make a PR.
+
+01:28.890 --> 01:30.930
+Anybody can make a pull request.
+
+01:30.930 --> 01:33.930
+So the first concept to understand is forking.
+
+01:33.930 --> 01:38.910
+Forking is a feature that is not part of Git itself,
+
+01:38.910 --> 01:41.040
+just like a PR is not part of Git.
+
+01:41.040 --> 01:42.810
+It is a feature of GitHub
+
+01:42.810 --> 01:45.663
+and other similar hosting services for Git repos.
+
+01:46.500 --> 01:50.550
+When we fork a repository, it creates a personal copy
+
+01:50.550 --> 01:54.210
+of somebody else's repository on our GitHub account.
+
+01:54.210 --> 01:56.310
+So we would call the new copy
+
+01:56.310 --> 01:59.220
+a fork of the original repository.
+
+01:59.220 --> 02:01.350
+So when I click the button to fork a repo,
+
+02:01.350 --> 02:02.920
+I'm asking GitHub to please make me
+
+02:02.920 --> 02:05.520
+a personal copy of this repo.
+
+02:05.520 --> 02:07.230
+This only works if it's a public repo
+
+02:07.230 --> 02:08.670
+and we have access to it,
+
+02:08.670 --> 02:10.380
+or, I guess if it's a private repo,
+
+02:10.380 --> 02:13.500
+you can fork it if needed, but you still need access to it.
+
+02:13.500 --> 02:14.970
+So I'll demonstrate this.
+
+02:14.970 --> 02:17.220
+I wanna be clear, again, this is not a Git feature,
+
+02:17.220 --> 02:18.990
+it's part of GitHub.
+
+02:18.990 --> 02:22.410
+So on some repository, this is, for example,
+
+02:22.410 --> 02:24.420
+not my repository, clearly.
+
+02:24.420 --> 02:25.980
+Automatic Udemy course enroller,
+
+02:25.980 --> 02:28.170
+get paid Udemy courses for free.
+
+02:28.170 --> 02:30.540
+I don't even know if this is still up or not,
+
+02:30.540 --> 02:32.580
+but this is not my project,
+
+02:32.580 --> 02:35.310
+but if I wanna work on it, I'm not a collaborator.
+
+02:35.310 --> 02:39.510
+Instead, I'm going to click this fork button right there.
+
+02:39.510 --> 02:43.650
+So when I do that, notice what the URL or the,
+
+02:43.650 --> 02:44.483
+what would you call this?
+
+02:44.483 --> 02:45.840
+I guess the breadcrumb is
+
+02:45.840 --> 02:49.290
+somebody's username slash the repository name.
+
+02:49.290 --> 02:51.390
+When I fork, I click that button.
+
+02:51.390 --> 02:54.360
+Now we have a copy that is on my account
+
+02:54.360 --> 02:57.630
+called slash automatic blah, blah, blah.
+
+02:57.630 --> 02:59.880
+So I still have all the history, all the files,
+
+02:59.880 --> 03:01.440
+but I can do my own stuff on here.
+
+03:01.440 --> 03:03.990
+I can clone this, I can delete branches.
+
+03:03.990 --> 03:05.700
+I can completely break code.
+
+03:05.700 --> 03:06.780
+It's totally up to me.
+
+03:06.780 --> 03:08.550
+It's just my repo now,
+
+03:08.550 --> 03:11.040
+and it's just based upon the original.
+
+03:11.040 --> 03:13.260
+So here's the two side by side,
+
+03:13.260 --> 03:15.240
+the original and then my fork.
+
+03:15.240 --> 03:17.370
+It shows my username, but also,
+
+03:17.370 --> 03:19.080
+it says where I forked it from.
+
+03:19.080 --> 03:21.660
+And that's just an intro to the concept of forking.
+
+03:21.660 --> 03:23.640
+In the next video, I'll demonstrate it,
+
+03:23.640 --> 03:26.010
+and then we'll talk about how we can use this concept
+
+03:26.010 --> 03:28.173
+to make open-source contributions.
