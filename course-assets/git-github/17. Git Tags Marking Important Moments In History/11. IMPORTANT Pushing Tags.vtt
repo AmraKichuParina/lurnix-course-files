@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00.150 --> 00:02.160
+Instructor: Now, one last important note about tags
+
+00:02.160 --> 00:03.810
+has to do with pushing.
+
+00:03.810 --> 00:06.725
+By default, when you push up changes to a remote repository,
+
+00:06.725 --> 00:09.065
+tags are not going to be included.
+
+00:09.065 --> 00:12.480
+So you can push tags, actually, two different ways.
+
+00:12.480 --> 00:14.610
+You can push all of your tags that are new,
+
+00:14.610 --> 00:18.109
+using --tags, or you can go to Git Docs,
+
+00:18.109 --> 00:22.248
+and they talk about how you can push a single particular tag
+
+00:22.248 --> 00:25.050
+like this, git push, and then a remote name,
+
+00:25.050 --> 00:27.300
+and then the tag you want to push up.
+
+00:27.300 --> 00:29.550
+So I'll demonstrate this, but the problem is,
+
+00:29.550 --> 00:32.400
+right now, I just cloned the React repo.
+
+00:32.400 --> 00:35.670
+I can't push anything, tags or anything at all,
+
+00:35.670 --> 00:36.720
+because I don't have permission.
+
+00:36.720 --> 00:37.950
+I'm not a collaborator.
+
+00:37.950 --> 00:39.661
+So I'm gonna make my own repo.
+
+00:39.661 --> 00:43.285
+I'll just call this one tags-demo.
+
+00:43.285 --> 00:45.360
+Sure, I'll make it public.
+
+00:45.360 --> 00:46.193
+It doesn't matter.
+
+00:46.193 --> 00:49.530
+All I'm going to do is push up all of this here.
+
+00:49.530 --> 00:53.010
+I'm gonna push up React, but I'm gonna push it to my repo.
+
+00:53.010 --> 00:55.267
+So I'm gonna add a new remote.
+
+00:55.267 --> 00:58.988
+So I already have remote called origin because I cloned.
+
+00:58.988 --> 01:00.944
+So instead of renaming origin,
+
+01:00.944 --> 01:05.944
+I'll just go with git remote add, how about Colt?
+
+01:05.947 --> 01:08.910
+That is the name of my remote now.
+
+01:08.910 --> 01:10.140
+So I have two.
+
+01:10.140 --> 01:11.370
+This is Facebook's.
+
+01:11.370 --> 01:14.040
+Because I cloned, it just came with that remote.
+
+01:14.040 --> 01:16.050
+And then this is the one I just added.
+
+01:16.050 --> 01:21.050
+So now if I try and push up to mine, git push colt master,
+
+01:22.136 --> 01:24.363
+it's gonna take a while.
+
+01:25.650 --> 01:27.571
+But eventually, when that finishes,
+
+01:27.571 --> 01:30.300
+I'll refresh here, and...
+
+01:30.300 --> 01:32.730
+It's gonna be like a minute or so.
+
+01:32.730 --> 01:33.840
+I'll edit this out.
+
+01:33.840 --> 01:35.220
+It's still going.
+
+01:35.220 --> 01:37.590
+Oh, oh, something new.
+
+01:37.590 --> 01:39.849
+And that should be it, right?
+
+01:39.849 --> 01:42.120
+Okay. Whew.
+
+01:42.120 --> 01:43.842
+I'll refresh on GitHub.
+
+01:43.842 --> 01:45.540
+Great.
+
+01:45.540 --> 01:47.407
+Hmm. I don't see any tags.
+
+01:47.407 --> 01:50.190
+Hopefully, you see that right there. Zero tags.
+
+01:50.190 --> 01:53.370
+So all the work, everything that I cloned from git,
+
+01:53.370 --> 01:55.650
+or sorry, everything I cloned from React,
+
+01:55.650 --> 01:57.891
+is pushed up but not tags.
+
+01:57.891 --> 02:01.020
+So I can push one tag up at a time.
+
+02:01.020 --> 02:04.080
+If we just pick one, like, oh, mytag,
+
+02:04.080 --> 02:05.130
+that was one we created,
+
+02:05.130 --> 02:08.346
+I can do git push origin, and then a tag name.
+
+02:08.346 --> 02:10.410
+Well, I can't push the origin.
+
+02:10.410 --> 02:11.310
+What a mess.
+
+02:11.310 --> 02:15.230
+I can push to my remote rather that I created called colt.
+
+02:15.230 --> 02:17.940
+And that should be quick.
+
+02:17.940 --> 02:20.560
+Hopefully, we're just pushing up a single tag.
+
+02:20.560 --> 02:23.688
+And there it is, mytag.
+
+02:23.688 --> 02:26.469
+But if I wanna push up all tags,
+
+02:26.469 --> 02:30.074
+that's where we can use the --tags flag.
+
+02:30.074 --> 02:33.630
+So I still need to specify, in this case, where.
+
+02:33.630 --> 02:36.300
+So I didn't use the -u option when I pushed,
+
+02:36.300 --> 02:38.250
+so I haven't set an upstream for this branch,
+
+02:38.250 --> 02:42.660
+but I'll do git push colt and then --tags.
+
+02:42.660 --> 02:44.610
+So colt is my remote name,
+
+02:44.610 --> 02:47.128
+obviously not a very conventional name.
+
+02:47.128 --> 02:50.100
+But because I didn't fork and then clone this,
+
+02:50.100 --> 02:51.480
+I had to add a remote.
+
+02:51.480 --> 02:54.150
+I could have changed the origin remote
+
+02:54.150 --> 02:55.770
+to point to my repo instead.
+
+02:55.770 --> 02:57.210
+But anyway, it doesn't matter.
+
+02:57.210 --> 03:01.583
+If I do --tags, it now pushes up to my repository,
+
+03:01.583 --> 03:05.460
+that remote, and it's going to push all of those tags up.
+
+03:05.460 --> 03:08.100
+Should be nowhere near as as much time, though.
+
+03:08.100 --> 03:11.790
+This is maybe 10 seconds or so compared to a minute,
+
+03:11.790 --> 03:13.050
+which is what we had earlier.
+
+03:13.050 --> 03:16.440
+And there we go, 141 tags. They're pushed up.
+
+03:16.440 --> 03:17.610
+So moral of the story.
+
+03:17.610 --> 03:20.010
+Tags are not included by default when you push.
+
+03:20.010 --> 03:21.660
+You can push them one at a time,
+
+03:21.660 --> 03:25.260
+or you can push all tags in a repo using --tags.
+
+03:25.260 --> 03:27.150
+And that about wraps it up for tags.
+
+03:27.150 --> 03:30.004
+A pretty simple feature, but also very heavily used,
+
+03:30.004 --> 03:33.327
+and especially in large projects, open-source projects
+
+03:33.327 --> 03:36.630
+and tightly tied, at least in how they're commonly used,
+
+03:36.630 --> 03:39.330
+tightly tied to semantic versioning.
+
+03:39.330 --> 03:40.323
+So that's tags.
