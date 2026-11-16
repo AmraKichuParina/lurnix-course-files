@@ -1,0 +1,322 @@
+WEBVTT
+
+00:00.210 --> 00:02.550
+Instructor: Okay, so onto another use
+
+00:02.550 --> 00:04.320
+for the checkout command.
+
+00:04.320 --> 00:07.920
+We can use git checkout to discard changes from a file
+
+00:07.920 --> 00:09.420
+basically to revert back
+
+00:09.420 --> 00:12.210
+to whenever we previously committed.
+
+00:12.210 --> 00:13.760
+So I'm going to demonstrate this
+
+00:13.760 --> 00:15.120
+in the next couple of commands.
+
+00:15.120 --> 00:19.620
+There's restore is another command on a very, very boring
+
+00:19.620 --> 00:22.080
+stupid repository that will make it very
+
+00:22.080 --> 00:23.910
+clear how this works.
+
+00:23.910 --> 00:26.520
+So I'm gonna just make, I already have a repo actually
+
+00:26.520 --> 00:28.590
+or a new folder called undoing stuff.
+
+00:28.590 --> 00:29.430
+It's not a repo.
+
+00:29.430 --> 00:32.910
+I'm going to init and then I'm gonna make two files.
+
+00:32.910 --> 00:37.910
+And again, very silly one will be called, how about cat.txt
+
+00:40.440 --> 00:42.543
+and the other will be dog.txt.
+
+00:43.470 --> 00:47.517
+Okay, so two files and then I'm gonna add my first commit.
+
+00:47.517 --> 00:52.517
+Git status, okay, get commit, add cat and dog files.
+
+00:54.720 --> 00:58.230
+Then in both of them, gonna open them up over here,
+
+00:58.230 --> 01:02.580
+I'm just gonna write first commit and make a commit.
+
+01:02.580 --> 01:05.010
+And then I'm gonna do second commit and make a commit.
+
+01:05.010 --> 01:07.290
+Basically I have a record in two files.
+
+01:07.290 --> 01:08.850
+Every commit I make, I'm just gonna say
+
+01:08.850 --> 01:11.340
+first commit, second commit, third commit, and so on.
+
+01:11.340 --> 01:13.290
+And this will make it easy for me to demonstrate
+
+01:13.290 --> 01:16.080
+when I go back in time, oh we're back to first commit,
+
+01:16.080 --> 01:17.520
+or second, or third.
+
+01:17.520 --> 01:19.230
+So let's do that here.
+
+01:19.230 --> 01:24.230
+Get status, get add dot, get commit first commit.
+
+01:24.840 --> 01:25.950
+Technically it's our second
+
+01:25.950 --> 01:28.620
+but I'll call it first commit
+
+01:28.620 --> 01:30.570
+and then I'll do the same thing.
+
+01:30.570 --> 01:32.163
+Second, commit.
+
+01:33.900 --> 01:35.370
+Okay.
+
+01:35.370 --> 01:40.370
+Git dot git commit dash m second commit.
+
+01:40.920 --> 01:42.600
+And I'll do it one more time.
+
+01:42.600 --> 01:44.253
+Third commit.
+
+01:45.540 --> 01:46.893
+Third commit.
+
+01:48.120 --> 01:53.120
+Git add dot get commit dash m third commit.
+
+01:53.520 --> 01:57.060
+Okay, very boring, like I said, and trivial stupid.
+
+01:57.060 --> 02:00.510
+But we have two files, both of them have three lines.
+
+02:00.510 --> 02:02.970
+We added one line at a time in a commit.
+
+02:02.970 --> 02:06.990
+Now what I wanna show is that we can use git checkout
+
+02:06.990 --> 02:10.470
+with HEAD and then a file name or multiple file names
+
+02:10.470 --> 02:13.320
+to revert changes or to discard changes that we've
+
+02:13.320 --> 02:16.080
+made back to whenever we last committed.
+
+02:16.080 --> 02:19.770
+So let's say that, you know, I'm working
+
+02:19.770 --> 02:24.770
+and I accidentally type a bunch of stuff in here and I save
+
+02:25.050 --> 02:28.380
+and type a bunch of stuff in this file too and I save.
+
+02:28.380 --> 02:31.440
+And of course over here git status
+
+02:31.440 --> 02:34.110
+we see, oh, I've modified those two files,
+
+02:34.110 --> 02:37.290
+if I don't want to commit that, if that's a mistake
+
+02:37.290 --> 02:40.440
+one option is just to manually delete that, right?
+
+02:40.440 --> 02:44.130
+Delete that, delete this, that's fine.
+
+02:44.130 --> 02:46.410
+But if we have a ton of files where I've done work
+
+02:46.410 --> 02:48.720
+and I just want to like get rid of all the changes
+
+02:48.720 --> 02:52.500
+I've done, I can do it using git checkout HEAD.
+
+02:52.500 --> 02:55.650
+So again, silly, but this is a demonstration of it.
+
+02:55.650 --> 02:58.290
+So I have this extra stuff in both of them.
+
+02:58.290 --> 03:02.040
+The last commit I made stopped right there and right here.
+
+03:02.040 --> 03:07.040
+So if I do git checkout HEAD
+
+03:07.350 --> 03:11.670
+and then a file name, how about dog, I'm telling git
+
+03:11.670 --> 03:16.560
+take whatever the contents of dog we're at HEAD, right
+
+03:16.560 --> 03:19.770
+'cause HEAD is different from where I am right now.
+
+03:19.770 --> 03:21.630
+HEAD is pointing at that last commit
+
+03:21.630 --> 03:23.460
+well it's pointing at master, which is pointing
+
+03:23.460 --> 03:26.070
+at the last commit on the master branch.
+
+03:26.070 --> 03:29.532
+So HEAD is still referencing this
+
+03:29.532 --> 03:31.332
+and this new stuff is gonna go away.
+
+03:32.850 --> 03:34.320
+And there it's gone.
+
+03:34.320 --> 03:37.200
+Now Cat.txt still has that stuff
+
+03:37.200 --> 03:39.450
+but if I do get checkout HEAD
+
+03:39.450 --> 03:44.450
+and then Cat.txt, that's gone as well, right?
+
+03:45.000 --> 03:46.170
+Okay.
+
+03:46.170 --> 03:47.430
+So that's one way of doing it.
+
+03:47.430 --> 03:49.590
+Another option is to use the shorter version
+
+03:49.590 --> 03:52.500
+git checkout dash, dash instead of typing HEAD
+
+03:52.500 --> 03:56.670
+and then the file or files we want to revert back to HEAD.
+
+03:56.670 --> 03:58.480
+So if I do a bunch of work again
+
+04:00.060 --> 04:05.060
+in this file and in dog, I could even get rid of that,
+
+04:05.130 --> 04:07.680
+get rid of that, just screw everything up
+
+04:07.680 --> 04:10.740
+and then I'm realize, oh crap, this is a disaster.
+
+04:10.740 --> 04:13.050
+I wanna undo those changes but I can't.
+
+04:13.050 --> 04:15.568
+Or maybe I mean I could just do Command Z,
+
+04:15.568 --> 04:17.220
+but let's say I can't,
+
+04:17.220 --> 04:21.090
+over here I could do git checkout HEAD
+
+04:21.090 --> 04:23.790
+or just git checkout dash dash cat.
+
+04:23.790 --> 04:25.353
+I'll do both of them and dog.
+
+04:27.120 --> 04:29.700
+And we're back to where we were at HEAD
+
+04:29.700 --> 04:32.670
+where HEAD is still referring to this commit.
+
+04:32.670 --> 04:34.800
+HEAD is always, unless we switch branches
+
+04:34.800 --> 04:36.270
+it's going to point at this master branch
+
+04:36.270 --> 04:37.680
+and that master branch doesn't move
+
+04:37.680 --> 04:39.180
+until we make a new commit.
+
+04:39.180 --> 04:42.900
+Git log, and this is where HEAD still is.
+
+04:42.900 --> 04:45.990
+All right, so to recap that git checkout HEAD
+
+04:45.990 --> 04:48.480
+and then a file name or multiple file names
+
+04:48.480 --> 04:52.020
+we'll reset those files contents back to whatever it looked
+
+04:52.020 --> 04:54.990
+like in your last commit or when you last committed,
+
+04:54.990 --> 04:58.290
+AKA, where HEAD is still referencing.
+
+04:58.290 --> 05:01.320
+And then there's a shorter version, git checkout dash dash
+
+05:01.320 --> 05:02.820
+does the same thing.
+
+05:02.820 --> 05:06.750
+What's extra confusing though, or kind of
+
+05:06.750 --> 05:08.820
+annoying to have to teach you is that there's
+
+05:08.820 --> 05:12.570
+a whole new command that also does the same thing and more.
+
+05:12.570 --> 05:14.610
+And that's what we're gonna learn in the next video.
+
+05:14.610 --> 05:16.173
+It's called git restore.
