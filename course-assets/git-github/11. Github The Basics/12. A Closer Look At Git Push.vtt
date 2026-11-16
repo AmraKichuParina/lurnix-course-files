@@ -1,0 +1,385 @@
+WEBVTT
+
+00:00.120 --> 00:01.560
+Instructor: All right, so next up I wanna talk
+
+00:01.560 --> 00:03.930
+a little bit more about how push works
+
+00:03.930 --> 00:07.560
+and specifically the relationship between a branch
+
+00:07.560 --> 00:10.800
+that we have locally and then a branch on GitHub.
+
+00:10.800 --> 00:12.270
+So to begin with,
+
+00:12.270 --> 00:13.980
+I'm just gonna make a new repository
+
+00:13.980 --> 00:17.130
+to demonstrate this with, a new GitHub repository.
+
+00:17.130 --> 00:21.690
+I'm just gonna call this pushme, sure.
+
+00:21.690 --> 00:23.880
+I'll make it public, I'll create it
+
+00:23.880 --> 00:28.530
+and then I'll just copy this line to add the remote, okay.
+
+00:28.530 --> 00:33.390
+And now I'm going to make a new repository locally.
+
+00:33.390 --> 00:35.010
+I don't have anything going on here.
+
+00:35.010 --> 00:38.610
+I'm going to git init and then I'll just make a file here.
+
+00:38.610 --> 00:43.531
+How about candy.txt, sure.
+
+00:43.531 --> 00:45.663
+Oh geez, I forgot to touch it.
+
+00:46.650 --> 00:49.570
+Okay, so I'm gonna add that empty file
+
+00:50.430 --> 00:54.000
+and I'm gonna commit create candy file.
+
+00:54.000 --> 00:56.790
+All right, so I'm gonna add this remote.
+
+00:56.790 --> 00:59.130
+Right, we've seen this before, git remote add origin,
+
+00:59.130 --> 01:02.340
+just the URL for that GitHub repository.
+
+01:02.340 --> 01:04.050
+Now when I run this command,
+
+01:04.050 --> 01:09.050
+if I wanna push up my master branch, git push origin master.
+
+01:09.060 --> 01:11.160
+What this does, as we've already talked about,
+
+01:11.160 --> 01:13.050
+is it pushes up my master branch,
+
+01:13.050 --> 01:15.690
+whatever commits or on it, up to GitHub.
+
+01:15.690 --> 01:17.730
+But what is really important to understand
+
+01:17.730 --> 01:21.900
+is that this will actually create a master branch on GitHub
+
+01:21.900 --> 01:23.280
+the very first time.
+
+01:23.280 --> 01:25.920
+Right, there is no branch on GitHub at the moment
+
+01:25.920 --> 01:29.520
+and there is a branch called master locally.
+
+01:29.520 --> 01:32.673
+So it's going to create a new master branch on GitHub.
+
+01:33.750 --> 01:35.430
+And then I have my local master branch
+
+01:35.430 --> 01:38.160
+and they're connected as you can see by this little arrow
+
+01:38.160 --> 01:42.240
+it shows me, it just says master pointing to master.
+
+01:42.240 --> 01:44.310
+This is something we're going to learn more about
+
+01:44.310 --> 01:47.520
+in the next section when we talk about fetching and pulling,
+
+01:47.520 --> 01:49.560
+but there's a distinction between the branches
+
+01:49.560 --> 01:51.690
+you have locally and the branches on GitHub.
+
+01:51.690 --> 01:54.360
+If I refresh here, there we are,
+
+01:54.360 --> 01:57.630
+we see the master branch and I see this empty candy file.
+
+01:57.630 --> 02:01.110
+Now usually, well a lot of the time,
+
+02:01.110 --> 02:05.220
+we want to connect and push our master branch
+
+02:05.220 --> 02:10.200
+up to the master branch on GitHub, but we don't have to.
+
+02:10.200 --> 02:11.430
+So I wanna be very clear about that.
+
+02:11.430 --> 02:13.230
+If I do more work here,
+
+02:13.230 --> 02:18.230
+let's just make another file touch candy and Flowers.txt.
+
+02:20.370 --> 02:25.370
+I'll add that and I'll commit -m create flowers.
+
+02:27.810 --> 02:30.990
+If I do a git push origin master again,
+
+02:30.990 --> 02:34.080
+this time it doesn't make a new branch called master
+
+02:34.080 --> 02:35.820
+on GitHub, it's already here.
+
+02:35.820 --> 02:38.880
+So it's just going to push our master branch
+
+02:38.880 --> 02:40.770
+to this master branch on GitHub.
+
+02:40.770 --> 02:42.330
+It just assumes that's what we want.
+
+02:42.330 --> 02:43.560
+That's what we've told it.
+
+02:43.560 --> 02:48.120
+If you just specify this, just a single branch named master,
+
+02:48.120 --> 02:51.300
+it's going to, it git is going to take
+
+02:51.300 --> 02:52.530
+our local master branch
+
+02:52.530 --> 02:55.980
+and push it up to the remote master branch.
+
+02:55.980 --> 02:57.573
+So we'll see that.
+
+02:59.040 --> 03:00.630
+Hopefully no surprise
+
+03:00.630 --> 03:04.050
+and we see this second file, our second commit show up
+
+03:04.050 --> 03:07.920
+but we can actually push to different branches.
+
+03:07.920 --> 03:10.560
+So this syntax is not that crazy looking,
+
+03:10.560 --> 03:12.750
+but right here, it's a little bit intimidating
+
+03:12.750 --> 03:16.020
+when I write it out with the official definition.
+
+03:16.020 --> 03:20.280
+Basically if we write git push and then a remote like origin
+
+03:20.280 --> 03:23.640
+and then I specify a local branch, a colon,
+
+03:23.640 --> 03:26.190
+and a remote branch, this would enable me to push
+
+03:26.190 --> 03:30.240
+a local branch to a remote branch of a different name.
+
+03:30.240 --> 03:33.570
+So take the local pancake branch,
+
+03:33.570 --> 03:35.790
+that one goes first local on my machine
+
+03:35.790 --> 03:39.780
+and push it to the origins branch called Waffle.
+
+03:39.780 --> 03:42.900
+So I'm gonna demonstrate this, it's nowhere near as common
+
+03:42.900 --> 03:46.200
+but I do wanna make it clear that there's a distinction.
+
+03:46.200 --> 03:47.640
+They don't have to be the same,
+
+03:47.640 --> 03:50.172
+you don't have to push master up to master
+
+03:50.172 --> 03:52.020
+even though that's the default behavior
+
+03:52.020 --> 03:54.870
+if you just run git push origin master.
+
+03:54.870 --> 03:56.523
+So why don't I make a new branch?
+
+03:57.480 --> 03:58.560
+What should this one be called?
+
+03:58.560 --> 04:00.600
+How about cats, okay.
+
+04:00.600 --> 04:02.430
+So I have this new branch called cats
+
+04:02.430 --> 04:05.070
+and I'm gonna make some changes on it.
+
+04:05.070 --> 04:10.070
+Like just add, I guess we'll just make a cats file.
+
+04:10.170 --> 04:12.270
+I know this is quite the boring repository.
+
+04:12.270 --> 04:13.890
+Let's add cats.
+
+04:13.890 --> 04:15.330
+I'm on this branch, right?
+
+04:15.330 --> 04:18.930
+So create cat's file, I'm on the cat's branch.
+
+04:18.930 --> 04:22.050
+If I do a git push origin cats,
+
+04:22.050 --> 04:25.620
+that will push up my local cats branch to a branch
+
+04:25.620 --> 04:27.390
+on origin that doesn't exist yet,
+
+04:27.390 --> 04:29.970
+it will create it, called cats.
+
+04:29.970 --> 04:32.970
+But if I instead, I don't want that to happen,
+
+04:32.970 --> 04:35.250
+which I'll just do it first, so you see that,
+
+04:35.250 --> 04:38.820
+just more practice, right, the master branch is unchanged.
+
+04:38.820 --> 04:42.360
+We don't see cats, but if I go to the cats branch,
+
+04:42.360 --> 04:45.870
+can toggle them here, we see the Cat's file.
+
+04:45.870 --> 04:50.580
+Anyway, if I instead want to get that work on master,
+
+04:50.580 --> 04:53.160
+not a normal thing to do, but I'm just gonna show this.
+
+04:53.160 --> 04:57.713
+If I do git push origin and then my local branch, cats,
+
+04:58.560 --> 05:01.350
+and then the destination branch on the remote,
+
+05:01.350 --> 05:03.960
+this is the syntax, local branch that we have
+
+05:03.960 --> 05:05.370
+on our machine colon,
+
+05:05.370 --> 05:07.890
+and then the name of a branch on GitHub,
+
+05:07.890 --> 05:11.640
+so master or if we had some other branch on GitHub, sure.
+
+05:11.640 --> 05:14.250
+This tells gits to take our local cats branch
+
+05:14.250 --> 05:16.170
+and push it up to the origin master branch.
+
+05:16.170 --> 05:17.013
+Let's try it.
+
+05:19.260 --> 05:21.240
+Okay, and we see this diagram,
+
+05:21.240 --> 05:23.550
+it's not a diagram really, but we see this,
+
+05:23.550 --> 05:26.640
+it says or it tells us it pushed the cats branch
+
+05:26.640 --> 05:29.040
+to the master branch this time.
+
+05:29.040 --> 05:30.120
+So if I refresh now,
+
+05:30.120 --> 05:33.750
+on the master branch on GitHub, we see that cats file.
+
+05:33.750 --> 05:35.820
+Even though we didn't push the master branch
+
+05:35.820 --> 05:39.210
+from our machine up, we pushed the cats branch
+
+05:39.210 --> 05:42.810
+but we pushed it to the GitHub master branch.
+
+05:42.810 --> 05:44.820
+So I know that's kind of confusing,
+
+05:44.820 --> 05:48.120
+and again, not at all common, but you can do it,
+
+05:48.120 --> 05:50.190
+and I just showed it to you to make it clear
+
+05:50.190 --> 05:52.410
+that there's a distinction between the branch
+
+05:52.410 --> 05:54.540
+on your machine and the branch on GitHub
+
+05:54.540 --> 05:56.340
+and when we normally do things
+
+05:56.340 --> 05:58.620
+like this git push origin master.
+
+05:58.620 --> 06:00.360
+Yes, we're pushing the master branch
+
+06:00.360 --> 06:03.210
+from our machine to the master branch on GitHub.
+
+06:03.210 --> 06:05.310
+Normally we want them to be the same
+
+06:05.310 --> 06:07.593
+but they don't have to be, all right.
