@@ -1,0 +1,538 @@
+WEBVTT
+
+00:00.090 --> 00:00.923
+Instructor: So as I mentioned,
+
+00:00.923 --> 00:02.880
+there are two main things that we can do
+
+00:02.880 --> 00:04.800
+with the git rebase command.
+
+00:04.800 --> 00:07.230
+We're gonna focus on the first of those things
+
+00:07.230 --> 00:10.230
+using it as an alternative to the git merge command.
+
+00:10.230 --> 00:12.780
+So both commands git merge, git rebase
+
+00:12.780 --> 00:15.870
+help us combine changes from two branches.
+
+00:15.870 --> 00:19.620
+Okay, so I'm gonna start by identifying the I guess
+
+00:19.620 --> 00:21.750
+you could call it the problem with merging
+
+00:21.750 --> 00:26.100
+or something that rebasing addresses, that merging does not.
+
+00:26.100 --> 00:29.220
+So imagine that I'm working on a project
+
+00:29.220 --> 00:32.610
+with let's say, 10 different developers.
+
+00:32.610 --> 00:34.740
+I'm at work and we're working on
+
+00:34.740 --> 00:37.770
+some big code base together, 10 of us, okay?
+
+00:37.770 --> 00:39.420
+So we have our master branch
+
+00:39.420 --> 00:41.970
+and there's a million commits before it that you can't see.
+
+00:41.970 --> 00:44.223
+Well, maybe a couple thousand commits.
+
+00:45.090 --> 00:47.220
+Then it's my turn, we have stand ups,
+
+00:47.220 --> 00:49.380
+it's my turn to work on a new feature this morning.
+
+00:49.380 --> 00:50.790
+Well, everyone works on a new feature,
+
+00:50.790 --> 00:52.470
+but it's time for me to start a new feature.
+
+00:52.470 --> 00:55.710
+So I make a new feature branch, we'll just call it feature.
+
+00:55.710 --> 00:58.470
+And I do some work on that feature branch, right?
+
+00:58.470 --> 01:01.740
+So there's a new commit or two or maybe more.
+
+01:01.740 --> 01:03.030
+Continue doing more work,
+
+01:03.030 --> 01:05.550
+we end up with more commits on my branch.
+
+01:05.550 --> 01:09.090
+But in the meantime, maybe a couple hours pass,
+
+01:09.090 --> 01:12.720
+maybe it's lunch and one of my other coworkers
+
+01:12.720 --> 01:15.660
+finish their task, their bug fix
+
+01:15.660 --> 01:17.610
+or their new feature or whatever,
+
+01:17.610 --> 01:20.490
+and that code is merged into master.
+
+01:20.490 --> 01:22.740
+Now, probably they make a pull request
+
+01:22.740 --> 01:24.600
+or if there's some mechanism in between,
+
+01:24.600 --> 01:26.940
+but the end result is that their changes
+
+01:26.940 --> 01:28.790
+are merged into master.
+
+01:28.790 --> 01:31.290
+So I probably want that new work
+
+01:31.290 --> 01:33.000
+on my feature branch, right?
+
+01:33.000 --> 01:35.640
+Maybe there's a bug fix in there or something.
+
+01:35.640 --> 01:37.950
+I don't wanna diverge from the master branch
+
+01:37.950 --> 01:40.740
+for a super-long time without getting those new changes.
+
+01:40.740 --> 01:42.870
+So how do I get that new commit?
+
+01:42.870 --> 01:44.940
+Hopefully this is nothing new.
+
+01:44.940 --> 01:46.980
+How do I get that new work from the master branch
+
+01:46.980 --> 01:48.540
+onto my feature branch?
+
+01:48.540 --> 01:51.030
+Well, I merge, right?
+
+01:51.030 --> 01:53.520
+So this cannot be performed as a fast forward merge.
+
+01:53.520 --> 01:55.380
+We end up with a merge commit.
+
+01:55.380 --> 02:00.330
+That purple background with a green or whatever cyan color,
+
+02:00.330 --> 02:02.700
+that's supposed to indicate a merge commit.
+
+02:02.700 --> 02:04.770
+So there's a merge commit on my branch
+
+02:04.770 --> 02:07.350
+and then I keep doing some more work, right?
+
+02:07.350 --> 02:09.360
+And then what do you know,
+
+02:09.360 --> 02:10.380
+as I'm doing more work
+
+02:10.380 --> 02:12.240
+the next day on my feature branch
+
+02:12.240 --> 02:14.730
+there's more new work added to the master branch.
+
+02:14.730 --> 02:17.100
+Another coworker pushes up some changes.
+
+02:17.100 --> 02:18.810
+Maybe it's even more than one.
+
+02:18.810 --> 02:21.600
+Maybe it happens five or six times in a day,
+
+02:21.600 --> 02:24.000
+depending on what they're fixing or working on.
+
+02:24.000 --> 02:27.510
+So I need to get those commits onto my feature branch
+
+02:27.510 --> 02:29.010
+or I need to know about them.
+
+02:29.010 --> 02:31.560
+So I do the same thing, I merge,
+
+02:31.560 --> 02:35.220
+and yet again I have a new merge commit, right?
+
+02:35.220 --> 02:38.640
+So as I continue to work, imagine that instead of what
+
+02:38.640 --> 02:40.470
+five commits here or something,
+
+02:40.470 --> 02:42.930
+I have a whole bunch of commits on my branch,
+
+02:42.930 --> 02:44.010
+my feature branch,
+
+02:44.010 --> 02:46.920
+maybe I'm working on it over the course of weeks,
+
+02:46.920 --> 02:48.240
+not just days.
+
+02:48.240 --> 02:50.310
+And the rest of the team is very active.
+
+02:50.310 --> 02:51.990
+So we have a very active master branch,
+
+02:51.990 --> 02:54.360
+lots of changes happening in the meantime.
+
+02:54.360 --> 02:57.120
+So I need to continuously merge those in
+
+02:57.120 --> 02:59.580
+and I end up with all these merge commits.
+
+02:59.580 --> 03:01.710
+So my entire feature branch
+
+03:01.710 --> 03:03.900
+might have dozens of merge commits
+
+03:03.900 --> 03:07.110
+that don't actually say anything about what I'm working on,
+
+03:07.110 --> 03:09.660
+they have nothing to do with my actual code
+
+03:09.660 --> 03:10.890
+or with my commits.
+
+03:10.890 --> 03:13.620
+They just have to be there, because I merged, right?
+
+03:13.620 --> 03:15.240
+We don't have a way around that.
+
+03:15.240 --> 03:18.900
+So again, try and visualize this on a much larger scale.
+
+03:18.900 --> 03:20.910
+So instead of just the small number of commits
+
+03:20.910 --> 03:24.000
+I can fit on this one slide in a tiny diagram,
+
+03:24.000 --> 03:26.370
+imagine that I'm merging pretty frequently
+
+03:26.370 --> 03:28.350
+just to get those changes from master
+
+03:28.350 --> 03:30.000
+whatever my coworkers are doing.
+
+03:30.000 --> 03:32.610
+And if it's a very, very active project
+
+03:32.610 --> 03:35.250
+that could be a lot of merging onto each feature branch.
+
+03:35.250 --> 03:37.380
+And my coworkers all have to do that too, right?
+
+03:37.380 --> 03:38.490
+I'm not the only one.
+
+03:38.490 --> 03:39.720
+They're all working on features.
+
+03:39.720 --> 03:43.260
+And if everyone else has merged changes into master
+
+03:43.260 --> 03:45.900
+they need to get those changes onto their feature branches.
+
+03:45.900 --> 03:48.600
+So everyone's feature branches might be riddled
+
+03:48.600 --> 03:50.340
+with a bunch of merge commits,
+
+03:50.340 --> 03:53.700
+and then when they merge those back into master,
+
+03:53.700 --> 03:55.830
+there's just a bunch of useless merge commits
+
+03:55.830 --> 03:57.150
+as part of the history.
+
+03:57.150 --> 04:00.240
+I shouldn't say useless, but they're not informative, right?
+
+04:00.240 --> 04:03.900
+The commits might be something like fix x bug,
+
+04:03.900 --> 04:06.690
+add new feature, remove X file,
+
+04:06.690 --> 04:10.440
+and then merge commit, merge blah branch, right?
+
+04:10.440 --> 04:11.910
+That's just sprinkled in there
+
+04:11.910 --> 04:13.260
+and that makes our history
+
+04:13.260 --> 04:17.640
+more annoying, muddier, less clean.
+
+04:17.640 --> 04:20.760
+So that is something that rebasing can help us with.
+
+04:20.760 --> 04:23.010
+So I'm gonna show an example repo,
+
+04:23.010 --> 04:24.690
+we'll set it up in the next video,
+
+04:24.690 --> 04:27.930
+but I'll just show you on slides for now,
+
+04:27.930 --> 04:29.670
+if we rebase instead.
+
+04:29.670 --> 04:31.470
+So rebasing is just another way
+
+04:31.470 --> 04:34.860
+of combining branches instead of merging.
+
+04:34.860 --> 04:36.330
+What happens when we rebase
+
+04:36.330 --> 04:38.760
+is that we actually rewrite history.
+
+04:38.760 --> 04:41.040
+And this is why it's sometimes problematic.
+
+04:41.040 --> 04:44.010
+We are rewriting history, we're creating new commits
+
+04:44.010 --> 04:46.440
+or we have git create new commits for us
+
+04:46.440 --> 04:49.920
+based upon the original feature branch commits.
+
+04:49.920 --> 04:53.010
+So here's the diagram, the same diagram from before up top.
+
+04:53.010 --> 04:56.340
+Here's my feature branch, this is what happens when I merge
+
+04:56.340 --> 04:58.740
+in all those changes right from the master branch
+
+04:58.740 --> 05:00.900
+and I get multiple merge commits.
+
+05:00.900 --> 05:02.610
+But if I use rebase,
+
+05:02.610 --> 05:05.340
+so I'm going to rebase the feature branch
+
+05:05.340 --> 05:06.900
+onto the master branch.
+
+05:06.900 --> 05:10.290
+Think of the term rebase as re...
+
+05:10.290 --> 05:12.510
+Well, that was, I was gonna say re-base.
+
+05:12.510 --> 05:13.770
+Yeah, that's exactly what it is.
+
+05:13.770 --> 05:18.180
+We are coming up with a new base for our feature branch.
+
+05:18.180 --> 05:21.210
+So what we end up with is this linear structure.
+
+05:21.210 --> 05:24.210
+We will go into detail again on how this all works
+
+05:24.210 --> 05:27.510
+and I'll demo it, but notice a linear structure,
+
+05:27.510 --> 05:28.830
+we have the master branch
+
+05:28.830 --> 05:31.110
+and then we have our feature commits
+
+05:31.110 --> 05:34.230
+from that feature branch on top of the master branch
+
+05:34.230 --> 05:37.080
+added to the tip of that master branch.
+
+05:37.080 --> 05:39.480
+So we don't have these merge commits, right?
+
+05:39.480 --> 05:41.670
+We have the same original the three commits
+
+05:41.670 --> 05:43.080
+I did on the feature branch,
+
+05:43.080 --> 05:45.060
+the four commits from the master branch,
+
+05:45.060 --> 05:47.130
+but they've actually been rewritten.
+
+05:47.130 --> 05:50.160
+So this doesn't indicate the time where things were made,
+
+05:50.160 --> 05:51.780
+where commits were created.
+
+05:51.780 --> 05:54.030
+Each commit actually has a date.
+
+05:54.030 --> 05:57.510
+So that is preserved, but commits are moved around
+
+05:57.510 --> 05:59.339
+in order to give us this new structure.
+
+05:59.339 --> 06:01.199
+So all that feature branch work I have done
+
+06:01.199 --> 06:05.490
+all those commits begin at the tip of the master branch.
+
+06:05.490 --> 06:07.740
+So I don't have these merge commits anymore,
+
+06:07.740 --> 06:09.840
+but the end result is that whatever
+
+06:09.840 --> 06:10.890
+I'm working on here
+
+06:10.890 --> 06:14.490
+contains all of the commits from master and from feature,
+
+06:14.490 --> 06:16.440
+just like it does right here.
+
+06:16.440 --> 06:18.240
+It's just a different mechanism.
+
+06:18.240 --> 06:19.710
+And here's a similar example
+
+06:19.710 --> 06:23.610
+where instead of having these merge commits, I just wait.
+
+06:23.610 --> 06:25.110
+So I have my feature branch
+
+06:25.110 --> 06:27.660
+and then I want to get the changes from master
+
+06:27.660 --> 06:30.210
+combine them with feature, those new commits,
+
+06:30.210 --> 06:33.480
+I can rebase in order to end up with this structure.
+
+06:33.480 --> 06:36.210
+My feature branch has a new base
+
+06:36.210 --> 06:37.860
+at the tip of the master branch.
+
+06:37.860 --> 06:40.800
+So it begins where master ends
+
+06:40.800 --> 06:44.160
+and we end up with this nice structure, linear, it's cleaner
+
+06:44.160 --> 06:45.720
+and it's more focused, right?
+
+06:45.720 --> 06:48.360
+The history here, someone can see very quickly
+
+06:48.360 --> 06:50.700
+these are the commits that had to do with my branch
+
+06:50.700 --> 06:52.050
+and the changes I made
+
+06:52.050 --> 06:55.350
+versus here those commits are still there,
+
+06:55.350 --> 06:57.600
+but there's these merge commits that are in the way.
+
+06:57.600 --> 06:59.490
+So if we multiply that by 10 people
+
+06:59.490 --> 07:01.950
+working on feature branches, merging all the time,
+
+07:01.950 --> 07:03.630
+that's a lot of merge commits.
+
+07:03.630 --> 07:05.940
+But if they all rebase in the correct way
+
+07:05.940 --> 07:07.710
+it's a lot easier to see what's going on
+
+07:07.710 --> 07:09.736
+with their individual branch history.
+
+07:09.736 --> 07:11.220
+All right, so I'm gonna demo this
+
+07:11.220 --> 07:12.813
+in the next couple of videos.
