@@ -1,0 +1,314 @@
+WEBVTT
+
+00:00.150 --> 00:02.711
+Presenter: In this video, I wanna show you option two
+
+00:02.711 --> 00:04.920
+for getting your code up on GitHub
+
+00:04.920 --> 00:06.420
+or connecting a local repo
+
+00:06.420 --> 00:09.540
+to a hosted repo starting from scratch.
+
+00:09.540 --> 00:12.330
+So this works if you haven't started your work
+
+00:12.330 --> 00:15.183
+on your project at all, you know, you wanna use GitHub
+
+00:15.183 --> 00:17.880
+and you know you need a git-repo on your machine
+
+00:17.880 --> 00:20.940
+but you don't have an existing project to push up.
+
+00:20.940 --> 00:22.680
+So we can start on GitHub.
+
+00:22.680 --> 00:25.500
+We can make a brand new empty repo on GitHub.
+
+00:25.500 --> 00:26.377
+So that's what I'm gonna do.
+
+00:26.377 --> 00:29.070
+Then we clone that to our machine.
+
+00:29.070 --> 00:31.890
+So I'd make it on GitHub, clone it down
+
+00:31.890 --> 00:33.605
+and that act of cloning it down,
+
+00:33.605 --> 00:36.780
+automatically configures the remote for me.
+
+00:36.780 --> 00:38.745
+So then, I can do some work and push it up.
+
+00:38.745 --> 00:40.590
+So this will be quick.
+
+00:40.590 --> 00:42.030
+Let's make a new repo.
+
+00:42.030 --> 00:44.130
+Remember you can do that by clicking new
+
+00:44.130 --> 00:46.927
+or by going to the plus sign new repository.
+
+00:46.927 --> 00:49.260
+I'll make this one.
+
+00:49.260 --> 00:50.093
+I don't know.
+
+00:50.093 --> 00:51.213
+How about chicken's?
+
+00:54.120 --> 00:55.620
+Chickens-demo.
+
+00:55.620 --> 00:58.587
+Okay, and we can make it public or private.
+
+00:58.587 --> 01:02.040
+We will come back at a later point
+
+01:02.040 --> 01:04.080
+in the course to talk about README files.
+
+01:04.080 --> 01:05.460
+We've already talked about get Ignore.
+
+01:05.460 --> 01:07.642
+So if, if you wanna start with a gitignore file,
+
+01:07.642 --> 01:11.550
+we can do that on GitHub and clone that down.
+
+01:11.550 --> 01:13.677
+Or we can make our own gitignore.
+
+01:13.677 --> 01:15.210
+I'm just gonna keep this simple
+
+01:15.210 --> 01:18.907
+and have an empty starter repository called chickens-demo.
+
+01:18.907 --> 01:21.390
+All right, so now
+
+01:21.390 --> 01:23.177
+that I have this empty repository on GitHub,
+
+01:23.177 --> 01:27.000
+the next step is to clone it down to my machine, right?
+
+01:27.000 --> 01:28.350
+So we've made this repo on GitHub.
+
+01:28.350 --> 01:31.050
+There's no corresponding repo on our machine.
+
+01:31.050 --> 01:32.610
+We clone it down.
+
+01:32.610 --> 01:35.910
+So to clone, all we need to do is copy this URL, right?
+
+01:35.910 --> 01:37.268
+So I'm gonna copy that
+
+01:37.268 --> 01:42.120
+and then I'm gonna go to my local machine.
+
+01:42.120 --> 01:45.840
+Let's back out into, let's see
+
+01:45.840 --> 01:48.300
+just the GitHub directory I made.
+
+01:48.300 --> 01:50.310
+I have this cloning directory sure.
+
+01:50.310 --> 01:52.230
+So in here, type git status.
+
+01:52.230 --> 01:53.670
+We're not in a git-repo.
+
+01:53.670 --> 01:57.670
+I'm now gonna run git clone, and then chickens-demo.git
+
+01:59.910 --> 02:01.560
+and it tells me you appear to have cloned
+
+02:01.560 --> 02:03.240
+an empty repository.
+
+02:03.240 --> 02:06.563
+Okay, so we have a new folder called chickens-demo.
+
+02:06.563 --> 02:10.410
+There's nothing in there, but it is a new folder.
+
+02:10.410 --> 02:14.280
+And if I type git status, it is a git-repository
+
+02:14.280 --> 02:16.110
+and I don't have any work to push up.
+
+02:16.110 --> 02:20.760
+But we do have a pre-configured remote called Origin.
+
+02:20.760 --> 02:22.200
+So now I can do some work.
+
+02:22.200 --> 02:24.512
+Let's make a a really simple file.
+
+02:24.512 --> 02:29.512
+touch chickens.txt, and then we can open that up
+
+02:30.720 --> 02:32.430
+and put something in there.
+
+02:32.430 --> 02:33.720
+So here it is in my editor.
+
+02:33.720 --> 02:37.440
+Let's put one of my chicken, Stevie Chicks in there
+
+02:37.440 --> 02:40.920
+and then The Grey Lady / Lady Gray, another one
+
+02:40.920 --> 02:41.753
+of my chickens.
+
+02:41.753 --> 02:43.327
+Anyway, we have some contents in there.
+
+02:43.327 --> 02:45.300
+I'm gonna add and commit.
+
+02:45.300 --> 02:47.130
+Pretend we've done some actual work.
+
+02:47.130 --> 02:51.480
+So get add chickens, git commit, add,
+
+02:51.480 --> 02:56.480
+You know, my first two chickens, great fire, fresh GitHub.
+
+02:57.570 --> 02:59.280
+Nothing has changed whatsoever
+
+02:59.280 --> 03:02.010
+because I still have to push as we've talked about.
+
+03:02.010 --> 03:03.000
+So that's the next step.
+
+03:03.000 --> 03:04.650
+I've done some work, not a whole lot
+
+03:04.650 --> 03:06.750
+but I've done some work locally.
+
+03:06.750 --> 03:08.400
+Now we push that up.
+
+03:08.400 --> 03:11.250
+So it's the same exact workflow from this point forward.
+
+03:11.250 --> 03:14.160
+The only difference between what I showed you earlier
+
+03:14.160 --> 03:16.410
+is that we cloned an empty repo
+
+03:16.410 --> 03:18.360
+and started working in that repo
+
+03:18.360 --> 03:21.450
+versus our first approach was we've been working
+
+03:21.450 --> 03:22.449
+on something locally.
+
+03:22.449 --> 03:24.001
+We have a bunch of commits.
+
+03:24.001 --> 03:26.070
+I wanna get those on GitHub.
+
+03:26.070 --> 03:28.020
+So I'm not gonna clone an empty repo.
+
+03:28.020 --> 03:29.921
+I already have my repo on my machine.
+
+03:29.921 --> 03:31.860
+So I make an empty repo on GitHub
+
+03:31.860 --> 03:33.510
+and then I configure a remote.
+
+03:33.510 --> 03:36.990
+So my local repo points to that GitHub repo.
+
+03:36.990 --> 03:38.359
+Anyway, I'm gonna push,
+
+03:38.359 --> 03:41.550
+so it's just the master branch at this point, right?
+
+03:41.550 --> 03:42.850
+That's the only branch I have.
+
+03:42.850 --> 03:46.680
+In the next video, I'll talk about master in Maine
+
+03:46.680 --> 03:48.690
+but I just have the master branch.
+
+03:48.690 --> 03:53.690
+So git push origin master, just one simple commits.
+
+03:54.870 --> 03:59.460
+If I refresh, we see chickens.txt is here
+
+03:59.460 --> 04:01.260
+and we have our one commit.
+
+04:01.260 --> 04:04.740
+Just one.
+Add my first two chickens.
+
+04:04.740 --> 04:07.290
+That's all the history we have on this branch.
+
+04:07.290 --> 04:08.310
+So that's just another way
+
+04:08.310 --> 04:11.730
+of connecting a local repo to a GitHub repo.
+
+04:11.730 --> 04:12.570
+Different approach.
+
+04:12.570 --> 04:14.040
+But then the same workflow
+
+04:14.040 --> 04:15.496
+once we have that connection established,
+
+04:15.496 --> 04:18.901
+do some work, add commit, and then use push.
+
+04:18.901 --> 04:19.870
+Okay
