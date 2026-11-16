@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00.180 --> 00:01.650
+Instructor: Okay, so now we're gonna talk
+
+00:01.650 --> 00:03.750
+about the git commit command,
+
+00:03.750 --> 00:06.420
+which is the command we actually use to make a commit
+
+00:06.420 --> 00:09.720
+using whatever changes we have previously staged.
+
+00:09.720 --> 00:11.460
+But before we actually run the command,
+
+00:11.460 --> 00:12.570
+and I definitely recommend
+
+00:12.570 --> 00:14.490
+you don't run git commit just yet.
+
+00:14.490 --> 00:15.690
+I'll explain why.
+
+00:15.690 --> 00:19.290
+Before we run it, we need to discuss commit messages.
+
+00:19.290 --> 00:20.580
+Whenever we make a commit,
+
+00:20.580 --> 00:23.100
+Git expects us to include a message
+
+00:23.100 --> 00:25.500
+that describes or summarizes the changes
+
+00:25.500 --> 00:28.740
+included in that snapshot in the given commit.
+
+00:28.740 --> 00:31.680
+For example, when I grouped together these files,
+
+00:31.680 --> 00:33.930
+the navbar changes, I staged them.
+
+00:33.930 --> 00:36.030
+When I committed, in this example,
+
+00:36.030 --> 00:39.720
+I added a message, "Add branded navbar."
+
+00:39.720 --> 00:43.170
+Or here I change three files, I stage them.
+
+00:43.170 --> 00:44.827
+I committed with the message,
+
+00:44.827 --> 00:47.610
+"Add team members to about page."
+
+00:47.610 --> 00:50.160
+So we'll talk more about writing good commit messages
+
+00:50.160 --> 00:51.930
+and what makes a good commit message.
+
+00:51.930 --> 00:53.940
+But for now, just know that a commit message
+
+00:53.940 --> 00:57.510
+should summarize the changes included in that commit.
+
+00:57.510 --> 01:00.510
+So over here on our first novel,
+
+01:00.510 --> 01:02.820
+the project that I've been working on,
+
+01:02.820 --> 01:05.280
+these two files, these two changes
+
+01:05.280 --> 01:08.040
+are really just the creation of those files.
+
+01:08.040 --> 01:10.320
+So a commit message might be something like
+
+01:10.320 --> 01:13.440
+start novel or initialize characters and outline
+
+01:13.440 --> 01:15.810
+or begin work on characters and outline.
+
+01:15.810 --> 01:19.470
+Nothing super detailed because it's a very minor commit.
+
+01:19.470 --> 01:20.303
+But now let's talk
+
+01:20.303 --> 01:23.370
+about actually running the git commit command.
+
+01:23.370 --> 01:25.050
+And again, I wanna emphasize
+
+01:25.050 --> 01:27.240
+I recommend you don't run it just yet.
+
+01:27.240 --> 01:30.870
+This is one option, git commit.
+
+01:30.870 --> 01:32.670
+And this will make a commit
+
+01:32.670 --> 01:34.500
+with whatever changes have been staged.
+
+01:34.500 --> 01:38.250
+However, it's going to try and use your default editor,
+
+01:38.250 --> 01:40.650
+whatever your default editor is on your machine,
+
+01:40.650 --> 01:44.280
+and most or many students don't have one configured,
+
+01:44.280 --> 01:46.380
+which is problematic because it will open up
+
+01:46.380 --> 01:47.820
+in something called Vim,
+
+01:47.820 --> 01:50.280
+which is a very, very not beginner friendly,
+
+01:50.280 --> 01:53.310
+very crazy confusing editor in your terminal.
+
+01:53.310 --> 01:54.810
+And if you don't know how to get out of Vim,
+
+01:54.810 --> 01:56.640
+it can be very confusing.
+
+01:56.640 --> 01:57.930
+If you happen to get in there,
+
+01:57.930 --> 02:00.030
+it's :q will get you outta there.
+
+02:00.030 --> 02:02.550
+Anyway, I don't recommend you run this yet.
+
+02:02.550 --> 02:05.523
+There's another variant, rather than git commit,
+
+02:06.449 --> 02:08.760
+which will pop up your editor and ask you for your message,
+
+02:08.760 --> 02:12.480
+we can just give git the message at the same time.
+
+02:12.480 --> 02:16.560
+So this -m flag, git commit -m,
+
+02:16.560 --> 02:19.410
+and then we provide a message in quotes.
+
+02:19.410 --> 02:21.870
+Git will use that message that we provide
+
+02:21.870 --> 02:23.340
+and make a commit with it,
+
+02:23.340 --> 02:26.970
+rather than this flavor which asks us for a message
+
+02:26.970 --> 02:28.710
+as a secondary step.
+
+02:28.710 --> 02:29.700
+At the end of the day,
+
+02:29.700 --> 02:32.250
+there is no difference in the generated commit,
+
+02:32.250 --> 02:33.960
+assuming you type the same message.
+
+02:33.960 --> 02:35.010
+It's just two different ways
+
+02:35.010 --> 02:37.410
+of getting to that same destination.
+
+02:37.410 --> 02:40.080
+So I always recommend beginners start with this.
+
+02:40.080 --> 02:41.370
+You don't have to configure an editor,
+
+02:41.370 --> 02:44.190
+you don't have to worry about Vim or another text editor.
+
+02:44.190 --> 02:47.430
+All you do is provide your message and hit enter.
+
+02:47.430 --> 02:50.400
+Okay, so -m I believe it stands for message,
+
+02:50.400 --> 02:52.440
+or at least that's what I tell myself it stands for.
+
+02:52.440 --> 02:53.820
+It makes sense.
+
+02:53.820 --> 02:56.160
+Git commit -m and then a message.
+
+02:56.160 --> 02:57.123
+So let's try it.
+
+02:58.183 --> 03:00.750
+Over here I have my changes are staged.
+
+03:00.750 --> 03:02.820
+I'm ready to make my first commit.
+
+03:02.820 --> 03:07.230
+So that's exactly what I'm going to do, git commit -m,
+
+03:07.230 --> 03:08.580
+and then something simple
+
+03:08.580 --> 03:11.460
+that summarizes what I've done in this commit.
+
+03:11.460 --> 03:14.790
+How about something like "start work on outline,"
+
+03:14.790 --> 03:19.143
+and basic characters or maybe just main characters.
+
+03:21.090 --> 03:24.390
+Sure, "Start work on outline and main characters,"
+
+03:24.390 --> 03:25.590
+and then I'll hit enter.
+
+03:26.490 --> 03:29.250
+Okay, so now what happens here?
+
+03:29.250 --> 03:31.590
+Well, let's type git status.
+
+03:31.590 --> 03:33.450
+This is what I saw a moment ago.
+
+03:33.450 --> 03:36.570
+Changes to be committed, no commits yet.
+
+03:36.570 --> 03:38.430
+Now, when I type git status,
+
+03:38.430 --> 03:41.520
+nothing to commit, working tree clean.
+
+03:41.520 --> 03:43.620
+So this phrase, working tree clean means
+
+03:43.620 --> 03:46.620
+that basically everything I've done in my folder
+
+03:46.620 --> 03:49.200
+in the working directory Git knows about,
+
+03:49.200 --> 03:52.470
+and Git has been tracking and it it's up to date.
+
+03:52.470 --> 03:53.910
+Everything is in sync.
+
+03:53.910 --> 03:55.740
+But as soon as I change a file,
+
+03:55.740 --> 03:57.750
+the working tree is no longer clean,
+
+03:57.750 --> 03:58.770
+which is not a bad thing.
+
+03:58.770 --> 04:00.840
+But yeah, that's all that it means.
+
+04:00.840 --> 04:04.560
+So I've now made my very first commit, first of many.
+
+04:04.560 --> 04:06.390
+In the next video, we'll continue
+
+04:06.390 --> 04:08.670
+by adding and committing and adding and committing.
+
+04:08.670 --> 04:10.170
+We'll get more practice.
+
+04:10.170 --> 04:13.050
+I'm gonna stop this video here just to keep it brief.
+
+04:13.050 --> 04:14.580
+But just to reiterate,
+
+04:14.580 --> 04:17.430
+when we make a commit, we provide a message.
+
+04:17.430 --> 04:20.340
+I recommend for now using the -m flag
+
+04:20.340 --> 04:22.590
+to provide the message in line.
+
+04:22.590 --> 04:26.130
+Otherwise, if you use the regular old git commit command,
+
+04:26.130 --> 04:27.390
+you can run into some trouble
+
+04:27.390 --> 04:29.160
+if you haven't configured your editor.
+
+04:29.160 --> 04:30.960
+And I'll include a video to show you
+
+04:30.960 --> 04:33.300
+how to configure that if you're interested.
+
+04:33.300 --> 04:35.550
+But it's not something you need to worry about for now.
+
+04:35.550 --> 04:37.710
+Whatever message you do provide should summarize
+
+04:37.710 --> 04:39.810
+the changes that are included in the commit.
+
+04:39.810 --> 04:41.250
+And later on I'll have a video
+
+04:41.250 --> 04:43.980
+on best practices for commit messages.
+
+04:43.980 --> 04:45.570
+So that's it for this video.
+
+04:45.570 --> 04:48.810
+Next up, we'll get more practice doing the same process,
+
+04:48.810 --> 04:51.003
+change something, add, commit.
