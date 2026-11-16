@@ -1,0 +1,589 @@
+WEBVTT
+
+00:00.000 --> 00:01.350
+[Instructor] - All right, so next up,
+
+00:01.350 --> 00:03.750
+we're gonna learn how to make our first branch.
+
+00:03.750 --> 00:05.910
+And we actually use the same command
+
+00:05.910 --> 00:08.130
+that we just saw, git branch,
+
+00:08.130 --> 00:10.800
+except now we add on a branch name.
+
+00:10.800 --> 00:12.960
+So git branch with a branch name
+
+00:12.960 --> 00:15.000
+will create a branch with that name
+
+00:15.000 --> 00:17.370
+versus git branch without anything else
+
+00:17.370 --> 00:20.100
+just lists the current branches.
+
+00:20.100 --> 00:21.780
+So git branch, branch name.
+
+00:21.780 --> 00:23.280
+And your branch name,
+
+00:23.280 --> 00:24.870
+we'll talk a little bit more about later,
+
+00:24.870 --> 00:26.670
+but it shouldn't include spaces.
+
+00:26.670 --> 00:28.680
+Let's just start with that.
+
+00:28.680 --> 00:31.680
+And generally, you want it to make sense and be informative,
+
+00:31.680 --> 00:33.210
+but you don't need to write, you know,
+
+00:33.210 --> 00:35.670
+a whole sentence to explain what the branch is.
+
+00:35.670 --> 00:39.060
+Also, this simply makes a branch for us.
+
+00:39.060 --> 00:41.640
+It does not switch to the branch.
+
+00:41.640 --> 00:43.830
+So I'm on my master branch here,
+
+00:43.830 --> 00:46.290
+as you can see, head points at master.
+
+00:46.290 --> 00:48.570
+I have two commits on the master branch.
+
+00:48.570 --> 00:51.840
+When I run this command, git branch bugfix,
+
+00:51.840 --> 00:54.990
+that makes me a new branch called bugfix.
+
+00:54.990 --> 00:58.230
+It's based off of the head where I currently was.
+
+00:58.230 --> 01:00.723
+So it points to the same exact spot.
+
+01:01.590 --> 01:02.940
+But I have a new branch.
+
+01:02.940 --> 01:04.770
+I have not switched to it.
+
+01:04.770 --> 01:06.600
+I'm still on master.
+
+01:06.600 --> 01:08.850
+So I'll demonstrate this to you.
+
+01:08.850 --> 01:10.680
+Let's make a new branch.
+
+01:10.680 --> 01:12.360
+But first, I'm actually gonna work on
+
+01:12.360 --> 01:14.760
+a separate project, a separate repo.
+
+01:14.760 --> 01:17.017
+Instead of working on the novel we were writing,
+
+01:17.017 --> 01:20.040
+"The Great Catsby," I'm gonna make a new repo.
+
+01:20.040 --> 01:22.110
+I'm in a folder, I'm just calling it branching,
+
+01:22.110 --> 01:23.970
+and I'm gonna make a directory.
+
+01:23.970 --> 01:27.123
+I'm gonna make a road trip playlist folder.
+
+01:28.440 --> 01:31.710
+So often, when I'm teaching this stuff, I'm torn
+
+01:31.710 --> 01:34.740
+if I should do something very easy to follow along with,
+
+01:34.740 --> 01:36.360
+something simple to understand,
+
+01:36.360 --> 01:38.640
+or if I should do something realistic.
+
+01:38.640 --> 01:39.780
+I'm gonna try and do both,
+
+01:39.780 --> 01:42.270
+but I'm gonna start with a super simple,
+
+01:42.270 --> 01:43.950
+easy-to-understand project.
+
+01:43.950 --> 01:45.270
+So it's not really a project.
+
+01:45.270 --> 01:48.180
+We're going on a road trip and I want a playlist of songs,
+
+01:48.180 --> 01:50.100
+and I'm gonna use git for whatever reason
+
+01:50.100 --> 01:53.730
+to track those songs and I'll make some different branches.
+
+01:53.730 --> 01:56.250
+So I'm gonna start by making my repository.
+
+01:56.250 --> 01:58.320
+So I'm in a folder, road trip playlist.
+
+01:58.320 --> 02:00.240
+I'm gonna run git in it.
+
+02:00.240 --> 02:01.800
+So I have an empty repo.
+
+02:01.800 --> 02:03.780
+I know that I wasn't in a git repo,
+
+02:03.780 --> 02:06.720
+but I should have checked to see with git status,
+
+02:06.720 --> 02:08.250
+but I know that I wasn't.
+
+02:08.250 --> 02:11.040
+And then I'm going to go ahead and make a file.
+
+02:11.040 --> 02:15.510
+I'm gonna call it playlist.txt.
+
+02:15.510 --> 02:17.880
+And I'll open this up in my editor.
+
+02:17.880 --> 02:19.710
+Okay, so here it is.
+
+02:19.710 --> 02:22.530
+I'm just gonna start by adding a very simple heading,
+
+02:22.530 --> 02:25.590
+like song-artist.
+
+02:25.590 --> 02:29.550
+So it's just the header heading for the playlist, right?
+
+02:29.550 --> 02:33.030
+I'm gonna add that file, git add playlist, git commit.
+
+02:33.030 --> 02:35.878
+I'm on the master branch, of course, just by default.
+
+02:35.878 --> 02:39.450
+Add playlist header.
+
+02:39.450 --> 02:41.070
+All right, we type git log,
+
+02:41.070 --> 02:44.250
+we see head is pointing to the master branch.
+
+02:44.250 --> 02:46.020
+Now, I'm gonna add two songs,
+
+02:46.020 --> 02:49.320
+just two ABBA songs to start that I happen to like.
+
+02:49.320 --> 02:50.153
+There they are.
+
+02:50.153 --> 02:54.570
+"SOS," mm, great song, "One of Us," also great song.
+
+02:54.570 --> 02:55.740
+I'm going to add those.
+
+02:55.740 --> 02:58.710
+I just wanna have one or two commits on my master branch.
+
+02:58.710 --> 03:03.180
+So I'm gonna do git add playlist, git commit,
+
+03:03.180 --> 03:05.940
+add two ABBA songs.
+
+03:05.940 --> 03:06.773
+All righty?
+
+03:06.773 --> 03:09.120
+So I'm on the master branch, right?
+
+03:09.120 --> 03:10.410
+Head points to master.
+
+03:10.410 --> 03:11.760
+We have two commits.
+
+03:11.760 --> 03:13.800
+Now let's make a new branch.
+
+03:13.800 --> 03:15.300
+For whatever reason I decide,
+
+03:15.300 --> 03:17.490
+I wanna make a different playlist
+
+03:17.490 --> 03:20.760
+based on this one that only contains oldies.
+
+03:20.760 --> 03:22.620
+So maybe I'm not sure, you know,
+
+03:22.620 --> 03:24.360
+what I want on my main playlist.
+
+03:24.360 --> 03:26.250
+So I'm gonna try a couple of options,
+
+03:26.250 --> 03:28.170
+and that's exactly what I'm going to do
+
+03:28.170 --> 03:29.490
+is make some different branches,
+
+03:29.490 --> 03:31.620
+and I'm gonna make a branch called oldies.
+
+03:31.620 --> 03:34.080
+And it's just gonna include songs that are,
+
+03:34.080 --> 03:35.910
+they're not technically what the radio
+
+03:35.910 --> 03:37.020
+would classify as oldies,
+
+03:37.020 --> 03:41.250
+but let's just say anything from before, like, 2000,
+
+03:41.250 --> 03:43.710
+which I recognize for most people is not oldies.
+
+03:43.710 --> 03:48.360
+So to make a branch, git branch and then a branch name.
+
+03:48.360 --> 03:51.210
+So let's make that oldies branch, git branch,
+
+03:51.210 --> 03:53.130
+and I'll make this full screen.
+
+03:53.130 --> 03:54.660
+And then actually before I do that,
+
+03:54.660 --> 03:56.520
+let's just do git branch,
+
+03:56.520 --> 03:58.440
+we're on master, it's the only branch.
+
+03:58.440 --> 04:02.823
+Now if I do git branch oldies and hit Enter,
+
+04:04.110 --> 04:05.580
+hmm, doesn't seem like anything happened.
+
+04:05.580 --> 04:07.410
+I'm still on master, right?
+
+04:07.410 --> 04:09.570
+If I type git status, I'm still on master.
+
+04:09.570 --> 04:10.890
+No surprise there.
+
+04:10.890 --> 04:12.570
+It doesn't switch us over.
+
+04:12.570 --> 04:14.820
+But if I type git branch,
+
+04:14.820 --> 04:16.680
+we do see we have a new branch,
+
+04:16.680 --> 04:19.050
+oldies, we're just not on it.
+
+04:19.050 --> 04:22.162
+Head is still pointing to master.
+
+04:22.162 --> 04:24.150
+You can see that again, type git log,
+
+04:24.150 --> 04:25.920
+head is pointing to master,
+
+04:25.920 --> 04:28.560
+but now we have this new reference, oldies,
+
+04:28.560 --> 04:31.020
+it's at the same commit, right?
+
+04:31.020 --> 04:34.590
+Two branch references pointing to the same thing.
+
+04:34.590 --> 04:36.810
+We just happen to be on master.
+
+04:36.810 --> 04:39.840
+So we're at this stage, two branches,
+
+04:39.840 --> 04:41.490
+they're both referring to the same point,
+
+04:41.490 --> 04:44.370
+the same commit, and we're on master.
+
+04:44.370 --> 04:45.660
+So to switch branches,
+
+04:45.660 --> 04:49.200
+there's a command that we can use called git switch.
+
+04:49.200 --> 04:51.630
+So this is actually a newer command in Git.
+
+04:51.630 --> 04:53.310
+I'll do a separate video.
+
+04:53.310 --> 04:56.730
+On the older command, we used something called git checkout
+
+04:56.730 --> 04:57.990
+to do the same thing.
+
+04:57.990 --> 04:59.370
+We'll talk about that.
+
+04:59.370 --> 05:01.170
+It's still used in other contexts,
+
+05:01.170 --> 05:04.860
+but git switch was introduced to switch between branches.
+
+05:04.860 --> 05:07.140
+So git switch and then a branch name.
+
+05:07.140 --> 05:08.850
+So in our example here,
+
+05:08.850 --> 05:11.160
+if I do git switch bugfix,
+
+05:11.160 --> 05:14.850
+head is now pointing to that bugfix branch.
+
+05:14.850 --> 05:17.640
+It was on master, now it's on bugfix.
+
+05:17.640 --> 05:20.130
+So in our case, we have this oldies branch,
+
+05:20.130 --> 05:21.120
+we are not on it.
+
+05:21.120 --> 05:22.680
+We see that we're on master.
+
+05:22.680 --> 05:25.050
+I type git status, we're on master.
+
+05:25.050 --> 05:27.690
+But if I do, git switch oldies,
+
+05:27.690 --> 05:29.220
+and I do need to spell it correctly.
+
+05:29.220 --> 05:31.320
+So if I reference something that doesn't exist,
+
+05:31.320 --> 05:33.570
+it tells me, there's no branch with that name.
+
+05:33.570 --> 05:36.093
+But if I do git switch oldies,
+
+05:37.260 --> 05:39.810
+hey, switch to branch oldies,
+
+05:39.810 --> 05:42.210
+my terminal shows oldies over here.
+
+05:42.210 --> 05:47.130
+If I type git status on branch oldies and if I type git log,
+
+05:47.130 --> 05:50.820
+you can now see head is pointing to oldies.
+
+05:50.820 --> 05:53.640
+Still the same commit though, I haven't done any new work.
+
+05:53.640 --> 05:56.970
+However, if I do some new work, I make a new commit here,
+
+05:56.970 --> 05:58.530
+this is the oldies playlist.
+
+05:58.530 --> 06:00.030
+So what should we add?
+
+06:00.030 --> 06:04.597
+Let's add two good, great George Jones songs.
+
+06:04.597 --> 06:05.760
+"He Stopped Loving Her Today."
+
+06:05.760 --> 06:06.593
+Ugh, great song.
+
+06:06.593 --> 06:07.920
+Great song.
+
+06:07.920 --> 06:10.020
+Okay, so I'm gonna save,
+
+06:10.020 --> 06:11.580
+and I'm going to commit.
+
+06:11.580 --> 06:13.830
+Now, when I commit here,
+
+06:13.830 --> 06:15.750
+remember, I'm on the oldies branch.
+
+06:15.750 --> 06:20.250
+So git add playlist, git commit, dash m,
+
+06:20.250 --> 06:25.250
+add two George Jones songs, just like that.
+
+06:27.900 --> 06:30.540
+And we just made our first commit on a new branch.
+
+06:30.540 --> 06:32.370
+We're on the oldies branch,
+
+06:32.370 --> 06:33.870
+and if I type git log,
+
+06:33.870 --> 06:36.060
+we're going to see something we haven't yet seen.
+
+06:36.060 --> 06:38.400
+We see head referring to oldies.
+
+06:38.400 --> 06:40.080
+That's what we expect to see.
+
+06:40.080 --> 06:41.370
+It's our most recent commit.
+
+06:41.370 --> 06:44.520
+That's where oldies is 'cause we're on the oldies branch.
+
+06:44.520 --> 06:47.190
+But we see master now has been left behind
+
+06:47.190 --> 06:48.390
+on this previous commit.
+
+06:48.390 --> 06:50.310
+Master is still, remember,
+
+06:50.310 --> 06:52.350
+this idea of a bookmark in the book.
+
+06:52.350 --> 06:54.180
+It's still bookmarking this commit.
+
+06:54.180 --> 06:56.640
+This is master, this is oldies,
+
+06:56.640 --> 06:58.890
+and we happen to be on the oldies branch.
+
+06:58.890 --> 07:02.160
+But I can switch, as we've seen, with git switch.
+
+07:02.160 --> 07:04.320
+So if I switch right now,
+
+07:04.320 --> 07:06.840
+this is what we have on our oldies branch.
+
+07:06.840 --> 07:11.840
+If I switch over, git switch to master, take a look.
+
+07:12.480 --> 07:16.110
+Now we have just two lines, just two songs rather.
+
+07:16.110 --> 07:19.170
+We don't have the George Jones stuff that we did.
+
+07:19.170 --> 07:21.870
+If I type git log on the master branch,
+
+07:21.870 --> 07:23.790
+we only have these two commits.
+
+07:23.790 --> 07:26.580
+Add the playlist header, add two ABBA songs.
+
+07:26.580 --> 07:30.183
+But when I switch back, git switch to oldies,
+
+07:31.020 --> 07:34.470
+we now have our two George Jones songs in addition,
+
+07:34.470 --> 07:37.410
+and I type git log, we have that extra commit.
+
+07:37.410 --> 07:38.790
+So that was just our first example
+
+07:38.790 --> 07:40.380
+of making a branch and switching.
+
+07:40.380 --> 07:42.930
+We will get more practice in the next video,
+
+07:42.930 --> 07:44.160
+but just to remind you,
+
+07:44.160 --> 07:48.480
+git branch on its own will list branches,
+
+07:48.480 --> 07:51.000
+git branch with a branch name makes a branch,
+
+07:51.000 --> 07:52.740
+and then to switch to a branch,
+
+07:52.740 --> 07:55.863
+we use git switch, followed by the branch name.
