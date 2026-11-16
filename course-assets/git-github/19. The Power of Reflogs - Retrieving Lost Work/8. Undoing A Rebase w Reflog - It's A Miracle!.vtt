@@ -1,0 +1,589 @@
+WEBVTT
+
+00:00.150 --> 00:02.700
+Instructor: Okay, so next up I wanna show another example
+
+00:02.700 --> 00:06.150
+of how reflogs can help save lost commits
+
+00:06.150 --> 00:08.340
+or seemingly lost commits.
+
+00:08.340 --> 00:11.250
+This time I'm going to perform a rebase
+
+00:11.250 --> 00:14.010
+which when I first taught it, I made it very clear
+
+00:14.010 --> 00:16.620
+that rebasing rewrites commits.
+
+00:16.620 --> 00:20.250
+It makes new commits and those old ones are gone,
+
+00:20.250 --> 00:24.630
+at least they seem to be gone until we talked about reflogs.
+
+00:24.630 --> 00:28.530
+So let me show you an example. Let's make a branch here.
+
+00:28.530 --> 00:33.530
+I'm working in the same vegetables, seeds, little demo.
+
+00:33.570 --> 00:36.870
+Let's do a switch. How about flowers?
+
+00:36.870 --> 00:39.180
+So we'll pretend I'm working on a feature branch,
+
+00:39.180 --> 00:43.050
+the flowers feature branch where I will be, I don't know,
+
+00:43.050 --> 00:43.920
+this is veggies.
+
+00:43.920 --> 00:47.760
+I'll be working on the different flowers that I wanna plant
+
+00:47.760 --> 00:50.910
+or that I'm starting in my garage or something like that.
+
+00:50.910 --> 00:52.920
+So what should I put in here?
+
+00:52.920 --> 00:56.850
+Why don't we just make our first commit, git add flowers.
+
+00:56.850 --> 01:00.513
+We'll do a git commit dash m, add flowers file.
+
+01:01.740 --> 01:03.330
+So I'm pretending, this is a feature
+
+01:03.330 --> 01:04.980
+so I'll have a couple of commits.
+
+01:05.820 --> 01:10.820
+Let's see, I'll add some flowers about some salmon zinnias.
+
+01:11.160 --> 01:16.160
+And what are some other, queen lime zinnias.
+
+01:17.820 --> 01:22.290
+Okay, so I'll do a git commit dash am just to speed it up,
+
+01:22.290 --> 01:27.290
+add some zinnias, and then on the next line,
+
+01:28.440 --> 01:30.750
+what's another type of flower that I grow?
+
+01:30.750 --> 01:32.853
+How about some dahlias?
+
+01:33.720 --> 01:38.433
+So we've got old rose dahlia.
+
+01:40.710 --> 01:44.250
+And there's another. I'll just, dinnerplate dahlias.
+
+01:44.250 --> 01:47.400
+I don't even know if that's really a specific one.
+
+01:47.400 --> 01:49.890
+Okay so I'll do a git commit dash am.
+
+01:49.890 --> 01:52.590
+I'm just gonna add one more commit after this one.
+
+01:52.590 --> 01:56.733
+Add dahlias to flowers list.
+
+01:57.630 --> 01:59.250
+And then how about some amaranth,
+
+01:59.250 --> 02:04.250
+so coral fountain amaranth, and also hot biscuits amaranth.
+
+02:11.280 --> 02:16.280
+Git commit dash am, add amaranth to flowers.
+
+02:19.170 --> 02:21.690
+Okay, I lied. I'll do one last one.
+
+02:21.690 --> 02:23.700
+I'll add some celosia.
+
+02:23.700 --> 02:26.250
+Some really cool flowers by the way, these celosias.
+
+02:26.250 --> 02:29.070
+Coral reef celosia, I'll just leave it at that.
+
+02:29.070 --> 02:32.610
+Git commit dash am, add celosia.
+
+02:32.610 --> 02:36.540
+Okay, so I'm done with my feature. This is my feature.
+
+02:36.540 --> 02:39.420
+It's not exciting, but I have what,
+
+02:39.420 --> 02:42.270
+four commits or so on this flowers branch.
+
+02:42.270 --> 02:44.760
+I want to eventually merge them into master
+
+02:44.760 --> 02:48.390
+but before I do that, I'm going to rebase.
+
+02:48.390 --> 02:51.030
+I'm gonna do an interactive rebase to get rid
+
+02:51.030 --> 02:53.040
+of some of these commits
+
+02:53.040 --> 02:56.100
+or combine them or just, you know, clean up.
+
+02:56.100 --> 02:58.530
+If you did not watch the section on rebasing
+
+02:58.530 --> 03:01.653
+and specifically the portion about interactive rebasing,
+
+03:03.090 --> 03:05.940
+I mean I can't imagine it would make any sense.
+
+03:05.940 --> 03:07.920
+So I would check that out.
+
+03:07.920 --> 03:09.630
+The point is more so going to be
+
+03:09.630 --> 03:11.460
+about fixing it after the fact.
+
+03:11.460 --> 03:15.390
+So I'm gonna do a git rebase back to here,
+
+03:15.390 --> 03:16.340
+so an interactive rebase.
+
+03:16.340 --> 03:20.430
+So this is head one, two, three, four.
+
+03:20.430 --> 03:22.170
+So I'll do head tilde four,
+
+03:22.170 --> 03:26.553
+git rebase dash I head tilde four.
+
+03:28.320 --> 03:29.430
+And there we are.
+
+03:29.430 --> 03:31.890
+You can see it opens up this file
+
+03:31.890 --> 03:34.200
+for me to do my interactive rebasing in.
+
+03:34.200 --> 03:36.900
+But let's say that I want to, I don't know,
+
+03:36.900 --> 03:40.863
+we'll fix up these two or maybe these three.
+
+03:41.820 --> 03:44.490
+So that will, if you don't remember,
+
+03:44.490 --> 03:46.110
+you can see down here, fix up.
+
+03:46.110 --> 03:49.050
+We'll squash them, basically mush 'em
+
+03:49.050 --> 03:52.110
+into the next previous commit
+
+03:52.110 --> 03:56.130
+but it's going to discard the log message as well.
+
+03:56.130 --> 04:01.130
+So if I replace pick with instead F or fix up,
+
+04:01.740 --> 04:04.620
+and I can do this for multiple, fix up,
+
+04:04.620 --> 04:06.120
+can do it for all of them.
+
+04:06.120 --> 04:10.380
+I'll do these three. So fix up, fix up, fix up.
+
+04:10.380 --> 04:12.180
+What you'll see is that the contents,
+
+04:12.180 --> 04:14.550
+the actual changes in the commits don't go away, right?
+
+04:14.550 --> 04:18.840
+We don't lose that work but we will be rewriting history.
+
+04:18.840 --> 04:20.280
+So I am squashing them.
+
+04:20.280 --> 04:23.730
+I'm melding all of these down into this commit.
+
+04:23.730 --> 04:27.030
+And so I'm gonna save and close this window
+
+04:27.030 --> 04:29.490
+and it tells us, successfully rebased and updated.
+
+04:29.490 --> 04:30.963
+Let's look at our git log.
+
+04:32.310 --> 04:35.340
+And now we have this one commit here. It has a new hash.
+
+04:35.340 --> 04:37.260
+We rewrote history
+
+04:37.260 --> 04:39.990
+and I could repeat the process one more time as well.
+
+04:39.990 --> 04:43.053
+I won't go back that far, but how about head tilde two?
+
+04:44.160 --> 04:48.060
+And maybe I decide I want to fix up this one,
+
+04:48.060 --> 04:50.520
+I wanna mush it back into this one
+
+04:50.520 --> 04:52.890
+and then instead of doing a pick here,
+
+04:52.890 --> 04:56.070
+maybe I want to reword the commit message instead
+
+04:56.070 --> 04:58.020
+of add flowers file.
+
+04:58.020 --> 04:59.460
+So I can do that.
+
+04:59.460 --> 05:01.890
+I'll rename this or not rename it, but come up
+
+05:01.890 --> 05:04.740
+with a new commit message and then mush this one into it.
+
+05:05.940 --> 05:08.730
+And now it opens up, when I close outta that window,
+
+05:08.730 --> 05:11.910
+it opens up the commit message that I can edit.
+
+05:11.910 --> 05:14.640
+So instead of saying add flowers file,
+
+05:14.640 --> 05:19.530
+let's go with add flowers, you know,
+
+05:19.530 --> 05:24.000
+flowers feature or how about just add flowers,
+
+05:24.000 --> 05:27.720
+add list of seeds, okay?
+
+05:27.720 --> 05:30.510
+So I'm basically taking all that work I did
+
+05:30.510 --> 05:33.660
+and combining it into one new commit with a new message.
+
+05:33.660 --> 05:35.460
+We talked about this with interactive rebasing.
+
+05:35.460 --> 05:36.900
+We can clean up our history.
+
+05:36.900 --> 05:39.270
+So if this is my feature, it's simple
+
+05:39.270 --> 05:41.790
+but this is the commit.
+
+05:41.790 --> 05:42.960
+I'll X outta there.
+
+05:42.960 --> 05:45.180
+And now if I do a git log,
+
+05:45.180 --> 05:48.300
+we just have this one commit hash right there
+
+05:48.300 --> 05:51.570
+and this contains everything for the flowers branch.
+
+05:51.570 --> 05:55.260
+So if I decided, that was a big mistake,
+
+05:55.260 --> 05:57.090
+or for whatever reason I want
+
+05:57.090 --> 05:59.520
+to access those individual commits,
+
+05:59.520 --> 06:02.220
+I even want the commit messages or I don't know,
+
+06:02.220 --> 06:06.333
+I want something from the past, we don't have to fear.
+
+06:07.260 --> 06:09.423
+We can use reflogs. Reflogs are here.
+
+06:10.290 --> 06:12.540
+So git reflog show
+
+06:12.540 --> 06:16.980
+and then we can do it for flowers and take a look.
+
+06:16.980 --> 06:20.160
+Every single one of those commits is still here,
+
+06:20.160 --> 06:21.540
+every commit hash.
+
+06:21.540 --> 06:23.400
+So this is when I added the flowers file.
+
+06:23.400 --> 06:25.640
+Here's where I did some zinnias, some dahlias,
+
+06:25.640 --> 06:28.680
+amarants, celosia, they're all here.
+
+06:28.680 --> 06:29.790
+So I have to decide,
+
+06:29.790 --> 06:32.160
+you know, what point I wanna go back to.
+
+06:32.160 --> 06:35.100
+But if I want to go to this point, I want all
+
+06:35.100 --> 06:38.670
+of those prior commits, all five commits that are gone now.
+
+06:38.670 --> 06:42.480
+I can copy this commit hash or I could copy this,
+
+06:42.480 --> 06:44.490
+but I'll copy the commit hash.
+
+06:44.490 --> 06:45.870
+The commit is still stored
+
+06:45.870 --> 06:49.230
+in the dot git directory and the objects directory.
+
+06:49.230 --> 06:50.910
+Now it won't be there forever,
+
+06:50.910 --> 06:52.290
+but it's definitely there now.
+
+06:52.290 --> 06:54.300
+Git goes through periodically as we talked about
+
+06:54.300 --> 06:56.160
+and it cleans up some of these,
+
+06:56.160 --> 06:58.170
+it does this thing called garbage collection
+
+06:58.170 --> 07:01.560
+if it notices git objects that are not reachable.
+
+07:01.560 --> 07:05.040
+So for example, this is not reachable from another commit.
+
+07:05.040 --> 07:06.630
+That is part of our history.
+
+07:06.630 --> 07:10.500
+It's stored in there and so we can basically say, git,
+
+07:10.500 --> 07:14.880
+I want you now to point your branch to this commit instead.
+
+07:14.880 --> 07:15.750
+And this commit was
+
+07:15.750 --> 07:18.450
+on its own, totally alone, not connected.
+
+07:18.450 --> 07:21.630
+And now after I've reset back to this commit,
+
+07:21.630 --> 07:23.970
+it will be hooked back into the grid.
+
+07:23.970 --> 07:27.360
+We'll have a pointer for our branch referencing to this.
+
+07:27.360 --> 07:30.450
+All right, so this is what I want. I can copy this.
+
+07:30.450 --> 07:32.850
+Just remember, these commits are not part
+
+07:32.850 --> 07:34.170
+of my history anymore, right?
+
+07:34.170 --> 07:38.670
+I don't see any of those commits. Just do one line.
+
+07:38.670 --> 07:39.990
+None of them are here.
+
+07:39.990 --> 07:40.823
+The hashes aren't here,
+
+07:40.823 --> 07:43.680
+the messages aren't here because I fixed them up.
+
+07:43.680 --> 07:46.650
+I merged 'em all together and gave them a new message too.
+
+07:46.650 --> 07:49.470
+I boiled it down to this one commit.
+
+07:49.470 --> 07:52.620
+So if I want to reset back to that, I can do that.
+
+07:52.620 --> 07:56.640
+Git reset, dash dash hard, not heard,
+
+07:56.640 --> 07:58.530
+and then pass in that commit hash.
+
+07:58.530 --> 08:00.600
+And this says the flower branch,
+
+08:00.600 --> 08:03.060
+that reference, should now point to this commit
+
+08:03.060 --> 08:06.900
+that we found in the garbage, we found in the reflog.
+
+08:06.900 --> 08:09.810
+And it says head is now at add celosia.
+
+08:09.810 --> 08:13.470
+Well, let's look at git log. Hey, look at that.
+
+08:13.470 --> 08:15.840
+We have all of those commits.
+
+08:15.840 --> 08:17.460
+And the reason this works is
+
+08:17.460 --> 08:21.150
+that every commit has, inside of it in that file,
+
+08:21.150 --> 08:24.300
+it also stores its parents or parents.
+
+08:24.300 --> 08:27.330
+So if we reset based on this one commit,
+
+08:27.330 --> 08:30.603
+we also get the parent commit and its parent and so on.
+
+08:31.560 --> 08:35.460
+So this ends up doing exactly what I was trying to show you.
+
+08:35.460 --> 08:37.680
+We've rebased, we rewrote history,
+
+08:37.680 --> 08:39.300
+we eliminated these commits,
+
+08:39.300 --> 08:42.930
+we combined them, we renamed them or redid their messages,
+
+08:42.930 --> 08:44.340
+we smooshed 'em together.
+
+08:44.340 --> 08:47.070
+They were lost or apparently lost,
+
+08:47.070 --> 08:49.200
+but I was able to rescue it.
+
+08:49.200 --> 08:51.360
+For whatever reason, I decided I wanted to.
+
+08:51.360 --> 08:53.730
+I'm able to go back and undo that.
+
+08:53.730 --> 08:57.030
+That rebase, it's basically like it never happened.
+
+08:57.030 --> 09:00.390
+But actually in our reflog,
+
+09:00.390 --> 09:03.750
+we can see that for whatever reason I wanted
+
+09:03.750 --> 09:08.310
+to go back and undo the undoing, I could.
+
+09:08.310 --> 09:11.100
+I could go to this commit hash right here.
+
+09:11.100 --> 09:13.860
+This does not exist right now in my history
+
+09:13.860 --> 09:15.570
+but it's in the reflog.
+
+09:15.570 --> 09:17.790
+So that object is still stored in git,
+
+09:17.790 --> 09:20.610
+but we don't see AB nine when I do git log.
+
+09:20.610 --> 09:23.730
+But I could reset to that, but I won't, all right?
+
+09:23.730 --> 09:25.230
+So I hope now you can see some
+
+09:25.230 --> 09:27.270
+of the utility in the reflog.
+
+09:27.270 --> 09:30.300
+Remember, it's local and it's not permanent.
+
+09:30.300 --> 09:32.640
+But in a lot of situations, especially
+
+09:32.640 --> 09:34.800
+if you do something that seems permanent
+
+09:34.800 --> 09:39.800
+or seems bad, rebasing or resetting, a hard reset,
+
+09:40.860 --> 09:42.720
+those still can be undone
+
+09:42.720 --> 09:44.620
+if you know how to look in the reflog.
