@@ -1,0 +1,751 @@
+WEBVTT
+
+00:00.120 --> 00:01.650
+Instructor: All right, so I wanna demonstrate
+
+00:01.650 --> 00:05.580
+how we could use this -i option, the interactive rebase,
+
+00:05.580 --> 00:09.690
+in order to clean up a messy branch, a messy set of commits.
+
+00:09.690 --> 00:14.130
+So I have a messy set of commits that you can try this on.
+
+00:14.130 --> 00:16.440
+The link will be included with this video
+
+00:16.440 --> 00:19.080
+as a resource, interactive-rebase-demo.
+
+00:19.080 --> 00:20.730
+It's not very creative.
+
+00:20.730 --> 00:22.440
+But we have a bunch of commits in here.
+
+00:22.440 --> 00:25.710
+Well, not a huge amount, but what, 8 or 10 commits?
+
+00:25.710 --> 00:28.590
+And there are some missteps here.
+
+00:28.590 --> 00:32.580
+For example, I started with initial commit. That's fine.
+
+00:32.580 --> 00:35.430
+But most of my commits are using the imperative.
+
+00:35.430 --> 00:36.750
+What is it, imperative voice?
+
+00:36.750 --> 00:38.460
+Imperative, it's not tense, is it?
+
+00:38.460 --> 00:40.380
+Present tense, imperative voice?
+
+00:40.380 --> 00:44.880
+Whatever the grammatical term is, right, fix x, add x.
+
+00:44.880 --> 00:48.510
+But then past tense, "I added project files."
+
+00:48.510 --> 00:51.990
+Okay, so I wanna rename that or rework that commit message
+
+00:51.990 --> 00:54.000
+before I share that with somebody.
+
+00:54.000 --> 00:56.970
+And this is a silly example, but often, you know,
+
+00:56.970 --> 01:00.120
+you might be doing some work locally on some project
+
+01:00.120 --> 01:01.380
+where you're just working on your own.
+
+01:01.380 --> 01:03.210
+You're not paying attention to commit guidelines
+
+01:03.210 --> 01:05.610
+and messaging guidelines for the commit messages.
+
+01:05.610 --> 01:07.410
+But then as you get ready to share this branch
+
+01:07.410 --> 01:10.410
+with people and with, you know, let's say, somebody
+
+01:10.410 --> 01:13.230
+who maintains a big open-source project or your boss,
+
+01:13.230 --> 01:14.250
+you might want to go through
+
+01:14.250 --> 01:17.670
+and rename commits to conform to some pattern
+
+01:17.670 --> 01:20.100
+that the project is asking you to do.
+
+01:20.100 --> 01:23.670
+Anyway, I also have a situation here.
+
+01:23.670 --> 01:26.640
+I added some Bootstrap files in, and then I committed,
+
+01:26.640 --> 01:28.290
+and then I realized, oh, whoops,
+
+01:28.290 --> 01:30.030
+forgot to add Bootstrap JS script.
+
+01:30.030 --> 01:32.640
+I forgot to add the JavaScript portion.
+
+01:32.640 --> 01:34.950
+So I wanna go through, and I wanna combine that, actually,
+
+01:34.950 --> 01:37.440
+into one commit, because they're doing the same thing.
+
+01:37.440 --> 01:40.560
+It's part of adding Bootstrap into my file.
+
+01:40.560 --> 01:42.360
+If you don't know Bootstrap, it's okay.
+
+01:42.360 --> 01:45.300
+Basically, I started a task, and I didn't quite finish it.
+
+01:45.300 --> 01:47.790
+So I have a second commit that also has to do
+
+01:47.790 --> 01:49.560
+with this same topic.
+
+01:49.560 --> 01:52.920
+Then I have this, I added a top nav bar to this website,
+
+01:52.920 --> 01:55.410
+and then I made a commit, but then I found some typos.
+
+01:55.410 --> 01:56.250
+So I made a commit.
+
+01:56.250 --> 01:58.380
+And then, oh no, I found more typos.
+
+01:58.380 --> 01:59.820
+So I made another commit.
+
+01:59.820 --> 02:02.100
+I don't wanna share that with people.
+
+02:02.100 --> 02:03.630
+I want those typos to be fixed,
+
+02:03.630 --> 02:05.340
+but I wanna collapse those down
+
+02:05.340 --> 02:07.530
+and just merge 'em in with this commit.
+
+02:07.530 --> 02:09.307
+And then, also, I've got this last commit,
+
+02:09.307 --> 02:11.130
+"my cat made this commit."
+
+02:11.130 --> 02:14.190
+I wanna just completely drop that. I don't want that.
+
+02:14.190 --> 02:16.350
+All right, so I just wanna get rid of it.
+
+02:16.350 --> 02:18.210
+So these are all things that we can do
+
+02:18.210 --> 02:20.370
+using interactive rebase.
+
+02:20.370 --> 02:22.740
+So I'm gonna start by cloning this project.
+
+02:22.740 --> 02:26.790
+So let's copy this URL, and then I'll clone it down.
+
+02:26.790 --> 02:31.143
+So make sure I'm not in a repo, git clone, this URL.
+
+02:32.640 --> 02:37.110
+Okay, so if we take a look, cd into there,
+
+02:37.110 --> 02:40.170
+first thing I'll do is run git log oneline.
+
+02:40.170 --> 02:43.650
+You can see that history, right, initial commit,
+
+02:43.650 --> 02:47.190
+this one in the wrong tense, "I added project files,"
+
+02:47.190 --> 02:48.840
+the Bootstrap stuff.
+
+02:48.840 --> 02:51.120
+The only thing that has changed, actually,
+
+02:51.120 --> 02:55.320
+is that I created a README on GitHub, I forgot about that,
+
+02:55.320 --> 02:59.550
+and I did not include that commit in this commit log.
+
+02:59.550 --> 03:02.430
+So there's another commit that was just added at the top,
+
+03:02.430 --> 03:03.570
+create the README.
+
+03:03.570 --> 03:07.740
+Anyway, so what I'm gonna do, I'm gonna make a branch first.
+
+03:07.740 --> 03:09.300
+So this is just on the main branch,
+
+03:09.300 --> 03:11.310
+but imagine we're working on some feature.
+
+03:11.310 --> 03:13.983
+So I'm gonna make a branch, git switch -c,
+
+03:14.970 --> 03:17.820
+my feature, my-feat.
+
+03:17.820 --> 03:19.650
+All right, so I'm on this branch,
+
+03:19.650 --> 03:22.500
+and I am ready to share this code with people,
+
+03:22.500 --> 03:25.890
+but then I realize this is actually pretty terrible.
+
+03:25.890 --> 03:27.870
+I wanna go through and clean up some of these commits,
+
+03:27.870 --> 03:30.960
+condense them, maybe drop some, rename them
+
+03:30.960 --> 03:32.670
+before anyone sees them.
+
+03:32.670 --> 03:34.470
+So as we talked about,
+
+03:34.470 --> 03:38.190
+we can use this git rebase command with the -i option,
+
+03:38.190 --> 03:40.800
+and then specify how far back we wanna go.
+
+03:40.800 --> 03:45.150
+And, again, I'm not specifying a branch to rebase onto.
+
+03:45.150 --> 03:47.190
+I just wanna rebase in place
+
+03:47.190 --> 03:49.230
+on top of the branch we're currently in.
+
+03:49.230 --> 03:53.820
+In other words, redo some number of commits on this branch.
+
+03:53.820 --> 03:55.650
+So I need to figure out how many.
+
+03:55.650 --> 03:57.210
+I'll just go, ah, I mean,
+
+03:57.210 --> 03:59.010
+I'm not gonna mess with initial commit,
+
+03:59.010 --> 04:01.950
+so I could just do 1, 2, 3, 4,
+
+04:01.950 --> 04:04.590
+5, 6, 7, 8, 9.
+
+04:04.590 --> 04:08.460
+I could go back nine commits and rebase that, all right?
+
+04:08.460 --> 04:12.360
+So before I do anything, I'm gonna take a screenshot of this
+
+04:12.360 --> 04:14.430
+just so that I can show you afterwards.
+
+04:14.430 --> 04:16.950
+All right, so now I'm going to run the command.
+
+04:16.950 --> 04:20.970
+So it's git rebase -i, for interactive.
+
+04:20.970 --> 04:23.580
+And then I have to specify how many commits back
+
+04:23.580 --> 04:25.320
+I want to recreate.
+
+04:25.320 --> 04:27.390
+So if I only wanted to edit something,
+
+04:27.390 --> 04:29.100
+you know, five commits ago,
+
+04:29.100 --> 04:32.340
+there's no reason to go back 50 commits.
+
+04:32.340 --> 04:34.410
+Generally, right, we wanna minimize the amount
+
+04:34.410 --> 04:36.930
+of rewriting history we do.
+
+04:36.930 --> 04:40.140
+So in our case, though, looking at this log,
+
+04:40.140 --> 04:42.000
+I've screenshotted it here,
+
+04:42.000 --> 04:44.340
+I wanna go back and at least to this one,
+
+04:44.340 --> 04:46.350
+as we talked about, so that's nine,
+
+04:46.350 --> 04:47.757
+so that's exactly what I'm gonna do,
+
+04:47.757 --> 04:51.480
+git rebase -i, and then HEAD~9,
+
+04:51.480 --> 04:52.950
+nine commits ago.
+
+04:52.950 --> 04:56.100
+Also remember that I am not specifying a branch.
+
+04:56.100 --> 04:59.910
+We are not rebasing onto a branch. We're rebasing in place.
+
+04:59.910 --> 05:02.400
+So that's why I didn't say, like, git rebase master
+
+05:02.400 --> 05:03.660
+or anything like that.
+
+05:03.660 --> 05:06.960
+Okay, so when I hit Enter here, something weird will happen.
+
+05:06.960 --> 05:09.030
+It will open up our text editor,
+
+05:09.030 --> 05:11.280
+and it's not the most interactive thing ever,
+
+05:11.280 --> 05:12.990
+but it opens up our text editor,
+
+05:12.990 --> 05:15.240
+and it will give us a list of our commits
+
+05:15.240 --> 05:16.950
+with these commands next to them.
+
+05:16.950 --> 05:19.560
+It will say pick by default.
+
+05:19.560 --> 05:22.680
+But then I have a bunch of options I can instead use.
+
+05:22.680 --> 05:24.720
+So I'm gonna sort of take my time
+
+05:24.720 --> 05:26.910
+showing those options to you in the next video or two.
+
+05:26.910 --> 05:29.160
+But in this video, we're gonna focus on one
+
+05:29.160 --> 05:31.020
+which is called reword.
+
+05:31.020 --> 05:32.610
+But first I've gotta run this.
+
+05:32.610 --> 05:35.910
+So I hit Enter, and it opens my text editor.
+
+05:35.910 --> 05:37.380
+make this a bit larger.
+
+05:37.380 --> 05:39.180
+It shows me all the commits
+
+05:39.180 --> 05:42.180
+not ever in my repository right,
+
+05:42.180 --> 05:43.650
+only the ones that I selected,
+
+05:43.650 --> 05:46.470
+so nine, going back nine commits.
+
+05:46.470 --> 05:49.170
+So we don't see initial commit.
+
+05:49.170 --> 05:50.940
+That was 10 commits ago.
+
+05:50.940 --> 05:55.140
+It stops with "I added project files."
+
+05:55.140 --> 05:57.810
+Also notice the order is reversed, right.
+
+05:57.810 --> 05:59.340
+Normally, with git log,
+
+05:59.340 --> 06:01.710
+we see the oldest commit at the bottom
+
+06:01.710 --> 06:03.210
+and the newest commit up top.
+
+06:03.210 --> 06:06.870
+Here, it's reversed, oldest, newest.
+
+06:06.870 --> 06:10.440
+But this is because basically this is a list of commands
+
+06:10.440 --> 06:13.440
+that we're telling Git to do for each commit,
+
+06:13.440 --> 06:15.840
+starting with this one, do this.
+
+06:15.840 --> 06:17.520
+We'll talk about pick in a moment.
+
+06:17.520 --> 06:19.020
+But if I change what these are,
+
+06:19.020 --> 06:21.690
+if I say drop something, rename, edit,
+
+06:21.690 --> 06:23.160
+it's gonna go through an order
+
+06:23.160 --> 06:26.100
+and take this commit and follow this instruction.
+
+06:26.100 --> 06:27.840
+And then this next one,
+
+06:27.840 --> 06:29.970
+take this commit, follow that instruction.
+
+06:29.970 --> 06:32.700
+So if I change those instructions, it goes through an order,
+
+06:32.700 --> 06:35.820
+and it does whatever I say to these commits.
+
+06:35.820 --> 06:37.500
+So it starts at the beginning, right,
+
+06:37.500 --> 06:38.880
+not the beginning of our project,
+
+06:38.880 --> 06:40.350
+not the beginning of the branch,
+
+06:40.350 --> 06:43.260
+but the beginning of this subsection of commits,
+
+06:43.260 --> 06:45.030
+nine commits, it starts at this one,
+
+06:45.030 --> 06:48.990
+and then reconstructs going towards the most recent commit.
+
+06:48.990 --> 06:52.050
+So there's a list of these commands that we have available
+
+06:52.050 --> 06:53.580
+down at the bottom here,
+
+06:53.580 --> 06:56.610
+quite a few, pick, reword, edit, squash, fixup,
+
+06:56.610 --> 06:59.160
+exec, break, drop, label, reset, merge.
+
+06:59.160 --> 07:02.070
+I've highlighted some of the more important ones here.
+
+07:02.070 --> 07:05.850
+The first is the default one that it's already using, pick.
+
+07:05.850 --> 07:09.570
+It's just a way of saying, yes, use this commit.
+
+07:09.570 --> 07:12.720
+Keep it, don't change it, just use this commit, pick it.
+
+07:12.720 --> 07:15.600
+But in this video, I'll also show you reword,
+
+07:15.600 --> 07:18.150
+which is how I can reword the commit message.
+
+07:18.150 --> 07:19.770
+So I'll edit the commit message.
+
+07:19.770 --> 07:22.410
+We'll still keep that commit, right, in history.
+
+07:22.410 --> 07:25.230
+It's not gonna go away or anything, the contents of it.
+
+07:25.230 --> 07:26.550
+But I want a new message.
+
+07:26.550 --> 07:29.467
+So in our example, I have this one in past tense,
+
+07:29.467 --> 07:31.830
+"I added project files."
+
+07:31.830 --> 07:33.990
+I want to reword that.
+
+07:33.990 --> 07:36.330
+So I don't just edit it here in place.
+
+07:36.330 --> 07:40.710
+What I'm gonna do is reword. That's the command I want.
+
+07:40.710 --> 07:43.410
+I could also just do r, but I'm gonna do reword,
+
+07:43.410 --> 07:44.850
+just to make it clearer for you.
+
+07:44.850 --> 07:48.360
+I'm gonna save this, and this whole time, right,
+
+07:48.360 --> 07:50.280
+my editor has just been waiting,
+
+07:50.280 --> 07:53.010
+tapping its toe, just waiting for me to finish.
+
+07:53.010 --> 07:56.043
+So I'm gonna close out of here now and close this window.
+
+07:57.330 --> 08:01.260
+That was the only command I wanted to do, the only change.
+
+08:01.260 --> 08:02.970
+And now it opens up something new.
+
+08:02.970 --> 08:05.460
+It says, "Waiting for your editor to close," again.
+
+08:05.460 --> 08:08.520
+But this time it opened up that commit message,
+
+08:08.520 --> 08:10.380
+and it's gonna allow me to change this.
+
+08:10.380 --> 08:12.660
+Instead of saying, "I added project files,"
+
+08:12.660 --> 08:17.070
+I'll just say, "add project files," okay?
+
+08:17.070 --> 08:20.670
+And then I'll save, and then I'm gonna close out of here.
+
+08:20.670 --> 08:23.970
+Also, you can see interactive rebase in progress.
+
+08:23.970 --> 08:25.890
+It knows, right, that we're in the middle of this.
+
+08:25.890 --> 08:28.530
+It's actually the very first commit that it's rebasing
+
+08:28.530 --> 08:29.850
+is the one I reworded.
+
+08:29.850 --> 08:31.680
+Everything else is just being picked,
+
+08:31.680 --> 08:33.690
+meaning keep it, don't reword it,
+
+08:33.690 --> 08:35.880
+don't do anything, just keep it.
+
+08:35.880 --> 08:39.270
+So I close out, and I'll full-screen this.
+
+08:39.270 --> 08:41.550
+Here we are, waiting for your editor to close,
+
+08:41.550 --> 08:42.420
+okay, it did.
+
+08:42.420 --> 08:45.720
+And then it says, "Successfully rebased and updated."
+
+08:45.720 --> 08:49.350
+Okay, so I type git status. Nothing has changed.
+
+08:49.350 --> 08:52.443
+However, if I type git log, and I do oneline,
+
+08:53.340 --> 08:55.710
+the first thing that we'll notice, hopefully,
+
+08:55.710 --> 08:59.250
+is this new commit message, "add project files,"
+
+08:59.250 --> 09:03.120
+instead of "added," or "I added," I think is what it said.
+
+09:03.120 --> 09:06.930
+So we changed that message. We reworded that message.
+
+09:06.930 --> 09:08.980
+So I'm gonna screenshot this and compare.
+
+09:09.930 --> 09:12.487
+Okay, so this is what we had before,
+
+09:12.487 --> 09:14.400
+"I added project files."
+
+09:14.400 --> 09:15.720
+That was our second commit.
+
+09:15.720 --> 09:18.750
+Now our second commit is "add project files."
+
+09:18.750 --> 09:22.200
+But more importantly, or just as important,
+
+09:22.200 --> 09:26.850
+by changing that commit, by renaming it or rewording it,
+
+09:26.850 --> 09:28.770
+that changes the commit hash.
+
+09:28.770 --> 09:31.560
+I'll compare them as best I can here.
+
+09:31.560 --> 09:34.170
+Let's see, maybe zoom these in a bit.
+
+09:34.170 --> 09:36.180
+Well, it's not a perfect comparison.
+
+09:36.180 --> 09:37.890
+The screenshots are different sizes.
+
+09:37.890 --> 09:40.260
+But you can see that first commit, initial commit,
+
+09:40.260 --> 09:42.960
+is unchanged, but then every other commit
+
+09:42.960 --> 09:45.330
+afterwards actually was rewritten.
+
+09:45.330 --> 09:46.830
+It has a new hash.
+
+09:46.830 --> 09:50.490
+Because this one changed, we changed that message,
+
+09:50.490 --> 09:51.930
+the whole commit changes,
+
+09:51.930 --> 09:54.240
+and every subsequent commit has to change
+
+09:54.240 --> 09:56.400
+because every commit takes into account
+
+09:56.400 --> 09:58.650
+its parent commit, it's rehashed.
+
+09:58.650 --> 10:01.380
+Long story short, all new commits here,
+
+10:01.380 --> 10:02.580
+but that's all that's changed.
+
+10:02.580 --> 10:05.610
+We renamed or reworded one commit message
+
+10:05.610 --> 10:08.880
+that made every other commit afterwards change.
+
+10:08.880 --> 10:11.820
+The commit hash is regenerated, it's a new commit,
+
+10:11.820 --> 10:14.700
+but the messages are the same, the contents are the same.
+
+10:14.700 --> 10:17.310
+We didn't rebase onto another branch, right,
+
+10:17.310 --> 10:19.350
+so our branch still looks the same
+
+10:19.350 --> 10:21.270
+and same number of commits.
+
+10:21.270 --> 10:23.430
+It's just that we used this one command so far,
+
+10:23.430 --> 10:26.730
+the reword command, to change the commit message.
+
+10:26.730 --> 10:28.500
+So in the next video, I'm gonna show you
+
+10:28.500 --> 10:30.840
+how we can actually combine commits
+
+10:30.840 --> 10:33.120
+so that I can get rid of some of these redundant things,
+
+10:33.120 --> 10:36.660
+like combine the two bootstrap commits here
+
+10:36.660 --> 10:40.230
+or the two bug fix commits up here with the nav bar.
+
+10:40.230 --> 10:41.910
+So that's what I'll show you in the next video.
+
+10:41.910 --> 10:44.760
+We still use interactive rebase. It's just a new command.
