@@ -1,0 +1,403 @@
+WEBVTT
+
+00:00.150 --> 00:01.170
+Instructor: Okay, so we've seen
+
+00:01.170 --> 00:03.330
+how we can define our own aliases.
+
+00:03.330 --> 00:05.190
+What I wanna show you in this video
+
+00:05.190 --> 00:08.250
+is how we can find useful aliases.
+
+00:08.250 --> 00:10.140
+So there are lots of blog posts
+
+00:10.140 --> 00:13.290
+and Reddit posts about different Git aliases
+
+00:13.290 --> 00:16.650
+and share your favorite Git aliases, stack overflow
+
+00:16.650 --> 00:17.940
+and so on.
+
+00:17.940 --> 00:21.660
+Why don't we take a look at, how about this one right here?
+
+00:21.660 --> 00:23.130
+So this is a blog post.
+
+00:23.130 --> 00:27.060
+I'll include these links as resources.
+
+00:27.060 --> 00:29.010
+And there's a couple on here,
+
+00:29.010 --> 00:31.230
+like this one right here, ls,
+
+00:31.230 --> 00:34.740
+that is basically a very pretty formatted way
+
+00:34.740 --> 00:36.930
+of updating Git Log.
+
+00:36.930 --> 00:39.150
+So you could type this yourself.
+
+00:39.150 --> 00:40.800
+This is just a very fancy way
+
+00:40.800 --> 00:45.240
+of updating the display for Git Log.
+
+00:45.240 --> 00:46.770
+So we can change the color,
+
+00:46.770 --> 00:48.180
+but we can also reorder things
+
+00:48.180 --> 00:50.520
+and show the hash first and then a message
+
+00:50.520 --> 00:53.070
+and then an author instead of curly braces
+
+00:53.070 --> 00:54.900
+or square brackets rather.
+
+00:54.900 --> 00:57.270
+These are all things that you can actually tweak too.
+
+00:57.270 --> 01:00.270
+But if we wanted this one, we just copy it.
+
+01:00.270 --> 01:02.523
+Take this and put it in our Git config.
+
+01:03.840 --> 01:05.610
+Okay, so let's try it.
+
+01:05.610 --> 01:08.940
+This is what my regular Git log looks like.
+
+01:08.940 --> 01:10.800
+Here's what one line looks like.
+
+01:10.800 --> 01:12.200
+I could also do it this way.
+
+01:13.140 --> 01:16.890
+Okay, and then here is what this new alias looks like.
+
+01:16.890 --> 01:18.273
+And I'm pretty zoomed in.
+
+01:19.680 --> 01:21.420
+But if we take a look now, right,
+
+01:21.420 --> 01:25.050
+we see the commit hash, we see the message,
+
+01:25.050 --> 01:26.490
+and then we see the committer,
+
+01:26.490 --> 01:28.989
+I believe is what this is not the author.
+
+01:28.989 --> 01:31.800
+Anyway, here's another example.
+
+01:31.800 --> 01:35.130
+So this one looks pretty useful, Git ll.
+
+01:35.130 --> 01:38.670
+This will list commits showing changed files.
+
+01:38.670 --> 01:40.680
+So if I want to know more about, you know,
+
+01:40.680 --> 01:45.030
+what changed within a given commit
+
+01:45.030 --> 01:47.040
+in which files were updated,
+
+01:47.040 --> 01:49.440
+this is going to be kind of a nightmare to look at I'm sure,
+
+01:49.440 --> 01:51.480
+but if I do get ll...
+
+01:51.480 --> 01:53.280
+Oh, it's actually not so bad.
+
+01:53.280 --> 01:57.330
+You can see in one commit I changed README and new js
+
+01:57.330 --> 01:59.700
+or this is a react repo.
+
+01:59.700 --> 02:03.120
+We can see in other commits quite a few files,
+
+02:03.120 --> 02:05.340
+lots of files were changed.
+
+02:05.340 --> 02:07.530
+So that could be very useful as well, right?
+
+02:07.530 --> 02:10.200
+This is more than just saving us time.
+
+02:10.200 --> 02:11.850
+This is actually giving us functionality
+
+02:11.850 --> 02:14.490
+that we probably wouldn't have used otherwise.
+
+02:14.490 --> 02:16.170
+I'm not gonna go and type this,
+
+02:16.170 --> 02:18.450
+I'm not gonna remember it, let alone type it,
+
+02:18.450 --> 02:20.220
+but this can be very useful now
+
+02:20.220 --> 02:22.800
+to have this option at our disposal.
+
+02:22.800 --> 02:26.820
+And there are quite a few others on just this one blog post.
+
+02:26.820 --> 02:29.100
+For example, this one,
+
+02:29.100 --> 02:31.950
+depending on your workflow and the company you work for,
+
+02:31.950 --> 02:35.280
+if they have a specific workflow, this can be nice.
+
+02:35.280 --> 02:37.710
+This is a command that just renames branches
+
+02:37.710 --> 02:40.680
+by prepending done to their name.
+
+02:40.680 --> 02:42.840
+So it's a very long looking command,
+
+02:42.840 --> 02:43.680
+and this isn't, you know,
+
+02:43.680 --> 02:46.470
+a lot of work to do without an alias.
+
+02:46.470 --> 02:49.080
+But it's nice just to have this alias done
+
+02:49.080 --> 02:51.394
+and be able to just say Git done.
+
+02:51.394 --> 02:53.910
+What you'll see on some of these commands, however,
+
+02:53.910 --> 02:56.910
+we have not talked about, is an exclamation point.
+
+02:56.910 --> 02:59.100
+What that means, if it's in a Git Alias
+
+02:59.100 --> 03:02.610
+it actually tells Git that this is a shell script.
+
+03:02.610 --> 03:05.700
+So that gives us access to things that are not Git commands,
+
+03:05.700 --> 03:09.284
+like if you're familiar with grep or echo
+
+03:09.284 --> 03:13.110
+or really any commands that we would use in our shell.
+
+03:13.110 --> 03:15.360
+So we can combine those with Git commands
+
+03:15.360 --> 03:17.760
+that we do need to then use Git.
+
+03:17.760 --> 03:19.920
+So instead of just branch, Git branch
+
+03:19.920 --> 03:22.230
+or Git config and so on.
+
+03:22.230 --> 03:27.120
+Anyway, this one lists all the aliases that you have set up.
+
+03:27.120 --> 03:28.680
+So that could be useful
+
+03:28.680 --> 03:31.260
+if in case you ever forget the different aliases,
+
+03:31.260 --> 03:32.670
+which you know for some of these
+
+03:32.670 --> 03:34.050
+if you don't use 'em all the time
+
+03:34.050 --> 03:36.060
+they're still good to have around, right?
+
+03:36.060 --> 03:38.610
+Even if you don't remember that this is ll,
+
+03:38.610 --> 03:42.540
+if you are able to just access all your aliases quickly
+
+03:42.540 --> 03:43.830
+that's what this will do.
+
+03:43.830 --> 03:45.570
+So again, this one is in quotes
+
+03:45.570 --> 03:49.230
+because it's telling Git this is going to be a shell script,
+
+03:49.230 --> 03:51.270
+that's what the exclamation point means.
+
+03:51.270 --> 03:54.300
+And that gives us access to things like grip,
+
+03:54.300 --> 03:55.980
+grep rather not grip.
+
+03:55.980 --> 04:00.750
+So if I try this, git la, list aliases,
+
+04:00.750 --> 04:03.150
+there's a list of my aliases.
+
+04:03.150 --> 04:04.620
+And I think that's enough for now.
+
+04:04.620 --> 04:06.750
+I don't want to waste your time, you know,
+
+04:06.750 --> 04:08.070
+just as I go through these
+
+04:08.070 --> 04:10.800
+and sort of pick them out one at a time and show you them,
+
+04:10.800 --> 04:12.510
+you can set these up on your own.
+
+04:12.510 --> 04:13.890
+I'll include all of these links.
+
+04:13.890 --> 04:15.330
+Figure out what works for you.
+
+04:15.330 --> 04:18.960
+One word of caution if you are working,
+
+04:18.960 --> 04:21.360
+this is coming from my personal experience,
+
+04:21.360 --> 04:22.680
+if you use aliases,
+
+04:22.680 --> 04:24.990
+and I use them a lot in my personal life
+
+04:24.990 --> 04:26.490
+or especially I used to,
+
+04:26.490 --> 04:28.163
+when I started teaching more
+
+04:28.163 --> 04:31.800
+I realized how heavily I actually had relied on aliases
+
+04:31.800 --> 04:34.980
+or like my muscle memory was just accustomed
+
+04:34.980 --> 04:37.410
+to my personal aliases.
+
+04:37.410 --> 04:39.630
+So if you're working on someone else's computer
+
+04:39.630 --> 04:42.257
+a coworker or in my case students,
+
+04:42.257 --> 04:45.510
+I just kept typing things that didn't exist.
+
+04:45.510 --> 04:47.823
+So a word of mild warning.
+
+04:48.870 --> 04:52.050
+There's a reason I didn't have everybody set up aliases
+
+04:52.050 --> 04:54.750
+on day one of this course or lecture one.
+
+04:54.750 --> 04:56.460
+It would've made the videos shorter,
+
+04:56.460 --> 04:58.770
+but you need to understand the underlying commands
+
+04:58.770 --> 05:00.060
+and remember what they are.
+
+05:00.060 --> 05:03.660
+But aliases can be a nice tool to save you some time.
+
+05:03.660 --> 05:06.450
+So take a look at some of the links I've included.
+
+05:06.450 --> 05:09.090
+There's a whole file full of aliases.
+
+05:09.090 --> 05:12.090
+A very comprehensive file that I'll include.
+
+05:12.090 --> 05:14.790
+It's from a Git repo called Git Alias,
+
+05:14.790 --> 05:18.090
+and you can read more about it, it's pretty popular.
+
+05:18.090 --> 05:20.970
+And it has a read me that explains how it works.
+
+05:20.970 --> 05:22.230
+There's kind of a system
+
+05:22.230 --> 05:24.720
+for the way that these aliases are set up.
+
+05:24.720 --> 05:27.420
+It's not just a hodgepodge of useful aliases,
+
+05:27.420 --> 05:29.250
+they actually follow a particular format
+
+05:29.250 --> 05:30.690
+that has some rules.
+
+05:30.690 --> 05:33.390
+Anyway, I'll let you explore that on your own.
+
+05:33.390 --> 05:35.840
+And that's really it for this section on aliases.
