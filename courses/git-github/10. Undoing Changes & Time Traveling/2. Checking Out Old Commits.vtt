@@ -1,0 +1,571 @@
+WEBVTT
+
+00:00.240 --> 00:01.999
+Instructor: All right, so the first of many
+
+00:01.999 --> 00:04.246
+different commands we're going to see in this section
+
+00:04.246 --> 00:08.370
+is actually one we've seen before, git checkout.
+
+00:08.370 --> 00:10.748
+So when we learned how to first switch branches,
+
+00:10.748 --> 00:12.891
+I used git switch, that's what I showed you.
+
+00:12.891 --> 00:15.240
+It's the newer way of doing things.
+
+00:15.240 --> 00:17.371
+But the longstanding way of switching branches
+
+00:17.371 --> 00:19.488
+is using git checkout, but also,
+
+00:19.488 --> 00:22.650
+git checkout does a lot of other things.
+
+00:22.650 --> 00:23.745
+So in this video, I'm gonna show you one
+
+00:23.745 --> 00:25.998
+of those other things.
+
+00:25.998 --> 00:27.980
+As a reminder, a lot of people think
+
+00:27.980 --> 00:30.300
+the git checkout command does too much
+
+00:30.300 --> 00:32.403
+which is why new commands were added
+
+00:32.403 --> 00:34.486
+including git switch and git restore
+
+00:34.486 --> 00:37.263
+which we'll talk about later on in this section.
+
+00:37.263 --> 00:40.170
+Okay, so if we use git checkout,
+
+00:40.170 --> 00:42.300
+but rather than checking out a branch,
+
+00:42.300 --> 00:45.159
+we instead checkout a particular commit hash
+
+00:45.159 --> 00:46.497
+like I've done here.
+
+00:46.497 --> 00:49.494
+Remember, we can view these commit hashes using git log.
+
+00:49.494 --> 00:50.499
+If we run this command,
+
+00:50.499 --> 00:53.190
+git checkout and then a commit hash,
+
+00:53.190 --> 00:55.771
+something quite peculiar happens.
+
+00:55.771 --> 00:57.251
+We're going to see this message
+
+00:57.251 --> 01:01.020
+that sounds very bad, detached HEAD.
+
+01:01.020 --> 01:03.011
+You are in detached HEAD state.
+
+01:03.011 --> 01:04.410
+You can look around,
+
+01:04.410 --> 01:05.629
+make experimental changes and commit them
+
+01:05.629 --> 01:06.754
+and you can discard any commits you make
+
+01:06.754 --> 01:09.780
+in the state without impacting any branches
+
+01:09.780 --> 01:11.263
+by switching back to a branch.
+
+01:11.263 --> 01:13.247
+Okay, so first of all,
+
+01:13.247 --> 01:15.139
+that sounds horrible, detached HEAD.
+
+01:15.139 --> 01:16.494
+It's not a bad thing.
+
+01:16.494 --> 01:18.510
+We'll talk about what exactly it means.
+
+01:18.510 --> 01:20.242
+But first, I wanna demonstrate this.
+
+01:20.242 --> 01:23.947
+So I'm going back to our first little repo,
+
+01:23.947 --> 01:27.016
+"The Great Gatsby" novel that I'm writing,
+
+01:27.016 --> 01:28.492
+my first novel.
+
+01:28.492 --> 01:31.007
+If you recall, we just have a single branch.
+
+01:31.007 --> 01:33.393
+I'm on master, so that's all that we have.
+
+01:33.393 --> 01:34.498
+And we have a bunch of commits.
+
+01:34.498 --> 01:36.333
+Let me do one line here.
+
+01:38.250 --> 01:39.760
+So we started with an outline
+
+01:39.760 --> 01:41.498
+and then I did chapter one
+
+01:41.498 --> 01:43.487
+and then I split chapter one into two,
+
+01:43.487 --> 01:44.903
+chapter one and chapter two.
+
+01:44.903 --> 01:46.011
+Then I renamed a character,
+
+01:46.011 --> 01:48.004
+character of Gatsby to Catsby,
+
+01:48.004 --> 01:49.380
+and then I added a mood board
+
+01:49.380 --> 01:51.264
+and I did a bunch of other stuff.
+
+01:51.264 --> 01:55.635
+Well, let's say, I wanna go back in time to when,
+
+01:55.635 --> 01:57.645
+I don't know, what would a good place be?
+
+01:57.645 --> 02:02.010
+Maybe when I renamed Gatsby to Catsby.
+
+02:02.010 --> 02:04.486
+So I want to undo that or at least I wanna see
+
+02:04.486 --> 02:06.647
+what things looked like back then.
+
+02:06.647 --> 02:09.180
+Right now, in my files,
+
+02:09.180 --> 02:12.270
+there is no Gatsby, it's Catsby here.
+
+02:12.270 --> 02:15.330
+If I look at the character's file,
+
+02:15.330 --> 02:16.163
+where are you?
+
+02:16.163 --> 02:16.996
+Here we are.
+
+02:16.996 --> 02:18.983
+Jay Catsby, chapter one.
+
+02:18.983 --> 02:20.134
+If I did a search,
+
+02:20.134 --> 02:23.261
+we would find Catsby in here and not Gatsby.
+
+02:23.261 --> 02:24.499
+There we are.
+
+02:24.499 --> 02:25.973
+All right, so if I wanna undo that,
+
+02:25.973 --> 02:27.910
+I wanna go back in time.
+
+02:27.910 --> 02:30.007
+I can take this commit hash.
+
+02:30.007 --> 02:32.484
+This is actually the abbreviated version.
+
+02:32.484 --> 02:34.510
+It's the first seven digits
+
+02:34.510 --> 02:36.240
+for each one of these commits
+
+02:36.240 --> 02:38.310
+and that's really all that Git needs.
+
+02:38.310 --> 02:39.618
+But I could also provide the entire thing
+
+02:39.618 --> 02:41.475
+if I just did git log
+
+02:41.475 --> 02:44.190
+and didn't do the abbreviated versions.
+
+02:44.190 --> 02:45.023
+So I could scroll down
+
+02:45.023 --> 02:47.746
+and find this commit hash here
+
+02:47.746 --> 02:49.633
+or just provide the first seven,
+
+02:49.633 --> 02:52.875
+one, two, three, four, five, six, seven.
+
+02:52.875 --> 02:55.530
+Okay, so I'm gonna copy that.
+
+02:55.530 --> 02:56.745
+And now, just gonna make sure
+
+02:56.745 --> 03:00.030
+I don't have any changes on here, okay, good.
+
+03:00.030 --> 03:03.780
+I'm gonna go check out that commit hash,
+
+03:03.780 --> 03:06.494
+git checkout, this old commit,
+
+03:06.494 --> 03:08.247
+and this is where I see that message.
+
+03:08.247 --> 03:10.742
+You are in detached HEAD state.
+
+03:10.742 --> 03:11.887
+You can look around, blah blah blah.
+
+03:11.887 --> 03:13.410
+I already read that.
+
+03:13.410 --> 03:15.491
+So let me show you a couple of things.
+
+03:15.491 --> 03:17.913
+First of all, if I type git log,
+
+03:19.460 --> 03:20.943
+let me do one line.
+
+03:23.492 --> 03:24.325
+We only have what?
+
+03:24.325 --> 03:27.000
+Five commits that are showing up right now
+
+03:27.000 --> 03:28.394
+because I have jumped back in time.
+
+03:28.394 --> 03:31.003
+I've traveled back to this commit.
+
+03:31.003 --> 03:32.765
+I don't know how many commits ago it was,
+
+03:32.765 --> 03:35.015
+six, seven, eight commits ago
+
+03:35.015 --> 03:37.387
+and there's only five commits at that point.
+
+03:37.387 --> 03:39.260
+This is where we are.
+
+03:39.260 --> 03:41.754
+Also, if I take a look at the files,
+
+03:41.754 --> 03:44.395
+well, I'm an idiot because I went back
+
+03:44.395 --> 03:47.011
+to the commit where we renamed to Catsby.
+
+03:47.011 --> 03:48.002
+I wanted to go back to the one
+
+03:48.002 --> 03:51.246
+before we were still Gatsby.
+
+03:51.246 --> 03:54.628
+So we see, Catsby is still everywhere.
+
+03:54.628 --> 03:58.230
+Okay, well, let's pick the commit before.
+
+03:58.230 --> 04:00.246
+So before we rename Gatsby to Catsby,
+
+04:00.246 --> 04:03.988
+I can go to this commit 4f1b
+
+04:03.988 --> 04:04.821
+and do the same thing.
+
+04:04.821 --> 04:07.500
+Git checkout that commit.
+
+04:07.500 --> 04:09.255
+And I'm still in this detached HEAD state.
+
+04:09.255 --> 04:12.738
+If I type git status, you can see HEAD detached.
+
+04:12.738 --> 04:16.500
+And if I take a look now, Gatsby,
+
+04:16.500 --> 04:18.619
+Gatsby is all that we see.
+
+04:18.619 --> 04:20.008
+Do I have another example?
+
+04:20.008 --> 04:23.130
+Here's Gatsby, we don't have Catsby at all.
+
+04:23.130 --> 04:24.988
+If I type git log,
+
+04:24.988 --> 04:28.800
+now, we only have four commits, okay?
+
+04:28.800 --> 04:31.020
+So I've jumped back in time.
+
+04:31.020 --> 04:33.233
+But don't fear, I haven't lost all of the other work
+
+04:33.233 --> 04:34.965
+that I had on the master branch.
+
+04:34.965 --> 04:37.530
+So what is this detached HEAD?
+
+04:37.530 --> 04:38.748
+Well, as we've learned earlier,
+
+04:38.748 --> 04:40.387
+but I'm just gonna review.
+
+04:40.387 --> 04:44.151
+Normally, HEAD points to a particular branch reference.
+
+04:44.151 --> 04:45.148
+Are you on master?
+
+04:45.148 --> 04:47.734
+Are you on bugfix or new feature?
+
+04:47.734 --> 04:49.261
+Whatever branch you're on,
+
+04:49.261 --> 04:51.760
+HEAD points to the branch reference,
+
+04:51.760 --> 04:53.749
+and then the branch reference itself
+
+04:53.749 --> 04:55.129
+points to the tip of a branch,
+
+04:55.129 --> 04:57.990
+the most recent commit on a branch.
+
+04:57.990 --> 04:59.485
+So if I'm on the master branch,
+
+04:59.485 --> 05:01.440
+HEAD points to master,
+
+05:01.440 --> 05:02.994
+and master points to some commit.
+
+05:02.994 --> 05:04.259
+If I make a new commit,
+
+05:04.259 --> 05:07.372
+master updates to point to the new commit,
+
+05:07.372 --> 05:09.888
+but HEAD still points at master, right?
+
+05:09.888 --> 05:12.522
+HEAD is still just pointing at that branch.
+
+05:12.522 --> 05:15.503
+If I switch branches, I go to bugfix.
+
+05:15.503 --> 05:16.336
+HEAD switches to bug fix,
+
+05:17.895 --> 05:20.745
+but HEAD is still pointing to a branch.
+
+05:20.745 --> 05:23.280
+And that's really the main takeaway so far.
+
+05:23.280 --> 05:26.505
+HEAD usually refers to a particular branch reference.
+
+05:26.505 --> 05:28.800
+It does not refer to a commit.
+
+05:28.800 --> 05:29.739
+HEAD is not pointing at this commit
+
+05:29.739 --> 05:31.710
+or this commit or that commit,
+
+05:31.710 --> 05:33.748
+HEAD is referring to the branch that we're on
+
+05:33.748 --> 05:36.420
+and the branch reference points to a commit.
+
+05:36.420 --> 05:38.243
+So now, back to this detached HEAD thing.
+
+05:38.243 --> 05:40.680
+Look at all those detached HEADS.
+
+05:40.680 --> 05:43.728
+I manually detached those just for this slide.
+
+05:43.728 --> 05:47.507
+Anyway, now, when we check out an earlier commit,
+
+05:47.507 --> 05:50.258
+what we're doing is actually changing HEAD
+
+05:50.258 --> 05:52.376
+to refer to a commit.
+
+05:52.376 --> 05:54.900
+So in this case, I'm just going back one commit.
+
+05:54.900 --> 05:57.507
+HEAD points directly at that commit,
+
+05:57.507 --> 05:59.910
+not at a branch reference.
+
+05:59.910 --> 06:01.390
+So it's kind of a weird state.
+
+06:01.390 --> 06:03.731
+It is not normal, it's not bad.
+
+06:03.731 --> 06:05.742
+But we can't always do the same things
+
+06:05.742 --> 06:09.410
+that we could do if we were on a branch.
+
+06:09.410 --> 06:10.368
+So we're not on a branch.
+
+06:10.368 --> 06:11.484
+We're just floating around.
+
+06:11.484 --> 06:13.997
+We're a detached HEAD.
+
+06:13.997 --> 06:15.730
+So I can just quickly show you
+
+06:15.730 --> 06:17.460
+what this looks like.
+
+06:17.460 --> 06:19.490
+If you recall, I actually showed that we can look
+
+06:19.490 --> 06:22.761
+at HEAD instead of this .git directory
+
+06:22.761 --> 06:25.387
+which is where all the git stuff is stored.
+
+06:25.387 --> 06:27.976
+We can look at head and earlier,
+
+06:27.976 --> 06:30.498
+when I first showed this a couple sections ago,
+
+06:30.498 --> 06:34.267
+we saw something like, I think refs/heads/master
+
+06:34.267 --> 06:36.631
+or oldies or whatever branch we were on.
+
+06:36.631 --> 06:39.000
+But right now, I'm in detached HEAD
+
+06:39.000 --> 06:41.618
+and HEAD is actually referring to a commit,
+
+06:41.618 --> 06:43.253
+the particular commit that I'm on,
+
+06:43.253 --> 06:44.735
+right, this commit.
+
+06:44.735 --> 06:46.226
+And that's abnormal.
+
+06:46.226 --> 06:49.379
+We're used to it pointing to an actual branch reference.
+
+06:49.379 --> 06:52.004
+Anyway, we are in detached HEAD at this point.
+
+06:52.004 --> 06:52.887
+In the next video,
+
+06:52.887 --> 06:55.008
+I'm gonna talk about what we can do here
+
+06:55.008 --> 06:58.680
+and why this could be useful, okay?
+
+06:58.680 --> 06:59.964
+So right now, we've gone back in time,
+
+06:59.964 --> 07:03.519
+but we're kind of just floating around some old commit.
+
+07:03.519 --> 07:05.500
+Next up, I'll talk about how we can branch off
+
+07:05.500 --> 07:07.755
+from here or undo things.
+
+07:07.755 --> 07:09.033
+So that's coming up.
