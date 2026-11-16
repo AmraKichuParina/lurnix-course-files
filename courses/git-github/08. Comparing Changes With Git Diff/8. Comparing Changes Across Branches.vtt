@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00.000 --> 00:01.230
+-: I can also use git diff
+
+00:01.230 --> 00:03.870
+to compare changes between two branches.
+
+00:03.870 --> 00:06.330
+So if I have two branches, currently I don't
+
+00:06.330 --> 00:09.720
+in the repo I was showing you, but whatever branch one is
+
+00:09.720 --> 00:12.390
+and branch two are, Git will do a diff
+
+00:12.390 --> 00:14.460
+between the files in those branches,
+
+00:14.460 --> 00:16.513
+so all the files in those branches,
+
+00:16.513 --> 00:18.930
+although you can narrow it down as well.
+
+00:18.930 --> 00:21.120
+So let's do a quick demo of that.
+
+00:21.120 --> 00:25.860
+I need to make a branch, so why don't I commit the changes.
+
+00:25.860 --> 00:27.600
+I added, what, Indigo and Vie,
+
+00:27.600 --> 00:30.960
+or I added Violet, and I added my Numbers file.
+
+00:30.960 --> 00:35.960
+Let's just go with "add violet and create numbers,"
+
+00:36.930 --> 00:38.580
+and then I'll add a couple of numbers here,
+
+00:38.580 --> 00:43.350
+one, two, three, four, git status.
+
+00:43.350 --> 00:48.350
+Let's do, clear this, git commit -am "add more numbers."
+
+00:54.570 --> 00:57.420
+Alrighty, and now, if I make a branch,
+
+00:57.420 --> 01:00.960
+so I'm gonna create a new branch, git switch -c,
+
+01:00.960 --> 01:04.203
+we'll call this branch, how about odd-numbers?
+
+01:05.490 --> 01:08.700
+So on this branch, I'm only going to have odd numbers,
+
+01:08.700 --> 01:13.290
+so I'm gonna delete two and I'll delete four,
+
+01:13.290 --> 01:18.290
+I'll do a commit, so I'll add numbers, then I'll commit,
+
+01:18.727 --> 01:22.920
+"removed two and four," okay, and then let's
+
+01:22.920 --> 01:24.783
+also add five down at the bottom,
+
+01:25.890 --> 01:30.890
+so we'll do a git add numbers, git commit "add five."
+
+01:33.150 --> 01:36.720
+Okay, so right now, we have two branches,
+
+01:36.720 --> 01:40.140
+nothing very exciting, but we have master and odd numbers,
+
+01:40.140 --> 01:42.300
+and if I wanna do a comparison between the two
+
+01:42.300 --> 01:44.250
+of them, I wanna see what has changed
+
+01:44.250 --> 01:46.980
+from master to odd numbers or vice versa,
+
+01:46.980 --> 01:49.980
+the order does matter, but I list the two branches
+
+01:49.980 --> 01:51.840
+and I separate them by two dots,
+
+01:51.840 --> 01:54.048
+or you can actually just add a space.
+
+01:54.048 --> 01:56.820
+Both of them will do the same thing.
+
+01:56.820 --> 02:00.510
+So let's do, which, let's do from master
+
+02:00.510 --> 02:05.510
+to odd numbers first, so git diff master..odd-numbers,
+
+02:08.550 --> 02:12.030
+and the only file that changed was Numbers.
+
+02:12.030 --> 02:14.400
+We still have the Colors file on both branches,
+
+02:14.400 --> 02:17.250
+but there's no differences, so there's nothing to display.
+
+02:17.250 --> 02:21.090
+Now here, we can see that numbers.txt version A,
+
+02:21.090 --> 02:23.040
+which is from the master branch,
+
+02:23.040 --> 02:26.193
+because of that order that I wrote, master to odd numbers,
+
+02:27.060 --> 02:28.740
+this one is from the master branch
+
+02:28.740 --> 02:31.110
+and this one is from my odd numbers branch,
+
+02:31.110 --> 02:32.910
+so we see that on the master branch,
+
+02:32.910 --> 02:34.620
+which is, A, it has the minus sign
+
+02:34.620 --> 02:37.650
+in front of it, that's its designated symbol.
+
+02:37.650 --> 02:40.770
+We had one, two, three, four,
+
+02:40.770 --> 02:43.322
+and we did not have this stuff, right?
+
+02:43.322 --> 02:48.030
+Then on B, we have the plus sign as its symbol,
+
+02:48.030 --> 02:51.450
+so we had one, three, and then five.
+
+02:51.450 --> 02:54.720
+So that's new on the odd numbers branch
+
+02:54.720 --> 02:57.180
+and it does not include two and four.
+
+02:57.180 --> 03:02.180
+If I change the order, git diff odd-numbers and then master,
+
+03:04.560 --> 03:06.000
+now, we see things have flipped,
+
+03:06.000 --> 03:08.250
+so A has been assigned the minus sign,
+
+03:08.250 --> 03:13.250
+but A this time is the odd numbers branch and B is master.
+
+03:13.800 --> 03:17.370
+So here, right on the master branch, B with a plus sign,
+
+03:17.370 --> 03:19.800
+we have one, two, three, four,
+
+03:19.800 --> 03:22.140
+and it's the opposite of what we saw previously,
+
+03:22.140 --> 03:24.030
+so that order does matter.
+
+03:24.030 --> 03:27.600
+Also, just to make this clear, we get the same outcome
+
+03:27.600 --> 03:31.440
+if we just use a space, but people like to use the dot, dot.
+
+03:31.440 --> 03:34.260
+Maybe it makes it, I don't know, makes it clearer,
+
+03:34.260 --> 03:35.970
+you know, that you're doing that comparison,
+
+03:35.970 --> 03:38.490
+but you'll see both of them, and then,
+
+03:38.490 --> 03:41.040
+let me just quickly change one of these files.
+
+03:41.040 --> 03:44.070
+So let's do red, orange, yellow, green, blue, indigo,
+
+03:44.070 --> 03:46.170
+violet, I don't know, odd numbers?
+
+03:46.170 --> 03:49.110
+We'll only display the odd-numbered colors,
+
+03:49.110 --> 03:51.630
+so if this is one, get rid of two.
+
+03:51.630 --> 03:55.294
+That's three, we get rid of four, five, and six.
+
+03:55.294 --> 03:57.690
+I dunno, I might've totally screwed that up, but whatever.
+
+03:57.690 --> 03:59.670
+We have fewer colors here.
+
+03:59.670 --> 04:03.390
+So now, we type git status. Let's make a commit here.
+
+04:03.390 --> 04:05.280
+So I'll add the Colors file
+
+04:05.280 --> 04:09.090
+and we'll just go with "remove some colors," alright?
+
+04:09.090 --> 04:10.800
+So now, if I do a git diff, let's go
+
+04:10.800 --> 04:12.813
+from master to odd numbers again,
+
+04:14.520 --> 04:16.830
+we have two files that are showing up.
+
+04:16.830 --> 04:18.570
+So the Colors file changed
+
+04:18.570 --> 04:21.060
+from master to odd numbers, right?
+
+04:21.060 --> 04:24.960
+On master, which is A, we had orange, green, and indigo.
+
+04:24.960 --> 04:27.360
+They are not present on the odd numbers branch
+
+04:27.360 --> 04:30.330
+and we didn't add anything new, but on the Numbers file,
+
+04:30.330 --> 04:32.010
+we have the same thing we saw earlier.
+
+04:32.010 --> 04:33.810
+We don't need to go over it again.
+
+04:33.810 --> 04:36.450
+So now, we have multiple files because there were changes
+
+04:36.450 --> 04:38.820
+to multiple files between those branches.
+
+04:38.820 --> 04:40.260
+So that's how you compare branches
+
+04:40.260 --> 04:44.763
+with git diff, dot dot, or a space between two branch names.
