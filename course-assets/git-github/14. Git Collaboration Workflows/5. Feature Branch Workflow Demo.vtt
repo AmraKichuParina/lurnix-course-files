@@ -1,0 +1,952 @@
+WEBVTT
+
+00:00.240 --> 00:02.190
+Instructor: Alright, so I'm gonna do a demonstration
+
+00:02.190 --> 00:05.010
+of working on feature branches and collaborating
+
+00:05.010 --> 00:09.600
+between the same two people, me, Colt, and Stevie.
+
+00:09.600 --> 00:10.433
+The Chicken.
+
+00:10.433 --> 00:12.000
+So I've made another repository
+
+00:12.000 --> 00:15.780
+on GitHub called creatively "feature branch workflow."
+
+00:15.780 --> 00:17.550
+I've already added Stevie,
+
+00:17.550 --> 00:20.670
+as a collaborator and I've accepted the invitation.
+
+00:20.670 --> 00:23.010
+So Stevie shows up there.
+
+00:23.010 --> 00:27.240
+And I've been working on this repo locally as Colt.
+
+00:27.240 --> 00:29.070
+So not, I haven't done much.
+
+00:29.070 --> 00:30.270
+This is all that we have.
+
+00:30.270 --> 00:33.690
+If it's the same thing, a a bootstrap website
+
+00:33.690 --> 00:35.550
+just basic bootstrap included
+
+00:35.550 --> 00:37.860
+and a heading that says Hello world.
+
+00:37.860 --> 00:39.660
+So again, we're not trying to like go crazy
+
+00:39.660 --> 00:41.250
+with some fancy code or anything.
+
+00:41.250 --> 00:43.290
+I'm just trying to show the, the workflow.
+
+00:43.290 --> 00:45.540
+So in the last example, it sucked working
+
+00:45.540 --> 00:47.430
+on the master branch or on the main branch.
+
+00:47.430 --> 00:48.870
+I had to pull down and merge code
+
+00:48.870 --> 00:51.240
+before I could ever push my code up.
+
+00:51.240 --> 00:52.740
+We broke the main branch
+
+00:52.740 --> 00:55.020
+because Stevie was trying to share some uncomplete
+
+00:55.020 --> 00:57.330
+or incomplete code to get feedback
+
+00:57.330 --> 00:58.890
+and hopefully get it solved.
+
+00:58.890 --> 01:02.130
+Anyway, that won't be a problem if we work with branches.
+
+01:02.130 --> 01:05.820
+So I also cloned it down from Stevie, right?
+
+01:05.820 --> 01:08.010
+This is Stevie's side as it shows you there.
+
+01:08.010 --> 01:11.700
+I cloned it down and we're working on it locally as Stevie.
+
+01:11.700 --> 01:14.700
+So why don't we say Stevie gets to work
+
+01:14.700 --> 01:17.280
+on a navbar, same thing as last time.
+
+01:17.280 --> 01:19.260
+Now he's not gonna work on the main branch.
+
+01:19.260 --> 01:23.100
+Instead he's going to create a new branch.
+
+01:23.100 --> 01:25.290
+We haven't really talked about naming feature branches.
+
+01:25.290 --> 01:27.060
+I'm gonna keep it very simple
+
+01:27.060 --> 01:31.080
+and do something like navbar or add navbar.
+
+01:31.080 --> 01:33.900
+There are lots of patterns that large companies
+
+01:33.900 --> 01:36.120
+and organizations follow for feature branch
+
+01:36.120 --> 01:38.220
+or just branch naming in general.
+
+01:38.220 --> 01:39.330
+You might see, see things
+
+01:39.330 --> 01:44.330
+like feat for feature slash navbar for example.
+
+01:45.390 --> 01:46.350
+And then you might see something
+
+01:46.350 --> 01:50.400
+like bug or fix or refactor, different prefixes.
+
+01:50.400 --> 01:52.830
+But I'm just gonna go with a very simple one.
+
+01:52.830 --> 01:54.180
+We'll just call it navbar.
+
+01:54.180 --> 01:56.880
+So we'll do git switch dash c,
+
+01:56.880 --> 01:59.463
+to make that new branch, navbar.
+
+02:00.540 --> 02:03.090
+Okay, and again, I'm logged in right now as Stevie.
+
+02:03.090 --> 02:04.620
+I'm working as Stevie.
+
+02:04.620 --> 02:06.840
+So on this branch that we're currently on
+
+02:06.840 --> 02:09.330
+I can go ahead and try adding a navbar.
+
+02:09.330 --> 02:10.770
+So we'll do the same thing as last time.
+
+02:10.770 --> 02:15.770
+I'll copy that very large navbar from Bootstrap.
+
+02:15.870 --> 02:16.950
+I'll put it up top.
+
+02:16.950 --> 02:19.020
+Let's see what that looks like.
+
+02:19.020 --> 02:22.950
+Okay, there's our basic navbar, but once again
+
+02:22.950 --> 02:24.840
+it's not working the way it's supposed to.
+
+02:24.840 --> 02:26.430
+Hmm. What's going on?
+
+02:26.430 --> 02:30.000
+Well, I would like to share this with Colt and you know
+
+02:30.000 --> 02:33.360
+get some feedback from him or from anybody on the team.
+
+02:33.360 --> 02:35.190
+See if they can fix that issue.
+
+02:35.190 --> 02:37.530
+I'm not gonna merge it into Master.
+
+02:37.530 --> 02:39.900
+I'm simply going to take this branch.
+
+02:39.900 --> 02:42.420
+I'm gonna add and commit my work on this branch
+
+02:42.420 --> 02:46.170
+because I can have incomplete or broken stuff on a branch.
+
+02:46.170 --> 02:47.190
+No one cares.
+
+02:47.190 --> 02:48.870
+My master branch or the main branch
+
+02:48.870 --> 02:51.510
+is supposed to be the working,
+
+02:51.510 --> 02:54.600
+the source of truth branch for my application.
+
+02:54.600 --> 02:57.720
+So I'm going to add and commit as Stevie.
+
+02:57.720 --> 03:01.800
+So git add index, git commit,
+
+03:01.800 --> 03:02.970
+I don't know
+
+03:02.970 --> 03:07.907
+begin navbar or add broken navbar.
+
+03:10.660 --> 03:14.280
+Okay, so now I can push that up to GitHub if I want to.
+
+03:14.280 --> 03:15.870
+I probably wouldn't push that up
+
+03:15.870 --> 03:19.080
+as just a broken halfway working navbar.
+
+03:19.080 --> 03:21.720
+But if I wanted to get feedback or collaborate
+
+03:21.720 --> 03:24.090
+with a a teammate, which is what I'm going to demonstrate
+
+03:24.090 --> 03:25.890
+then I definitely would push it up.
+
+03:25.890 --> 03:27.300
+So I'm gonna do that now.
+
+03:27.300 --> 03:28.890
+We have our remote, right?
+
+03:28.890 --> 03:32.810
+We have Origin and I'm gonna push the branch navbar.
+
+03:32.810 --> 03:37.773
+So git push origin navbar and push that up.
+
+03:38.940 --> 03:40.020
+I refresh.
+
+03:40.020 --> 03:41.640
+And we already see, okay
+
+03:41.640 --> 03:44.700
+navbar has recent pushes less than a minute ago.
+
+03:44.700 --> 03:46.110
+And I can see my work is showing
+
+03:46.110 --> 03:49.200
+up here on navbar by Stevie Chicks.
+
+03:49.200 --> 03:51.450
+So I preserve the state of main,
+
+03:51.450 --> 03:53.220
+I don't have to screw up main
+
+03:53.220 --> 03:55.440
+and I can still share code that is incomplete.
+
+03:55.440 --> 03:59.970
+Meanwhile, Colt is working away on his own feature.
+
+03:59.970 --> 04:01.770
+And so he's on his own branch.
+
+04:01.770 --> 04:02.603
+What is he doing?
+
+04:02.603 --> 04:03.990
+Let's say he's, he's working
+
+04:03.990 --> 04:05.820
+on a pricing table like you see here.
+
+04:05.820 --> 04:08.010
+This is just one of the examples from Bootstrap.
+
+04:08.010 --> 04:09.480
+If you go to examples.
+
+04:09.480 --> 04:12.240
+So I'm gonna start before I go any further
+
+04:12.240 --> 04:14.790
+by making a branch that we're going to work on.
+
+04:14.790 --> 04:16.952
+So if we're trying to make this pricing table
+
+04:16.952 --> 04:19.530
+let's make a branch called Pricing Table
+
+04:19.530 --> 04:20.970
+or something like that.
+
+04:20.970 --> 04:24.000
+So I'm now switched back to Colt
+
+04:24.000 --> 04:28.620
+and I'm going to just check, all right, I'm on main.
+
+04:28.620 --> 04:31.890
+So let's, the first thing I would always do is just see
+
+04:31.890 --> 04:33.630
+if there's any updates or any new changes
+
+04:33.630 --> 04:35.220
+to main before we branch,
+
+04:35.220 --> 04:37.620
+because we want the most recent version of main.
+
+04:37.620 --> 04:39.240
+Maybe a coworker has merged something
+
+04:39.240 --> 04:40.800
+into main and I don't have it.
+
+04:40.800 --> 04:43.950
+So we could always do git pull origin main
+
+04:43.950 --> 04:45.840
+although there's nothing new up there
+
+04:45.840 --> 04:47.010
+we're already up to date.
+
+04:47.010 --> 04:48.960
+But now I can make my branch
+
+04:48.960 --> 04:51.376
+without having to worry that I'm missing commits.
+
+04:51.376 --> 04:53.430
+Anyway, git switch dash c.
+
+04:53.430 --> 04:55.593
+Let's just call this pricing table.
+
+04:56.670 --> 04:58.410
+Okay, so I'm on this new branch
+
+04:58.410 --> 05:00.480
+and now I can do some basic work.
+
+05:00.480 --> 05:03.060
+I'll do maybe two commits.
+
+05:03.060 --> 05:03.893
+So the first one
+
+05:03.893 --> 05:06.180
+I'm just gonna add a container to work inside of
+
+05:06.180 --> 05:07.530
+if you don't know Bootstrap at all.
+
+05:07.530 --> 05:09.060
+Again, that's not the point here
+
+05:09.060 --> 05:10.393
+so please don't worry about it.
+
+05:10.393 --> 05:13.680
+But I'll just do very basic simple commits.
+
+05:13.680 --> 05:17.220
+Like you wouldn't commit that just a single html element.
+
+05:17.220 --> 05:18.540
+But I will here.
+
+05:18.540 --> 05:20.250
+So git add index
+
+05:20.250 --> 05:22.162
+and then I'll do git commit,
+
+05:22.162 --> 05:25.800
+add container to index.
+
+05:25.800 --> 05:29.430
+Okay, now let's do another commit where,
+
+05:29.430 --> 05:31.950
+I'm just gonna copy the markup from this example
+
+05:31.950 --> 05:34.440
+on Bootstrap to make this pricing table.
+
+05:34.440 --> 05:36.210
+I'll inspect.
+
+05:36.210 --> 05:39.003
+And then let's see if I can make this larger for you.
+
+05:39.870 --> 05:41.640
+I want this right here.
+
+05:41.640 --> 05:44.400
+So I'm just gonna right click copy
+
+05:44.400 --> 05:46.140
+and then copy other html.
+
+05:46.140 --> 05:47.730
+I want the whole thing.
+
+05:47.730 --> 05:50.610
+Whoopsies, not just the particular element,
+
+05:50.610 --> 05:51.990
+but really it doesn't matter
+
+05:51.990 --> 05:55.740
+this is not a course on html or copying and pasting
+
+05:55.740 --> 05:57.450
+but I'm gonna paste that inside.
+
+05:57.450 --> 06:00.630
+Pretend that I've been working on that all morning.
+
+06:00.630 --> 06:04.290
+Okay? So that looks fine enough, right?
+
+06:04.290 --> 06:06.690
+And the good news is that if I wanna share this,
+
+06:06.690 --> 06:08.550
+if I'm maybe I'm not done,
+
+06:08.550 --> 06:09.750
+but I wanna share it with somebody
+
+06:09.750 --> 06:12.660
+and push it up to GitHub, I can push this branch up
+
+06:12.660 --> 06:14.010
+at any point.
+
+06:14.010 --> 06:16.140
+It doesn't matter what other people have done.
+
+06:16.140 --> 06:18.840
+Unlike with our first workflow where I couldn't push
+
+06:18.840 --> 06:21.570
+anything up until I had pulled down changes to main or
+
+06:21.570 --> 06:23.790
+to Master and I had to merge.
+
+06:23.790 --> 06:27.630
+And that process repeated anytime anybody pushed new changes
+
+06:27.630 --> 06:31.530
+up to GitHub, everyone else has to pull them down and merge
+
+06:31.530 --> 06:32.700
+before they can push.
+
+06:32.700 --> 06:34.290
+But that's not an issue here.
+
+06:34.290 --> 06:39.060
+So now I can push my branch up if I add those changes.
+
+06:39.060 --> 06:43.740
+So git add index, git commit, add pricing table.
+
+06:43.740 --> 06:45.150
+I'll just go with that.
+
+06:45.150 --> 06:47.610
+Okay? And now I can push that branch up,
+
+06:47.610 --> 06:49.900
+git push origin pricing table
+
+06:52.530 --> 06:54.047
+And we'll go back to GitHub.
+
+06:56.007 --> 06:58.020
+And now we have two branches up here
+
+06:58.020 --> 07:00.450
+navbar and pricing table.
+
+07:00.450 --> 07:02.910
+Okay? So I'm not necessarily suggesting
+
+07:02.910 --> 07:04.920
+that every time you make a feature branch
+
+07:04.920 --> 07:06.870
+you need to push it up to GitHub.
+
+07:06.870 --> 07:09.540
+A lot of the time you won't do that
+
+07:09.540 --> 07:11.190
+unless you have a particular reason
+
+07:11.190 --> 07:13.710
+and you need to share that feature branch with somebody.
+
+07:13.710 --> 07:16.770
+But often if you look at an organization's repositories
+
+07:16.770 --> 07:18.600
+they're not going to have thousands
+
+07:18.600 --> 07:20.280
+and thousands of branches even
+
+07:20.280 --> 07:22.740
+though there have been thousands of feature branches
+
+07:22.740 --> 07:25.950
+over the probably a month or a couple of months at least.
+
+07:25.950 --> 07:29.340
+There's just tons and tons of new branches all the time.
+
+07:29.340 --> 07:30.840
+We don't push them all to GitHub.
+
+07:30.840 --> 07:32.130
+If we do, we remove them.
+
+07:32.130 --> 07:33.540
+But also just a lot of the time
+
+07:33.540 --> 07:35.220
+you don't need to push them up to GitHub
+
+07:35.220 --> 07:39.240
+you will merge them in to master or to main at some point
+
+07:39.240 --> 07:41.490
+and then just delete the branch when you're done.
+
+07:41.490 --> 07:43.170
+So they don't need to stay around
+
+07:43.170 --> 07:45.060
+if you end up merging that stuff in.
+
+07:45.060 --> 07:47.040
+Anyway, sticking with Colt,
+
+07:47.040 --> 07:50.250
+let's say that now Colt gets that Slack message
+
+07:50.250 --> 07:52.027
+from good old Stevie saying,
+
+07:52.027 --> 07:54.390
+"Hey I pushed up that navbar, could you take a look?
+
+07:54.390 --> 07:55.950
+I don't know why it's not working.
+
+07:55.950 --> 07:58.110
+It's supposed to collapse and it is,
+
+07:58.110 --> 08:02.130
+but it's not expanding on small screen sizes.
+
+08:02.130 --> 08:04.020
+I'm not getting the drawers that I'm getting
+
+08:04.020 --> 08:05.190
+on the documentation.
+
+08:05.190 --> 08:06.480
+Why is it not working?"
+
+08:06.480 --> 08:09.060
+So Stevie's just a chicken, what you know
+
+08:09.060 --> 08:10.020
+what do you expect?
+
+08:10.020 --> 08:12.450
+I'm no expert, but I think we can figure it out.
+
+08:12.450 --> 08:16.980
+So what I need to do is pull that branch down, right?
+
+08:16.980 --> 08:19.260
+And before I do that, I could just fetch.
+
+08:19.260 --> 08:22.440
+So let's, I'm on Colts again, just to be clear.
+
+08:22.440 --> 08:25.200
+I can do a git fetch origin
+
+08:25.200 --> 08:27.990
+and just get everything from origin, has anything changed?
+
+08:27.990 --> 08:31.020
+And yep, it says new branch, navbar.
+
+08:31.020 --> 08:33.270
+So we have origin slash navbar
+
+08:33.270 --> 08:35.580
+and I could start by just going into detached head.
+
+08:35.580 --> 08:39.570
+I'm trying to make this a bit larger here and checking out
+
+08:39.570 --> 08:41.880
+if we do git branch dash r,
+
+08:41.880 --> 08:44.070
+we see there's this origin slash navbar
+
+08:44.070 --> 08:46.230
+remote tracking branch reference.
+
+08:46.230 --> 08:49.410
+So I could check that out, git checkout
+
+08:49.410 --> 08:51.690
+if I wanted to origin,
+
+08:51.690 --> 08:56.690
+origin slash navbar detached head.
+
+08:57.570 --> 09:00.270
+But I can take a look and here it is, right?
+
+09:00.270 --> 09:01.563
+I can refresh.
+
+09:03.870 --> 09:06.150
+This is what's in my working directory
+
+09:06.150 --> 09:08.130
+because I'm in this detached head state
+
+09:08.130 --> 09:10.530
+and I can verify is it actually broken?
+
+09:10.530 --> 09:12.750
+Well, it's collapsing how it's supposed to
+
+09:12.750 --> 09:13.770
+but that's not working.
+
+09:13.770 --> 09:17.040
+Hmm. So okay, I see Stevie's, right?
+
+09:17.040 --> 09:20.010
+Something is going on and I wanna work on that branch.
+
+09:20.010 --> 09:23.700
+I wanna make a contribution as Colt on that navbar branch.
+
+09:23.700 --> 09:26.100
+So I need to leave detached head.
+
+09:26.100 --> 09:28.350
+Let's just go back to where we were.
+
+09:28.350 --> 09:30.720
+We can do this git switch dash.
+
+09:30.720 --> 09:33.480
+So now I'm back on pricing table.
+
+09:33.480 --> 09:36.600
+And then if I want to check out that navbar branch
+
+09:36.600 --> 09:38.760
+remember with git switch, it's super simple
+
+09:38.760 --> 09:42.390
+I can do git switch and then just the same name.
+
+09:42.390 --> 09:45.870
+So navbar, Git will automatically make me that branch
+
+09:45.870 --> 09:48.900
+navbar even though it doesn't exist on my machine yet.
+
+09:48.900 --> 09:50.550
+And set it up so that it's connected
+
+09:50.550 --> 09:53.160
+it's tracking origin slash navbar.
+
+09:53.160 --> 09:53.993
+So here we go.
+
+09:55.170 --> 09:56.730
+It tells me exactly what I just said.
+
+09:56.730 --> 09:57.960
+Branch navbar set up to track
+
+09:57.960 --> 09:59.850
+remote branch navbar from origin.
+
+09:59.850 --> 10:01.830
+So now I'm working on the navbar,
+
+10:01.830 --> 10:03.390
+I'm not just in detached head
+
+10:03.390 --> 10:05.760
+and I can start to, you know
+
+10:05.760 --> 10:07.500
+try and tweak it and figure it out.
+
+10:07.500 --> 10:10.470
+I happen to know what the problem is.
+
+10:10.470 --> 10:14.970
+This requires bootstrap JavaScript, which I did not include.
+
+10:14.970 --> 10:16.890
+So let's say that was an accident.
+
+10:16.890 --> 10:19.260
+Very trivial, simple to fix issue
+
+10:19.260 --> 10:21.810
+but most anybody would notice that
+
+10:21.810 --> 10:23.040
+in a matter of seconds.
+
+10:23.040 --> 10:25.320
+I didn't include the JavaScript file.
+
+10:25.320 --> 10:30.120
+So I'm gonna go get that from Bootstrap just right here.
+
+10:30.120 --> 10:32.040
+Let's take that script.
+
+10:32.040 --> 10:36.573
+Okay, I'm gonna go put it just at the bottom for html.
+
+10:37.530 --> 10:41.100
+Now if I refresh, hopefully it works.
+
+10:41.100 --> 10:43.110
+And indeed it does.
+
+10:43.110 --> 10:45.810
+So we just collaborated Colt and Stevie.
+
+10:45.810 --> 10:47.460
+Stevie started the navbar.
+
+10:47.460 --> 10:49.080
+Colt hopefully finished it.
+
+10:49.080 --> 10:51.210
+I hate saying my name in third person.
+
+10:51.210 --> 10:53.160
+Now I'm going to add and commit that change
+
+10:53.160 --> 10:55.650
+to the navbar branch as Colt.
+
+10:55.650 --> 10:56.760
+So here we go.
+
+10:56.760 --> 11:01.470
+Git status, git add index, git commit.
+
+11:01.470 --> 11:02.460
+We'll just go with, you know,
+
+11:02.460 --> 11:06.150
+add fix navbar bug.
+
+11:06.150 --> 11:08.190
+Even though it's really not a bug,
+
+11:08.190 --> 11:11.970
+it was just missing the entire JavaScript that it needed.
+
+11:11.970 --> 11:14.340
+Anyway, we will pretend I just fixed some bug
+
+11:14.340 --> 11:17.430
+for Stevie and this is on the navbar branch.
+
+11:17.430 --> 11:19.140
+So now I can push that branch up
+
+11:19.140 --> 11:22.023
+git push origin navbar if I want to.
+
+11:23.820 --> 11:25.770
+And then I can go back to whatever I was doing
+
+11:25.770 --> 11:29.130
+which was the pricing branch, right?
+
+11:29.130 --> 11:31.260
+What was it pricing table?
+
+11:31.260 --> 11:32.790
+So now I'm back to that.
+
+11:32.790 --> 11:33.930
+I'll refresh here.
+
+11:33.930 --> 11:35.340
+Completely different thing.
+
+11:35.340 --> 11:38.010
+And I can get back to work on this, right?
+
+11:38.010 --> 11:41.100
+I can experiment, I could do some radical new thing.
+
+11:41.100 --> 11:44.190
+And on GitHub we now have the working navbar.
+
+11:44.190 --> 11:48.270
+Hopefully that navbar branch and Stevie can now
+
+11:48.270 --> 11:51.000
+go pull that down and maybe keep working on it.
+
+11:51.000 --> 11:51.833
+Who knows.
+
+11:51.833 --> 11:55.618
+So on Stevie's machine, that's where I am right now.
+
+11:55.618 --> 11:59.610
+He hears from Colts that he fixed the bug
+
+11:59.610 --> 12:00.570
+in the navbar.
+
+12:00.570 --> 12:04.080
+So Stevie's gonna go pull down the most recent changes
+
+12:04.080 --> 12:05.490
+or maybe just the navbar branch.
+
+12:05.490 --> 12:07.863
+So git pull origin navbar.
+
+12:09.390 --> 12:12.240
+Alright, fast forward 'cause there's a new commit.
+
+12:12.240 --> 12:14.940
+If we type git log, we see the whole history here.
+
+12:14.940 --> 12:18.900
+Most recently we have Colt, fixed Navbar Bug.
+
+12:18.900 --> 12:21.420
+And I'm currently acting as Stevie.
+
+12:21.420 --> 12:24.780
+And we see if I expand that
+
+12:24.780 --> 12:28.290
+the JavaScript is correctly included and if we refresh
+
+12:28.290 --> 12:31.950
+hopefully it works on Stevie's machine and it does.
+
+12:31.950 --> 12:33.300
+So that's the basic idea.
+
+12:33.300 --> 12:34.470
+We're working on branches.
+
+12:34.470 --> 12:36.770
+That allows us to collaborate more freely.
+
+12:36.770 --> 12:39.210
+We can experiment, try radical changes.
+
+12:39.210 --> 12:42.330
+We treat the main or the master branch or whatever branch,
+
+12:42.330 --> 12:46.170
+some branch as the the important golden child
+
+12:46.170 --> 12:47.730
+branch that we don't wanna screw up.
+
+12:47.730 --> 12:50.760
+So we make feature branches, we make all sorts of branches.
+
+12:50.760 --> 12:52.950
+It doesn't just have to be for a new feature
+
+12:52.950 --> 12:55.230
+but we make branches that we work on
+
+12:55.230 --> 12:57.540
+often people just call them feature branches.
+
+12:57.540 --> 12:59.490
+The thing that we have neglected to talk about
+
+12:59.490 --> 13:03.180
+with working on feature branches is the inevitable merging
+
+13:03.180 --> 13:04.320
+of those feature branches.
+
+13:04.320 --> 13:06.000
+Or at least some of them.
+
+13:06.000 --> 13:08.460
+We need to merge them into the master or main branch.
+
+13:08.460 --> 13:11.490
+And how we do this is up for discussion.
+
+13:11.490 --> 13:13.490
+That's what we're gonna talk about next.
