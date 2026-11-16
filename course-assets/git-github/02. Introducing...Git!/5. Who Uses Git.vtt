@@ -1,0 +1,427 @@
+WEBVTT
+
+00:00.210 --> 00:03.390
+Instructor: Next up, I'd like to talk about who uses Git.
+
+00:03.390 --> 00:06.390
+This will be pretty quick as well, and optional.
+
+00:06.390 --> 00:09.630
+You don't have to know about this in order to use it.
+
+00:09.630 --> 00:13.050
+But the first most obvious group would be engineers,
+
+00:13.050 --> 00:14.730
+developers, coders,
+
+00:14.730 --> 00:16.470
+ranging from people who work on
+
+00:16.470 --> 00:21.270
+their own little tiny side projects or just hobby projects,
+
+00:21.270 --> 00:23.880
+entrepreneurs up to massive tech giants
+
+00:23.880 --> 00:25.650
+like Facebook and Google.
+
+00:25.650 --> 00:29.190
+Git is the most commonly used version control system
+
+00:29.190 --> 00:30.270
+as we talked about.
+
+00:30.270 --> 00:32.820
+And when you're developing applications,
+
+00:32.820 --> 00:35.640
+version control is very, very important to use.
+
+00:35.640 --> 00:37.470
+On Git's official homepage,
+
+00:37.470 --> 00:39.870
+they list some of the companies that use it.
+
+00:39.870 --> 00:43.560
+Google, Facebook, Microsoft, Twitter, LinkedIn, Netflix.
+
+00:43.560 --> 00:46.680
+And then if you go to a website like StackShare,
+
+00:46.680 --> 00:48.317
+where you can view,
+
+00:48.317 --> 00:50.520
+I don't know how accurate StackShare is,
+
+00:50.520 --> 00:52.560
+but you can view different tools
+
+00:52.560 --> 00:54.540
+and companies that use them.
+
+00:54.540 --> 00:56.970
+There's other companies like Robinhood, Reddit,
+
+00:56.970 --> 00:59.580
+Lyft, StackShare itself uses Git.
+
+00:59.580 --> 01:03.600
+Smaller companies, Patreon, Fiverr, Canva,
+
+01:03.600 --> 01:05.010
+I use Canva all the time.
+
+01:05.010 --> 01:06.750
+Massive companies like Walmart.
+
+01:06.750 --> 01:08.760
+Anyway, the point is it's used by pretty much
+
+01:08.760 --> 01:10.830
+any engineering team you can think of.
+
+01:10.830 --> 01:12.990
+Also, another group that uses Git,
+
+01:12.990 --> 01:15.420
+or at least would benefit from being familiar
+
+01:15.420 --> 01:17.910
+with Git are tech adjacent roles.
+
+01:17.910 --> 01:20.370
+So people who are not developers
+
+01:20.370 --> 01:23.040
+but work with developers or deal with developers,
+
+01:23.040 --> 01:26.220
+learning the basics of Git is not all that difficult
+
+01:26.220 --> 01:28.440
+and it can help a lot with conversations,
+
+01:28.440 --> 01:31.830
+with deadlines, with just, you know, setting expectations.
+
+01:31.830 --> 01:32.790
+And in particular,
+
+01:32.790 --> 01:35.940
+designers often need the basic understanding
+
+01:35.940 --> 01:39.120
+to be able to work with Git and communicate with developers.
+
+01:39.120 --> 01:41.760
+So another completely separate group
+
+01:41.760 --> 01:44.160
+of people who are using Git these days
+
+01:44.160 --> 01:46.830
+are governments and large organizations.
+
+01:46.830 --> 01:47.940
+Not technical, right?
+
+01:47.940 --> 01:50.217
+They're not, I don't know, tech startups.
+
+01:50.217 --> 01:54.720
+Governments use Git a lot to manage the drafting of laws,
+
+01:54.720 --> 01:57.840
+collaboration of drafting laws,
+
+01:57.840 --> 02:00.750
+sharing data and large data sets.
+
+02:00.750 --> 02:03.750
+So Washington DC City Council uses Git and GitHub.
+
+02:03.750 --> 02:05.250
+We'll talk about GitHub in a bit,
+
+02:05.250 --> 02:06.480
+to publish its laws
+
+02:06.480 --> 02:09.630
+and have made it a collaborative process.
+
+02:09.630 --> 02:10.860
+Citizens have actually found
+
+02:10.860 --> 02:14.250
+and fixed typos collaboratively in those laws.
+
+02:14.250 --> 02:15.990
+They've fixed them using Git.
+
+02:15.990 --> 02:18.330
+So I think I have some examples.
+
+02:18.330 --> 02:19.163
+Here we are.
+
+02:19.163 --> 02:21.150
+This is the city of Chattanooga.
+
+02:21.150 --> 02:23.310
+They use GitHub, which again,
+
+02:23.310 --> 02:26.760
+we'll talk about what GitHub is and how it compares to Git,
+
+02:26.760 --> 02:29.040
+but all you need to know is that it's based on Git.
+
+02:29.040 --> 02:30.660
+This project is simple.
+
+02:30.660 --> 02:34.470
+It just shares parking locations in the city of Chattanooga.
+
+02:34.470 --> 02:36.240
+And then if we go to GitHub's webpage,
+
+02:36.240 --> 02:39.488
+they have something called governments.github.com.
+
+02:39.488 --> 02:42.780
+They show actually a whole bunch of different governments
+
+02:42.780 --> 02:46.410
+that use GitHub, which again is built on top of Git.
+
+02:46.410 --> 02:49.080
+So governments, groups from Argentina,
+
+02:49.080 --> 02:51.600
+Australia, the US, the UK, I mean,
+
+02:51.600 --> 02:54.360
+pretty much every country is listed here.
+
+02:54.360 --> 02:55.860
+Now, that doesn't mean that Git
+
+02:55.860 --> 02:58.680
+plays a central role in all of these governments.
+
+02:58.680 --> 03:03.680
+For example, let's see, USGS, the US Geological Survey.
+
+03:05.040 --> 03:07.860
+They have a whole bunch of things on GitHub.
+
+03:07.860 --> 03:09.720
+Pages and pages of these projects
+
+03:09.720 --> 03:11.040
+that are shared with the public
+
+03:11.040 --> 03:13.530
+and they use Git to manage all of them.
+
+03:13.530 --> 03:17.460
+Anyway, so that's another group that use Git these days.
+
+03:17.460 --> 03:21.450
+Scientists also more and more are using Git
+
+03:21.450 --> 03:24.270
+to help collaborate on projects,
+
+03:24.270 --> 03:26.010
+to share findings and data sets,
+
+03:26.010 --> 03:29.640
+to manage code and work together on code bases.
+
+03:29.640 --> 03:34.290
+Git and GitHub together really work well in a open source
+
+03:34.290 --> 03:38.130
+or a peer reviewed world like science and research.
+
+03:38.130 --> 03:39.330
+We'll learn more about GitHub.
+
+03:39.330 --> 03:41.013
+I keep saying that, but we will.
+
+03:42.030 --> 03:42.930
+Some other groups.
+
+03:42.930 --> 03:44.250
+Writers.
+
+03:44.250 --> 03:45.510
+It's not all writers, certainly.
+
+03:45.510 --> 03:46.860
+It's not that common these days,
+
+03:46.860 --> 03:50.520
+but some writers really are becoming fans of Git.
+
+03:50.520 --> 03:52.380
+I listen to some screenwriting podcasts
+
+03:52.380 --> 03:53.940
+to fall asleep to sometimes,
+
+03:53.940 --> 03:56.340
+and every so often there's an episode about using Git
+
+03:56.340 --> 03:59.280
+to write screenplays, manage versions, right?
+
+03:59.280 --> 04:01.440
+I talked about having different essay versions.
+
+04:01.440 --> 04:03.720
+Well, with a screenplay, you've got so many revisions,
+
+04:03.720 --> 04:04.553
+so many drafts.
+
+04:04.553 --> 04:06.630
+Or a novel, so many characters,
+
+04:06.630 --> 04:09.240
+so many ways of structuring a novel,
+
+04:09.240 --> 04:10.980
+ordering things, different arcs.
+
+04:10.980 --> 04:14.100
+So Git is definitely gaining in popularity there.
+
+04:14.100 --> 04:15.330
+And then specifically,
+
+04:15.330 --> 04:17.670
+I've seen multiple use cases of Git
+
+04:17.670 --> 04:20.070
+for collaborative textbook writing
+
+04:20.070 --> 04:22.560
+where textbooks usually have multiple authors.
+
+04:22.560 --> 04:27.560
+So this is a book, a textbook on informal homotopy.
+
+04:27.720 --> 04:31.350
+Homoto, I think it's homotopy type theory.
+
+04:31.350 --> 04:34.290
+I have no clue what it is, what the book,
+
+04:34.290 --> 04:36.420
+I mean, this means nothing to me other than the fact
+
+04:36.420 --> 04:38.850
+that it's a textbook on something crazy sounding.
+
+04:38.850 --> 04:42.390
+But a lot of people have used this textbook.
+
+04:42.390 --> 04:46.756
+It looks like a couple of thousand people have started.
+
+04:46.756 --> 04:49.830
+So it's like a favorite of their projects on GitHub.
+
+04:49.830 --> 04:52.740
+And here we'll see there's 85 people
+
+04:52.740 --> 04:55.170
+who have collaborated to write this textbook.
+
+04:55.170 --> 04:56.945
+Just one simple example.
+
+04:56.945 --> 04:59.160
+Now the last slide.
+
+04:59.160 --> 05:01.200
+Anyone really can use Git.
+
+05:01.200 --> 05:03.090
+People find all sorts of creative uses,
+
+05:03.090 --> 05:04.800
+from keeping a daily diary
+
+05:04.800 --> 05:07.260
+to writing their PhD thesis with Git,
+
+05:07.260 --> 05:08.880
+all the way to composers.
+
+05:08.880 --> 05:11.640
+I saw a Reddit comment from a music,
+
+05:11.640 --> 05:13.530
+a composer who writes symphonies,
+
+05:13.530 --> 05:16.470
+and he uses Git to help track the massive changes.
+
+05:16.470 --> 05:18.600
+All the different files, the parts,
+
+05:18.600 --> 05:20.640
+as his symphonies evolve over time.
+
+05:20.640 --> 05:22.770
+It's a month, multiple month process
+
+05:22.770 --> 05:24.570
+to write a symphony for a full orchestra
+
+05:24.570 --> 05:26.670
+with all the different instruments written out,
+
+05:26.670 --> 05:28.830
+he uses Git to help with that.
+
+05:28.830 --> 05:31.200
+So I assume a lot of you who are watching this
+
+05:31.200 --> 05:35.760
+are probably in this group right there, or maybe this group.
+
+05:35.760 --> 05:38.490
+But increasingly, I expect in the next few years
+
+05:38.490 --> 05:40.410
+there'll be more governments, more scientists,
+
+05:40.410 --> 05:45.210
+more writers, more symphony composers who use Git
+
+05:45.210 --> 05:47.400
+because it really can be,
+
+05:47.400 --> 05:49.770
+I won't say a life changer, maybe a life saver.
+
+05:49.770 --> 05:52.380
+It can save you a lot of stress and time down the line,
+
+05:52.380 --> 05:54.540
+assuming you can get past the initial hurdle
+
+05:54.540 --> 05:55.530
+of learning it.
+
+05:55.530 --> 05:58.983
+We are on the precipice of learning it, so I'll shut up.
