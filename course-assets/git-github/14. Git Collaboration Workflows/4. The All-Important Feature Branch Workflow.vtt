@@ -1,0 +1,604 @@
+WEBVTT
+
+00:00.210 --> 00:01.800
+Instructor: Okay, so as we've seen
+
+00:01.800 --> 00:03.600
+the centralized workflow, AKA
+
+00:03.600 --> 00:06.123
+everyone works on one branch, is not ideal.
+
+00:07.390 --> 00:08.624
+Quite a few issues.
+
+00:08.624 --> 00:09.600
+That brings us to our next workflow,
+
+00:09.600 --> 00:10.590
+Feature Branches.
+
+00:10.590 --> 00:11.880
+I don't really know what to call it,
+
+00:11.880 --> 00:13.350
+but that's the concept.
+
+00:13.350 --> 00:15.150
+Work on feature branches.
+
+00:15.150 --> 00:17.190
+Don't work on master, you silly goose.
+
+00:17.190 --> 00:18.600
+That's the main idea.
+
+00:18.600 --> 00:19.980
+If the centralized workflow is
+
+00:19.980 --> 00:21.188
+everyone works on master,
+
+00:21.188 --> 00:23.039
+the feature branch workflow is
+
+00:23.039 --> 00:25.290
+nobody works on master or main.
+
+00:25.290 --> 00:27.660
+You always work on a feature branch.
+
+00:27.660 --> 00:30.000
+This is a very, very common pattern.
+
+00:30.000 --> 00:32.310
+Rather than working directly on the master branch
+
+00:32.310 --> 00:35.003
+or the main branch or any centralized branch,
+
+00:35.003 --> 00:38.070
+all development, whether it's something tiny,
+
+00:38.070 --> 00:41.400
+or some massive new feature, or a redesign, or a bug fix,
+
+00:41.400 --> 00:44.100
+all development should be done on separate branches.
+
+00:44.100 --> 00:46.964
+So part of this means treating the master or main branch
+
+00:46.964 --> 00:49.920
+as the official project history,
+
+00:49.920 --> 00:51.510
+the branch, right?
+
+00:51.510 --> 00:55.144
+Like the sacred branch that you're not going to work on.
+
+00:55.144 --> 00:57.540
+Instead, all work is done
+
+00:57.540 --> 00:59.410
+on these side feature branches
+
+01:00.306 --> 01:01.350
+and then merged back in
+
+01:01.350 --> 01:04.290
+to the master or main branch when appropriate.
+
+01:04.290 --> 01:06.810
+This allows multiple teammates to collaborate
+
+01:06.810 --> 01:08.250
+on the same feature
+
+01:08.250 --> 01:11.430
+without having to mess up the master or main branch.
+
+01:11.430 --> 01:12.480
+Like with what happened
+
+01:12.480 --> 01:13.970
+with the centralized approach
+
+01:13.970 --> 01:16.625
+to share broken code or incomplete code
+
+01:16.625 --> 01:19.560
+also meant breaking the master branch.
+
+01:19.560 --> 01:22.110
+So with this feature branch workflow,
+
+01:22.110 --> 01:24.390
+I could have a branch that never works,
+
+01:24.390 --> 01:26.700
+it's always broken, and I can collaborate
+
+01:26.700 --> 01:30.030
+on that with anybody else, any number of collaborators.
+
+01:30.030 --> 01:31.560
+So my master or main branch
+
+01:31.560 --> 01:33.600
+should not contain any broken code
+
+01:33.600 --> 01:35.040
+unless somebody messes up
+
+01:35.040 --> 01:36.990
+and you know thinks code is not broken
+
+01:36.990 --> 01:40.590
+and they merge it back in and it actually is broken.
+
+01:40.590 --> 01:42.000
+So back to our diagrams.
+
+01:42.000 --> 01:43.500
+Here's the same three characters.
+
+01:43.500 --> 01:45.870
+Forrest, David, and Pamela.
+
+01:45.870 --> 01:48.180
+They all clone the same GitHub repository.
+
+01:48.180 --> 01:50.910
+It starts with two commits and a master branch,
+
+01:50.910 --> 01:52.020
+or a main branch.
+
+01:52.020 --> 01:54.674
+In this diagram, master is the default branch name.
+
+01:54.674 --> 01:56.730
+So Forrest clones it,
+
+01:56.730 --> 01:58.350
+Pamela clones it,
+
+01:58.350 --> 02:00.120
+and David clones it.
+
+02:00.120 --> 02:02.010
+Everyone's at the same point.
+
+02:02.010 --> 02:04.620
+Okay? So we work on feature branches.
+
+02:04.620 --> 02:06.690
+David starts working on a new feature.
+
+02:06.690 --> 02:09.900
+He's working on a branch called Add Dark Theme.
+
+02:09.900 --> 02:13.140
+So he's hit a point where he's not totally done,
+
+02:13.140 --> 02:15.480
+he's maybe 30% of the way there,
+
+02:15.480 --> 02:18.360
+but he wants to share his work with the rest of the team
+
+02:18.360 --> 02:21.330
+and specifically he wants some help from Pamela.
+
+02:21.330 --> 02:23.700
+He wants her feedback or maybe he wants her to
+
+02:23.700 --> 02:25.080
+write some code.
+
+02:25.080 --> 02:27.240
+So he pushes his branch up,
+
+02:27.240 --> 02:30.060
+he pushes add Dark theme up to GitHub.
+
+02:30.060 --> 02:32.160
+So he didn't merge it into master, right?
+
+02:32.160 --> 02:33.750
+It's not merged into anything.
+
+02:33.750 --> 02:36.106
+He just pushes that feature branch up to GitHub.
+
+02:36.106 --> 02:39.840
+So at the same time during this morning or afternoon
+
+02:39.840 --> 02:40.890
+or whatever it is,
+
+02:40.890 --> 02:43.560
+Pamela has been working on her own new feature,
+
+02:43.560 --> 02:45.413
+animated scroll.
+
+02:45.413 --> 02:46.590
+It's the name of the branch she's working on.
+
+02:46.590 --> 02:47.940
+It's a totally separate branch,
+
+02:47.940 --> 02:49.918
+it's in yellow here to make that clear,
+
+02:49.918 --> 02:51.540
+she's not working on master.
+
+02:51.540 --> 02:54.060
+Nobody works directly on master or main.
+
+02:54.060 --> 02:55.200
+So she's working on her branch,
+
+02:55.200 --> 02:56.640
+she's made good progress,
+
+02:56.640 --> 02:59.640
+but then she gets a chat message from David.
+
+02:59.640 --> 03:01.320
+David sent her a Slack saying,
+
+03:01.320 --> 03:03.480
+Hey Pam can you please take a look
+
+03:03.480 --> 03:05.700
+at the work that I did today on the branch?
+
+03:05.700 --> 03:06.533
+What was it called?
+
+03:06.533 --> 03:07.634
+Add dark mode.
+
+03:07.634 --> 03:08.610
+Is that what it was?
+
+03:08.610 --> 03:09.450
+Add dark theme.
+
+03:09.450 --> 03:10.920
+Can you take a look at that branch,
+
+03:10.920 --> 03:11.910
+pull it down from GitHub
+
+03:11.910 --> 03:13.500
+and lemme know what you think
+
+03:13.500 --> 03:15.248
+and add some of your own work.
+
+03:15.248 --> 03:17.141
+So that's what she does.
+
+03:17.141 --> 03:19.890
+She pulls down that branch.
+
+03:19.890 --> 03:21.390
+She didn't have to stop what she was doing
+
+03:21.390 --> 03:23.640
+and merge this into some other branch.
+
+03:23.640 --> 03:25.590
+She can just leave her animated scroll branch
+
+03:25.590 --> 03:27.517
+where it was if she's not ready to share it
+
+03:27.517 --> 03:29.485
+and she just pulls down his branch.
+
+03:29.485 --> 03:31.230
+So we've seen how to do that
+
+03:31.230 --> 03:33.420
+and how we can switch to a remote branch.
+
+03:33.420 --> 03:35.880
+We can fetch to see if there are new branches
+
+03:35.880 --> 03:38.010
+that we don't have and then switch to them.
+
+03:38.010 --> 03:40.050
+So if she gets his feature branch down,
+
+03:40.050 --> 03:43.020
+add dark theme, and it doesn't pollute the master branch,
+
+03:43.020 --> 03:45.030
+it doesn't pollute her animated scroll,
+
+03:45.030 --> 03:47.199
+they can coexist side by side.
+
+03:47.199 --> 03:50.280
+So she takes a look, she makes a couple of improvements.
+
+03:50.280 --> 03:53.970
+She even adds her own commits on the same feature branch.
+
+03:53.970 --> 03:56.400
+So it was three, now it's four commits.
+
+03:56.400 --> 03:57.840
+So she pushes those up.
+
+03:57.840 --> 04:00.180
+Add dark theme is now updated on GitHub.
+
+04:00.180 --> 04:01.290
+She tells David,
+
+04:01.290 --> 04:03.510
+Hey, I added some new work.
+
+04:03.510 --> 04:05.730
+Go ahead and pull down those changes.
+
+04:05.730 --> 04:08.490
+And so he returns to work the next morning.
+
+04:08.490 --> 04:10.950
+I guess this was late at night or evening.
+
+04:10.950 --> 04:13.320
+And after some Redditing in the morning he decides,
+
+04:13.320 --> 04:15.150
+okay I guess I should get back to work.
+
+04:15.150 --> 04:17.580
+But all that he has are these three commits
+
+04:17.580 --> 04:19.110
+on add dark theme.
+
+04:19.110 --> 04:21.420
+All he needs to do is pull down
+
+04:21.420 --> 04:22.980
+see if there's any new information,
+
+04:22.980 --> 04:24.780
+I mean he could fetch first to check,
+
+04:24.780 --> 04:27.780
+but he gets the new work from that branch on GitHub
+
+04:27.780 --> 04:30.630
+that Pamela did and now he can continue his work
+
+04:30.630 --> 04:33.720
+and then at some point maybe he decides he's happy
+
+04:33.720 --> 04:36.990
+with a new feature and he can merge it into master.
+
+04:36.990 --> 04:38.578
+So that's what I'm illustrating here.
+
+04:38.578 --> 04:41.100
+So that actual mechanic or mechanism
+
+04:41.100 --> 04:42.785
+for merging into master,
+
+04:42.785 --> 04:44.910
+usually you don't just decide
+
+04:44.910 --> 04:46.350
+if you're at a big company, you don't decide.
+
+04:46.350 --> 04:48.120
+All right, this goes in master.
+
+04:48.120 --> 04:49.620
+There are usually some controls.
+
+04:49.620 --> 04:51.840
+I mean at the very least there's code review.
+
+04:51.840 --> 04:54.030
+Somebody or a team of people
+
+04:54.030 --> 04:55.590
+need to look at what you've written, right?
+
+04:55.590 --> 04:57.150
+Things need to pass tests.
+
+04:57.150 --> 04:59.400
+So it's not a matter usually of just merging it
+
+04:59.400 --> 05:00.450
+in whenever you want
+
+05:00.450 --> 05:03.090
+and we'll talk about some of those mechanisms
+
+05:03.090 --> 05:05.190
+for code approval and rejection.
+
+05:05.190 --> 05:07.800
+But that doesn't really matter for this workflow right now.
+
+05:07.800 --> 05:10.980
+All that matters is that when a branch is done
+
+05:10.980 --> 05:12.420
+or when a feature is done,
+
+05:12.420 --> 05:14.910
+it can be merged into master.
+
+05:14.910 --> 05:17.610
+So this would ideally and, and the, the way
+
+05:17.610 --> 05:18.810
+that this is supposed to work,
+
+05:18.810 --> 05:20.340
+this is a fully done feature
+
+05:20.340 --> 05:22.170
+it's not broken, it's ready to go,
+
+05:22.170 --> 05:24.870
+then we merge it into the main branch of the master branch.
+
+05:24.870 --> 05:26.850
+We don't merge broken stuff in
+
+05:26.850 --> 05:29.970
+unlike the previous centralized workflow.
+
+05:29.970 --> 05:32.460
+So everyone works in a branch on a given feature,
+
+05:32.460 --> 05:33.990
+you could have multiple branches too.
+
+05:33.990 --> 05:36.750
+It's not necessarily like Pamela's branch
+
+05:36.750 --> 05:37.783
+and David's branch,
+
+05:37.783 --> 05:40.650
+it's more one branch per feature
+
+05:40.650 --> 05:42.480
+or branch per bug fix.
+
+05:42.480 --> 05:44.790
+Branches are feature oriented.
+
+05:44.790 --> 05:47.040
+So this allows us to then share those branches,
+
+05:47.040 --> 05:48.420
+collaborate on branches,
+
+05:48.420 --> 05:50.460
+and keep our master or main branch
+
+05:50.460 --> 05:53.250
+as the source of truth in our repository
+
+05:53.250 --> 05:56.550
+as the stable, always working, functioning,
+
+05:56.550 --> 05:59.130
+non broken branch in our project.
+
+05:59.130 --> 06:01.230
+And of course the last thing that would would need to happen
+
+06:01.230 --> 06:03.823
+once David merges his new feature branch in,
+
+06:03.823 --> 06:07.590
+is he would push that up so that GitHub is updated
+
+06:07.590 --> 06:10.050
+and now everyone's master branch would include
+
+06:10.050 --> 06:11.070
+those new commits,
+
+06:11.070 --> 06:12.780
+those new changes that he made
+
+06:12.780 --> 06:14.640
+on his feature branch originally.
+
+06:14.640 --> 06:16.020
+So that's the main idea.
+
+06:16.020 --> 06:18.450
+Master or main or whatever you want to call it,
+
+06:18.450 --> 06:21.330
+you treat it as a branch that is not to be screwed with.
+
+06:21.330 --> 06:23.250
+It's the official project history.
+
+06:23.250 --> 06:25.590
+All work is done on separate branches
+
+06:25.590 --> 06:28.260
+and then those branches can be either abandoned
+
+06:28.260 --> 06:31.680
+or eventually merged back in to the official project history
+
+06:31.680 --> 06:33.540
+whether that's master or main.
+
+06:33.540 --> 06:36.960
+Remember this slide from the centralized workflow,
+
+06:36.960 --> 06:39.979
+these were all problems with working on one branch.
+
+06:39.979 --> 06:41.460
+No one can work on anything
+
+06:41.460 --> 06:43.170
+without disturbing the main code base.
+
+06:43.170 --> 06:44.160
+That's not a problem
+
+06:44.160 --> 06:45.870
+if you're working on a feature branch.
+
+06:45.870 --> 06:47.426
+The only way to collaborate on a feature
+
+06:47.426 --> 06:49.950
+is to push incomplete code to master.
+
+06:49.950 --> 06:51.750
+Nope, that's not a problem now
+
+06:51.750 --> 06:53.964
+if everyone works on feature branches.
+
+06:53.964 --> 06:57.450
+Way less time spent resolving conflicts and merging code
+
+06:57.450 --> 06:59.670
+because now code only needs to be merged
+
+06:59.670 --> 07:02.040
+when something is ready to go into master.
+
+07:02.040 --> 07:05.550
+Not anytime anybody does literally any commits,
+
+07:05.550 --> 07:08.603
+which is what happened when everyone works on one branch.
+
+07:08.603 --> 07:11.040
+Okay? In conclusion, feature branches
+
+07:11.040 --> 07:12.243
+much better approach.
