@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:01.170
+Instructor: The next GitHub feature
+
+00:01.170 --> 00:02.910
+we'll cover are gists.
+
+00:02.910 --> 00:05.490
+So GitHub gists are a very simple way
+
+00:05.490 --> 00:07.080
+to share code snippets.
+
+00:07.080 --> 00:09.780
+If you're familiar with something called pastebin
+
+00:09.780 --> 00:11.250
+it's a very similar tool.
+
+00:11.250 --> 00:14.040
+It allows you to basically copy some code
+
+00:14.040 --> 00:17.130
+into a gist and then save that
+
+00:17.130 --> 00:20.070
+and share it with other people or refer back to it later.
+
+00:20.070 --> 00:23.100
+You don't have access to all the GitHub repo features
+
+00:23.100 --> 00:24.930
+but you have access to some of them,
+
+00:24.930 --> 00:26.910
+like forking, for example.
+
+00:26.910 --> 00:28.470
+So I'll just demonstrate it,
+
+00:28.470 --> 00:30.990
+first to access gist, not over there,
+
+00:30.990 --> 00:35.990
+over here, if you go to GitHub, I go to gist.github.com.
+
+00:36.480 --> 00:39.840
+Now, I'm sure there's a button somewhere.
+
+00:39.840 --> 00:41.910
+I think it's actually, if we go here
+
+00:41.910 --> 00:45.030
+to your profile and then your gists
+
+00:45.030 --> 00:47.070
+I think that's the easiest way to get there.
+
+00:47.070 --> 00:48.450
+Maybe there's another way
+
+00:48.450 --> 00:51.900
+without just typing gists.github.com.
+
+00:51.900 --> 00:54.450
+So it's a different page, right?
+
+00:54.450 --> 00:58.770
+We see my personal list of gists actually,
+
+00:58.770 --> 01:01.170
+I don't use them very frequently on this account.
+
+01:01.170 --> 01:03.870
+Most of these are from when I was teaching lectures
+
+01:03.870 --> 01:05.550
+but I can just show you one.
+
+01:05.550 --> 01:09.510
+Let's say here is some exercise I made for students.
+
+01:09.510 --> 01:11.643
+So this is an HTML file.
+
+01:13.380 --> 01:15.150
+Okay, so there's this HTML file
+
+01:15.150 --> 01:16.860
+I don't remember what this exercise was
+
+01:16.860 --> 01:19.170
+what I was asking students to do
+
+01:19.170 --> 01:21.852
+but there's the ability to leave comments.
+
+01:21.852 --> 01:24.030
+I can personally, you know
+
+01:24.030 --> 01:27.060
+delete this file or edit this file.
+
+01:27.060 --> 01:30.150
+I can download it, I can share it with people
+
+01:30.150 --> 01:32.490
+they can fork it and star it.
+
+01:32.490 --> 01:34.810
+So I'll show you, if I go to all gists
+
+01:35.910 --> 01:38.430
+I can see a discovery page.
+
+01:38.430 --> 01:41.430
+So these are gists that other people have made.
+
+01:41.430 --> 01:43.140
+So they range from markdown files
+
+01:43.140 --> 01:46.350
+like I don't know exactly what this is.
+
+01:46.350 --> 01:48.450
+It looks like some sort of checklist
+
+01:48.450 --> 01:53.103
+for turning in work maybe, on GitHub.
+
+01:54.300 --> 01:56.430
+So there's whoever this person is
+
+01:56.430 --> 01:58.770
+made that gist and it's public.
+
+01:58.770 --> 01:59.670
+But here's another one.
+
+01:59.670 --> 02:02.193
+This looks like some sort of iOS script.
+
+02:03.090 --> 02:04.530
+So here's a Swift script.
+
+02:04.530 --> 02:06.720
+There's two files which we can do
+
+02:06.720 --> 02:09.720
+and then you can make private gists as well.
+
+02:09.720 --> 02:12.360
+So I use these when I'm teaching to share stuff
+
+02:12.360 --> 02:13.890
+but you'll see them occasionally
+
+02:13.890 --> 02:16.290
+like on Reddit or different webpages.
+
+02:16.290 --> 02:18.360
+People will share code this way.
+
+02:18.360 --> 02:20.970
+A full GitHub repository where you have to push up
+
+02:20.970 --> 02:22.980
+and you know, set up your remotes.
+
+02:22.980 --> 02:24.390
+And all of that can be annoying.
+
+02:24.390 --> 02:26.130
+This you can do very easily.
+
+02:26.130 --> 02:27.420
+So if I wanna make a new gist
+
+02:27.420 --> 02:30.300
+it's just a matter of clicking the plus sign here
+
+02:30.300 --> 02:32.700
+and then I enter a file name.
+
+02:32.700 --> 02:34.890
+So what do I want to share with somebody?
+
+02:34.890 --> 02:37.230
+Or what do I want to store in a gist?
+
+02:37.230 --> 02:41.220
+Well, actually, here's a gist I've been using personally
+
+02:41.220 --> 02:43.890
+as I'm making this course where I've set
+
+02:43.890 --> 02:46.530
+up my computer to have two different GitHub accounts
+
+02:46.530 --> 02:48.231
+and it's been kind of frustrating
+
+02:48.231 --> 02:50.580
+to have to switch between them.
+
+02:50.580 --> 02:54.213
+But this is a gist that somebody made to share this person.
+
+02:56.820 --> 02:58.984
+Let's see, Owen Nguyen.
+
+02:58.984 --> 03:00.600
+I am very sorry.
+
+03:00.600 --> 03:02.280
+I'm sure I completely butchered that.
+
+03:02.280 --> 03:04.950
+Anyway, this gist talks about
+
+03:04.950 --> 03:06.390
+having multiple GitHub accounts
+
+03:06.390 --> 03:08.310
+wanting to use 'em both on the same computer.
+
+03:08.310 --> 03:10.530
+How to set up your SSH config file
+
+03:10.530 --> 03:11.730
+which is exactly what I did.
+
+03:11.730 --> 03:13.710
+I followed these instructions
+
+03:13.710 --> 03:15.360
+how to add the two private keys
+
+03:15.360 --> 03:16.830
+how to test your connection
+
+03:16.830 --> 03:19.980
+and then it allows people to discuss and you know
+
+03:19.980 --> 03:23.460
+post about their error messages or other suggestions.
+
+03:23.460 --> 03:25.800
+So this is very, very useful.
+
+03:25.800 --> 03:27.960
+It could have been a full fledged GitHub repo
+
+03:27.960 --> 03:31.950
+with just one file in it, but it just is more appropriate.
+
+03:31.950 --> 03:35.760
+So if I wanted to just try recreating some of this myself
+
+03:35.760 --> 03:38.280
+this happens to be a markdown file, right,
+
+03:38.280 --> 03:41.250
+so .md, a lot of gists are markdown
+
+03:41.250 --> 03:43.470
+but they can be any file extension.
+
+03:43.470 --> 03:45.570
+I'm just gonna copy this to show you.
+
+03:45.570 --> 03:46.403
+I'll delete this.
+
+03:46.403 --> 03:48.510
+I'm not plagiarizing his work.
+
+03:48.510 --> 03:50.880
+Okay, so I can now name this
+
+03:50.880 --> 03:53.615
+I'll call this, you know, I don't know.
+
+03:53.615 --> 03:58.615
+GitHub, how about multiple GitHub, SSH.md.
+
+04:02.580 --> 04:06.055
+And if I do that, .md it now highlights it as marked down
+
+04:06.055 --> 04:08.850
+and then I can choose to create a secret gist
+
+04:08.850 --> 04:10.290
+or a public gist.
+
+04:10.290 --> 04:12.060
+I'll just create a secret one.
+
+04:12.060 --> 04:15.450
+I can add a description, I'll create it.
+
+04:15.450 --> 04:16.980
+And now I have this gist
+
+04:16.980 --> 04:18.673
+that I can come back to at any point.
+
+04:18.673 --> 04:22.170
+And that's pretty much all that there is to a secret gist.
+
+04:22.170 --> 04:24.756
+I can edit it, I can write some comments.
+
+04:24.756 --> 04:27.210
+I can also have gists, I believe
+
+04:27.210 --> 04:29.940
+within the company that I work at
+
+04:29.940 --> 04:31.350
+and share gists with people.
+
+04:31.350 --> 04:34.140
+Keep them secret so they're not public facing
+
+04:34.140 --> 04:35.730
+but have collaborators.
+
+04:35.730 --> 04:37.110
+I can edit.
+
+04:37.110 --> 04:39.900
+Whoops, that's just the raw, I can edit this way.
+
+04:39.900 --> 04:41.460
+I can even add files.
+
+04:41.460 --> 04:45.090
+So I could add some other file, like a JavaScript file
+
+04:45.090 --> 04:47.430
+and it will highlight it as JavaScript.
+
+04:47.430 --> 04:49.080
+Hopefully you can see that.
+
+04:49.080 --> 04:50.460
+I guess it's a bit small.
+
+04:50.460 --> 04:51.293
+There we go.
+
+04:51.293 --> 04:54.270
+So it's getting JavaScripts and text highlighting
+
+04:54.270 --> 04:56.970
+and that's kind of all that there is to gists.
+
+04:56.970 --> 05:00.540
+So this one again, is secret, it's private
+
+05:00.540 --> 05:01.800
+but I could make a new gist
+
+05:01.800 --> 05:05.310
+and instead just make it public here.
+
+05:05.310 --> 05:07.295
+And anybody could see that on my account.
+
+05:07.295 --> 05:10.860
+And anybody can see anybody else's public gist.
+
+05:10.860 --> 05:13.740
+As you saw here, there's this discovery feature.
+
+05:13.740 --> 05:16.110
+I never, ever really use this
+
+05:16.110 --> 05:19.380
+I guess except for this video where I'm showing you it.
+
+05:19.380 --> 05:21.330
+It's pretty rare that I just wanna stumble across
+
+05:21.330 --> 05:22.830
+random gists.
+
+05:22.830 --> 05:25.860
+Anyway, that's all there is to GitHub gists.
+
+05:25.860 --> 05:27.120
+You can have multiple files,
+
+05:27.120 --> 05:29.490
+different file types, different extensions.
+
+05:29.490 --> 05:31.770
+You can share them, you can keep them secret.
+
+05:31.770 --> 05:33.240
+They are, I believe
+
+05:33.240 --> 05:36.010
+behind the scenes actual Git repositories
+
+05:36.960 --> 05:39.030
+although they don't expose the same features
+
+05:39.030 --> 05:41.040
+on GitHub that we normally have access
+
+05:41.040 --> 05:43.050
+to with a full fledged repo.
+
+05:43.050 --> 05:46.140
+But we can see revisions, we can see diffs.
+
+05:46.140 --> 05:47.700
+So there is a history here
+
+05:47.700 --> 05:49.500
+but they're just very slimmed down
+
+05:49.500 --> 05:52.050
+the actual interface is very streamlined compared
+
+05:52.050 --> 05:53.850
+to a full GitHub repository.
+
+05:53.850 --> 05:56.483
+So that about wraps it up for GitHub Gists.
