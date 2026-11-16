@@ -1,0 +1,370 @@
+WEBVTT
+
+00:00.360 --> 00:01.410
+Instructor: Alright, so it's time
+
+00:01.410 --> 00:03.840
+for a quick exercise that just tests your ability
+
+00:03.840 --> 00:05.700
+to work with the git Stash command,
+
+00:05.700 --> 00:07.650
+and just in the most basic way.
+
+00:07.650 --> 00:09.810
+So we talked a lot or we talked about
+
+00:09.810 --> 00:12.690
+quite a few different variants of git stash.
+
+00:12.690 --> 00:14.520
+This exercise is really just the basics.
+
+00:14.520 --> 00:16.740
+Can you put something in it and take something out?
+
+00:16.740 --> 00:17.573
+Okay?
+
+00:17.573 --> 00:22.053
+So the premise here is that you're keeping a diary,
+
+00:23.540 --> 00:25.800
+and you're working in an office
+
+00:25.800 --> 00:28.170
+and your boss walks by and you need to
+
+00:28.170 --> 00:32.040
+quickly stash some changes before your boss sees them.
+
+00:32.040 --> 00:35.160
+So as always, you can find the link to this,
+
+00:35.160 --> 00:37.050
+this document as a resource.
+
+00:37.050 --> 00:38.280
+With this video, I recommend
+
+00:38.280 --> 00:41.280
+that you stop the video and try this on your own.
+
+00:41.280 --> 00:45.000
+Basically, you'll make a new repo, make a file called diary,
+
+00:45.000 --> 00:47.130
+and then inside of it write a sentence
+
+00:47.130 --> 00:48.570
+that says, "I love my boss".
+
+00:48.570 --> 00:52.080
+Save, add, and commit and that will be on the master branch.
+
+00:52.080 --> 00:55.140
+But then you make a new branch called "the truth"
+
+00:55.140 --> 00:56.460
+and you work on that branch.
+
+00:56.460 --> 00:59.700
+You switch to it and you erase the contents of the file,
+
+00:59.700 --> 01:03.060
+and you replace it with all of this, and you save the file.
+
+01:03.060 --> 01:06.600
+And just before you're able to add and commit,
+
+01:06.600 --> 01:08.370
+your boss walks towards you.
+
+01:08.370 --> 01:09.780
+You see them walking towards you,
+
+01:09.780 --> 01:12.390
+so you quickly switch over to the master branch.
+
+01:12.390 --> 01:15.030
+So that tells you, switch to master
+
+01:15.030 --> 01:16.200
+without adding and committing.
+
+01:16.200 --> 01:18.660
+So we switch over and oh no,
+
+01:18.660 --> 01:22.530
+the diary file still contains our truthful confession.
+
+01:22.530 --> 01:25.860
+Quickly stash the changes before your boss sees.
+
+01:25.860 --> 01:28.147
+So now the diary file should go back to just saying,
+
+01:28.147 --> 01:29.730
+"I love my boss".
+
+01:29.730 --> 01:31.080
+And the boss walks by.
+
+01:31.080 --> 01:32.700
+We add some more lies,
+
+01:32.700 --> 01:35.310
+just more lines that say I love my boss.
+
+01:35.310 --> 01:38.100
+Then we add and commit those changes on the master branch.
+
+01:38.100 --> 01:39.210
+Then our boss leaves.
+
+01:39.210 --> 01:42.240
+So we go back to the truth branch, we retrieve the changes
+
+01:42.240 --> 01:44.550
+from the stash, all of this.
+
+01:44.550 --> 01:46.740
+And then we add and commit on the truth branch
+
+01:46.740 --> 01:47.850
+and we're done.
+
+01:47.850 --> 01:49.560
+Okay, very simple.
+
+01:49.560 --> 01:50.393
+So let's try it.
+
+01:50.393 --> 01:53.220
+I recommend you do it on your own as always, but here we go.
+
+01:53.220 --> 01:54.526
+I'll do it.
+
+01:54.526 --> 01:57.060
+So we'll make a new repo in some folder.
+
+01:57.060 --> 02:02.060
+LS, let's make a folder called Stash-Diary.
+
+02:03.780 --> 02:05.520
+We'll cd into that.
+
+02:05.520 --> 02:06.960
+Make sure we're not in a repo.
+
+02:06.960 --> 02:09.000
+I'll git init and then I'm gonna make
+
+02:09.000 --> 02:13.080
+the diary.txt file and then I'll open that.
+
+02:13.080 --> 02:15.960
+Okay, so here's the file and I'm just gonna put
+
+02:15.960 --> 02:19.080
+I love my boss, I think is what it was.
+
+02:19.080 --> 02:21.090
+Yeah, you don't have to get it exactly right.
+
+02:21.090 --> 02:23.310
+And then we're going to add and commit.
+
+02:23.310 --> 02:26.670
+So add that diary file and then just a simple commit,
+
+02:26.670 --> 02:27.963
+add diary file.
+
+02:29.580 --> 02:33.240
+Okay, so then we create a new branch called the truth.
+
+02:33.240 --> 02:34.740
+We're gonna switch over to that.
+
+02:34.740 --> 02:39.120
+So git switch -c, the -truth.
+
+02:39.120 --> 02:41.790
+So I'm now on that branch, right?
+
+02:41.790 --> 02:45.270
+And I'm going to write the truth in this file.
+
+02:45.270 --> 02:47.220
+I hate my boss.
+
+02:47.220 --> 02:50.040
+And then I'll duplicate that four times or so.
+
+02:50.040 --> 02:50.880
+It doesn't matter.
+
+02:50.880 --> 02:53.880
+As long as we have some number of some lines in there
+
+02:53.880 --> 02:55.320
+some changes.
+
+02:55.320 --> 02:58.020
+And it's pretty obvious to see I have changed that.
+
+02:58.020 --> 03:00.210
+So I hate my boss, I hate my boss, I hate my boss.
+
+03:00.210 --> 03:01.043
+Okay.
+
+03:01.043 --> 03:03.210
+Oh, and just as a quick quiz,
+
+03:03.210 --> 03:07.230
+what is the command I could run to see what I've changed?
+
+03:07.230 --> 03:10.110
+Since we made this branch, right since the last commit.
+
+03:10.110 --> 03:12.990
+Well, there's a couple, but I could just do git diff HEAD.
+
+03:12.990 --> 03:13.830
+And there we are.
+
+03:13.830 --> 03:15.240
+We see that I removed this line
+
+03:15.240 --> 03:17.130
+and I added these lines in.
+
+03:17.130 --> 03:21.480
+Okay, so the next step I'm about to add and commit
+
+03:21.480 --> 03:23.640
+but oh no, my boss is walking towards us.
+
+03:23.640 --> 03:26.670
+Shoot, I gotta switch over to the master branch.
+
+03:26.670 --> 03:29.040
+Git switch back to master.
+
+03:29.040 --> 03:31.380
+Oh no, my changes came with me.
+
+03:31.380 --> 03:32.490
+This is a nightmare.
+
+03:32.490 --> 03:33.960
+My boss is about to see.
+
+03:33.960 --> 03:36.240
+Quickly, stash the changes.
+
+03:36.240 --> 03:37.950
+So I can do git stash,
+
+03:37.950 --> 03:39.750
+or git stash save.
+
+03:39.750 --> 03:42.301
+They're the same thing, it's just a shortcut.
+
+03:42.301 --> 03:43.260
+(Instructors gasps)
+
+03:43.260 --> 03:46.950
+Now my boss walks by and as they're walking by
+
+03:46.950 --> 03:49.110
+I just continue to write some more lies.
+
+03:49.110 --> 03:51.240
+I love my boss, I love my boss.
+
+03:51.240 --> 03:54.900
+I save, I'm even gonna add and commit these changes.
+
+03:54.900 --> 03:59.900
+Git add diary, git commit -m, add more lies.
+
+04:01.350 --> 04:04.950
+All right, so I'm now ready to switch back over
+
+04:04.950 --> 04:07.260
+because my boss has left the room.
+
+04:07.260 --> 04:10.200
+I can go back to the truth branch.
+
+04:10.200 --> 04:15.200
+Git switch the-truth, and we don't see my work, right?
+
+04:16.230 --> 04:19.170
+We don't see the, I hate my boss times five of course
+
+04:19.170 --> 04:20.790
+because it's in the stash.
+
+04:20.790 --> 04:22.680
+So how do I apply those changes?
+
+04:22.680 --> 04:23.970
+Well, I could do git stash apply
+
+04:23.970 --> 04:26.280
+but I'm just gonna pop off the stash.
+
+04:26.280 --> 04:28.620
+As I talked about in the section
+
+04:28.620 --> 04:30.150
+or the videos prior to this.
+
+04:30.150 --> 04:33.240
+I usually just use git stash and git stash pop.
+
+04:33.240 --> 04:37.050
+So git stash pop will then retrieve the changes,
+
+04:37.050 --> 04:38.610
+right, that I stashed away.
+
+04:38.610 --> 04:42.570
+And now I can keep working or I can add and commit.
+
+04:42.570 --> 04:44.430
+I'll just add and commit.
+
+04:44.430 --> 04:49.430
+Git commit -m, add the truth, and we're done.
+
+04:50.010 --> 04:53.160
+All right, so I can switch back to master.
+
+04:53.160 --> 04:54.840
+Switch to the truth.
+
+04:54.840 --> 04:56.010
+It's not part of the exercise
+
+04:56.010 --> 04:58.890
+but we just stashed something in the The stash.
+
+04:58.890 --> 04:59.910
+Nothing crazy.
+
+04:59.910 --> 05:01.890
+I hope you're able to get through that
+
+05:01.890 --> 05:03.780
+and I hope you don't actually hate your boss.
+
+05:03.780 --> 05:04.683
+Okay, bye.
