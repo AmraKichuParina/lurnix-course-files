@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.120 --> 00:01.620
+-: Alright, welcome back everyone.
+
+00:01.620 --> 00:04.290
+Next up we have a section that I'm going to say is
+
+00:04.290 --> 00:07.200
+the least important for the entire course.
+
+00:07.200 --> 00:09.180
+That doesn't mean that I don't like it.
+
+00:09.180 --> 00:11.400
+I actually think it's very interesting,
+
+00:11.400 --> 00:14.310
+fascinating behind the scenes peak at how Git works.
+
+00:14.310 --> 00:16.320
+But you really don't have to understand any
+
+00:16.320 --> 00:18.450
+of this in order to use Git.
+
+00:18.450 --> 00:20.400
+So far we haven't really talked about it
+
+00:20.400 --> 00:22.410
+we haven't understood it,
+
+00:22.410 --> 00:24.210
+but we've been using Git just fine.
+
+00:24.210 --> 00:26.610
+So a lot of Git users won't go into any
+
+00:26.610 --> 00:29.310
+of this or they won't be bothered to understand things
+
+00:29.310 --> 00:31.020
+like Git objects and blobs
+
+00:31.020 --> 00:34.140
+and trees and how Git hashes things.
+
+00:34.140 --> 00:38.070
+And you know, it's important to understand
+
+00:38.070 --> 00:41.580
+to make you a more well-rounded Git developer, I guess.
+
+00:41.580 --> 00:44.550
+But it's not critical to actually using it.
+
+00:44.550 --> 00:48.000
+Anyway, let's start by highlighting probably
+
+00:48.000 --> 00:51.690
+the one thing that I would say is slightly more important.
+
+00:51.690 --> 00:53.400
+At the beginning of this section, we're going to talk
+
+00:53.400 --> 00:56.033
+about the contents of the .Git directory
+
+00:56.033 --> 00:59.250
+and just take a look at some of the more important pieces.
+
+00:59.250 --> 01:01.980
+So I'll show you the local config file.
+
+01:01.980 --> 01:03.420
+Eh, it will come up probably for you
+
+01:03.420 --> 01:06.060
+at some point if you continue using Git
+
+01:06.060 --> 01:09.180
+and it has more real world applications, I guess
+
+01:09.180 --> 01:11.310
+than some of the more conceptual things.
+
+01:11.310 --> 01:12.870
+So everything else, eh
+
+01:12.870 --> 01:15.300
+understanding the refs directory, not that important.
+
+01:15.300 --> 01:16.590
+Understanding the head file
+
+01:16.590 --> 01:19.080
+we've already seen it actually very early on
+
+01:19.080 --> 01:20.942
+when I first introduced branches.
+
+01:20.942 --> 01:23.280
+Then when I talk about hashing functions
+
+01:23.280 --> 01:27.690
+and Git objects, Git trees, Git blobs, all of that stuff.
+
+01:27.690 --> 01:29.190
+And I'll show you some commands
+
+01:29.190 --> 01:30.990
+some new Git commands that are,
+
+01:30.990 --> 01:32.520
+they're called plumbing commands.
+
+01:32.520 --> 01:34.770
+Therefore, behind the scenes usages
+
+01:34.770 --> 01:37.920
+they're not really consumer facing commands as much
+
+01:37.920 --> 01:40.590
+as you could say any command and Git is consumer facing.
+
+01:40.590 --> 01:42.690
+But anyway, that's all encompassed
+
+01:42.690 --> 01:44.220
+in these two at the bottom.
+
+01:44.220 --> 01:45.960
+So all of that is nice to have.
+
+01:45.960 --> 01:47.700
+It's great if you watch these videos
+
+01:47.700 --> 01:49.620
+if you make it through them, if you find them interesting.
+
+01:49.620 --> 01:51.630
+But if you struggle to understand some
+
+01:51.630 --> 01:52.463
+of what I'm talking about,
+
+01:52.463 --> 01:55.230
+if I do a poor job of teaching you these concepts,
+
+01:55.230 --> 01:57.900
+you will still be a perfectly fine Git developer.
+
+01:57.900 --> 02:00.330
+But let's hope that I don't do a poor job.
+
+02:00.330 --> 02:01.163
+Okay.
