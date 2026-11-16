@@ -1,0 +1,220 @@
+WEBVTT
+
+00:00.120 --> 00:01.710
+Instructor: Hey everyone, welcome back.
+
+00:01.710 --> 00:03.630
+So as I've been working on this course,
+
+00:03.630 --> 00:06.120
+I've referred to this section internally,
+
+00:06.120 --> 00:07.410
+it's just me but,
+
+00:07.410 --> 00:10.400
+in my head internally as GitHub odds and ends.
+
+00:10.400 --> 00:12.990
+I don't really think that's a fair title.
+
+00:12.990 --> 00:15.120
+There are some very important pieces in here
+
+00:15.120 --> 00:17.640
+and then some odds and ends.
+
+00:17.640 --> 00:20.040
+It's just another one of those motley sections
+
+00:20.040 --> 00:23.640
+and assortments of topics that have to do with GitHub.
+
+00:23.640 --> 00:25.189
+So the first thing we covered
+
+00:25.189 --> 00:27.720
+is the difference between having a public and private repo
+
+00:27.720 --> 00:29.040
+and what it means.
+
+00:29.040 --> 00:31.980
+That's gonna be critical but also very easy.
+
+00:31.980 --> 00:34.650
+Then we talked about adding collaborators to repos.
+
+00:34.650 --> 00:36.900
+How do we add somebody else and give them permission
+
+00:36.900 --> 00:39.881
+to push for example to a project?
+
+00:39.881 --> 00:42.390
+That's going to be critical as well.
+
+00:42.390 --> 00:43.470
+You do that all the time,
+
+00:43.470 --> 00:45.540
+assuming you collaborate.
+
+00:45.540 --> 00:47.910
+We talked about ReadMe files.
+
+00:47.910 --> 00:49.200
+Which is important.
+
+00:49.200 --> 00:50.790
+You may have seen this before.
+
+00:50.790 --> 00:52.920
+All caps README.md,
+
+00:52.920 --> 00:55.020
+stands for Markdown, md.
+
+00:55.020 --> 00:57.780
+They play a particular role in GitHub repositories.
+
+00:57.780 --> 01:01.620
+Pretty much every repo has one but it's not critical.
+
+01:01.620 --> 01:03.510
+Important, sort of best practice,
+
+01:03.510 --> 01:05.760
+it's a good habit to get into.
+
+01:05.760 --> 01:07.350
+Anyways, I'm getting ahead of myself.
+
+01:07.350 --> 01:09.120
+It's important but not critical.
+
+01:09.120 --> 01:11.310
+Then I talked about markdown.
+
+01:11.310 --> 01:12.720
+If you're not familiar with markdown,
+
+01:12.720 --> 01:14.859
+it is not a Git or GitHub topic,
+
+01:14.859 --> 01:18.360
+but to make a ReadMe we do write markdown.
+
+01:18.360 --> 01:20.160
+So it's related.
+
+01:20.160 --> 01:21.870
+If you already know markdown skip that.
+
+01:21.870 --> 01:23.250
+If you don't, check it out.
+
+01:23.250 --> 01:25.200
+But remember markdown is a thing on its own
+
+01:25.200 --> 01:27.810
+and it's not tied to Git and GitHub.
+
+01:27.810 --> 01:30.570
+And then two other things I'm gonna say are nice to have,
+
+01:30.570 --> 01:32.610
+definitely not important or critical,
+
+01:32.610 --> 01:35.490
+a feature on GitHub called gists.
+
+01:35.490 --> 01:36.540
+That's all I'll say about it.
+
+01:36.540 --> 01:38.250
+They're nice to have but a lot of people
+
+01:38.250 --> 01:39.690
+just don't even use them.
+
+01:39.690 --> 01:41.460
+And then GitHub Pages,
+
+01:41.460 --> 01:44.490
+a very nice to have tool from GitHub that allows us,
+
+01:44.490 --> 01:48.300
+it helps us to easily host webpages, static webpages,
+
+01:48.300 --> 01:50.130
+from our repositories.
+
+01:50.130 --> 01:53.730
+So very nice to have but also not at all critical.
+
+01:53.730 --> 01:55.650
+It's just not a feature of Git,
+
+01:55.650 --> 01:57.630
+it's a feature of GitHub.
+
+01:57.630 --> 01:59.880
+But it's one that's pleasant and it's nice
+
+01:59.880 --> 02:00.960
+especially if you're starting out
+
+02:00.960 --> 02:03.150
+and you want a personal site, a portfolio site,
+
+02:03.150 --> 02:04.320
+you wanna demo a project,
+
+02:04.320 --> 02:05.730
+it's very useful.
+
+02:05.730 --> 02:06.990
+Anyway, you get it.
+
+02:06.990 --> 02:10.110
+We'll talk about it in the actual video on GitHub Pages.
+
+02:10.110 --> 02:12.480
+The main things I hope you take away from this section
+
+02:12.480 --> 02:15.210
+are really just about settings in a repo.
+
+02:15.210 --> 02:16.620
+Public versus private,
+
+02:16.620 --> 02:17.453
+permissions,
+
+02:17.453 --> 02:18.450
+adding collaborators,
+
+02:18.450 --> 02:20.910
+and then some GitHub adjacent topics,
+
+02:20.910 --> 02:22.770
+like markdown and ReadMe files.
+
+02:22.770 --> 02:24.840
+GitHub pages, worth knowing about,
+
+02:24.840 --> 02:25.740
+nice to have,
+
+02:25.740 --> 02:27.240
+they're in the course for a reason,
+
+02:27.240 --> 02:28.260
+but just not critical.
+
+02:28.260 --> 02:29.093
+Okay, I gotta shut up.
+
+02:29.093 --> 02:29.943
+Bye.
