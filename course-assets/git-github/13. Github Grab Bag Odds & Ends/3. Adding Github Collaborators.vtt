@@ -1,0 +1,295 @@
+WEBVTT
+
+00:00.000 --> 00:02.430
+-: The next thing we'll talk about is collaborators.
+
+00:02.430 --> 00:05.160
+How do we add collaborators to a repo?
+
+00:05.160 --> 00:06.270
+Now that's different, right?
+
+00:06.270 --> 00:08.250
+Working with somebody on a GitHub repo is different
+
+00:08.250 --> 00:10.650
+from just making a repo public.
+
+00:10.650 --> 00:12.630
+When I say working with collaborators,
+
+00:12.630 --> 00:15.930
+I mean allowing other users to push changes
+
+00:15.930 --> 00:17.400
+to the repository.
+
+00:17.400 --> 00:20.430
+When a repo is public, anybody can take, like any
+
+00:20.430 --> 00:22.950
+of these public repos, not this one that we made private.
+
+00:22.950 --> 00:26.520
+They can take any of these public repos and clone them,
+
+00:26.520 --> 00:28.650
+make their own changes and commits,
+
+00:28.650 --> 00:32.730
+but they can't push them back up to my copy.
+
+00:32.730 --> 00:35.790
+Nobody can just take over a repo
+
+00:35.790 --> 00:37.710
+without me granting them permission.
+
+00:37.710 --> 00:39.120
+Otherwise, they could delete everything,
+
+00:39.120 --> 00:41.250
+and then just push up an empty version.
+
+00:41.250 --> 00:42.240
+That's not how it works.
+
+00:42.240 --> 00:45.480
+I have to grant people collaboration privileges.
+
+00:45.480 --> 00:46.860
+So I'll show you how to do that.
+
+00:46.860 --> 00:48.570
+I have two accounts, right?
+
+00:48.570 --> 00:50.490
+I already explained that I have Colt
+
+00:50.490 --> 00:52.200
+and then I have Stevie,
+
+00:52.200 --> 00:56.550
+and why don't I add Stevie to this bookish disco repository
+
+00:56.550 --> 00:58.650
+and give him permission to push?
+
+00:58.650 --> 01:01.290
+So, I'm logged in, as Colt, the owner.
+
+01:01.290 --> 01:02.730
+There's nothing even in here.
+
+01:02.730 --> 01:04.503
+If I go into settings,
+
+01:05.460 --> 01:07.920
+under settings, we've been here to options.
+
+01:07.920 --> 01:09.090
+This is where we change something
+
+01:09.090 --> 01:11.340
+from public to private and vice versa.
+
+01:11.340 --> 01:14.160
+We also have manage access,
+
+01:14.160 --> 01:18.300
+and this is where I can add direct access collaborators.
+
+01:18.300 --> 01:20.040
+So here's visibility, right?
+
+01:20.040 --> 01:22.800
+Only those with access can even view it in the first place.
+
+01:22.800 --> 01:25.860
+Right now, that's just me, just Colt.
+
+01:25.860 --> 01:28.530
+But I'm gonna change that, I'm gonna invite Stevie.
+
+01:28.530 --> 01:31.620
+So to do that I need to know Stevie's GitHub username
+
+01:31.620 --> 01:33.120
+or his email.
+
+01:33.120 --> 01:34.950
+Now, I think if I remember,
+
+01:34.950 --> 01:37.590
+I just did StevieChicks, like that.
+
+01:37.590 --> 01:39.960
+Yep, there he is.
+
+01:39.960 --> 01:41.310
+I'm gonna click,
+
+01:41.310 --> 01:44.613
+and then I'm gonna add Stevie Chicks to this repository.
+
+01:46.320 --> 01:48.720
+Okay, so that's just an invitation.
+
+01:48.720 --> 01:52.890
+So Stevie now has to actually go to his email that he signed
+
+01:52.890 --> 01:54.570
+up for GitHub with, he'll get a...
+
+01:54.570 --> 01:55.560
+or he'll get a message there.
+
+01:55.560 --> 01:58.350
+He has to click a link to accept the invite.
+
+01:58.350 --> 02:01.560
+So Stevie opens up his email, he clicks the link.
+
+02:01.560 --> 02:04.890
+I didn't show you that because it's my email inbox,
+
+02:04.890 --> 02:08.280
+but I click the link as Stevie, and this is what we see.
+
+02:08.280 --> 02:10.560
+Colt invited you to collaborate,
+
+02:10.560 --> 02:12.030
+accept or decline.
+
+02:12.030 --> 02:15.120
+So again, you can't just automatically add someone.
+
+02:15.120 --> 02:17.430
+It requires permission on both sides.
+
+02:17.430 --> 02:20.640
+I have to invite somebody and they have to accept.
+
+02:20.640 --> 02:24.180
+And so as Stevie, I will accept, but it does, you know,
+
+02:24.180 --> 02:26.250
+it says, here's the information that Colt
+
+02:26.250 --> 02:28.440
+and other people will be able to have access to,
+
+02:28.440 --> 02:31.740
+your activity, where your request activity is coming from,
+
+02:31.740 --> 02:34.530
+basically country of origin, your IP address.
+
+02:34.530 --> 02:37.500
+Anyway, I'm gonna hit accept, and now my view changes.
+
+02:37.500 --> 02:40.200
+I wasn't able to see this repository just a second ago
+
+02:40.200 --> 02:43.260
+because it's private, but now I'm a collaborator.
+
+02:43.260 --> 02:46.980
+If I go back to Colt's view, we see now,
+
+02:46.980 --> 02:49.260
+if I refresh the page, Stevie Chicks is listed
+
+02:49.260 --> 02:50.520
+as a collaborator.
+
+02:50.520 --> 02:53.280
+If I want to get rid of him, or multiple collaborators,
+
+02:53.280 --> 02:56.070
+I can use check boxes and then delete.
+
+02:56.070 --> 02:58.740
+But I am gonna keep him as a collaborator.
+
+02:58.740 --> 03:01.620
+And so now, already we can see it's a private repo.
+
+03:01.620 --> 03:04.410
+Stevie has access to this repository.
+
+03:04.410 --> 03:05.940
+But what I'm gonna demonstrate next is that
+
+03:05.940 --> 03:07.860
+Stevie also has push access.
+
+03:07.860 --> 03:10.320
+It's not just about viewing the project on GitHub,
+
+03:10.320 --> 03:12.660
+although that is new, because it's private,
+
+03:12.660 --> 03:14.340
+he's a collaborator, he can view it.
+
+03:14.340 --> 03:17.460
+I can also clone and push my changes up.
+
+03:17.460 --> 03:21.210
+However, Stevie does not have access to settings, right?
+
+03:21.210 --> 03:22.830
+Stevie is not the owner.
+
+03:22.830 --> 03:26.220
+Stevie is a collaborator, but the owner is Colt.
+
+03:26.220 --> 03:29.100
+I'm the only one who sees settings.
+
+03:29.100 --> 03:32.430
+If I go to Stevie's side, that doesn't exist.
+
+03:32.430 --> 03:34.230
+So that is an important distinction.
+
+03:34.230 --> 03:36.390
+Being a collaborator, it's not like you can
+
+03:36.390 --> 03:37.380
+do everything, right?
+
+03:37.380 --> 03:39.120
+You can't delete the repository.
+
+03:39.120 --> 03:41.310
+I can't invite my own people here.
+
+03:41.310 --> 03:46.080
+I can't delete other people or remove their privileges.
+
+03:46.080 --> 03:47.970
+With different levels, different tiers,
+
+03:47.970 --> 03:49.800
+you definitely can have those features,
+
+03:49.800 --> 03:52.140
+like organization and enterprise tiers.
+
+03:52.140 --> 03:55.560
+You, on GitHub, you can have multiple owners.
+
+03:55.560 --> 03:57.000
+So permissions are different.
+
+03:57.000 --> 03:59.430
+So next step, I'll show you what it's like to collaborate
+
+03:59.430 --> 04:00.750
+and actually make some commits,
+
+04:00.750 --> 04:03.273
+and push them up from two different accounts.
