@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00.120 --> 00:01.440
+Instructor: So the first thing we'll talk about
+
+00:01.440 --> 00:04.590
+is the difference between public and private repositories
+
+00:04.590 --> 00:07.230
+on GitHub, pretty straightforward.
+
+00:07.230 --> 00:08.850
+There are two settings, right?
+
+00:08.850 --> 00:10.530
+One setting with two options.
+
+00:10.530 --> 00:13.410
+You can make the visibility of any GitHub repository
+
+00:13.410 --> 00:16.200
+public or private, assuming that you're the owner
+
+00:16.200 --> 00:19.320
+and you have permission to make it public or private.
+
+00:19.320 --> 00:20.940
+So when you create a new repository,
+
+00:20.940 --> 00:23.160
+it prompts you with that choice.
+
+00:23.160 --> 00:25.440
+Here I have two GitHub accounts.
+
+00:25.440 --> 00:26.850
+The one I've been using, Colt,
+
+00:26.850 --> 00:30.810
+and then I made a new one for my chicken, Stevie Chicks.
+
+00:30.810 --> 00:32.280
+So that's Stevie Chicks.
+
+00:32.280 --> 00:34.080
+I'm also trying to make it clear up top,
+
+00:34.080 --> 00:36.300
+this is Stevie's account, and this one's mine,
+
+00:36.300 --> 00:38.340
+because here, it's somewhat easy to tell,
+
+00:38.340 --> 00:41.010
+but once we get on an actual repository page,
+
+00:41.010 --> 00:42.750
+if we're looking at the same repo,
+
+00:42.750 --> 00:44.550
+it's really hard to tell who is who.
+
+00:44.550 --> 00:46.080
+You can look at this little photo up there,
+
+00:46.080 --> 00:47.880
+but that's kind of, that's it.
+
+00:47.880 --> 00:51.150
+So I've put the name up top, Stevie and Colt.
+
+00:51.150 --> 00:54.600
+Anyway, if I make a new repository, new repository,
+
+00:54.600 --> 00:56.730
+we've seen that it prompts you for a name,
+
+00:56.730 --> 01:00.000
+and then here, public or private.
+
+01:00.000 --> 01:01.740
+So there's an important difference.
+
+01:01.740 --> 01:05.190
+A public repository is accessible, it's discoverable,
+
+01:05.190 --> 01:08.130
+it's clonable by anyone on the internet.
+
+01:08.130 --> 01:10.710
+They can go find your repo by searching on GitHub.
+
+01:10.710 --> 01:14.040
+They can find it by looking at your profile.
+
+01:14.040 --> 01:16.620
+They can just have the link and view it, right?
+
+01:16.620 --> 01:18.300
+Anybody can access it.
+
+01:18.300 --> 01:19.530
+That still does not mean
+
+01:19.530 --> 01:22.320
+people can change the contents of the repository.
+
+01:22.320 --> 01:24.570
+They can't push to the repository.
+
+01:24.570 --> 01:26.760
+They have to have collaborator privileges
+
+01:26.760 --> 01:28.680
+or permissions to do that.
+
+01:28.680 --> 01:30.210
+And I'll show you how to set that up,
+
+01:30.210 --> 01:31.890
+but that's a separate topic.
+
+01:31.890 --> 01:34.410
+We're purely talking about visibility.
+
+01:34.410 --> 01:36.510
+So anybody can see a public repo,
+
+01:36.510 --> 01:38.400
+but when I make something private,
+
+01:38.400 --> 01:42.510
+it's only accessible to the owner, AKA me who created it,
+
+01:42.510 --> 01:45.420
+and then people who have been granted access.
+
+01:45.420 --> 01:48.750
+So they have explicitly been added as collaborators.
+
+01:48.750 --> 01:52.020
+They then have access to a private repo.
+
+01:52.020 --> 01:53.910
+Now, things work slightly differently
+
+01:53.910 --> 01:55.680
+if we're talking about an organization
+
+01:55.680 --> 01:57.900
+or enterprise-level GitHub account
+
+01:57.900 --> 02:00.480
+where a private repository can be visible
+
+02:00.480 --> 02:02.850
+to everyone within the organization.
+
+02:02.850 --> 02:05.370
+But we're working with personal, free accounts.
+
+02:05.370 --> 02:08.040
+So a private repo is only visible to me, the owner,
+
+02:08.040 --> 02:11.220
+and people I specifically grant access to.
+
+02:11.220 --> 02:13.170
+So let's try making,
+
+02:13.170 --> 02:16.020
+sure, let's go with their name that they suggest,
+
+02:16.020 --> 02:19.710
+bookish disco, and then I'll make it public to start.
+
+02:19.710 --> 02:20.543
+Okay.
+
+02:20.543 --> 02:23.100
+I'll just create, we're not gonna do anything in here.
+
+02:23.100 --> 02:24.660
+I'm just making this repo,
+
+02:24.660 --> 02:26.610
+so anybody can see this now.
+
+02:26.610 --> 02:29.700
+If they go to my profile, go to repositories,
+
+02:29.700 --> 02:32.220
+here it is, bookish disco.
+
+02:32.220 --> 02:36.360
+Okay, so if I copy this over, I'm in Safari,
+
+02:36.360 --> 02:39.060
+I'm in a different browser here on Stevie's account,
+
+02:39.060 --> 02:42.480
+and if I go to this URL to view Colt,
+
+02:42.480 --> 02:44.070
+that's kind of why it's confusing, right?
+
+02:44.070 --> 02:46.230
+I'm viewing somebody else's account.
+
+02:46.230 --> 02:47.910
+I see bookish disco,
+
+02:47.910 --> 02:50.100
+even though I'm logged in as somebody else.
+
+02:50.100 --> 02:52.980
+Now, I don't see the same display.
+
+02:52.980 --> 02:56.340
+Like here, if I go to bookish disco, I'm the owner.
+
+02:56.340 --> 02:58.680
+So I see this information about getting set up,
+
+02:58.680 --> 03:00.840
+but I also see settings.
+
+03:00.840 --> 03:02.640
+I don't see that here.
+
+03:02.640 --> 03:04.470
+I'm just a member of the public
+
+03:04.470 --> 03:07.620
+viewing the repository because it's public.
+
+03:07.620 --> 03:08.490
+All right?
+
+03:08.490 --> 03:11.610
+So speaking of settings, if you wanna toggle
+
+03:11.610 --> 03:15.240
+or change that privacy under settings for a repository,
+
+03:15.240 --> 03:16.830
+you have to be the owner,
+
+03:16.830 --> 03:19.050
+unless we're talking about an organization
+
+03:19.050 --> 03:20.880
+or enterprise-level account.
+
+03:20.880 --> 03:22.530
+In that case, you don't have to be the owner,
+
+03:22.530 --> 03:24.750
+but you have to be granted permission
+
+03:24.750 --> 03:26.370
+to change the visibility.
+
+03:26.370 --> 03:28.290
+Anyway, if I wanna change visibility,
+
+03:28.290 --> 03:31.530
+it's under options, which we're already on, on settings,
+
+03:31.530 --> 03:33.870
+and then you just scroll for a long,
+
+03:33.870 --> 03:35.760
+long ways down to the very bottom.
+
+03:35.760 --> 03:37.980
+We're looking for the danger zone.
+
+03:37.980 --> 03:39.480
+And then we have this right here,
+
+03:39.480 --> 03:42.090
+change repository visibility.
+
+03:42.090 --> 03:46.080
+So I'm going to change visibility just to demonstrate this,
+
+03:46.080 --> 03:48.300
+and I'm going to make it private,
+
+03:48.300 --> 03:50.730
+but it's gonna ask me to type in,
+
+03:50.730 --> 03:52.980
+well, first, it actually just shows me
+
+03:52.980 --> 03:54.720
+all the changes that will happen.
+
+03:54.720 --> 03:57.270
+Anybody who is watching the repository,
+
+03:57.270 --> 04:01.620
+anybody who has starred it, you can star repositories,
+
+04:01.620 --> 04:02.970
+like here's an example.
+
+04:02.970 --> 04:05.100
+A couple hundred people have starred this one.
+
+04:05.100 --> 04:05.970
+People are watching it.
+
+04:05.970 --> 04:07.320
+They get notifications.
+
+04:07.320 --> 04:10.650
+So if I make that private, that goes away.
+
+04:10.650 --> 04:12.750
+But then also, there's some other changes
+
+04:12.750 --> 04:14.640
+that go along with making something private.
+
+04:14.640 --> 04:16.140
+I'll lose wikis
+
+04:16.140 --> 04:18.690
+and different poll requests and other things.
+
+04:18.690 --> 04:20.250
+Basically, we're going private,
+
+04:20.250 --> 04:22.890
+so anything involving the public goes away,
+
+04:22.890 --> 04:24.630
+but we don't have anything in here anyway.
+
+04:24.630 --> 04:26.010
+So I'm gonna type that.
+
+04:26.010 --> 04:28.680
+It wants me to exactly type the name of the repo.
+
+04:28.680 --> 04:33.480
+So colt/bookish-disco.
+
+04:33.480 --> 04:34.650
+All right, I understand.
+
+04:34.650 --> 04:36.120
+Change visibility.
+
+04:36.120 --> 04:37.470
+Now it wants my password.
+
+04:37.470 --> 04:40.710
+Okay, so now it shows up as private, right here.
+
+04:40.710 --> 04:42.120
+I'm on my account as Colt.
+
+04:42.120 --> 04:44.310
+I'm the owner, so I can see that.
+
+04:44.310 --> 04:47.160
+But if I refresh this page where I'm logged in as Stevie,
+
+04:48.060 --> 04:50.190
+404, I don't have access at all.
+
+04:50.190 --> 04:51.840
+I can't see that repository.
+
+04:51.840 --> 04:53.100
+I don't know it exists anymore.
+
+04:53.100 --> 04:54.570
+It's gone private.
+
+04:54.570 --> 04:57.210
+So that's the distinction and that's how you change them.
+
+04:57.210 --> 04:59.850
+Generally, it's a pain if you have a public repo
+
+04:59.850 --> 05:01.860
+and you make it private.
+
+05:01.860 --> 05:03.240
+I don't recommend, you know,
+
+05:03.240 --> 05:05.220
+having some big established repository
+
+05:05.220 --> 05:06.690
+with a whole bunch of collaborators
+
+05:06.690 --> 05:10.680
+and then going private and suddenly it's just gone.
+
+05:10.680 --> 05:12.750
+But you can do that, okay?
+
+05:12.750 --> 05:14.070
+Generally, I go the other direction.
+
+05:14.070 --> 05:15.240
+Start something in secret,
+
+05:15.240 --> 05:17.790
+start it private so people can't see them.
+
+05:17.790 --> 05:21.600
+For example, all these horrible little dumb demo repos
+
+05:21.600 --> 05:23.670
+that we have just for this course,
+
+05:23.670 --> 05:25.770
+all these Git repos like animals,
+
+05:25.770 --> 05:28.440
+colors, chickens, GitHub demo novel,
+
+05:28.440 --> 05:30.270
+I would normally make those private,
+
+05:30.270 --> 05:32.700
+and then maybe make them public.
+
+05:32.700 --> 05:34.170
+But I'm making them public
+
+05:34.170 --> 05:35.580
+because I want you to be able to see them.
+
+05:35.580 --> 05:37.443
+This is a Git course, okay.
