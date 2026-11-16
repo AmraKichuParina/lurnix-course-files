@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00.150 --> 00:02.520
+Instructor: So, this will be a very quick video.
+
+00:02.520 --> 00:05.760
+I just wanna show that you can also configure these aliases
+
+00:05.760 --> 00:07.890
+from the command line if you prefer.
+
+00:07.890 --> 00:10.080
+It's the same exact idea
+
+00:10.080 --> 00:12.660
+of configuring any of these properties.
+
+00:12.660 --> 00:14.070
+You can do it in the file,
+
+00:14.070 --> 00:16.110
+a config file with this syntax,
+
+00:16.110 --> 00:19.740
+or you can use the dot syntax on the command line.
+
+00:19.740 --> 00:20.820
+So, it would look like this,
+
+00:20.820 --> 00:23.133
+git config --global.
+
+00:24.180 --> 00:27.720
+Then, we decide what is the alias we want to configure.
+
+00:27.720 --> 00:30.453
+Well, it's going to be alias. something.
+
+00:31.800 --> 00:36.450
+How about we do a git branch alias?
+
+00:36.450 --> 00:38.790
+Instead of making it shorter,
+
+00:38.790 --> 00:39.900
+let's do something silly.
+
+00:39.900 --> 00:44.070
+So, if you type whatismybranch,
+
+00:44.070 --> 00:46.564
+or how about showmebranches?
+
+00:46.564 --> 00:49.050
+showmebranches (laughs).
+
+00:49.050 --> 00:51.600
+Let's make that an alias for branch.
+
+00:51.600 --> 00:55.740
+So, git showmebranches should be the same as git branch.
+
+00:55.740 --> 00:56.970
+Very silly.
+
+00:56.970 --> 00:57.803
+You'll see though,
+
+00:57.803 --> 01:00.450
+if I try running git showmebranches,
+
+01:00.450 --> 01:02.550
+it actually now does auto-complete for me.
+
+01:03.690 --> 01:05.220
+It just ran git branch, right?
+
+01:05.220 --> 01:07.680
+Same output I would see if I did git branch.
+
+01:07.680 --> 01:11.670
+And if we go to this file, it shows that change.
+
+01:11.670 --> 01:13.590
+So those aliases I set up,
+
+01:13.590 --> 01:18.570
+assuming I set them up as a global alias with --global,
+
+01:18.570 --> 01:20.820
+they're added to the global config file.
+
+01:20.820 --> 01:22.380
+Otherwise, if I set them up locally,
+
+01:22.380 --> 01:25.740
+they'll be in the local config file in a specific repo.
+
+01:25.740 --> 01:28.290
+So, I probably don't want this alias,
+
+01:28.290 --> 01:29.820
+but I'll leave it for now.
+
+01:29.820 --> 01:30.660
+In the next video,
+
+01:30.660 --> 01:32.580
+I'll talk about how we can write aliases
+
+01:32.580 --> 01:34.173
+that work with arguments.
