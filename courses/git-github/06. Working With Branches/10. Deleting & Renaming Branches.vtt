@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00.180 --> 00:01.470
+Instructor: Okay, in this video,
+
+00:01.470 --> 00:04.920
+I wanna talk about deleting and renaming branches.
+
+00:04.920 --> 00:06.810
+So, this is something you probably won't need to do
+
+00:06.810 --> 00:08.940
+all that often, early on at least.
+
+00:08.940 --> 00:11.070
+But if you work professionally
+
+00:11.070 --> 00:12.450
+or you work on a large project,
+
+00:12.450 --> 00:13.865
+where there's tons of branches
+
+00:13.865 --> 00:16.500
+and you are constantly making new branches
+
+00:16.500 --> 00:17.850
+and then merging them in,
+
+00:17.850 --> 00:19.620
+again, we haven't talked about merging,
+
+00:19.620 --> 00:21.420
+but it's really common to work on something
+
+00:21.420 --> 00:22.860
+and then merge it in.
+
+00:22.860 --> 00:25.440
+You don't wanna just have this extra branch for no reason,
+
+00:25.440 --> 00:27.210
+so you can delete them.
+
+00:27.210 --> 00:29.307
+Let's talk about how you delete a branch.
+
+00:29.307 --> 00:31.950
+You use the git-branch command.
+
+00:31.950 --> 00:33.570
+Git-branch does a lot and we've seen,
+
+00:33.570 --> 00:35.940
+it shows us a list of branches.
+
+00:35.940 --> 00:37.950
+It also creates a new branch
+
+00:37.950 --> 00:42.950
+and we can delete using git-branch with the dash D option.
+
+00:43.650 --> 00:47.880
+So, dash D or dash dash delete deletes a branch.
+
+00:47.880 --> 00:49.290
+Now, it tells us this message here,
+
+00:49.290 --> 00:51.180
+it must be fully merged, blah blah blah.
+
+00:51.180 --> 00:52.861
+We will learn more about what this means shortly.
+
+00:52.861 --> 00:54.821
+We haven't talked about merging.
+
+00:54.821 --> 00:57.360
+But if I try and delete one of these branches.
+
+00:57.360 --> 01:00.480
+For example, let's make a new branch.
+
+01:00.480 --> 01:02.370
+So, I'll go full screen here.
+
+01:02.370 --> 01:03.360
+Where are we?
+
+01:03.360 --> 01:04.620
+We are on an empty playlist.
+
+01:04.620 --> 01:05.670
+It's an empty branch.
+
+01:05.670 --> 01:08.910
+Let's go to, I don't know, Georges branch.
+
+01:08.910 --> 01:11.610
+So, git switch Georges.
+
+01:11.610 --> 01:13.080
+And then let's make a new branch
+
+01:13.080 --> 01:15.690
+and I'll use our single line version,
+
+01:15.690 --> 01:19.200
+git switch dash C to create a new branch.
+
+01:19.200 --> 01:21.540
+And I'm gonna call it, delete me
+
+01:21.540 --> 01:24.240
+because I want to delete it.
+
+01:24.240 --> 01:26.910
+Okay, so we're on this new branch, delete me.
+
+01:26.910 --> 01:31.500
+And to delete it, I use the dash D option on git-branch.
+
+01:31.500 --> 01:32.550
+So, let's try it.
+
+01:32.550 --> 01:37.550
+Git branch dash D and then I specify the branch to delete,
+
+01:37.980 --> 01:39.390
+which is delete me.
+
+01:39.390 --> 01:40.877
+I'm gonna run into a problem.
+
+01:40.877 --> 01:43.830
+I can't delete the branch I'm checked out at.
+
+01:43.830 --> 01:46.890
+So, the one that I'm viewing, right, I'm on delete me,
+
+01:46.890 --> 01:47.940
+I can't delete it.
+
+01:47.940 --> 01:52.440
+So, if I switch branches, let's do git switch master
+
+01:52.440 --> 01:57.150
+and I try running that again, now I get a different message.
+
+01:57.150 --> 01:59.070
+It's not fully merged.
+
+01:59.070 --> 02:00.450
+If you're sure you want to delete it,
+
+02:00.450 --> 02:02.729
+run git branch dash uppercase D,
+
+02:02.729 --> 02:07.650
+which is equivalent to adding in the dash dash force option.
+
+02:07.650 --> 02:10.260
+In other words, allow deleting the branch irrespective
+
+02:10.260 --> 02:12.360
+of its merged status.
+
+02:12.360 --> 02:14.029
+So, in this case, that's fine.
+
+02:14.029 --> 02:17.100
+You wanna be confident in what you're deleting
+
+02:17.100 --> 02:20.220
+and that you actually do want to delete it because
+
+02:20.220 --> 02:22.770
+without GitHub, without any sort of backup,
+
+02:22.770 --> 02:24.510
+which we don't have at this point in time,
+
+02:24.510 --> 02:26.070
+if I had a lot of work on this branch
+
+02:26.070 --> 02:29.070
+and I actually delete it, it's gone.
+
+02:29.070 --> 02:32.190
+But for this demonstration, I'm fine deleting it.
+
+02:32.190 --> 02:36.120
+So git-branch, uppercase D, delete me.
+
+02:36.120 --> 02:37.650
+And now, it's gone.
+
+02:37.650 --> 02:40.920
+So we can see here, there is no delete me branch.
+
+02:40.920 --> 02:43.440
+All right, now another thing we might want
+
+02:43.440 --> 02:45.600
+to do is rename a branch.
+
+02:45.600 --> 02:47.576
+And this is something we definitely will be doing
+
+02:47.576 --> 02:49.521
+when we get to GitHub.
+
+02:49.521 --> 02:52.055
+We could rename our master branch to main
+
+02:52.055 --> 02:54.630
+to play well with GitHub,
+
+02:54.630 --> 02:56.917
+but also it's a common thing to do.
+
+02:56.917 --> 02:59.070
+If you're unhappy with a branch name
+
+02:59.070 --> 03:02.460
+or you just want to change it and give it a better name,
+
+03:02.460 --> 03:05.317
+the way that we do it is somewhat hard to remember.
+
+03:05.317 --> 03:07.980
+We use git-branch, the same command.
+
+03:07.980 --> 03:10.950
+However, the flag or the option that we use
+
+03:10.950 --> 03:15.120
+is dash M and that seems somewhat confusing.
+
+03:15.120 --> 03:19.410
+It should be dash R for rename or dash N for name,
+
+03:19.410 --> 03:24.030
+but it's actually dash M for move.
+
+03:24.030 --> 03:26.520
+But it's move slash rename.
+
+03:26.520 --> 03:28.606
+So, all that we do, if we want to rename a branch,
+
+03:28.606 --> 03:33.150
+is first change to the branch that we want to rename.
+
+03:33.150 --> 03:35.880
+So, this is kind of confusing because to delete a branch,
+
+03:35.880 --> 03:39.390
+we had to go anywhere else but that branch.
+
+03:39.390 --> 03:42.090
+We could not delete from the branch.
+
+03:42.090 --> 03:44.610
+But to rename, you have to be on the branch,
+
+03:44.610 --> 03:46.200
+again, it's just kind of weird,
+
+03:46.200 --> 03:48.570
+but you don't have to do this that frequently.
+
+03:48.570 --> 03:51.210
+So, what branch should I rename?
+
+03:51.210 --> 03:53.742
+How about instead of recentish music,
+
+03:53.742 --> 03:56.910
+I just wanna rename it to 2000s.
+
+03:56.910 --> 03:58.290
+So, music from the 2000s
+
+03:58.290 --> 04:01.561
+because recentish implies something somewhat pretty recent.
+
+04:01.561 --> 04:04.200
+but maybe I want anything from the 2000s.
+
+04:04.200 --> 04:07.470
+So, I'm gonna switch, git switch.
+
+04:07.470 --> 04:09.690
+And I'll do checkout this time just to mix it up.
+
+04:09.690 --> 04:14.460
+Show you both work, recentish music, I switched, okay.
+
+04:14.460 --> 04:18.150
+And now I'm gonna rename it with git branch dash M,
+
+04:18.150 --> 04:21.693
+and then my new name, which will be 2000s.
+
+04:23.910 --> 04:27.360
+And we can see already, it changed to 2000s over here.
+
+04:27.360 --> 04:32.360
+If I type git status on branch 2000s git log,
+
+04:33.300 --> 04:37.950
+we see that head is pointing to 2000s as the branch name.
+
+04:37.950 --> 04:39.740
+It's the same branch that I was on before,
+
+04:39.740 --> 04:43.890
+the same two Phoebe Bridger songs are here,
+
+04:43.890 --> 04:48.890
+but it's been renamed from recentish music to 2000s.
+
+04:49.050 --> 04:51.750
+So I'll do I guess one more commit.
+
+04:51.750 --> 04:55.350
+Here are two songs by a great group called Moderat
+
+04:55.350 --> 04:59.880
+and I will go ahead and commit dash A, dash M,
+
+04:59.880 --> 05:04.880
+just to do it in one go, add to Moderat songs.
+
+05:05.820 --> 05:10.650
+All right and so that only exists on the 2000s branch.
+
+05:10.650 --> 05:15.150
+It no longer is called recentish songs or recentish music.
+
+05:15.150 --> 05:19.110
+Okay, so that's how you can rename a branch, it's dash M.
+
+05:19.110 --> 05:20.490
+Where are you, where'd I do it?
+
+05:20.490 --> 05:23.718
+Right here, it's somewhat confusing, but it works.
+
+05:23.718 --> 05:26.637
+It stands for move and then we have dash D
+
+05:26.637 --> 05:28.500
+to delete a branch.
+
+05:28.500 --> 05:30.660
+Two operations you may not need to do all that often,
+
+05:30.660 --> 05:33.543
+certainly not right now, but good to know about.
