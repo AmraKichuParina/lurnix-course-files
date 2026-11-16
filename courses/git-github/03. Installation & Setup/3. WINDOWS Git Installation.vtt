@@ -1,0 +1,634 @@
+WEBVTT
+
+00:00.150 --> 00:02.280
+Instructor: Okay, so this is the Windows Git
+
+00:02.280 --> 00:03.600
+Installation video.
+
+00:03.600 --> 00:05.520
+If you're not on a Windows machine,
+
+00:05.520 --> 00:07.620
+I guess you're welcome to join us if you want
+
+00:07.620 --> 00:11.070
+but I would just move on and go to the next video.
+
+00:11.070 --> 00:15.210
+Installing Git on a Windows machine is, it's not complicated
+
+00:15.210 --> 00:18.210
+but it's a little bit trickier than to do it on a Mac.
+
+00:18.210 --> 00:20.370
+And the reason for this is that Git was designed,
+
+00:20.370 --> 00:23.490
+it was created, if you watch that video where I did
+
+00:23.490 --> 00:25.320
+you know, the brief history of Git,
+
+00:25.320 --> 00:28.200
+it was created to run on a Unix-based interface.
+
+00:28.200 --> 00:31.620
+It was designed for Linux because the guy who created it
+
+00:31.620 --> 00:34.620
+Linus Torvalds, also created Linux.
+
+00:34.620 --> 00:38.370
+Okay, the problem that we run into on a Windows machine
+
+00:38.370 --> 00:40.350
+is that Windows machines
+
+00:40.350 --> 00:44.010
+don't come with a Unix-based prompt by default.
+
+00:44.010 --> 00:46.470
+Windows comes with a different command line interface
+
+00:46.470 --> 00:48.510
+called Command Prompt.
+
+00:48.510 --> 00:49.650
+It's not Unix-based.
+
+00:49.650 --> 00:50.670
+If you don't know what Unix is,
+
+00:50.670 --> 00:52.230
+it really it's not a big deal.
+
+00:52.230 --> 00:53.790
+You don't need to know what it is.
+
+00:53.790 --> 00:55.470
+It just causes an issue here.
+
+00:55.470 --> 00:58.170
+Git wants to run with a Unix-based interface
+
+00:58.170 --> 00:59.280
+and there's this shell,
+
+00:59.280 --> 01:02.070
+this thing called Bash that is a default shell
+
+01:02.070 --> 01:03.780
+for Linux machines and for Macs.
+
+01:03.780 --> 01:05.370
+So it's a lot easier on those machines.
+
+01:05.370 --> 01:07.260
+We don't have to go jump through any hoops.
+
+01:07.260 --> 01:08.550
+On a Windows machine,
+
+01:08.550 --> 01:11.250
+we have to download something called Git Bash
+
+01:11.250 --> 01:13.650
+which we're about to do and Git Bash
+
+01:13.650 --> 01:16.650
+is going to emulate a Bash, a Unix experience
+
+01:16.650 --> 01:18.150
+on our Windows machine.
+
+01:18.150 --> 01:20.190
+And it comes with Git also.
+
+01:20.190 --> 01:22.260
+So some people actually use Git Bash
+
+01:22.260 --> 01:24.120
+without even touching the Git portion.
+
+01:24.120 --> 01:26.100
+They just want the Bash portion.
+
+01:26.100 --> 01:28.800
+Anyway, you'll see, you know, it's not too bad
+
+01:28.800 --> 01:30.510
+it's a single package we download
+
+01:30.510 --> 01:32.610
+and then it's just a couple of menus and settings
+
+01:32.610 --> 01:33.990
+that we have to walk through.
+
+01:33.990 --> 01:36.090
+So that's all we're gonna do here.
+
+01:36.090 --> 01:38.880
+If none of that explanation made sense to you, don't worry
+
+01:38.880 --> 01:40.770
+we'll just install it and it should work.
+
+01:40.770 --> 01:44.100
+But if you're curious, this is kind of the issue at the core
+
+01:44.100 --> 01:46.560
+of why it's a little trickier on Windows.
+
+01:46.560 --> 01:49.800
+Git was not designed to run on a Windows machine originally
+
+01:49.800 --> 01:51.720
+so there's just an extra hurdle or two.
+
+01:51.720 --> 01:52.950
+Okay, let's go.
+
+01:52.950 --> 01:54.810
+All right, so the first thing we need to do
+
+01:54.810 --> 01:57.030
+is go to the Git homepage, the Git website,
+
+01:57.030 --> 01:59.940
+and download the Git installer for Windows.
+
+01:59.940 --> 02:02.130
+So I've included in the resources a link.
+
+02:02.130 --> 02:06.570
+It's also just Git-scm.com.
+
+02:06.570 --> 02:07.560
+I never remember that.
+
+02:07.560 --> 02:10.650
+I just Google or binging Git.
+
+02:10.650 --> 02:12.210
+And then click the link.
+
+02:12.210 --> 02:15.360
+So I'm gonna click download just the version
+
+02:15.360 --> 02:20.360
+You can see the other options, 62 and 64 bits.
+
+02:21.120 --> 02:23.190
+But anyway, it looks like it finished.
+
+02:23.190 --> 02:24.873
+So I'm going to open this up.
+
+02:25.800 --> 02:28.260
+Alrighty, I'm going to click yes.
+
+02:28.260 --> 02:30.660
+Do I want to allow it to make changes?
+
+02:30.660 --> 02:34.080
+And is there a way to make this larger?
+
+02:34.080 --> 02:35.610
+It does not look like it.
+
+02:35.610 --> 02:38.070
+So I'll try zooming in post-production
+
+02:38.070 --> 02:40.260
+to make this a little bit easier for you to see.
+
+02:40.260 --> 02:43.170
+It's quite small on this large screen.
+
+02:43.170 --> 02:44.910
+Anyway, I'm gonna click next.
+
+02:44.910 --> 02:46.590
+This is the license.
+
+02:46.590 --> 02:48.840
+You know, I've read the entire thing.
+
+02:48.840 --> 02:50.640
+All right, I'll hit next.
+
+02:50.640 --> 02:53.220
+Then it's asking where I want to install it.
+
+02:53.220 --> 02:54.330
+I'll leave the default.
+
+02:54.330 --> 02:56.250
+So C Drive program files.
+
+02:56.250 --> 02:58.590
+Git next up here.
+
+02:58.590 --> 03:00.990
+I'm just gonna leave all these defaults,
+
+03:00.990 --> 03:03.660
+so I'm not gonna check or uncheck anything.
+
+03:03.660 --> 03:05.073
+And click next.
+
+03:06.240 --> 03:08.850
+And then it's saying the name of the shortcut
+
+03:08.850 --> 03:09.750
+that it creates for me
+
+03:09.750 --> 03:14.130
+I'll just call it Gits and that it's good to go.
+
+03:14.130 --> 03:17.760
+Now this is one spot where I recommend actually
+
+03:17.760 --> 03:19.770
+deviating from the default.
+
+03:19.770 --> 03:22.860
+So it's asking us to choose the default text editor
+
+03:22.860 --> 03:24.150
+that Git uses.
+
+03:24.150 --> 03:26.670
+Now, the default that it uses right now
+
+03:26.670 --> 03:28.560
+is something called Vim.
+
+03:28.560 --> 03:31.110
+It is kind of a nightmare if you've never used it.
+
+03:31.110 --> 03:35.610
+They commands and it's all done via text in the terminal.
+
+03:35.610 --> 03:38.580
+A lot of people use it, but way, way more people
+
+03:38.580 --> 03:40.740
+are scared of it and confused by it.
+
+03:40.740 --> 03:43.440
+So I recommend switching this over to VS Code
+
+03:43.440 --> 03:45.570
+or Visual Studio Code.
+
+03:45.570 --> 03:49.740
+So this is a brand new install of Windows on my computer.
+
+03:49.740 --> 03:51.930
+I don't actually have VS code yet
+
+03:51.930 --> 03:54.690
+so I'm gonna click this use visual studious code,
+
+03:54.690 --> 03:57.600
+Visual Studio Code as Gits default editor.
+
+03:57.600 --> 03:59.220
+And it doesn't let me hit Next
+
+03:59.220 --> 04:00.990
+because I don't have it installed.
+
+04:00.990 --> 04:03.210
+So I'm going to click that link
+
+04:03.210 --> 04:06.900
+and just open it up and then download For Windows.
+
+04:06.900 --> 04:09.000
+We won't need this text editor right away.
+
+04:09.000 --> 04:11.430
+And you don't have to use this editor either.
+
+04:11.430 --> 04:15.210
+I have a video where I explain how to get out of Vim
+
+04:15.210 --> 04:18.480
+and how to use Vim in one context.
+
+04:18.480 --> 04:20.460
+So if you wanna use Vim, you can do that.
+
+04:20.460 --> 04:22.470
+Or if you have some other editor that you like,
+
+04:22.470 --> 04:24.570
+feel free to use that instead.
+
+04:24.570 --> 04:26.160
+So this is a pretty quick install
+
+04:26.160 --> 04:27.900
+just accept the agreement.
+
+04:27.900 --> 04:29.253
+Location is fine.
+
+04:30.120 --> 04:31.650
+That's good to go.
+
+04:31.650 --> 04:34.950
+And then I'm going to leave this checked Add to Path.
+
+04:34.950 --> 04:36.180
+We want that.
+
+04:36.180 --> 04:38.490
+And I'm gonna click this register code
+
+04:38.490 --> 04:41.820
+as an editor for supported file types,
+
+04:41.820 --> 04:44.910
+so the bottom two checkbox is there.
+
+04:44.910 --> 04:47.500
+And then I'll click next, install
+
+04:48.570 --> 04:50.910
+and hopefully that goes pretty quickly.
+
+04:50.910 --> 04:52.890
+And then while that finishes up
+
+04:52.890 --> 04:55.380
+I guess I do actually have to wait for it to finish
+
+04:55.380 --> 04:58.770
+in order to go back to the other installer for Git.
+
+04:58.770 --> 05:01.740
+Okay, so that finished we could launch it right now
+
+05:01.740 --> 05:03.900
+but we really don't need it.
+
+05:03.900 --> 05:05.910
+All that we need that for is to,
+
+05:05.910 --> 05:09.090
+so that we can use VS code as the default editor
+
+05:09.090 --> 05:11.820
+so it doesn't register that we actually have that.
+
+05:11.820 --> 05:14.490
+I'm gonna click back and next again.
+
+05:14.490 --> 05:15.960
+Okay, now it's working.
+
+05:15.960 --> 05:18.690
+So we still have Visual Studio Code selected
+
+05:18.690 --> 05:20.073
+and now I can click next.
+
+05:21.000 --> 05:23.790
+And then here, this is a bigger topic actually
+
+05:23.790 --> 05:25.890
+that we're not gonna go into a whole lot right now
+
+05:25.890 --> 05:28.920
+but a bigger topic we discussed throughout the course.
+
+05:28.920 --> 05:31.590
+In late 2020, there's been a push
+
+05:31.590 --> 05:32.820
+without going into too much detail
+
+05:32.820 --> 05:35.610
+there's been a push to rename the default branch
+
+05:35.610 --> 05:39.840
+in Git and GitHub from Master to Main
+
+05:39.840 --> 05:43.860
+or some other similar name like Trunk or development.
+
+05:43.860 --> 05:45.870
+We'll talk more about what this means.
+
+05:45.870 --> 05:47.670
+We haven't talked about branches at all
+
+05:47.670 --> 05:49.650
+so that probably makes no sense.
+
+05:49.650 --> 05:52.320
+I'm actually going to say let Git decide
+
+05:52.320 --> 05:55.950
+and keep it as the current default branch name.
+
+05:55.950 --> 05:57.510
+But later on I will show you
+
+05:57.510 --> 05:59.250
+how to change the default branch name.
+
+05:59.250 --> 06:02.670
+We'll talk about how to work with Main instead of master
+
+06:02.670 --> 06:04.080
+and we'll cover all of this.
+
+06:04.080 --> 06:07.530
+So to keep things simple and to keep you sort of in sync
+
+06:07.530 --> 06:10.800
+with the standard documentation and tutorials you'll see
+
+06:10.800 --> 06:13.923
+in the world right now, we're going to just let Git decide.
+
+06:14.940 --> 06:18.123
+All right, and then I'll leave this alone as well.
+
+06:19.180 --> 06:21.750
+Okay, I'm gonna click next again,
+
+06:21.750 --> 06:25.110
+leave this as use the open SSL library.
+
+06:25.110 --> 06:27.390
+So on this page or this screen
+
+06:27.390 --> 06:29.730
+we're gonna leave the top option selected
+
+06:29.730 --> 06:33.570
+checkout Windows-style, commit Unix style line endings.
+
+06:33.570 --> 06:35.610
+It doesn't matter what that does right now
+
+06:35.610 --> 06:38.040
+but we're gonna pick that first one.
+
+06:38.040 --> 06:39.510
+And then we have this screen
+
+06:39.510 --> 06:41.850
+which terminal emulator do we want to use?
+
+06:41.850 --> 06:45.180
+If you wanna follow along with me and what I'll be using
+
+06:45.180 --> 06:46.920
+well throughout the course I'm using a Mac,
+
+06:46.920 --> 06:49.050
+but on the Windows specific videos
+
+06:49.050 --> 06:51.633
+I'll be using this first one, MinTTY.
+
+06:53.010 --> 06:54.930
+And then we're gonna select default
+
+06:54.930 --> 06:58.170
+just the default option that's already selected for us.
+
+06:58.170 --> 07:01.110
+And then, yep, we'll just keep this one selected,
+
+07:01.110 --> 07:02.943
+Git Credential Manager Core.
+
+07:04.560 --> 07:07.350
+We'll enable file system caching that's already selected.
+
+07:07.350 --> 07:08.703
+Okay, we're good to go.
+
+07:09.990 --> 07:13.350
+And we don't need to enable support for pseudo console
+
+07:13.350 --> 07:14.820
+so we don't need to select that.
+
+07:14.820 --> 07:19.820
+And then we click install and we wait for this to finish.
+
+07:20.730 --> 07:22.443
+And I'll probably fast forward.
+
+07:23.550 --> 07:26.100
+All right, so it looks like it finished up.
+
+07:26.100 --> 07:26.940
+Let's launch it.
+
+07:26.940 --> 07:29.310
+So we'll click launch Git Bash
+
+07:29.310 --> 07:31.200
+and then we can get rid of this.
+
+07:31.200 --> 07:33.720
+We don't, I don't care to see the released notes personally.
+
+07:33.720 --> 07:35.163
+And then we'll click finish.
+
+07:36.120 --> 07:37.590
+So you'll probably see
+
+07:37.590 --> 07:40.710
+or hopefully see a prompt that looks something like this.
+
+07:40.710 --> 07:42.810
+Your name will be different
+
+07:42.810 --> 07:47.070
+and I'll just full screened it to make it hopefully legible.
+
+07:47.070 --> 07:48.600
+And for now, the last thing we'll do
+
+07:48.600 --> 07:50.910
+just to verify that Git is installed,
+
+07:50.910 --> 07:54.393
+is run the command Git --version.
+
+07:55.770 --> 07:57.750
+So as long as we see something here
+
+07:57.750 --> 07:59.670
+and you should see something here.
+
+07:59.670 --> 08:03.360
+If you have this, if you're able to see this window
+
+08:03.360 --> 08:07.050
+after that installation, then I can't think of a situation
+
+08:07.050 --> 08:08.460
+where Git would not be installed.
+
+08:08.460 --> 08:12.600
+But just to verify, we can run this Git --version,
+
+08:12.600 --> 08:14.550
+the Git command is being recognized
+
+08:14.550 --> 08:16.110
+and we should be good to go.
+
+08:16.110 --> 08:19.350
+Now one thing I'll mention is if you do close out of this
+
+08:19.350 --> 08:21.990
+you get rid of this terminal window.
+
+08:21.990 --> 08:25.200
+If we shut that down, if you wanna reopen it
+
+08:25.200 --> 08:29.400
+and have access to it again, a pretty reasonable request
+
+08:29.400 --> 08:31.470
+you can just search for Git Bash.
+
+08:31.470 --> 08:35.250
+That's the name of the application we want to run or open.
+
+08:35.250 --> 08:38.760
+So Git Bash and then we get back to this window.
+
+08:38.760 --> 08:42.180
+Okay, so if you're on a Windows machine
+
+08:42.180 --> 08:44.040
+this window is where you will be working
+
+08:44.040 --> 08:47.130
+when you see me working on my Mac terminal,
+
+08:47.130 --> 08:49.770
+I'll talk about some of the minor differences in commands.
+
+08:49.770 --> 08:52.200
+But overall, it should be a pretty smooth experience
+
+08:52.200 --> 08:53.700
+Now that we have it installed.
