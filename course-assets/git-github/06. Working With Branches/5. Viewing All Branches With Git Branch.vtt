@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.540 --> 00:01.373
+Instructor: Okie-dokie.
+
+00:01.373 --> 00:02.670
+It's time to learn our first command
+
+00:02.670 --> 00:06.210
+that has to do with branching and it's a pretty simple one.
+
+00:06.210 --> 00:10.650
+It is git branch, git space branch, nothing else.
+
+00:10.650 --> 00:12.360
+This will just give us a list
+
+00:12.360 --> 00:15.660
+of our current existing branches in a repo.
+
+00:15.660 --> 00:18.240
+So it doesn't make a new branch, it doesn't switch branches,
+
+00:18.240 --> 00:21.150
+it just shows you the current branches.
+
+00:21.150 --> 00:23.422
+In our case, we haven't made new branches
+
+00:23.422 --> 00:26.940
+so we won't see anything except master.
+
+00:26.940 --> 00:29.100
+So I'm on MyFirstNovel for now.
+
+00:29.100 --> 00:31.050
+I'm gonna make a new repository in a moment.
+
+00:31.050 --> 00:35.490
+If I type git branch, I see one branch, master.
+
+00:35.490 --> 00:38.463
+And to get out of here, just like with git log, I type q.
+
+00:39.420 --> 00:41.340
+Now I'll show you a different project.
+
+00:41.340 --> 00:43.800
+This repository has a couple more branches.
+
+00:43.800 --> 00:46.770
+If I type git branch, you can see them all here.
+
+00:46.770 --> 00:49.500
+Birds, birds-of-prey, california-mammals, hawks,
+
+00:49.500 --> 00:53.489
+mammals, master, no-animals, owls, stashtest.
+
+00:53.489 --> 00:56.250
+(laughs) I was testing something out there.
+
+00:56.250 --> 00:58.620
+You can see though there's a bunch of branches
+
+00:58.620 --> 01:03.210
+but the one that is active has a little asterisk next to it.
+
+01:03.210 --> 01:05.880
+That's the branch we're currently on.
+
+01:05.880 --> 01:08.280
+So we see I'm on owls, and again,
+
+01:08.280 --> 01:10.050
+I can type q to get out of here.
+
+01:10.050 --> 01:13.230
+So here on the the MyFirstNovel project,
+
+01:13.230 --> 01:14.550
+we only have master.
+
+01:14.550 --> 01:17.400
+I never made that branch, and it's the only branch we have
+
+01:17.400 --> 01:18.600
+so we're on it.
+
+01:18.600 --> 01:20.160
+We don't really have a choice right now
+
+01:20.160 --> 01:22.960
+but next up, we're gonna learn how to make a new branch.
