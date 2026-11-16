@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.000 --> 00:01.320
+-: Okay, so there is more
+
+00:01.320 --> 00:03.460
+to using Git Stash and I'm gonna show it
+
+00:04.436 --> 00:06.413
+to you throughout the rest of this section.
+
+00:06.413 --> 00:09.570
+But I'm gonna be honest upfront, at least in my experience
+
+00:09.570 --> 00:12.420
+90 something percent of the time I use anything
+
+00:12.420 --> 00:14.790
+with the stash or with stashing
+
+00:14.790 --> 00:18.450
+it's just git stash and git stash pop.
+
+00:18.450 --> 00:21.000
+So those are the two things I use the most.
+
+00:21.000 --> 00:23.910
+Put something in the stash and pop it when I need it.
+
+00:23.910 --> 00:24.840
+However
+
+00:24.840 --> 00:28.950
+we can also use something called apply get stash apply
+
+00:28.950 --> 00:31.140
+which will take whatever's in the stash
+
+00:31.140 --> 00:34.728
+and apply it in the same way that POP does except
+
+00:34.728 --> 00:39.420
+with Apply the stash stays in the stash, or in other words
+
+00:39.420 --> 00:42.464
+the changes are still in the stash and we can apply them
+
+00:42.464 --> 00:45.330
+in multiple places versus with pop, our changes are removed
+
+00:45.330 --> 00:47.610
+from the stash after they're applied.
+
+00:47.610 --> 00:49.560
+So I'll demonstrate this.
+
+00:49.560 --> 00:50.940
+This could be useful
+
+00:50.940 --> 00:53.610
+if you wanted to have some stash changes that you
+
+00:53.610 --> 00:56.910
+need to apply in multiple places across different branches.
+
+00:56.910 --> 00:59.640
+I'm just gonna come up with a pretty contrived example.
+
+00:59.640 --> 01:02.260
+I guess all of the examples so far have been
+
+01:03.240 --> 01:05.880
+so we're on this goodbye branch.
+
+01:05.880 --> 01:07.210
+If I type get status
+
+01:08.785 --> 01:10.868
+we have these changes, the goodbye changes, right?
+
+01:10.868 --> 01:12.840
+We can see that here, goodbye world.
+
+01:12.840 --> 01:14.760
+But I haven't added or committed them
+
+01:14.760 --> 01:17.133
+so I could just stash them again.
+
+01:17.133 --> 01:18.120
+Git stash.
+
+01:18.120 --> 01:20.130
+Alright, now we type Git status
+
+01:20.130 --> 01:22.500
+and everything's clean working tree clean.
+
+01:22.500 --> 01:24.840
+And if I refresh the page
+
+01:24.840 --> 01:27.480
+we see it says Hello world now, right?
+
+01:27.480 --> 01:30.810
+It doesn't say goodbye, it doesn't say goodbye here
+
+01:30.810 --> 01:33.390
+and we don't have that magenta background.
+
+01:33.390 --> 01:36.930
+Okay, so I have those changes stashed away
+
+01:36.930 --> 01:39.450
+and I can go to a different branch.
+
+01:39.450 --> 01:42.360
+Should we go to master get switched master?
+
+01:42.360 --> 01:44.670
+Let's see what are we working with here?
+
+01:44.670 --> 01:48.390
+Sure. So I'm on master now and if I wanted to
+
+01:48.390 --> 01:50.999
+apply the changes that are in the stash
+
+01:50.999 --> 01:54.150
+which makes the background magenta of the body
+
+01:54.150 --> 01:56.850
+and it also changes this to say goodbye world
+
+01:56.850 --> 01:59.370
+and the title to say goodbye.
+
+01:59.370 --> 02:02.340
+I can do git stash pop, that would be one option.
+
+02:02.340 --> 02:04.890
+But if I also wanna apply this somewhere else
+
+02:04.890 --> 02:09.840
+I can do git stash apply and we get a conflict.
+
+02:09.840 --> 02:12.570
+You can see here it says auto merging index
+
+02:12.570 --> 02:14.880
+H T M L merge Conflict in index.
+
+02:14.880 --> 02:17.790
+So now it's complaining to me just like any other merge
+
+02:17.790 --> 02:20.850
+we've done, the difference is that here we applied something
+
+02:20.850 --> 02:23.160
+from the stash and that generated the conflict
+
+02:23.160 --> 02:25.980
+versus merging a specific branch.
+
+02:25.980 --> 02:27.300
+But it works the exact same way.
+
+02:27.300 --> 02:30.030
+I need to decide, well which one of these do I want?
+
+02:30.030 --> 02:32.220
+Do I want hello or goodbye?
+
+02:32.220 --> 02:34.680
+So I'll keep the changes that are coming from the stash.
+
+02:34.680 --> 02:38.370
+So accept that incoming change, accept this incoming change.
+
+02:38.370 --> 02:40.680
+I'm gonna save in the c s s file.
+
+02:40.680 --> 02:43.260
+We have that magenta color and now I refresh
+
+02:43.260 --> 02:45.180
+and we see goodbye world.
+
+02:45.180 --> 02:46.800
+Okay, great.
+
+02:46.800 --> 02:49.617
+And I could add and commit that if I wanted to
+
+02:49.617 --> 02:53.285
+I could add both of those files, get commit
+
+02:53.285 --> 02:58.285
+let's just say, you know, merge stashed changes
+
+02:59.130 --> 03:00.933
+Or let's say apply.
+
+03:03.780 --> 03:06.900
+So we have to make a commit because there was a conflict.
+
+03:06.900 --> 03:10.350
+But if I go back to the other branch, what was it called?
+
+03:10.350 --> 03:11.370
+I can't remember now.
+
+03:11.370 --> 03:14.100
+It's to git branch, yes.
+
+03:14.100 --> 03:16.050
+Goodbye. If I go back to goodbye.
+
+03:16.050 --> 03:18.723
+So git switch, goodbye.
+
+03:20.520 --> 03:23.850
+Our CS file is empty and we're back to hello.
+
+03:23.850 --> 03:25.950
+Right? We didn't make a commit with that stuff
+
+03:25.950 --> 03:29.010
+but I still have those changes stashed away
+
+03:29.010 --> 03:33.210
+because I didn't use pop, git stash, pop, pops those changes
+
+03:33.210 --> 03:36.300
+off of the stash, they're gone and they're applied.
+
+03:36.300 --> 03:38.460
+But if I use git stash apply
+
+03:38.460 --> 03:41.190
+it's still there so I can apply it again.
+
+03:41.190 --> 03:43.350
+Git stash apply.
+
+03:43.350 --> 03:44.250
+And there we are.
+
+03:44.250 --> 03:46.350
+We now have those changes back in here.
+
+03:46.350 --> 03:48.960
+App c s s has magenta
+
+03:48.960 --> 03:51.780
+and now we have goodbye and goodbye world
+
+03:51.780 --> 03:54.000
+and I'll refresh the webpage and there it is.
+
+03:54.000 --> 03:55.920
+So I know it's not the most exciting thing ever
+
+03:55.920 --> 03:59.310
+but that is using apply instead of pop.
+
+03:59.310 --> 04:01.560
+This can come in handy if you need to apply changes
+
+04:01.560 --> 04:05.400
+across multiple branches, compare that to pop git stash pop
+
+04:05.400 --> 04:07.560
+which removes the changes from the stash.
+
+04:07.560 --> 04:10.443
+Apply, keeps them in there, but also applies them.
