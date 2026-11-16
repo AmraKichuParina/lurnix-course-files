@@ -1,0 +1,472 @@
+WEBVTT
+
+00:00.150 --> 00:02.430
+Instructor: So as we talked about in the previous video
+
+00:02.430 --> 00:05.310
+the most common, really the only use case these days,
+
+00:05.310 --> 00:06.480
+well, I shouldn't say only,
+
+00:06.480 --> 00:09.570
+by far, the most common use case though for tagging
+
+00:09.570 --> 00:12.330
+is in versioning, in marking release points
+
+00:12.330 --> 00:14.183
+for some piece of software.
+
+00:14.183 --> 00:16.080
+The Git docs mention this.
+
+00:16.080 --> 00:17.509
+Typically people use this functionality
+
+00:17.509 --> 00:19.110
+to mark release points.
+
+00:19.110 --> 00:22.230
+It is really the thing tags are used for.
+
+00:22.230 --> 00:23.303
+So in this video,
+
+00:23.303 --> 00:25.620
+we're not gonna talk about tags specifically,
+
+00:25.620 --> 00:26.910
+we're not gonna see any commands,
+
+00:26.910 --> 00:29.310
+but I wanna talk about semantic versioning.
+
+00:29.310 --> 00:32.820
+Semantic versioning is a protocol, a specification,
+
+00:32.820 --> 00:34.740
+a set of rules and requirements,
+
+00:34.740 --> 00:37.170
+that dictate how version numbers are assigned
+
+00:37.170 --> 00:38.100
+and incremented,
+
+00:38.100 --> 00:40.830
+basically the meaning of these three numbers
+
+00:40.830 --> 00:42.150
+with two dots between them.
+
+00:42.150 --> 00:43.830
+You've probably seen this system before,
+
+00:43.830 --> 00:45.960
+it's really widespread these days,
+
+00:45.960 --> 00:49.443
+and it is tied tightly to the usage of Git tags.
+
+00:50.700 --> 00:53.100
+So the whole point here of semantic versioning,
+
+00:53.100 --> 00:56.160
+it's an actual specification that we can take a look at.
+
+00:56.160 --> 00:58.080
+It's a nice and short document,
+
+00:58.080 --> 00:59.845
+not bad compared to some of the other
+
+00:59.845 --> 01:03.120
+software specs out there.
+
+01:03.120 --> 01:05.970
+And the idea is just to lay out this set of rules
+
+01:05.970 --> 01:09.383
+for making versioning transparent and consistent
+
+01:09.383 --> 01:13.110
+and meaningful so that these release numbers
+
+01:13.110 --> 01:16.980
+actually have meaning encoded in those three digits.
+
+01:16.980 --> 01:19.950
+So the system is three numbers with two dots between them,
+
+01:19.950 --> 01:22.320
+and each spot indicates something different.
+
+01:22.320 --> 01:25.680
+So on the far left, we have major releases,
+
+01:25.680 --> 01:27.600
+then we have minor releases in the middle,
+
+01:27.600 --> 01:30.180
+and then patches on the right.
+
+01:30.180 --> 01:32.820
+So typically if you start out development
+
+01:32.820 --> 01:36.000
+of some application or some library that you're creating,
+
+01:36.000 --> 01:39.067
+the initial public facing release will be 1.0.0,
+
+01:39.960 --> 01:42.630
+and I believe that's actually codified in here somewhere.
+
+01:42.630 --> 01:47.160
+Let's see, version 1.0.0 defines public API, yes,
+
+01:47.160 --> 01:50.340
+so that's one of the rules here, there's a couple of rules.
+
+01:50.340 --> 01:53.700
+Then, once you have that initial release out,
+
+01:53.700 --> 01:56.310
+small changes, patch releases,
+
+01:56.310 --> 01:59.310
+are going to be indicated here on the far right.
+
+01:59.310 --> 02:01.442
+So patches do not contain new features
+
+02:01.442 --> 02:05.070
+or significant changes, definitely no breaking changes,
+
+02:05.070 --> 02:07.860
+often just bug fixes and minor changes
+
+02:07.860 --> 02:10.045
+that don't impact how people use the code
+
+02:10.045 --> 02:12.030
+or the piece of software.
+
+02:12.030 --> 02:14.910
+So if people are already using 1.0.0,
+
+02:14.910 --> 02:16.350
+and they're comfortable with it,
+
+02:16.350 --> 02:19.560
+if you release 1.0.1, that's a patch,
+
+02:19.560 --> 02:21.570
+and you shouldn't change anything
+
+02:21.570 --> 02:25.230
+that those people are using, you shouldn't surprise people
+
+02:25.230 --> 02:26.880
+or break anything that they're doing.
+
+02:26.880 --> 02:30.360
+So patches are small and they happen pretty frequently.
+
+02:30.360 --> 02:32.481
+So that's what this number indicates here,
+
+02:32.481 --> 02:35.460
+and you increment that by one for every patch,
+
+02:35.460 --> 02:39.390
+so there could be another patch and it would be 1.0.2.
+
+02:39.390 --> 02:41.370
+Then we have minor releases.
+
+02:41.370 --> 02:44.400
+So minor releases signify new features,
+
+02:44.400 --> 02:46.260
+new functionality that's been added,
+
+02:46.260 --> 02:48.570
+but everything is still backwards compatible,
+
+02:48.570 --> 02:50.220
+no breaking changes.
+
+02:50.220 --> 02:51.987
+So typically, new functionality,
+
+02:51.987 --> 02:55.230
+new features will be optional in a minor release.
+
+02:55.230 --> 02:57.630
+It's just like, hey, here's some new stuff,
+
+02:57.630 --> 02:59.850
+but you don't have to completely reconfigure
+
+02:59.850 --> 03:02.040
+everything you've done as a user.
+
+03:02.040 --> 03:05.280
+You don't have to rewrite code, but you could add this in.
+
+03:05.280 --> 03:07.080
+So that's what minor releases are for.
+
+03:07.080 --> 03:09.810
+And whenever there's a minor release,
+
+03:09.810 --> 03:14.370
+you're supposed to reset the patch number back to zero.
+
+03:14.370 --> 03:19.350
+So then you could have 1.1.1, 1.1.2, 1.1.3.
+
+03:19.350 --> 03:24.330
+But then as soon as there's a new minor release, 1.2.0.
+
+03:24.330 --> 03:26.220
+And then we get to major releases,
+
+03:26.220 --> 03:28.890
+major releases are for significant changes
+
+03:28.890 --> 03:30.869
+that are not backwards compatible,
+
+03:30.869 --> 03:33.210
+features may be entirely removed,
+
+03:33.210 --> 03:34.648
+changed substantially.
+
+03:34.648 --> 03:37.830
+It will often include breaking changes.
+
+03:37.830 --> 03:39.120
+So there's a big difference
+
+03:39.120 --> 03:41.160
+between a minor release and a major release.
+
+03:41.160 --> 03:43.980
+And the protocol is that for a major release,
+
+03:43.980 --> 03:45.720
+you increment that number
+
+03:45.720 --> 03:48.570
+and then you set the other two back to zero.
+
+03:48.570 --> 03:50.610
+So that's the basic concept.
+
+03:50.610 --> 03:52.200
+It's pretty simple, right?
+
+03:52.200 --> 03:54.300
+The system, here's just three numbers,
+
+03:54.300 --> 03:58.230
+but it makes it clear to any user or consumer
+
+03:58.230 --> 03:59.880
+of some piece of software,
+
+03:59.880 --> 04:02.790
+how significant a change is in a new version,
+
+04:02.790 --> 04:04.260
+which is always very important,
+
+04:04.260 --> 04:06.990
+especially if you're relying on a piece of software,
+
+04:06.990 --> 04:09.990
+a library, as a dependency for your own software
+
+04:09.990 --> 04:11.460
+that you're building.
+
+04:11.460 --> 04:13.380
+So we can take a look at some examples,
+
+04:13.380 --> 04:15.840
+for example, Bootstrap.
+
+04:15.840 --> 04:17.460
+Bootstrap, if you're not familiar,
+
+04:17.460 --> 04:19.230
+I've mentioned it a couple times in this course,
+
+04:19.230 --> 04:23.532
+just as demos, very popular CSS framework,
+
+04:23.532 --> 04:26.280
+component library, whatever you wanna call it.
+
+04:26.280 --> 04:30.270
+And on GitHub, we can actually go and click on tags,
+
+04:30.270 --> 04:32.580
+which again, we haven't seen how to make tags yet,
+
+04:32.580 --> 04:35.430
+but then we can click on releases right here.
+
+04:35.430 --> 04:37.208
+And we can see a whole bunch of releases,
+
+04:37.208 --> 04:39.743
+so currently we're on 5.0.0.
+
+04:40.813 --> 04:44.340
+By the way, v technically is not part
+
+04:44.340 --> 04:47.280
+of the semantic versioning spec,
+
+04:47.280 --> 04:49.260
+but most of the time you'll see a v
+
+04:49.260 --> 04:51.060
+before those three numbers.
+
+04:51.060 --> 04:54.630
+And also afterwards, you can append things like beta,
+
+04:54.630 --> 04:56.820
+I believe they talk about it somewhere on here.
+
+04:56.820 --> 04:58.920
+Yeah, a pre-release version may be noted
+
+04:58.920 --> 05:02.430
+by appending a hyphen, and then some other stuff afterwards.
+
+05:02.430 --> 05:04.546
+Anyway, if we keep scrolling down
+
+05:04.546 --> 05:07.830
+we can see these different releases, here are two examples.
+
+05:07.830 --> 05:09.930
+We have 4.5.1,
+
+05:09.930 --> 05:14.820
+and then the next release is a patch, 4.5.2.
+
+05:14.820 --> 05:16.230
+So this number increments,
+
+05:16.230 --> 05:18.780
+and there's really not a lot happening here.
+
+05:18.780 --> 05:23.070
+It looks like it's removing one line of styles
+
+05:23.070 --> 05:25.890
+and then restoring some mixin.
+
+05:25.890 --> 05:28.628
+So two minor things, no breaking changes.
+
+05:28.628 --> 05:32.880
+And we can see, you know, the rules were followed, I guess,
+
+05:32.880 --> 05:35.730
+in this versioning, in this release number,
+
+05:35.730 --> 05:37.740
+increment that far right digit.
+
+05:37.740 --> 05:40.200
+And then here's another example for React.
+
+05:40.200 --> 05:44.160
+This is their change log on the React homepage.
+
+05:44.160 --> 05:48.540
+And if we take a look at something like 16.12,
+
+05:48.540 --> 05:53.370
+going to 16.13, this is a minor release,
+
+05:53.370 --> 05:54.960
+but there are some changes,
+
+05:54.960 --> 05:56.547
+some new features, it looks like.
+
+05:56.547 --> 05:59.970
+Generally more functionality compared to a patch,
+
+05:59.970 --> 06:02.010
+we can find a patch somewhere, like right here,
+
+06:02.010 --> 06:04.770
+this is a patch release, as is this.
+
+06:04.770 --> 06:07.650
+Tiny little changes, refactoring, bug fixes.
+
+06:07.650 --> 06:10.440
+Then here we've got a minor.
+
+06:10.440 --> 06:13.740
+This is, let's see what came before,
+
+06:13.740 --> 06:15.690
+looks like this is a patch right there.
+
+06:15.690 --> 06:19.480
+16.8.6, and then a minor release, 16.9.0,
+
+06:20.850 --> 06:24.090
+we've reset that patch number to zero.
+
+06:24.090 --> 06:28.200
+And then somewhere we've got 17.0.0,
+
+06:28.200 --> 06:29.760
+that is a major release,
+
+06:29.760 --> 06:31.980
+you can see they kind of make a big deal out of it.
+
+06:31.980 --> 06:34.530
+They write a blog post on how to even update to it,
+
+06:34.530 --> 06:35.700
+what the main changes are,
+
+06:35.700 --> 06:38.010
+and there's a lot more stuff here.
+
+06:38.010 --> 06:41.400
+So that's the main concept behind semantic versioning.
+
+06:41.400 --> 06:44.760
+The version numbers, those three digits are in this case,
+
+06:44.760 --> 06:45.990
+you know, it's what, four digits.
+
+06:45.990 --> 06:50.280
+But those three slots separated by periods tell you a lot.
+
+06:50.280 --> 06:54.570
+They indicate the severity or the scope of a given release
+
+06:54.570 --> 06:56.040
+and its changes.
+
+06:56.040 --> 06:58.390
+So let's get back to tagging in the next video.
