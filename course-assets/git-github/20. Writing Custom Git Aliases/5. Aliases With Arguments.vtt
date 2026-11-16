@@ -1,0 +1,298 @@
+WEBVTT
+
+00:00.000 --> 00:02.070
+Instructor: The aliases we've written so far
+
+00:02.070 --> 00:03.480
+have been simple.
+
+00:03.480 --> 00:05.430
+There's, what, three of them,
+
+00:05.430 --> 00:07.260
+and we have not worked with any arguments.
+
+00:07.260 --> 00:09.720
+We haven't passed any additional values to them.
+
+00:09.720 --> 00:12.030
+For example, when we run git branch,
+
+00:12.030 --> 00:14.340
+often we'll create a new branch
+
+00:14.340 --> 00:16.560
+instead of just looking at all branches.
+
+00:16.560 --> 00:18.300
+If we do git branch and then a branch name,
+
+00:18.300 --> 00:19.830
+it creates the branch.
+
+00:19.830 --> 00:21.690
+That would be an argument of value
+
+00:21.690 --> 00:23.940
+we're passing to the command.
+
+00:23.940 --> 00:26.070
+Or git commit.
+
+00:26.070 --> 00:29.610
+If we do dash M, we provide a commit message.
+
+00:29.610 --> 00:31.800
+So how can I set up an alias?
+
+00:31.800 --> 00:34.860
+For example, let's say I just want C
+
+00:34.860 --> 00:38.190
+or maybe CM for commit with a message.
+
+00:38.190 --> 00:40.890
+So I could write that alias myself.
+
+00:40.890 --> 00:43.980
+CM equals commit dash M.
+
+00:43.980 --> 00:47.010
+But then, what about the commit message itself?
+
+00:47.010 --> 00:50.130
+Well, the way that Git aliases are set up,
+
+00:50.130 --> 00:51.120
+the way they're structured,
+
+00:51.120 --> 00:53.910
+is that Git will actually take any arguments
+
+00:53.910 --> 00:57.570
+we pass to whatever our alias is, this command.
+
+00:57.570 --> 01:02.190
+If we pass something like first commit, for example,
+
+01:02.190 --> 01:05.100
+it will take that and pass it through here.
+
+01:05.100 --> 01:07.560
+So it will just append it to the end.
+
+01:07.560 --> 01:10.293
+So if we have two arguments that we pass through,
+
+01:11.340 --> 01:13.230
+for whatever reason, it wouldn't make sense here,
+
+01:13.230 --> 01:15.840
+but if we did, Git would pass both of them
+
+01:15.840 --> 01:17.310
+in that same order.
+
+01:17.310 --> 01:19.170
+So this makes it really really easy
+
+01:19.170 --> 01:22.080
+to define aliases that involve arguments.
+
+01:22.080 --> 01:24.270
+We can do a lot more complex things.
+
+01:24.270 --> 01:28.470
+For example, CM, if we want that for commit message.
+
+01:28.470 --> 01:31.830
+So I wouldn't just do C, because a lot of the time,
+
+01:31.830 --> 01:33.655
+you need to write full commit messages,
+
+01:33.655 --> 01:35.941
+open it up in the editor, multiple lines,
+
+01:35.941 --> 01:39.300
+follow a particular format, template for your message,
+
+01:39.300 --> 01:44.190
+so I would do CM as the shortcut for dash M.
+
+01:44.190 --> 01:47.100
+So if I just do that and I save,
+
+01:47.100 --> 01:48.660
+do I have any changes in here?
+
+01:48.660 --> 01:51.543
+Let's do our git l, or rather, s.
+
+01:53.040 --> 01:54.540
+I don't have anything to commit,
+
+01:54.540 --> 01:56.610
+so let's just make a new file.
+
+01:56.610 --> 02:01.610
+Let's do touch new.js, all right, and then git s again.
+
+02:02.880 --> 02:07.020
+We can add new.js. We didn't set up an alias for that.
+
+02:07.020 --> 02:10.230
+And now I can do get cm and then a message,
+
+02:10.230 --> 02:12.873
+like my new commit.
+
+02:13.710 --> 02:15.060
+All right.
+
+02:15.060 --> 02:17.118
+Oh, I totally forgot not to use exclamation points
+
+02:17.118 --> 02:18.870
+in the terminal.
+
+02:18.870 --> 02:22.140
+And if we take a look, get l for get log,
+
+02:22.140 --> 02:24.330
+we see my new commit.
+
+02:24.330 --> 02:28.920
+So we successfully made a new commit using CM.
+
+02:28.920 --> 02:32.640
+So we could do another example, git add.
+
+02:32.640 --> 02:34.170
+There's another one, right?
+
+02:34.170 --> 02:35.460
+We add files.
+
+02:35.460 --> 02:38.820
+We could just do A equals add,
+
+02:38.820 --> 02:41.580
+and I can add as many arguments after,
+
+02:41.580 --> 02:43.920
+you know, file one, file two,
+
+02:43.920 --> 02:45.540
+they all will be included.
+
+02:45.540 --> 02:47.040
+They'll be passed through.
+
+02:47.040 --> 02:50.940
+When I do git a, they'll be passed through to git add.
+
+02:50.940 --> 02:52.380
+So let's try that.
+
+02:52.380 --> 02:55.500
+Here is the repository I'm working on.
+
+02:55.500 --> 02:58.860
+Let's just add some changes to this README file
+
+02:58.860 --> 03:02.940
+and to this JS file. and to our package.json.
+
+03:02.940 --> 03:04.503
+I'm really destroying things.
+
+03:05.490 --> 03:06.780
+What should we change in here?
+
+03:06.780 --> 03:08.640
+Maybe a version number.
+
+03:08.640 --> 03:11.640
+It doesn't matter, I'm just making a lot of changes.
+
+03:11.640 --> 03:12.473
+Okay?
+
+03:12.473 --> 03:14.760
+So if I type git s now,
+
+03:14.760 --> 03:17.730
+instead of status, why not use our new alias?
+
+03:17.730 --> 03:21.180
+If I want to add two of them, the README and new.js,
+
+03:21.180 --> 03:25.710
+I can do git a, and then README and new.js.
+
+03:25.710 --> 03:27.510
+Now, this only saved us two characters, right?
+
+03:27.510 --> 03:29.880
+Add is not that long of a command.
+
+03:29.880 --> 03:31.650
+None of these are saving us a lot,
+
+03:31.650 --> 03:35.010
+although, you know, it's annoying to do git commit -m.
+
+03:35.010 --> 03:36.900
+But I'm gonna show you in the next video
+
+03:36.900 --> 03:39.300
+some more complicated commands or aliases
+
+03:39.300 --> 03:42.210
+that people like to use that we'll just steal.
+
+03:42.210 --> 03:45.153
+Well, they're shared for us to use, so we will borrow.
+
+03:45.990 --> 03:47.590
+But lemme just demonstrate this.
+
+03:48.600 --> 03:51.150
+So git a with these two arguments,
+
+03:51.150 --> 03:54.690
+they both were passed through, those two values, to git add.
+
+03:54.690 --> 03:56.580
+And if we take a look at our status,
+
+03:56.580 --> 03:58.320
+both of them are ready to be committed,
+
+03:58.320 --> 04:00.693
+and now we can do commit with a message.
+
+04:01.620 --> 04:04.050
+You know, another commit.
+
+04:04.050 --> 04:05.430
+Yay.
+
+04:05.430 --> 04:08.820
+And we'll do git l, and there we are.
+
+04:08.820 --> 04:10.980
+Another commit, yay.
+
+04:10.980 --> 04:13.560
+Okay, so you don't really have to worry about arguments.
+
+04:13.560 --> 04:15.480
+You don't have to do anything fancy.
+
+04:15.480 --> 04:17.190
+They're automatically passed through
+
+04:17.190 --> 04:19.353
+when you define an alias and call it.
