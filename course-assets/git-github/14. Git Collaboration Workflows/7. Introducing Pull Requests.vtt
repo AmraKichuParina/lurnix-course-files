@@ -1,0 +1,742 @@
+WEBVTT
+
+00:00.180 --> 00:02.280
+Instructor: So now we get to talk about pull requests.
+
+00:02.280 --> 00:04.980
+This is the first of a few videos on the topic.
+
+00:04.980 --> 00:06.270
+I'm just gonna start in this video
+
+00:06.270 --> 00:09.660
+by talking about what pull requests or PRs are
+
+00:09.660 --> 00:12.240
+and why we want them or why they exist.
+
+00:12.240 --> 00:13.650
+And then in subsequent videos,
+
+00:13.650 --> 00:14.970
+we'll make our own.
+
+00:14.970 --> 00:18.570
+Okay, so we talked about this concept of working on branches
+
+00:18.570 --> 00:20.730
+and how that makes our life a lot easier.
+
+00:20.730 --> 00:21.960
+But then at some point
+
+00:21.960 --> 00:24.090
+somebody needs to merge those changes in
+
+00:24.090 --> 00:26.760
+from a feature branch into some main branch,
+
+00:26.760 --> 00:28.560
+master main, whatever, right?
+
+00:28.560 --> 00:31.110
+We don't just stay on separate feature branches forever
+
+00:31.110 --> 00:33.060
+otherwise everyone would be working in a silo
+
+00:33.060 --> 00:35.010
+and never merging and sharing their code,
+
+00:35.010 --> 00:37.860
+which defeats the whole collaboration thing.
+
+00:37.860 --> 00:40.530
+So rather than just allowing a free for all merge,
+
+00:40.530 --> 00:43.260
+especially if you're at a company where the stakes are high
+
+00:43.260 --> 00:46.110
+and you can't afford to screw up something on the main
+
+00:46.110 --> 00:49.050
+or the master branch, you have users, you've got,
+
+00:49.050 --> 00:51.060
+I mean, even if not that,
+
+00:51.060 --> 00:52.620
+if you've got a hundreds of developers
+
+00:52.620 --> 00:55.080
+and somebody includes some bad commit
+
+00:55.080 --> 00:57.540
+or something that breaks things on the main branch,
+
+00:57.540 --> 01:00.510
+at the very least you've got a hundred something developers
+
+01:00.510 --> 01:03.510
+who now have a bad version of that main branch
+
+01:03.510 --> 01:06.090
+and they have to get rid of a commit or reset.
+
+01:06.090 --> 01:07.320
+It's just annoying.
+
+01:07.320 --> 01:08.370
+You wanna make sure
+
+01:08.370 --> 01:11.040
+that whatever you are merging in
+
+01:11.040 --> 01:12.690
+or whoever is doing the merging
+
+01:12.690 --> 01:15.150
+has some discussion around it,
+
+01:15.150 --> 01:16.410
+has some approval,
+
+01:16.410 --> 01:18.180
+maybe changes are made
+
+01:18.180 --> 01:20.520
+at the request of somebody else, right?
+
+01:20.520 --> 01:22.860
+There's some code review process involved,
+
+01:22.860 --> 01:26.340
+and pull requests or PRs are an integral part
+
+01:26.340 --> 01:27.480
+of that process.
+
+01:27.480 --> 01:30.720
+So pull requests are not a native Git feature.
+
+01:30.720 --> 01:32.520
+They are built on top
+
+01:32.520 --> 01:35.550
+of platforms like GitHub and Bitbucket and some others.
+
+01:35.550 --> 01:38.610
+But really most people are referring to GitHub these days.
+
+01:38.610 --> 01:41.310
+But again, not exclusive to GitHub
+
+01:41.310 --> 01:45.330
+and 100% not part of Git itself.
+
+01:45.330 --> 01:47.070
+So pull requests allow developers
+
+01:47.070 --> 01:50.250
+to tell other team members, other collaborators
+
+01:50.250 --> 01:51.900
+that they have some new work
+
+01:51.900 --> 01:53.310
+that they want to be reviewed,
+
+01:53.310 --> 01:55.950
+new work that is on a branch
+
+01:55.950 --> 01:59.280
+that they want to be discussed, accepted,
+
+01:59.280 --> 02:02.340
+AKA merged in or rejected.
+
+02:02.340 --> 02:04.320
+And this facilitates discussion.
+
+02:04.320 --> 02:05.580
+They can get feedback,
+
+02:05.580 --> 02:09.660
+they can even update the work on the same pull request.
+
+02:09.660 --> 02:11.017
+So think of it as,
+
+02:11.017 --> 02:14.370
+"Hey everybody on my team, hundreds of people
+
+02:14.370 --> 02:17.790
+I have this new branch with this feature I just completed
+
+02:17.790 --> 02:19.260
+or I think it's complete.
+
+02:19.260 --> 02:20.093
+It's on GitHub.
+
+02:20.093 --> 02:22.320
+I'm making this request, this pull request.
+
+02:22.320 --> 02:24.930
+Can you take a look at it and somebody,
+
+02:24.930 --> 02:26.880
+will you merge it in if it's good,
+
+02:26.880 --> 02:29.250
+or will you tell me if it's not good?"
+
+02:29.250 --> 02:31.500
+That's pretty much what a pull request is.
+
+02:31.500 --> 02:34.080
+So we do some work locally on a feature branch
+
+02:34.080 --> 02:36.210
+like we did in the last couple of videos.
+
+02:36.210 --> 02:38.370
+Stevie added the nav bar branch, right?
+
+02:38.370 --> 02:39.540
+We finished the nav bar,
+
+02:39.540 --> 02:41.070
+we push it up to GitHub.
+
+02:41.070 --> 02:42.750
+Instead of just merging that directly
+
+02:42.750 --> 02:45.750
+into master or into main,
+
+02:45.750 --> 02:46.770
+and a lot of companies,
+
+02:46.770 --> 02:48.450
+actually the main branch is protected.
+
+02:48.450 --> 02:49.680
+I'll show you how to do that.
+
+02:49.680 --> 02:51.360
+You can't just merge stuff in.
+
+02:51.360 --> 02:53.490
+You actually have to make a pull request
+
+02:53.490 --> 02:55.770
+so that there's an opportunity to discuss
+
+02:55.770 --> 02:58.860
+and accept or reject your changes.
+
+02:58.860 --> 03:00.360
+Somebody makes that decision.
+
+03:00.360 --> 03:03.000
+Maybe multiple people actually have to consent
+
+03:03.000 --> 03:05.100
+and actually approve of your changes.
+
+03:05.100 --> 03:06.570
+So once you make the pull request,
+
+03:06.570 --> 03:08.310
+you then have to wait for it to be approved
+
+03:08.310 --> 03:10.770
+and hopefully merged or something.
+
+03:10.770 --> 03:12.720
+Discussion, it might be closed.
+
+03:12.720 --> 03:15.480
+It might be ignored, but hopefully not.
+
+03:15.480 --> 03:17.580
+So here's an example with some diagrams.
+
+03:17.580 --> 03:18.690
+I'm working on this feature.
+
+03:18.690 --> 03:21.210
+I finish it, I push it up to GitHub,
+
+03:21.210 --> 03:23.370
+and I wanna open a pull request.
+
+03:23.370 --> 03:27.090
+So on GitHub there's this new branch, my new feature,
+
+03:27.090 --> 03:29.040
+and you've probably seen this before,
+
+03:29.040 --> 03:30.330
+compare and pull request.
+
+03:30.330 --> 03:31.620
+It showed up a couple of times
+
+03:31.620 --> 03:33.210
+when you push branches up.
+
+03:33.210 --> 03:35.580
+That is a button I definitely want to click
+
+03:35.580 --> 03:37.080
+to make a pull request,
+
+03:37.080 --> 03:39.300
+or I can also click it here.
+
+03:39.300 --> 03:41.310
+There's a couple of different ways of doing it.
+
+03:41.310 --> 03:43.830
+But if I click pull request,
+
+03:43.830 --> 03:45.720
+I then have this option to choose
+
+03:45.720 --> 03:47.730
+what pull request am I making?
+
+03:47.730 --> 03:50.250
+Well, I am requesting that my branch,
+
+03:50.250 --> 03:53.460
+my new feature be merged in to master
+
+03:53.460 --> 03:55.680
+or to main or whatever the default
+
+03:55.680 --> 03:57.270
+or it could be any other base branch.
+
+03:57.270 --> 04:00.600
+But typically we're talking about master slash main.
+
+04:00.600 --> 04:03.330
+So then I need to provide some information, right?
+
+04:03.330 --> 04:07.530
+I need to come up with a name for what my pull request is.
+
+04:07.530 --> 04:08.850
+What's the reason for it?
+
+04:08.850 --> 04:10.350
+What does it include?
+
+04:10.350 --> 04:12.300
+Depending on the company and the organization
+
+04:12.300 --> 04:13.980
+there can be some pretty strict rules
+
+04:13.980 --> 04:15.270
+for what goes in here.
+
+04:15.270 --> 04:17.310
+And then I can click create pull request,
+
+04:17.310 --> 04:18.510
+and then I wait.
+
+04:18.510 --> 04:20.790
+So in this hypothetical world of these slides
+
+04:20.790 --> 04:21.623
+I have a boss
+
+04:21.623 --> 04:25.440
+and my boss is the only one who can approve changes,
+
+04:25.440 --> 04:27.930
+who can actually merge pull requests in on GitHub.
+
+04:27.930 --> 04:30.450
+There are different ways of configuring permissions
+
+04:30.450 --> 04:32.370
+and all of that that we can get into.
+
+04:32.370 --> 04:35.970
+But basically my boss has to accept my pull request.
+
+04:35.970 --> 04:38.460
+I as just an employee,
+
+04:38.460 --> 04:41.640
+I actually don't have the ability to merge directly
+
+04:41.640 --> 04:42.990
+into master on GitHub.
+
+04:42.990 --> 04:45.030
+I'm supposed to make a pull request.
+
+04:45.030 --> 04:47.610
+So my boss finds some issues
+
+04:47.610 --> 04:49.620
+and she actually leaves some feedback.
+
+04:49.620 --> 04:51.780
+She asked me to make some changes,
+
+04:51.780 --> 04:53.040
+pinging me when it's ready.
+
+04:53.040 --> 04:57.120
+I can notify people or I can mention people in comments.
+
+04:57.120 --> 04:59.460
+I can attach files.
+
+04:59.460 --> 05:02.340
+She can even just close this out by the way.
+
+05:02.340 --> 05:04.290
+Just close it without comment.
+
+05:04.290 --> 05:07.110
+Nope, it's a bit of a blunt way of saying no.
+
+05:07.110 --> 05:08.820
+Or she can just leave the comments.
+
+05:08.820 --> 05:11.190
+So then I can respond.
+
+05:11.190 --> 05:13.140
+We can have a conversation about it, right?
+
+05:13.140 --> 05:15.840
+I can say, "Okay, sounds good.
+
+05:15.840 --> 05:17.670
+I'll get to work on blah, blah, blah, blah, blah."
+
+05:17.670 --> 05:19.297
+Or I can say something like,
+
+05:19.297 --> 05:21.390
+"Hmm, are you sure you really want me to do that?
+
+05:21.390 --> 05:23.250
+What's the motivation?
+
+05:23.250 --> 05:25.410
+I mean, I'm not sure I agree with that.
+
+05:25.410 --> 05:27.480
+What do you think other developer?
+
+05:27.480 --> 05:30.150
+And then I can bring somebody else in and we can have
+
+05:30.150 --> 05:33.810
+a full discussion here as a team, okay?"
+
+05:33.810 --> 05:37.170
+I can even make more changes if she requests them.
+
+05:37.170 --> 05:38.970
+But then eventually, hopefully
+
+05:38.970 --> 05:41.490
+my boss decides things are good to go,
+
+05:41.490 --> 05:43.680
+it's time to merge those changes in.
+
+05:43.680 --> 05:45.810
+So if she accepts my pull request,
+
+05:45.810 --> 05:48.930
+she can then go and click merge pull request
+
+05:48.930 --> 05:50.010
+and merge my changes
+
+05:50.010 --> 05:52.020
+or whoever's in charge of doing the merging,
+
+05:52.020 --> 05:54.450
+merge my branch into the main branch,
+
+05:54.450 --> 05:56.040
+the branch I was requesting,
+
+05:56.040 --> 05:57.900
+and then we're good to go.
+
+05:57.900 --> 05:59.280
+So she'll click that button
+
+05:59.280 --> 06:02.250
+and then I'll demonstrate this for real,
+
+06:02.250 --> 06:03.600
+not just with slides.
+
+06:03.600 --> 06:06.300
+Then she can make the merge commit message directly
+
+06:06.300 --> 06:07.530
+on GitHub.
+
+06:07.530 --> 06:11.850
+So this is just a mechanism for merging changes in
+
+06:11.850 --> 06:13.980
+from a feature branch into some other branch
+
+06:13.980 --> 06:15.870
+where instead of just going for it,
+
+06:15.870 --> 06:17.790
+we have this process
+
+06:17.790 --> 06:19.320
+where we we can have conversations,
+
+06:19.320 --> 06:20.310
+we can chat with each other,
+
+06:20.310 --> 06:22.500
+we can make updates, request things.
+
+06:22.500 --> 06:25.590
+We can reject a suggestion or a pull request,
+
+06:25.590 --> 06:26.910
+or we can accept it.
+
+06:26.910 --> 06:28.470
+But if my pull request is accepted
+
+06:28.470 --> 06:30.990
+the end result is still just my branch is merged
+
+06:30.990 --> 06:32.160
+into another branch.
+
+06:32.160 --> 06:34.830
+It's just a slower, longer process
+
+06:34.830 --> 06:38.670
+that is more transparent and more controlled, I guess,
+
+06:38.670 --> 06:40.080
+for merging.
+
+06:40.080 --> 06:42.840
+So that's an intro to the concept of pull requests.
+
+06:42.840 --> 06:44.310
+I'll wrap up by showing you
+
+06:44.310 --> 06:48.480
+that if we look at any popular repository on GitHub
+
+06:48.480 --> 06:49.710
+there's going to be a section
+
+06:49.710 --> 06:52.170
+for pull requests like this is React,
+
+06:52.170 --> 06:55.890
+a very popular repository, lots of contributors.
+
+06:55.890 --> 06:59.670
+Those contributors don't just directly push changes up.
+
+06:59.670 --> 07:01.170
+They don't even have permission
+
+07:01.170 --> 07:05.220
+to directly push changes to any of the branches here.
+
+07:05.220 --> 07:07.140
+There's another way of making pull requests.
+
+07:07.140 --> 07:08.970
+We're gonna talk about involving something called
+
+07:08.970 --> 07:10.740
+the Fork and Clone Workflow.
+
+07:10.740 --> 07:12.360
+That will be coming up in a little bit.
+
+07:12.360 --> 07:14.100
+It's a common pattern to contribute
+
+07:14.100 --> 07:15.150
+to open source projects
+
+07:15.150 --> 07:17.040
+where you're not an actual collaborator,
+
+07:17.040 --> 07:18.840
+you don't have permission to push.
+
+07:18.840 --> 07:20.040
+Anyway, we'll get there.
+
+07:20.040 --> 07:21.750
+But if we go to pull requests
+
+07:21.750 --> 07:23.730
+we can see quite a few of them here.
+
+07:23.730 --> 07:25.920
+And again, there's a lot of structure
+
+07:25.920 --> 07:28.230
+and patterns that have to be followed
+
+07:28.230 --> 07:29.820
+when you're creating a pull request
+
+07:29.820 --> 07:32.280
+for a big open source project.
+
+07:32.280 --> 07:36.000
+So they all follow particular naming conventions.
+
+07:36.000 --> 07:38.400
+They all have these different tags.
+
+07:38.400 --> 07:39.810
+But you can see, here's one,
+
+07:39.810 --> 07:42.150
+somebody wants to merge one commit into master
+
+07:42.150 --> 07:43.650
+from their feature branch.
+
+07:43.650 --> 07:45.270
+Notice the name of this feature branch.
+
+07:45.270 --> 07:47.310
+Well, this is not a great one actually
+
+07:47.310 --> 07:48.270
+from Dependabot.
+
+07:48.270 --> 07:49.440
+If I find another one,
+
+07:49.440 --> 07:51.453
+how about this one here?
+
+07:52.740 --> 07:55.920
+So this is a pull request from the branch
+
+07:55.920 --> 08:00.920
+Rick Hanlon II, Hanlonii, I don't know.
+
+08:00.960 --> 08:03.000
+Rh-add-effect-warn-test.
+
+08:03.000 --> 08:04.230
+That's the feature branch.
+
+08:04.230 --> 08:06.210
+Whatever he did on this branch,
+
+08:06.210 --> 08:08.460
+he wants to merge it into master.
+
+08:08.460 --> 08:11.190
+And then we see some information
+
+08:11.190 --> 08:13.980
+about what his pull request includes.
+
+08:13.980 --> 08:15.510
+He wants to add a test
+
+08:15.510 --> 08:18.000
+so we can see under commits,
+
+08:18.000 --> 08:20.640
+here's the commit, we can view that commit,
+
+08:20.640 --> 08:22.170
+what's included, what's new.
+
+08:22.170 --> 08:24.240
+So some new code here
+
+08:24.240 --> 08:26.040
+and then there's a discussion around it.
+
+08:26.040 --> 08:26.873
+So this person said,
+
+08:26.873 --> 08:28.830
+"Please, this should probably throw an error,
+
+08:28.830 --> 08:30.780
+like how blah, blah, blah, blah, blah."
+
+08:32.280 --> 08:34.260
+It's a conversation in other words.
+
+08:34.260 --> 08:35.790
+And this one is still open,
+
+08:35.790 --> 08:38.340
+meaning it has not been closed or rejected,
+
+08:38.340 --> 08:40.080
+but it also has not been merged.
+
+08:40.080 --> 08:44.280
+Oh, and there's a lot more conversation here around this PR
+
+08:44.280 --> 08:46.260
+and that's kind of a good place to end,
+
+08:46.260 --> 08:47.730
+just to show you an example.
+
+08:47.730 --> 08:50.580
+So these larger projects have tons of pull requests.
+
+08:50.580 --> 08:52.650
+Sometimes it can take a little while to get yours
+
+08:52.650 --> 08:54.240
+if it's not super important,
+
+08:54.240 --> 08:56.580
+if it's not a critical feature you're working on
+
+08:56.580 --> 08:58.050
+it can take a little while to get noticed,
+
+08:58.050 --> 09:00.780
+depending on the resources available
+
+09:00.780 --> 09:02.280
+to the project maintainers.
+
+09:02.280 --> 09:04.860
+Anyway, that's the basic idea of a pull request.
+
+09:04.860 --> 09:07.110
+I'll show you the workflow in the next video.
