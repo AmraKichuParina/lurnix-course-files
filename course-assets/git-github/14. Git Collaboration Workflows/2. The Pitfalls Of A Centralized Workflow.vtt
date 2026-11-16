@@ -1,0 +1,583 @@
+WEBVTT
+
+00:00.000 --> 00:02.280
+Instructor: So the first of these collaborative workflows
+
+00:02.280 --> 00:04.260
+I'm calling the centralized workflow.
+
+00:04.260 --> 00:06.870
+It's not really an official name or anything,
+
+00:06.870 --> 00:09.150
+but I'm telling you now, it is the weakest,
+
+00:09.150 --> 00:12.330
+it's the worst of these workflows for collaborating.
+
+00:12.330 --> 00:13.800
+And the reason I'm showing it to you
+
+00:13.800 --> 00:17.070
+is that the shortcomings of the centralized workflow
+
+00:17.070 --> 00:19.680
+are addressed by the other workflows
+
+00:19.680 --> 00:21.210
+that we're going to discuss.
+
+00:21.210 --> 00:24.480
+So we're kind of motivating the more complicated workflows,
+
+00:24.480 --> 00:26.400
+but we're starting with the simplest.
+
+00:26.400 --> 00:28.050
+So I'm calling it the centralized workflow,
+
+00:28.050 --> 00:30.270
+aka everyone works on the master branch,
+
+00:30.270 --> 00:32.550
+or everyone works on the main branch,
+
+00:32.550 --> 00:35.850
+or everyone works on some single branch.
+
+00:35.850 --> 00:37.290
+So that's why it's super-easy.
+
+00:37.290 --> 00:39.600
+It's centralized, because all the work is done
+
+00:39.600 --> 00:41.070
+on a single branch.
+
+00:41.070 --> 00:42.990
+Whatever that branch is, historically,
+
+00:42.990 --> 00:45.390
+that would just be the master branch, a default,
+
+00:45.390 --> 00:46.830
+but it could be any branch.
+
+00:46.830 --> 00:48.600
+So it's straightforward, right?
+
+00:48.600 --> 00:51.600
+We don't have to worry about pushing up a whole bunch
+
+00:51.600 --> 00:53.700
+of different branches and pulling them down
+
+00:53.700 --> 00:55.500
+and merging different branches,
+
+00:55.500 --> 00:57.180
+we just work with one branch.
+
+00:57.180 --> 00:58.560
+So I have some diagrams
+
+00:58.560 --> 01:00.900
+that I'm gonna be using throughout this section.
+
+01:00.900 --> 01:03.090
+They all kind of follow the same pattern.
+
+01:03.090 --> 01:05.460
+Up top, we have three different collaborators,
+
+01:05.460 --> 01:08.880
+Pamela, David, and Forrest,
+
+01:08.880 --> 01:10.980
+and I'm highlighting one of them
+
+01:10.980 --> 01:14.100
+to indicate whose repository we're looking at
+
+01:14.100 --> 01:17.970
+on their local machine versus up top in the right corner.
+
+01:17.970 --> 01:22.230
+This is the GitHub repository that all three are using.
+
+01:22.230 --> 01:25.140
+So this is the same repo on GitHub for everyone.
+
+01:25.140 --> 01:28.260
+But then we have three different local repositories,
+
+01:28.260 --> 01:30.720
+but they're all connected to that same GitHub repo.
+
+01:30.720 --> 01:33.270
+And I have similar diagrams for the other workflows
+
+01:33.270 --> 01:35.640
+the same characters, the same format.
+
+01:35.640 --> 01:37.560
+So with this centralized workflow,
+
+01:37.560 --> 01:39.780
+everybody clones the same repository,
+
+01:39.780 --> 01:42.330
+so this is our starting point, just one commit.
+
+01:42.330 --> 01:44.640
+So Pamela clones it down, right?
+
+01:44.640 --> 01:46.590
+There's the master branch or the main branch,
+
+01:46.590 --> 01:49.170
+whatever we wanna name it, it's the same branch.
+
+01:49.170 --> 01:52.560
+So David clones it, he gets that default branch, master.
+
+01:52.560 --> 01:55.588
+Forrest clones the same GitHub repo, and he has it.
+
+01:55.588 --> 01:57.480
+So now they get to work.
+
+01:57.480 --> 02:00.150
+Forrest, this guy here with a mustache
+
+02:00.150 --> 02:02.130
+spends his day adding and committing.
+
+02:02.130 --> 02:03.660
+He's working on some new feature.
+
+02:03.660 --> 02:05.220
+He has two new commits.
+
+02:05.220 --> 02:07.350
+So this is what he started with here.
+
+02:07.350 --> 02:11.100
+He has two new commits worth of work on the master branch.
+
+02:11.100 --> 02:13.950
+So he wants to share that with everyone, right?
+
+02:13.950 --> 02:15.390
+He pushes that up.
+
+02:15.390 --> 02:17.160
+So you can see those new commits.
+
+02:17.160 --> 02:19.263
+There's now three total commits on GitHub.
+
+02:20.280 --> 02:22.830
+During this same period where Forrest was working
+
+02:22.830 --> 02:24.420
+and he pushed his code up,
+
+02:24.420 --> 02:26.010
+Pamela has also been hard at work
+
+02:26.010 --> 02:28.020
+on her own feature all day.
+
+02:28.020 --> 02:31.650
+So that yellow commit is Pamela's new work.
+
+02:31.650 --> 02:34.350
+Okay, so as she's been working,
+
+02:34.350 --> 02:36.360
+Forrest already pushed some code up.
+
+02:36.360 --> 02:39.360
+Pamela now wants to share her code with everyone.
+
+02:39.360 --> 02:40.800
+So she wants to push it up.
+
+02:40.800 --> 02:43.980
+So she tries it, git push origin master,
+
+02:43.980 --> 02:45.300
+but she's not allowed to.
+
+02:45.300 --> 02:46.133
+Why?
+
+02:46.133 --> 02:48.810
+Well, she gets this message, failed to push.
+
+02:48.810 --> 02:51.900
+Updates were rejected because the tip of your current branch
+
+02:51.900 --> 02:54.360
+is behind its remote counterpart.
+
+02:54.360 --> 02:58.560
+Merge the remote changes git pull before pushing again.
+
+02:58.560 --> 03:00.810
+So git is telling her, I can't do that.
+
+03:00.810 --> 03:03.390
+There are changes that you don't have on GitHub.
+
+03:03.390 --> 03:04.500
+You need to get those changes
+
+03:04.500 --> 03:06.390
+and merge yours with those changes,
+
+03:06.390 --> 03:08.580
+and then you can push back up.
+
+03:08.580 --> 03:10.740
+So already we hit a roadblock, right?
+
+03:10.740 --> 03:13.343
+Just for Pamela to push her code up,
+
+03:13.343 --> 03:15.570
+she has to pull down everything
+
+03:15.570 --> 03:18.060
+that her other collaborators have pushed up.
+
+03:18.060 --> 03:20.190
+They're all working on the same branch.
+
+03:20.190 --> 03:21.930
+So if she does that, she pulls down
+
+03:21.930 --> 03:24.060
+she gets the changes that Forrest had pushed
+
+03:24.060 --> 03:26.250
+from on the master branch from GitHub,
+
+03:26.250 --> 03:28.651
+then she merges her work in
+
+03:28.651 --> 03:30.450
+and hopefully that goes smoothly.
+
+03:30.450 --> 03:32.730
+There might be a bunch of conflicts, maybe not,
+
+03:32.730 --> 03:36.420
+but she has to do it and then she can push back up.
+
+03:36.420 --> 03:40.740
+So now there are four commits up on GitHub or more,
+
+03:40.740 --> 03:42.630
+but a minimum of four,
+
+03:42.630 --> 03:43.920
+although I didn't really include
+
+03:43.920 --> 03:45.750
+there would be a merge commit here.
+
+03:45.750 --> 03:47.520
+So let's say five, but whatever it is,
+
+03:47.520 --> 03:51.420
+she pushes up her new commits and she's good to go, right?
+
+03:51.420 --> 03:53.730
+That's her part done for the day.
+
+03:53.730 --> 03:55.680
+Now, during all of this,
+
+03:55.680 --> 03:58.410
+poor David has been working on a new feature,
+
+03:58.410 --> 04:01.590
+but he's been having some doubts, it's not working.
+
+04:01.590 --> 04:03.630
+He's really halfway done.
+
+04:03.630 --> 04:05.670
+He's deleted a bunch of important files,
+
+04:05.670 --> 04:08.760
+he's committed out some code, things are broken.
+
+04:08.760 --> 04:10.200
+So he wants to get some input,
+
+04:10.200 --> 04:13.050
+some advice from his collaborators.
+
+04:13.050 --> 04:14.370
+He wants to start a discussion
+
+04:14.370 --> 04:15.690
+and he wants them to see the code.
+
+04:15.690 --> 04:17.880
+They're not working in an office together.
+
+04:17.880 --> 04:21.716
+So he has this work and he has some commits
+
+04:21.716 --> 04:24.420
+indicated by this meh face,
+
+04:24.420 --> 04:27.240
+this I guess, is that I would call it a meh face
+
+04:27.240 --> 04:30.630
+or a neutral face, I don't know.
+
+04:30.630 --> 04:33.000
+Anyway, he's not happy with it, but he makes a commit.
+
+04:33.000 --> 04:36.960
+And if we're using this centralized workflow, one branch,
+
+04:36.960 --> 04:39.270
+so he's just working on the master branch.
+
+04:39.270 --> 04:41.370
+So in order for him to share this,
+
+04:41.370 --> 04:42.810
+he can't just push it up,
+
+04:42.810 --> 04:46.860
+because as we saw Pamela earlier tried and git said,
+
+04:46.860 --> 04:48.000
+no way, you can't do that,
+
+04:48.000 --> 04:50.160
+you've gotta pull down, get the changes, then merge
+
+04:50.160 --> 04:51.510
+and then you can push.
+
+04:51.510 --> 04:52.800
+So that's what he does.
+
+04:52.800 --> 04:54.330
+Before he can even share
+
+04:54.330 --> 04:58.770
+this mediocre, unfinished broken code,
+
+04:58.770 --> 05:02.310
+he has to first pull down, get all the new changes
+
+05:02.310 --> 05:06.300
+and merge his broken stuff in, his incomplete feature,
+
+05:06.300 --> 05:09.120
+he has to merge that in with the rest of the work
+
+05:09.120 --> 05:11.070
+everyone else has done on the master branch,
+
+05:11.070 --> 05:12.750
+then he can push that up
+
+05:12.750 --> 05:15.990
+and now everyone can go and pull his work down.
+
+05:15.990 --> 05:17.940
+And he broke the code base.
+
+05:17.940 --> 05:19.980
+Probably if this is incomplete
+
+05:19.980 --> 05:22.290
+everybody now has that incomplete code
+
+05:22.290 --> 05:24.660
+and that's really frustrating and problematic.
+
+05:24.660 --> 05:26.790
+All he wanted to do is get some input
+
+05:26.790 --> 05:30.600
+and have some of his collaborators take a look at his work.
+
+05:30.600 --> 05:32.760
+But to do that with this workflow
+
+05:32.760 --> 05:36.240
+he had to wreck the master branch, the one and only branch.
+
+05:36.240 --> 05:40.530
+So hopefully the problem is clear with those diagrams.
+
+05:40.530 --> 05:42.480
+It's simple, you don't have to think about
+
+05:42.480 --> 05:45.330
+where you're working if you're only working on one branch.
+
+05:45.330 --> 05:48.090
+But there are some serious issues, some shortcomings.
+
+05:48.090 --> 05:51.090
+First of all, every person has to spend a ton of time
+
+05:51.090 --> 05:54.180
+resolving conflicts or at least merging code,
+
+05:54.180 --> 05:56.250
+especially as team size scales up.
+
+05:56.250 --> 05:59.040
+Imagine you're working with, let's say, 10 developers,
+
+05:59.040 --> 06:00.300
+and at the end of the day,
+
+06:00.300 --> 06:03.000
+everybody makes a bunch of commits, they push them up.
+
+06:03.000 --> 06:05.460
+Well, for each one of those developers
+
+06:05.460 --> 06:07.260
+to make those commits and push them up,
+
+06:07.260 --> 06:09.690
+they first have to pull down everyone else's work
+
+06:09.690 --> 06:11.940
+just to merge their stuff in.
+
+06:11.940 --> 06:15.330
+So it's a lot of merging and potential conflicts
+
+06:15.330 --> 06:17.910
+even if work is not entirely finished.
+
+06:17.910 --> 06:19.860
+So that brings me to the next piece,
+
+06:19.860 --> 06:21.510
+no one can work on anything
+
+06:21.510 --> 06:24.150
+without disturbing the main code base.
+
+06:24.150 --> 06:27.300
+How do you try some radical experiment?
+
+06:27.300 --> 06:30.630
+How do you try removing files and committing things out,
+
+06:30.630 --> 06:33.990
+trying to fix some crazy difficult bug
+
+06:33.990 --> 06:36.570
+if you have to work on the master branch?
+
+06:36.570 --> 06:37.860
+How do you experiment?
+
+06:37.860 --> 06:39.540
+And that brings us to the last piece,
+
+06:39.540 --> 06:41.987
+there's no way to really collaborate on anything
+
+06:41.987 --> 06:45.540
+unless you push incomplete code up to master
+
+06:45.540 --> 06:47.820
+and now all your other teammates have incomplete
+
+06:47.820 --> 06:48.840
+or broken code,
+
+06:48.840 --> 06:51.540
+which is what happened here in our final scenario.
+
+06:51.540 --> 06:52.440
+David wanted...
+
+06:52.440 --> 06:53.273
+Is this David?
+
+06:53.273 --> 06:55.050
+Yes, David wanted some help.
+
+06:55.050 --> 06:57.630
+He wanted to collaborate with, let's say, Pamela.
+
+06:57.630 --> 06:58.920
+For her to get that code
+
+06:58.920 --> 07:01.920
+he had to add stuff onto master that's broken,
+
+07:01.920 --> 07:05.790
+push that up, and now the whole code base is broken
+
+07:05.790 --> 07:08.340
+at least at the tip of the master branch.
+
+07:08.340 --> 07:10.380
+Everyone else comes to work the next morning,
+
+07:10.380 --> 07:11.880
+they get the most recent changes.
+
+07:11.880 --> 07:14.820
+Oh, things are broken for everyone.
+
+07:14.820 --> 07:16.950
+So not a good workflow.
+
+07:16.950 --> 07:20.130
+It can be manageable if you're a very tiny team
+
+07:20.130 --> 07:22.555
+and you're not doing anything experimental.
+
+07:22.555 --> 07:25.320
+Even then, I wouldn't really recommend it,
+
+07:25.320 --> 07:27.450
+but it is a option.
+
+07:27.450 --> 07:30.180
+So that really serves to highlight the problems
+
+07:30.180 --> 07:31.590
+with working in one branch,
+
+07:31.590 --> 07:33.780
+which now motivates us to talk about workflows
+
+07:33.780 --> 07:35.850
+that involve multiple branches.
+
+07:35.850 --> 07:36.990
+That's coming up.
+
+07:36.990 --> 07:37.823
+In the next video,
+
+07:37.823 --> 07:40.110
+I wanna demonstrate some of these problems for real,
+
+07:40.110 --> 07:41.583
+using a GitHub repo.
