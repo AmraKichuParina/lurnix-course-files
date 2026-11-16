@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.090 --> 00:02.610
+-: So, this section is all oriented around installation
+
+00:02.610 --> 00:04.470
+and setup, nothing very glamorous,
+
+00:04.470 --> 00:07.020
+but a lot of critical content that we'll need
+
+00:07.020 --> 00:08.250
+to move forward.
+
+00:08.250 --> 00:09.570
+So, the first thing we cover
+
+00:09.570 --> 00:11.820
+are the two main ways of using Git,
+
+00:11.820 --> 00:15.210
+from the command line and from graphical user interfaces.
+
+00:15.210 --> 00:17.670
+That isn't a very important distinction to understand.
+
+00:17.670 --> 00:20.364
+We'll be playing around with both throughout the course.
+
+00:20.364 --> 00:22.920
+And, then we focus on installing Git.
+
+00:22.920 --> 00:24.750
+So, I have separate instructions for Mac
+
+00:24.750 --> 00:26.331
+versus Windows users.
+
+00:26.331 --> 00:29.130
+That's definitely going to be critical.
+
+00:29.130 --> 00:30.360
+I marked it as yellow
+
+00:30.360 --> 00:32.910
+just because it can take a little bit of time
+
+00:32.910 --> 00:34.230
+if you're on a Windows machine.
+
+00:34.230 --> 00:36.690
+It's not hard, you just have to change some settings,
+
+00:36.690 --> 00:38.130
+and watch the video, you'll see.
+
+00:38.130 --> 00:40.440
+We just click a bunch of times, and hit "next,"
+
+00:40.440 --> 00:42.060
+and then hit "next," and then hit "next."
+
+00:42.060 --> 00:43.620
+But, obviously, very critical.
+
+00:43.620 --> 00:45.990
+We also install an application called GitKraken.
+
+00:45.990 --> 00:48.990
+It's a GUI for Gits, it's free.
+
+00:48.990 --> 00:50.340
+I guess it's not critical.
+
+00:50.340 --> 00:52.350
+You don't have to use it if you wanna use Git,
+
+00:52.350 --> 00:54.900
+but I'm gonna put it as important/critical,
+
+00:54.900 --> 00:57.630
+because for this course we'll be using this,
+
+00:57.630 --> 01:00.480
+but it is not critical to Git, itself.
+
+01:00.480 --> 01:02.760
+Configuring your Git name and email, critical,
+
+01:02.760 --> 01:04.680
+but also very quick and easy.
+
+01:04.680 --> 01:07.800
+And then, the biggest question mark in this section
+
+01:07.800 --> 01:09.810
+is the terminal crash course videos.
+
+01:09.810 --> 01:12.507
+There are three videos at the end of this section
+
+01:12.507 --> 01:16.380
+that are absolutely critical if you have no experience
+
+01:16.380 --> 01:20.130
+working with terminal commands, basic Unix commands,
+
+01:20.130 --> 01:23.100
+like LS, and CD, and Touch.
+
+01:23.100 --> 01:25.110
+So, if you're familiar with those,
+
+01:25.110 --> 01:27.690
+you can skip those videos, and they're not critical.
+
+01:27.690 --> 01:30.664
+They're not really Git specific at all.
+
+01:30.664 --> 01:32.940
+So, if you have experience, you can skip those.
+
+01:32.940 --> 01:37.320
+But, if it's all new to you, I 100% would sit through them.
+
+01:37.320 --> 01:38.310
+You don't need to take notes,
+
+01:38.310 --> 01:40.110
+but practice along with those videos,
+
+01:40.110 --> 01:41.730
+they are very important.
+
+01:41.730 --> 01:44.160
+If you wanna be able to use Git down the line,
+
+01:44.160 --> 01:46.560
+we have to be able to navigate through the terminal.
+
+01:46.560 --> 01:48.300
+So, most things in this section are critical,
+
+01:48.300 --> 01:49.650
+but no big concepts.
+
+01:49.650 --> 01:50.940
+It's just installation,
+
+01:50.940 --> 01:53.670
+plus this weird thing at the end with the terminal.
+
+01:53.670 --> 01:56.220
+I highly recommend checking that out if you're new.
