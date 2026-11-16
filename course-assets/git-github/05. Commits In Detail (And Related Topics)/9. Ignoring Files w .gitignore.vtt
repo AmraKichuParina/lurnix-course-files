@@ -1,0 +1,736 @@
+WEBVTT
+
+00:00.240 --> 00:01.710
+Instructor: When you're working on a project
+
+00:01.710 --> 00:03.000
+and you're using Git,
+
+00:03.000 --> 00:04.680
+there are often situations
+
+00:04.680 --> 00:07.140
+where you have files, directories
+
+00:07.140 --> 00:09.630
+that you just don't want Git to know about
+
+00:09.630 --> 00:11.520
+or to track at any point.
+
+00:11.520 --> 00:13.890
+You want them to be completely ignored
+
+00:13.890 --> 00:15.810
+and there's a mechanism for doing this.
+
+00:15.810 --> 00:18.633
+We can create a particular file called .gitignore,
+
+00:19.890 --> 00:21.420
+but before we go into that,
+
+00:21.420 --> 00:23.760
+let's talk about why you might want this.
+
+00:23.760 --> 00:25.560
+One of the most common situations
+
+00:25.560 --> 00:27.090
+is if you're working on an application,
+
+00:27.090 --> 00:30.270
+you're writing code where you're using API keys,
+
+00:30.270 --> 00:33.810
+credentials, any sort of application secret
+
+00:33.810 --> 00:37.590
+that is tied potentially to a credit card like from AWS
+
+00:37.590 --> 00:40.320
+or some API that you're using
+
+00:40.320 --> 00:43.470
+where you don't want those to get out into the world.
+
+00:43.470 --> 00:45.750
+So you put them in a separate file
+
+00:45.750 --> 00:48.000
+and if you push your code up to GitHub,
+
+00:48.000 --> 00:49.830
+which I realize we haven't talked about,
+
+00:49.830 --> 00:52.380
+but if you share that code and you make it public,
+
+00:52.380 --> 00:54.810
+you don't want that file to be included.
+
+00:54.810 --> 00:57.150
+So you'll still have the file yourself locally
+
+00:57.150 --> 00:59.280
+but you don't want Git to track it.
+
+00:59.280 --> 01:02.280
+Other things include operating system files.
+
+01:02.280 --> 01:05.853
+So on a Mac there are these pesky .DS_Store files
+
+01:05.853 --> 01:09.390
+that have nothing to do with your project or your code.
+
+01:09.390 --> 01:10.980
+They just show up in directories.
+
+01:10.980 --> 01:12.870
+They're system hidden files,
+
+01:12.870 --> 01:14.820
+so you don't want to track those with Git.
+
+01:14.820 --> 01:18.420
+There are similar files on Windows with a different name.
+
+01:18.420 --> 01:19.980
+Other things, log files
+
+01:19.980 --> 01:23.040
+or any files that are output by your application
+
+01:23.040 --> 01:25.770
+that could easily be generated again.
+
+01:25.770 --> 01:28.230
+So if you have an application when you run it,
+
+01:28.230 --> 01:32.280
+it generates some, you know, reports every single day
+
+01:32.280 --> 01:34.860
+and you regenerate that report on demand,
+
+01:34.860 --> 01:36.150
+you don't really don't need Git
+
+01:36.150 --> 01:38.190
+to track that and save that report
+
+01:38.190 --> 01:41.310
+because you can regenerate that report, if that makes sense.
+
+01:41.310 --> 01:42.143
+And then lastly,
+
+01:42.143 --> 01:45.660
+a really common scenario is dependencies or packages.
+
+01:45.660 --> 01:47.820
+So if you've ever worked with Node or Python
+
+01:47.820 --> 01:50.400
+or really any well any language
+
+01:50.400 --> 01:53.220
+and you work with a bunch of dependencies that you download
+
+01:53.220 --> 01:56.880
+and install, those do not need to be tracked by Git.
+
+01:56.880 --> 01:57.900
+That could be hundreds
+
+01:57.900 --> 01:59.670
+or maybe thousands of different folders
+
+01:59.670 --> 02:02.910
+and files that you can easily go and get at any point.
+
+02:02.910 --> 02:06.600
+You don't need to bother tracking the dependencies themself.
+
+02:06.600 --> 02:08.940
+So I'm gonna show you an example of how we do this.
+
+02:08.940 --> 02:12.510
+As I mentioned, the mechanism is through this file
+
+02:12.510 --> 02:14.010
+with a very particular name.
+
+02:14.010 --> 02:16.690
+It's a hidden file that we create .gitignore
+
+02:17.856 --> 02:21.210
+and if we put that really anywhere in a repository
+
+02:21.210 --> 02:23.160
+but traditionally we'll put it
+
+02:23.160 --> 02:26.100
+in the root of the repository, the top of it,
+
+02:26.100 --> 02:27.686
+although it doesn't have to be there,
+
+02:27.686 --> 02:30.360
+we create a file with that name.
+
+02:30.360 --> 02:33.990
+Git will look for that file and inside of it
+
+02:33.990 --> 02:36.480
+we can tell Git what to ignore.
+
+02:36.480 --> 02:38.700
+So we can put exact file names.
+
+02:38.700 --> 02:42.630
+So the first bullet point here is .DS_Store,
+
+02:42.630 --> 02:45.210
+Git will ignore a file with that name.
+
+02:45.210 --> 02:48.899
+We can give it folder names by putting a slash at the end.
+
+02:48.899 --> 02:51.600
+And we can also do fancier patterns.
+
+02:51.600 --> 02:56.130
+For example, this line here, *.log,
+
+02:56.130 --> 02:59.430
+this is a wild card that will match anything.
+
+02:59.430 --> 03:01.560
+I think anything except for a slash.
+
+03:01.560 --> 03:03.060
+It will match any character
+
+03:03.060 --> 03:05.760
+followed by the extension .log.
+
+03:05.760 --> 03:09.630
+So this allows you to tell Git, ignore all log files.
+
+03:09.630 --> 03:11.040
+I don't want to have to write them out.
+
+03:11.040 --> 03:12.570
+I don't know what their names will be.
+
+03:12.570 --> 03:14.610
+Just anything with .log.
+
+03:14.610 --> 03:16.770
+So I'll just quickly show you some examples.
+
+03:16.770 --> 03:18.990
+Again, we haven't really gone into GitHub at all
+
+03:18.990 --> 03:21.030
+but on GitHub there are projects
+
+03:21.030 --> 03:23.790
+and pretty much every single project here
+
+03:23.790 --> 03:26.910
+is going to have a .gitignore file.
+
+03:26.910 --> 03:31.410
+And inside we see some of what I talked about .DS_Store.
+
+03:31.410 --> 03:35.310
+We see directories like the reports directory, node modules,
+
+03:35.310 --> 03:36.570
+if you ever work with Node,
+
+03:36.570 --> 03:38.790
+that's where all the packages are installed.
+
+03:38.790 --> 03:40.890
+So we're ignoring that.
+
+03:40.890 --> 03:42.240
+Here's another example.
+
+03:42.240 --> 03:45.286
+The app signal, if you're familiar with that,
+
+03:45.286 --> 03:47.730
+.gitignore, there it is.
+
+03:47.730 --> 03:49.290
+And there's stuff in here,
+
+03:49.290 --> 03:51.630
+particular files and folder names.
+
+03:51.630 --> 03:55.350
+They're different because this is an Android application
+
+03:55.350 --> 03:58.020
+versus Faker I was showing you as a JavaScript app.
+
+03:58.020 --> 03:59.070
+Here's TensorFlow,
+
+03:59.070 --> 04:01.268
+another really popular open source project
+
+04:01.268 --> 04:05.130
+instead of here .gitignore, right?
+
+04:05.130 --> 04:06.900
+And then we see similar stuff
+
+04:06.900 --> 04:08.940
+but now some Python specific files
+
+04:08.940 --> 04:12.450
+and folders that they're telling Git to always ignore.
+
+04:12.450 --> 04:14.197
+So I'm gonna demonstrate this
+
+04:14.197 --> 04:18.030
+and to do this I'm actually gonna make a new repository.
+
+04:18.030 --> 04:21.150
+It doesn't really make sense to ignore things in my novel.
+
+04:21.150 --> 04:23.610
+Maybe it does, but I'm just gonna make a new demo
+
+04:23.610 --> 04:26.340
+and make a simple node application.
+
+04:26.340 --> 04:28.620
+So I'm not in a Git repository now,
+
+04:28.620 --> 04:30.600
+I'm gonna make a directory.
+
+04:30.600 --> 04:33.030
+I'll just call this GitIgnoreDemo.
+
+04:33.030 --> 04:35.100
+I'll cd in there.
+
+04:35.100 --> 04:37.110
+I'll type git status.
+
+04:37.110 --> 04:37.943
+Okay, good.
+
+04:37.943 --> 04:41.640
+It's not one yet, but now I'm going to initialize get init,
+
+04:41.640 --> 04:44.880
+and I'm going to run npm init
+
+04:44.880 --> 04:47.673
+so that I can use some Node packages in here.
+
+04:48.540 --> 04:49.950
+So if you're not familiar with Node,
+
+04:49.950 --> 04:51.712
+it really doesn't matter at this point.
+
+04:51.712 --> 04:54.210
+I'm just gonna install some stuff
+
+04:54.210 --> 04:55.680
+and I'm going to ignore it.
+
+04:55.680 --> 04:57.510
+But you can ignore any other files
+
+04:57.510 --> 04:59.730
+using the same stuff that I'm gonna show you.
+
+04:59.730 --> 05:01.290
+So I'm gonna make a file.
+
+05:01.290 --> 05:03.930
+I'll pretend you know to write a basic JavaScript app
+
+05:03.930 --> 05:08.930
+in here, index.js, maybe I'll make a secrets file as well.
+
+05:09.150 --> 05:12.840
+Secrets. I'll make it a text file
+
+05:12.840 --> 05:15.300
+and then I open it up in my text editor.
+
+05:15.300 --> 05:17.100
+Let's put some stuff in here.
+
+05:17.100 --> 05:18.980
+So my index.js,
+
+05:18.980 --> 05:22.170
+I'm just gonna write some very basic JavaScript code
+
+05:22.170 --> 05:26.760
+like console.log, hello world.
+
+05:26.760 --> 05:29.520
+All right, so whatever, this is my application code.
+
+05:29.520 --> 05:34.520
+Then I'll have some secret like API_Key equals
+
+05:35.790 --> 05:37.770
+let's just say that's some secret key
+
+05:37.770 --> 05:39.870
+I don't want anyone to know about,
+
+05:39.870 --> 05:41.640
+but I need it for my app.
+
+05:41.640 --> 05:45.513
+And then let's go ahead and make our first commit.
+
+05:46.530 --> 05:48.390
+So it would be nice
+
+05:48.390 --> 05:51.480
+if I could make a commit and just do git add dot
+
+05:51.480 --> 05:55.920
+but I can't because that will include secrets.txt.
+
+05:55.920 --> 05:58.720
+So I need to add the index first
+
+05:59.820 --> 06:02.070
+and then I'll also add my package.json
+
+06:02.070 --> 06:05.160
+which is a generated file from Node.
+
+06:05.160 --> 06:09.243
+And then I'll commit, you know, start project or something.
+
+06:10.260 --> 06:11.640
+It doesn't matter what.
+
+06:11.640 --> 06:12.600
+Okay.
+
+06:12.600 --> 06:15.870
+And of course we still have this file that's untracked
+
+06:15.870 --> 06:17.160
+and we want it to stay that way.
+
+06:17.160 --> 06:18.930
+We don't want it to be tracked.
+
+06:18.930 --> 06:21.330
+So if I do some more work in here,
+
+06:21.330 --> 06:25.590
+I'm just gonna copy that a couple times.
+
+06:25.590 --> 06:27.749
+We'll pretend I just wrote a lot of code,
+
+06:27.749 --> 06:30.060
+then I'm gonna head over here again
+
+06:30.060 --> 06:34.830
+to my terminal and I need to add that change
+
+06:34.830 --> 06:36.570
+but I can't do git add dot,
+
+06:36.570 --> 06:39.283
+I need to add just the index.js, right?
+
+06:39.283 --> 06:43.680
+And then I can commit again, you know, add new feature.
+
+06:43.680 --> 06:47.220
+This is a horrible commit message, but pretend it's not.
+
+06:47.220 --> 06:48.053
+All right.
+
+06:48.053 --> 06:51.330
+So now I'm gonna go and install something with NPM.
+
+06:51.330 --> 06:53.703
+I'll install React.
+
+06:55.110 --> 06:56.700
+I'm using NPM in here.
+
+06:56.700 --> 07:00.480
+And we can see I have a new directory, node_modules,
+
+07:00.480 --> 07:04.530
+and it has react in there and some of react's dependencies.
+
+07:04.530 --> 07:07.260
+So if I type git status now,
+
+07:07.260 --> 07:08.220
+it also notices
+
+07:08.220 --> 07:13.220
+that node_modules now exist and my secrets file still there.
+
+07:13.230 --> 07:15.695
+There's this thing called package-lock.json.
+
+07:15.695 --> 07:19.110
+The package.json is modified, which I'm cool with.
+
+07:19.110 --> 07:20.490
+I want to track that.
+
+07:20.490 --> 07:22.950
+That's where the dependencies are listed.
+
+07:22.950 --> 07:25.080
+So it tells anybody who gets this code,
+
+07:25.080 --> 07:26.880
+I need react, but we don't actually need
+
+07:26.880 --> 07:29.250
+to track the folder that includes React.
+
+07:29.250 --> 07:31.740
+We can always go get that whenever necessary.
+
+07:31.740 --> 07:33.990
+So now let's add in our .gitignore file
+
+07:33.990 --> 07:36.420
+so that this will be ignored.
+
+07:36.420 --> 07:38.550
+I'm going to make a new file.
+
+07:38.550 --> 07:40.241
+I can do it from here.
+
+07:40.241 --> 07:41.250
+I'll just do it
+
+07:41.250 --> 07:43.290
+from the command line I guess to be consistent.
+
+07:43.290 --> 07:44.733
+Touch .gitignore,
+
+07:46.440 --> 07:48.300
+and as I mentioned, it's conventional to put it
+
+07:48.300 --> 07:51.060
+in the root of your project directory.
+
+07:51.060 --> 07:53.574
+So now I have that file and then in here
+
+07:53.574 --> 07:55.812
+I can write certain files
+
+07:55.812 --> 07:58.020
+and patterns that I want to be ignored.
+
+07:58.020 --> 07:59.013
+So for example,
+
+07:59.940 --> 08:02.580
+I don't know if there's a .DS_Store file in here,
+
+08:02.580 --> 08:03.930
+no, there's not at the moment
+
+08:03.930 --> 08:07.020
+but I don't know why it pops up, sometimes it just does.
+
+08:07.020 --> 08:09.120
+So I'm saying ignore that.
+
+08:09.120 --> 08:13.893
+Please also ignore the exact file secrets.txt.
+
+08:14.970 --> 08:19.560
+That's the name of the file and the node_modules directory.
+
+08:19.560 --> 08:22.740
+So I need a slash, if it's just node_modules like this,
+
+08:22.740 --> 08:23.910
+it thinks it's a file.
+
+08:23.910 --> 08:27.300
+This tells Git it's a directory, node_modules.
+
+08:27.300 --> 08:31.007
+So over here, if I type git status now, whoa, look at that.
+
+08:31.007 --> 08:32.396
+Very different.
+
+08:32.396 --> 08:35.730
+Now we no longer see well, hmm,
+
+08:35.730 --> 08:37.890
+I got rid of it unfortunately, I cleared.
+
+08:37.890 --> 08:41.430
+But earlier it was tracking node_modules and secrets.
+
+08:41.430 --> 08:44.490
+Now we just see .gitignore
+
+08:44.490 --> 08:47.340
+because we did change that file and it exists.
+
+08:47.340 --> 08:49.334
+We want to track the .gitignore file.
+
+08:49.334 --> 08:52.317
+Then also this package-lock.json
+
+08:52.317 --> 08:54.750
+and that's fine to track with Git.
+
+08:54.750 --> 08:59.750
+So now I can just do things like git add dot if I wanted to
+
+08:59.883 --> 09:03.570
+and I can commit and then I can make some commit message.
+
+09:03.570 --> 09:04.920
+In this case, doesn't really matter
+
+09:04.920 --> 09:05.820
+I haven't done any work.
+
+09:05.820 --> 09:08.463
+But I'll just say, you know, add .gitignore file.
+
+09:10.260 --> 09:12.810
+And now anytime I make changes in those files,
+
+09:12.810 --> 09:15.900
+if I change my secrets file right there
+
+09:15.900 --> 09:17.520
+I'll do something else in here.
+
+09:17.520 --> 09:19.609
+Let's just add onto that key.
+
+09:19.609 --> 09:24.450
+I save, normally Git would notice, but now it says nothing.
+
+09:24.450 --> 09:26.970
+It's ignoring this file entirely.
+
+09:26.970 --> 09:29.340
+So there's a lot to write in .gitignore,
+
+09:29.340 --> 09:31.650
+especially for complicated projects.
+
+09:31.650 --> 09:33.420
+You can have all sorts of stuff in there.
+
+09:33.420 --> 09:36.600
+And to help out, there are tools online,
+
+09:36.600 --> 09:37.590
+show you one quickly.
+
+09:37.590 --> 09:40.080
+This is on the GitHub documentation.
+
+09:40.080 --> 09:42.990
+They recommend this one site .gitignore.io
+
+09:42.990 --> 09:45.330
+where you can specify what you're working in.
+
+09:45.330 --> 09:47.680
+For example, if you're working on a Python app,
+
+09:50.370 --> 09:53.730
+this is a recommended starting place for .gitignore.
+
+09:53.730 --> 09:57.120
+And you may not have files with all of these patterns
+
+09:57.120 --> 09:59.370
+or these extensions or these directory names
+
+09:59.370 --> 10:02.010
+but they're common enough that you can just include it.
+
+10:02.010 --> 10:03.030
+It's really not adding
+
+10:03.030 --> 10:05.220
+a lot of overhead to your application
+
+10:05.220 --> 10:07.980
+and they have similar .gitignore templates for JavaScript
+
+10:07.980 --> 10:10.110
+and pretty much any other thing you can think of.
+
+10:10.110 --> 10:12.019
+So that's an intro to .gitignore files.
+
+10:12.019 --> 10:14.340
+There's a lot to them, right?
+
+10:14.340 --> 10:15.510
+The patterns you can write,
+
+10:15.510 --> 10:18.810
+you can actually go on the Git Docs and read about it.
+
+10:18.810 --> 10:20.460
+There's more that we didn't even go into.
+
+10:20.460 --> 10:24.750
+For example, two stars is different from one star.
+
+10:24.750 --> 10:27.660
+A question mark is a way to match a single character.
+
+10:27.660 --> 10:30.150
+If you're familiar with regular expressions notation,
+
+10:30.150 --> 10:31.620
+it's kind of similar here.
+
+10:31.620 --> 10:34.170
+But anyway, most of the time it's good enough
+
+10:34.170 --> 10:36.690
+to just be able to ignore file names, directories,
+
+10:36.690 --> 10:39.810
+and file extensions using the wild card.
+
+10:39.810 --> 10:41.570
+Okay, so that's .gitignore.
