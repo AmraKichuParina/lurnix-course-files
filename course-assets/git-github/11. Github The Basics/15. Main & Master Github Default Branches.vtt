@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.120 --> 00:02.610
+Instructor: The last thing we'll talk about here is
+
+00:02.610 --> 00:05.850
+in 2020, I've mentioned this a few times, GitHub decided
+
+00:05.850 --> 00:10.290
+to rename the default branch from master to main.
+
+00:10.290 --> 00:14.040
+Now we've seen that that doesn't really impact us, right?
+
+00:14.040 --> 00:16.050
+We've been able to just push up a master branch
+
+00:16.050 --> 00:18.600
+and it's defaulting here to showing us master.
+
+00:18.600 --> 00:22.020
+If I just go to this repo, we see master.
+
+00:22.020 --> 00:23.970
+However, I do wanna talk about it.
+
+00:23.970 --> 00:25.800
+If we make a brand new repository,
+
+00:25.800 --> 00:28.740
+we'll just call this, how about colors?
+
+00:28.740 --> 00:31.470
+All right, here's our repo called colors.
+
+00:31.470 --> 00:32.640
+There it is, colors.
+
+00:32.640 --> 00:35.370
+And I'm gonna create this repository
+
+00:35.370 --> 00:38.760
+and maybe this time I'm gonna initialize it with something.
+
+00:38.760 --> 00:40.590
+So we will learn about readmes
+
+00:40.590 --> 00:42.930
+but I'm just gonna click this box.
+
+00:42.930 --> 00:45.180
+And notice it tells me something different now, right?
+
+00:45.180 --> 00:47.610
+It says this will set main as the default branch.
+
+00:47.610 --> 00:51.270
+If I get rid of that, it doesn't say anything about main
+
+00:51.270 --> 00:53.220
+because there is no branch.
+
+00:53.220 --> 00:57.510
+So when I create this repo as is with no readme,
+
+00:57.510 --> 00:59.280
+just completely empty,
+
+00:59.280 --> 01:01.800
+there is no branch that is initialized.
+
+01:01.800 --> 01:04.143
+But as soon as I add a file to GitHub,
+
+01:05.550 --> 01:08.490
+when I'm initializing this repository is what I mean,
+
+01:08.490 --> 01:11.040
+it automatically needs to have a branch, right?
+
+01:11.040 --> 01:14.340
+You can't have files in a Git repo that are tracked
+
+01:14.340 --> 01:17.250
+and committed if they're not associated with some branch.
+
+01:17.250 --> 01:20.160
+So it defaults that branch name to main.
+
+01:20.160 --> 01:21.600
+So we could change that
+
+01:21.600 --> 01:24.240
+in our settings so that it always defaults to master.
+
+01:24.240 --> 01:27.750
+But you know, more and more people are using main anyway.
+
+01:27.750 --> 01:29.070
+And that's kind of the push
+
+01:29.070 --> 01:31.920
+that GitHub is working towards here.
+
+01:31.920 --> 01:33.420
+So if we do this,
+
+01:33.420 --> 01:36.300
+I create this repository, now it has a file in it.
+
+01:36.300 --> 01:38.430
+It has a commit, initial commit,
+
+01:38.430 --> 01:39.660
+that was made for me, right?
+
+01:39.660 --> 01:43.290
+I didn't say commit-m or anything like that.
+
+01:43.290 --> 01:45.450
+It just made me this readme file
+
+01:45.450 --> 01:47.700
+which is something we'll learn more about
+
+01:47.700 --> 01:48.660
+in future sections.
+
+01:48.660 --> 01:50.460
+So for now it's just a file.
+
+01:50.460 --> 01:54.120
+And I'm on the main branch.
+
+01:54.120 --> 01:57.930
+So in order to get this branch down to my machine, right?
+
+01:57.930 --> 02:01.920
+In order to work with it, I can clone this repository.
+
+02:01.920 --> 02:05.340
+So I'll copy that and then I'll go over here
+
+02:05.340 --> 02:07.620
+and make sure I'm not in a repo.
+
+02:07.620 --> 02:09.363
+Git clone, that URL.
+
+02:10.800 --> 02:13.650
+Okay? And then we have this colors repo, right?
+
+02:13.650 --> 02:16.950
+And if you look at the branch we're currently on, it's main.
+
+02:16.950 --> 02:18.150
+So this makes it easy.
+
+02:18.150 --> 02:19.860
+If we wanna work on the main branch,
+
+02:19.860 --> 02:22.500
+we just clone it and we have the main branch.
+
+02:22.500 --> 02:26.520
+But something that you may encounter is some companies
+
+02:26.520 --> 02:29.280
+or some projects may want to rename their branch
+
+02:29.280 --> 02:31.650
+from master to main.
+
+02:31.650 --> 02:33.450
+To be in accordance with these,
+
+02:33.450 --> 02:35.490
+they're not rules by any means from GitHub,
+
+02:35.490 --> 02:38.096
+but this new decision by GitHub.
+
+02:38.096 --> 02:41.640
+So to do that, if you've been working on the master branch
+
+02:41.640 --> 02:43.860
+and you want to rename it to main,
+
+02:43.860 --> 02:46.140
+it's just like renaming any other branch.
+
+02:46.140 --> 02:48.450
+So you can actually see instructions.
+
+02:48.450 --> 02:51.540
+If you make a new repository, I'm gonna delete this,
+
+02:51.540 --> 02:54.090
+but if we make a new repository, it shows us,
+
+02:54.090 --> 02:56.160
+as we've talked about a couple of times,
+
+02:56.160 --> 02:57.330
+what to do right?
+
+02:57.330 --> 02:58.740
+It gives you instructions.
+
+02:58.740 --> 03:00.750
+If you wanna wanna push an existing repository,
+
+03:00.750 --> 03:04.260
+add a remote and then this line renames the branch
+
+03:04.260 --> 03:07.020
+you're currently on to be main.
+
+03:07.020 --> 03:09.180
+Or, here's another version of this.
+
+03:09.180 --> 03:11.040
+If you don't have a repository yet,
+
+03:11.040 --> 03:13.260
+make a new repo, get an git init,
+
+03:13.260 --> 03:16.860
+add some stuff to it, commit, rename the branch to main,
+
+03:16.860 --> 03:19.860
+and then push your branch called main up.
+
+03:19.860 --> 03:21.900
+So I'll do this with our chickens demo.
+
+03:21.900 --> 03:25.080
+I have this master branch, but if I wanna rename it
+
+03:25.080 --> 03:29.310
+to main, whoopsies, I need to go to that repository.
+
+03:29.310 --> 03:31.680
+Geez, I can't type, back outta here.
+
+03:31.680 --> 03:33.570
+Cd into chickens, right?
+
+03:33.570 --> 03:35.310
+We have one branch, which is master.
+
+03:35.310 --> 03:40.050
+If I do git branch-M, main,
+
+03:40.050 --> 03:43.170
+that renames my branch to main.
+
+03:43.170 --> 03:46.650
+So now there is no master branch, right?
+
+03:46.650 --> 03:48.060
+We just have main.
+
+03:48.060 --> 03:50.490
+Remember, there is no significance
+
+03:50.490 --> 03:53.100
+to the master branch name itself
+
+03:53.100 --> 03:54.540
+or to the master branch period.
+
+03:54.540 --> 03:57.630
+It's just that you have to be working on a branch in Git.
+
+03:57.630 --> 04:01.080
+And by default, the the default branch name is master
+
+04:01.080 --> 04:02.940
+if you're working on Git on your machine.
+
+04:02.940 --> 04:04.890
+But on GitHub, the default branch name
+
+04:04.890 --> 04:07.080
+if you clone a new repo
+
+04:07.080 --> 04:09.480
+that you have not created a branch on
+
+04:09.480 --> 04:12.810
+but GitHub has made a branch, it will default to main.
+
+04:12.810 --> 04:14.670
+So don't get worried, don't freak out
+
+04:14.670 --> 04:15.960
+if you don't see master, right?
+
+04:15.960 --> 04:18.690
+It's this exact same concept, it's just a branch.
+
+04:18.690 --> 04:20.340
+And GitHub made this decision recently
+
+04:20.340 --> 04:22.860
+to make main that default name.
+
+04:22.860 --> 04:27.813
+So now I could push this branch up git push origin main.
+
+04:30.030 --> 04:32.793
+And if we head over here, if I refresh,
+
+04:33.960 --> 04:35.910
+we still see the master branch, right?
+
+04:35.910 --> 04:38.100
+But now we see main.
+
+04:38.100 --> 04:39.164
+So there's main.
+
+04:39.164 --> 04:40.140
+You'll see though
+
+04:40.140 --> 04:43.350
+that master is considered the default branch here.
+
+04:43.350 --> 04:46.050
+That is because we pushed up master first.
+
+04:46.050 --> 04:47.520
+There was no main branch.
+
+04:47.520 --> 04:50.580
+And so GitHub doesn't ignore a master branch.
+
+04:50.580 --> 04:53.280
+I can change with the default branch is on this project,
+
+04:53.280 --> 04:55.260
+but really you probably would not have main
+
+04:55.260 --> 04:57.750
+and master in the same project.
+
+04:57.750 --> 05:01.050
+What you would have is either a brand new empty project,
+
+05:01.050 --> 05:02.250
+you clone it down
+
+05:02.250 --> 05:04.200
+and you start on the main branch,
+
+05:04.200 --> 05:07.680
+or you work on a project with your company or some,
+
+05:07.680 --> 05:08.513
+you know, some team
+
+05:08.513 --> 05:11.220
+and they decide we're not gonna use the term master anymore.
+
+05:11.220 --> 05:13.110
+We will rename to main
+
+05:13.110 --> 05:15.510
+and then you can make main the default.
+
+05:15.510 --> 05:20.040
+I believe you go into settings, and then we have branches.
+
+05:20.040 --> 05:20.880
+And then I can decide
+
+05:20.880 --> 05:23.823
+that the default branch is actually main.
+
+05:27.330 --> 05:30.780
+And so now I've updated my project so that it defaults
+
+05:30.780 --> 05:34.980
+to showing me main when I visit my repository.
+
+05:34.980 --> 05:38.070
+So keep in mind through all of this, if you're confused,
+
+05:38.070 --> 05:39.300
+it's just a name.
+
+05:39.300 --> 05:40.620
+Master is just a name for a branch
+
+05:40.620 --> 05:42.510
+and main is just a name for a branch.
+
+05:42.510 --> 05:45.330
+The only complication comes if you have been working
+
+05:45.330 --> 05:48.120
+on one branch called master, and you change that name.
+
+05:48.120 --> 05:50.700
+If you change it locally, then you need to push up
+
+05:50.700 --> 05:52.950
+that new branch name to GitHub, and then
+
+05:52.950 --> 05:55.530
+if you care about what your default branch is on GitHub,
+
+05:55.530 --> 05:57.090
+you need to change that.
+
+05:57.090 --> 06:00.060
+But this is not, you know, some seismic shift.
+
+06:00.060 --> 06:01.980
+It's just a branch name that you can change
+
+06:01.980 --> 06:02.970
+and you'll likely see more
+
+06:02.970 --> 06:05.610
+and more people using main rather than master
+
+06:05.610 --> 06:07.890
+though master is still incredibly common
+
+06:07.890 --> 06:10.233
+and it's still the default branch name on Git.
