@@ -1,0 +1,493 @@
+WEBVTT
+
+00:00.240 --> 00:01.590
+Instructor: Okay, so now we move on
+
+00:01.590 --> 00:04.110
+to the Git Reflog command.
+
+00:04.110 --> 00:07.650
+So this command works with four different subcommands,
+
+00:07.650 --> 00:10.830
+but the good news for us is we only need to care about one
+
+00:10.830 --> 00:14.730
+which is the Git Reflog show subcommand.
+
+00:14.730 --> 00:16.500
+The other three expire, delete,
+
+00:16.500 --> 00:18.960
+and exists are not really used.
+
+00:18.960 --> 00:21.510
+And when I say that I'm not just being a lazy teacher
+
+00:21.510 --> 00:24.270
+who doesn't wanna show you the documentation
+
+00:24.270 --> 00:26.340
+if we take a look for Git Reflog
+
+00:26.340 --> 00:28.590
+it actually says exactly that.
+
+00:28.590 --> 00:30.480
+For example, for expire
+
+00:30.480 --> 00:33.720
+it says this is typically not used directly by end users,
+
+00:33.720 --> 00:35.700
+for delete something similar.
+
+00:35.700 --> 00:38.550
+This subcommand is also typically not used directly
+
+00:38.550 --> 00:39.840
+by end users.
+
+00:39.840 --> 00:42.300
+The only subcommand they really document
+
+00:42.300 --> 00:45.090
+and show examples of is show.
+
+00:45.090 --> 00:47.010
+So I'm not making it up
+
+00:47.010 --> 00:48.780
+we really just need to know about show.
+
+00:48.780 --> 00:50.130
+And the show command
+
+00:50.130 --> 00:51.990
+or subcommand is pretty straightforward.
+
+00:51.990 --> 00:55.110
+We pass a reference head or a branch tip
+
+00:55.110 --> 00:58.410
+or a remote branch and then we will see a log,
+
+00:58.410 --> 01:02.070
+we'll see a printed version of the stored Reflog.
+
+01:02.070 --> 01:03.810
+So I'll show you that.
+
+01:03.810 --> 01:06.060
+Let's do Git Reflog show head.
+
+01:06.060 --> 01:06.960
+We've been looking
+
+01:06.960 --> 01:11.433
+and we've seen this head Reflog file right here.
+
+01:12.300 --> 01:14.760
+All these entries, I'm not sure how,
+
+01:14.760 --> 01:18.060
+maybe 60 something different entries in here.
+
+01:18.060 --> 01:19.650
+Maybe fewer, fifties.
+
+01:19.650 --> 01:24.430
+Anyway, if I run this command, Git Reflog show head
+
+01:25.410 --> 01:29.370
+we see a log similar to Git log, but it's not the same.
+
+01:29.370 --> 01:33.180
+Okay, for one, this includes things Git log
+
+01:33.180 --> 01:34.380
+does not include,
+
+01:34.380 --> 01:36.840
+for example, if you check out a branch, right?
+
+01:36.840 --> 01:39.390
+Git log doesn't care that you checked out a branch
+
+01:39.390 --> 01:40.890
+it doesn't add a new entry.
+
+01:40.890 --> 01:44.700
+Git log is just a log of a commit and it's parents commit
+
+01:44.700 --> 01:47.340
+and its parents and so on and so forth.
+
+01:47.340 --> 01:48.173
+On and on.
+
+01:48.173 --> 01:51.300
+But it doesn't include things like checking out.
+
+01:51.300 --> 01:55.290
+Also, this is all going to be a history of things, right?
+
+01:55.290 --> 01:58.530
+So we could delete commit, we could rebase,
+
+01:58.530 --> 02:02.220
+but we're still going to see entries from when we did that.
+
+02:02.220 --> 02:04.950
+For example here, I did a reset,
+
+02:04.950 --> 02:06.780
+this was before I was recording,
+
+02:06.780 --> 02:09.450
+actually I recorded this video a couple times.
+
+02:09.450 --> 02:11.490
+It was in a previous version of this video
+
+02:11.490 --> 02:13.320
+that will never see the light of day.
+
+02:13.320 --> 02:14.970
+So I made a reset, right?
+
+02:14.970 --> 02:17.010
+And I deleted a commit.
+
+02:17.010 --> 02:21.540
+But the thing is that commit was actually right here.
+
+02:21.540 --> 02:23.670
+So this is that commit that I deleted.
+
+02:23.670 --> 02:28.080
+And the crazy part is I still have that hash in Git log.
+
+02:28.080 --> 02:31.440
+That hash is completely gone because I did a reset.
+
+02:31.440 --> 02:34.050
+Anyway, we'll talk more about the differences in the utility
+
+02:34.050 --> 02:36.810
+of Reflogs, but I hope it's clear that there's a difference.
+
+02:36.810 --> 02:40.920
+This is keeping every single thing, assuming it's been less
+
+02:40.920 --> 02:43.380
+than 90 days and it's all local, it's keeping track
+
+02:43.380 --> 02:45.600
+of every change to head.
+
+02:45.600 --> 02:50.010
+Git log is just gonna show me a lot more in this case
+
+02:50.010 --> 02:51.900
+in terms of the number of lines.
+
+02:51.900 --> 02:54.510
+But it's only going to show me a clear history
+
+02:54.510 --> 02:57.270
+from one commit to its parent and so on.
+
+02:57.270 --> 02:58.920
+So there's stuff that I've done
+
+02:58.920 --> 03:00.990
+that I may have lost, I may have deleted,
+
+03:00.990 --> 03:03.720
+I may have reset and rebased, I don't have record
+
+03:03.720 --> 03:08.580
+of that on Git log, but I may have record in my Reflog.
+
+03:08.580 --> 03:12.210
+Anyway, we see starting from the very beginning up here,
+
+03:12.210 --> 03:15.420
+the first line is actually the most recent change
+
+03:15.420 --> 03:18.030
+the most recent entry in the head Reflog.
+
+03:18.030 --> 03:20.880
+And then down here is the oldest thing.
+
+03:20.880 --> 03:23.670
+So I first cloned this repository
+
+03:23.670 --> 03:27.300
+and so head when I cloned was pointing to this commit.
+
+03:27.300 --> 03:28.290
+So we can see the commits
+
+03:28.290 --> 03:31.590
+that it was referring to over time for head, right?
+
+03:31.590 --> 03:33.183
+So currently head is pointing to this,
+
+03:33.183 --> 03:34.470
+it's pointing to master,
+
+03:34.470 --> 03:37.860
+but master is right here, d83.
+
+03:37.860 --> 03:40.380
+But also we can see, you know what happened.
+
+03:40.380 --> 03:43.650
+So in this case, I moved from a commit detached head
+
+03:43.650 --> 03:45.300
+back to the master branch.
+
+03:45.300 --> 03:47.490
+And then I moved from, before that I moved
+
+03:47.490 --> 03:50.250
+from the turtle branch to detached head, right?
+
+03:50.250 --> 03:52.890
+So this is what I did one move ago.
+
+03:52.890 --> 03:56.610
+I went to detached head and then here most recently I left
+
+03:56.610 --> 03:58.590
+and I went back to master.
+
+03:58.590 --> 04:03.590
+You'll also see this notation head at curly braces a number.
+
+04:04.260 --> 04:09.260
+So this syntax refers to a particular entry in a Reflog.
+
+04:09.420 --> 04:12.990
+So the most recent entry is head at zero
+
+04:12.990 --> 04:16.770
+and in my case head at 56 is the very last thing,
+
+04:16.770 --> 04:20.310
+the oldest thing in the Reflog for head.
+
+04:20.310 --> 04:22.650
+So this syntax can be very useful
+
+04:22.650 --> 04:24.420
+because we can actually pass this around
+
+04:24.420 --> 04:27.900
+and reference this Reflog entry syntax.
+
+04:27.900 --> 04:29.850
+We can pass that to other commands.
+
+04:29.850 --> 04:31.980
+And there's fancier things we'll get to.
+
+04:31.980 --> 04:33.900
+I'll show you in a little bit.
+
+04:33.900 --> 04:35.970
+But yes, each one of those lines
+
+04:35.970 --> 04:38.940
+has its own Reflog identifier
+
+04:38.940 --> 04:39.990
+but they are relative.
+
+04:39.990 --> 04:42.210
+So this was the very first thing that happened
+
+04:42.210 --> 04:43.740
+to head I cloned.
+
+04:43.740 --> 04:48.450
+And so right now it's 56 and head zero is checking out
+
+04:48.450 --> 04:51.030
+when I moved from detached head to master.
+
+04:51.030 --> 04:52.290
+But if I make a new move, right
+
+04:52.290 --> 04:54.693
+if I switch to the donkey branch I have,
+
+04:55.830 --> 04:58.110
+and if I look at that Reflog again,
+
+04:58.110 --> 05:00.960
+now head zero is something different, right?
+
+05:00.960 --> 05:02.820
+This is the most recent thing.
+
+05:02.820 --> 05:05.550
+This used to be head zero, but now it's not.
+
+05:05.550 --> 05:08.760
+And at the bottom we now have head 57.
+
+05:08.760 --> 05:10.500
+So the point is that these change, right?
+
+05:10.500 --> 05:11.700
+These are not set in stone,
+
+05:11.700 --> 05:13.830
+these numbers and each one of these,
+
+05:13.830 --> 05:17.010
+each number is used to indicate a particular entry
+
+05:17.010 --> 05:19.860
+in the Reflog in this case for head.
+
+05:19.860 --> 05:23.580
+But we're not limited to looking at the head Reflogs,
+
+05:23.580 --> 05:27.390
+for example I can pass some other reference
+
+05:27.390 --> 05:28.620
+that we wanna look at.
+
+05:28.620 --> 05:30.930
+Let's see the donkey branch, I don't think
+
+05:30.930 --> 05:32.970
+I mean is there anything that's happened here?
+
+05:32.970 --> 05:34.020
+Two things.
+
+05:34.020 --> 05:36.480
+I first made the donkey branch
+
+05:36.480 --> 05:38.250
+that was the commit we were on
+
+05:38.250 --> 05:40.980
+and then I made my first commit.
+
+05:40.980 --> 05:42.990
+So unlike the head reference, right,
+
+05:42.990 --> 05:46.050
+the head reference is updated when I switch branches.
+
+05:46.050 --> 05:46.920
+When I make commits
+
+05:46.920 --> 05:48.660
+there's a bunch of things that change head.
+
+05:48.660 --> 05:51.090
+But here this is just showing us the donkey,
+
+05:51.090 --> 05:52.920
+tip of the donkey branch.
+
+05:52.920 --> 05:54.210
+And that only changes
+
+05:54.210 --> 05:57.180
+when the donkey branch itself is updated.
+
+05:57.180 --> 05:59.250
+So switching branches doesn't do anything.
+
+05:59.250 --> 06:02.190
+But if I make a new commit, we'll see a new entry,
+
+06:02.190 --> 06:06.960
+echo "hahah" we'll put that in a file called haha.txt.
+
+06:06.960 --> 06:08.730
+We'll add that.
+
+06:08.730 --> 06:09.563
+We'll commit.
+
+06:09.563 --> 06:13.350
+I'm just making a commit, "add haha"
+
+06:13.350 --> 06:16.050
+Okay, so we have this new commit.
+
+06:16.050 --> 06:17.160
+If I do a Git log
+
+06:17.160 --> 06:19.803
+we'll see a new commit on the donkey branch, 7c1.
+
+06:20.700 --> 06:22.230
+So that means donkey
+
+06:22.230 --> 06:25.350
+that branch reference was updated, the tip moved.
+
+06:25.350 --> 06:28.833
+So if I do a Git Reflog show donkey,
+
+06:29.850 --> 06:31.440
+now we have three entries.
+
+06:31.440 --> 06:33.390
+We added this new commit.
+
+06:33.390 --> 06:35.670
+So that is the most recent change
+
+06:35.670 --> 06:38.160
+the most recent entry in the Reflog.
+
+06:38.160 --> 06:40.740
+And notice the syntax is the same here.
+
+06:40.740 --> 06:41.850
+We have a reference name,
+
+06:41.850 --> 06:44.310
+so it's not head, it's donkey now
+
+06:44.310 --> 06:48.510
+but the same principle at and then some entry number.
+
+06:48.510 --> 06:50.790
+So this is something we'll come back to in the next video.
+
+06:50.790 --> 06:53.250
+There are other qualifiers we can pass in
+
+06:53.250 --> 06:55.170
+but the basic syntax is the same.
+
+06:55.170 --> 06:56.130
+This is a way of referring
+
+06:56.130 --> 06:58.890
+to a particular entry in the donkey Reflog.
+
+06:58.890 --> 07:01.290
+Okay, so I'll stop this video here.
+
+07:01.290 --> 07:03.030
+We'll talk more about this syntax
+
+07:03.030 --> 07:05.930
+and some fancy things that we can do with Reflogs up next.
