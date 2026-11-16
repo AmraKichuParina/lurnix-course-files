@@ -1,0 +1,721 @@
+WEBVTT
+
+00:00.120 --> 00:02.220
+Instructor: All right, so next up another exercise,
+
+00:02.220 --> 00:04.410
+another opportunity to practice things.
+
+00:04.410 --> 00:07.590
+And this section covered quite a few different commands.
+
+00:07.590 --> 00:10.320
+They all are almost all started with an R, right?
+
+00:10.320 --> 00:13.470
+Reset, restore, revert.
+
+00:13.470 --> 00:14.850
+Maybe it was just those three,
+
+00:14.850 --> 00:16.260
+but it just felt like a lot of Rs
+
+00:16.260 --> 00:17.910
+and they all sound similar.
+
+00:17.910 --> 00:20.280
+You'll get a chance to practice some of them here.
+
+00:20.280 --> 00:22.770
+This exercise is going to cover
+
+00:22.770 --> 00:24.540
+most of what we talked about.
+
+00:24.540 --> 00:26.610
+And I did say I wouldn't expect you to just
+
+00:26.610 --> 00:27.900
+immediately remember them all.
+
+00:27.900 --> 00:31.290
+So please feel free to reference notes, Google things.
+
+00:31.290 --> 00:32.520
+I mean you should always do that.
+
+00:32.520 --> 00:34.050
+It's just part of the process.
+
+00:34.050 --> 00:37.050
+Anyway, this exercise is another one
+
+00:37.050 --> 00:39.480
+that is asking you to clone,
+
+00:39.480 --> 00:42.900
+to download an existing starter repository.
+
+00:42.900 --> 00:45.990
+So I still realize we have not really covered clone.
+
+00:45.990 --> 00:49.320
+You've cloned at least one time in a prior exercise.
+
+00:49.320 --> 00:51.510
+This is another example where I'm just gonna ask you
+
+00:51.510 --> 00:52.680
+to run this command.
+
+00:52.680 --> 00:55.200
+And just trust me, it gives you a repository
+
+00:55.200 --> 00:56.310
+I've made for you.
+
+00:56.310 --> 00:59.820
+We are on the verge, the cusp of learning about git clone,
+
+00:59.820 --> 01:02.220
+but for now, just run this at the beginning.
+
+01:02.220 --> 01:04.020
+So as always, this link is available
+
+01:04.020 --> 01:05.730
+as a resource with this video.
+
+01:05.730 --> 01:07.410
+I highly recommend you do the exercise.
+
+01:07.410 --> 01:08.880
+I think it's kind of a fun one.
+
+01:08.880 --> 01:12.570
+It's based on the lyrics to the Beatles song, "Yesterday,"
+
+01:12.570 --> 01:16.470
+which originally Paul McCartney wrote the melody
+
+01:16.470 --> 01:19.560
+and he sang it in his head and to friends
+
+01:19.560 --> 01:21.120
+using scrambled eggs.
+
+01:21.120 --> 01:24.630
+And then there's a whole bunch of lyrics he actually wrote
+
+01:24.630 --> 01:26.220
+that are all based around scrambled eggs.
+
+01:26.220 --> 01:28.920
+So the history of this repository, actually,
+
+01:28.920 --> 01:32.910
+includes my fictionalized evolution of those lyrics.
+
+01:32.910 --> 01:34.710
+So you'll see if you clone this repository,
+
+01:34.710 --> 01:35.670
+we'll start there.
+
+01:35.670 --> 01:38.130
+Make sure that we're not in a git repository
+
+01:38.130 --> 01:39.330
+when we do this.
+
+01:39.330 --> 01:42.360
+And then just paste that line. Okay?
+
+01:42.360 --> 01:46.140
+That now makes us a folder called "yesterday-exercise."
+
+01:46.140 --> 01:49.860
+So if we "cd" into that, the next step is to,
+
+01:49.860 --> 01:52.260
+well we should see a file called "lyrics," okay?
+
+01:52.260 --> 01:54.780
+And then we take a look at the commit history.
+
+01:54.780 --> 01:57.030
+So I'll just do that with you right now.
+
+01:57.030 --> 01:58.317
+Lemme do "oneline."
+
+01:59.940 --> 02:02.580
+You can see that there are eight different commits
+
+02:02.580 --> 02:05.580
+that you have already just by cloning.
+
+02:05.580 --> 02:08.310
+So this first kind of batch here
+
+02:08.310 --> 02:11.070
+all have to do with "Scrambled Egg" lyrics.
+
+02:11.070 --> 02:12.660
+So I wrote, I copied and pasted,
+
+02:12.660 --> 02:14.820
+but the original first verse, second verse,
+
+02:14.820 --> 02:16.590
+the chorus, then I finished it.
+
+02:16.590 --> 02:19.297
+And then this is the rework where it became
+
+02:19.297 --> 02:21.060
+"Yesterday" instead of "Scrambled Eggs"
+
+02:21.060 --> 02:23.130
+broken into four different commits.
+
+02:23.130 --> 02:27.510
+Okay, so your task is, well there's a bunch of tasks.
+
+02:27.510 --> 02:29.010
+Is to follow the instructions.
+
+02:29.010 --> 02:31.680
+I won't just walk through them all right now before I do it.
+
+02:31.680 --> 02:33.990
+But basically at one point I ask you to go back
+
+02:33.990 --> 02:35.160
+and check out a commit.
+
+02:35.160 --> 02:37.080
+You'll go into detached HEAD.
+
+02:37.080 --> 02:39.330
+And then I ask you to go back, leave detached HEAD
+
+02:39.330 --> 02:40.980
+and go back to the master branch.
+
+02:40.980 --> 02:43.380
+Then I ask you to go find a particular commit
+
+02:43.380 --> 02:45.540
+where I finish the original lyrics,
+
+02:45.540 --> 02:48.600
+and then create a branch based upon that commit.
+
+02:48.600 --> 02:51.510
+So that we'll have one branch called "scrambled-eggs"
+
+02:51.510 --> 02:52.890
+that actually has all the lyrics
+
+02:52.890 --> 02:56.550
+from that original version called "Scrambled Eggs."
+
+02:56.550 --> 02:59.580
+And then I'm gonna ask you to make a serious change,
+
+02:59.580 --> 03:02.880
+delete everything in the "lyrics.txt" file,
+
+03:02.880 --> 03:04.260
+and then save that file.
+
+03:04.260 --> 03:06.300
+But don't add and commit, just save.
+
+03:06.300 --> 03:08.370
+And then using a git command,
+
+03:08.370 --> 03:13.080
+so not using Command Z or undo, but using a git command,
+
+03:13.080 --> 03:14.880
+discard those changes you made
+
+03:14.880 --> 03:18.210
+so that you end up with the lyrics back in the file.
+
+03:18.210 --> 03:21.960
+Then we move on to something slightly humorous
+
+03:21.960 --> 03:24.810
+where I found some parody lyrics from this website.
+
+03:24.810 --> 03:26.260
+I did not write these myself.
+
+03:27.240 --> 03:32.220
+And these parody lyrics have to do with 404 pages.
+
+03:32.220 --> 03:36.390
+So lyrics set to "Yesterday," but about 404 pages.
+
+03:36.390 --> 03:38.760
+So I just ask you to copy some of them,
+
+03:38.760 --> 03:40.980
+paste it into the "lyrics" file.
+
+03:40.980 --> 03:42.810
+and add and commit on the master branch.
+
+03:42.810 --> 03:43.800
+And then do it again.
+
+03:43.800 --> 03:47.430
+Finish the song out, add and commit on the master branch.
+
+03:47.430 --> 03:48.870
+After more consideration, you realize
+
+03:48.870 --> 03:50.340
+you don't actually want those two commits
+
+03:50.340 --> 03:51.420
+on the master branch.
+
+03:51.420 --> 03:53.910
+So I would like for you to move them.
+
+03:53.910 --> 03:57.270
+And the way that we'll do that is by undoing them.
+
+03:57.270 --> 03:59.190
+So we're going to remove those two commits
+
+03:59.190 --> 04:00.023
+from the master branch.
+
+04:00.023 --> 04:01.410
+We've seen a command to do that.
+
+04:01.410 --> 04:04.260
+However, I don't want you to lose those changes.
+
+04:04.260 --> 04:07.290
+I want you to keep the changes in your working directory.
+
+04:07.290 --> 04:11.220
+So you may need to rewatch a video to learn how to do that.
+
+04:11.220 --> 04:13.350
+Keep the changes, undo the two commits.
+
+04:13.350 --> 04:15.930
+Then you can create a new branch called "404,"
+
+04:15.930 --> 04:18.090
+switch over to it, and then
+
+04:18.090 --> 04:19.410
+those changes will come with you.
+
+04:19.410 --> 04:21.480
+You can add and commit them on the 404 branch
+
+04:21.480 --> 04:23.340
+and go back to the master branch
+
+04:23.340 --> 04:25.500
+and we'll have the original lyrics.
+
+04:25.500 --> 04:28.320
+So don't just, you know, listen to me.
+
+04:28.320 --> 04:31.290
+Read the the exercise, read the bullet points.
+
+04:31.290 --> 04:33.240
+I think it's pretty step-by-step.
+
+04:33.240 --> 04:36.330
+You'll need to use most of the commands we talked about
+
+04:36.330 --> 04:39.210
+and you may need to reference either the git docs
+
+04:39.210 --> 04:41.520
+or the earlier videos in this section.
+
+04:41.520 --> 04:42.960
+So I'm gonna go ahead and do it.
+
+04:42.960 --> 04:45.092
+I really recommend you do it.
+
+04:45.092 --> 04:46.620
+You know, it kind of takes me forever to make these things.
+
+04:46.620 --> 04:49.050
+So I hope you get something out of them.
+
+04:49.050 --> 04:50.370
+Anyway, here we go.
+
+04:50.370 --> 04:51.420
+So I already cloned.
+
+04:51.420 --> 04:53.850
+We already saw that there was eight commits in there.
+
+04:53.850 --> 04:56.490
+I'm going to check out the very first commit.
+
+04:56.490 --> 05:00.570
+And first, I'm just gonna open up the "lyrics" file, right?
+
+05:00.570 --> 05:03.573
+There's one file, so I'll just open it up in VS code.
+
+05:04.800 --> 05:06.750
+And I'll do this side-by-side.
+
+05:06.750 --> 05:08.520
+Okay, so there is the lyrics,
+
+05:08.520 --> 05:11.070
+the complete lyrics for, "Yesterday,"
+
+05:11.070 --> 05:13.980
+although actually I did leave off the final verse.
+
+05:13.980 --> 05:18.060
+Anyway, what we're going to do now is go back to the commit.
+
+05:18.060 --> 05:20.340
+That was the very, very first commit.
+
+05:20.340 --> 05:22.950
+So "git log," just do "oneline,"
+
+05:22.950 --> 05:26.283
+and I'm gonna copy this hash, and then check it out.
+
+05:27.187 --> 05:29.040
+"Git checkout" that hash.
+
+05:29.040 --> 05:30.930
+And this is the very first commit.
+
+05:30.930 --> 05:32.760
+We are going to immediately leave.
+
+05:32.760 --> 05:34.410
+We saw those lyrics, right?
+
+05:34.410 --> 05:37.380
+Those are different than what was just in that file.
+
+05:37.380 --> 05:38.940
+We're gonna go back to the master branch.
+
+05:38.940 --> 05:41.010
+So I can just do a "git switch" master,
+
+05:41.010 --> 05:45.480
+or just "git switch -" to go back to where I was.
+
+05:45.480 --> 05:48.660
+And now we see "Yesterday," the actual lyrics.
+
+05:48.660 --> 05:50.490
+Next, go back to the commit
+
+05:50.490 --> 05:52.290
+where the original version of the lyrics
+
+05:52.290 --> 05:53.790
+was first completed.
+
+05:53.790 --> 05:57.360
+This commit has the message "finish original lyrics,"
+
+05:57.360 --> 05:59.340
+and then create a branch called "scrambled-eggs"
+
+05:59.340 --> 06:01.410
+based on that commit.
+
+06:01.410 --> 06:02.967
+So we'll do a "git log."
+
+06:03.967 --> 06:05.640
+"Oneline."
+
+06:05.640 --> 06:09.090
+Let's find, there it is: "finish original lyrics,"
+
+06:09.090 --> 06:10.830
+copy that hash.
+
+06:10.830 --> 06:12.000
+We're going to check it out.
+
+06:12.000 --> 06:14.640
+This will be a detached HEAD, which is okay.
+
+06:14.640 --> 06:17.910
+So here's the full "Scrambled Eggs" lyrics.
+
+06:17.910 --> 06:20.640
+So we're going to make a branch based upon this.
+
+06:20.640 --> 06:21.780
+I'm gonna switch to it.
+
+06:21.780 --> 06:22.653
+Let me clear.
+
+06:23.803 --> 06:27.090
+"-c," and it's called "scrambled-eggs."
+
+06:27.090 --> 06:29.730
+So now we're no longer in detached HEAD.
+
+06:29.730 --> 06:32.790
+We have these changes, from the earlier commit,
+
+06:32.790 --> 06:34.713
+but I can also switch back to master.
+
+06:35.760 --> 06:37.620
+And we don't have those changes here.
+
+06:37.620 --> 06:38.940
+I mean we do in the history,
+
+06:38.940 --> 06:41.970
+but currently in the working directory, we don't.
+
+06:41.970 --> 06:44.010
+Now, delete everything in the "lyrics" file
+
+06:44.010 --> 06:46.950
+on the master branch, and save.
+
+06:46.950 --> 06:48.690
+Uh oh, I didn't mean to do that.
+
+06:48.690 --> 06:51.030
+And ignoring the fact that I can just do command Z
+
+06:51.030 --> 06:55.050
+and undo it, using a git command, discard those changes.
+
+06:55.050 --> 06:57.030
+Okay, how do I do that?
+
+06:57.030 --> 06:58.830
+Well, there's a couple of options.
+
+06:58.830 --> 07:01.200
+The newer way of doing it is "git restore,"
+
+07:01.200 --> 07:02.550
+and then a file name.
+
+07:02.550 --> 07:06.420
+So "git restore lyrics," and there we are.
+
+07:06.420 --> 07:09.720
+But I can also recreate that.
+
+07:09.720 --> 07:10.980
+So I just saved again.
+
+07:10.980 --> 07:13.140
+I can do the older version.
+
+07:13.140 --> 07:14.047
+Whoopsies.
+
+07:14.047 --> 07:18.357
+"Git checkout HEAD," and then the file "lyrics."
+
+07:19.380 --> 07:22.050
+And there we go. Same thing. Okay?
+
+07:22.050 --> 07:23.730
+Next up I get a creative itch.
+
+07:23.730 --> 07:25.050
+I'm on the master branch.
+
+07:25.050 --> 07:27.480
+I'm gonna replace the contents of the "lyrics" file
+
+07:27.480 --> 07:29.190
+with this.
+
+07:29.190 --> 07:31.890
+Nope, not that. I copied the wrong thing.
+
+07:31.890 --> 07:32.723
+This.
+
+07:34.200 --> 07:37.650
+And we're going to add and commit this on the master branch.
+
+07:37.650 --> 07:40.740
+So "git add lyrics," "git commit,"
+
+07:40.740 --> 07:45.090
+just go with "begin 404 lyrics."
+
+07:45.090 --> 07:48.030
+And then we're just gonna copy this,
+
+07:48.030 --> 07:49.743
+the second half of the song,
+
+07:50.610 --> 07:52.800
+put it at the bottom of the file,
+
+07:52.800 --> 07:54.240
+and then add and commit again.
+
+07:54.240 --> 07:59.240
+So "git add lyrics," "git commit," "finish 404 lyrics."
+
+08:03.510 --> 08:06.480
+And then we realize, "Oh, that was actually a mistake."
+
+08:06.480 --> 08:08.430
+Shouldn't have done that on the master branch.
+
+08:08.430 --> 08:10.740
+I don't even know if I want those lyrics anymore.
+
+08:10.740 --> 08:14.070
+So I'm going to move them to a branch called "404,"
+
+08:14.070 --> 08:16.680
+but I already made the commits on the master branch.
+
+08:16.680 --> 08:19.560
+So I'm going to undo them on master.
+
+08:19.560 --> 08:22.260
+So I need to use the "reset" command,
+
+08:22.260 --> 08:24.910
+and I need to figure out where I'm resetting back to.
+
+08:25.830 --> 08:28.590
+So this is 404, this is 404.
+
+08:28.590 --> 08:30.930
+This is what I want to go back to.
+
+08:30.930 --> 08:32.370
+So two commits ago.
+
+08:32.370 --> 08:34.170
+Copy that hash.
+
+08:34.170 --> 08:36.090
+And then I'm gonna do a "git reset."
+
+08:36.090 --> 08:38.700
+But I'm not gonna do hard if you recall,
+
+08:38.700 --> 08:42.990
+which also updates the files and undoes the changes.
+
+08:42.990 --> 08:44.700
+It doesn't just delete the commits,
+
+08:44.700 --> 08:46.170
+it actually undoes changes.
+
+08:46.170 --> 08:47.820
+I'm not going to do that.
+
+08:47.820 --> 08:50.550
+As this document makes, I hope clear,
+
+08:50.550 --> 08:52.260
+keep the changes in your working directory.
+
+08:52.260 --> 08:55.650
+Just undo the two commits. Okay?
+
+08:55.650 --> 08:57.810
+So we don't see anything change over here,
+
+08:57.810 --> 09:02.810
+but if I do a "git log," we don't see those 404 commits.
+
+09:03.750 --> 09:07.980
+So now, I can make my new branch called "404."
+
+09:07.980 --> 09:12.060
+So "git switch -c 404."
+
+09:12.060 --> 09:13.260
+And those changes come with me
+
+09:13.260 --> 09:14.850
+if I look at "git status," right?
+
+09:14.850 --> 09:17.100
+It says you modified the lyrics file.
+
+09:17.100 --> 09:19.207
+So now I can add and commit on this branch,
+
+09:19.207 --> 09:21.567
+"git add lyrics," "git commit."
+
+09:22.860 --> 09:27.460
+I don't know. How about "write 404 parody lyrics."
+
+09:29.070 --> 09:31.020
+Geez, can't type.
+
+09:31.020 --> 09:33.570
+Okay, so that's on the 404 branch.
+
+09:33.570 --> 09:36.870
+And now I can switch back to master. Right?
+
+09:36.870 --> 09:40.650
+Here's the 404 lyrics, but on master they're gone.
+
+09:40.650 --> 09:42.627
+We have the original "Yesterday" lyrics.
+
+09:42.627 --> 09:45.240
+All right, we don't have that 404 commit.
+
+09:45.240 --> 09:47.850
+This is the final thing on the master branch.
+
+09:47.850 --> 09:50.220
+And if we switch back to 404,
+
+09:50.220 --> 09:52.470
+we have those lovely parody lyrics.
+
+09:52.470 --> 09:55.107
+And if we switch to "scrambled-eggs,"
+
+09:55.980 --> 09:58.860
+which is the other branch that we made early on,
+
+09:58.860 --> 10:02.460
+I have the original "Scrambled Eggs" version of "Yesterday."
+
+10:02.460 --> 10:04.923
+And that's it for the exercise. Okay.
