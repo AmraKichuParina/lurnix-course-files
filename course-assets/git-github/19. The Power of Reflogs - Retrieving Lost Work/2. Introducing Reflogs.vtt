@@ -1,0 +1,457 @@
+WEBVTT
+
+00:00.300 --> 00:03.270
+Speaker 1: Okay, so let's start talking about reflogs.
+
+00:03.270 --> 00:06.930
+So the term reflogs is short for reference logs.
+
+00:06.930 --> 00:09.690
+And I recognize it doesn't sound
+
+00:09.690 --> 00:12.840
+very exciting at all or even that useful,
+
+00:12.840 --> 00:15.840
+but trust me, we will see how these come in handy.
+
+00:15.840 --> 00:18.810
+But they are just logs, they're just a transcript
+
+00:18.810 --> 00:21.060
+or a record that Git keeps for us
+
+00:21.060 --> 00:23.550
+of whenever references are updated.
+
+00:23.550 --> 00:25.740
+So references in Git,
+
+00:25.740 --> 00:27.660
+I've also used the term pointer,
+
+00:27.660 --> 00:31.050
+are things like this in my diagrams where I have an arrow.
+
+00:31.050 --> 00:34.110
+So a branch, every branch has a branch reference, right?
+
+00:34.110 --> 00:36.450
+That is what keeps the tip of the branch.
+
+00:36.450 --> 00:39.210
+So in my diagrams, it's been a name with an arrow
+
+00:39.210 --> 00:40.620
+pointing to a commit.
+
+00:40.620 --> 00:43.710
+Another reference we've seen would be HEAD.
+
+00:43.710 --> 00:45.300
+So HEAD can refer to a branch
+
+00:45.300 --> 00:47.850
+or it can point to a commit and detached HEAD.
+
+00:47.850 --> 00:49.590
+There are other references as well,
+
+00:49.590 --> 00:51.840
+things for remote branches.
+
+00:51.840 --> 00:54.270
+There's fetch HEAD, merge HEAD,
+
+00:54.270 --> 00:56.400
+there are different references in Git.
+
+00:56.400 --> 01:00.240
+So Git is going to keep a record of when they change
+
+01:00.240 --> 01:02.280
+and it actually stores them in a file.
+
+01:02.280 --> 01:05.190
+So in my diagrams here I'm kind of indicating the
+
+01:05.190 --> 01:07.560
+potential log for HEAD.
+
+01:07.560 --> 01:11.430
+So a reflog, a reference log for when HEAD changes.
+
+01:11.430 --> 01:14.520
+So here's HEAD in this hypothetical situation, it's pointing
+
+01:14.520 --> 01:17.910
+to Feature, which in turn is pointing to this commit.
+
+01:17.910 --> 01:20.550
+So then we make a new commit, commit H.
+
+01:20.550 --> 01:22.560
+I'm just using letters to make it simple.
+
+01:22.560 --> 01:24.270
+But then we switch branches.
+
+01:24.270 --> 01:26.220
+HEAD now points to Main.
+
+01:26.220 --> 01:28.620
+So Git actually takes note of that and it says,
+
+01:28.620 --> 01:33.090
+oh, you just switched HEAD, changed from Main to Feature,
+
+01:33.090 --> 01:34.530
+or other way around, I think.
+
+01:34.530 --> 01:36.390
+It changed to Main from Feature.
+
+01:36.390 --> 01:39.540
+And then if we switch back, Git takes note of that.
+
+01:39.540 --> 01:42.690
+You switched to the Feature branch from Main.
+
+01:42.690 --> 01:44.760
+So it has this running log.
+
+01:44.760 --> 01:46.620
+We haven't seen it yet, but there is a log,
+
+01:46.620 --> 01:49.110
+and there's actually a file that we can take a look at
+
+01:49.110 --> 01:51.450
+for HEAD if we want to see the reflog,
+
+01:51.450 --> 01:54.360
+the reference log in any repository.
+
+01:54.360 --> 01:57.360
+I'm using this react repository because it has
+
+01:57.360 --> 01:58.800
+a lot of history.
+
+01:58.800 --> 02:00.720
+If you wanna follow along, I would just work
+
+02:00.720 --> 02:03.660
+on any repo that has commits and branches.
+
+02:03.660 --> 02:06.270
+And if we look in the .git folder,
+
+02:06.270 --> 02:09.000
+there is a directory called logs,
+
+02:09.000 --> 02:10.380
+and I can actually see it over here.
+
+02:10.380 --> 02:13.530
+I have the .git folder open in VS Code.
+
+02:13.530 --> 02:16.110
+Here it is, a logs directory.
+
+02:16.110 --> 02:18.660
+And then there's a file called HEAD.
+
+02:18.660 --> 02:20.490
+And this might be shocking,
+
+02:20.490 --> 02:22.530
+but this file is actually readable.
+
+02:22.530 --> 02:26.220
+It's not compressed, it's not binary, it's a lot of text.
+
+02:26.220 --> 02:28.770
+But what we have are a series of entries in here.
+
+02:28.770 --> 02:32.070
+So here's the first one and the second one
+
+02:32.070 --> 02:32.903
+and the third one.
+
+02:32.903 --> 02:35.910
+I'm pretty zoomed in, so it kind of makes it look
+
+02:35.910 --> 02:37.350
+worse than it is.
+
+02:37.350 --> 02:40.470
+But each one of these entries is a move
+
+02:40.470 --> 02:42.598
+for the HEAD reference.
+
+02:42.598 --> 02:44.520
+I'll just show you down at the bottom.
+
+02:44.520 --> 02:47.580
+HEAD, most recently, let's see,
+
+02:47.580 --> 02:49.920
+there was a new commit made and before that
+
+02:49.920 --> 02:51.750
+I actually did a Git reset.
+
+02:51.750 --> 02:53.340
+Before that, I did a commit,
+
+02:53.340 --> 02:56.700
+but then before that I moved from some commit,
+
+02:56.700 --> 03:00.090
+I was in detached HEAD, and I moved to master.
+
+03:00.090 --> 03:02.790
+So it's tracking when I switch branches.
+
+03:02.790 --> 03:04.860
+So instead of just going through a history,
+
+03:04.860 --> 03:07.372
+you weren't even present for any of this, really,
+
+03:07.372 --> 03:10.620
+why don't I show you what happens when I make changes,
+
+03:10.620 --> 03:13.590
+when I actually update the HEAD reference live?
+
+03:13.590 --> 03:16.710
+So I think what I'll do to make this easier is
+
+03:16.710 --> 03:18.990
+actually put my terminal side by side.
+
+03:18.990 --> 03:20.280
+Okay, here we are.
+
+03:20.280 --> 03:24.360
+This will allow me to show you the updates happening live.
+
+03:24.360 --> 03:26.160
+So this is the same repository.
+
+03:26.160 --> 03:29.160
+By the way, you should not edit this file.
+
+03:29.160 --> 03:31.200
+I just accidentally typed something in there.
+
+03:31.200 --> 03:33.090
+You don't want to edit this directly.
+
+03:33.090 --> 03:35.640
+These are just logs kept by Git.
+
+03:35.640 --> 03:38.580
+Okay, so there are many ways to update HEAD.
+
+03:38.580 --> 03:41.310
+The simplest way is just to switch branches.
+
+03:41.310 --> 03:43.590
+So let's see what branch I'm on in this repo.
+
+03:43.590 --> 03:45.210
+I'm on the master branch.
+
+03:45.210 --> 03:46.980
+Let's switch to the turtle branch.
+
+03:46.980 --> 03:51.980
+Okay, so git switch turtle, and watch right here,
+
+03:53.610 --> 03:56.340
+we'll have a new entry added into this file,
+
+03:56.340 --> 04:01.340
+and it says checkout: moving from master to turtle.
+
+04:01.680 --> 04:03.540
+So it doesn't say switch, but that's what we did, right?
+
+04:03.540 --> 04:04.410
+We checked out a branch,
+
+04:04.410 --> 04:06.630
+we just used the git switch command.
+
+04:06.630 --> 04:08.820
+So it took a record or it made a record.
+
+04:08.820 --> 04:10.470
+Just like I showed in this diagram.
+
+04:10.470 --> 04:12.030
+Git is tracking our moves,
+
+04:12.030 --> 04:15.420
+or it's tracking the moves of the HEAD reference, rather.
+
+04:15.420 --> 04:17.820
+So if I do something else,
+
+04:17.820 --> 04:19.680
+how about I go into detached HEAD?
+
+04:19.680 --> 04:21.720
+So git log, let's just see what we've got.
+
+04:21.720 --> 04:23.730
+Let's pick some commit.
+
+04:23.730 --> 04:26.427
+How about this one right here, 295.
+
+04:26.427 --> 04:30.750
+If I do a git checkout and I give it a commit hash,
+
+04:30.750 --> 04:33.570
+we know that that puts us in detached HEAD
+
+04:33.570 --> 04:34.710
+and it tells us that.
+
+04:34.710 --> 04:36.600
+And if I look at the log,
+
+04:36.600 --> 04:38.790
+it now says this is where we were.
+
+04:38.790 --> 04:40.620
+You moved from the master branch to turtle.
+
+04:40.620 --> 04:42.420
+Well now it says, hang on, wait a minute,
+
+04:42.420 --> 04:46.770
+you're at this commit, checkout: moving from turtle to 295d.
+
+04:48.000 --> 04:49.620
+And that's exactly where we are.
+
+04:49.620 --> 04:53.970
+So now if I switch back, let's go back to master this time.
+
+04:53.970 --> 04:55.050
+We have a new entry.
+
+04:55.050 --> 04:58.440
+It says, okay, at this time, which I haven't shown you
+
+04:58.440 --> 05:00.000
+but there's a timestamp in here,
+
+05:00.000 --> 05:04.590
+at this time you moved from this detached HEAD commit
+
+05:04.590 --> 05:07.440
+to master, you're back on a branch.
+
+05:07.440 --> 05:10.710
+All right, so we have these files that we normally
+
+05:10.710 --> 05:12.360
+don't open up and look at.
+
+05:12.360 --> 05:13.770
+I'm gonna show you in the next video,
+
+05:13.770 --> 05:16.830
+there's a command we use to interact with these files.
+
+05:16.830 --> 05:20.280
+But Git keeps these records for us when HEAD changes.
+
+05:20.280 --> 05:23.670
+That's one example of a reflog because that's one example
+
+05:23.670 --> 05:25.020
+of a Git reference.
+
+05:25.020 --> 05:28.560
+But there are other things in this logs directory.
+
+05:28.560 --> 05:31.620
+Actually it keeps track of the tip of every branch.
+
+05:31.620 --> 05:34.170
+So here's the master reflog.
+
+05:34.170 --> 05:36.060
+Let me make this larger.
+
+05:36.060 --> 05:38.031
+The tip of the master branch as it changes,
+
+05:38.031 --> 05:40.380
+there are fewer entries because it just
+
+05:40.380 --> 05:41.700
+doesn't change as much.
+
+05:41.700 --> 05:43.890
+Or the donkey branch or the turtle branch
+
+05:43.890 --> 05:45.630
+or remote branches.
+
+05:45.630 --> 05:48.900
+So you can see, for example, every time I push up to the
+
+05:48.900 --> 05:52.560
+cult remote, the master branch, there's a record of it.
+
+05:52.560 --> 05:54.840
+It says you updated by pushing, you updated by pushing,
+
+05:54.840 --> 05:56.910
+you updated by pushing.
+
+05:56.910 --> 05:59.130
+So that's all that I want to say for now.
+
+05:59.130 --> 06:01.830
+Just with these files, just the fact that they exist,
+
+06:01.830 --> 06:04.491
+Git is tracking, it's keeping these logs
+
+06:04.491 --> 06:06.600
+that we can reference later.
+
+06:06.600 --> 06:09.060
+And this can be a lifesaver at times.
+
+06:09.060 --> 06:12.420
+If we make mistakes, if we need to access some commit hash
+
+06:12.420 --> 06:14.880
+that we no longer see in our Git log,
+
+06:14.880 --> 06:16.830
+I will show some demos of that.
+
+06:16.830 --> 06:20.190
+But first I wanna talk about the git reflog command.
+
+06:20.190 --> 06:22.140
+Instead of viewing these files directly,
+
+06:22.140 --> 06:23.880
+we can use a command to take a peek.
+
+06:23.880 --> 06:24.880
+So that's coming up.
