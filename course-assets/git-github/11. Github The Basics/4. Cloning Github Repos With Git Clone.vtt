@@ -1,0 +1,625 @@
+WEBVTT
+
+00:00.060 --> 00:01.500
+Instructor: So the first thing we're going to cover
+
+00:01.500 --> 00:02.790
+is cloning.
+
+00:02.790 --> 00:04.380
+Cloning is a really important part
+
+00:04.380 --> 00:06.720
+of working with remote repositories.
+
+00:06.720 --> 00:09.600
+In fact, it's such an important thing that we do in Git.
+
+00:09.600 --> 00:12.510
+If we go to the documentation under reference,
+
+00:12.510 --> 00:14.430
+all the commands are grouped together
+
+00:14.430 --> 00:16.560
+like the basic snapshot and commands:
+
+00:16.560 --> 00:20.790
+adding and git status, git commits, branching and merging.
+
+00:20.790 --> 00:21.990
+They're grouped together.
+
+00:21.990 --> 00:25.950
+But then up top there are two commands side by side,
+
+00:25.950 --> 00:30.000
+getting and creating projects: inits and clone.
+
+00:30.000 --> 00:31.680
+So we've seen how to use git init
+
+00:31.680 --> 00:34.350
+to create a new project or a new repo from scratch.
+
+00:34.350 --> 00:36.750
+We've done that for every repository
+
+00:36.750 --> 00:39.090
+but git clone does something different.
+
+00:39.090 --> 00:42.360
+Git clone actually goes and gets a repository
+
+00:42.360 --> 00:44.190
+that is not on your machine
+
+00:44.190 --> 00:46.680
+and it brings it to your machine.
+
+00:46.680 --> 00:49.410
+It basically downloads the contents of a repository
+
+00:49.410 --> 00:52.470
+based upon some URL that we provide.
+
+00:52.470 --> 00:56.970
+Typically, that URL will be from a service like GitHub.
+
+00:56.970 --> 00:58.020
+And in this course
+
+00:58.020 --> 01:01.770
+and 99% of the open source projects out there,
+
+01:01.770 --> 01:04.170
+it will be a GitHub repository that you're cloning
+
+01:04.170 --> 01:05.880
+but it could be something else.
+
+01:05.880 --> 01:09.570
+Bitbucket, it could be a self-hosted repository.
+
+01:09.570 --> 01:11.310
+Git does not care.
+
+01:11.310 --> 01:13.350
+The command git clone is part of Git.
+
+01:13.350 --> 01:15.600
+It's not part of GitHub.
+
+01:15.600 --> 01:18.960
+So here it is git clone and then a URL
+
+01:18.960 --> 01:22.290
+and that URL is where Git will go and retrieve
+
+01:22.290 --> 01:25.380
+all the relevant information for a repository from.
+
+01:25.380 --> 01:27.540
+It will copy the files to your machine.
+
+01:27.540 --> 01:30.900
+It initializes a new repository on your machine
+
+01:30.900 --> 01:33.330
+so that gives you access to the full Git history
+
+01:33.330 --> 01:35.100
+of whatever project you're cloning
+
+01:35.100 --> 01:37.590
+and I'm gonna demo this in just a moment.
+
+01:37.590 --> 01:40.980
+So as an example, there's some repository on GitHub.
+
+01:40.980 --> 01:44.400
+Let's say it's, I don't know, it's React
+
+01:44.400 --> 01:46.500
+or it's a "Flappy Bird" clone.
+
+01:46.500 --> 01:49.140
+It's some game on GitHub.
+
+01:49.140 --> 01:51.660
+I want the source code and the Git history.
+
+01:51.660 --> 01:55.530
+So if I run git clone with the corresponding URL,
+
+01:55.530 --> 01:59.070
+whatever that GitHub URL is for that hosted repo,
+
+01:59.070 --> 02:01.020
+git is gonna go fetch all that
+
+02:01.020 --> 02:03.150
+and bring it down to my machine.
+
+02:03.150 --> 02:06.690
+I'll have the full history, all the commits, all the files.
+
+02:06.690 --> 02:09.180
+So I'll go ahead and demonstrate this.
+
+02:09.180 --> 02:12.750
+Here's a GitHub repository that I don't have.
+
+02:12.750 --> 02:17.103
+It's for the game "2048" which some of you probably know.
+
+02:18.240 --> 02:20.430
+This game, very addictive.
+
+02:20.430 --> 02:23.040
+It's, I don't know how many years old now but anyway,
+
+02:23.040 --> 02:26.760
+it's just a JavaScript, HTML, some CSS,
+
+02:26.760 --> 02:27.780
+that it's a game.
+
+02:27.780 --> 02:30.030
+You can open it up and play it in your browser.
+
+02:30.030 --> 02:31.440
+So if I want the code for that
+
+02:31.440 --> 02:33.300
+and I want the full Git history,
+
+02:33.300 --> 02:35.610
+of course I can see it on GitHub, right?
+
+02:35.610 --> 02:38.250
+That's what GitHub is doing for me here as a user.
+
+02:38.250 --> 02:40.170
+I can view this URL.
+
+02:40.170 --> 02:42.540
+I can look at different commits, 180 commits.
+
+02:42.540 --> 02:44.100
+I can see who contributed.
+
+02:44.100 --> 02:45.360
+I can read about it.
+
+02:45.360 --> 02:47.010
+I can take a look at, you know,
+
+02:47.010 --> 02:50.010
+the index HTML file in the browser.
+
+02:50.010 --> 02:52.530
+But I'm gonna clone this URL.
+
+02:52.530 --> 02:55.110
+One option is just to copy this URL right here.
+
+02:55.110 --> 02:57.570
+Another option on GitHub is to click right here
+
+02:57.570 --> 03:00.330
+and it's gonna show me the clone URL
+
+03:00.330 --> 03:02.040
+which is the same thing as we see up there.
+
+03:02.040 --> 03:03.330
+I can click this button.
+
+03:03.330 --> 03:04.710
+I can, you know, Command+C,
+
+03:04.710 --> 03:06.630
+however you want to get that URL.
+
+03:06.630 --> 03:08.340
+I'm gonna get that URL.
+
+03:08.340 --> 03:09.173
+And by the way,
+
+03:09.173 --> 03:11.790
+this repository link is in the resources with this video.
+
+03:11.790 --> 03:15.030
+If you wanna try this, definitely recommend you do.
+
+03:15.030 --> 03:17.190
+Now, I'm gonna go over to my terminal.
+
+03:17.190 --> 03:19.170
+The first thing you always wanna do when you're cloning
+
+03:19.170 --> 03:21.077
+is make sure that you're not in a repository.
+
+03:21.077 --> 03:23.190
+Just like when you run git init.
+
+03:23.190 --> 03:25.320
+So I just like to do git status.
+
+03:25.320 --> 03:27.750
+Okay, we're not in a repository.
+
+03:27.750 --> 03:29.850
+And then wherever you run git clone,
+
+03:29.850 --> 03:33.480
+that is the place, that folder, where git is going to create
+
+03:33.480 --> 03:35.070
+a new folder for you.
+
+03:35.070 --> 03:38.610
+So I'm in a folder called what is this?
+
+03:38.610 --> 03:42.120
+Just, well actually, I meant to be in this folder Cloning.
+
+03:42.120 --> 03:43.890
+So now I'm in a folder Cloning.
+
+03:43.890 --> 03:45.120
+There's nothing in here.
+
+03:45.120 --> 03:47.850
+It's gonna make me a new folder when I run this command
+
+03:47.850 --> 03:50.880
+git clone and then I paste the URL
+
+03:50.880 --> 03:52.560
+that's coming from GitHub.
+
+03:52.560 --> 03:54.900
+I don't have anything from this URL.
+
+03:54.900 --> 03:57.390
+I don't have this repository on this machine.
+
+03:57.390 --> 03:58.743
+I'm not in a git repo.
+
+03:59.580 --> 04:01.110
+But when that finishes
+
+04:01.110 --> 04:04.620
+and you will need internet for this, when that finishes,
+
+04:04.620 --> 04:07.080
+we see a new folder that was not there before.
+
+04:07.080 --> 04:09.270
+I typed LS, there was nothing.
+
+04:09.270 --> 04:13.050
+If I go into that folder and I type LS,
+
+04:13.050 --> 04:15.690
+okay I've got a whole bunch of stuff, right?
+
+04:15.690 --> 04:20.430
+I've got index.html, JavaScript folder, style folder,
+
+04:20.430 --> 04:22.230
+some other stuff going on.
+
+04:22.230 --> 04:26.070
+And it looks like this is a git repo, right?
+
+04:26.070 --> 04:29.100
+If I type git status, yes it is.
+
+04:29.100 --> 04:32.943
+If I type git log, I can see the full history of commits.
+
+04:33.810 --> 04:35.310
+See all that stuff.
+
+04:35.310 --> 04:37.560
+That's all or it came from GitHub.
+
+04:37.560 --> 04:39.690
+I can see all the commits and who made them,
+
+04:39.690 --> 04:40.773
+when they were made.
+
+04:41.670 --> 04:43.230
+There's, you know, all the code here.
+
+04:43.230 --> 04:45.330
+I can open it up and take a look.
+
+04:45.330 --> 04:47.310
+I can even run this.
+
+04:47.310 --> 04:49.440
+And there, this is actually running.
+
+04:49.440 --> 04:50.820
+This is not the hosted version.
+
+04:50.820 --> 04:51.960
+This is running from my machine.
+
+04:51.960 --> 04:54.570
+You can see here and there we are.
+
+04:54.570 --> 04:56.400
+I could play around with it myself.
+
+04:56.400 --> 04:58.140
+I could change the styles.
+
+04:58.140 --> 05:01.770
+I've opened up the CSS, main.css
+
+05:01.770 --> 05:05.580
+and I could do something like, is there a background?
+
+05:05.580 --> 05:06.630
+What are we dealing with?
+
+05:06.630 --> 05:08.640
+The background color somewhere.
+
+05:08.640 --> 05:09.660
+Ah, there we are.
+
+05:09.660 --> 05:14.370
+Let's make that some form of green or olive.
+
+05:14.370 --> 05:17.370
+Sure, olive. Just like that.
+
+05:17.370 --> 05:20.370
+So pretend I've tweaked a whole bunch of things.
+
+05:20.370 --> 05:21.960
+I can see those changes, right?
+
+05:21.960 --> 05:23.340
+This is all just for me to experiment
+
+05:23.340 --> 05:24.720
+and play around with locally.
+
+05:24.720 --> 05:26.340
+Although in the next couple of sections,
+
+05:26.340 --> 05:28.350
+I'll also show how we could make changes
+
+05:28.350 --> 05:31.080
+and then try and contribute, try and share these changes
+
+05:31.080 --> 05:33.180
+with the owner of the repository.
+
+05:33.180 --> 05:36.360
+Try and suggest, maybe not this (laughs)
+
+05:36.360 --> 05:38.340
+but maybe there's a bug that someone's identified
+
+05:38.340 --> 05:40.200
+and I volunteer to fix it.
+
+05:40.200 --> 05:42.150
+I would need to clone the repository.
+
+05:42.150 --> 05:43.620
+Whether I'm just messing around
+
+05:43.620 --> 05:46.530
+and breaking things and playing and changing colors,
+
+05:46.530 --> 05:48.540
+whether I'm trying to understand how something works
+
+05:48.540 --> 05:52.980
+or whether I wanna make contributions, I need to clone.
+
+05:52.980 --> 05:56.190
+So that command git clone, it's pretty simple.
+
+05:56.190 --> 05:57.990
+Just git clone and then a URL.
+
+05:57.990 --> 06:00.930
+Make sure you're not in a Git repository when you run it
+
+06:00.930 --> 06:03.270
+because it creates, well, it creates a folder,
+
+06:03.270 --> 06:05.730
+but in that folder there is a Git repository
+
+06:05.730 --> 06:06.780
+that's been initialized
+
+06:06.780 --> 06:09.990
+and it has the full history of the project.
+
+06:09.990 --> 06:12.390
+I'm just showing it to you in GitKraken very quickly.
+
+06:12.390 --> 06:14.730
+This is the cloned repository
+
+06:14.730 --> 06:18.690
+and we can see a lot of commits going on as I scroll,
+
+06:18.690 --> 06:20.820
+a lot of different branches over time,
+
+06:20.820 --> 06:22.470
+a lot of different contributors.
+
+06:22.470 --> 06:24.510
+And I could take a look at any of them, right?
+
+06:24.510 --> 06:26.640
+I could go all the way back to the beginning.
+
+06:26.640 --> 06:29.670
+Oh boy, look initial commit, basic styling.
+
+06:29.670 --> 06:33.240
+The very basic stuff like add win, win conditions
+
+06:33.240 --> 06:34.440
+so you can win the game.
+
+06:34.440 --> 06:36.840
+All the way up to things up top
+
+06:36.840 --> 06:39.510
+where other developers have contributed.
+
+06:39.510 --> 06:40.890
+I'll just show one more example.
+
+06:40.890 --> 06:43.380
+This is another GitHub repository.
+
+06:43.380 --> 06:45.330
+This one is just a list.
+
+06:45.330 --> 06:48.180
+It's a list of companies that hire
+
+06:48.180 --> 06:50.040
+without whiteboarding interviews,
+
+06:50.040 --> 06:53.730
+without the the bad computer science trivia questions
+
+06:53.730 --> 06:56.160
+that don't actually test your abilities as a developer.
+
+06:56.160 --> 06:56.993
+It's open source.
+
+06:56.993 --> 06:57.900
+People contribute,
+
+06:57.900 --> 06:59.430
+you know different companies that are on here.
+
+06:59.430 --> 07:03.240
+If I want this repository for whatever reason on my machine,
+
+07:03.240 --> 07:05.640
+nevermind the fact that, you know, just
+
+07:05.640 --> 07:07.530
+it's probably easier to view it here.
+
+07:07.530 --> 07:09.750
+But if I wanted to contribute and add,
+
+07:09.750 --> 07:11.260
+I could copy this URL
+
+07:12.191 --> 07:13.980
+or I can click here and copy that.
+
+07:13.980 --> 07:15.330
+They're the same URL.
+
+07:15.330 --> 07:18.060
+Go to my terminal which is somewhere.
+
+07:18.060 --> 07:19.470
+There we are.
+
+07:19.470 --> 07:22.290
+Make sure I'm not in a git repo and I am right now.
+
+07:22.290 --> 07:24.840
+So I'm gonna back out and now I'm not.
+
+07:24.840 --> 07:27.390
+Type git status. I'm not.
+
+07:27.390 --> 07:29.673
+Git clone, paste the URL.
+
+07:31.350 --> 07:32.183
+It takes a moment.
+
+07:32.183 --> 07:33.420
+This one's a bit larger.
+
+07:33.420 --> 07:35.430
+And then I have a new folder.
+
+07:35.430 --> 07:37.680
+Hiring without whiteboards.
+
+07:37.680 --> 07:39.090
+Git status inside.
+
+07:39.090 --> 07:41.280
+Yes, it is a repository.
+
+07:41.280 --> 07:42.270
+I type LS.
+
+07:42.270 --> 07:44.220
+We can see all the files here.
+
+07:44.220 --> 07:48.720
+And I type git log, and I can see all of the contributions,
+
+07:48.720 --> 07:50.250
+all the individual commits.
+
+07:50.250 --> 07:51.120
+There's quite a bit here.
+
+07:51.120 --> 07:52.240
+Let's do one line
+
+07:55.830 --> 07:57.720
+and then I can scroll through all of them.
+
+07:57.720 --> 08:00.120
+I could open this in GitKraken and show you the same thing.
+
+08:00.120 --> 08:02.910
+I have the full history for that entire repository
+
+08:02.910 --> 08:03.990
+on my machine.
+
+08:03.990 --> 08:05.850
+I didn't create the repository right?
+
+08:05.850 --> 08:07.980
+I just cloned it using git clone.
+
+08:07.980 --> 08:08.970
+Great command.
+
+08:08.970 --> 08:11.100
+Excellent, excellent, great command.
+
+08:11.100 --> 08:12.810
+Remember, it's a git command.
+
+08:12.810 --> 08:14.567
+It is not tied to GitHub.
