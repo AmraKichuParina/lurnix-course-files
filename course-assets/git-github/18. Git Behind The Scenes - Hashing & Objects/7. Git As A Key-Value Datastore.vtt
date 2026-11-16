@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00.270 --> 00:02.340
+-: Okay, so if you skipped the last video
+
+00:02.340 --> 00:04.320
+because you know hashing functions
+
+00:04.320 --> 00:06.750
+the only thing you miss relevant to git is
+
+00:06.750 --> 00:11.670
+that Git uses a specific hashing function called SHA one.
+
+00:11.670 --> 00:13.500
+Although this is set to change eventually it still
+
+00:13.500 --> 00:17.280
+uses SHA-1 it generates 40 digit hexadecimal numbers.
+
+00:17.280 --> 00:19.230
+Exactly what we've been seeing
+
+00:19.230 --> 00:21.360
+this is the output of the SHA one algorithm.
+
+00:21.360 --> 00:24.390
+This is as well, and these are commit hashes, right?
+
+00:24.390 --> 00:26.490
+40 digit commit hashes.
+
+00:26.490 --> 00:30.600
+But Git actually uses SHA one in many, many other places
+
+00:30.600 --> 00:32.940
+not just to generate commit hashes.
+
+00:32.940 --> 00:35.610
+If you recall, let me find the slide.
+
+00:35.610 --> 00:37.260
+I mentioned that there are four types
+
+00:37.260 --> 00:39.240
+of git objects, four things
+
+00:39.240 --> 00:42.630
+four types that Git can store, including commits
+
+00:42.630 --> 00:46.290
+but then there's also trees and blobs and annotated tags
+
+00:46.290 --> 00:49.260
+all four of which are hashed using SHA one.
+
+00:49.260 --> 00:52.032
+So we're gonna get to all four of those data types
+
+00:52.032 --> 00:55.260
+or object types throughout the, the course of this section.
+
+00:55.260 --> 00:58.890
+But I wanna start by just explaining something about Git.
+
+00:58.890 --> 01:01.560
+Git is a key value data store
+
+01:01.560 --> 01:04.500
+meaning that we can put data into Git, right?
+
+01:04.500 --> 01:06.600
+We ask Git to store something for us.
+
+01:06.600 --> 01:09.750
+That could be a file, it could be a folder
+
+01:09.750 --> 01:12.450
+or it could be a hundred files in folders.
+
+01:12.450 --> 01:15.720
+We could even just tell Git to store a piece of text for us
+
+01:15.720 --> 01:18.480
+which we really don't do because all the times we
+
+01:18.480 --> 01:21.240
+we make texts in a file, but I'm about to show you
+
+01:21.240 --> 01:22.710
+we can just give git a piece
+
+01:22.710 --> 01:25.500
+of text and have it store that as well.
+
+01:25.500 --> 01:28.050
+So we can put all sorts of content into a Git repo.
+
+01:28.050 --> 01:31.470
+And Git is going to hand us back a unique key
+
+01:31.470 --> 01:34.380
+that we can then later use to retrieve that content.
+
+01:34.380 --> 01:37.770
+Like when you go to a, if you ever go to a bar or a club
+
+01:37.770 --> 01:41.130
+or a concert venue and there's a coat check, right?
+
+01:41.130 --> 01:44.070
+They, they take your coat, they give you a unique key
+
+01:44.070 --> 01:46.800
+that corresponds to your coat, and then later on you go back
+
+01:46.800 --> 01:49.800
+and say, hey, here's my key, gimme back my coat, please.
+
+01:49.800 --> 01:54.000
+So the keys that we get back in git are SHA one check sums
+
+01:54.000 --> 01:57.000
+or the output of the SHA one hashing function.
+
+01:57.000 --> 01:57.833
+So here's a demo.
+
+01:57.833 --> 02:02.260
+Imagine we have a file called App js, and I'm using Git to
+
+02:03.171 --> 02:04.302
+track the changes, right?
+
+02:04.302 --> 02:07.290
+I've made one version of it and then a second version of it.
+
+02:07.290 --> 02:11.010
+And for each version, I've used Git to store that file
+
+02:11.010 --> 02:12.390
+and its contents.
+
+02:12.390 --> 02:15.481
+Now that's actually somewhat complicated to understand
+
+02:15.481 --> 02:16.950
+'cause it does store files and contents separately
+
+02:16.950 --> 02:18.003
+but we'll get there.
+
+02:19.219 --> 02:23.460
+Anyway, each one actually gets its own unique key.
+
+02:23.460 --> 02:25.110
+So you can see the keys here.
+
+02:25.110 --> 02:28.200
+Okay, so they, they're the output of SHA one, just
+
+02:28.200 --> 02:33.200
+like a commit hash, and they each correspond to some value
+
+02:33.390 --> 02:35.130
+some piece of data.
+
+02:35.130 --> 02:37.990
+So if I have one of those keys and I tell Git
+
+02:38.883 --> 02:41.490
+please give me the content for this key, it's able to
+
+02:41.490 --> 02:43.740
+use that and figure out, oh, I know what I stored
+
+02:43.740 --> 02:44.573
+under that.
+
+02:45.462 --> 02:46.680
+It's V two of app js.
+
+02:46.680 --> 02:47.513
+Here you go.
+
+02:48.701 --> 02:51.105
+So we've seen a, a basic version of this using
+
+02:51.105 --> 02:52.598
+commit hashes, right?
+
+02:52.598 --> 02:54.630
+Where we say things like, check out this commit hash.
+
+02:54.630 --> 02:57.840
+I want to use, I wanna view the contents of this commit.
+
+02:57.840 --> 02:59.803
+And we give, Git that
+
+02:59.803 --> 03:00.636
+commit and then it can go
+
+03:00.636 --> 03:02.280
+look up corresponding information.
+
+03:02.280 --> 03:03.930
+But what we haven't seen is
+
+03:03.930 --> 03:06.720
+that Git uses these hashes all over the place.
+
+03:06.720 --> 03:09.270
+It's fundamental to how GIT works
+
+03:09.270 --> 03:11.460
+but so much of it is hidden behind the scenes.
+
+03:11.460 --> 03:13.890
+So in the next few videos, we're gonna walk through this
+
+03:13.890 --> 03:16.887
+we're going to see these different data types
+
+03:16.887 --> 03:18.960
+and the role that SHA one hashing function plays.
+
+03:18.960 --> 03:21.420
+Not just to make commit hashes, but also
+
+03:21.420 --> 03:24.030
+for trees and blobs and then also annotated tags.
+
+03:24.030 --> 03:25.920
+But they're kind of an afterthought for us.
+
+03:25.920 --> 03:28.440
+So let me summarize that hopefully quickly.
+
+03:28.440 --> 03:31.470
+Git allows us to store any sort of data in it
+
+03:31.470 --> 03:34.230
+and it will hand us back a key for that data.
+
+03:34.230 --> 03:37.620
+And that key will be a SHA one hash that we can then use
+
+03:37.620 --> 03:41.310
+at a later date to retrieve the information we stored.
+
+03:41.310 --> 03:43.590
+So a key value data store
+
+03:43.590 --> 03:46.260
+we store stuff in there and it gives us a key.
+
+03:46.260 --> 03:50.190
+We can then come back and give it the key to get that value.
+
+03:50.190 --> 03:51.993
+So we'll see that in the next video.
