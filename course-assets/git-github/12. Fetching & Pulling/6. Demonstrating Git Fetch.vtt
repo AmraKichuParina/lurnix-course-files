@@ -1,0 +1,650 @@
+WEBVTT
+
+00:00.180 --> 00:01.980
+Instructor: All right, so I'd like to demonstrate
+
+00:01.980 --> 00:03.330
+using "Git Fetch."
+
+00:03.330 --> 00:04.950
+And in order to do that,
+
+00:04.950 --> 00:08.550
+I need to have some changes on a GitHub repo
+
+00:08.550 --> 00:10.380
+that I don't have locally.
+
+00:10.380 --> 00:13.260
+Normally, this would come from collaborators, right,
+
+00:13.260 --> 00:14.520
+from other people I'm working with,
+
+00:14.520 --> 00:16.740
+who are pushing their own changes up.
+
+00:16.740 --> 00:20.700
+But right now, if it's just me, I kind of need to fake that,
+
+00:20.700 --> 00:24.180
+or at least change the GitHub repo in another way.
+
+00:24.180 --> 00:25.560
+And I can do that.
+
+00:25.560 --> 00:27.330
+You can make any GitHub repo
+
+00:27.330 --> 00:31.050
+and manually add files and edit files.
+
+00:31.050 --> 00:32.520
+So that's what I'm gonna do.
+
+00:32.520 --> 00:34.590
+I'm gonna go on GitHub.
+
+00:34.590 --> 00:38.100
+So first of all, I'm working on this "remote-branches-demo"
+
+00:38.100 --> 00:39.540
+where I've got the ASCII art.
+
+00:39.540 --> 00:43.290
+So I've got the fantasy branch, we added that phoenix into,
+
+00:43.290 --> 00:46.590
+and then I've got what, four other, three other branches.
+
+00:46.590 --> 00:48.390
+Let's go to the food branch,
+
+00:48.390 --> 00:52.080
+and I'm gonna create a new file on GitHub.
+
+00:52.080 --> 00:54.270
+I won't have this on my machine,
+
+00:54.270 --> 00:56.157
+so I can "create new file."
+
+00:57.540 --> 00:59.952
+And then I'm using this ASCII Art website.
+
+00:59.952 --> 01:03.990
+I'm just gonna take this apple and paste it in here.
+
+01:03.990 --> 01:06.630
+So if you're following along or doing something similar,
+
+01:06.630 --> 01:08.880
+you can edit any file on GitHub,
+
+01:08.880 --> 01:10.620
+assuming it's in a repo you own.
+
+01:10.620 --> 01:13.980
+And when you do that, as you can see here,
+
+01:13.980 --> 01:15.930
+it's gonna generate a commit.
+
+01:15.930 --> 01:17.880
+And I also need to come up with a name for the file.
+
+01:17.880 --> 01:20.070
+So I'll do "apple.txt,"
+
+01:20.070 --> 01:23.610
+and then I'll create it on the food branch.
+
+01:23.610 --> 01:25.650
+I could create a new branch, I'm not gonna do that.
+
+01:25.650 --> 01:27.603
+I'm adding this to the food branch.
+
+01:29.190 --> 01:32.850
+Okay, so now it shows just like any other commit.
+
+01:32.850 --> 01:35.850
+I have a new file, "create apple.txt."
+
+01:35.850 --> 01:37.680
+It's showing up right here.
+
+01:37.680 --> 01:40.140
+I'm gonna switch now to a different branch.
+
+01:40.140 --> 01:42.630
+How about to the movies branch?
+
+01:42.630 --> 01:46.290
+And I'll copy this Tinkerbell ASCII Art,
+
+01:46.290 --> 01:49.500
+and put that in a file on the movies branch
+
+01:49.500 --> 01:51.937
+called Tinkerbell.
+
+01:51.937 --> 01:56.040
+"tinkerbell.txt," and I'll paste that in,
+
+01:56.040 --> 01:58.740
+and I'll commit again to make a new file
+
+01:58.740 --> 02:00.300
+on the movies branch.
+
+02:00.300 --> 02:02.460
+So all of this that I've done so far,
+
+02:02.460 --> 02:04.320
+it has nothing to do with fetching,
+
+02:04.320 --> 02:06.180
+we're just updating the repo
+
+02:06.180 --> 02:08.670
+so that now we have stuff on GitHub
+
+02:08.670 --> 02:11.670
+that I don't have present on my local machine.
+
+02:11.670 --> 02:13.920
+And again, normally the way this would happen
+
+02:13.920 --> 02:15.810
+is that somebody pushes up changes
+
+02:15.810 --> 02:19.560
+from their own local repo, if I had collaborators.
+
+02:19.560 --> 02:23.520
+All right, so now we have three files on movies,
+
+02:23.520 --> 02:26.070
+and we have three files in food.
+
+02:26.070 --> 02:29.100
+Locally, let's start with the movies branch.
+
+02:29.100 --> 02:31.500
+If I go to the movies branch here,
+
+02:31.500 --> 02:33.787
+so just make sure I don't have any changes here.
+
+02:33.787 --> 02:35.637
+"git switch" to "movies."
+
+02:36.900 --> 02:40.020
+All right? I just have two files, right?
+
+02:40.020 --> 02:42.180
+If I type "git status," it says I'm up to date
+
+02:42.180 --> 02:43.800
+with origin/movies.
+
+02:43.800 --> 02:45.810
+But that just means I'm up to date
+
+02:45.810 --> 02:50.550
+with what my local repo knows origin/movies was,
+
+02:50.550 --> 02:54.510
+not what it exactly is at this one moment in time,
+
+02:54.510 --> 02:56.130
+because it can change.
+
+02:56.130 --> 02:58.897
+My repo is not constantly asking, "Hey, is there new stuff?
+
+02:58.897 --> 03:00.510
+"Is there new stuff from GitHub?"
+
+03:00.510 --> 03:01.440
+I have to do that.
+
+03:01.440 --> 03:05.700
+I have to tell it, "Go fetch changes, go fetch the latest."
+
+03:05.700 --> 03:07.740
+So, that's what I wanna do right now.
+
+03:07.740 --> 03:08.940
+I want to get the changes.
+
+03:08.940 --> 03:11.973
+Let's say my friend told me, what'd I say his name was?
+
+03:12.810 --> 03:15.487
+Bob Head? Yeah, Bob Head told me,
+
+03:15.487 --> 03:18.397
+"Colta just added to the movies branch.
+
+03:18.397 --> 03:20.610
+"Go fetch the changes, you need them."
+
+03:20.610 --> 03:22.320
+So "git fetch,"
+
+03:22.320 --> 03:26.310
+and then I can specify origin to get all changes,
+
+03:26.310 --> 03:30.769
+or I can specify one branch, like movies.
+
+03:30.769 --> 03:33.630
+Normally I just do "git fetch origin"
+
+03:33.630 --> 03:37.950
+or just even "git fetch" because it will default to origin.
+
+03:37.950 --> 03:40.500
+But if you only want to fetch one branch
+
+03:40.500 --> 03:42.300
+then you can specify.
+
+03:42.300 --> 03:45.480
+So I'm gonna do a "git fetch,"
+(keys tapping)
+
+03:45.480 --> 03:47.790
+and I'll do "origin," just to be clearer.
+
+03:47.790 --> 03:50.317
+We only have one remote, but here we go.
+
+03:50.317 --> 03:51.900
+"git fetch origin."
+
+03:51.900 --> 03:54.720
+Okay, doesn't seem like a whole lot happened, right?
+
+03:54.720 --> 03:56.370
+Well let's type "git status" now.
+
+03:57.210 --> 03:59.850
+Now I see a completely different message.
+
+03:59.850 --> 04:02.527
+It says, "Your branch is behind 'origin/movies'
+
+04:02.527 --> 04:04.230
+"by 1 commit."
+
+04:04.230 --> 04:08.790
+So we can tell origin/movies, that remote branch reference,
+
+04:08.790 --> 04:10.110
+has been updated.
+
+04:10.110 --> 04:12.780
+It's the equivalent with different branch names
+
+04:12.780 --> 04:13.680
+of what we saw here
+
+04:13.680 --> 04:15.600
+where we had master.
+
+04:15.600 --> 04:18.510
+origin/master was updated when we fetched
+
+04:18.510 --> 04:20.070
+to point to something new,
+
+04:20.070 --> 04:22.710
+but my branch itself is unchanged.
+
+04:22.710 --> 04:25.680
+So same idea, but swap in movies.
+
+04:25.680 --> 04:27.660
+My movies branch is here,
+
+04:27.660 --> 04:31.470
+and origin/movies is pointing at a new commit.
+
+04:31.470 --> 04:34.080
+So if I go back, let's take a look at our files.
+
+04:34.080 --> 04:36.330
+Just two files in my working directory.
+
+04:36.330 --> 04:38.610
+I don't have that new work.
+
+04:38.610 --> 04:43.610
+If I type "git log," I don't see that new commit either.
+
+04:44.340 --> 04:47.220
+Nothing has changed in my working directory.
+
+04:47.220 --> 04:50.970
+However, origin/movies is now pointing to something new.
+
+04:50.970 --> 04:52.290
+It's pointing to a new commit,
+
+04:52.290 --> 04:53.940
+and I can take a look at that.
+
+04:53.940 --> 04:58.940
+I can do "git checkout origin/movies."
+
+04:59.070 --> 05:00.360
+I just wanna take a peek.
+
+05:00.360 --> 05:03.420
+What is the work that Bob Head did?
+
+05:03.420 --> 05:05.373
+And now I enter detached HEAD.
+
+05:06.540 --> 05:10.470
+And now I see, oh yeah, Tinkerbell is here, right?
+
+05:10.470 --> 05:12.600
+Ghostbusters is here, Bambi.
+
+05:12.600 --> 05:14.460
+But this is the new work.
+
+05:14.460 --> 05:16.890
+Okay, and if I type "git log" here,
+
+05:16.890 --> 05:20.370
+we see "Create tinkerbell," that was the most recent commit,
+
+05:20.370 --> 05:22.770
+because we are looking at origin/movies.
+
+05:22.770 --> 05:25.560
+So I could make a new branch from here if I wanted to.
+
+05:25.560 --> 05:27.570
+But what I'm actually gonna show you next
+
+05:27.570 --> 05:30.990
+is how we can use the "pull" command to help us out,
+
+05:30.990 --> 05:32.820
+if we actually want to integrate these changes
+
+05:32.820 --> 05:34.410
+into our working directory.
+
+05:34.410 --> 05:37.620
+But for now fetch is just getting those changes from GitHub,
+
+05:37.620 --> 05:39.570
+or any other remote repo,
+
+05:39.570 --> 05:42.030
+and it brings them down to my machine.
+
+05:42.030 --> 05:43.620
+It just doesn't integrate them.
+
+05:43.620 --> 05:45.960
+So I can switch branches, too.
+
+05:45.960 --> 05:49.470
+Let's make sure I get back out of detached HEAD.
+
+05:49.470 --> 05:51.545
+So let's switch back to movies.
+
+05:51.545 --> 05:53.370
+(keys tapping)
+
+05:53.370 --> 05:56.820
+Okay, so I'm still behind origin/movies by one.
+
+05:56.820 --> 06:01.293
+Now let's switch to, what was it, foods? No, food.
+
+06:02.520 --> 06:05.550
+All right. And oh we didn't even have food
+
+06:05.550 --> 06:09.330
+on my machine at this point, I hadn't actually worked on it.
+
+06:09.330 --> 06:12.570
+So I just saw a message, I cleared it unfortunately.
+
+06:12.570 --> 06:14.700
+But it said it set up the branch for me.
+
+06:14.700 --> 06:17.130
+And if I take a look at what we have,
+
+06:17.130 --> 06:20.460
+it's already up to date, it has that apple file.
+
+06:20.460 --> 06:22.830
+So that's kind of a unique case
+
+06:22.830 --> 06:25.980
+because I hadn't even bothered looking at this branch yet,
+
+06:25.980 --> 06:29.190
+but because I switched to it for the very first time,
+
+06:29.190 --> 06:30.510
+and I had just fetched,
+
+06:30.510 --> 06:33.690
+it used the most recent information that it fetched.
+
+06:33.690 --> 06:36.270
+From, remember we have these remote tracking branches.
+
+06:36.270 --> 06:40.830
+Remember, "git branch -r." It used origin/food.
+
+06:40.830 --> 06:42.360
+So I'm gonna make one more change.
+
+06:42.360 --> 06:44.820
+Let's do another food.
+
+06:44.820 --> 06:48.213
+So we'll go back to food here, and I'll add a new file,
+
+06:49.440 --> 06:53.280
+and I guess I'll take this, is it tea, coffee,
+
+06:53.280 --> 06:55.020
+whatever this is.
+
+06:55.020 --> 06:59.460
+We'll put that, we'll call this, yeah, "coffee.txt."
+
+06:59.460 --> 07:01.890
+So I'm making a new file on the food branch.
+
+07:01.890 --> 07:02.793
+I'll commit.
+
+07:04.680 --> 07:05.670
+Okay.
+
+07:05.670 --> 07:07.950
+And now I'm gonna go back here,
+
+07:07.950 --> 07:11.010
+and if I type "git status" on the food branch,
+
+07:11.010 --> 07:12.180
+it thinks it's up to date.
+
+07:12.180 --> 07:16.020
+It is up to date with what we have in origin/food.
+
+07:16.020 --> 07:18.420
+But I can get more recent information,
+
+07:18.420 --> 07:19.980
+more up-to-date information.
+
+07:19.980 --> 07:22.920
+This time I'll just show fetching a particular branch.
+
+07:22.920 --> 07:24.697
+It will work exactly the same way.
+
+07:24.697 --> 07:27.237
+"git fetch origin food."
+
+07:28.590 --> 07:31.680
+And what we see now is a decent chunk of output,
+
+07:31.680 --> 07:34.237
+and if I type "git status" it tells me,
+
+07:34.237 --> 07:36.577
+"Hey, you're on this branch called food,
+
+07:36.577 --> 07:40.290
+"and it's behind origin/food By 1 commit."
+
+07:40.290 --> 07:42.660
+Just a moment ago before I fetched, it was up to date.
+
+07:42.660 --> 07:44.850
+Now it says you're behind by one.
+
+07:44.850 --> 07:47.250
+So it tells me, "use git pull to update your branch."
+
+07:47.250 --> 07:49.770
+That's a sneak peek at what we're gonna cover next.
+
+07:49.770 --> 07:51.397
+But as you just saw,
+
+07:51.397 --> 07:53.940
+"git fetch" got me the latest information
+
+07:53.940 --> 07:55.110
+from that food branch,
+
+07:55.110 --> 07:56.820
+and now we can take a look at it.
+
+07:56.820 --> 07:58.530
+So if I inspect,
+
+07:58.530 --> 08:01.050
+right, we're not looking at the latest version,
+
+08:01.050 --> 08:02.940
+we're not looking at what we just fetched.
+
+08:02.940 --> 08:04.650
+This is my working directory.
+
+08:04.650 --> 08:09.650
+But now if I check it out, "origin/food."
+
+08:10.710 --> 08:15.210
+Detached HEAD, and we see coffee is here, all right?
+
+08:15.210 --> 08:17.730
+So that's a basic idea of fetching.
+
+08:17.730 --> 08:19.080
+There are other things, you know,
+
+08:19.080 --> 08:20.790
+that you would use fetch for.
+
+08:20.790 --> 08:22.410
+It's not just about updating
+
+08:22.410 --> 08:24.060
+the particular branch that you're on
+
+08:24.060 --> 08:25.530
+and getting the latest.
+
+08:25.530 --> 08:28.890
+Also, it might be that a new branch was created.
+
+08:28.890 --> 08:30.090
+That's really common.
+
+08:30.090 --> 08:32.790
+I can make a new branch here just as a demonstration.
+
+08:32.790 --> 08:36.150
+I'll delete it, but I can make one called,
+
+08:36.150 --> 08:40.140
+how about "morefood," okay?
+
+08:40.140 --> 08:43.410
+Create that branch, I'm doing it on GitHub.
+
+08:43.410 --> 08:44.940
+So I just made this branch.
+
+08:44.940 --> 08:46.500
+It's only on GitHub.
+
+08:46.500 --> 08:47.940
+I don't know about it here.
+
+08:47.940 --> 08:50.430
+If I do "git branch -r,"
+
+08:50.430 --> 08:52.020
+I don't see "morefood."
+
+08:52.020 --> 08:55.197
+But as soon as I fetch, "git fetch,"
+
+08:56.040 --> 08:59.790
+now, it says, "Oh, there's this thing, origin/morefood."
+
+08:59.790 --> 09:01.230
+We know about it now.
+
+09:01.230 --> 09:06.230
+So if I do "git branch -r" again, now I have "morefood."
+
+09:06.660 --> 09:08.490
+It's exactly the same as my food branch,
+
+09:08.490 --> 09:09.630
+I didn't change it in any way,
+
+09:09.630 --> 09:11.280
+so we wouldn't see a difference.
+
+09:11.280 --> 09:14.700
+But now my computer, my local repo, knows about it.
+
+09:14.700 --> 09:17.640
+A moment ago, it didn't know about it until I fetched.
+
+09:17.640 --> 09:20.310
+So using "fetch" gets you the latest information
+
+09:20.310 --> 09:22.230
+about some remote repository.
+
+09:22.230 --> 09:24.690
+It just doesn't automatically integrate those changes
+
+09:24.690 --> 09:26.290
+into whatever you're working on.
