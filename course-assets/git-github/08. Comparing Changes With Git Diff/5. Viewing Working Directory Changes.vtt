@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.000 --> 00:00.833
+Instructor: The next version
+
+00:00.833 --> 00:02.760
+we'll look at is get diff head.
+
+00:02.760 --> 00:04.170
+So this will list all changes
+
+00:04.170 --> 00:05.280
+in our working directory
+
+00:05.280 --> 00:08.430
+since the last commit since head right?
+
+00:08.430 --> 00:10.920
+Remember head is this pointer, this reference
+
+00:10.920 --> 00:14.640
+to the last commit, typically the last commit on a branch.
+
+00:14.640 --> 00:17.670
+So wherever head is, when we do git diff head,
+
+00:17.670 --> 00:21.123
+we'll see the changes that we've made since head.
+
+00:22.140 --> 00:27.140
+So that includes if we try this again here, git diff head
+
+00:27.750 --> 00:31.500
+that includes staged and unstaged changes.
+
+00:31.500 --> 00:35.430
+So right now, you know we see the same exact output
+
+00:35.430 --> 00:39.030
+that we saw when I just did regular git diff.
+
+00:39.030 --> 00:41.730
+This is showing all unstaged changes.
+
+00:41.730 --> 00:44.160
+This is showing everything that has changed
+
+00:44.160 --> 00:46.740
+since our last commit, since head.
+
+00:46.740 --> 00:50.610
+However, if I stage something, if I do git add,
+
+00:50.610 --> 00:54.450
+and then our file is called what Colors dot txt.
+
+00:54.450 --> 00:58.170
+If I do git diff again, now we don't see any changes, right?
+
+00:58.170 --> 00:59.310
+Nothing is showing up
+
+00:59.310 --> 01:01.290
+because this is supposed to show me the difference
+
+01:01.290 --> 01:03.720
+between my working directory and the staging area.
+
+01:03.720 --> 01:05.790
+And right now they're the same.
+
+01:05.790 --> 01:08.640
+But if I do git diff head, this is showing me the difference
+
+01:08.640 --> 01:12.240
+between the head and my working directory.
+
+01:12.240 --> 01:14.730
+So now we see the same thing we were seeing earlier.
+
+01:14.730 --> 01:16.530
+So now let's go ahead and commit.
+
+01:16.530 --> 01:20.430
+So git commit dash m, just add indigo.
+
+01:20.430 --> 01:22.830
+And then I'm gonna do something different, now.
+
+01:22.830 --> 01:24.870
+I'm going to make, what should I do?
+
+01:24.870 --> 01:26.490
+I guess I'll make a new file
+
+01:26.490 --> 01:27.924
+and this new file will be called
+
+01:27.924 --> 01:30.570
+it doesn't really matter but it'll be numbers.
+
+01:30.570 --> 01:34.680
+All right, so touch numbers dot T X T.
+
+01:34.680 --> 01:35.827
+And in this numbers file,
+
+01:35.827 --> 01:39.933
+I'm just gonna add the number one to begin with.
+
+01:40.800 --> 01:43.440
+So I'll just spell it out in all caps, ONE.
+
+01:43.440 --> 01:44.340
+Okay.
+
+01:44.340 --> 01:46.500
+So currently numbers is untracked.
+
+01:46.500 --> 01:48.450
+So if I try and do git diff,
+
+01:48.450 --> 01:49.830
+we're not gonna see anything there.
+
+01:49.830 --> 01:52.680
+However, if I add that new change
+
+01:52.680 --> 01:55.260
+so git add numbers
+
+01:55.260 --> 01:56.610
+dot txt.
+
+01:56.610 --> 01:58.860
+Now if I do git diff
+
+01:58.860 --> 02:00.210
+head,
+
+02:00.210 --> 02:02.400
+we see that since our last commits,
+
+02:02.400 --> 02:04.230
+we have some new stuff, right?
+
+02:04.230 --> 02:07.650
+And it's just the fact that numbers dot txt now exists
+
+02:07.650 --> 02:10.318
+and it has this line one inside of it.
+
+02:10.318 --> 02:13.210
+The way that we can tell that there was nothing
+
+02:13.210 --> 02:14.580
+there before,
+
+02:14.580 --> 02:17.640
+the version A is actually dev slash null.
+
+02:17.640 --> 02:21.060
+That's gits way of telling us nothing ,
+
+02:21.060 --> 02:24.187
+compared to now having the file numbers.
+
+02:24.187 --> 02:26.808
+So there was nothing really to compare it before
+
+02:26.808 --> 02:28.770
+but that doesn't break it.
+
+02:28.770 --> 02:31.230
+We just end up seeing only the additions because
+
+02:31.230 --> 02:33.150
+there only are additions.
+
+02:33.150 --> 02:35.550
+Okay, so git diff head shows us that.
+
+02:35.550 --> 02:36.383
+But just one more time.
+
+02:36.383 --> 02:37.740
+Git diff on its own.
+
+02:37.740 --> 02:40.080
+It's only showing us unstage changes.
+
+02:40.080 --> 02:43.440
+Nothing has been un or nothing is currently unstaged.
+
+02:43.440 --> 02:47.130
+But if I add Violet, for example, to colors
+
+02:47.130 --> 02:48.630
+and I do git diff
+
+02:48.630 --> 02:52.410
+we only see a diff for colors because that's the only file
+
+02:52.410 --> 02:55.260
+that changed that has not been staged.
+
+02:55.260 --> 02:57.660
+Versus get diff head.
+
+02:57.660 --> 03:01.590
+I just remind you here, numbers is staged, colors is not.
+
+03:01.590 --> 03:03.033
+So if I do git diff head,
+
+03:04.680 --> 03:08.250
+I see all changes staged on stage, it doesn't matter.
+
+03:08.250 --> 03:10.020
+Anything new in the working directory
+
+03:10.020 --> 03:14.940
+since head right and head, if you ever forget,
+
+03:14.940 --> 03:18.690
+and head currently is pointing to this commit here.
+
+03:18.690 --> 03:20.820
+So that's what we are comparing to.
+
+03:20.820 --> 03:23.730
+So Git diff shows us all unstaged changes
+
+03:23.730 --> 03:26.010
+Git diff head shows us all changes.
+
+03:26.010 --> 03:28.743
+Staged and unstaged, since head.
