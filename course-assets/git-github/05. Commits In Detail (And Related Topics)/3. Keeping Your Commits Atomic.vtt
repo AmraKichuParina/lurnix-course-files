@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.240 --> 00:02.310
+Instructor: One of the more common pieces of Git advice
+
+00:02.310 --> 00:04.980
+that many a blog article has been written about
+
+00:04.980 --> 00:07.830
+is to keep your commits atomic.
+
+00:07.830 --> 00:08.910
+So what does that mean?
+
+00:08.910 --> 00:10.380
+That's what I wanna talk about in this video
+
+00:10.380 --> 00:12.030
+and I'll show you an example.
+
+00:12.030 --> 00:14.847
+In this context, the word atomic does not mean
+
+00:14.847 --> 00:16.620
+having to do with an atom,
+
+00:16.620 --> 00:21.330
+but rather of something being irreducible or of a, I guess,
+
+00:21.330 --> 00:24.900
+a base unit, a single component,
+
+00:24.900 --> 00:27.420
+that makes up a larger system.
+
+00:27.420 --> 00:29.550
+So if that doesn't mean anything to you,
+
+00:29.550 --> 00:31.560
+just read the first paragraph here.
+
+00:31.560 --> 00:32.610
+When possible,
+
+00:32.610 --> 00:35.550
+your commits should encompass a single feature,
+
+00:35.550 --> 00:37.530
+a single change, a fix.
+
+00:37.530 --> 00:39.960
+In other words, try and keep each commit focused
+
+00:39.960 --> 00:41.610
+on a single thing.
+
+00:41.610 --> 00:42.570
+And this is important,
+
+00:42.570 --> 00:44.250
+especially if you're working with code
+
+00:44.250 --> 00:46.140
+and you're writing code, you're adding features
+
+00:46.140 --> 00:47.310
+or fixing bugs.
+
+00:47.310 --> 00:50.340
+It's super important to keep things as atomic as possible
+
+00:50.340 --> 00:53.220
+to keep each commit focused on one thing.
+
+00:53.220 --> 00:55.290
+Again, that does not mean one file,
+
+00:55.290 --> 00:59.460
+that means one feature, one thing that you worked on.
+
+00:59.460 --> 01:01.170
+So lemme show you an example.
+
+01:01.170 --> 01:05.460
+Here, I've got my first novel repository going still,
+
+01:05.460 --> 01:07.920
+and I'm gonna do two things this morning.
+
+01:07.920 --> 01:11.250
+First of all, I'm gonna add some inspiration,
+
+01:11.250 --> 01:14.130
+some visual inspiration,
+
+01:14.130 --> 01:17.130
+since I'm such a, I guess, a budding writer,
+
+01:17.130 --> 01:18.720
+I wanna have a little mood board.
+
+01:18.720 --> 01:21.088
+So I've actually downloaded a couple of photos
+
+01:21.088 --> 01:25.860
+that I want to use, just, 1920s esque photos.
+
+01:25.860 --> 01:27.910
+This is the best I could find
+
+01:28.980 --> 01:31.770
+with all the copyright restrictions I have to worry about.
+
+01:31.770 --> 01:34.830
+So I'm gonna make a new folder in here,
+
+01:34.830 --> 01:37.950
+I'll just do it through Finder, I'll call it mood board.
+
+01:37.950 --> 01:41.163
+And then I'm just gonna put those images in there.
+
+01:43.500 --> 01:46.177
+So now I have that folder in there and of course,
+
+01:46.177 --> 01:48.900
+if I type git status git is gonna tell me,
+
+01:48.900 --> 01:51.090
+hey, there's a whole new directory mood board
+
+01:51.090 --> 01:53.970
+that I see but I'm not tracking.
+
+01:53.970 --> 01:57.870
+So I keep working on my novel and I decide,
+
+01:57.870 --> 02:00.480
+I'm not sure if I like the name Gatsby,
+
+02:00.480 --> 02:05.480
+I think I wanna change Gatsby to be Catsby with a C.
+
+02:05.580 --> 02:08.670
+So I'm gonna change that across all my files.
+
+02:08.670 --> 02:09.720
+How am I gonna do that?
+
+02:09.720 --> 02:11.850
+Well, with VS Code, it's super simple.
+
+02:11.850 --> 02:13.860
+If I go to this little icon here,
+
+02:13.860 --> 02:16.050
+there's also a shortcut I can never remember.
+
+02:16.050 --> 02:18.750
+I can search for Gatsby,
+
+02:18.750 --> 02:22.080
+and I can replace it across all files.
+
+02:22.080 --> 02:24.030
+So it found it in four different files, right?
+
+02:24.030 --> 02:27.150
+The character's file, chapter one, chapter two, the outline,
+
+02:27.150 --> 02:30.060
+and I'll replace it with Catsby, like that,
+
+02:30.060 --> 02:31.950
+and then I can click this button.
+
+02:31.950 --> 02:34.290
+However you do this, if you are following along,
+
+02:34.290 --> 02:36.900
+I'm just making a change across a bunch of files.
+
+02:36.900 --> 02:38.940
+So it's asking me, are you sure you wanna replace
+
+02:38.940 --> 02:41.160
+18 occurrences across four files?
+
+02:41.160 --> 02:42.270
+Sure.
+
+02:42.270 --> 02:44.320
+Alright, so now we see it changed here.
+
+02:44.320 --> 02:48.330
+Catsby in the character's file, somewhere in here, I'm sure,
+
+02:48.330 --> 02:49.320
+here we go.
+
+02:49.320 --> 02:52.050
+When I looked once more for Catsby, he had vanished.
+
+02:52.050 --> 02:56.280
+So we can trust that it changed across all those files.
+
+02:56.280 --> 03:00.000
+So now I'm ready to start committing, it's later in the day
+
+03:00.000 --> 03:01.980
+or maybe I'm gonna take a lunch break.
+
+03:01.980 --> 03:06.980
+So I type git status and we have a couple of things, right?
+
+03:06.990 --> 03:09.660
+We have four files that have been modified
+
+03:09.660 --> 03:11.139
+plus a whole new directory
+
+03:11.139 --> 03:13.230
+that contains a bunch of files inside,
+
+03:13.230 --> 03:15.090
+well, three image files.
+
+03:15.090 --> 03:18.660
+So I'm not just gonna add all of this to one single commit,
+
+03:18.660 --> 03:19.963
+that breaks this rule
+
+03:19.963 --> 03:23.310
+or this pattern of wanting to keep each commit
+
+03:23.310 --> 03:25.680
+focused on a single thing.
+
+03:25.680 --> 03:28.020
+Here, it's very easy for me to break this up
+
+03:28.020 --> 03:30.360
+and just say okay, my first commit,
+
+03:30.360 --> 03:31.440
+the order doesn't really matter,
+
+03:31.440 --> 03:34.693
+but one commit I'll make will be around changing
+
+03:34.693 --> 03:39.360
+Gatsby to Catsby, that was one thing that I did.
+
+03:39.360 --> 03:41.400
+And then the other commit that I'll make
+
+03:41.400 --> 03:43.830
+will be around adding to my mood board
+
+03:43.830 --> 03:45.870
+or creating my mood board.
+
+03:45.870 --> 03:49.270
+So why don't I start by just adding chapter one
+
+03:50.850 --> 03:55.770
+and chapter two and the characters and outline.
+
+03:55.770 --> 03:58.131
+So notice I did not do git add dots,
+
+03:58.131 --> 04:00.513
+'cause I don't want the mood board.
+
+04:01.590 --> 04:03.930
+So now if I type git status,
+
+04:03.930 --> 04:07.350
+I've got these four things staged for my next commit
+
+04:07.350 --> 04:08.490
+and now I'm gonna commit.
+
+04:08.490 --> 04:09.750
+So git commit.
+
+04:09.750 --> 04:11.790
+And those four files, those four changes,
+
+04:11.790 --> 04:15.060
+they all had to do with changing Gatsby to Catsby.
+
+04:15.060 --> 04:18.930
+So I'd go with replace Gatsby or how about
+
+04:18.930 --> 04:23.523
+rename Gatsby to Catsby.
+
+04:25.260 --> 04:26.760
+Okay.
+
+04:26.760 --> 04:28.230
+I type git status,
+
+04:28.230 --> 04:30.300
+and we still have some uncommitted changes,
+
+04:30.300 --> 04:34.050
+some stuff I've worked on that Git does not know about.
+
+04:34.050 --> 04:36.720
+It's a whole directory, that's what the slash means.
+
+04:36.720 --> 04:39.360
+So if I wanted to, I could add specific files
+
+04:39.360 --> 04:42.810
+from inside of there, git add moodboard/,
+
+04:42.810 --> 04:44.820
+and then I could type the name of one of those files
+
+04:44.820 --> 04:47.730
+like rolls, it's a Rolls Royce image,
+
+04:47.730 --> 04:48.870
+so I could do it that way,
+
+04:48.870 --> 04:52.200
+or I can just add the entire directory like this
+
+04:52.200 --> 04:54.390
+and I'll just add the entire thing.
+
+04:54.390 --> 04:56.340
+Now if I type git status,
+
+04:56.340 --> 05:00.000
+you can see all three image files have been added.
+
+05:00.000 --> 05:02.340
+They are going to be committed whenever I commit,
+
+05:02.340 --> 05:03.750
+so I'll commit now.
+
+05:03.750 --> 05:06.420
+Git commit -m, what should I do?
+
+05:06.420 --> 05:11.420
+How about start off or create mood board?
+
+05:11.580 --> 05:14.943
+Sure, create mood board.
+
+05:17.310 --> 05:18.240
+There we go.
+
+05:18.240 --> 05:20.430
+So I just made two separate commits
+
+05:20.430 --> 05:22.920
+instead of one larger commit,
+
+05:22.920 --> 05:26.190
+following this idea, keeping our commits atomic,
+
+05:26.190 --> 05:28.140
+breaking them down into some sort of
+
+05:28.140 --> 05:31.170
+single, irreducible unit or piece,
+
+05:31.170 --> 05:33.300
+instead of having like a multipurpose commit
+
+05:33.300 --> 05:35.850
+that just includes everything you did at once,
+
+05:35.850 --> 05:38.190
+break it down into smaller pieces.
+
+05:38.190 --> 05:41.310
+This matters a lot when you're working on code,
+
+05:41.310 --> 05:43.560
+especially when you're working with a team of people.
+
+05:43.560 --> 05:46.800
+And you may need to undo some of the things that you write.
+
+05:46.800 --> 05:48.600
+You may introduce a bug at some point
+
+05:48.600 --> 05:51.235
+and if you boiled in a whole bunch of changes
+
+05:51.235 --> 05:54.840
+into one commit, rolling back that commit
+
+05:54.840 --> 05:56.400
+could undo a ton of work.
+
+05:56.400 --> 05:59.910
+But if you kept your commits atomic, single purpose,
+
+05:59.910 --> 06:02.730
+then if somebody needs to undo one of them,
+
+06:02.730 --> 06:04.470
+you don't lose all that other work.
+
+06:04.470 --> 06:06.870
+It also makes your code easier to review
+
+06:06.870 --> 06:09.420
+if you do or when you do code reviews.
+
+06:09.420 --> 06:11.520
+It's just generally a practice you wanna follow,
+
+06:11.520 --> 06:13.440
+group things together in a way that makes sense.
+
+06:13.440 --> 06:16.170
+Keep things small, but don't just break them up
+
+06:16.170 --> 06:17.520
+to be as tiny as possible,
+
+06:17.520 --> 06:19.893
+keep them focused on a single thing.
