@@ -1,0 +1,532 @@
+WEBVTT
+
+00:00.250 --> 00:02.490
+Instructor: So we just saw git restore.
+
+00:02.490 --> 00:04.980
+Now we're moving on to a similar sounding command,
+
+00:04.980 --> 00:06.690
+which is git reset.
+
+00:06.690 --> 00:09.360
+The git reset command will reset a repository
+
+00:09.360 --> 00:11.880
+back to some particular commit.
+
+00:11.880 --> 00:14.730
+So if we're working on, let's say the master branch
+
+00:14.730 --> 00:17.490
+and then I realized that the last three commits
+
+00:17.490 --> 00:19.290
+that I've made we're not supposed to be
+
+00:19.290 --> 00:20.123
+on the master branch.
+
+00:20.123 --> 00:21.450
+I screwed that up and I wanted to put them
+
+00:21.450 --> 00:24.390
+on a different branch and I want to remove them from master.
+
+00:24.390 --> 00:25.470
+I can do that.
+
+00:25.470 --> 00:28.230
+I undo those commits using git reset.
+
+00:28.230 --> 00:30.900
+And there's two flavors, two varieties I'll show you.
+
+00:30.900 --> 00:34.470
+There's regular reset and then a hard reset.
+
+00:34.470 --> 00:35.940
+And we're gonna start with I guess
+
+00:35.940 --> 00:37.530
+the plain old regular reset.
+
+00:37.530 --> 00:38.700
+I don't know if anyone calls it that
+
+00:38.700 --> 00:41.850
+but that's what I'll call it, plain reset.
+
+00:41.850 --> 00:42.690
+It looks like this:
+
+00:42.690 --> 00:44.970
+git reset and then a commit hash.
+
+00:44.970 --> 00:46.590
+And this will reset our repository
+
+00:46.590 --> 00:48.810
+back to whatever that commit hash is.
+
+00:48.810 --> 00:53.340
+Let me demonstrate this with our really boring cat, dog.
+
+00:53.340 --> 00:55.260
+First, second, third, fourth commit.
+
+00:55.260 --> 00:58.260
+I'm gonna go, let's delete this secrets file
+
+00:58.260 --> 01:00.420
+just to make our lives easier.
+
+01:00.420 --> 01:02.520
+Okay, so it's gone.
+
+01:02.520 --> 01:06.060
+Let's make a mistake or do something in here
+
+01:06.060 --> 01:07.800
+that we just want to undo.
+
+01:07.800 --> 01:09.450
+Let's say it's that.
+
+01:09.450 --> 01:11.913
+And then this one over here I delete that,
+
+01:12.750 --> 01:15.030
+and then I'm gonna save this
+
+01:15.030 --> 01:17.850
+and then I'm gonna make a commit accidentally,
+
+01:17.850 --> 01:19.110
+which I'm doing on purpose
+
+01:19.110 --> 01:21.810
+but we'll pretend I don't actually want this commit.
+
+01:21.810 --> 01:25.380
+git commit -m mistake commit.
+
+01:25.380 --> 01:27.360
+Okay, so here's what we have now.
+
+01:27.360 --> 01:30.420
+First, second, third, fourth, and then mistake commit.
+
+01:30.420 --> 01:33.480
+And you can see, you know, I added those two lines
+
+01:33.480 --> 01:36.330
+and then I deleted this in the dog file.
+
+01:36.330 --> 01:38.280
+Anyway, we've screwed it up.
+
+01:38.280 --> 01:40.230
+And maybe I do one more commit,
+
+01:40.230 --> 01:42.030
+that's even a a further mistake.
+
+01:42.030 --> 01:44.883
+Why don't I, I don't know, add a happy face.
+
+01:46.440 --> 01:47.523
+Same thing over here.
+
+01:48.420 --> 01:49.253
+git add .
+
+01:50.520 --> 01:52.140
+git commit -m.
+
+01:52.140 --> 01:54.993
+Another mistake or another bad commit.
+
+01:55.950 --> 01:59.850
+Okay, so now I can use the git reset command.
+
+01:59.850 --> 02:02.220
+If I find a commit, I want to go back to,
+
+02:02.220 --> 02:04.593
+so git log, let's just do one line.
+
+02:05.520 --> 02:07.920
+If I want to go back to fourth commit
+
+02:07.920 --> 02:10.500
+I can reference this particular commit hash,
+
+02:10.500 --> 02:12.510
+or this is the first seven digits.
+
+02:12.510 --> 02:13.770
+Copy that.
+
+02:13.770 --> 02:18.063
+And then git reset and that hash just like this.
+
+02:19.110 --> 02:21.120
+And what happened?
+
+02:21.120 --> 02:24.210
+Well, you might think those changes are gone
+
+02:24.210 --> 02:25.920
+but they're actually not.
+
+02:25.920 --> 02:27.663
+Those changes are still here.
+
+02:29.040 --> 02:31.110
+Doesn't that seem like they should be reset?
+
+02:31.110 --> 02:34.260
+No, because all that we did was perform a basic
+
+02:34.260 --> 02:37.950
+or a plain reset and that removed the commits
+
+02:37.950 --> 02:41.490
+but the changes are still in our working directory.
+
+02:41.490 --> 02:43.140
+So I can get rid of those changes
+
+02:43.140 --> 02:46.410
+and I can, you know, undo stuff in my local files.
+
+02:46.410 --> 02:49.380
+But all that we did right now was tell Git
+
+02:49.380 --> 02:51.540
+to get rid of some commits.
+
+02:51.540 --> 02:56.430
+Go back to this last commit that, what was it, 4661.
+
+02:56.430 --> 02:59.700
+So in Gits mind, that's where the history stops.
+
+02:59.700 --> 03:01.590
+There is no commit after that, right?
+
+03:01.590 --> 03:04.680
+git log, just do one line again.
+
+03:04.680 --> 03:06.600
+That's the last commit it has.
+
+03:06.600 --> 03:09.420
+But it kept those changes in our working directory.
+
+03:09.420 --> 03:11.940
+So here's a diagram to show that.
+
+03:11.940 --> 03:13.980
+Let's say we make a commit and we realize,
+
+03:13.980 --> 03:16.320
+ah, we don't want that commit.
+
+03:16.320 --> 03:19.260
+So to undo it, if we use git reset
+
+03:19.260 --> 03:21.630
+and a commit hash to go back to this one,
+
+03:21.630 --> 03:24.120
+those changes are still in our working directory.
+
+03:24.120 --> 03:27.360
+We don't lose the changes, we lose the commits.
+
+03:27.360 --> 03:30.210
+However many commits there were between head,
+
+03:30.210 --> 03:32.160
+all the way back to this commit.
+
+03:32.160 --> 03:33.930
+It just happened to be one.
+
+03:33.930 --> 03:38.580
+So in our case, we undid two commits over here, right?
+
+03:38.580 --> 03:40.860
+There were two commits, one was mistake
+
+03:40.860 --> 03:43.170
+and the second was called bad commit I think.
+
+03:43.170 --> 03:45.030
+But we still have the changes.
+
+03:45.030 --> 03:45.863
+This can be useful
+
+03:45.863 --> 03:47.880
+if you make some commits on the wrong branch.
+
+03:47.880 --> 03:51.300
+You wanna keep that work but move it to another branch.
+
+03:51.300 --> 03:52.710
+So we've reset, right?
+
+03:52.710 --> 03:55.320
+We lost those commits on the master branch
+
+03:55.320 --> 03:57.420
+but now I could take these changes with me
+
+03:57.420 --> 04:00.120
+and make a new branch, git switch,
+
+04:00.120 --> 04:04.437
+switch -c, you know, I dunno, badstuff.
+
+04:05.847 --> 04:06.823
+And on here I can add and commit those changes.
+
+04:08.912 --> 04:10.445
+git add .
+
+04:10.445 --> 04:12.612
+git commit, add bad stuff.
+
+04:16.590 --> 04:17.751
+I dunno, it's stupid.
+
+04:17.751 --> 04:21.180
+So now I have this branch that I've made that has, you know,
+
+04:21.180 --> 04:24.990
+these mistakes, the stuff that I presumably don't want.
+
+04:24.990 --> 04:28.440
+And now I can go back to master
+
+04:28.440 --> 04:31.440
+and things are how we want them to be on master.
+
+04:31.440 --> 04:34.500
+So I took those changes with me over to the new branch.
+
+04:34.500 --> 04:36.720
+I added and committed them on the new branch
+
+04:36.720 --> 04:39.960
+and then went back to master without those changes.
+
+04:39.960 --> 04:41.790
+Okay, so hopefully that was clear.
+
+04:41.790 --> 04:44.940
+Reset, git reset with a commit hash
+
+04:44.940 --> 04:48.450
+removes the commits, but it does not remove the changes
+
+04:48.450 --> 04:49.620
+from your working directory.
+
+04:49.620 --> 04:53.070
+So you don't lose that work, you lose the commits.
+
+04:53.070 --> 04:57.360
+The alternative is a hard reset, which is the same command
+
+04:57.360 --> 04:59.490
+but with --hard.
+
+04:59.490 --> 05:03.210
+And when we do a get reset --hard with a commit hash,
+
+05:03.210 --> 05:06.480
+what will actually happen is that we lose the commits,
+
+05:06.480 --> 05:10.290
+Git undoes the commits up to this commit hash
+
+05:10.290 --> 05:13.860
+and the changes are removed from our working directory.
+
+05:13.860 --> 05:16.020
+So if you like absolutely know
+
+05:16.020 --> 05:17.580
+you want to get rid of some work
+
+05:17.580 --> 05:19.500
+and get rid of the corresponding commits,
+
+05:19.500 --> 05:21.420
+you can use --hard.
+
+05:21.420 --> 05:22.770
+So you can reference the commit hash
+
+05:22.770 --> 05:24.630
+or you can do things like, you know,
+
+05:24.630 --> 05:27.210
+we've already seen HEAD~1 or ~2
+
+05:27.210 --> 05:30.660
+to go back relative to where head is.
+
+05:30.660 --> 05:33.150
+So on a diagram, if I wanted to undo this
+
+05:33.150 --> 05:37.350
+and get rid of those changes, git reset --hard,
+
+05:37.350 --> 05:39.150
+the commit hash that we're going back to,
+
+05:39.150 --> 05:41.550
+those changes are gone.
+
+05:41.550 --> 05:44.220
+So I'll do a quick demo of that.
+
+05:44.220 --> 05:48.000
+Let's go back, I guess let's go back to master.
+
+05:48.000 --> 05:50.040
+git switch master.
+
+05:50.040 --> 05:52.740
+And let's make another bad change.
+
+05:52.740 --> 05:56.400
+So we'll delete two of those and dog,
+
+05:56.400 --> 05:58.850
+and then we'll add a bunch of stuff in cat again.
+
+06:00.180 --> 06:02.580
+And then I'm gonna add and commit that on master.
+
+06:02.580 --> 06:06.363
+git commit, undo this commit please.
+
+06:07.530 --> 06:10.710
+Okay, so a regular git reset, as we saw,
+
+06:10.710 --> 06:13.350
+would keep these changes in our directory
+
+06:13.350 --> 06:15.150
+but it would remove commit.
+
+06:15.150 --> 06:17.670
+I am going to undo that last commit.
+
+06:17.670 --> 06:21.300
+So git log, let's just get the commit hash.
+
+06:21.300 --> 06:25.080
+I'll go back, maybe I'll go back to this one, third commit.
+
+06:25.080 --> 06:28.560
+So that means I will lose this commit and this commit,
+
+06:28.560 --> 06:30.990
+and I'll lose the the corresponding changes
+
+06:30.990 --> 06:32.790
+that I made in both of them.
+
+06:32.790 --> 06:35.760
+So you wanna be careful with this, obviously. (chuckles)
+
+06:35.760 --> 06:38.710
+You don't wanna go around just resetting hard all the time.
+
+06:39.720 --> 06:40.553
+But I'm gonna do it here.
+
+06:40.553 --> 06:44.910
+So git reset --hard commit hash.
+
+06:44.910 --> 06:46.230
+One more time, this is what we're looking at.
+
+06:46.230 --> 06:47.760
+Undo this commit please.
+
+06:47.760 --> 06:50.880
+On master fourth, commit third, second, and so on.
+
+06:50.880 --> 06:52.350
+Here we go.
+
+06:52.350 --> 06:56.480
+Okay, it says head is now at this third commit.
+
+06:56.480 --> 06:59.250
+As you can see, here's master.
+
+06:59.250 --> 07:01.440
+We no longer have that commit on master branch.
+
+07:01.440 --> 07:03.870
+We lost two commits on the master branch.
+
+07:03.870 --> 07:05.790
+One line.
+
+07:05.790 --> 07:07.260
+Now we just have three.
+
+07:07.260 --> 07:10.860
+And in my files they both are reset back
+
+07:10.860 --> 07:11.910
+to what they looked like.
+
+07:11.910 --> 07:13.830
+They have the same contents that they did
+
+07:13.830 --> 07:17.220
+when we made this third commit, we reset them back.
+
+07:17.220 --> 07:20.820
+Okay, so that's kind of all there is for that.
+
+07:20.820 --> 07:22.500
+I mean, I guess I should mention.
+
+07:22.500 --> 07:24.030
+This is on a per branch basis.
+
+07:24.030 --> 07:26.700
+So if we go back to my diagram,
+
+07:26.700 --> 07:29.490
+we still have that fourth commit over on bad stuff.
+
+07:29.490 --> 07:32.730
+It's not like we remove this commit from every branch ever
+
+07:32.730 --> 07:34.920
+that knows about that commit.
+
+07:34.920 --> 07:35.910
+It's still there.
+
+07:35.910 --> 07:38.913
+If I go to bad stuff, git switch badstuff,
+
+07:39.840 --> 07:42.750
+do a git log, we still see fourth commit.
+
+07:42.750 --> 07:45.513
+Anyway, so that's reset and reset hard.
