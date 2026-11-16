@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00.150 --> 00:01.320
+Instructor: So next up, we're gonna talk
+
+00:01.320 --> 00:03.750
+about one of my favorite commands in git,
+
+00:03.750 --> 00:05.700
+something called git reflog.
+
+00:05.700 --> 00:07.620
+It's not one that's used all that often
+
+00:07.620 --> 00:08.940
+but when it is used,
+
+00:08.940 --> 00:10.050
+at least when I use it,
+
+00:10.050 --> 00:12.810
+it's when I've screwed something up terribly
+
+00:12.810 --> 00:13.950
+and I've lost a commit,
+
+00:13.950 --> 00:16.050
+or I've rebased when I shouldn't have rebased,
+
+00:16.050 --> 00:20.160
+or I want to undo something that seems undoable.
+
+00:20.160 --> 00:22.470
+Well, with the help of the git reflog command,
+
+00:22.470 --> 00:24.060
+often we can fix things.
+
+00:24.060 --> 00:26.940
+We can dig ourselves out of some pretty bad situations.
+
+00:26.940 --> 00:29.670
+So, I recommend you check this section out.
+
+00:29.670 --> 00:31.710
+I think it's definitely worth your time.
+
+00:31.710 --> 00:32.880
+With that said,
+
+00:32.880 --> 00:34.170
+if all things go well,
+
+00:34.170 --> 00:35.940
+you won't be using any of what I show you
+
+00:35.940 --> 00:37.710
+very frequently at all.
+
+00:37.710 --> 00:39.780
+So, I'm not gonna say anything is critical.
+
+00:39.780 --> 00:41.010
+This is a sort of concept
+
+00:41.010 --> 00:44.040
+where you might just Google in a time of need.
+
+00:44.040 --> 00:46.230
+You might be desperate, "How do I fix this?"
+
+00:46.230 --> 00:49.050
+You know, "How do I retrieve this commit that I've lost?"
+
+00:49.050 --> 00:51.630
+And if you read some Stack Overflow post,
+
+00:51.630 --> 00:53.970
+it will tell you the exact git reflog command
+
+00:53.970 --> 00:55.230
+that you should use,
+
+00:55.230 --> 00:57.330
+so it's not something you need to commit to memory.
+
+00:57.330 --> 01:02.160
+Anyway, I'm gonna say everything in here is nice to have.
+
+01:02.160 --> 01:03.810
+Meh, I'll put it in important.
+
+01:03.810 --> 01:05.970
+It's between important and nice to have.
+
+01:05.970 --> 01:09.450
+Rescuing loss commits with reflog, undoing rebases.
+
+01:09.450 --> 01:12.090
+The one thing that I'll say really is not that critical,
+
+01:12.090 --> 01:15.510
+well, nothing's critical, but that's not as important,
+
+01:15.510 --> 01:18.540
+there's a video on time-based reflog qualifiers.
+
+01:18.540 --> 01:20.730
+You'll know it when you see it.
+
+01:20.730 --> 01:22.770
+It's not as important as this stuff.
+
+01:22.770 --> 01:23.730
+But anyway, remember,
+
+01:23.730 --> 01:25.800
+you won't be using this very frequently.
+
+01:25.800 --> 01:26.880
+If all goes well
+
+01:26.880 --> 01:29.490
+and you don't make a huge number of mistakes,
+
+01:29.490 --> 01:31.680
+you won't need to use this command very much.
+
+01:31.680 --> 01:34.323
+But when you do need it, it really is a lifesaver.
