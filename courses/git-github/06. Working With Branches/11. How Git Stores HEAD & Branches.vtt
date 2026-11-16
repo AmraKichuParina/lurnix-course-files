@@ -1,0 +1,412 @@
+WEBVTT
+
+00:00.150 --> 00:02.790
+Presenter: This video is completely 100 million
+
+00:02.790 --> 00:04.470
+trillion percent optional.
+
+00:04.470 --> 00:07.560
+Please, if you don't care to watch it, don't.
+
+00:07.560 --> 00:10.650
+We're not gonna learn any new commands or any new syntax.
+
+00:10.650 --> 00:13.470
+All that I'm gonna do is show you a little peek
+
+00:13.470 --> 00:14.790
+behind the scenes in Git.
+
+00:14.790 --> 00:17.340
+We're gonna take a look at that dot git directory
+
+00:17.340 --> 00:21.090
+and I'll show you proof of HEAD, how it works,
+
+00:21.090 --> 00:23.160
+the fact that it's just referencing a branch
+
+00:23.160 --> 00:27.270
+and that each branch reference is referencing a commit.
+
+00:27.270 --> 00:31.410
+Alright, so let's go ahead and hop over here
+
+00:31.410 --> 00:33.330
+to our road trip playlist.
+
+00:33.330 --> 00:35.220
+We are on this two thousands branch.
+
+00:35.220 --> 00:37.037
+Let's go back to master.
+
+00:37.037 --> 00:38.640
+So git switch master.
+
+00:38.640 --> 00:39.473
+(keyboard typing)
+
+00:39.473 --> 00:40.620
+And on master, it's very simple.
+
+00:40.620 --> 00:42.720
+We have two commits and that's it.
+
+00:42.720 --> 00:46.170
+And we can see that Head is referring to master
+
+00:46.170 --> 00:47.910
+because we're on the master branch.
+
+00:47.910 --> 00:52.350
+And the master branch is pointing to this commit.
+
+00:52.350 --> 00:54.450
+This is the most recent commit on the tip
+
+00:54.450 --> 00:55.770
+of the master branch.
+
+00:55.770 --> 00:57.600
+Let's take a look at this Commit hash.
+
+00:57.600 --> 01:00.240
+It starts with nine three E.
+
+01:00.240 --> 01:04.380
+Let's just remember that nine three E D, 93ED.
+
+01:04.380 --> 01:06.540
+Okay, so remember that.
+
+01:06.540 --> 01:09.360
+And now remember we have this hidden directory
+
+01:09.360 --> 01:10.500
+called dot git.
+
+01:10.500 --> 01:13.470
+And inside of it I'll just CD inside.
+
+01:13.470 --> 01:14.877
+CD dot git.
+
+01:14.877 --> 01:16.770
+(keyboard typing)
+
+01:16.770 --> 01:19.320
+We have this thing called Head.
+
+01:19.320 --> 01:21.270
+And Head, if I take a look,
+
+01:21.270 --> 01:22.805
+I'm just gonna use the cat command...
+
+01:22.805 --> 01:23.910
+(keyboard typing)
+
+01:23.910 --> 01:25.980
+Is referencing this other thing,
+
+01:25.980 --> 01:29.250
+refs slash heads slash master.
+
+01:29.250 --> 01:31.980
+So in other words, this is, I'll simplify it.
+
+01:31.980 --> 01:34.833
+Head is pointing to the master branch.
+
+01:35.670 --> 01:38.818
+If I switch branches, git switch oldies.
+
+01:38.818 --> 01:40.350
+(keyboard typing)
+
+01:40.350 --> 01:41.580
+Whoops, can't do that from here.
+
+01:41.580 --> 01:42.660
+I have to back out.
+
+01:42.660 --> 01:45.510
+Now if I switch, 'cause I was in the docket directory
+
+01:45.510 --> 01:46.650
+it gets very confused.
+
+01:46.650 --> 01:48.015
+Git switch to oldies...
+
+01:48.015 --> 01:49.230
+(keyboard typing)
+
+01:49.230 --> 01:50.880
+And now I take a look again.
+
+01:50.880 --> 01:54.630
+So I'll do cat dot git slash Head.
+
+01:54.630 --> 01:56.530
+I'm now outside that folder.
+
+01:56.530 --> 01:57.510
+(keyboard typing)
+
+01:57.510 --> 02:00.750
+See this, it now references oldies.
+
+02:00.750 --> 02:02.548
+So if I switch back to master.
+
+02:02.548 --> 02:05.190
+(keyboard typing)
+
+02:05.190 --> 02:08.790
+And I take a look at head, it's now master.
+
+02:08.790 --> 02:12.540
+So that thing, that file called head is just
+
+02:12.540 --> 02:15.180
+referencing a particular branch.
+
+02:15.180 --> 02:18.900
+Now this thing here, refs slash heads slash master
+
+02:18.900 --> 02:22.680
+or refs slash heads slash oldies right here
+
+02:22.680 --> 02:25.770
+they actually reference a particular commit.
+
+02:25.770 --> 02:27.270
+So let's take a look.
+
+02:27.270 --> 02:29.820
+I'm gonna open up the dot git directory now.
+
+02:29.820 --> 02:33.180
+I've opened up the dot git directory just in finder here.
+
+02:33.180 --> 02:37.530
+And let's take a look at this refs slash heads slash master.
+
+02:37.530 --> 02:41.610
+So refs heads, and you'll see there's a file
+
+02:41.610 --> 02:43.890
+for every branch that I have.
+
+02:43.890 --> 02:47.730
+And in each one of these files, there's just one thing.
+
+02:47.730 --> 02:49.480
+I'm gonna open it in my text editor
+
+02:51.000 --> 02:52.500
+it's just a commit hash.
+
+02:52.500 --> 02:55.530
+It's just a pointer to a particular commit.
+
+02:55.530 --> 02:57.780
+And head in turn is pointing
+
+02:57.780 --> 03:00.660
+to one of those branch references.
+
+03:00.660 --> 03:05.250
+So remember head was refs slash heads slash master
+
+03:05.250 --> 03:06.660
+that's what it had inside.
+
+03:06.660 --> 03:09.570
+And then if we look at what that actually is
+
+03:09.570 --> 03:12.690
+it's a commit 93 E D.
+
+03:12.690 --> 03:15.300
+That is where the master branch left off.
+
+03:15.300 --> 03:18.382
+That's where the bookmark for master branch is.
+
+03:18.382 --> 03:19.813
+Now if I switch to the oldies branch...
+
+03:19.813 --> 03:21.330
+(keyboard typing)
+
+03:21.330 --> 03:24.840
+Nothing changes in this master reference, right?
+
+03:24.840 --> 03:27.990
+But we know that my head changed.
+
+03:27.990 --> 03:29.787
+So we could take a look at that again.
+
+03:29.787 --> 03:30.620
+(keyboard typing)
+
+03:30.620 --> 03:31.868
+Cat dot git slash head.
+
+03:31.868 --> 03:34.680
+(keyboard typing)
+
+03:34.680 --> 03:36.960
+There it is, head slash oldies.
+
+03:36.960 --> 03:38.283
+And if we look at that.
+
+03:39.840 --> 03:42.900
+Oldies, it says the last commit on the oldies branch
+
+03:42.900 --> 03:44.790
+is seven F F D.
+
+03:44.790 --> 03:47.670
+And if we type git log, that's exactly what we see.
+
+03:47.670 --> 03:50.130
+Seven, F F D, right?
+
+03:50.130 --> 03:51.630
+So we can see that all over the place.
+
+03:51.630 --> 03:54.250
+You know I have this two thousands branch
+
+03:54.250 --> 03:59.250
+and it says the last commit on there, zero two F four.
+
+03:59.730 --> 04:00.563
+Okay?
+
+04:00.563 --> 04:02.130
+And so if we switch to that branch,
+
+04:02.130 --> 04:04.351
+git switch, two thousands...
+
+04:04.351 --> 04:06.360
+(keyboard typing)
+
+04:06.360 --> 04:07.530
+Type git log.
+
+04:07.530 --> 04:09.480
+There it is zero two F four.
+
+04:09.480 --> 04:11.520
+So each one of these is like a bookmark.
+
+04:11.520 --> 04:14.460
+It's one of these branch references.
+
+04:14.460 --> 04:17.280
+So we happen to have what, five of them instead of two
+
+04:17.280 --> 04:18.390
+in this diagram.
+
+04:18.390 --> 04:19.950
+Each one refers to a commit.
+
+04:19.950 --> 04:21.900
+It just stores that commit hash in a file
+
+04:21.900 --> 04:24.120
+and then head changes.
+
+04:24.120 --> 04:26.580
+This file right here changes
+
+04:26.580 --> 04:28.890
+depending on what we have checked out,
+
+04:28.890 --> 04:31.080
+which branch we're currently on.
+
+04:31.080 --> 04:32.340
+So again, this really doesn't matter
+
+04:32.340 --> 04:33.990
+if you understand it or not.
+
+04:33.990 --> 04:35.190
+In terms of using git,
+
+04:35.190 --> 04:37.440
+it's not a big deal as long as you understand the fact
+
+04:37.440 --> 04:40.170
+that head is just whatever you're currently checked
+
+04:40.170 --> 04:43.590
+out on, whatever you're, you know what branch you're on.
+
+04:43.590 --> 04:45.450
+But behind the scenes, this is the mechanism.
+
+04:45.450 --> 04:46.860
+It's just a file
+
+04:46.860 --> 04:49.890
+and it references a particular branch reference.
+
+04:49.890 --> 04:51.480
+We look at those branch references
+
+04:51.480 --> 04:54.900
+they in turn refer to a particular commit.
+
+04:54.900 --> 04:57.750
+So pretty simple when you look at it this way.
+
+04:57.750 --> 05:00.150
+So hopefully this diagram, plus this,
+
+05:00.150 --> 05:03.480
+starts to sort of congeal branch reference points
+
+05:03.480 --> 05:04.320
+to a commit.
+
+05:04.320 --> 05:06.090
+This one points to a different commit.
+
+05:06.090 --> 05:09.960
+Head just points to one of those branch references.
+
+05:09.960 --> 05:12.240
+So we can stay on dark mode
+
+05:12.240 --> 05:16.710
+or I could toggle back to master, but these stay the same.
+
+05:16.710 --> 05:19.440
+The branch reference, they both stay the same.
+
+05:19.440 --> 05:21.000
+Head is all that's changing,
+
+05:21.000 --> 05:23.550
+until I do more work and make new commits.
+
+05:23.550 --> 05:24.930
+Anyway, it's only optional.
+
+05:24.930 --> 05:26.657
+I'm sure I'm boring you to death, so I'm gonna stop.
+
+05:26.657 --> 05:27.753
+Bye.
