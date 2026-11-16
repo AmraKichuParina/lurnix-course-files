@@ -1,0 +1,484 @@
+WEBVTT
+
+00:00.240 --> 00:01.650
+Instructor: Okay, so back to tagging.
+
+00:01.650 --> 00:03.870
+The first thing that we're gonna take a look at is
+
+00:03.870 --> 00:05.010
+how we view tags,
+
+00:05.010 --> 00:06.960
+how do we look at existing tags?
+
+00:06.960 --> 00:09.120
+And we're actually gonna use a repository
+
+00:09.120 --> 00:12.210
+that we clone that has hundreds of tags
+
+00:12.210 --> 00:14.583
+for us to play around with and inspect.
+
+00:15.709 --> 00:16.920
+We're going to use the react repository
+
+00:16.920 --> 00:18.270
+if you wanna follow along.
+
+00:18.270 --> 00:20.880
+So I'll include the link along with this video,
+
+00:20.880 --> 00:25.410
+and a resource, but it's just github.com/facebook/react.
+
+00:25.410 --> 00:28.650
+We can see currently there's oh what, 137 tags?
+
+00:28.650 --> 00:29.790
+Quite a few.
+
+00:29.790 --> 00:31.344
+This is where you view them on GitHub,
+
+00:31.344 --> 00:32.776
+but I'm just gonna clone this,
+
+00:32.776 --> 00:34.816
+clone this down to my machine,
+
+00:34.816 --> 00:37.980
+so make sure I'm not in a Git repository.
+
+00:37.980 --> 00:39.900
+And then Git clone.
+
+00:39.900 --> 00:40.733
+There we are.
+
+00:40.733 --> 00:42.870
+It's, it's gonna take a little while.
+
+00:42.870 --> 00:44.970
+It's a pretty large project.
+
+00:44.970 --> 00:47.031
+You can see it's going pretty slowly,
+
+00:47.031 --> 00:48.600
+but it will be, well
+
+00:48.600 --> 00:50.179
+I won't say it's worth it, but it
+
+00:50.179 --> 00:52.594
+it's a good tool for us to play around with tags.
+
+00:52.594 --> 00:55.020
+And while that's going, I just wanna remind you,
+
+00:55.020 --> 00:58.064
+the concept of a tag is to be able to mark
+
+00:58.064 --> 01:01.230
+or to highlight some point in history
+
+01:01.230 --> 01:03.180
+and have that be a static reference
+
+01:03.180 --> 01:06.382
+that does not update unless we explicitly want to move it.
+
+01:06.382 --> 01:09.420
+This example, V 3.1.0,
+
+01:09.420 --> 01:12.480
+some release refers to that right there, right?
+
+01:12.480 --> 01:13.710
+This one commit.
+
+01:13.710 --> 01:15.864
+This is a minor release, most likely
+
+01:15.864 --> 01:18.750
+and it's referring to that one commit.
+
+01:18.750 --> 01:20.203
+And at any point I can go back and look at that, right?
+
+01:20.203 --> 01:24.090
+Everyone can see this is the moment in time
+
+01:24.090 --> 01:27.060
+where version 3.1.0 was released, right?
+
+01:27.060 --> 01:28.500
+This is that release.
+
+01:28.500 --> 01:31.484
+Alright, so hopefully that repository is done cloning.
+
+01:31.484 --> 01:33.326
+The command that we're gonna start with,
+
+01:33.326 --> 01:35.910
+really the command that forms the base of everything we do
+
+01:35.910 --> 01:38.070
+with tags, is git tag,
+
+01:38.070 --> 01:40.050
+but git tag on its own with no options,
+
+01:40.050 --> 01:42.300
+no additional values or arguments
+
+01:42.300 --> 01:45.153
+will list all the tags in the current repository.
+
+01:46.050 --> 01:48.120
+So we clone this react repo.
+
+01:48.120 --> 01:51.003
+Okay, it did finish, if I CD into it,
+
+01:51.928 --> 01:56.280
+all right, we're in a git repository,
+
+01:56.280 --> 01:57.690
+we're on the master branch.
+
+01:57.690 --> 01:59.343
+If I type git tag,
+
+02:00.360 --> 02:02.340
+I'm going to see a lot of different tags.
+
+02:02.340 --> 02:04.680
+These each mark a different release.
+
+02:04.680 --> 02:06.540
+So there's a lot of them I have to scroll.
+
+02:06.540 --> 02:07.650
+And then to get out of here,
+
+02:07.650 --> 02:09.300
+hopefully we're used to this by now,
+
+02:09.300 --> 02:10.620
+type Q,
+
+02:10.620 --> 02:14.160
+same as you know, when we're in git log for example,
+
+02:14.160 --> 02:16.050
+hit Q and we get out.
+
+02:16.050 --> 02:18.600
+So these are all different tag names.
+
+02:18.600 --> 02:21.420
+You'll see that a lot of them start with V.
+
+02:21.420 --> 02:23.370
+That's pretty standard and conventional,
+
+02:23.370 --> 02:25.380
+although actually some of them don't.
+
+02:25.380 --> 02:27.480
+Some of them are missing the V,
+
+02:27.480 --> 02:29.370
+I'm not sure why that is.
+
+02:29.370 --> 02:30.480
+Just, I don't know.
+
+02:30.480 --> 02:32.012
+Some people didn't get the memo.
+
+02:32.012 --> 02:35.430
+But all these tags down here are all different versions
+
+02:35.430 --> 02:37.410
+right, they follow semantic versioning.
+
+02:37.410 --> 02:41.040
+So we've got, you know, the most recent 17.0.0,
+
+02:41.040 --> 02:42.840
+that's the most recent major release.
+
+02:42.840 --> 02:46.980
+And then here's a patch soon after, 17.0.1.
+
+02:46.980 --> 02:49.590
+And I'm sure you'll see some new tags.
+
+02:49.590 --> 02:51.840
+Just, you know, even if you're doing this a couple weeks
+
+02:51.840 --> 02:54.660
+after I publish the course, there will be new releases.
+
+02:54.660 --> 02:56.730
+So the exact numbers don't really matter,
+
+02:56.730 --> 02:58.380
+but you should have all these anyway,
+
+02:58.380 --> 02:59.970
+plus possibly more.
+
+02:59.970 --> 03:02.730
+So this is just listing a bunch of pointers.
+
+03:02.730 --> 03:05.392
+So each pointer, each tag has a name, right?
+
+03:05.392 --> 03:07.590
+And they're just version numbers,
+
+03:07.590 --> 03:08.850
+but those could be other names.
+
+03:08.850 --> 03:12.030
+They could be chicken or honey boo boo or something.
+
+03:12.030 --> 03:13.530
+Typically version numbers.
+
+03:13.530 --> 03:15.690
+And they each refer to a particular point in time
+
+03:15.690 --> 03:17.100
+a specific commit,
+
+03:17.100 --> 03:18.594
+but we don't see that right now.
+
+03:18.594 --> 03:21.930
+We'll learn how to inspect the changes
+
+03:21.930 --> 03:25.020
+or take a look at those particular moments in time.
+
+03:25.020 --> 03:27.043
+But for now, we're just listing the tags.
+
+03:27.043 --> 03:29.670
+And on the topic of listing tags,
+
+03:29.670 --> 03:32.970
+another thing we can do is filter them or search.
+
+03:32.970 --> 03:34.110
+When we've got a bunch of tags
+
+03:34.110 --> 03:36.030
+like we do on this react project,
+
+03:36.030 --> 03:37.680
+we can use the dash L.
+
+03:37.680 --> 03:39.930
+So it is an L, it kind of looks like a one there
+
+03:39.930 --> 03:42.330
+but it's dash L for list,
+
+03:42.330 --> 03:44.700
+which actually, it's confusing,
+
+03:44.700 --> 03:46.800
+it doesn't have anything to do with this really,
+
+03:46.800 --> 03:50.637
+dash L is telling it to list all the tags
+
+03:50.637 --> 03:53.760
+which we don't have to do here, right?
+
+03:53.760 --> 03:54.870
+We just get them all.
+
+03:54.870 --> 03:58.230
+But if I add the dash L, it's implicit
+
+03:58.230 --> 04:01.980
+when I do git tag, we're actually doing dash L,
+
+04:01.980 --> 04:04.200
+just we're saying list all the tags.
+
+04:04.200 --> 04:06.867
+But when we try and filter with some
+
+04:06.867 --> 04:09.420
+some sort of wild card like we have here
+
+04:09.420 --> 04:11.850
+this is a pattern that we're trying to match.
+
+04:11.850 --> 04:13.410
+So that star inside the quotes
+
+04:13.410 --> 04:16.290
+an asterisk here means any character
+
+04:16.290 --> 04:19.830
+this is going to find all tags that contain beta in them
+
+04:19.830 --> 04:23.340
+and we have to use dash L in order to list them out.
+
+04:23.340 --> 04:25.708
+It's kind of weird, but that's just how it works.
+
+04:25.708 --> 04:30.000
+So as an example, if I wanted to look at all the,
+
+04:30.000 --> 04:33.360
+hmm, how about all the tags that start with 17?
+
+04:33.360 --> 04:34.560
+I think there's only two
+
+04:35.468 --> 04:38.580
+I can do git tag dash L and then 17.
+
+04:38.580 --> 04:41.580
+And if I just do that, I'm looking for an exact tag
+
+04:41.580 --> 04:42.420
+named 17.
+
+04:42.420 --> 04:43.650
+It doesn't exist,
+
+04:43.650 --> 04:46.050
+but if I do 17 star,
+
+04:46.050 --> 04:47.610
+that means one or more characters,
+
+04:47.610 --> 04:50.490
+or I actually, I think it's zero or more characters.
+
+04:50.490 --> 04:53.469
+But basically something after 17,
+
+04:53.469 --> 04:55.410
+still nothing.
+
+04:55.410 --> 04:57.120
+Oh, well that's my fault.
+
+04:57.120 --> 04:59.689
+They actually start with a V 17, don't they?
+
+04:59.689 --> 05:01.950
+Yeah, well that was underwhelming.
+
+05:01.950 --> 05:05.520
+So there was no tag that started exactly with 17
+
+05:05.520 --> 05:07.740
+and then stuff afterwards,
+
+05:07.740 --> 05:11.820
+they only had V 17 and then content afterwards.
+
+05:11.820 --> 05:13.772
+So let's take a look again at all the tags,
+
+05:13.772 --> 05:17.760
+if I wanted to find all of them that contained beta,
+
+05:17.760 --> 05:19.710
+anywhere I could do this
+
+05:19.710 --> 05:22.024
+git tag dash L, and then some characters
+
+05:22.024 --> 05:26.080
+optionally beta, and then some characters optionally
+
+05:26.080 --> 05:27.960
+afterwards.
+
+05:27.960 --> 05:29.280
+And here we are.
+
+05:29.280 --> 05:30.210
+This one, right?
+
+05:30.210 --> 05:33.540
+16.0.0 beta.1,
+
+05:33.540 --> 05:35.130
+this one ends in beta,
+
+05:35.130 --> 05:36.390
+this one has a dot after it,
+
+05:36.390 --> 05:37.440
+this one has a number.
+
+05:37.440 --> 05:39.540
+So we're getting all of those.
+
+05:39.540 --> 05:41.250
+And yeah, that's kind of all I wanted to show you
+
+05:41.250 --> 05:42.083
+in this video.
+
+05:42.083 --> 05:45.600
+So we can search through tags or filter for particular tags.
+
+05:45.600 --> 05:48.170
+Remember you do need the dash L here,
+
+05:48.170 --> 05:51.000
+otherwise it thinks that we're actually trying
+
+05:51.000 --> 05:53.313
+to make a new tag name
+
+05:53.313 --> 05:56.190
+because in the next video, or very soon,
+
+05:56.190 --> 05:57.520
+I'll show you how to make a new tag
+
+05:57.520 --> 06:01.260
+where we use git tag just kind of like git branch, right?
+
+06:01.260 --> 06:03.110
+You can view branches with git branch
+
+06:04.597 --> 06:05.430
+and make a new branch with git branch.
+
+06:05.430 --> 06:08.282
+So anyway, dash L just says, list all the tags
+
+06:08.282 --> 06:10.923
+and here's what I want you to filter them by.
+
+06:11.790 --> 06:15.450
+Okay, so that's our first example of viewing those tags
+
+06:15.450 --> 06:17.730
+or at least the name of those tags.
+
+06:17.730 --> 06:20.460
+Next up I wanna talk about actually checking out those tags
+
+06:20.460 --> 06:23.613
+and going back in time and maybe diffing tags as well.
