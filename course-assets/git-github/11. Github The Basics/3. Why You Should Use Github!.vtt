@@ -1,0 +1,325 @@
+WEBVTT
+
+00:00.150 --> 00:01.020
+Instructor: In this video,
+
+00:01.020 --> 00:02.730
+I'll do my best to keep this quick,
+
+00:02.730 --> 00:04.800
+I wanna talk about why you should use GitHub,
+
+00:04.800 --> 00:06.840
+or know how to use it.
+
+00:06.840 --> 00:10.320
+And not just the basic reason of, you know,
+
+00:10.320 --> 00:13.650
+backing up your code or being able to collaborate,
+
+00:13.650 --> 00:16.410
+although obviously that's really important part
+
+00:16.410 --> 00:17.670
+of using GitHub and one
+
+00:17.670 --> 00:20.040
+of the main reasons people want to use it,
+
+00:20.040 --> 00:21.600
+but there are other reasons,
+
+00:21.600 --> 00:23.580
+especially if you're part of the, I guess,
+
+00:23.580 --> 00:25.920
+greater developer community.
+
+00:25.920 --> 00:28.320
+Things like, if you're looking for a job down the line
+
+00:28.320 --> 00:30.060
+or trying to meet potential mentors.
+
+00:30.060 --> 00:31.470
+There are other reasons.
+
+00:31.470 --> 00:33.660
+So collaboration is 100%,
+
+00:33.660 --> 00:37.200
+one of the most important reasons to use GitHub.
+
+00:37.200 --> 00:39.780
+If we take a look at some projects, I mean,
+
+00:39.780 --> 00:43.290
+you can see there are certain repositories that have 1,500+
+
+00:43.290 --> 00:46.860
+different contributors working on the same project.
+
+00:46.860 --> 00:47.790
+So that's pretty amazing.
+
+00:47.790 --> 00:48.623
+And there are repos
+
+00:48.623 --> 00:51.450
+with thousands and thousands of contributors.
+
+00:51.450 --> 00:53.700
+But the first reason I wanna focus on that,
+
+00:53.700 --> 00:54.840
+maybe is slightly different
+
+00:54.840 --> 00:57.927
+than just a generic collaboration is good,
+
+00:57.927 --> 01:00.390
+is open source projects.
+
+01:00.390 --> 01:03.450
+If you're not familiar with the term,§ or need a recap,
+
+01:03.450 --> 01:05.310
+open source projects are projects where
+
+01:05.310 --> 01:07.440
+the code base is available,
+
+01:07.440 --> 01:09.960
+not just typically, not just to look at
+
+01:09.960 --> 01:14.670
+but also to make contributions to, to fix bugs, to discuss
+
+01:14.670 --> 01:17.490
+with a community, a greater community of people,
+
+01:17.490 --> 01:19.830
+usually the users of the product.
+
+01:19.830 --> 01:22.080
+Anyway, GitHub has become the home
+
+01:22.080 --> 01:24.720
+of open source projects on the internet today.
+
+01:24.720 --> 01:27.990
+And so if you ever plan on working on open source projects
+
+01:27.990 --> 01:30.030
+or contributing or starting your own,
+
+01:30.030 --> 01:32.070
+GitHub is the place to do it currently.
+
+01:32.070 --> 01:34.470
+And if you have never made contributions,
+
+01:34.470 --> 01:36.990
+you might want to consider making open source contributions,
+
+01:36.990 --> 01:41.310
+especially if you plan on looking for a job at some points.
+
+01:41.310 --> 01:44.790
+It's great proof that you know what you're doing.
+
+01:44.790 --> 01:47.490
+So just a couple of open source projects,
+
+01:47.490 --> 01:51.150
+things like React. Very, very, very popular tool,
+
+01:51.150 --> 01:54.240
+JavaScript library, it's all on GitHub
+
+01:54.240 --> 01:57.630
+and lots and lots of people have made contributions.
+
+01:57.630 --> 02:00.060
+So it's not just the people on the official React team
+
+02:00.060 --> 02:01.080
+at Facebook.
+
+02:01.080 --> 02:04.770
+Same thing with TensorFlow, just to give another example,
+
+02:04.770 --> 02:08.370
+so a machine learning framework, 100- no,
+
+02:08.370 --> 02:09.570
+that's how many people use it.
+
+02:09.570 --> 02:11.820
+Almost 3,000 contributors.
+
+02:11.820 --> 02:14.070
+And that brings me to the next point, which is,
+
+02:14.070 --> 02:17.130
+GitHub can give you, as a developer,
+
+02:17.130 --> 02:19.260
+it can give you exposure, it can give you,
+
+02:19.260 --> 02:23.430
+I won't say notoriety, but if you do contribute
+
+02:23.430 --> 02:26.940
+to open source projects consistently, you are going to
+
+02:26.940 --> 02:29.430
+run into people and, and sort of make friends,
+
+02:29.430 --> 02:31.830
+or at least GitHub friends,
+
+02:31.830 --> 02:33.780
+because you're having conversations,
+
+02:33.780 --> 02:36.990
+you're talking about features and lines of code together.
+
+02:36.990 --> 02:39.150
+Additionally, employers will often look
+
+02:39.150 --> 02:42.090
+at your GitHub profile,
+
+02:42.090 --> 02:44.400
+so I'll just show you one or two of those.
+
+02:44.400 --> 02:48.210
+This is my friend Carly, who was recently looking for a job.
+
+02:48.210 --> 02:50.730
+You can actually see her contributions here,
+
+02:50.730 --> 02:53.070
+stopped when she got a job and
+
+02:53.070 --> 02:55.470
+started working on that job full-time.
+
+02:55.470 --> 02:56.970
+But we've got things like,
+
+02:56.970 --> 02:58.800
+her repositories she's worked on.
+
+02:58.800 --> 03:01.560
+If I'm thinking about hiring her, I might go take a look
+
+03:01.560 --> 03:03.450
+at one of them, and what is this?
+
+03:03.450 --> 03:07.620
+Oh, this is like a marketing website for a concert series,
+
+03:07.620 --> 03:09.840
+and then we can take a look.
+
+03:09.840 --> 03:13.740
+Okay, so that's just a very simple demo of how, you know,
+
+03:13.740 --> 03:15.600
+your GitHub profile can act
+
+03:15.600 --> 03:18.780
+as a bit of a resume for your code.
+
+03:18.780 --> 03:20.880
+So we can take a look at all her different projects.
+
+03:20.880 --> 03:24.480
+Similarly, here's another friend, I can see recently,
+
+03:24.480 --> 03:28.200
+just this January, he contributed to Material UI,
+
+03:28.200 --> 03:30.960
+a very popular large front-end component library.
+
+03:30.960 --> 03:33.480
+And if I was thinking about hiring somebody
+
+03:33.480 --> 03:35.340
+and I saw that, you know,
+
+03:35.340 --> 03:38.310
+it's not an instant yes, but it's a good sign.
+
+03:38.310 --> 03:40.140
+And then the last reason that I'll list,
+
+03:40.140 --> 03:42.600
+is that GitHub can help you stay up-to-date.
+
+03:42.600 --> 03:46.500
+It has some sort of vaguely social networky features.
+
+03:46.500 --> 03:50.490
+And if, let's say you're a React developer, you can stay
+
+03:50.490 --> 03:55.140
+up-to-date on changes coming to the React project,
+
+03:55.140 --> 03:56.850
+you can stay sort of active
+
+03:56.850 --> 03:59.610
+in the conversation and learn more about, you know,
+
+03:59.610 --> 04:02.280
+when that next massive update is coming,
+
+04:02.280 --> 04:03.600
+that is gonna change everything,
+
+04:03.600 --> 04:04.860
+you can even anticipate it.
+
+04:04.860 --> 04:07.470
+If you're active on GitHub, you can set up notifications
+
+04:07.470 --> 04:09.090
+and you can be the first to know.
+
+04:09.090 --> 04:12.720
+Anyway, for us, the main reason that it all comes back to
+
+04:12.720 --> 04:15.794
+is collaboration, getting our code up on GitHub.
+
+04:15.794 --> 04:18.330
+But these side effects are nice too, right?
+
+04:18.330 --> 04:19.920
+Being able to work on open source projects
+
+04:19.920 --> 04:21.600
+is great in general,
+
+04:21.600 --> 04:24.120
+but specifically if you're looking for a job,
+
+04:24.120 --> 04:27.930
+it can be a great idea, a great sort of, resume builder.
+
+04:27.930 --> 04:29.940
+You can gain exposure, you can meet mentors
+
+04:29.940 --> 04:33.090
+and just sort of have a presence in the coding world
+
+04:33.090 --> 04:34.530
+and you can stay up-to-date
+
+04:34.530 --> 04:36.753
+on repositories and upcoming changes.
