@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.120 --> 00:01.350
+Instructor: So, we just talked about working
+
+00:01.350 --> 00:04.410
+with collaborators and adding collaborators and all of that.
+
+00:04.410 --> 00:05.910
+Now, we're switching gears to talk about
+
+00:05.910 --> 00:08.490
+these things called README files.
+
+00:08.490 --> 00:11.121
+So, you may remember, and you've probably seen it before,
+
+00:11.121 --> 00:15.540
+when we make a repo on GitHub, if I just go new repository,
+
+00:15.540 --> 00:18.060
+I'm not gonna actually make one, one of the options
+
+00:18.060 --> 00:21.180
+of three options here to initialize a repository
+
+00:21.180 --> 00:24.690
+with a file, one of them is add a README file.
+
+00:24.690 --> 00:25.530
+So, what is that?
+
+00:25.530 --> 00:27.570
+README in all caps.
+
+00:27.570 --> 00:29.640
+Well, the README is a particular file
+
+00:29.640 --> 00:33.210
+that plays a special role on a GitHub repository.
+
+00:33.210 --> 00:34.590
+And it's not limited to GitHub,
+
+00:34.590 --> 00:37.290
+but in our context we're talking about GitHub.
+
+00:37.290 --> 00:39.693
+It's a file that is supposed to explain
+
+00:39.693 --> 00:42.360
+what your project does, whether you're working
+
+00:42.360 --> 00:46.110
+on some API or a web application, a video game,
+
+00:46.110 --> 00:48.150
+or even if it's just, you know,
+
+00:48.150 --> 00:52.301
+you're a government using GitHub to make laws and legislate.
+
+00:52.301 --> 00:55.560
+Whatever your repo is, the README file
+
+00:55.560 --> 00:57.780
+should include information about what the project does,
+
+00:57.780 --> 00:59.520
+what it's for, who's it for,
+
+00:59.520 --> 01:02.040
+how to get started with the project, how to run it
+
+01:02.040 --> 01:04.440
+and install dependencies if necessary,
+
+01:04.440 --> 01:07.470
+why it's noteworthy, who maintains the project,
+
+01:07.470 --> 01:09.960
+how to collaborate the project, how to get help.
+
+01:09.960 --> 01:11.490
+Not all of that has to be there,
+
+01:11.490 --> 01:14.190
+but if there's important information you want to convey
+
+01:14.190 --> 01:17.850
+to somebody coming to your project for the first time,
+
+01:17.850 --> 01:19.800
+then put it in the README file.
+
+01:19.800 --> 01:22.020
+So, README in all caps.
+
+01:22.020 --> 01:24.420
+You'll see them all over the place if you haven't,
+
+01:24.420 --> 01:25.620
+and they're very important
+
+01:25.620 --> 01:27.210
+because if you put a README file
+
+01:27.210 --> 01:29.250
+in the root of your project,
+
+01:29.250 --> 01:31.200
+GitHub is automatically going to display it.
+
+01:31.200 --> 01:33.780
+It will render the contents on the page for us.
+
+01:33.780 --> 01:36.660
+So, when I go to a repository like this,
+
+01:36.660 --> 01:39.240
+I just opened a couple trending repositories.
+
+01:39.240 --> 01:41.610
+This one here, Clean Architecture,
+
+01:41.610 --> 01:45.600
+it has a README file in the root of the directory
+
+01:45.600 --> 01:48.630
+and it's automatically displayed for me.
+
+01:48.630 --> 01:53.010
+As you can see, it tells me a title, a little brief
+
+01:53.010 --> 01:55.560
+about what it does, a list of technologies,
+
+01:55.560 --> 01:57.810
+how to get started, how to configure things,
+
+01:57.810 --> 02:00.270
+how to configure the database, how to migrate,
+
+02:00.270 --> 02:03.030
+all this stuff, keep going down, how to support,
+
+02:03.030 --> 02:05.700
+or how to get supports, the license
+
+02:05.700 --> 02:07.230
+that it's licensed under.
+
+02:07.230 --> 02:09.840
+Here's a different project, same deal.
+
+02:09.840 --> 02:11.850
+It's called, what is this spaCY?
+
+02:11.850 --> 02:15.000
+It's a tool for natural language processing in Python.
+
+02:15.000 --> 02:17.520
+Again, I just clicked a trending repo.
+
+02:17.520 --> 02:20.880
+It has a README file, and if I scroll down,
+
+02:20.880 --> 02:23.640
+that is what automatically GitHub detects
+
+02:23.640 --> 02:27.570
+and it renders for users coming to this main repo page.
+
+02:27.570 --> 02:30.170
+So, I see the title and all the stuff on the README.
+
+02:31.020 --> 02:33.090
+There's more information, where to ask questions,
+
+02:33.090 --> 02:35.700
+how to ask questions, features of this tool,
+
+02:35.700 --> 02:40.230
+how to install things, how to update, what else?
+
+02:40.230 --> 02:43.410
+How to compile from source, how to run the tests.
+
+02:43.410 --> 02:46.590
+Okay, so we're not limited just to software,
+
+02:46.590 --> 02:50.040
+although, of course, that's what a lot of GitHub repos are,
+
+02:50.040 --> 02:52.680
+but the README file, whatever is in it,
+
+02:52.680 --> 02:54.360
+is going to be automatically rendered
+
+02:54.360 --> 02:57.515
+if GitHub detects it in the root of your project.
+
+02:57.515 --> 03:01.140
+Also, I believe it will look in the dot git folder,
+
+03:01.140 --> 03:02.820
+but almost everyone I've seen
+
+03:02.820 --> 03:05.430
+puts it right in the root of the directory.
+
+03:05.430 --> 03:07.860
+All right, so READMEs play an important role.
+
+03:07.860 --> 03:09.601
+It's the first thing somebody looks
+
+03:09.601 --> 03:11.340
+at when they come to your project.
+
+03:11.340 --> 03:13.890
+I mean, the title says it all, README.
+
+03:13.890 --> 03:14.940
+That's the goal.
+
+03:14.940 --> 03:15.810
+That's the aim here.
+
+03:15.810 --> 03:18.690
+Someone visits our, let's say React
+
+03:18.690 --> 03:20.490
+'cause it's a very large repository,
+
+03:20.490 --> 03:24.120
+this is like the entry point for people to learn more.
+
+03:24.120 --> 03:27.240
+And often, it should include a bunch of links.
+
+03:27.240 --> 03:30.270
+You know, learn how to use React, online playground.
+
+03:30.270 --> 03:33.120
+So, this isn't even a very detailed README
+
+03:33.120 --> 03:34.800
+compared to some of the others we've seen,
+
+03:34.800 --> 03:37.957
+but it leads to tons of really important information
+
+03:37.957 --> 03:40.710
+for somebody who wants to know how to use React
+
+03:40.710 --> 03:42.390
+and how to contribute to React.
+
+03:42.390 --> 03:43.890
+There's a whole section about contributing,
+
+03:43.890 --> 03:46.158
+the code of conduct, contributing guide.
+
+03:46.158 --> 03:49.530
+So, a bunch of stuff, that's really the role of READMEs.
+
+03:49.530 --> 03:51.213
+It's like the entry point for somebody
+
+03:51.213 --> 03:53.550
+to learn more about your project.
+
+03:53.550 --> 03:55.140
+And again, we can see the file here.
+
+03:55.140 --> 03:57.000
+It's just like any other file,
+
+03:57.000 --> 04:00.120
+except it is named something very particular.
+
+04:00.120 --> 04:03.450
+README in all caps dot md.
+
+04:03.450 --> 04:05.190
+So, what is that md?
+
+04:05.190 --> 04:07.294
+Well, it stands for markdown.
+
+04:07.294 --> 04:09.300
+READMEs are markdown files.
+
+04:09.300 --> 04:10.860
+If you're not familiar with the term,
+
+04:10.860 --> 04:15.300
+markdown is a very succinct, convenient syntax
+
+04:15.300 --> 04:17.490
+to generate formatted text.
+
+04:17.490 --> 04:21.450
+It generates markup, markdown, markup.
+
+04:21.450 --> 04:23.310
+And in the next video I'll show you
+
+04:23.310 --> 04:24.900
+how we can write markdown,
+
+04:24.900 --> 04:27.240
+and I'll show you an example of making a README.
+
+04:27.240 --> 04:28.290
+So, that's coming up.
