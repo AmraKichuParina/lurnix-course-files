@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.150 --> 00:00.983
+Instructor: All right.
+
+00:00.983 --> 00:02.940
+So let's try using the git stash command,
+
+00:02.940 --> 00:06.900
+or git stash save, in order to add our unstaged
+
+00:06.900 --> 00:09.990
+and staged changes to the stash.
+
+00:09.990 --> 00:14.070
+So back here, I've got our Goodbye World
+
+00:14.070 --> 00:15.390
+that I've changed, right?
+
+00:15.390 --> 00:18.210
+Goodbye World and Goodbye up in the title.
+
+00:18.210 --> 00:21.180
+And this is on the branch called Goodbye.
+
+00:21.180 --> 00:22.740
+That's where I am right now.
+
+00:22.740 --> 00:24.990
+But I have not committed those changes.
+
+00:24.990 --> 00:28.837
+Let's also do one more thing, like maybe in my app.css,
+
+00:28.837 --> 00:31.770
+I'm gonna make the body have a background color
+
+00:31.770 --> 00:34.956
+that's really obvious, background color of,
+
+00:34.956 --> 00:37.530
+I don't know, magenta.
+
+00:37.530 --> 00:39.750
+And again, this doesn't really matter if you don't know CSS,
+
+00:39.750 --> 00:42.743
+but I've made a very obvious background color magenta,
+
+00:42.743 --> 00:45.570
+and it says "Goodbye World!!" up here
+
+00:45.570 --> 00:47.130
+and the title is Goodbye.
+
+00:47.130 --> 00:48.960
+So those are the changes I've made.
+
+00:48.960 --> 00:51.104
+And I need to switch to master right now
+
+00:51.104 --> 00:52.710
+for whatever reason,
+
+00:52.710 --> 00:54.930
+and I don't wanna take these changes with me,
+
+00:54.930 --> 00:57.330
+not to mention the fact that they actually conflict.
+
+00:57.330 --> 01:00.764
+I can't take at least the index HTML change with me,
+
+01:00.764 --> 01:02.407
+because as we saw previously,
+
+01:02.407 --> 01:05.704
+it conflicts with what we have on the master branch.
+
+01:05.704 --> 01:09.390
+So I don't want to commit. I'm going to use git stash.
+
+01:09.390 --> 01:10.590
+So if I type git status,
+
+01:10.590 --> 01:13.170
+if I can actually type it correctly,
+
+01:13.170 --> 01:15.810
+you can see two files that have been modified.
+
+01:15.810 --> 01:19.620
+I'm going to call git stash save, or just git stash.
+
+01:19.620 --> 01:20.453
+Same thing.
+
+01:21.570 --> 01:24.300
+And it tells me "Saved working directory and index state."
+
+01:24.300 --> 01:28.138
+Index is just what Git calls the staging area.
+
+01:28.138 --> 01:32.670
+So it saved the staged and unstaged changes on this branch,
+
+01:32.670 --> 01:34.320
+but it did not commit them.
+
+01:34.320 --> 01:37.950
+So if I type git status now, we don't see anything,
+
+01:37.950 --> 01:40.170
+nothing to commit, working tree clean.
+
+01:40.170 --> 01:42.097
+And if I take a look at my files here,
+
+01:42.097 --> 01:43.980
+we're back to Hello World!
+
+01:43.980 --> 01:45.750
+We don't have the magenta at all,
+
+01:45.750 --> 01:48.630
+and if I refresh the page, it's gone.
+
+01:48.630 --> 01:50.820
+So those changes are not here.
+
+01:50.820 --> 01:53.259
+And now, I could switch to whatever branch I need to,
+
+01:53.259 --> 01:56.460
+git switch master, which remember, earlier,
+
+01:56.460 --> 01:58.740
+it said I couldn't do because of conflicts.
+
+01:58.740 --> 02:00.614
+Now, I'm on the master branch,
+
+02:00.614 --> 02:04.050
+we can see here's our Hello World! from before
+
+02:04.050 --> 02:05.700
+with all the exclamation points.
+
+02:05.700 --> 02:08.670
+And then I could go anywhere else,
+
+02:08.670 --> 02:10.740
+I could apply these changes here if I wanted,
+
+02:10.740 --> 02:13.560
+or I can go back to the branch I was on before.
+
+02:13.560 --> 02:16.623
+So git switch back to goodbye,
+
+02:17.760 --> 02:19.920
+and this is what we're dealing with on goodbye.
+
+02:19.920 --> 02:22.170
+And if I want to then get those changes back
+
+02:22.170 --> 02:26.520
+that I've stashed away, we use git stash pop.
+
+02:26.520 --> 02:29.040
+So this will take the most recently stashed changes,
+
+02:29.040 --> 02:31.170
+and yes, we can have multiple things in the stash,
+
+02:31.170 --> 02:33.284
+we'll get to that, but most frequently,
+
+02:33.284 --> 02:35.910
+most commonly, in my experience, we just have one,
+
+02:35.910 --> 02:37.980
+I have one thing in the stash at a time.
+
+02:37.980 --> 02:39.960
+Anyway, so I'm gonna reapply those changes
+
+02:39.960 --> 02:42.102
+to my working copy, which is right here.
+
+02:42.102 --> 02:44.850
+git status, just to show you.
+
+02:44.850 --> 02:46.410
+It says "nothing to commit."
+
+02:46.410 --> 02:48.330
+We don't see that magenta in here.
+
+02:48.330 --> 02:50.280
+We don't see Goodbye World.
+
+02:50.280 --> 02:55.280
+And now, git stash pop and it tells me,
+
+02:55.470 --> 02:58.590
+okay, we added those changes back in for you.
+
+02:58.590 --> 03:00.570
+You modified this file, app.css.
+
+03:00.570 --> 03:02.370
+You modified index HTML.
+
+03:02.370 --> 03:06.120
+And now, if I take a look at my file, it says goodbye again.
+
+03:06.120 --> 03:08.610
+If I look at app.css, it has magenta in there.
+
+03:08.610 --> 03:11.430
+If I refresh my page, we see those changes now
+
+03:11.430 --> 03:13.740
+in the browser where I'm viewing the webpage.
+
+03:13.740 --> 03:15.242
+Cool.
+
+03:15.242 --> 03:16.890
+So we successfully stashed some changes
+
+03:16.890 --> 03:18.450
+and then we applied them.
+
+03:18.450 --> 03:19.593
+We popped them off.
+
+03:20.581 --> 03:22.020
+All right, so next up, I'll show you some more examples,
+
+03:22.020 --> 03:25.743
+and we'll talk about some other stash-related commands.
