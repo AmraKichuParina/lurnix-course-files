@@ -1,0 +1,400 @@
+WEBVTT
+
+00:00.090 --> 00:01.260
+Instructor: So now we're gonna start talking
+
+00:01.260 --> 00:03.390
+about fetching and pulling.
+
+00:03.390 --> 00:05.880
+So I'm gonna start with a hypothetical.
+
+00:05.880 --> 00:07.650
+Here's some diagrams.
+
+00:07.650 --> 00:10.530
+Once again, we have a local repository,
+
+00:10.530 --> 00:12.840
+and then we have a corresponding GitHub repo,
+
+00:12.840 --> 00:16.980
+and currently, let's say I just clone down the local repo.
+
+00:16.980 --> 00:20.640
+I'm entirely up to date with whatever is on GitHub, right?
+
+00:20.640 --> 00:24.450
+I have the master branch pointer and origin/master,
+
+00:24.450 --> 00:26.790
+both referring to this latest commit,
+
+00:26.790 --> 00:29.430
+but I go on to do some more work,
+
+00:29.430 --> 00:32.430
+and as we saw previously, they now have diverged.
+
+00:32.430 --> 00:35.040
+I have a commit that the GitHub repo,
+
+00:35.040 --> 00:37.680
+the origin repo, does not have.
+
+00:37.680 --> 00:40.560
+But I'm also working with some collaborators,
+
+00:40.560 --> 00:42.960
+and in the meantime, while I was working
+
+00:42.960 --> 00:45.570
+on this yellow commit, whatever that is,
+
+00:45.570 --> 00:48.003
+those collaborators, let's just say one person,
+
+00:49.177 --> 00:52.680
+Bob Head added three new commits
+
+00:52.680 --> 00:54.840
+that you can see up there in green.
+
+00:54.840 --> 00:56.430
+So those are on GitHub.
+
+00:56.430 --> 00:58.050
+They're on the master branch.
+
+00:58.050 --> 00:59.670
+Let's say there's just one branch.
+
+00:59.670 --> 01:02.700
+So the master branch, they're on GitHub.
+
+01:02.700 --> 01:04.590
+I don't have them locally.
+
+01:04.590 --> 01:06.210
+I do have my new commit,
+
+01:06.210 --> 01:10.020
+but I don't have those new commits coming from Bob Head.
+
+01:10.020 --> 01:12.150
+So how do I get those changes?
+
+01:12.150 --> 01:14.340
+This is where the two commands we're gonna discuss,
+
+01:14.340 --> 01:17.460
+fetching and pulling, or git fetch, git pull,
+
+01:17.460 --> 01:19.590
+this is where they come into play.
+
+01:19.590 --> 01:21.540
+So here's a diagram that I've put together.
+
+01:21.540 --> 01:24.720
+It's based on some really common diagrams that you'll see
+
+01:24.720 --> 01:26.304
+where we have different locations.
+
+01:26.304 --> 01:27.649
+They're not really physical locations,
+
+01:27.649 --> 01:30.630
+but we've got our working directory, our workspace,
+
+01:30.630 --> 01:32.220
+we've got the staging area,
+
+01:32.220 --> 01:35.490
+we've got our actual local Git repository.
+
+01:35.490 --> 01:38.447
+So something like git add, hopefully by now we know,
+
+01:38.447 --> 01:41.070
+will stage changes, right?
+
+01:41.070 --> 01:44.190
+git add will stage a change, puts it in the staging area,
+
+01:44.190 --> 01:47.250
+and then git commit takes whatever is in the staging area
+
+01:47.250 --> 01:50.550
+and then creates a new commit in the actual .git folder,
+
+01:50.550 --> 01:52.290
+the real local repository.
+
+01:52.290 --> 01:54.810
+And then we saw that git push will take commits
+
+01:54.810 --> 01:57.870
+from a local repo and push them up to a remote repo,
+
+01:57.870 --> 02:01.380
+like GitHub, or a GitHub repo, rather.
+
+02:01.380 --> 02:04.350
+So git fetch and git pull down here
+
+02:04.350 --> 02:06.600
+both go the other direction.
+
+02:06.600 --> 02:08.190
+There are two commands that we can use
+
+02:08.190 --> 02:12.390
+to get changes, new commits, from a remote repository,
+
+02:12.390 --> 02:14.400
+from GitHub in our example.
+
+02:14.400 --> 02:16.200
+So we're gonna start with git fetch.
+
+02:16.200 --> 02:19.110
+Fetching is going to take remote changes,
+
+02:19.110 --> 02:21.900
+so stuff coming from a GitHub repo,
+
+02:21.900 --> 02:25.650
+and bring them down to the local repository,
+
+02:25.650 --> 02:28.050
+not into our working directory.
+
+02:28.050 --> 02:29.850
+So that is what git pull does.
+
+02:29.850 --> 02:31.290
+I will illustrate the difference.
+
+02:31.290 --> 02:33.450
+It can seem a little confusing at first.
+
+02:33.450 --> 02:37.530
+Fetching allows us to download changes from a remote repo,
+
+02:37.530 --> 02:41.520
+but those changes are not integrated into our working files.
+
+02:41.520 --> 02:45.150
+So it's a way of kind of fetching the latest changes
+
+02:45.150 --> 02:47.730
+and having access to them on your machine,
+
+02:47.730 --> 02:49.170
+but without having to merge them
+
+02:49.170 --> 02:51.750
+into our actual local working directory,
+
+02:51.750 --> 02:53.730
+without having to mess up our files.
+
+02:53.730 --> 02:55.950
+So think of it as this last paragraph.
+
+02:55.950 --> 02:58.290
+Please go and get the latest information from GitHub,
+
+02:58.290 --> 03:01.050
+but don't screw up what I'm currently working on.
+
+03:01.050 --> 03:05.220
+So we'll have access to it using this git fetch command.
+
+03:05.220 --> 03:08.910
+So we specify git fetch, and then a remote.
+
+03:08.910 --> 03:12.810
+The default is origin, so you could just do git fetch,
+
+03:12.810 --> 03:14.700
+but if you do git fetch origin,
+
+03:14.700 --> 03:16.260
+it's going to fetch from the origin.
+
+03:16.260 --> 03:19.440
+If you have multiple remotes, which eventually we may,
+
+03:19.440 --> 03:22.080
+well, eventually in this course, we will,
+
+03:22.080 --> 03:24.720
+it will fetch from whatever that remote is.
+
+03:24.720 --> 03:28.147
+Git will basically request origin and say,
+
+03:28.147 --> 03:31.620
+"Hey, origin, is there any changes on this GitHub repo?
+
+03:31.620 --> 03:33.990
+If so, I want them."
+
+03:33.990 --> 03:37.710
+We can also specifically just fetch one branch.
+
+03:37.710 --> 03:42.150
+So git fetch origin master, or origin bugfix,
+
+03:42.150 --> 03:43.770
+or whatever the branch is.
+
+03:43.770 --> 03:46.710
+So here's the same situation from before, right?
+
+03:46.710 --> 03:48.848
+We have this GitHub repo and a local repo.
+
+03:48.848 --> 03:49.920
+I'm working on it.
+
+03:49.920 --> 03:51.570
+I have a new commit in yellow,
+
+03:51.570 --> 03:54.870
+and then my friend, Bob Head, I think is what I said,
+
+03:54.870 --> 03:56.820
+added three commits to GitHub.
+
+03:56.820 --> 03:59.130
+He pushed them up. I don't have them.
+
+03:59.130 --> 04:03.090
+So if I don't wanna screw up my local working directory
+
+04:03.090 --> 04:05.850
+but I want access to those changes,
+
+04:05.850 --> 04:09.690
+I can fetch that branch, origin master,
+
+04:09.690 --> 04:13.140
+or I can just do git fetch and get everything from origin,
+
+04:13.140 --> 04:16.800
+and what will happen is that origin master,
+
+04:16.800 --> 04:21.000
+remember these remote branch references, that will update.
+
+04:21.000 --> 04:24.270
+So I have access, I can look at origin/master
+
+04:24.270 --> 04:26.700
+to see where is it, what's going on,
+
+04:26.700 --> 04:27.690
+what do the files look like?
+
+04:27.690 --> 04:28.980
+I can check it out,
+
+04:28.980 --> 04:32.640
+but my master branch has not changed in any way.
+
+04:32.640 --> 04:34.320
+That's exactly what this slide says.
+
+04:34.320 --> 04:35.460
+I got ahead of myself.
+
+04:35.460 --> 04:38.220
+I now have these changes on my machine,
+
+04:38.220 --> 04:42.630
+and if I want to see them, I can go checkout origin/master,
+
+04:42.630 --> 04:44.940
+but my master branch is completely untouched.
+
+04:44.940 --> 04:46.650
+So basically, I've downloaded the changes,
+
+04:46.650 --> 04:49.800
+but I have not integrated them into my working directory,
+
+04:49.800 --> 04:52.590
+onto any branch that I'm working on.
+
+04:52.590 --> 04:55.320
+So if I lost internet, I would still have access
+
+04:55.320 --> 04:58.410
+to all of the work as of this moment in time
+
+04:58.410 --> 04:59.700
+that I fetched, right?
+
+04:59.700 --> 05:02.100
+I don't need the internet to go look at this stuff.
+
+05:02.100 --> 05:03.330
+It's on my computer.
+
+05:03.330 --> 05:05.250
+It's just not in my working directory.
+
+05:05.250 --> 05:07.530
+So that's why, in this diagram,
+
+05:07.530 --> 05:10.410
+we've got fetch going from the remote repository,
+
+05:10.410 --> 05:13.320
+fetching changes down to our local repo,
+
+05:13.320 --> 05:15.930
+but not into the workspace.
+
+05:15.930 --> 05:18.690
+So in the next video, I'm gonna demonstrate this,
+
+05:18.690 --> 05:21.180
+but for now, all that you should know,
+
+05:21.180 --> 05:22.920
+or the recap, really, the main takeaway,
+
+05:22.920 --> 05:25.710
+is that fetching allows us to get changes
+
+05:25.710 --> 05:27.480
+from some remote repo
+
+05:27.480 --> 05:29.730
+without actually integrating those changes
+
+05:29.730 --> 05:31.440
+into our working files.
+
+05:31.440 --> 05:33.960
+So we can go take a look, see what changed,
+
+05:33.960 --> 05:37.110
+what's new on origin or on any other remote,
+
+05:37.110 --> 05:40.650
+and we could specify if we only wanna fetch one branch
+
+05:40.650 --> 05:41.910
+from a given remote.
+
+05:41.910 --> 05:44.520
+Otherwise, it's gonna fetch all branches.
+
+05:44.520 --> 05:46.970
+So in the next video, I'm gonna demonstrate this.
