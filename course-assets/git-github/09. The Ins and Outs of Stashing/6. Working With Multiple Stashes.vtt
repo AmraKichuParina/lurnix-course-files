@@ -1,0 +1,448 @@
+WEBVTT
+
+00:00.120 --> 00:02.970
+-: So far with git stash, we've put one thing
+
+00:02.970 --> 00:05.310
+in the stash and then popped it out, right?
+
+00:05.310 --> 00:08.550
+One set of changes and then we popped or applied it,
+
+00:08.550 --> 00:11.460
+but we can actually stash again and again.
+
+00:11.460 --> 00:14.880
+We can have multiple stashes in our stack of stashes,
+
+00:14.880 --> 00:18.360
+and they will be kept in the order that we added them in.
+
+00:18.360 --> 00:19.260
+I've gotta be honest though,
+
+00:19.260 --> 00:22.440
+I don't do this really, at least not frequently.
+
+00:22.440 --> 00:25.350
+Like I said, 99 or 90 something percent of the time,
+
+00:25.350 --> 00:27.780
+I'm just doing git stash and git stash pop.
+
+00:27.780 --> 00:30.780
+But I'm being comprehensive, or at least attempting to.
+
+00:30.780 --> 00:32.580
+So I'll show this very quickly.
+
+00:32.580 --> 00:36.870
+Well, relatively quickly, I'm going to make a new branch.
+
+00:36.870 --> 00:40.140
+So I am on this magenta, no, I'm on the goodbye branch.
+
+00:40.140 --> 00:45.140
+We'll just add those changes and commit now, commit dash m.
+
+00:45.450 --> 00:48.300
+Let's just do change to goodbye.
+
+00:48.300 --> 00:50.190
+That's pretty much what we did.
+
+00:50.190 --> 00:53.250
+Okay, so now I'm gonna make a new branch from here.
+
+00:53.250 --> 00:55.654
+So git switch dash c,
+
+00:55.654 --> 00:57.480
+and I'm gonna just call this branch rainbow.
+
+00:57.480 --> 01:00.420
+It's where I'm gonna demo, demo some things.
+
+01:00.420 --> 01:03.630
+And then on this branch, I'm gonna start
+
+01:03.630 --> 01:07.230
+by getting rid of the background color in the body.
+
+01:07.230 --> 01:09.240
+Just have no background color.
+
+01:09.240 --> 01:12.660
+And again, if you don't know CSS, it's totally okay,
+
+01:12.660 --> 01:14.520
+but hopefully you can see when I wrote magenta,
+
+01:14.520 --> 01:16.440
+we had a magenta background.
+
+01:16.440 --> 01:19.440
+And I'm just going to leave it at that for now,
+
+01:19.440 --> 01:20.940
+and I'm gonna commit that.
+
+01:20.940 --> 01:24.630
+So git add app dot CSS git commit, you know,
+
+01:24.630 --> 01:26.643
+remove background color.
+
+01:27.570 --> 01:30.180
+Okay, so nothing in the stash right now,
+
+01:30.180 --> 01:32.550
+and we don't have any changes that we could put in there.
+
+01:32.550 --> 01:34.440
+But now I'm gonna make a single change.
+
+01:34.440 --> 01:39.440
+I'm going to give the body a background color of red,
+
+01:39.780 --> 01:41.700
+and I'm going to go in the order of a rainbow,
+
+01:41.700 --> 01:44.040
+or at least like the standard, you know
+
+01:44.040 --> 01:47.163
+roygbv, red, orange, yellow, green, blue, so on.
+
+01:48.330 --> 01:50.283
+So, we've got red.
+
+01:51.720 --> 01:52.860
+Just refresh the page.
+
+01:52.860 --> 01:55.590
+There it is, red background, but I'm not gonna commit this.
+
+01:55.590 --> 01:57.540
+I'm gonna add it to the stash.
+
+01:57.540 --> 02:00.780
+So git stash, okay.
+
+02:00.780 --> 02:04.800
+And now we're back to just an empty app dot CSS.
+
+02:04.800 --> 02:07.710
+And if I refresh my page, we have a white background.
+
+02:07.710 --> 02:09.930
+Now I'm gonna stash again, but this time,
+
+02:09.930 --> 02:14.610
+I'm gonna set the body to have a background color of orange.
+
+02:14.610 --> 02:15.930
+So that's what it looks like.
+
+02:15.930 --> 02:18.240
+I'm not gonna add and commit.
+
+02:18.240 --> 02:21.030
+And Git tells me, hey, you modified that file.
+
+02:21.030 --> 02:23.763
+I'm just gonna stash it right here, get stash.
+
+02:24.750 --> 02:25.800
+And there we are.
+
+02:25.800 --> 02:29.130
+We have another thing on the stash, the change is reverted
+
+02:29.130 --> 02:31.740
+in my working directory, we go back to white here.
+
+02:31.740 --> 02:34.110
+So I'll do it one more time, body.
+
+02:34.110 --> 02:36.510
+Okay, so now background color yellow on the body.
+
+02:36.510 --> 02:37.890
+That's what it looks like.
+
+02:37.890 --> 02:41.940
+And once again, we have some unstaged changes.
+
+02:41.940 --> 02:43.623
+I'm going to stash them.
+
+02:44.550 --> 02:47.670
+Okay, so now we have three things in the stash.
+
+02:47.670 --> 02:49.260
+They're very simple, right?
+
+02:49.260 --> 02:50.580
+Three sets of changes.
+
+02:50.580 --> 02:53.490
+And the first thing was just giving the background color
+
+02:53.490 --> 02:55.110
+of the body or making it red.
+
+02:55.110 --> 02:57.060
+Then the second thing I stashed was orange
+
+02:57.060 --> 02:59.160
+and the third was yellow.
+
+02:59.160 --> 03:02.970
+So they're stored in order and we can view what we have
+
+03:02.970 --> 03:06.843
+in the stash if needed using git stash list.
+
+03:07.740 --> 03:12.740
+So if I head back over here, git stash list, there they are.
+
+03:13.290 --> 03:15.780
+We have, well actually, we have four things
+
+03:15.780 --> 03:18.650
+in the stash because when I used apply earlier,
+
+03:18.650 --> 03:21.660
+in the previous video when I demonstrated how apply works,
+
+03:21.660 --> 03:24.900
+I never actually popped that set of changes off the stash.
+
+03:24.900 --> 03:26.280
+So we still have that here,
+
+03:26.280 --> 03:29.460
+but we have three that we just added.
+
+03:29.460 --> 03:31.830
+Now notice, it gives us, it says work
+
+03:31.830 --> 03:34.440
+in progress on branch rainbow in our case.
+
+03:34.440 --> 03:37.200
+And then it gives us the most recent commit,
+
+03:37.200 --> 03:40.200
+where we were working when we made that stash.
+
+03:40.200 --> 03:41.640
+Remove background color.
+
+03:41.640 --> 03:44.640
+So this doesn't really help us in any way, but to be honest,
+
+03:44.640 --> 03:47.100
+it would be really weird to do what I just did,
+
+03:47.100 --> 03:49.800
+to make three, or to stash, three sets
+
+03:49.800 --> 03:52.980
+of changes on the same branch, one after another.
+
+03:52.980 --> 03:54.930
+You would probably just make those changes
+
+03:54.930 --> 03:58.080
+and stash them, or work on a different branch, right?
+
+03:58.080 --> 03:59.370
+You, you wouldn't do what I just did,
+
+03:59.370 --> 04:01.140
+but I was just demonstrating it.
+
+04:01.140 --> 04:05.400
+So, if I do git stash pop, for example,
+
+04:05.400 --> 04:09.240
+we will be popping this off and applying those changes.
+
+04:09.240 --> 04:11.010
+So I, maybe I don't want that.
+
+04:11.010 --> 04:13.740
+If I want red, which is this one here,
+
+04:13.740 --> 04:15.720
+this was the first one that we added
+
+04:15.720 --> 04:17.610
+from this branch, rainbow.
+
+04:17.610 --> 04:20.400
+I actually can reference particular stashes
+
+04:20.400 --> 04:23.550
+by using the little stash id.
+
+04:23.550 --> 04:25.560
+So it looks like this, git stash,
+
+04:25.560 --> 04:27.630
+and then I can do apply
+
+04:27.630 --> 04:29.970
+and then reference the particular stash.
+
+04:29.970 --> 04:33.540
+Stash at two inside of those curly braces.
+
+04:33.540 --> 04:36.300
+So I'll do stash at two right here.
+
+04:36.300 --> 04:40.290
+That should be our red background color.
+
+04:40.290 --> 04:41.970
+And if you're confused by this, honestly,
+
+04:41.970 --> 04:43.560
+I just say let it go.
+
+04:43.560 --> 04:45.120
+It's okay.
+
+04:45.120 --> 04:47.490
+Just focus on git stash and git stash pop.
+
+04:47.490 --> 04:50.220
+But, here we are, type git status.
+
+04:50.220 --> 04:52.530
+We don't have any background color here,
+
+04:52.530 --> 04:54.810
+but, if I do git stash apply,
+
+04:54.810 --> 04:59.810
+and then that stash at two in curly braces, okay,
+
+05:00.210 --> 05:04.230
+we now have modified app CSS, and there it is, it's red.
+
+05:04.230 --> 05:06.150
+Refresh the page, we see red.
+
+05:06.150 --> 05:08.250
+Now if instead I applied a different stash,
+
+05:08.250 --> 05:10.770
+can go back, git stash list.
+
+05:10.770 --> 05:14.100
+If we look at this one here, stash one,
+
+05:14.100 --> 05:17.760
+that's going to be the orange background color.
+
+05:17.760 --> 05:21.900
+And if I try to apply that one right now, git stash one,
+
+05:21.900 --> 05:24.300
+we run into a conflict, right?
+
+05:24.300 --> 05:27.300
+There's a problem because it's set to red right now
+
+05:27.300 --> 05:29.160
+and that is unstaged.
+
+05:29.160 --> 05:31.350
+So I either need to get rid of that change,
+
+05:31.350 --> 05:34.500
+which I could do, I could just delete the whole thing,
+
+05:34.500 --> 05:37.590
+type git status and we're back to where we were before
+
+05:37.590 --> 05:40.650
+and now I can apply this other stash, right.
+
+05:40.650 --> 05:42.900
+And it changes to orange, okay.
+
+05:42.900 --> 05:46.230
+And really, that's enough of, of showing you this.
+
+05:46.230 --> 05:49.170
+The point is that we can have multiple things in the stash
+
+05:49.170 --> 05:50.130
+at once.
+
+05:50.130 --> 05:53.700
+In my experience, I pretty much rarely, I won't say never,
+
+05:53.700 --> 05:55.410
+but very rarely do that.
+
+05:55.410 --> 05:58.350
+I'm sure in some, some developers' workflows,
+
+05:58.350 --> 05:59.970
+it's a really important feature.
+
+05:59.970 --> 06:03.600
+But just for me, and I asked a couple friends just to see
+
+06:03.600 --> 06:06.090
+if I was crazy, and according to them,
+
+06:06.090 --> 06:09.060
+I'm not that crazy, but in my experience,
+
+06:09.060 --> 06:11.280
+I just use git stash and git stash pop.
+
+06:11.280 --> 06:13.110
+Put one thing in there and remove it.
+
+06:13.110 --> 06:16.080
+Anyway, we can view all those stashes that we have,
+
+06:16.080 --> 06:17.370
+git stash list.
+
+06:17.370 --> 06:20.490
+We can reference them if we want to apply a particular one,
+
+06:20.490 --> 06:22.890
+using I don't know what this is actually called.
+
+06:22.890 --> 06:27.360
+I call it a stash id, but just, you know, stash, an index,
+
+06:27.360 --> 06:31.680
+a stash reference, and then we can apply any of them.
+
+06:31.680 --> 06:32.670
+And then lastly,
+
+06:32.670 --> 06:36.360
+I'll show you in the next video how to delete, clear, drop,
+
+06:36.360 --> 06:37.440
+whatever you wanna call it.
+
+06:37.440 --> 06:40.020
+How to get rid of things in the stash if we want
+
+06:40.020 --> 06:40.950
+to clear it out.
+
+06:40.950 --> 06:41.800
+That's coming up.
