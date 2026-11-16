@@ -1,0 +1,490 @@
+WEBVTT
+
+00:00.120 --> 00:00.953
+Instructor: So next up,
+
+00:00.953 --> 00:02.970
+I wanna show you how we can turn to the reflogs
+
+00:02.970 --> 00:05.040
+in times of need.
+
+00:05.040 --> 00:07.440
+In this example video, I'll show you how we could
+
+00:07.440 --> 00:11.010
+reset, do a hard reset and lose some commits,
+
+00:11.010 --> 00:14.760
+but we can still retrieve the data from the reflog.
+
+00:14.760 --> 00:18.000
+So let's make a simple situation.
+
+00:18.000 --> 00:19.800
+I was working in that react repo.
+
+00:19.800 --> 00:22.440
+It just had so many files and commits.
+
+00:22.440 --> 00:25.620
+It's a little bit more confusing to take a look at.
+
+00:25.620 --> 00:28.200
+So I'm gonna do something simple, you can follow along.
+
+00:28.200 --> 00:29.550
+I'm not in a repo.
+
+00:29.550 --> 00:31.110
+I'm going to init,
+
+00:31.110 --> 00:33.330
+and I'm gonna just track the seeds
+
+00:33.330 --> 00:36.270
+that I've planted in my garden or something like that.
+
+00:36.270 --> 00:38.400
+So why don't I make a file
+
+00:38.400 --> 00:42.450
+I'll call this one veggies.txt, okay?
+
+00:42.450 --> 00:46.080
+And I'll add that file, git add veggies,
+
+00:46.080 --> 00:51.080
+git commits -m add veggies file.
+
+00:51.450 --> 00:53.880
+I'm just gonna build up two or three commits.
+
+00:53.880 --> 00:55.410
+So I open this in my editor
+
+00:55.410 --> 00:58.740
+I'll do code dot from my terminal, that's just the shortcut.
+
+00:58.740 --> 01:01.950
+And I don't have any files except for veggies.
+
+01:01.950 --> 01:03.840
+So what should I put in here?
+
+01:03.840 --> 01:06.840
+Well, I have been planting some things recently
+
+01:06.840 --> 01:09.150
+so I'll just put some of the stuff I started.
+
+01:09.150 --> 01:13.060
+We have broccoli and rainbow chard
+
+01:14.070 --> 01:16.950
+and what else did I plant recently?
+
+01:16.950 --> 01:18.750
+Some kale, boring.
+
+01:18.750 --> 01:23.460
+All right, so now I'll add my first commit, git commit -m.
+
+01:23.460 --> 01:26.730
+I'll do am so I don't have to add that file again.
+
+01:26.730 --> 01:29.550
+And I'll do a commit message
+
+01:29.550 --> 01:33.603
+like plant winter veggies.
+
+01:35.160 --> 01:38.430
+Okay, and then I don't know some other stuff.
+
+01:38.430 --> 01:43.323
+How about cabbage and some lettuce maybe, arugula.
+
+01:44.580 --> 01:46.770
+Did I spell that right, Arugula?
+
+01:46.770 --> 01:48.750
+No, I think it's like that.
+
+01:48.750 --> 01:53.254
+So then I'll commit, git commit -am, add more greens.
+
+01:53.254 --> 01:56.040
+Okay, and then we're going to do a last commit.
+
+01:56.040 --> 01:57.360
+Let's say I get ahead of myself
+
+01:57.360 --> 01:59.250
+and I'm just daydreaming about
+
+01:59.250 --> 02:01.560
+when I can actually start watermelon,
+
+02:01.560 --> 02:03.450
+it's the middle of winter right now,
+
+02:03.450 --> 02:05.460
+so not a good time for that.
+
+02:05.460 --> 02:10.410
+And pumpkins, and what's another summery thing
+
+02:10.410 --> 02:11.243
+that I grow?
+
+02:11.243 --> 02:12.273
+Well, squash.
+
+02:13.110 --> 02:14.820
+Okay, so if these are things
+
+02:14.820 --> 02:17.520
+that I'm looking forward to growing, I get ahead of myself.
+
+02:17.520 --> 02:18.510
+I add and commit them.
+
+02:18.510 --> 02:20.880
+So git commit -am,
+
+02:20.880 --> 02:24.630
+add summer veggies/fruits.
+
+02:24.630 --> 02:28.380
+I guess it's not just veggies, summer seeds.
+
+02:28.380 --> 02:32.190
+-: Okay, then I decide, oh you idiots,
+
+02:32.190 --> 02:34.170
+you can't plant those right now, it's the dead of winter,
+
+02:34.170 --> 02:35.760
+get that off of your list.
+
+02:35.760 --> 02:38.460
+So this is all very silly obviously,
+
+02:38.460 --> 02:42.120
+but imagine I've done a lot of work on some project.
+
+02:42.120 --> 02:43.860
+I wanna get rid of that commit.
+
+02:43.860 --> 02:45.213
+We've seen how to do this.
+
+02:46.110 --> 02:46.980
+You may have forgotten,
+
+02:46.980 --> 02:50.310
+because it is something that doesn't come up all that often.
+
+02:50.310 --> 02:52.890
+But to completely undo a commit,
+
+02:52.890 --> 02:55.500
+we pick some point that we wanna go back to.
+
+02:55.500 --> 02:58.140
+So let's do git log oneline,
+
+02:58.140 --> 03:00.390
+and let's go back to this point.
+
+03:00.390 --> 03:02.100
+So we'll take that commit hash,
+
+03:02.100 --> 03:05.250
+and then we can do a git reset, hard.
+
+03:05.250 --> 03:07.830
+So --hard with that commit hash
+
+03:07.830 --> 03:09.810
+and the hard will undo the changes
+
+03:09.810 --> 03:11.580
+in my working directory as well.
+
+03:11.580 --> 03:13.590
+So we get rid of the commit,
+
+03:13.590 --> 03:16.110
+and then also in this case just one commit
+
+03:16.110 --> 03:18.570
+we're resetting back to the prior commit.
+
+03:18.570 --> 03:21.180
+But we also lose the work that we had
+
+03:21.180 --> 03:22.860
+in our working directory.
+
+03:22.860 --> 03:24.270
+And so, it's gone there, right?
+
+03:24.270 --> 03:27.510
+If I type git log, that commit is gone.
+
+03:27.510 --> 03:30.480
+So if I realize, oh you could still start them,
+
+03:30.480 --> 03:32.070
+you have a greenhouse, I wish I did,
+
+03:32.070 --> 03:32.940
+I don't have a greenhouse,
+
+03:32.940 --> 03:36.903
+but I turn one of my bedrooms into a greenhouse.
+
+03:37.800 --> 03:41.160
+If I wanted those changes back, I want that commit,
+
+03:41.160 --> 03:42.600
+it's not here, right?
+
+03:42.600 --> 03:44.610
+It's not on another branch or anything like that.
+
+03:44.610 --> 03:48.660
+It's just not here, git log oneline, nope,
+
+03:48.660 --> 03:49.809
+I don't have that.
+
+03:49.809 --> 03:54.809
+But thankfully, that information is actually still available
+
+03:54.870 --> 03:56.190
+in the reflog.
+
+03:56.190 --> 03:58.860
+So if I do git reflog,
+
+03:58.860 --> 04:02.370
+I'll just do show master or I could do head if I wanted,
+
+04:02.370 --> 04:04.560
+but master will work for us, right?
+
+04:04.560 --> 04:06.660
+Because I'm on the master branch by default.
+
+04:06.660 --> 04:08.940
+Here is where we were, right?
+
+04:08.940 --> 04:10.800
+This is where that commit was.
+
+04:10.800 --> 04:14.550
+There's that commit hash FB5072A.
+
+04:14.550 --> 04:16.740
+So we have access to that hash.
+
+04:16.740 --> 04:18.090
+And here's the information.
+
+04:18.090 --> 04:21.360
+This is when I made that commit add summer seeds.
+
+04:21.360 --> 04:24.840
+This was one tip ago of the master branch.
+
+04:24.840 --> 04:28.680
+So master at one is one way I could access that.
+
+04:28.680 --> 04:31.110
+I also have access to the commit hash.
+
+04:31.110 --> 04:33.570
+I could check it out for example.
+
+04:33.570 --> 04:34.800
+So if I get out of here
+
+04:34.800 --> 04:38.400
+I could do a git checkout and paste that hash in.
+
+04:38.400 --> 04:41.040
+But remember, I didn't see this in git log.
+
+04:41.040 --> 04:42.840
+That does put me in detached head of course.
+
+04:42.840 --> 04:45.180
+But here it is, I see it.
+
+04:45.180 --> 04:46.920
+So that puts me in detached head.
+
+04:46.920 --> 04:48.320
+I'll just switch outta there
+
+04:50.850 --> 04:52.400
+and I'll go back to the reflog.
+
+04:53.625 --> 04:55.500
+It's still there, right?
+
+04:55.500 --> 04:58.083
+It's just not part of my main git log.
+
+04:58.920 --> 05:01.740
+This is the history stemming from the commit.
+
+05:01.740 --> 05:03.330
+This commit right here, going back
+
+05:03.330 --> 05:05.130
+to its parent and to its parent.
+
+05:05.130 --> 05:07.320
+The summer seeds commit is just long gone.
+
+05:07.320 --> 05:09.450
+But git still stores that information
+
+05:09.450 --> 05:11.460
+in the .get folder it,
+
+05:11.460 --> 05:13.890
+it will go through and every so often
+
+05:13.890 --> 05:15.780
+remove commits that are dangling
+
+05:15.780 --> 05:17.490
+that aren't actually connected.
+
+05:17.490 --> 05:20.640
+So that the summer seeds commit is not attached
+
+05:20.640 --> 05:21.473
+to anything, right?
+
+05:21.473 --> 05:23.910
+It doesn't have a parent, it doesn't have child commits.
+
+05:23.910 --> 05:27.720
+It's just on its own in terms of the objects directory.
+
+05:27.720 --> 05:29.370
+It's just an entry in there.
+
+05:29.370 --> 05:32.730
+But because the reflog still references it,
+
+05:32.730 --> 05:34.530
+we can go and restore back to it.
+
+05:34.530 --> 05:37.770
+So we just checked it out and went into detached head.
+
+05:37.770 --> 05:41.130
+But if I want to go back, I wanna make this the actual
+
+05:41.130 --> 05:43.410
+new head of my master branch.
+
+05:43.410 --> 05:45.780
+In other words, I want to undo the fact
+
+05:45.780 --> 05:48.600
+that I removed that commit that I reset.
+
+05:48.600 --> 05:52.380
+I can use the commit hash or I can just do master at 1.
+
+05:52.380 --> 05:55.290
+If I prefer, I can reference it this way.
+
+05:55.290 --> 05:58.500
+These will be referring to the same thing for now, okay?
+
+05:58.500 --> 06:03.500
+I can do another git reset hard master at 1,
+
+06:04.380 --> 06:06.060
+or I could pass in the commit hash
+
+06:06.060 --> 06:08.449
+that we found in the reflog.
+
+06:08.449 --> 06:11.100
+And that now says the new tip of this master branch
+
+06:11.100 --> 06:15.390
+is whatever master at 1 is from the reflogs.
+
+06:15.390 --> 06:16.983
+And if we do a git log here,
+
+06:18.540 --> 06:20.348
+we see that we have that commit message back
+
+06:20.348 --> 06:22.830
+and we have that hash back.
+
+06:22.830 --> 06:24.202
+So it was gone, right?
+
+06:24.202 --> 06:28.380
+We didn't see it at all in the git log.
+
+06:28.380 --> 06:31.110
+but because we had the ref log available,
+
+06:31.110 --> 06:33.540
+we could go back and find that commit hash
+
+06:33.540 --> 06:36.870
+or just find the correct line master at 1
+
+06:36.870 --> 06:38.910
+and we could reset based upon that.
+
+06:38.910 --> 06:40.950
+So even though it looks like we lost the commit
+
+06:40.950 --> 06:43.110
+it wasn't tied to any other commits
+
+06:43.110 --> 06:46.410
+it was floating on its own, we were able to rescue it.
+
+06:46.410 --> 06:48.150
+And that can be extremely useful.
+
+06:48.150 --> 06:50.520
+We just undid a hard reset.
+
+06:50.520 --> 06:53.970
+But remember, this only works with local changes.
+
+06:53.970 --> 06:56.130
+Reflogs only exist for stuff you've done
+
+06:56.130 --> 06:58.440
+on your machine and they do expire.
+
+06:58.440 --> 07:00.600
+In the next final video on reflogs
+
+07:00.600 --> 07:03.030
+I'll show you how we could also undo a rebase
+
+07:03.030 --> 07:05.490
+or retrieve commits that we have
+
+07:05.490 --> 07:08.493
+to completely rewritten using git rebase.
