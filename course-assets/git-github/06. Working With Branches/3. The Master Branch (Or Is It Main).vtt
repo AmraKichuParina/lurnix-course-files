@@ -1,0 +1,349 @@
+WEBVTT
+
+00:00.120 --> 00:02.280
+-: So even though we haven't really used the term branch,
+
+00:02.280 --> 00:05.460
+we haven't made branches or referenced them in any way.
+
+00:05.460 --> 00:08.610
+In Git, you are always working on a branch,
+
+00:08.610 --> 00:10.470
+and we've seen evidence of this.
+
+00:10.470 --> 00:12.630
+You've hopefully seen this before,
+
+00:12.630 --> 00:15.630
+on branch master nothing to commit,
+
+00:15.630 --> 00:17.310
+or it may not say nothing to commit
+
+00:17.310 --> 00:19.560
+but on branch master something.
+
+00:19.560 --> 00:22.440
+So in any repository, here's MyFirstNovel,
+
+00:22.440 --> 00:26.820
+if I type git status, here we are on branch master.
+
+00:26.820 --> 00:29.610
+And you can see the way I have my terminal configured,
+
+00:29.610 --> 00:32.370
+it also shows me my branch that I'm on currently.
+
+00:32.370 --> 00:33.780
+It shows master here.
+
+00:33.780 --> 00:34.830
+That's what that is.
+
+00:34.830 --> 00:36.450
+So when we learn how to change branches,
+
+00:36.450 --> 00:39.570
+you'll see that updated as well on this right hand side.
+
+00:39.570 --> 00:40.830
+So we're always on a branch,
+
+00:40.830 --> 00:44.070
+even though we didn't decide to be on the master branch.
+
+00:44.070 --> 00:45.870
+We didn't create the master branch.
+
+00:45.870 --> 00:47.850
+It's just there for us.
+
+00:47.850 --> 00:50.400
+And that's exactly what the master branch is.
+
+00:50.400 --> 00:52.290
+It's just the default branch name.
+
+00:52.290 --> 00:54.300
+When you make a new Git repository,
+
+00:54.300 --> 00:56.280
+when we run git init,
+
+00:56.280 --> 00:59.850
+automatically the branch that we start on is called master.
+
+00:59.850 --> 01:01.530
+Now it doesn't do anything special.
+
+01:01.530 --> 01:04.110
+It doesn't have any fancy powers whatsoever.
+
+01:04.110 --> 01:06.780
+It's just like any other branch.
+
+01:06.780 --> 01:08.730
+Every single possible branch you create,
+
+01:08.730 --> 01:11.910
+they have the same abilities, the same commands.
+
+01:11.910 --> 01:14.400
+There's nothing special about master except for the fact
+
+01:14.400 --> 01:16.680
+that it just happens to be made for you.
+
+01:16.680 --> 01:19.320
+Now, some people do treat the master branch
+
+01:19.320 --> 01:22.770
+as special in their own project.
+
+01:22.770 --> 01:24.780
+They treat it as the source of truth.
+
+01:24.780 --> 01:27.030
+The official project branch,
+
+01:27.030 --> 01:30.030
+the main branch where they don't wanna mess anything up.
+
+01:30.030 --> 01:31.470
+So they treat the master branch is
+
+01:31.470 --> 01:34.950
+like our official working code base.
+
+01:34.950 --> 01:37.890
+And then I'll try things on other branches and if they work,
+
+01:37.890 --> 01:39.930
+I combine them back into master.
+
+01:39.930 --> 01:42.000
+But again, that is a choice that you make
+
+01:42.000 --> 01:43.860
+or that specific developers make.
+
+01:43.860 --> 01:45.120
+From Git's perspective,
+
+01:45.120 --> 01:47.550
+the master branch is just like any other branch.
+
+01:47.550 --> 01:50.700
+It does not have to hold the master copy of your project.
+
+01:50.700 --> 01:52.860
+You can delete it, you can rename it.
+
+01:52.860 --> 01:56.610
+And, in fact, I wanna talk about renaming it for a moment.
+
+01:56.610 --> 01:58.410
+This is a topic that will come up again
+
+01:58.410 --> 02:00.840
+a couple of times throughout the course.
+
+02:00.840 --> 02:05.370
+The name on Git and GitHub for the default branch name
+
+02:05.370 --> 02:07.290
+for a long time was master.
+
+02:07.290 --> 02:09.960
+However, in 2020, GitHub announced that they were
+
+02:09.960 --> 02:13.800
+renaming the default branch name from master to main
+
+02:13.800 --> 02:15.960
+as part of a larger push by tech companies
+
+02:15.960 --> 02:18.870
+to try and avoid any potentially offensive language.
+
+02:18.870 --> 02:21.150
+So GitHub, again, just GitHub,
+
+02:21.150 --> 02:23.880
+made this change from master to main.
+
+02:23.880 --> 02:26.220
+With Git, however, what we're using,
+
+02:26.220 --> 02:27.450
+we haven't touched GitHub yet,
+
+02:27.450 --> 02:30.270
+Git the default branch name is still master
+
+02:30.270 --> 02:33.240
+and that's why we see things like on branch master.
+
+02:33.240 --> 02:36.630
+We didn't name it master, it's just the default branch name.
+
+02:36.630 --> 02:39.180
+However, there are conversations happening
+
+02:39.180 --> 02:40.770
+and that may change in the future.
+
+02:40.770 --> 02:43.110
+And I will also show you how to change
+
+02:43.110 --> 02:46.050
+the default branch name if you want to do this.
+
+02:46.050 --> 02:47.550
+It's easy to do.
+
+02:47.550 --> 02:48.930
+But I'm gonna wait until we talk
+
+02:48.930 --> 02:50.400
+a little bit more about branches.
+
+02:50.400 --> 02:52.890
+I don't wanna talk about renaming and changing branch names
+
+02:52.890 --> 02:55.260
+before we even really understand what they are.
+
+02:55.260 --> 02:56.700
+So we will come back to this.
+
+02:56.700 --> 02:57.660
+But I wanna bring this up
+
+02:57.660 --> 03:00.570
+because on most of the documentation, tutorials,
+
+03:00.570 --> 03:02.100
+videos that you see out there,
+
+03:02.100 --> 03:04.260
+you will see the term master branch
+
+03:04.260 --> 03:05.940
+as the default branch name.
+
+03:05.940 --> 03:08.760
+And over time, more and more people will likely adopt main.
+
+03:08.760 --> 03:10.590
+So we'll put a pin in that for now.
+
+03:10.590 --> 03:13.440
+And my slides are going to continue to use master
+
+03:13.440 --> 03:16.110
+just because it is what your Git is going
+
+03:16.110 --> 03:18.120
+to show you branch master.
+
+03:18.120 --> 03:20.820
+But once we get to GitHub, we will use main.
+
+03:20.820 --> 03:24.120
+Okay, so I mentioned that there's nothing special at all
+
+03:24.120 --> 03:27.030
+about the master branch, but a lot of companies
+
+03:27.030 --> 03:30.150
+or a lot of people treat it as your main branch
+
+03:30.150 --> 03:32.580
+where things should always be working.
+
+03:32.580 --> 03:34.830
+It should be the main copy
+
+03:34.830 --> 03:37.080
+of your code base or of your project.
+
+03:37.080 --> 03:39.930
+So you could then make a branch to try something
+
+03:39.930 --> 03:43.230
+experimental and make some commits and test something out.
+
+03:43.230 --> 03:46.650
+And then if you like that, you can incorporate it back
+
+03:46.650 --> 03:48.900
+to master branch or you can abandon it
+
+03:48.900 --> 03:51.750
+and just move on and keep working on your master branch
+
+03:51.750 --> 03:54.960
+and just not incorporate this experimental branch.
+
+03:54.960 --> 03:56.670
+This is an approach a lot of people use.
+
+03:56.670 --> 03:58.300
+It's a very common workflow and we will actually
+
+03:58.300 --> 04:02.640
+have a section on Git workflows and collaboration patterns.
+
+04:02.640 --> 04:04.140
+But this is a very, very common one.
+
+04:04.140 --> 04:07.230
+It's called feature branching or creating feature branches.
+
+04:07.230 --> 04:09.420
+So you have your main or your master branch,
+
+04:09.420 --> 04:11.160
+which acts as the source of truth,
+
+04:11.160 --> 04:13.260
+and then you add new feature branches
+
+04:13.260 --> 04:15.510
+and merge them back in when it makes sense.
+
+04:15.510 --> 04:17.760
+So here's another version of the same thing.
+
+04:17.760 --> 04:20.940
+We have Ethel and Fitz working on their own branches,
+
+04:20.940 --> 04:23.400
+and then our master branch or the main branch
+
+04:23.400 --> 04:26.010
+where their changes can be merged in.
+
+04:26.010 --> 04:28.590
+But for us, at the moment, the only significance
+
+04:28.590 --> 04:31.350
+of the master branch is that it just exists.
+
+04:31.350 --> 04:33.930
+So next we're gonna learn how to make our own branches
+
+04:33.930 --> 04:35.550
+and how to switch between them.
+
+04:35.550 --> 04:36.480
+But before that,
+
+04:36.480 --> 04:40.140
+we're actually gonna talk about this right here.
+
+04:40.140 --> 04:43.653
+What is this thing, HEAD -> master?
