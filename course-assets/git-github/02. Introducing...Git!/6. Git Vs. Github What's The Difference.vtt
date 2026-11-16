@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00.330 --> 00:01.560
+Instructor: Next up, I want to talk about
+
+00:01.560 --> 00:03.660
+an important distinction, the difference
+
+00:03.660 --> 00:06.000
+between Git and GitHub.
+
+00:06.000 --> 00:07.620
+This course does cover both.
+
+00:07.620 --> 00:11.910
+They are closely related, but they are not the same thing.
+
+00:11.910 --> 00:14.370
+So Git, as we've been talking about,
+
+00:14.370 --> 00:16.440
+is this version control software.
+
+00:16.440 --> 00:20.220
+It runs on somebody's machine, it runs on my laptop,
+
+00:20.220 --> 00:22.830
+it runs on your desktop, or whatever.
+
+00:22.830 --> 00:24.483
+It runs on people's computers.
+
+00:24.483 --> 00:26.318
+It doesn't need internet.
+
+00:26.318 --> 00:28.710
+You don't need to register for an account.
+
+00:28.710 --> 00:30.780
+It's just something that you download.
+
+00:30.780 --> 00:33.450
+If you don't have it yet, and then you use it
+
+00:33.450 --> 00:35.940
+on your machine, you could never have internet ever
+
+00:35.940 --> 00:37.470
+and you can still use Git,
+
+00:37.470 --> 00:39.990
+in the same way that you could if you had like,
+
+00:39.990 --> 00:42.339
+a text editor, or Microsoft Word, or Excel,
+
+00:42.339 --> 00:44.130
+you can create those documents.
+
+00:44.130 --> 00:47.160
+You don't need the internet, you don't need to sign up.
+
+00:47.160 --> 00:48.750
+Although, I don't know, maybe these days,
+
+00:48.750 --> 00:50.190
+Microsoft needs an account.
+
+00:50.190 --> 00:51.557
+I don't know.
+
+00:51.557 --> 00:52.575
+But whatever.
+
+00:52.575 --> 00:54.270
+Text edit, you can just write text documents, whenever.
+
+00:54.270 --> 00:57.660
+GitHub, on the other hand, is a service.
+
+00:57.660 --> 01:00.450
+It's a web service, and what it does is,
+
+01:00.450 --> 01:02.580
+it takes Git repositories.
+
+01:02.580 --> 01:05.638
+That's the fancy way of saying Git projects.
+
+01:05.638 --> 01:06.900
+And it hosts them.
+
+01:06.900 --> 01:08.340
+It stores them in the cloud,
+
+01:08.340 --> 01:10.020
+and makes it easier to collaborate
+
+01:10.020 --> 01:11.670
+on them with other people.
+
+01:11.670 --> 01:14.520
+So it's a website you do need an account for.
+
+01:14.520 --> 01:16.620
+You do need the internet to use it,
+
+01:16.620 --> 01:20.430
+and it takes the stuff you do locally on your laptop,
+
+01:20.430 --> 01:22.950
+or my laptop, or whatever, using Git.
+
+01:22.950 --> 01:25.020
+And then it allows us to put that online,
+
+01:25.020 --> 01:28.440
+and share it with other people, or the other way around.
+
+01:28.440 --> 01:30.360
+Other people can put their stuff online,
+
+01:30.360 --> 01:32.220
+and then we can get their code,
+
+01:32.220 --> 01:35.220
+or their Git projects on our machines.
+
+01:35.220 --> 01:38.490
+So it connects people, it connects Git projects.
+
+01:38.490 --> 01:41.250
+And in this course, we're going to start with Git first.
+
+01:41.250 --> 01:43.290
+You kind of have to, we don't have a choice.
+
+01:43.290 --> 01:44.820
+We have to understand how Git works
+
+01:44.820 --> 01:48.870
+and the different commands before we can move on to GitHub.
+
+01:48.870 --> 01:50.310
+So that will come second.
+
+01:50.310 --> 01:53.430
+Although it's not like the course is split exactly in two,
+
+01:53.430 --> 01:55.320
+because we do cover some Git content
+
+01:55.320 --> 01:58.200
+after we learn more about GitHub.
+
+01:58.200 --> 02:01.590
+So just to try and visualize this or help you visualize it,
+
+02:01.590 --> 02:03.990
+if this is my project I've been working on locally
+
+02:03.990 --> 02:07.200
+on my machine, no internet, no collaborators involved,
+
+02:07.200 --> 02:08.670
+and this is my Git history,
+
+02:08.670 --> 02:11.010
+I have a whole series of these checkpoints.
+
+02:11.010 --> 02:13.350
+If I wanted to share this with other people
+
+02:13.350 --> 02:17.070
+and collaborate with them, I could put it up on GitHub.
+
+02:17.070 --> 02:18.390
+That's what I'm showing here.
+
+02:18.390 --> 02:20.880
+There's a cloud, that's the GitHub logo.
+
+02:20.880 --> 02:23.130
+I'm taking this work and all this history,
+
+02:23.130 --> 02:27.420
+and putting it online on GitHub for some collaborators,
+
+02:27.420 --> 02:29.550
+or maybe for the whole world to see.
+
+02:29.550 --> 02:33.060
+Then those collaborators here, we've got two people.
+
+02:33.060 --> 02:35.550
+They can take that work and get it on their machine.
+
+02:35.550 --> 02:38.280
+They can add on, they can modify it, they can do
+
+02:38.280 --> 02:41.160
+their own work, and then share that back up to GitHub,
+
+02:41.160 --> 02:43.200
+and then I can go and get it from GitHub,
+
+02:43.200 --> 02:44.859
+and we can all work together.
+
+02:44.859 --> 02:48.030
+So all of a sudden, we can have lots and lots of people
+
+02:48.030 --> 02:51.120
+collaborating on projects, thanks to GitHub.
+
+02:51.120 --> 02:52.500
+That is something we will learn.
+
+02:52.500 --> 02:54.120
+It's kind of a separate workflow,
+
+02:54.120 --> 02:55.800
+a set of skills that you need.
+
+02:55.800 --> 02:58.500
+In addition to just understanding the basics of Git,
+
+02:58.500 --> 03:00.990
+we have multiple sections of GitHub ahead of us.
+
+03:00.990 --> 03:03.960
+But first, as I've said, we're going to start with Git.
+
+03:03.960 --> 03:05.490
+So that's all I wanted to say here.
+
+03:05.490 --> 03:06.990
+I just wanted to make that clear.
+
+03:06.990 --> 03:09.600
+Git and GitHub are not the same thing.
+
+03:09.600 --> 03:12.840
+GitHub definitely requires some knowledge of Git.
+
+03:12.840 --> 03:16.380
+It is a tool that is built for Git and for Git users,
+
+03:16.380 --> 03:18.090
+but you could live your entire life
+
+03:18.090 --> 03:20.910
+as a Git developer, never touching GitHub.
+
+03:20.910 --> 03:22.899
+Anyway, we'll talk more about it later on.
+
+03:22.899 --> 03:25.113
+Let's focus on Git for now.
