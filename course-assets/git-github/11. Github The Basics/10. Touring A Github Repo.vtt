@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00.090 --> 00:02.190
+Instructor: Okay, so I'll keep this short.
+
+00:02.190 --> 00:03.510
+Now that we have some code
+
+00:03.510 --> 00:06.450
+some repo up on GitHub that actually has contents
+
+00:06.450 --> 00:07.710
+it's not empty anymore.
+
+00:07.710 --> 00:10.410
+Even if the contents absolutely suck
+
+00:10.410 --> 00:12.690
+they're garbage like this repo.
+
+00:12.690 --> 00:15.210
+I wanna walk through what we're actually looking at.
+
+00:15.210 --> 00:16.770
+So of course we see the files
+
+00:16.770 --> 00:18.300
+the actual contents here, right?
+
+00:18.300 --> 00:19.830
+We've got chapter one.
+
+00:19.830 --> 00:24.060
+We can look at that and inspect and read.
+
+00:24.060 --> 00:25.410
+Sure.
+
+00:25.410 --> 00:28.170
+We can also switch branches.
+
+00:28.170 --> 00:30.810
+So we only have two right now, empty, which was
+
+00:30.810 --> 00:33.750
+that branch I made where almost everything was deleted.
+
+00:33.750 --> 00:35.013
+And then master.
+
+00:36.240 --> 00:38.700
+Notice if I go back to empty, it tells us, you know
+
+00:38.700 --> 00:42.150
+this branch has one commit that master does not have.
+
+00:42.150 --> 00:44.950
+But it also is missing one commit that master has
+
+00:45.960 --> 00:48.300
+we can see here, most recent push
+
+00:48.300 --> 00:50.642
+to this branch happened four minutes ago.
+
+00:50.642 --> 00:52.800
+And we can also
+
+00:52.800 --> 00:55.260
+if we go back to master, it doesn't really matter.
+
+00:55.260 --> 00:58.770
+We can see the commits listed here, the most
+
+00:58.770 --> 01:01.560
+recent commit that affected each one of these files.
+
+01:01.560 --> 01:03.210
+So when I made chapter four
+
+01:03.210 --> 01:06.030
+that text file that was part of the commit
+
+01:06.030 --> 01:10.440
+begin chapter four, when I added headings to files.
+
+01:10.440 --> 01:12.390
+You can see that's the most recent change
+
+01:12.390 --> 01:16.350
+to this and this and this one and the outline.
+
+01:16.350 --> 01:19.383
+If you recall a while ago, I added those headings in,
+
+01:20.280 --> 01:22.560
+anyway if I wanna see all the commits
+
+01:22.560 --> 01:25.860
+I can click here where it says 13 commits
+
+01:25.860 --> 01:29.340
+and I can see just a visual representation of each commit.
+
+01:29.340 --> 01:31.410
+So here's where I began.
+
+01:31.410 --> 01:33.180
+Yeah, if you have multiple pages
+
+01:33.180 --> 01:36.030
+like lots and lots of commits, you can go between pages.
+
+01:36.030 --> 01:38.250
+But this is my most recent commit.
+
+01:38.250 --> 01:40.650
+If I click, what do we see?
+
+01:40.650 --> 01:43.050
+Well, I just started with these two files
+
+01:43.050 --> 01:45.993
+outline.txt and characters.txt.
+
+01:47.460 --> 01:49.050
+If I look at a different commit
+
+01:49.050 --> 01:52.110
+how about when I...
+
+01:52.110 --> 01:53.160
+what did I do?
+
+01:53.160 --> 01:55.720
+How about removed extra blank lines in chapter two
+
+01:56.580 --> 02:00.210
+if I scroll down, you'll see highlighted in red.
+
+02:00.210 --> 02:01.860
+Those are the two lines that were removed
+
+02:01.860 --> 02:03.270
+and this is all that was affected.
+
+02:03.270 --> 02:05.667
+This one file, right?
+
+02:05.667 --> 02:08.130
+We see some other stuff like when I renamed Gatsby
+
+02:08.130 --> 02:11.520
+to Catsby, lots of files impacted.
+
+02:11.520 --> 02:13.200
+You can see all those impacts here.
+
+02:13.200 --> 02:14.520
+This line changed.
+
+02:14.520 --> 02:18.810
+Gatsby became Catsby and all these other files too.
+
+02:18.810 --> 02:21.300
+So I can see all those commits on the master branch.
+
+02:21.300 --> 02:23.730
+The most recent one is begin chapter four.
+
+02:23.730 --> 02:26.700
+If I switch to empty, the most recent commit is
+
+02:26.700 --> 02:30.540
+delete most things, which in the last video you saw
+
+02:30.540 --> 02:32.640
+I deleted quite a few files.
+
+02:32.640 --> 02:34.530
+And on each of these commits, I see the commit
+
+02:34.530 --> 02:36.300
+message obviously.
+
+02:36.300 --> 02:39.270
+And then I also see the commit hash.
+
+02:39.270 --> 02:42.342
+And then for some of them that have much longer commits
+
+02:42.342 --> 02:44.040
+like this one, right?
+
+02:44.040 --> 02:46.080
+I can see the entire commit message.
+
+02:46.080 --> 02:48.270
+This is when I demonstrated, you know, how to set up
+
+02:48.270 --> 02:50.280
+VS code to make a commit message.
+
+02:50.280 --> 02:51.630
+That's much longer.
+
+02:51.630 --> 02:53.490
+So I can see the whole commit message here.
+
+02:53.490 --> 02:55.410
+Then I can see the files impacted
+
+02:55.410 --> 02:58.590
+and I can leave a comment if I want to.
+
+02:58.590 --> 03:00.720
+Probably not going to because I'm not collaborating
+
+03:00.720 --> 03:01.553
+with anyone.
+
+03:01.553 --> 03:02.386
+But if I want to
+
+03:02.386 --> 03:05.400
+I can leave comments here and I don't know
+
+03:05.400 --> 03:08.190
+revisit them and come back and look at my comments.
+
+03:08.190 --> 03:09.900
+But this is actually a very important part of
+
+03:09.900 --> 03:11.880
+of discussing changes
+
+03:11.880 --> 03:13.980
+once you start working with other people.
+
+03:13.980 --> 03:16.140
+And that's pretty much all we need to cover for now.
+
+03:16.140 --> 03:18.810
+Eventually we'll learn about things like poll requests
+
+03:18.810 --> 03:21.330
+and how to make poll requests, how to compare things.
+
+03:21.330 --> 03:22.890
+We are not at that point yet.
+
+03:22.890 --> 03:25.920
+That's gonna come up when we talk about workflows.
+
+03:25.920 --> 03:27.960
+But yeah, that's pretty much it.
+
+03:27.960 --> 03:29.807
+Switch branches here, that's probably the most
+
+03:29.807 --> 03:32.418
+hidden thing that sometimes students miss.
+
+03:32.418 --> 03:34.650
+If you don't see your changes showing up.
+
+03:34.650 --> 03:37.506
+And if you have multiple branches, make sure you switch
+
+03:37.506 --> 03:39.961
+to the correct branch to see those changes.
+
+03:39.961 --> 03:41.013
+Okay.
