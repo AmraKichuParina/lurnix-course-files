@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00.090 --> 00:01.980
+Instructor: Welcome, welcome, welcome everyone.
+
+00:01.980 --> 00:04.260
+In this section, we're talking about one command
+
+00:04.260 --> 00:07.020
+and only one command, git rebase.
+
+00:07.020 --> 00:09.390
+So, this is a command we haven't talked about at all.
+
+00:09.390 --> 00:12.480
+I don't even know if I've mentioned it so far in the course
+
+00:12.480 --> 00:14.550
+and that's because it's another one of these commands
+
+00:14.550 --> 00:16.920
+that you don't have to use.
+
+00:16.920 --> 00:19.620
+These days, a lot of people do use it,
+
+00:19.620 --> 00:21.960
+but as I'll talk about in the next video,
+
+00:21.960 --> 00:23.070
+when I first learned git,
+
+00:23.070 --> 00:26.790
+I was actually told to avoid rebasing if possible.
+
+00:26.790 --> 00:29.880
+And there's reasons for that I'm gonna go into.
+
+00:29.880 --> 00:32.100
+So without spoiling everything,
+
+00:32.100 --> 00:32.933
+or not spoiling
+
+00:32.933 --> 00:34.830
+but without just trying to explain it all now,
+
+00:34.830 --> 00:36.750
+I'll just say that I don't plan on marking anything
+
+00:36.750 --> 00:37.890
+as critical.
+
+00:37.890 --> 00:39.780
+I'm gonna put everything in important,
+
+00:39.780 --> 00:41.370
+it's worth knowing about.
+
+00:41.370 --> 00:42.810
+And increasingly,
+
+00:42.810 --> 00:44.670
+rebasing is part of workflows
+
+00:44.670 --> 00:47.910
+or companies' workflows on engineering teams,
+
+00:47.910 --> 00:50.490
+so you probably wanna know about it
+
+00:50.490 --> 00:53.310
+even if you won't end up using it day to day.
+
+00:53.310 --> 00:55.410
+Some people do, definitely.
+
+00:55.410 --> 00:57.420
+So, we wanna start by understanding the difference
+
+00:57.420 --> 00:59.130
+between two things that are similar,
+
+00:59.130 --> 01:00.660
+rebasing and merging,
+
+01:00.660 --> 01:02.910
+two different ways of integrating changes
+
+01:02.910 --> 01:04.350
+from different branches.
+
+01:04.350 --> 01:06.480
+And then, I'll show you how to use git rebase
+
+01:06.480 --> 01:10.590
+and then, I'll talk about when not to rebase.
+
+01:10.590 --> 01:12.960
+That is a very important thing to understand,
+
+01:12.960 --> 01:15.420
+something called the golden rule of rebasing,
+
+01:15.420 --> 01:17.850
+but that's really all we cover in this section.
+
+01:17.850 --> 01:20.040
+We're gonna see a bit more of the rebase command
+
+01:20.040 --> 01:21.240
+in the next section,
+
+01:21.240 --> 01:22.530
+it does something different
+
+01:22.530 --> 01:24.780
+or there's a second way we can use it.
+
+01:24.780 --> 01:25.650
+But in this section,
+
+01:25.650 --> 01:29.550
+we're focusing on using rebase to combine branches.
+
+01:29.550 --> 01:32.103
+All right, let's talk about rebase.
