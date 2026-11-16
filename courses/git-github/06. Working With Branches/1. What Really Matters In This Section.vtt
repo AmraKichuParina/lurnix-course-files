@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.240 --> 00:01.440
+Instructor: In this section, we cover
+
+00:01.440 --> 00:04.402
+one of the most useful features in Git, branching.
+
+00:04.402 --> 00:07.208
+So everything in this section has to do with branching.
+
+00:07.208 --> 00:10.800
+And branching is really one of the last topics, I would say,
+
+00:10.800 --> 00:13.920
+that you have to master and have to be comfortable with
+
+00:13.920 --> 00:16.410
+in order to use Git day-to-day.
+
+00:16.410 --> 00:18.872
+There are plenty of other topics we cover in this course
+
+00:18.872 --> 00:21.900
+but those may not come up as frequently.
+
+00:21.900 --> 00:23.850
+Branching will come up on a daily basis,
+
+00:23.850 --> 00:27.210
+just like committing, if you work with Git daily at least.
+
+00:27.210 --> 00:30.090
+So we start by covering branching at a conceptual level.
+
+00:30.090 --> 00:31.005
+What is it?
+
+00:31.005 --> 00:32.310
+What are the benefits?
+
+00:32.310 --> 00:33.600
+Why would you use it?
+
+00:33.600 --> 00:35.392
+And that is going to be critical.
+
+00:35.392 --> 00:37.659
+I've marked it in yellow, not because it's hard,
+
+00:37.659 --> 00:39.990
+but it does take up a little bit more time
+
+00:39.990 --> 00:41.550
+than learning a single command.
+
+00:41.550 --> 00:43.410
+But I really recommend you don't skip
+
+00:43.410 --> 00:45.750
+through the videos before the commands.
+
+00:45.750 --> 00:48.150
+Everyone likes to just get to the meaty stuff,
+
+00:48.150 --> 00:49.320
+show me the commands.
+
+00:49.320 --> 00:50.850
+But with branching it really helps
+
+00:50.850 --> 00:52.302
+to understand with diagrams.
+
+00:52.302 --> 00:54.960
+Plus I introduced a couple of concepts
+
+00:54.960 --> 00:56.940
+including something called Git HEAD.
+
+00:56.940 --> 00:59.121
+You've probably seen that term so far in your terminal.
+
+00:59.121 --> 01:01.410
+That's also going to be critical,
+
+01:01.410 --> 01:05.160
+understanding what HEAD is and the fact that it points
+
+01:05.160 --> 01:06.480
+to something called a branch reference
+
+01:06.480 --> 01:08.310
+and a branch reference points to a commit.
+
+01:08.310 --> 01:11.610
+All this stuff we cover in these two videos.
+
+01:11.610 --> 01:14.490
+Other crucial things, understanding the Git branch command,
+
+01:14.490 --> 01:17.295
+the Git switch command, the Git checkout command.
+
+01:17.295 --> 01:19.530
+Then I'll say that deleting
+
+01:19.530 --> 01:21.431
+and renaming branches is important
+
+01:21.431 --> 01:24.630
+but not as important as this other stuff.
+
+01:24.630 --> 01:27.150
+HEAD and refs behind the scenes
+
+01:27.150 --> 01:28.620
+I'm gonna say is nice to have.
+
+01:28.620 --> 01:30.660
+This is just an explanation of,
+
+01:30.660 --> 01:33.600
+or it's proof of how some of these concepts work.
+
+01:33.600 --> 01:36.270
+I actually show you in the .Git directory.
+
+01:36.270 --> 01:39.060
+So it's nice to have, it'll make you a more, I guess,
+
+01:39.060 --> 01:41.370
+well-rounded or informed Git developer
+
+01:41.370 --> 01:43.680
+but you don't need to know it in order to use Git.
+
+01:43.680 --> 01:45.750
+And then we spend a little bit of time,
+
+01:45.750 --> 01:48.627
+not a whole lot, talking about branch naming
+
+01:48.627 --> 01:52.901
+and the issue that came up in late 2020, early 2021
+
+01:52.901 --> 01:57.330
+around renaming the default branch from Master to Main.
+
+01:57.330 --> 02:00.110
+So that will make more sense once we talk about branches.
+
+02:00.110 --> 02:02.220
+But I'm gonna say it's important
+
+02:02.220 --> 02:05.047
+but it's not critical to understand in order to use Git.
