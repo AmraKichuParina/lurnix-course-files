@@ -1,0 +1,394 @@
+WEBVTT
+
+00:00.150 --> 00:00.983
+Instructor: In this video,
+
+00:00.983 --> 00:03.930
+we'll quickly talk about why you might want to rebase,
+
+00:03.930 --> 00:05.370
+we've kind of already touched on it,
+
+00:05.370 --> 00:09.330
+but also most importantly, when you should not rebase,
+
+00:09.330 --> 00:11.760
+what the golden rule is of rebasing.
+
+00:11.760 --> 00:14.100
+So why rebase instead of merge?
+
+00:14.100 --> 00:16.140
+Imagine this repo is way more cluttered.
+
+00:16.140 --> 00:18.780
+Well, not cluttered, but there's a lot more history,
+
+00:18.780 --> 00:23.760
+hundreds of commits and a lot of simultaneous work going on.
+
+00:23.760 --> 00:27.510
+We can see with the way I've structured this very clearly
+
+00:27.510 --> 00:30.240
+what work I did on the feature branch.
+
+00:30.240 --> 00:33.270
+It's these three commits right here because we rebased.
+
+00:33.270 --> 00:35.490
+So it doesn't matter if a whole bunch
+
+00:35.490 --> 00:38.580
+of, let's say, there's 10 or 50 or 100 other commits
+
+00:38.580 --> 00:41.610
+from the master branch and they happen simultaneously
+
+00:41.610 --> 00:42.930
+over the course of development
+
+00:42.930 --> 00:44.640
+that I was working on feature.
+
+00:44.640 --> 00:46.410
+Assuming that I get those changes,
+
+00:46.410 --> 00:47.550
+I pull them down to master,
+
+00:47.550 --> 00:49.890
+and I rebase onto the master branch,
+
+00:49.890 --> 00:51.510
+my feature branch commits
+
+00:51.510 --> 00:53.790
+are all located together at the tip.
+
+00:53.790 --> 00:57.270
+This makes it easier for someone to review my commits
+
+00:57.270 --> 00:59.220
+and take a look at the code base
+
+00:59.220 --> 01:00.960
+and try and read what's going on.
+
+01:00.960 --> 01:03.510
+In open source projects with thousands of contributors
+
+01:03.510 --> 01:05.760
+and tons and tons of work all the time,
+
+01:05.760 --> 01:07.920
+this makes it easier for some random person
+
+01:07.920 --> 01:09.210
+to go read the history,
+
+01:09.210 --> 01:12.300
+go try and understand what did this feature do, right?
+
+01:12.300 --> 01:14.550
+I don't have to see like a million merge commits
+
+01:14.550 --> 01:16.260
+as part of the commit history.
+
+01:16.260 --> 01:18.150
+The end result is the same.
+
+01:18.150 --> 01:20.940
+I guess I didn't really actually show you the code here,
+
+01:20.940 --> 01:23.970
+but we still end up with the code
+
+01:23.970 --> 01:25.110
+coming from the master branch
+
+01:25.110 --> 01:27.090
+mixed in with a feature branch.
+
+01:27.090 --> 01:28.620
+So we have IMAGE GALLERY ADDED.
+
+01:28.620 --> 01:32.250
+It's just the actual history that is updated.
+
+01:32.250 --> 01:34.380
+So because we are updating the history,
+
+01:34.380 --> 01:38.850
+because rebase rewrites commits, there is a big no-no,
+
+01:38.850 --> 01:40.590
+a big thing you should be aware of,
+
+01:40.590 --> 01:42.960
+you do not ever wanna rebase commits
+
+01:42.960 --> 01:45.420
+that other people already have.
+
+01:45.420 --> 01:49.440
+So you don't wanna rebase if you've pushed up some branch
+
+01:49.440 --> 01:51.540
+to GitHub or somewhere else
+
+01:51.540 --> 01:55.290
+and you collaborators have that work on their machine,
+
+01:55.290 --> 01:56.970
+because then they have those commits,
+
+01:56.970 --> 01:58.710
+and then all of a sudden you rebase
+
+01:58.710 --> 02:01.650
+and you rewrite those commits, you rewrite history,
+
+02:01.650 --> 02:03.870
+that is a nightmare, it's not a nightmare,
+
+02:03.870 --> 02:06.652
+but it can be really, really annoying to reconcile
+
+02:06.652 --> 02:09.090
+when your collaborators have different histories.
+
+02:09.090 --> 02:11.970
+You have commits that just don't even exist in their history
+
+02:11.970 --> 02:14.220
+and they have commits that don't exist in yours,
+
+02:14.220 --> 02:15.720
+and it's all in the past.
+
+02:15.720 --> 02:17.460
+That can be very tricky.
+
+02:17.460 --> 02:20.730
+So again, the rule, never rebase commits
+
+02:20.730 --> 02:22.500
+that you've shared with others.
+
+02:22.500 --> 02:25.800
+So what this means is, you wanna be rebasing commits
+
+02:25.800 --> 02:28.410
+that you have on your machine and other people don't,
+
+02:28.410 --> 02:31.050
+so your feature branches that you're working on.
+
+02:31.050 --> 02:33.600
+You don't wanna rebase the master branch
+
+02:33.600 --> 02:35.490
+because people, presumably,
+
+02:35.490 --> 02:37.350
+have that master branch or the main branch,
+
+02:37.350 --> 02:39.120
+they have commits that you have.
+
+02:39.120 --> 02:42.921
+So if you rewrite those commits and they're totally new,
+
+02:42.921 --> 02:45.630
+that's a problem when you try and push up.
+
+02:45.630 --> 02:47.220
+So you don't wanna do that,
+
+02:47.220 --> 02:49.770
+at least that's the general principle.
+
+02:49.770 --> 02:51.450
+So you work on a feature branch,
+
+02:51.450 --> 02:53.160
+whatever you're doing in there, fixing a bug,
+
+02:53.160 --> 02:55.200
+adding a new feature, whatever it is,
+
+02:55.200 --> 02:57.960
+you can rebase your work from that branch
+
+02:57.960 --> 03:00.930
+onto the master branch or onto another branch, right,
+
+03:00.930 --> 03:02.940
+you're not changing the master branch.
+
+03:02.940 --> 03:04.230
+You don't change the branch
+
+03:04.230 --> 03:06.540
+that you are rebasing onto, right?
+
+03:06.540 --> 03:09.210
+We didn't change the master branch here.
+
+03:09.210 --> 03:12.240
+We only changed my commits on the feature branch.
+
+03:12.240 --> 03:13.800
+So that's important.
+
+03:13.800 --> 03:17.100
+The branch that you are on when you call rebase
+
+03:17.100 --> 03:20.130
+is the one that is rebased, as we talked about.
+
+03:20.130 --> 03:21.273
+Let's go back here.
+
+03:22.500 --> 03:24.570
+Here I'm on the feature branch.
+
+03:24.570 --> 03:27.000
+I rebase onto master, that's fine.
+
+03:27.000 --> 03:28.350
+I'm not messing up master,
+
+03:28.350 --> 03:30.420
+I'm not changing the history on master.
+
+03:30.420 --> 03:32.910
+I'm only changing the history on my feature branch,
+
+03:32.910 --> 03:34.560
+I'm changing those commits.
+
+03:34.560 --> 03:35.610
+So that's okay.
+
+03:35.610 --> 03:37.800
+You just want to avoid rebasing commits,
+
+03:37.800 --> 03:40.080
+rewriting history that other people have.
+
+03:40.080 --> 03:42.360
+So once you've pushed that feature branch up,
+
+03:42.360 --> 03:45.210
+if somebody has pulled that down, if they have that history,
+
+03:45.210 --> 03:46.710
+if they're working on it,
+
+03:46.710 --> 03:49.080
+eh, you don't wanna rebase.
+
+03:49.080 --> 03:51.420
+At least that's a general rule I recommend.
+
+03:51.420 --> 03:55.710
+Again, there are ways of fixing this, but it's not fun.
+
+03:55.710 --> 03:59.430
+All right, so that is kind of why a lot of people
+
+03:59.430 --> 04:02.460
+shy away from rebase or why I was told not to use it
+
+04:02.460 --> 04:05.820
+because you can get yourself in situations that are hairy.
+
+04:05.820 --> 04:07.500
+If you're collaborating with people,
+
+04:07.500 --> 04:08.520
+you're rewriting history.
+
+04:08.520 --> 04:11.460
+And if you don't know how to properly use rebase,
+
+04:11.460 --> 04:13.110
+that can be a big problem.
+
+04:13.110 --> 04:15.210
+So make sure you know what you're doing.
+
+04:15.210 --> 04:16.470
+And if you're working at a company,
+
+04:16.470 --> 04:18.090
+like they're gonna make it very clear to you
+
+04:18.090 --> 04:19.050
+what the workflow is
+
+04:19.050 --> 04:21.390
+and if they expect you to rebase everything
+
+04:21.390 --> 04:25.500
+or to never base and only merge or rebase in X situations.
+
+04:25.500 --> 04:26.550
+It's just part of learning,
+
+04:26.550 --> 04:29.100
+you know, the Git workflow at a particular company.
+
+04:29.100 --> 04:31.650
+But on your own, if you're working on your own projects,
+
+04:31.650 --> 04:35.790
+just you, then you can rebase all the time of course.
+
+04:35.790 --> 04:39.150
+But also, even if you're just on a small team,
+
+04:39.150 --> 04:40.050
+rebase all the time,
+
+04:40.050 --> 04:42.420
+just make sure you know what you are rebasing,
+
+04:42.420 --> 04:44.280
+and don't rebase shared history
+
+04:44.280 --> 04:46.290
+any commits people already have.
+
+04:46.290 --> 04:49.380
+Only rebase stuff that is yours and yours alone.
+
+04:49.380 --> 04:51.990
+Rebase it and then you can push it up, right?
+
+04:51.990 --> 04:53.970
+You get this nice clean history.
+
+04:53.970 --> 04:55.890
+You don't have all those merge commits.
+
+04:55.890 --> 04:57.810
+Do that, and then you can share that.
+
+04:57.810 --> 05:00.060
+So I'll show another example of this next
+
+05:00.060 --> 05:02.370
+with some conflicts if you wanna see how that works.
+
+05:02.370 --> 05:04.470
+It's the same principle roughly
+
+05:04.470 --> 05:07.500
+as resolving merge conflicts when you're merging,
+
+05:07.500 --> 05:08.763
+but I'll demo it anyway.
