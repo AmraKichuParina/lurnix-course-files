@@ -1,0 +1,334 @@
+WEBVTT
+
+00:00.420 --> 00:01.253
+Instructor: So next up,
+
+00:01.253 --> 00:03.060
+we're going to talk about GitHub Pages.
+
+00:03.060 --> 00:05.760
+A pretty fun, fun is the wrong term,
+
+00:05.760 --> 00:08.580
+I guess useful feature of GitHub
+
+00:08.580 --> 00:12.000
+is that we can actually host webpages
+
+00:12.000 --> 00:15.990
+out of GitHub repositories for free, very easily,
+
+00:15.990 --> 00:18.390
+with basically a single click of a button.
+
+00:18.390 --> 00:22.410
+Once our code is up on GitHub, we can host a website.
+
+00:22.410 --> 00:24.000
+Now there are some restrictions.
+
+00:24.000 --> 00:26.130
+This is not a full-fledged hosting service,
+
+00:26.130 --> 00:29.460
+you can't do anything except static webpages.
+
+00:29.460 --> 00:31.740
+So that means no server-side languages
+
+00:31.740 --> 00:33.510
+like Python, Ruby, or Node.
+
+00:33.510 --> 00:36.240
+You're purely HTML, CSS, and JavaScript,
+
+00:36.240 --> 00:39.450
+that's what you're limited to, client-side static pages.
+
+00:39.450 --> 00:42.960
+But you can still create really amazing portfolio websites
+
+00:42.960 --> 00:47.960
+or documentation websites for your repositories.
+
+00:48.240 --> 00:51.030
+You can host, you know, if you build a JavaScript game,
+
+00:51.030 --> 00:53.100
+you can use GitHub Pages to host that.
+
+00:53.100 --> 00:55.080
+But you don't want to use GitHub Pages
+
+00:55.080 --> 00:57.780
+for any like high-capacity website
+
+00:57.780 --> 00:59.700
+where you're expecting a lot of traffic,
+
+00:59.700 --> 01:01.950
+it's not really meant for that.
+
+01:01.950 --> 01:04.140
+But it's a really nice feature,
+
+01:04.140 --> 01:07.170
+and again, it's free and it's built into GitHub,
+
+01:07.170 --> 01:11.460
+so it makes hosting very, very easy for certain situations.
+
+01:11.460 --> 01:12.960
+So I'm going to show you some examples.
+
+01:12.960 --> 01:15.270
+Here's the GitHub Pages homepage
+
+01:15.270 --> 01:16.500
+where they explain how it works,
+
+01:16.500 --> 01:17.880
+there's a video you can watch,
+
+01:17.880 --> 01:20.130
+then they have the instructions.
+
+01:20.130 --> 01:23.790
+But if we go to a project like Faker,
+
+01:23.790 --> 01:26.190
+which is a JavaScript library,
+
+01:26.190 --> 01:30.840
+this is the actual project on GitHub, it's open-source.
+
+01:30.840 --> 01:33.090
+This is the entire repository,
+
+01:33.090 --> 01:36.600
+all the collaborators, or contributors, rather.
+
+01:36.600 --> 01:38.490
+If I scroll down, though,
+
+01:38.490 --> 01:42.423
+there's a link right here to view the documentation.
+
+01:43.290 --> 01:45.030
+So it's not the most beautiful website
+
+01:45.030 --> 01:47.040
+but it is documentation
+
+01:47.040 --> 01:49.530
+and has to do with the library Faker,
+
+01:49.530 --> 01:51.570
+it's okay if you have no idea what it is,
+
+01:51.570 --> 01:54.090
+but this is docs for this project.
+
+01:54.090 --> 01:55.950
+And if you notice this URL,
+
+01:55.950 --> 01:59.670
+it has GitHub in the URL, github.io.
+
+01:59.670 --> 02:03.990
+So all GitHub pages are going to use that domain github.io.
+
+02:03.990 --> 02:05.790
+You can change that, you can actually customize it
+
+02:05.790 --> 02:08.430
+and set it up to use your own URL,
+
+02:08.430 --> 02:10.140
+but I'm not going to go into that.
+
+02:10.140 --> 02:12.210
+But that tells us this is actually hosted
+
+02:12.210 --> 02:14.130
+thanks to GitHub Pages.
+
+02:14.130 --> 02:15.840
+And here's another example.
+
+02:15.840 --> 02:18.780
+This is a repository, oh, I'm on the wrong page.
+
+02:18.780 --> 02:19.860
+Here we are.
+
+02:19.860 --> 02:24.030
+This repository is a fork of that 2048 game
+
+02:24.030 --> 02:26.800
+where somebody, this person here, Ovolve,
+
+02:28.080 --> 02:33.080
+Ovolve created an AI solver for the popular game 2048.
+
+02:34.440 --> 02:36.570
+So we can see the code here,
+
+02:36.570 --> 02:39.266
+but also, thanks to GitHub Pages,
+
+02:39.266 --> 02:42.330
+there's this URL I can go to to view the website.
+
+02:42.330 --> 02:43.710
+And I don't know if you can see this,
+
+02:43.710 --> 02:48.710
+I'll zoom in, hopefully, it's ovolve.github.io/2048-AI.
+
+02:50.520 --> 02:53.400
+So it has GitHub in there again, github.io.
+
+02:53.400 --> 02:54.930
+So this is another example,
+
+02:54.930 --> 02:57.690
+where there's the actual repository,
+
+02:57.690 --> 03:00.930
+there's a read me, there's information about the project,
+
+03:00.930 --> 03:03.450
+but then, there's a corresponding website
+
+03:03.450 --> 03:05.790
+and it happens to be hosted by GitHub.
+
+03:05.790 --> 03:07.470
+Same thing that we saw with Faker.
+
+03:07.470 --> 03:10.710
+Here is the project, the repository on GitHub.
+
+03:10.710 --> 03:14.310
+And here's a website that goes along with that project,
+
+03:14.310 --> 03:16.050
+it pertains to that project,
+
+03:16.050 --> 03:19.140
+and it has GitHub in that URL as well.
+
+03:19.140 --> 03:22.560
+So there are two types, two flavors of GitHub pages.
+
+03:22.560 --> 03:26.220
+There are user sites and project sites.
+
+03:26.220 --> 03:28.560
+So I'm going to focus on project sites.
+
+03:28.560 --> 03:31.410
+For every single GitHub repository you create,
+
+03:31.410 --> 03:34.020
+you can have a corresponding hosted website.
+
+03:34.020 --> 03:37.830
+So that is, yeah, every single repo you make, every project,
+
+03:37.830 --> 03:40.440
+you can have your own corresponding website
+
+03:40.440 --> 03:43.080
+and the default URLs are going to follow this pattern.
+
+03:43.080 --> 03:46.320
+Whatever your username is, so I'm Colt, is my username,
+
+03:46.320 --> 03:51.090
+colt.github.io, slash, and then whatever my repo name is,
+
+03:51.090 --> 03:54.990
+you know, portfolio or 2048 clone or something like that.
+
+03:54.990 --> 03:56.610
+So that's one per project.
+
+03:56.610 --> 03:59.880
+Then there's also user sites.
+
+03:59.880 --> 04:02.910
+You are limited to one of those, one per GitHub account.
+
+04:02.910 --> 04:05.850
+And this is a different application,
+
+04:05.850 --> 04:07.890
+it's actually set up differently as well,
+
+04:07.890 --> 04:09.690
+I'm not going to spend as much time on it.
+
+04:09.690 --> 04:11.220
+But this is where you could host something
+
+04:11.220 --> 04:14.130
+like a personal website, a portfolio,
+
+04:14.130 --> 04:16.140
+anything that you want to be based
+
+04:16.140 --> 04:19.290
+upon your username.github.io.
+
+04:19.290 --> 04:24.290
+So colt.github.io, samanthajones.github.io,
+
+04:24.360 --> 04:27.480
+where it's not a project, it's not a particular repository.
+
+04:27.480 --> 04:31.920
+Instead, it's about you or your group, your organization,
+
+04:31.920 --> 04:34.860
+you are allowed one per GitHub account.
+
+04:34.860 --> 04:37.050
+But we're going to focus on project sites
+
+04:37.050 --> 04:38.760
+like the two that I showed you.
+
+04:38.760 --> 04:39.960
+We have a repo here
+
+04:39.960 --> 04:42.420
+and then a corresponding documentation website.
+
+04:42.420 --> 04:43.920
+And then we have another repo here,
+
+04:43.920 --> 04:47.700
+and then just a deployed version of this project
+
+04:47.700 --> 04:49.020
+that we can interact with.
+
+04:49.020 --> 04:50.040
+So in the next video,
+
+04:50.040 --> 04:53.100
+I'm going to show you how to set this up, it is very simple.
+
+04:53.100 --> 04:56.010
+Now you will need to know a little bit of HTML,
+
+04:56.010 --> 04:59.310
+just to make websites, but the actual mechanism
+
+04:59.310 --> 05:02.340
+to turn it on with GitHub Pages is very easy.
+
+05:02.340 --> 05:03.340
+So that's coming up.
