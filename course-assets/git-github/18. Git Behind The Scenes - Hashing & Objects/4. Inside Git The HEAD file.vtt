@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.180 --> 00:01.890
+Instructor: Next up, this will be a quick one.
+
+00:01.890 --> 00:04.170
+We'll talk about the HEAD file.
+
+00:04.170 --> 00:06.870
+So, HEAD in all caps, that's the name of the file.
+
+00:06.870 --> 00:09.690
+It exists in our .git directory.
+
+00:09.690 --> 00:11.490
+So if we take a look at .git,
+
+00:11.490 --> 00:13.410
+there it is, HEAD,
+
+00:13.410 --> 00:15.360
+and it's just a plain text file
+
+00:15.360 --> 00:18.060
+and it contains a reference to a commit
+
+00:18.060 --> 00:20.670
+or to a branch reference, normally.
+
+00:20.670 --> 00:22.920
+So as we've talked about in our diagrams,
+
+00:22.920 --> 00:25.650
+HEAD typically refers to a branch pointer
+
+00:25.650 --> 00:28.020
+but we can go into detached HEAD,
+
+00:28.020 --> 00:30.270
+at which point HEAD refers to a particular commit
+
+00:30.270 --> 00:31.680
+and that's why it's detached.
+
+00:31.680 --> 00:33.480
+Detached, detached.
+
+00:33.480 --> 00:36.300
+Okay, so we can take a look at it.
+
+00:36.300 --> 00:40.380
+Currently, I'm on the master branch on this react repo.
+
+00:40.380 --> 00:41.650
+Here's the HEAD file
+
+00:42.630 --> 00:46.110
+and it says, inside of it, so I'll make it a bit larger.
+
+00:46.110 --> 00:46.943
+It just says,
+
+00:46.943 --> 00:50.700
+"Okay, take a look at whatever's in refs/heads/master"
+
+00:50.700 --> 00:53.820
+which is a commit as we saw in the prior video.
+
+00:53.820 --> 00:56.970
+So, it's a reference to a reference, right?
+
+00:56.970 --> 00:58.830
+It is pointing,
+
+00:58.830 --> 01:00.060
+if I go back, here we are,
+
+01:00.060 --> 01:01.740
+it's pointing, in that file,
+
+01:01.740 --> 01:04.140
+to the contents of the master reference,
+
+01:04.140 --> 01:05.550
+master branch reference.
+
+01:05.550 --> 01:08.940
+If I switch branches, what do we have?
+
+01:08.940 --> 01:12.693
+Let's switch to chicken, git switch chicken.
+
+01:13.710 --> 01:17.790
+Now it contains refs/heads/chicken
+
+01:17.790 --> 01:19.560
+and we can take a look at that.
+
+01:19.560 --> 01:21.870
+This is the commit it's referring to.
+
+01:21.870 --> 01:23.280
+It's not pointing to the commit though.
+
+01:23.280 --> 01:24.690
+It's pointing to the branch
+
+01:24.690 --> 01:26.760
+and the branch is referring to this commit.
+
+01:26.760 --> 01:28.500
+That's the tip of the branch.
+
+01:28.500 --> 01:30.030
+However, I could go back, right?
+
+01:30.030 --> 01:32.370
+If I pick one commit,
+
+01:32.370 --> 01:34.650
+let's just pick one of them, doesn't matter.
+
+01:34.650 --> 01:36.090
+Right here.
+
+01:36.090 --> 01:38.460
+If I copy this hash or just a portion of it
+
+01:38.460 --> 01:41.460
+and I do a git checkout with that hash,
+
+01:41.460 --> 01:42.660
+we've seen it before,
+
+01:42.660 --> 01:44.880
+I'm now in detached HEAD.
+
+01:44.880 --> 01:47.280
+If we look at the HEAD file,
+
+01:47.280 --> 01:50.190
+now it directly points to the commit.
+
+01:50.190 --> 01:52.770
+So, the branch reference has not moved.
+
+01:52.770 --> 01:57.270
+It's still pointing to that 5fb, but HEAD has.
+
+01:57.270 --> 02:00.300
+Just like in this slide here, we detach the HEAD.
+
+02:00.300 --> 02:01.620
+It refers to a commit.
+
+02:01.620 --> 02:03.540
+The branch reference is still in the same place,
+
+02:03.540 --> 02:05.040
+it's just pointing at that commit.
+
+02:05.040 --> 02:08.010
+It contains the commit inside of the file.
+
+02:08.010 --> 02:09.930
+Now, HEAD contains a commit
+
+02:09.930 --> 02:12.990
+instead of containing a reference to a branch.
+
+02:12.990 --> 02:14.700
+So now if I get out of this,
+
+02:14.700 --> 02:16.650
+let's go, this time let's go to master,
+
+02:16.650 --> 02:18.183
+git switch to master.
+
+02:19.020 --> 02:22.590
+Now, HEAD is updated to reflect that change.
+
+02:22.590 --> 02:24.633
+All right, so that's the HEAD file.
